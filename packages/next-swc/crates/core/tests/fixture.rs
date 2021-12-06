@@ -1,5 +1,5 @@
 use next_swc::{
-    amp_attributes::amp_attributes, next_dynamic::next_dynamic, next_ssg::next_ssg,
+    amp_attributes::amp_attributes, css_utils, next_dynamic::next_dynamic, next_ssg::next_ssg,
     page_config::page_config_test, react_remove_properties::remove_properties,
     remove_console::remove_console, styled_jsx::styled_jsx,
 };
@@ -155,6 +155,17 @@ fn react_remove_properties_custom_fixture(input: PathBuf) {
                 },
             ))
         },
+        &input,
+        &output,
+    );
+}
+
+#[fixture("tests/fixture/css-utils/**/input.js")]
+fn next_css_utils(input: PathBuf) {
+    let output = input.parent().unwrap().join("output.js");
+    test_fixture(
+        syntax(),
+        &|_tr| css_utils::next_css_utils(),
         &input,
         &output,
     );
