@@ -25,6 +25,7 @@ swc_node_base = "0.5.1"
 swc_stylis = "0.41.1"
 tracing = {version = "0.1.28", features = ["release_max_level_off"]}
 regex = "1.5"
+css = { path = "../../../../../../../rust/css", version = "0.1.0" }
 
 [dev-dependencies]
 swc_ecma_transforms_testing = "0.51.0"

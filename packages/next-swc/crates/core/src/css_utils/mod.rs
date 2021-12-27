@@ -1,23 +1,20 @@
 use swc_atoms::JsWord;
 use swc_common::DUMMY_SP;
 use swc_ecmascript::ast::*;
-use swc_ecmascript::utils::HANDLER;
+// use swc_ecmascript::utils::HANDLER;
 use swc_ecmascript::visit::{noop_fold_type, Fold, FoldWith};
-
-mod css;
 
 pub fn next_css_utils() -> impl Fold {
     CssUtils {
         classes: String::from(""),
-        css_generator: css::get_css_generator(),
+        css_compiler: css::compiler::Compiler::new(),
         at_root: true,
     }
 }
 
 struct CssUtils {
-    // classes: Vec<String>,
     classes: String,
-    css_generator: css::CssGenerator,
+    css_compiler: css::compiler::Compiler,
     at_root: bool,
 }
 impl Fold for CssUtils {
@@ -27,7 +24,7 @@ impl Fold for CssUtils {
         e.opening.attrs.retain(|attr| {
             if let JSXAttrOrSpread::JSXAttr(jsxattr) = attr {
                 if let JSXAttrName::Ident(ref iden) = jsxattr.name {
-                    if &*iden.sym == "css" {
+                    if &*iden.sym == "ecss" {
                         match &jsxattr.value {
                             Some(JSXAttrValue::Lit(Lit::Str(str))) => {
                                 self.classes = String::from(&*str.value);
@@ -44,7 +41,7 @@ impl Fold for CssUtils {
         });
 
         if !self.classes.is_empty() {
-            let class_name = self.css_generator.add_css(&self.classes);
+            let class_names = self.css_compiler.generate_classes(&self.classes).join(" ");
 
             match e.opening.attrs.iter().enumerate().position(|(_, attr)| {
                 if let JSXAttrOrSpread::JSXAttr(jsxattr) = attr {
@@ -76,7 +73,7 @@ impl Fold for CssUtils {
                         }),
                         span: DUMMY_SP,
                         value: Some(JSXAttrValue::Lit(Lit::Str(Str {
-                            value: JsWord::from(format!("{} {}", current_value, class_name)),
+                            value: JsWord::from(format!("{} {}", current_value, class_names)),
                             span: DUMMY_SP,
                             has_escape: false,
                             kind: StrKind::Synthesized,
@@ -91,7 +88,7 @@ impl Fold for CssUtils {
                     }),
                     span: DUMMY_SP,
                     value: Some(JSXAttrValue::Lit(Lit::Str(Str {
-                        value: JsWord::from(class_name),
+                        value: JsWord::from(class_names),
                         span: DUMMY_SP,
                         has_escape: false,
                         kind: StrKind::Synthesized,
@@ -106,7 +103,7 @@ impl Fold for CssUtils {
         self.at_root = false;
         let mut e = e.fold_children_with(self);
 
-        if at_root {
+        if at_root && !self.classes.is_empty() {
             e.children
                 .push(JSXElementChild::JSXElement(Box::new(JSXElement {
                     opening: JSXOpeningElement {
@@ -141,7 +138,7 @@ impl Fold for CssUtils {
                             quasis: vec![TplElement {
                                 cooked: None,
                                 raw: Str {
-                                    value: JsWord::from(self.css_generator.get_css()),
+                                    value: JsWord::from(self.css_compiler.get_css()),
                                     has_escape: false,
                                     span: DUMMY_SP,
                                     kind: StrKind::Synthesized,
