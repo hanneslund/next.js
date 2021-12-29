@@ -99,15 +99,28 @@ function loadNative() {
 
   for (const triple of triples) {
     try {
-      bindings = require(`@next/swc/native/next-swc.${triple.platformArchABI}.node`)
-      Log.info('Using locally built binary of @next/swc')
+      bindings = require(`${process.cwd()}/next-swc.${
+        triple.platformArchABI
+      }.node`)
+      Log.info('Using user provided binary of @next/swc')
       break
     } catch (e) {}
   }
 
   if (!bindings) {
     for (const triple of triples) {
-      let pkg = `@next/swc-${triple.platformArchABI}`
+      try {
+        bindings = require(`@next/swc/native/next-swc.${triple.platformArchABI}.node`)
+        Log.info('Using locally built binary of @next/swc')
+        break
+      } catch (e) {}
+    }
+  }
+
+  if (!bindings) {
+    for (const triple of triples) {
+      let pkg = `@emergentcss/next-swc-${triple.platformArchABI}`
+      console.log(`Using next-swc: ${pkg}`)
       try {
         bindings = require(pkg)
         break

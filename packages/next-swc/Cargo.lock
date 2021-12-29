@@ -336,13 +336,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "css"
-version = "0.1.0"
-dependencies = [
- "anyhow",
-]
-
-[[package]]
 name = "ctor"
 version = "0.1.20"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -845,7 +838,6 @@ name = "next-swc"
 version = "0.0.0"
 dependencies = [
  "chrono",
- "css",
  "easy-error",
  "either",
  "fxhash",

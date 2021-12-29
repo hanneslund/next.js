@@ -2443,6 +2443,36 @@
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
 
+"@emergentcss/next-swc-darwin-arm64@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@emergentcss/next-swc-darwin-arm64/-/next-swc-darwin-arm64-0.0.3.tgz#b47c61f80a500a0db9f754464eb07d344f7b35c4"
+  integrity sha512-t+/IZQ4nJlAjbBn12HG2SvdG8zTffQ5mghDvISV0mxMy8i/1Bnk60LgH/v5jGimXwJFT57W+T5RFaUlC5jvyUw==
+
+"@emergentcss/next-swc-darwin-x64@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@emergentcss/next-swc-darwin-x64/-/next-swc-darwin-x64-0.0.3.tgz#fa947d3259fb49fddb755b33901a6745b1fcb445"
+  integrity sha512-wpJWBy1DgYUBAxKU3tUSBvGwsLUBYdVEMVUrW7FG1dhDhWn7SCJfnT3IUc1q5ssbKFCrMuwECrECwHatkFcX5Q==
+
+"@emergentcss/next-swc-linux-x64-gnu@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@emergentcss/next-swc-linux-x64-gnu/-/next-swc-linux-x64-gnu-0.0.3.tgz#1070c865240170580168de0bec24e471e3973972"
+  integrity sha512-D8O+sZkPlWEQ/5J8qAZCTCPc3xpTmGMOUW2J7OaRVrgELgi1vSuSrqhm265E7o3MBzdIwr9BxD+Cptk0EtgxDg==
+
+"@emergentcss/next-swc-win32-x64-msvc@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@emergentcss/next-swc-win32-x64-msvc/-/next-swc-win32-x64-msvc-0.0.3.tgz#82987dc21d664098d209b4466586c9370613fb25"
+  integrity sha512-zT2e6tfkyASwMWcwodBlv0pHRIznZ35Jqgj0OtvThuf61QosiufoaOARx766tRH/oC6mwhJZCiBrwgnGYAsDVA==
+
+"@emergentcss/next-swc@0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@emergentcss/next-swc/-/next-swc-0.0.3.tgz#5579d5d348f5120e13d9a3c534eacdd58337f396"
+  integrity sha512-qA/zk/mifVbq6OXiy8OggrMaoS8Dy3UyOjn5C7oJPsjmfsGNNSWj0M3uB4lINEGImmNNJfJ9AlRd3RzG1lsKoQ==
+  optionalDependencies:
+    "@emergentcss/next-swc-darwin-arm64" "0.0.3"
+    "@emergentcss/next-swc-darwin-x64" "0.0.3"
+    "@emergentcss/next-swc-linux-x64-gnu" "0.0.3"
+    "@emergentcss/next-swc-win32-x64-msvc" "0.0.3"
+
 "@emotion/is-prop-valid@^0.8.8":
   version "0.8.8"
   resolved "https://registry.yarnpkg.com/@emotion/is-prop-valid/-/is-prop-valid-0.8.8.tgz#db28b1c4368a259b60a97311d6a952d4fd01ac1a"

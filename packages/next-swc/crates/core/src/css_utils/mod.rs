@@ -103,56 +103,60 @@ impl Fold for CssUtils {
         self.at_root = false;
         let mut e = e.fold_children_with(self);
 
-        if at_root && !self.classes.is_empty() {
-            e.children
-                .push(JSXElementChild::JSXElement(Box::new(JSXElement {
-                    opening: JSXOpeningElement {
-                        name: JSXElementName::Ident(Ident {
-                            sym: JsWord::from("style"),
-                            optional: false,
+        if at_root {
+            let generated_css = self.css_compiler.get_css();
+
+            if !generated_css.is_empty() {
+                e.children
+                    .push(JSXElementChild::JSXElement(Box::new(JSXElement {
+                        opening: JSXOpeningElement {
+                            name: JSXElementName::Ident(Ident {
+                                sym: JsWord::from("style"),
+                                optional: false,
+                                span: DUMMY_SP,
+                            }),
+                            attrs: vec![JSXAttrOrSpread::JSXAttr(JSXAttr {
+                                name: JSXAttrName::Ident(Ident {
+                                    sym: JsWord::from("jsx"),
+                                    optional: false,
+                                    span: DUMMY_SP,
+                                }),
+                                span: DUMMY_SP,
+                                value: None,
+                            })],
                             span: DUMMY_SP,
-                        }),
-                        attrs: vec![JSXAttrOrSpread::JSXAttr(JSXAttr {
-                            name: JSXAttrName::Ident(Ident {
-                                sym: JsWord::from("jsx"),
+                            type_args: None,
+                            self_closing: false,
+                        },
+                        closing: Some(JSXClosingElement {
+                            name: JSXElementName::Ident(Ident {
+                                sym: JsWord::from("style"),
                                 optional: false,
                                 span: DUMMY_SP,
                             }),
                             span: DUMMY_SP,
-                            value: None,
+                        }),
+                        children: vec![JSXElementChild::JSXExprContainer(JSXExprContainer {
+                            expr: JSXExpr::Expr(Box::new(Expr::Tpl(Tpl {
+                                quasis: vec![TplElement {
+                                    cooked: None,
+                                    raw: Str {
+                                        value: JsWord::from(generated_css),
+                                        has_escape: false,
+                                        span: DUMMY_SP,
+                                        kind: StrKind::Synthesized,
+                                    },
+                                    tail: false,
+                                    span: DUMMY_SP,
+                                }],
+                                exprs: Vec::new(),
+                                span: DUMMY_SP,
+                            }))),
+                            span: DUMMY_SP,
                         })],
                         span: DUMMY_SP,
-                        type_args: None,
-                        self_closing: false,
-                    },
-                    closing: Some(JSXClosingElement {
-                        name: JSXElementName::Ident(Ident {
-                            sym: JsWord::from("style"),
-                            optional: false,
-                            span: DUMMY_SP,
-                        }),
-                        span: DUMMY_SP,
-                    }),
-                    children: vec![JSXElementChild::JSXExprContainer(JSXExprContainer {
-                        expr: JSXExpr::Expr(Box::new(Expr::Tpl(Tpl {
-                            quasis: vec![TplElement {
-                                cooked: None,
-                                raw: Str {
-                                    value: JsWord::from(self.css_compiler.get_css()),
-                                    has_escape: false,
-                                    span: DUMMY_SP,
-                                    kind: StrKind::Synthesized,
-                                },
-                                tail: false,
-                                span: DUMMY_SP,
-                            }],
-                            exprs: Vec::new(),
-                            span: DUMMY_SP,
-                        }))),
-                        span: DUMMY_SP,
-                    })],
-                    span: DUMMY_SP,
-                })));
+                    })));
+            }
         }
 
         self.at_root = true;

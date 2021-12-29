@@ -47,7 +47,7 @@ use swc_ecmascript::{
 
 pub mod amp_attributes;
 mod auto_cjs;
-pub mod css_utils;
+// pub mod css_utils;
 pub mod disallow_re_export_all_in_page;
 pub mod hook_optimizer;
 pub mod next_dynamic;
@@ -103,7 +103,7 @@ pub fn custom_before_pass(
 ) -> impl Fold {
     chain!(
         disallow_re_export_all_in_page::disallow_re_export_all_in_page(opts.is_page_file),
-        css_utils::next_css_utils(),
+        // css_utils::next_css_utils(),
         styled_jsx::styled_jsx(cm.clone()),
         hook_optimizer::hook_optimizer(),
         match &opts.styled_components {

@@ -6,7 +6,7 @@ use next_swc::{
     react_remove_properties::remove_properties,
     remove_console::remove_console,
     shake_exports::{shake_exports, Config as ShakeExportsConfig},
-    styled_jsx::styled_jsx,
+    styled_jsx::styled_jsx
 };
 use std::path::PathBuf;
 use swc_common::{chain, comments::SingleThreadedComments, FileName, Mark, Span, DUMMY_SP};
@@ -209,3 +209,16 @@ fn shake_exports_fixture_default(input: PathBuf) {
         &output,
     );
 }
+
+// #[fixture("tests/fixture/css-utils/**/input.js")]
+// fn css_utils_fixture(input: PathBuf) {
+//     let output = input.parent().unwrap().join("output.js");
+//     test_fixture(
+//         syntax(),
+//         &|_tr| {
+//             css_utils::next_css_utils()
+//         },
+//         &input,
+//         &output,
+//     );
+// }

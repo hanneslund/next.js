@@ -1,6 +1,6 @@
 const A = () => (
-  <div css="gap-20 h-20">
-    <p css="rounded-full flex" className="test">Hej</p>
+  <div ecss="(_ @md):p=(1 2)">
+    <p ecss="flex" className="test">Hej</p>
   </div>
 )
 
