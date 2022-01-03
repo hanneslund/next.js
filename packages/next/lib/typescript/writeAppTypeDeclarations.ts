@@ -27,7 +27,7 @@ export async function writeAppTypeDeclarations(
     }
   } catch (err) {}
 
-  const content =
+  let content =
     '/// <reference types="next" />' +
     eol +
     (imageImportsEnabled
@@ -38,6 +38,14 @@ export async function writeAppTypeDeclarations(
     eol +
     '// see https://nextjs.org/docs/basic-features/typescript for more information.' +
     eol
+
+  content = `${content}
+  
+declare namespace React {
+  interface HTMLAttributes<T> extends AriaAttributes, DOMAttributes<T> {
+    ecss?: string;
+  }
+}`
 
   // Avoids an un-necessary write on read-only fs
   if (currentContent === content) {
