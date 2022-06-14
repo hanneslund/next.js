@@ -143,6 +143,7 @@ export interface ExperimentalConfig {
   }
   swcPlugins?: Array<[string, Record<string, unknown>]>
   largePageDataBytes?: number
+  fonts?: any
 }
 
 /**

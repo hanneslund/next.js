@@ -1,3 +1,5 @@
+import { getFonts, nextFontMap } from '../next-font'
+
 const nextDistPath =
   /(next[\\/]dist[\\/]shared[\\/]lib)|(next[\\/]dist[\\/]client)|(next[\\/]dist[\\/]pages)/
 
@@ -114,6 +116,7 @@ function getBaseSWCOptions({
     modularizeImports: nextConfig?.experimental?.modularizeImports,
     relay: nextConfig?.compiler?.relay,
     emotion: getEmotionOptions(nextConfig, development),
+    fonts: getFonts(),
   }
 }
 

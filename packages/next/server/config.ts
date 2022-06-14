@@ -1,4 +1,4 @@
-import { basename, extname, relative, isAbsolute, resolve } from 'path'
+import path, { basename, extname, relative, isAbsolute, resolve } from 'path'
 import { pathToFileURL } from 'url'
 import { Agent as HttpAgent } from 'http'
 import { Agent as HttpsAgent } from 'https'
@@ -21,6 +21,8 @@ import {
 } from '../shared/lib/image-config'
 import { loadEnvConfig } from '@next/env'
 import { hasNextSupport } from '../telemetry/ci-info'
+import { readFileSync, writeFileSync } from 'fs'
+import postcss from 'postcss'
 
 export { DomainLocale, NextConfig, normalizeConfig } from './config-shared'
 
@@ -745,6 +747,30 @@ function assignDefaults(userConfig: { [key: string]: any }) {
         )}, received ${buildActivityPosition}`
       )
     }
+  }
+
+  const fonts = result.experimental?.fonts
+  if (fonts) {
+    if (typeof fonts !== 'object') {
+      throw new Error(
+        `Specified fonts is not an object, found "${fonts}". Please update this config or remove it.`
+      )
+    }
+
+    const fontEntries = Object.values(fonts)
+    if (!fontEntries.length) {
+      throw new Error(
+        `Specified fonts is an empty object. Please update it with the relevant extensions or remove it.`
+      )
+    }
+
+    fontEntries.forEach((fontDeclarationPath) => {
+      if (typeof fontDeclarationPath !== 'string') {
+        throw new Error(
+          `Specified font declaration path is not a string, found "${fontDeclarationPath}" of type "${typeof fontDeclarationPath}". Please update this font declaration path or remove it.`
+        )
+      }
+    })
   }
 
   return result

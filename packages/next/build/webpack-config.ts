@@ -38,6 +38,7 @@ import MiddlewarePlugin from './webpack/plugins/middleware-plugin'
 import BuildManifestPlugin from './webpack/plugins/build-manifest-plugin'
 import { JsConfigPathsPlugin } from './webpack/plugins/jsconfig-paths-plugin'
 import { DropClientPage } from './webpack/plugins/next-drop-client-page-plugin'
+import { NextFontPlugin } from './webpack/plugins/next-font-plugin'
 import PagesManifestPlugin from './webpack/plugins/pages-manifest-plugin'
 import { ProfilingPlugin } from './webpack/plugins/profiling-plugin'
 import { ReactLoadablePlugin } from './webpack/plugins/react-loadable-plugin'
@@ -1422,6 +1423,7 @@ export default async function getBaseWebpackConfig(
       ].filter(Boolean),
     },
     plugins: [
+      isClient && new NextFontPlugin(config.experimental?.fonts, dir),
       ...(!dev &&
       isEdgeServer &&
       !!config.experimental.middlewareSourceMaps &&

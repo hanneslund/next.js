@@ -1,6 +1,7 @@
 use next_swc::{
     amp_attributes::amp_attributes,
     next_dynamic::next_dynamic,
+    next_font::next_font,
     next_ssg::next_ssg,
     page_config::page_config_test,
     react_remove_properties::remove_properties,
@@ -208,4 +209,22 @@ fn shake_exports_fixture_default(input: PathBuf) {
         &input,
         &output,
     );
+}
+
+#[fixture("tests/fixture/next-font/1/**/input.js")]
+fn next_font_fixture(input: PathBuf) {
+    let output = input.parent().unwrap().join("output.js");
+    // let output_client = input.parent().unwrap().join("output-client.js");
+    // let output_server = input.parent().unwrap().join("output-server.js");
+    // test_fixture(
+    //     syntax(),
+    //     &|_tr| {
+    //         next_font(
+    //             true,
+    //         )
+    //     },
+    //     &input,
+    //     &output_client,
+    // );
+    test_fixture(syntax(), &|_tr| next_font(false), &input, &output);
 }
