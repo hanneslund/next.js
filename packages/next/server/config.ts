@@ -751,26 +751,12 @@ function assignDefaults(userConfig: { [key: string]: any }) {
 
   const fonts = result.experimental?.fonts
   if (fonts) {
-    if (typeof fonts !== 'object') {
+    if (typeof fonts !== 'string') {
       throw new Error(
-        `Specified fonts is not an object, found "${fonts}". Please update this config or remove it.`
+        `Specified experimental.fonts is not a string, found type "${typeof fonts}"`
       )
     }
-
-    const fontEntries = Object.values(fonts)
-    if (!fontEntries.length) {
-      throw new Error(
-        `Specified fonts is an empty object. Please update it with the relevant extensions or remove it.`
-      )
-    }
-
-    fontEntries.forEach((fontDeclarationPath) => {
-      if (typeof fontDeclarationPath !== 'string') {
-        throw new Error(
-          `Specified font declaration path is not a string, found "${fontDeclarationPath}" of type "${typeof fontDeclarationPath}". Please update this font declaration path or remove it.`
-        )
-      }
-    })
+    result.experimental!.fonts = path.join(result.configFile, '..', fonts)
   }
 
   return result

@@ -28,7 +28,7 @@ DEALINGS IN THE SOFTWARE.
 
 import { isWasm, transform } from '../../swc'
 import { getLoaderSWCOptions } from '../../swc/options'
-import { isAbsolute } from 'path'
+import path, { isAbsolute } from 'path'
 
 async function loaderTransform(parentTrace, source, inputSourceMap) {
   // Make the loader async
@@ -45,12 +45,16 @@ async function loaderTransform(parentTrace, source, inputSourceMap) {
     supportedBrowsers,
   } = loaderOptions
   const isPageFile = filename.startsWith(pagesDir)
+  const isAppFile = ['.js', '.jsx', '.ts', '.tsx'].some(
+    (ext) => filename === path.join(pagesDir, `_app${ext}`)
+  )
 
   const swcOptions = getLoaderSWCOptions({
     pagesDir,
     filename,
     isServer: isServer,
     isPageFile,
+    isAppFile,
     development: this.mode === 'development',
     hasReactRefresh,
     nextConfig,

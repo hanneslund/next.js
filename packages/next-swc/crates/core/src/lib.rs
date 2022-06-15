@@ -80,6 +80,9 @@ pub struct TransformOptions {
     pub is_page_file: bool,
 
     #[serde(default)]
+    pub is_app_file: bool,
+
+    #[serde(default)]
     pub is_development: bool,
 
     #[serde(default)]
@@ -201,7 +204,7 @@ pub fn custom_before_pass<'a, C: Comments + 'a>(
             None => Either::Right(noop()),
         },
         match &opts.fonts {
-            Some(fonts) => Either::Left(next_font::next_font(fonts.clone())),
+            Some(fonts) => Either::Left(next_font::next_font(fonts.clone(), opts.is_app_file)),
             None => Either::Right(noop()),
         }
     )

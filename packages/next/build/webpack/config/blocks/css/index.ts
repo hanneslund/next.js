@@ -310,6 +310,10 @@ export const css = curry(async function css(
     )
 
     if (ctx.customAppFile) {
+      const use = getGlobalCssLoader(ctx, lazyPostCSSInitializer)
+      use.splice(2, 0, { loader: 'next-font-loader' })
+      // use.splice(0, 1)
+      // console.log('use', use)
       fns.push(
         loader({
           oneOf: [
@@ -321,7 +325,7 @@ export const css = curry(async function css(
               sideEffects: true,
               test: regexCssGlobal,
               issuer: { and: [ctx.customAppFile] },
-              use: getGlobalCssLoader(ctx, lazyPostCSSInitializer),
+              use,
             }),
           ],
         })

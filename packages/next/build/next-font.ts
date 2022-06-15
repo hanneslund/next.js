@@ -22,4 +22,12 @@ export function getFonts(): typeof fonts {
   return fonts
 }
 
-export let fontFaceCss = ''
+let fontFaceCss = ''
+
+export function setFontDeclarationCss(css: string) {
+  fontFaceCss = css
+}
+
+export function getFontDeclarationCss(): string {
+  return fontFaceCss
+}

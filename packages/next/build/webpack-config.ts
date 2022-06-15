@@ -1224,6 +1224,7 @@ export default async function getBaseWebpackConfig(
         'next-flight-server-loader',
         'next-flight-client-entry-loader',
         'noop-loader',
+        'next-font-loader',
         'next-middleware-loader',
         'next-edge-function-loader',
         'next-edge-ssr-loader',
@@ -1423,7 +1424,9 @@ export default async function getBaseWebpackConfig(
       ].filter(Boolean),
     },
     plugins: [
-      isClient && new NextFontPlugin(config.experimental?.fonts, dir),
+      isClient &&
+        config.experimental?.fonts &&
+        new NextFontPlugin(config.experimental.fonts),
       ...(!dev &&
       isEdgeServer &&
       !!config.experimental.middlewareSourceMaps &&

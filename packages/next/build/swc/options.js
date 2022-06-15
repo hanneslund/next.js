@@ -116,7 +116,10 @@ function getBaseSWCOptions({
     modularizeImports: nextConfig?.experimental?.modularizeImports,
     relay: nextConfig?.compiler?.relay,
     emotion: getEmotionOptions(nextConfig, development),
-    fonts: getFonts(),
+    fonts: {
+      fonts: getFonts(),
+      fontsCssFile: nextConfig.experimental.fonts,
+    },
   }
 }
 
@@ -205,6 +208,7 @@ export function getLoaderSWCOptions({
   isServer,
   pagesDir,
   isPageFile,
+  isAppFile,
   hasReactRefresh,
   nextConfig,
   jsConfig,
@@ -234,6 +238,7 @@ export function getLoaderSWCOptions({
       isServer,
       pagesDir,
       isPageFile,
+      isAppFile,
       env: {
         targets: {
           // Targets the current version of Node.js
@@ -259,6 +264,7 @@ export function getLoaderSWCOptions({
       isServer,
       pagesDir,
       isPageFile,
+      isAppFile,
       ...(supportedBrowsers && supportedBrowsers.length > 0
         ? {
             env: {
