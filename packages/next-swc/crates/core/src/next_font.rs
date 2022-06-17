@@ -32,7 +32,6 @@ struct NextFont {
 #[derive(Clone, Debug, Deserialize)]
 // #[derive(Clone, Debug, Deserialize)]
 pub struct FontData {
-    family: String,
     path: String,
 }
 
@@ -86,7 +85,7 @@ impl Fold for NextFont {
 }
 
 // ERROR IF ALREADY EXISTS
-pub fn font_css_import_decl(fonts_file: &str) -> ModuleItem {
+fn font_css_import_decl(fonts_file: &str) -> ModuleItem {
     ModuleItem::ModuleDecl(ModuleDecl::Import(ImportDecl {
         asserts: None,
         span: DUMMY_SP,

@@ -24,11 +24,11 @@ type FontProps = {
 }
 let loadedFonts: Set<string> = new Set()
 export function Font({ name, children }: FontProps) {
-  console.log({ name, children })
+  // console.log({ name, children })
   // cache
   const [loaded, setLoaded] = useState(loadedFonts.has(name))
   useEffect(() => {
-    console.log({ loaded })
+    // console.log({ loaded })
     if (loaded) return
     document.fonts.ready
       .then((e) => {

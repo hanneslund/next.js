@@ -199,6 +199,8 @@ export const css = curry(async function css(
 
   // CSS Modules support must be enabled on the server and client so the class
   // names are available for SSR or Prerendering.
+  const use = getCssModuleLoader(ctx, lazyPostCSSInitializer)
+  use.splice(1, 0, { loader: 'next-font-loader' })
   fns.push(
     loader({
       oneOf: [
@@ -216,7 +218,7 @@ export const css = curry(async function css(
             and: [ctx.rootDirectory],
             not: [/node_modules/],
           },
-          use: getCssModuleLoader(ctx, lazyPostCSSInitializer),
+          use,
         }),
       ],
     })

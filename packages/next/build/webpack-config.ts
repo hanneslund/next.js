@@ -1426,7 +1426,7 @@ export default async function getBaseWebpackConfig(
     plugins: [
       isClient &&
         config.experimental?.fonts &&
-        new NextFontPlugin(config.experimental.fonts),
+        new NextFontPlugin(config.experimental.fonts, dir),
       ...(!dev &&
       isEdgeServer &&
       !!config.experimental.middlewareSourceMaps &&

@@ -60,6 +60,7 @@ async function loaderTransform(parentTrace, source, inputSourceMap) {
     nextConfig,
     jsConfig,
     supportedBrowsers,
+    fonts: this._compilation.params.NextFontPlugin?.fontData,
   })
 
   const programmaticOptions = {
