@@ -3,6 +3,7 @@ import { webpack } from 'next/dist/compiled/webpack/webpack'
 import { loader, plugin } from '../../helpers'
 import { ConfigurationContext, ConfigurationFn, pipe } from '../../utils'
 import { getCssModuleLoader, getGlobalCssLoader } from './loaders'
+import { getFontModuleLoader } from './loaders/fonts'
 import {
   getCustomDocumentError,
   getGlobalImportError,
@@ -16,6 +17,7 @@ export const regexLikeCss = /\.(css|scss|sass)$/
 
 // RegExps for Style Sheets
 const regexCssGlobal = /(?<!\.module)\.css$/
+const regexFontModule = /\.font\.css$/
 const regexCssModules = /\.module\.css$/
 
 // RegExps for Syntactically Awesome Style Sheets
@@ -197,10 +199,31 @@ export const css = curry(async function css(
     })
   )
 
+  const uze = getFontModuleLoader(ctx, lazyPostCSSInitializer)
+  // uze.splice(2, 0, { loader: 'next-font-loader' })
+  console.log(uze)
+  fns.push(
+    loader({
+      oneOf: [
+        markRemovable({
+          test: regexFontModule,
+          issuer: {
+            and: [ctx.rootDirectory],
+            not: [/node_modules/],
+          },
+          // use: {
+          //   loader: 'next-font-loader',
+          // },
+          use: uze,
+        }),
+      ],
+    })
+  )
+
   // CSS Modules support must be enabled on the server and client so the class
   // names are available for SSR or Prerendering.
   const use = getCssModuleLoader(ctx, lazyPostCSSInitializer)
-  use.splice(1, 0, { loader: 'next-font-loader' })
+  // use.splice(1, 0, { loader: 'next-font-loader' })
   fns.push(
     loader({
       oneOf: [
@@ -313,7 +336,7 @@ export const css = curry(async function css(
 
     if (ctx.customAppFile) {
       const use = getGlobalCssLoader(ctx, lazyPostCSSInitializer)
-      use.splice(2, 0, { loader: 'next-font-loader' })
+      // use.splice(2, 0, { loader: 'next-font-loader' })
       // use.splice(0, 1)
       // console.log('use', use)
       fns.push(
