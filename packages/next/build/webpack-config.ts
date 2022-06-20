@@ -1424,9 +1424,7 @@ export default async function getBaseWebpackConfig(
       ].filter(Boolean),
     },
     plugins: [
-      isClient &&
-        config.experimental?.fonts &&
-        new NextFontPlugin(config.experimental.fonts, dir),
+      isClient && new NextFontPlugin(pagesDir),
       ...(!dev &&
       isEdgeServer &&
       !!config.experimental.middlewareSourceMaps &&

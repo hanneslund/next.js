@@ -4,18 +4,15 @@ import { promises } from 'fs'
 import { webpack, sources } from 'next/dist/compiled/webpack/webpack'
 import path from 'path'
 import postcss from 'postcss'
-import { setFontData } from '../../next-font'
 import getRouteFromEntrypoint from '../../../server/get-route-from-entrypoint'
 
 const PLUGIN_NAME = 'NextFontPlugin'
 
 export class NextFontPlugin implements webpack.Plugin {
-  fontsFile: string
-  dir: string
+  pagesDir: string
 
-  constructor(fontsFile: string, dir: string) {
-    this.fontsFile = fontsFile
-    this.dir = dir
+  constructor(pagesDir: string) {
+    this.pagesDir = pagesDir
   }
 
   apply(compiler: webpack.Compiler) {
@@ -24,45 +21,65 @@ export class NextFontPlugin implements webpack.Plugin {
         require('next/dist/compiled/glob') as typeof import('next/dist/compiled/glob')
       const glob = (pattern: string): Promise<string[]> => {
         return new Promise((resolve, reject) => {
-          globOrig(pattern, { cwd: this.dir, absolute: true }, (err, files) => {
-            if (err) {
-              return reject(err)
+          globOrig(
+            pattern,
+            { cwd: this.pagesDir, absolute: true },
+            (err, files) => {
+              if (err) {
+                return reject(err)
+              }
+              resolve(files)
             }
-            resolve(files)
-          })
+          )
         })
       }
 
-      const cssFiles = (await glob(`**/*.css`)).filter(
-        (p) => p !== this.fontsFile
+      const fontFiles = await glob(`**/_fonts.css`)
+      const pages = (await glob(`**/*.{js,jsx,ts,tsx}`)).filter(
+        (page) => !/pages\/_app.js/.test(page)
       )
-
-      const fontUsage = new Map()
-      await Promise.all(
-        cssFiles.map(async (file) => {
-          const css = await promises.readFile(file, 'utf8')
-          await postcss([nextFontUsage(file, fontUsage)]).process(css, {
-            from: file,
-          })
-        })
-      )
-
-      const fontDeclarations = await promises.readFile(this.fontsFile, 'utf8')
 
       const files = new Map()
       const fontData = {}
-      const after = (
-        await postcss([
-          nextFontPlugin(this.fontsFile, files, fontData),
-        ]).process(fontDeclarations, {
-          from: this.fontsFile,
+      const fontz = {}
+      let fontDeclarations = ''
+
+      await Promise.all(
+        fontFiles.map(async (fontsFile) => {
+          const fileContent = await promises.readFile(fontsFile, 'utf8')
+          const after = (
+            await postcss([
+              nextFontPlugin(fontsFile, files, fontData, fontz),
+            ]).process(fileContent, {
+              from: fontsFile,
+            })
+          ).css
+          fontDeclarations += after + '\n'
+          // console.log
         })
-      ).css
+      )
+
+      const fontsManifest = {} as { [key: string]: string[] }
+      pages.forEach((page) => {
+        let preloads = []
+
+        const pageLevel = path.join(page, '..')
+        fontFiles.forEach((css) => {
+          const cssLevel = path.join(css, '..')
+          if (shouldPreloadFonts(this.pagesDir, cssLevel, pageLevel)) {
+            preloads = preloads.concat(fontz[css])
+          }
+        })
+
+        fontsManifest[page] = preloads
+      })
 
       params[PLUGIN_NAME] = {
-        fontDeclarations: after,
+        fontDeclarations,
         files,
         fontData,
+        fontsManifest,
+        fontFiles,
       }
     })
 
@@ -86,24 +103,17 @@ export class NextFontPlugin implements webpack.Plugin {
   }
 }
 
-// /**
-//  * Find unique origin modules in the specified 'connections', which possibly
-//  * contains more than one connection for a module due to different types of
-//  * dependency.
-//  */
-// function findUniqueOriginModulesInConnections(
-//   connections: Connection[]
-// ): Set<unknown> {
-//   const originModules = new Set()
-//   for (const connection of connections) {
-//     if (!originModules.has(connection.originModule)) {
-//       originModules.add(connection.originModule)
-//     }
-//   }
-//   return originModules
-// }
+function shouldPreloadFonts(
+  pagesDir: string,
+  cssLevel: string,
+  pageLevel: string
+): boolean {
+  if (cssLevel === pageLevel) return true
+  if (pageLevel === pagesDir) return false
+  return shouldPreloadFonts(pagesDir, cssLevel, path.join(pageLevel, '..'))
+}
 
-function nextFontPlugin(fontsFile, files, fontData) {
+function nextFontPlugin(fontsFile, files, fontData, fontz) {
   return {
     postcssPlugin: 'NEXT-FONT-POSTCSS-PLUGIN',
     async Once(root: any) {
@@ -131,8 +141,8 @@ function nextFontPlugin(fontsFile, files, fontData) {
 
             const interpolatedName = loaderUtils.interpolateName(
               { resourcePath: fontFilePath },
-              // '/static/fonts/[name].[hash:8].[ext]',
-              '/static/fonts/[contenthash].[ext]',
+              '/static/fonts/[name].[hash:8].[ext]',
+              // '/static/fonts/[name].[contenthash].[ext]',
               { content: fontFileData }
             )
 
@@ -142,6 +152,11 @@ function nextFontPlugin(fontsFile, files, fontData) {
               new sources.RawSource(fontFileData as any)
             )
 
+            if (fontz[fontsFile]) {
+              fontz[fontsFile].push(`/_next${interpolatedName}`)
+            } else {
+              fontz[fontsFile] = [`/_next${interpolatedName}`]
+            }
             srcPath = `/_next${interpolatedName}`
             decl.value = decl.value.replace(declUrl, srcPath)
           }
@@ -153,30 +168,6 @@ function nextFontPlugin(fontsFile, files, fontData) {
           }
         }
       })
-    },
-  }
-}
-
-function nextFontUsage(file: string, fontUsage) {
-  return {
-    postcssPlugin: 'NEXT-FONT-POSTCSS-USAGE-PLUGIN',
-    // Once(root: any) {
-    //   root.nodes.forEach((node) => console.log(node))
-    // },
-    Declaration(decl: any) {
-      if (decl.prop === 'font-family') {
-        let font = decl.value
-        if (font[0] === "'") {
-          font = font.slice(1, -1)
-        }
-
-        let usedFonts = fontUsage.get(file)
-        if (!usedFonts) {
-          usedFonts = new Set()
-        }
-        usedFonts.add(font)
-        fontUsage.set(file, usedFonts)
-      }
     },
   }
 }

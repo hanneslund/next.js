@@ -34,7 +34,6 @@ use either::Either;
 use fxhash::FxHashSet;
 use serde::Deserialize;
 use std::cell::RefCell;
-use std::collections::HashMap;
 use std::rc::Rc;
 use std::{path::PathBuf, sync::Arc};
 use swc::config::ModuleConfig;
@@ -78,9 +77,6 @@ pub struct TransformOptions {
 
     #[serde(default)]
     pub is_page_file: bool,
-
-    #[serde(default)]
-    pub is_app_file: bool,
 
     #[serde(default)]
     pub is_development: bool,
@@ -204,7 +200,7 @@ pub fn custom_before_pass<'a, C: Comments + 'a>(
             None => Either::Right(noop()),
         },
         match &opts.fonts {
-            Some(fonts) => Either::Left(next_font::next_font(fonts.clone(), opts.is_app_file)),
+            Some(fonts) => Either::Left(next_font::next_font(fonts.clone())),
             None => Either::Right(noop()),
         }
     )

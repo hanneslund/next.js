@@ -1,5 +1,6 @@
-import { preloadFont } from 'next/font';
-export default function Page() {
-    preloadFont("/_next/font/main");
-    return <p >hello</p>;
-};
+import "/pages/_font.css";
+import "/pages/b/_font.css";
+function MyApp({ Component , pageProps  }) {
+    return <Component {...pageProps}/>;
+}
+export default MyApp;

@@ -1,6 +1,5 @@
-import { preloadFont } from 'next/font'
-
-export default function Page() {
-  preloadFont('main')
-  return <p>hello</p>
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
 }
+
+export default MyApp

@@ -115,12 +115,7 @@ function getBaseSWCOptions({
     modularizeImports: nextConfig?.experimental?.modularizeImports,
     relay: nextConfig?.compiler?.relay,
     emotion: getEmotionOptions(nextConfig, development),
-    fonts: fonts
-      ? {
-          fonts,
-          fontsCssFile: nextConfig.experimental.fonts,
-        }
-      : undefined,
+    fonts,
   }
 }
 
