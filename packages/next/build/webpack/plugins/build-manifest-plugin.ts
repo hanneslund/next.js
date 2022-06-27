@@ -135,6 +135,7 @@ export default class BuildManifestPlugin {
         pages: { '/_app': [] },
         ampFirstPages: [],
       }
+      const fontManifest: { [page: string]: string[] } = {}
 
       const ampFirstEntryNames = ampFirstEntryNamesMap.get(compilation)
       if (ampFirstEntryNames) {
@@ -207,6 +208,35 @@ export default class BuildManifestPlugin {
         const filesForPage = getEntrypointFiles(entrypoint)
 
         assetMap.pages[pagePath] = [...new Set([...mainFiles, ...filesForPage])]
+
+        if (['/_app', '/_error'].includes(pagePath)) continue
+
+        const fontFiles = [
+          ...new Set(
+            entrypoint.chunks
+              .flatMap(({ auxiliaryFiles }) => [...auxiliaryFiles.values()])
+              .filter((file) => /\.(woff|woff2|eot|ttf|otf)$/.test(file))
+          ),
+        ] as string[]
+
+        if (!fontFiles.length) {
+          continue
+        }
+
+        fontManifest[pagePath] = fontFiles
+      }
+
+      if (!this.isDevFallback && Object.keys(fontManifest).length > 0) {
+        assets[`${CLIENT_STATIC_FILES_PATH}/${this.buildId}/_fontManifest.js`] =
+          new sources.RawSource(
+            `self.__FONT_MANIFEST =${devalue(
+              fontManifest
+            )};self.__FONT_MANIFEST_CB && self.__FONT_MANIFEST_CB()`
+          )
+
+        assetMap.lowPriorityFiles.push(
+          `${CLIENT_STATIC_FILES_PATH}/${this.buildId}/_fontManifest.js`
+        )
       }
 
       if (!this.isDevFallback) {

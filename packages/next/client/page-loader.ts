@@ -29,6 +29,7 @@ export default class PageLoader {
   private buildId: string
   private assetPrefix: string
   private promisedSsgManifest: Promise<Set<string>>
+  private promisedFontManifest: Promise<Set<string>>
   private promisedDevPagesManifest?: Promise<string[]>
   private promisedMiddlewareManifest?: Promise<
     [location: string, isSSR: boolean][]
@@ -43,6 +44,15 @@ export default class PageLoader {
     this.assetPrefix = assetPrefix
 
     this.promisedSsgManifest = new Promise((resolve) => {
+      if (window.__SSG_MANIFEST) {
+        resolve(window.__SSG_MANIFEST)
+      } else {
+        window.__SSG_MANIFEST_CB = () => {
+          resolve(window.__SSG_MANIFEST!)
+        }
+      }
+    })
+    this.promisedFontManifest = new Promise((resolve) => {
       if (window.__SSG_MANIFEST) {
         resolve(window.__SSG_MANIFEST)
       } else {

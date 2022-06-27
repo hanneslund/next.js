@@ -61,7 +61,7 @@ async function loaderTransform(parentTrace, source, inputSourceMap) {
     }
   }
   if (isAppFile) {
-    console.log('isapp', fonts)
+    // console.log('isapp', fonts)
   }
   // console.log(fontData)
 

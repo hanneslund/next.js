@@ -38,7 +38,7 @@ import MiddlewarePlugin from './webpack/plugins/middleware-plugin'
 import BuildManifestPlugin from './webpack/plugins/build-manifest-plugin'
 import { JsConfigPathsPlugin } from './webpack/plugins/jsconfig-paths-plugin'
 import { DropClientPage } from './webpack/plugins/next-drop-client-page-plugin'
-// import { NextFontPlugin } from './webpack/plugins/next-font-plugin'
+// import NextFontPlugin from './webpack/plugins/next-font-plugin'
 import PagesManifestPlugin from './webpack/plugins/pages-manifest-plugin'
 import { ProfilingPlugin } from './webpack/plugins/profiling-plugin'
 import { ReactLoadablePlugin } from './webpack/plugins/react-loadable-plugin'
@@ -1225,6 +1225,7 @@ export default async function getBaseWebpackConfig(
         'next-flight-client-entry-loader',
         'noop-loader',
         'next-font-loader',
+        'next-font-metadata-loader',
         'next-middleware-loader',
         'next-edge-function-loader',
         'next-edge-ssr-loader',
@@ -1244,6 +1245,10 @@ export default async function getBaseWebpackConfig(
     },
     module: {
       rules: [
+        {
+          test: /\.(woff|woff2|eot|ttf|otf)$/i,
+          type: 'asset/resource',
+        },
         // TODO: FIXME: do NOT webpack 5 support with this
         // x-ref: https://github.com/webpack/webpack/issues/11467
         ...(!config.experimental.fullySpecified
@@ -1424,7 +1429,7 @@ export default async function getBaseWebpackConfig(
       ].filter(Boolean),
     },
     plugins: [
-      // isClient && new NextFontPlugin(pagesDir),
+      // isClient && new NextFontPlugin({ buildId }),
       ...(!dev &&
       isEdgeServer &&
       !!config.experimental.middlewareSourceMaps &&

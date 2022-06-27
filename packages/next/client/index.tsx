@@ -1,6 +1,7 @@
 /* global location */
 import '../build/polyfills/polyfill-module'
-import React, { useState } from 'react'
+import React, { ReactNode, useState } from 'react'
+import { preloadFont } from '../shared/lib/font'
 import { HeadManagerContext } from '../shared/lib/head-manager-context'
 import mitt, { MittEmitter } from '../shared/lib/mitt'
 import { RouterContext } from '../shared/lib/router-context'
@@ -643,12 +644,28 @@ function AppContainer({
           <ImageConfigContext.Provider
             value={process.env.__NEXT_IMAGE_OPTS as any as ImageConfigComplete}
           >
-            {children}
+            <PreloadWrapper>{children}</PreloadWrapper>
           </ImageConfigContext.Provider>
         </HeadManagerContext.Provider>
       </RouterContext.Provider>
     </Container>
   )
+}
+
+function PreloadWrapper({
+  children,
+}: {
+  children: ReactNode
+}): React.ReactElement {
+  const { route } = React.useContext(RouterContext)
+  if (window.__FONT_MANIFEST) {
+    // finns inte alltid i dev varning!
+    window.__FONT_MANIFEST[route]?.forEach((fontFile) => {
+      // asset path
+      preloadFont(`/_next/${fontFile}`)
+    })
+  }
+  return children
 }
 
 function renderApp(App: AppComponent, appProps: AppProps) {

@@ -1,20 +1,19 @@
 import React, { ReactNode, useEffect, useState } from 'react'
 
-const preloaded: Set<string> = new Set()
-
 export function preloadFont(font: string) {
-  if (typeof window === 'object' && !preloaded.has(font)) {
-    // preloaded.add(font)
-    // const link = document.createElement('link')
-    // link.rel = 'preload'
-    // link.as = 'font'
-    // link.href = font
-    // console.log(link)
-    // document.head.appendChild(link)
-    fetch(font)
-      .then(console.log)
-      .catch(() => {})
-  }
+  console.log('PRELOADING: ' + font)
+  // if (typeof window === 'object' && !preloaded.has(font)) {
+  // preloaded.add(font)
+  // const link = document.createElement('link')
+  // link.rel = 'preload'
+  // link.as = 'font'
+  // link.href = font
+  // console.log(link)
+  // document.head.appendChild(link)
+  // fetch(font)
+  //   .then(console.log)
+  //   .catch(() => {})
+  // }
   // transform to Head?
 }
 

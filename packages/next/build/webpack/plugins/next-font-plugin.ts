@@ -1,173 +1,109 @@
-import loaderUtils from 'next/dist/compiled/loader-utils3'
-import { readFileSync } from 'fs'
-import { promises } from 'fs'
+import devalue from 'next/dist/compiled/devalue'
 import { webpack, sources } from 'next/dist/compiled/webpack/webpack'
-import path from 'path'
-import postcss from 'postcss'
+import {
+  PAGES_MANIFEST,
+  APP_PATHS_MANIFEST,
+} from '../../../shared/lib/constants'
 import getRouteFromEntrypoint from '../../../server/get-route-from-entrypoint'
+import { normalizePathSep } from '../../../shared/lib/page-path/normalize-path-sep'
 
-const PLUGIN_NAME = 'NextFontPlugin'
+export type PagesManifest = { [page: string]: string }
 
-export class NextFontPlugin implements webpack.Plugin {
-  pagesDir: string
+// let edgeServerPages = {}
+// let nodeServerPages = {}
+// let edgeServerRootPaths = {}
+// let nodeServerRootPaths = {}
 
-  constructor(pagesDir: string) {
-    this.pagesDir = pagesDir
+export default class NextFontPlugin implements webpack.Plugin {
+  buildId: string
+  // serverless: boolean
+  // dev: boolean
+  // isEdgeRuntime: boolean
+  // appDirEnabled: boolean
+
+  constructor({ buildId }: { buildId: string }) {
+    this.buildId = buildId
+  }
+  // constructor({
+  //   serverless,
+  //   dev,
+  //   isEdgeRuntime,
+  //   appDirEnabled,
+  // }: {
+  //   serverless: boolean
+  //   dev: boolean
+  //   isEdgeRuntime: boolean
+  //   appDirEnabled: boolean
+  // }) {
+  //   this.serverless = serverless
+  //   this.dev = dev
+  //   this.isEdgeRuntime = isEdgeRuntime
+  //   this.appDirEnabled = appDirEnabled
+  // }
+
+  createAssets(compilation: any, assets: any) {
+    const entrypoints = compilation.entrypoints
+    const manifest: { [page: string]: string[] } = {}
+
+    for (const entrypoint of entrypoints.values()) {
+      const pagePath = getRouteFromEntrypoint(
+        entrypoint.name,
+        // this.appDirEnabled
+        false
+      )
+
+      if (!pagePath || ['/_app', '/_error'].includes(pagePath)) {
+        continue
+      }
+
+      const fontFiles = [
+        ...new Set(
+          entrypoint.chunks
+            .flatMap(({ auxiliaryFiles }) => [...auxiliaryFiles.values()])
+            .filter((file) => /\.(woff|woff2|eot|ttf|otf)$/.test(file))
+        ),
+      ] as string[]
+
+      if (!fontFiles.length) {
+        continue
+      }
+
+      manifest[pagePath] = fontFiles
+    }
+
+    // assets[
+    //   // `${!this.dev && !this.isEdgeRuntime ? '../' : ''}` + PAGES_MANIFEST
+    //   'font-manifest.json'
+    // ] = new sources.RawSource(JSON.stringify(manifest, null, 2))
+
+    // // const clientManifestPath = `${CLIENT_STATIC_FILES_PATH}/${this.buildId}/_buildManifest.js`
+
+    assets[`static/${this.buildId}/_fontManifest.js`] = new sources.RawSource(
+      `self.__FONT_MANIFEST =${devalue(
+        manifest
+      )};self.__FONT_MANIFEST_CB && self.__FONT_MANIFEST_CB()`
+      // `self.__BUILD_MANIFEST = ${generateClientManifest(
+      //   compiler,
+      //   compilation,
+      //   assetMap,
+      //   this.rewrites
+      // )};self.__BUILD_MANIFEST_CB && self.__BUILD_MANIFEST_CB()`
+    )
   }
 
-  apply(compiler: webpack.Compiler) {
-    compiler.hooks.beforeCompile.tapPromise(PLUGIN_NAME, async (params) => {
-      const globOrig =
-        require('next/dist/compiled/glob') as typeof import('next/dist/compiled/glob')
-      const glob = (pattern: string): Promise<string[]> => {
-        return new Promise((resolve, reject) => {
-          globOrig(
-            pattern,
-            { cwd: this.pagesDir, absolute: true },
-            (err, files) => {
-              if (err) {
-                return reject(err)
-              }
-              resolve(files)
-            }
-          )
-        })
-      }
-
-      const fontFiles = await glob(`**/_fonts.css`)
-      const pages = (await glob(`**/*.{js,jsx,ts,tsx}`)).filter(
-        (page) => !/pages\/_app.js/.test(page)
-      )
-
-      const files = new Map()
-      const fontData = {}
-      const fontz = {}
-      let fontDeclarations = ''
-
-      await Promise.all(
-        fontFiles.map(async (fontsFile) => {
-          const fileContent = await promises.readFile(fontsFile, 'utf8')
-          const after = (
-            await postcss([
-              nextFontPlugin(fontsFile, files, fontData, fontz),
-            ]).process(fileContent, {
-              from: fontsFile,
-            })
-          ).css
-          fontDeclarations += after + '\n'
-          // console.log
-        })
-      )
-
-      const fontsManifest = {} as { [key: string]: string[] }
-      pages.forEach((page) => {
-        let preloads = []
-
-        const pageLevel = path.join(page, '..')
-        fontFiles.forEach((css) => {
-          const cssLevel = path.join(css, '..')
-          if (shouldPreloadFonts(this.pagesDir, cssLevel, pageLevel)) {
-            preloads = preloads.concat(fontz[css])
-          }
-        })
-
-        fontsManifest[page] = preloads
-      })
-
-      params[PLUGIN_NAME] = {
-        fontDeclarations,
-        files,
-        fontData,
-        fontsManifest,
-        fontFiles,
-      }
-    })
-
-    compiler.hooks.compilation.tap(PLUGIN_NAME, (compilation: any) => {
-      compilation.hooks.processAssets.tapPromise(
+  apply(compiler: webpack.Compiler): void {
+    compiler.hooks.make.tap('NextFontPlugin', (compilation) => {
+      // @ts-ignore TODO: Remove ignore when webpack 5 is stable
+      compilation.hooks.processAssets.tap(
         {
-          name: PLUGIN_NAME,
-          // @ts-ignore
-          stage: webpack.Compilation.PROCESS_ASSETS_STAGE_ADDITIONAL,
+          name: 'NextFontPlugin',
+          // @ts-ignore TODO: Remove ignore when webpack 5 is stable
+          stage: webpack.Compilation.PROCESS_ASSETS_STAGE_ADDITIONS,
         },
-        async (assets: any) => {
-          const params = compilation.params[PLUGIN_NAME]
-          await Promise.all(
-            [...params.files.entries()].map(async ([file, asset]) => {
-              assets[file] = asset
-            })
-          )
+        (assets: any) => {
+          this.createAssets(compilation, assets)
         }
       )
     })
-  }
-}
-
-function shouldPreloadFonts(
-  pagesDir: string,
-  cssLevel: string,
-  pageLevel: string
-): boolean {
-  if (cssLevel === pageLevel) return true
-  if (pageLevel === pagesDir) return false
-  return shouldPreloadFonts(pagesDir, cssLevel, path.join(pageLevel, '..'))
-}
-
-function nextFontPlugin(fontsFile, files, fontData, fontz) {
-  return {
-    postcssPlugin: 'NEXT-FONT-POSTCSS-PLUGIN',
-    async Once(root: any) {
-      root.nodes.forEach((node: any) => {
-        if (node.type === 'comment') return
-        if (node.type !== 'atrule') throw new Error('Expected atrule')
-        if (node.name !== 'font-face') throw new Error('Expected font-face')
-
-        let srcPath: string | undefined
-        let family: string | undefined
-        node.nodes.forEach((decl: any) => {
-          if (decl.type === 'comment') return
-          if (decl.type !== 'decl') throw new Error('Expected decl')
-
-          if (decl.prop === 'font-family') {
-            family = decl.value.slice(1, -1)
-          }
-
-          if (decl.prop === 'src') {
-            let declUrl = decl.value.split('url(')[1]
-            declUrl = declUrl.slice(0, declUrl.indexOf(')'))
-
-            const fontFilePath = path.join(fontsFile, '..', declUrl)
-            const fontFileData = readFileSync(fontFilePath)
-
-            const interpolatedName = loaderUtils.interpolateName(
-              { resourcePath: fontFilePath },
-              '/static/fonts/[name].[hash:8].[ext]',
-              // '/static/fonts/[name].[contenthash].[ext]',
-              { content: fontFileData }
-            )
-
-            // decl.value = decl.value.replace(declUrl, `/_next${interpolatedName}`)
-            files.set(
-              interpolatedName,
-              new sources.RawSource(fontFileData as any)
-            )
-
-            if (fontz[fontsFile]) {
-              fontz[fontsFile].push(`/_next${interpolatedName}`)
-            } else {
-              fontz[fontsFile] = [`/_next${interpolatedName}`]
-            }
-            srcPath = `/_next${interpolatedName}`
-            decl.value = decl.value.replace(declUrl, srcPath)
-          }
-        })
-
-        if (family && srcPath) {
-          fontData[family] = {
-            path: srcPath,
-          }
-        }
-      })
-    },
   }
 }

@@ -1,5 +1,6 @@
 import curry from 'next/dist/compiled/lodash.curry'
 import { webpack } from 'next/dist/compiled/webpack/webpack'
+import path from 'path'
 import { loader, plugin } from '../../helpers'
 import { ConfigurationContext, ConfigurationFn, pipe } from '../../utils'
 import { getCssModuleLoader, getGlobalCssLoader } from './loaders'
@@ -199,22 +200,32 @@ export const css = curry(async function css(
     })
   )
 
-  const uze = getFontModuleLoader(ctx, lazyPostCSSInitializer)
-  // uze.splice(2, 0, { loader: 'next-font-loader' })
-  console.log(uze)
+  fns.push(
+    loader({
+      oneOf: [
+        markRemovable({
+          test: path.join(__dirname, '../../../../../../font'),
+          // issuer: {
+          //   and: [ctx.rootDirectory],
+          //   not: [/node_modules/],
+          // },
+          // use: {
+          use: getFontModuleLoader(ctx, lazyPostCSSInitializer, true),
+        }),
+      ],
+    })
+  )
+
   fns.push(
     loader({
       oneOf: [
         markRemovable({
           test: regexFontModule,
-          issuer: {
-            and: [ctx.rootDirectory],
-            not: [/node_modules/],
-          },
-          // use: {
-          //   loader: 'next-font-loader',
+          // issuer: {
+          //   and: [ctx.rootDirectory],
+          //   not: [/node_modules/],
           // },
-          use: uze,
+          use: getFontModuleLoader(ctx, lazyPostCSSInitializer, false),
         }),
       ],
     })
