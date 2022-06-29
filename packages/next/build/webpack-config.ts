@@ -1247,6 +1247,9 @@ export default async function getBaseWebpackConfig(
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/i,
           type: 'asset/resource',
+          generator: {
+            filename: 'static/fonts/[name].[hash:8][ext]',
+          },
         },
         // TODO: FIXME: do NOT webpack 5 support with this
         // x-ref: https://github.com/webpack/webpack/issues/11467
