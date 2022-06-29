@@ -644,28 +644,23 @@ function AppContainer({
           <ImageConfigContext.Provider
             value={process.env.__NEXT_IMAGE_OPTS as any as ImageConfigComplete}
           >
-            <PreloadWrapper>{children}</PreloadWrapper>
+            <RouterContext.Consumer>
+              {(router) => {
+                if (window.__FONT_MANIFEST) {
+                  // finns inte alltid i dev varning!
+                  window.__FONT_MANIFEST[router.route]?.forEach((fontFile) => {
+                    // asset path
+                    preloadFont(`/_next/${fontFile}`)
+                  })
+                }
+                return children
+              }}
+            </RouterContext.Consumer>
           </ImageConfigContext.Provider>
         </HeadManagerContext.Provider>
       </RouterContext.Provider>
     </Container>
   )
-}
-
-function PreloadWrapper({
-  children,
-}: {
-  children: ReactNode
-}): React.ReactElement {
-  const { route } = React.useContext(RouterContext)
-  if (window.__FONT_MANIFEST) {
-    // finns inte alltid i dev varning!
-    window.__FONT_MANIFEST[route]?.forEach((fontFile) => {
-      // asset path
-      preloadFont(`/_next/${fontFile}`)
-    })
-  }
-  return children
 }
 
 function renderApp(App: AppComponent, appProps: AppProps) {
@@ -991,6 +986,33 @@ function doRender(input: RenderRouteInfo): Promise<any> {
         document.querySelectorAll('link[data-n-p]')
       ).forEach((el) => {
         el.parentNode!.removeChild(el)
+      })
+    }
+
+    if (
+      process.env.NODE_ENV === 'development' &&
+      window.__FONT_MANIFEST &&
+      !canceled
+    ) {
+      const fontStyleTags: HTMLStyleElement[] = looseToArray<HTMLStyleElement>(
+        document.querySelectorAll('style[data-isfont]')
+      )
+      const currentFontFiles: string[] | undefined =
+        window.__FONT_MANIFEST[next.router.route]
+      console.log({ currentFontFiles })
+
+      fontStyleTags.forEach((s) => {
+        if (!currentFontFiles) {
+          s.setAttribute('media', 'x')
+          return
+        }
+        const css = s.innerHTML
+        const hasFont = currentFontFiles.some((file) => css.includes(file))
+        if (hasFont) {
+          s.removeAttribute('media')
+        } else {
+          s.setAttribute('media', 'x')
+        }
       })
     }
 

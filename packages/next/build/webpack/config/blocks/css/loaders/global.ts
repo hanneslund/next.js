@@ -27,7 +27,7 @@ export function getGlobalCssLoader(
     loader: require.resolve('../../../../loaders/css-loader/src'),
     options: {
       postcss,
-      importLoaders: 1 + preProcessors.length,
+      importLoaders: 1 + preProcessors.length, // 1+ ??
       // Next.js controls CSS Modules eligibility:
       modules: false,
       url: (url: string, resourcePath: string) =>
@@ -35,6 +35,10 @@ export function getGlobalCssLoader(
       import: (url: string, _: any, resourcePath: string) =>
         cssFileResolve(url, resourcePath, ctx.experimental.urlImports),
     },
+  })
+
+  loaders.push({
+    loader: 'next-font-loader',
   })
 
   // Compile CSS

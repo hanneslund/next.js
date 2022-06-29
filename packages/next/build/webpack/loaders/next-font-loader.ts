@@ -1,29 +1,46 @@
 import postcss from 'postcss'
-import loaderUtils from 'next/dist/compiled/loader-utils3'
 import path from 'path'
-import { readFileSync } from 'fs'
+import chalk from 'next/dist/compiled/chalk'
 
-export default async function nextFontLoader(src: string, a, b, c) {
+export default async function nextFontLoader(src: string) {
   const callback = this.async()
 
-  // const fileContent = await promises.readFile(fontsFile, 'utf8')
-  let css = src
+  console.log(src)
+  try {
+    await postcss([nextFontPlugin()]).process(src, {
+      from: undefined,
+    })
+  } catch (e) {
+    const resource = this._module?.issuer?.resource ?? null
+    const context = this.rootContext ?? this._compiler?.context
 
-  // console.log(src)
-  // console.log({ a, b, c })
-  // const after = (
-  //   await postcss([nextFontPlugin(this)]).process(css, {
-  //     // from: fontsFile,
-  //   })
+    const issuer = resource
+      ? context
+        ? path.relative(context, resource)
+        : resource
+      : null
+
+    const err = new Error(
+      e.message + (issuer ? `\nLocation: ${chalk.cyan(issuer)}` : '')
+    )
+
+    this.emitError(err)
+  }
   // ).css
 
-  // callback(null, after)
   callback(null, src)
 }
 
-function nextFontPlugin(loaderCtx) {
+function nextFontPlugin() {
   return {
     postcssPlugin: 'NEXT-FONT-LOADER-POSTCSS-PLUGIN',
-    async Once(root: any) {},
+    AtRule(atRule: any) {
+      if (atRule.name === 'font-face') {
+        console.log(atRule)
+        throw new Error(
+          'Found @font-face declaration outside of name.font.css file.'
+        )
+      }
+    },
   }
 }

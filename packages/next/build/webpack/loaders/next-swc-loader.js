@@ -45,25 +45,8 @@ async function loaderTransform(parentTrace, source, inputSourceMap) {
     supportedBrowsers,
   } = loaderOptions
   const isPageFile = filename.startsWith(pagesDir)
-  const isAppFile = ['.js', '.jsx', '.ts', '.tsx'].some(
-    (ext) => filename === path.join(pagesDir, `_app${ext}`)
-  )
 
   // console.log({ fontData })
-  let fonts
-  const fontData = this._compilation.params.NextFontPlugin
-  if (fontData) {
-    fonts = {}
-    if (isAppFile) {
-      fonts.importCssFiles = fontData.fontFiles
-    } else {
-      fonts.preloadFontFiles = fontData.fontsManifest[filename]
-    }
-  }
-  if (isAppFile) {
-    // console.log('isapp', fonts)
-  }
-  // console.log(fontData)
 
   const swcOptions = getLoaderSWCOptions({
     pagesDir,
@@ -75,7 +58,6 @@ async function loaderTransform(parentTrace, source, inputSourceMap) {
     nextConfig,
     jsConfig,
     supportedBrowsers,
-    fonts,
   })
 
   const programmaticOptions = {

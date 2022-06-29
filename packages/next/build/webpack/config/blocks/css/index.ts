@@ -233,8 +233,6 @@ export const css = curry(async function css(
 
   // CSS Modules support must be enabled on the server and client so the class
   // names are available for SSR or Prerendering.
-  const use = getCssModuleLoader(ctx, lazyPostCSSInitializer)
-  // use.splice(1, 0, { loader: 'next-font-loader' })
   fns.push(
     loader({
       oneOf: [
@@ -252,7 +250,7 @@ export const css = curry(async function css(
             and: [ctx.rootDirectory],
             not: [/node_modules/],
           },
-          use,
+          use: getCssModuleLoader(ctx, lazyPostCSSInitializer),
         }),
       ],
     })
@@ -346,10 +344,6 @@ export const css = curry(async function css(
     )
 
     if (ctx.customAppFile) {
-      const use = getGlobalCssLoader(ctx, lazyPostCSSInitializer)
-      // use.splice(2, 0, { loader: 'next-font-loader' })
-      // use.splice(0, 1)
-      // console.log('use', use)
       fns.push(
         loader({
           oneOf: [
@@ -361,7 +355,7 @@ export const css = curry(async function css(
               sideEffects: true,
               test: regexCssGlobal,
               issuer: { and: [ctx.customAppFile] },
-              use,
+              use: getGlobalCssLoader(ctx, lazyPostCSSInitializer),
             }),
           ],
         })

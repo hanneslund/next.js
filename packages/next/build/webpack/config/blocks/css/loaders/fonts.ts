@@ -6,7 +6,8 @@ import { getCssModuleLocalIdent } from './getCssModuleLocalIdent'
 
 export function getFontModuleLoader(
   ctx: ConfigurationContext,
-  postcss: any
+  postcss: any,
+  isMetadata: boolean
 ): webpack.RuleSetUseItem[] {
   const loaders: webpack.RuleSetUseItem[] = []
 
@@ -17,6 +18,7 @@ export function getFontModuleLoader(
       getClientStyleLoader({
         isDevelopment: ctx.isDevelopment,
         assetPrefix: ctx.assetPrefix,
+        isFontFace: true,
       })
     )
   }
@@ -40,6 +42,7 @@ export function getFontModuleLoader(
         exportOnlyLocals: ctx.isServer,
         // Disallow global style exports so we can code-split CSS and
         // not worry about loading order.
+        // mode: 'pure',
         mode: 'pure',
         // Generate a friendly production-ready name so it's
         // reasonably understandable. The same name is used for
@@ -51,17 +54,11 @@ export function getFontModuleLoader(
     },
   })
 
-  loaders.push({
-    loader: 'next-font-loader',
-  })
-
-  // Compile CSS
-  // loaders.push({
-  //   loader: require.resolve('../../../../loaders/postcss-loader/src'),
-  //   options: {
-  //     postcss,
-  //   },
-  // })
+  if (isMetadata) {
+    loaders.push({
+      loader: 'next-font-metadata-loader',
+    })
+  }
 
   return loaders
 }

@@ -3,9 +3,11 @@ import type { webpack } from 'next/dist/compiled/webpack/webpack'
 export function getClientStyleLoader({
   isDevelopment,
   assetPrefix,
+  isFontFace,
 }: {
   isDevelopment: boolean
   assetPrefix: string
+  isFontFace?: boolean
 }): webpack.RuleSetUseItem {
   if (isDevelopment) {
     return {
@@ -28,6 +30,9 @@ export function getClientStyleLoader({
           // anchor. By inserting before and not after, we do not
           // need to track the last inserted element.
           parentNode.insertBefore(element, anchorElement)
+        },
+        attributes: {
+          'data-isfont': isFontFace ? '' : undefined,
         },
       },
     }
