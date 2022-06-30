@@ -210,6 +210,11 @@ export default class BuildManifestPlugin {
         assetMap.pages[pagePath] = [...new Set([...mainFiles, ...filesForPage])]
 
         if (['/_app', '/_error'].includes(pagePath)) continue
+        // console.log(
+        // entrypoint.chunks.forEach(({ files }) => console.log(pagePath, files))
+        // )
+
+        // parse css with postcss to know if to preload or preconnect?
 
         const fontFiles = [
           ...new Set(
@@ -226,16 +231,17 @@ export default class BuildManifestPlugin {
         fontManifest[pagePath] = fontFiles
       }
 
-      if (!this.isDevFallback && Object.keys(fontManifest).length > 0) {
-        assets[`${CLIENT_STATIC_FILES_PATH}/${this.buildId}/_fontManifest.js`] =
-          new sources.RawSource(
-            `self.__FONT_MANIFEST =${devalue(
-              fontManifest
-            )};self.__FONT_MANIFEST_CB && self.__FONT_MANIFEST_CB()`
-          )
+      if (!this.isDevFallback) {
+        assets[
+          `${CLIENT_STATIC_FILES_PATH}/${this.buildId}/_pageFontsManifest.js`
+        ] = new sources.RawSource(
+          `self.__PAGE_FONTS =${devalue(
+            fontManifest
+          )};self.__PAGE_FONTS_CB && self.__PAGE_FONTS_CB()`
+        )
 
         assetMap.lowPriorityFiles.push(
-          `${CLIENT_STATIC_FILES_PATH}/${this.buildId}/_fontManifest.js`
+          `${CLIENT_STATIC_FILES_PATH}/${this.buildId}/_pageFontsManifest.js`
         )
       }
 

@@ -644,18 +644,7 @@ function AppContainer({
           <ImageConfigContext.Provider
             value={process.env.__NEXT_IMAGE_OPTS as any as ImageConfigComplete}
           >
-            <RouterContext.Consumer>
-              {(router) => {
-                if (window.__FONT_MANIFEST) {
-                  // finns inte alltid i dev varning!
-                  window.__FONT_MANIFEST[router.route]?.forEach((fontFile) => {
-                    // asset path
-                    preloadFont(`/_next/${fontFile}`)
-                  })
-                }
-                return children
-              }}
-            </RouterContext.Consumer>
+            {children}
           </ImageConfigContext.Provider>
         </HeadManagerContext.Provider>
       </RouterContext.Provider>
@@ -991,14 +980,14 @@ function doRender(input: RenderRouteInfo): Promise<any> {
 
     if (
       process.env.NODE_ENV === 'development' &&
-      window.__FONT_MANIFEST &&
+      window.__PAGE_FONTS &&
       !canceled
     ) {
       const fontStyleTags: HTMLStyleElement[] = looseToArray<HTMLStyleElement>(
         document.querySelectorAll('style[data-isfont]')
       )
       const currentFontFiles: string[] | undefined =
-        window.__FONT_MANIFEST[next.router.route]
+        window.__PAGE_FONTS[next.router.route]
       console.log({ currentFontFiles })
 
       fontStyleTags.forEach((s) => {

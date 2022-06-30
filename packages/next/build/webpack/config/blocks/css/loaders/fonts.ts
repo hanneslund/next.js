@@ -14,13 +14,14 @@ export function getFontModuleLoader(
   if (ctx.isClient) {
     // Add appropriate development more or production mode style
     // loader
-    loaders.push(
-      getClientStyleLoader({
-        isDevelopment: ctx.isDevelopment,
-        assetPrefix: ctx.assetPrefix,
-        isFontFace: true,
-      })
-    )
+    loaders.push({
+      loader: 'next-style-loader',
+      options: {
+        attributes: {
+          'data-isfont': '',
+        },
+      },
+    })
   }
 
   // Resolve CSS `@import`s and `url()`s

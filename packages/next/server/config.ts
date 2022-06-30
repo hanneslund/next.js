@@ -1,4 +1,4 @@
-import path, { basename, extname, relative, isAbsolute, resolve } from 'path'
+import { basename, extname, relative, isAbsolute, resolve } from 'path'
 import { pathToFileURL } from 'url'
 import { Agent as HttpAgent } from 'http'
 import { Agent as HttpsAgent } from 'https'
@@ -21,8 +21,6 @@ import {
 } from '../shared/lib/image-config'
 import { loadEnvConfig } from '@next/env'
 import { hasNextSupport } from '../telemetry/ci-info'
-import { readFileSync, writeFileSync } from 'fs'
-import postcss from 'postcss'
 
 export { DomainLocale, NextConfig, normalizeConfig } from './config-shared'
 
@@ -749,14 +747,13 @@ function assignDefaults(userConfig: { [key: string]: any }) {
     }
   }
 
-  const fonts = result.experimental?.fonts
-  if (fonts) {
-    if (typeof fonts !== 'string') {
+  const selfHostFonts = result.experimental?.selfHostFonts
+  if (selfHostFonts) {
+    if (typeof selfHostFonts !== 'boolean') {
       throw new Error(
-        `Specified experimental.fonts is not a string, found type "${typeof fonts}"`
+        `Specified experimental.selfHostFonts should be a boolean, received "${selfHostFonts}"`
       )
     }
-    result.experimental!.fonts = path.join(result.configFile, '..', fonts)
   }
 
   return result
