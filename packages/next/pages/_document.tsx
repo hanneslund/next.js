@@ -820,6 +820,10 @@ export class Head extends Component<HeadProps> {
       inAmpMode
     )
 
+    const pageFontFiles =
+      this.context.buildManifest.pagesFontFiles[this.context.dangerousAsPath] ??
+      []
+
     return (
       <head {...getHeadHTMLProps(this.props)}>
         {this.context.isDevelopment && (
@@ -851,6 +855,15 @@ export class Head extends Component<HeadProps> {
 
         {children}
         {optimizeFonts && <meta name="next-font-preconnect" />}
+        {pageFontFiles.map((file) => (
+          <link
+            rel="preload"
+            href={`/_next/${file}`}
+            as="font"
+            type={`font/${file.split('.').at(-1)}`}
+            crossOrigin="anonymous"
+          />
+        ))}
 
         {inAmpMode && (
           <>

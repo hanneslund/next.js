@@ -167,7 +167,7 @@ export default class PageLoader {
 
   loadPage(route: string): Promise<GoodPageCache> {
     this.promisedPageFontsManifest.then((pageFonts) => {
-      pageFonts[route].forEach((file) => {
+      pageFonts[route]?.forEach((file) => {
         preloadFont(file)
       })
     })
@@ -188,7 +188,7 @@ export default class PageLoader {
 
   prefetch(route: string): Promise<void> {
     this.promisedPageFontsManifest.then((pageFonts) => {
-      pageFonts[route].forEach((file) => {
+      pageFonts[route]?.forEach((file) => {
         preloadFont(file)
       })
     })

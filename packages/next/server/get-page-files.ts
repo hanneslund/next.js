@@ -11,6 +11,9 @@ export type BuildManifest = {
     '/_app': readonly string[]
     [page: string]: readonly string[]
   }
+  pagesFontFiles: {
+    [page: string]: readonly string[]
+  }
   ampFirstPages: readonly string[]
 }
 

@@ -754,6 +754,12 @@ function assignDefaults(userConfig: { [key: string]: any }) {
         `Specified experimental.selfHostFonts should be a boolean, received "${selfHostFonts}"`
       )
     }
+    result.experimental.urlImports = [
+      ...(result.experimental?.urlImports
+        ? result.experimental?.urlImports
+        : []),
+      'https://cdn.jsdelivr.net/npm/@fontsource/',
+    ]
   }
 
   return result

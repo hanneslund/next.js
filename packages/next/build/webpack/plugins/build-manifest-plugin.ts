@@ -134,8 +134,8 @@ export default class BuildManifestPlugin {
         rootMainFiles: [],
         pages: { '/_app': [] },
         ampFirstPages: [],
+        pagesFontFiles: {},
       }
-      const fontManifest: { [page: string]: string[] } = {}
 
       const ampFirstEntryNames = ampFirstEntryNamesMap.get(compilation)
       if (ampFirstEntryNames) {
@@ -228,7 +228,7 @@ export default class BuildManifestPlugin {
           continue
         }
 
-        fontManifest[pagePath] = fontFiles
+        assetMap.pagesFontFiles[pagePath] = fontFiles
       }
 
       if (!this.isDevFallback) {
@@ -236,7 +236,7 @@ export default class BuildManifestPlugin {
           `${CLIENT_STATIC_FILES_PATH}/${this.buildId}/_pageFontsManifest.js`
         ] = new sources.RawSource(
           `self.__PAGE_FONTS =${devalue(
-            fontManifest
+            assetMap.pagesFontFiles
           )};self.__PAGE_FONTS_CB && self.__PAGE_FONTS_CB()`
         )
 
