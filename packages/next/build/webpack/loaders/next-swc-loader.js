@@ -46,8 +46,6 @@ async function loaderTransform(parentTrace, source, inputSourceMap) {
   } = loaderOptions
   const isPageFile = filename.startsWith(pagesDir)
 
-  // console.log({ fontData })
-
   const swcOptions = getLoaderSWCOptions({
     pagesDir,
     filename,

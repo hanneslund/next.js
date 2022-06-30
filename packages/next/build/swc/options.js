@@ -31,7 +31,6 @@ function getBaseSWCOptions({
   nextConfig,
   resolvedBaseUrl,
   jsConfig,
-  fonts,
 }) {
   const parserConfig = getParserOptions({ filename, jsConfig })
   const paths = jsConfig?.compilerOptions?.paths
@@ -115,7 +114,6 @@ function getBaseSWCOptions({
     modularizeImports: nextConfig?.experimental?.modularizeImports,
     relay: nextConfig?.compiler?.relay,
     emotion: getEmotionOptions(nextConfig, development),
-    fonts,
   }
 }
 
@@ -210,7 +208,6 @@ export function getLoaderSWCOptions({
   supportedBrowsers,
   // This is not passed yet as "paths" resolving is handled by webpack currently.
   // resolvedBaseUrl,
-  fonts,
 }) {
   let baseOptions = getBaseSWCOptions({
     filename,
@@ -220,7 +217,6 @@ export function getLoaderSWCOptions({
     nextConfig,
     jsConfig,
     // resolvedBaseUrl,
-    fonts,
   })
 
   const isNextDist = nextDistPath.test(filename)
