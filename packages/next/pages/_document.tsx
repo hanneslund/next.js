@@ -857,6 +857,7 @@ export class Head extends Component<HeadProps> {
         {optimizeFonts && <meta name="next-font-preconnect" />}
         {pageFontFiles.map((file) => (
           <link
+            key={file}
             rel="preload"
             href={`/_next/${file}`}
             as="font"
