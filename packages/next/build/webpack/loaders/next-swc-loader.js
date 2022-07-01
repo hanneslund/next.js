@@ -28,7 +28,7 @@ DEALINGS IN THE SOFTWARE.
 
 import { isWasm, transform } from '../../swc'
 import { getLoaderSWCOptions } from '../../swc/options'
-import path, { isAbsolute } from 'path'
+import { isAbsolute } from 'path'
 
 async function loaderTransform(parentTrace, source, inputSourceMap) {
   // Make the loader async

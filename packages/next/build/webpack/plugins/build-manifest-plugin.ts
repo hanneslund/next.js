@@ -208,28 +208,9 @@ export default class BuildManifestPlugin {
         const filesForPage = getEntrypointFiles(entrypoint)
 
         assetMap.pages[pagePath] = [...new Set([...mainFiles, ...filesForPage])]
-
-        if (['/_app', '/_error'].includes(pagePath)) continue
-        // console.log(
-        // entrypoint.chunks.forEach(({ files }) => console.log(pagePath, files))
-        // )
-
-        // parse css with postcss to know if to preload or preconnect?
-
-        const fontFiles = [
-          ...new Set(
-            entrypoint.chunks
-              .flatMap(({ auxiliaryFiles }) => [...auxiliaryFiles.values()])
-              .filter((file) => /\.(woff|woff2|eot|ttf|otf)$/.test(file))
-          ),
-        ] as string[]
-
-        if (!fontFiles.length) {
-          continue
-        }
-
-        assetMap.pagesFontFiles[pagePath] = fontFiles
       }
+
+      assetMap.pagesFontFiles = getPageFontsFromCompilation(compilation)
 
       if (!this.isDevFallback) {
         assets[
@@ -317,4 +298,38 @@ export default class BuildManifestPlugin {
     })
     return
   }
+}
+
+export function getPageFontsFromCompilation(compilation): any {
+  const fonts: any = {}
+  for (const entrypoint of compilation.entrypoints.values()) {
+    const pagePath = getRouteFromEntrypoint(entrypoint.name)
+
+    if (!pagePath) {
+      continue
+    }
+
+    if (['/_app', '/_error'].includes(pagePath)) continue
+    // console.log(
+    // entrypoint.chunks.forEach(({ files }) => console.log(pagePath, files))
+    // )
+
+    // parse css with postcss to know if to preload or preconnect?
+
+    const fontFiles = [
+      ...new Set(
+        entrypoint.chunks
+          .flatMap(({ auxiliaryFiles }) => [...auxiliaryFiles.values()])
+          .filter((file) => /\.(woff|woff2|eot|ttf|otf)$/.test(file))
+      ),
+    ] as string[]
+
+    if (!fontFiles.length) {
+      continue
+    }
+
+    fonts[pagePath] = fontFiles
+  }
+
+  return fonts
 }

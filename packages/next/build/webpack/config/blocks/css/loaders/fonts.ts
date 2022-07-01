@@ -15,13 +15,20 @@ export function getFontModuleLoader(
     // Add appropriate development more or production mode style
     // loader
     loaders.push({
-      loader: 'next-style-loader',
+      loader: 'next-style-loader', // om mini-css-extract måste man kolla .css i files istället för fontfilerna
       options: {
         attributes: {
           'data-isfont': '',
         },
       },
     })
+    // loaders.push(
+    //   getClientStyleLoader({
+    //     isDevelopment: ctx.isDevelopment,
+    //     assetPrefix: ctx.assetPrefix,
+    //     isFontFace: true,
+    //   })
+    // )
   }
 
   // Resolve CSS `@import`s and `url()`s

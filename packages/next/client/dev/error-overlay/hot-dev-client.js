@@ -223,6 +223,9 @@ function processMessage(e) {
     }
     case 'built':
     case 'sync': {
+      if (obj.fonts) {
+        window.__PAGE_FONTS = obj.fonts
+      }
       if (obj.hash) {
         handleAvailableHash(obj.hash)
       }

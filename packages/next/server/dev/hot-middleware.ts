@@ -24,6 +24,7 @@
 import type { webpack5 as webpack } from 'next/dist/compiled/webpack/webpack'
 import type ws from 'ws'
 import { isMiddlewareFilename } from '../../build/utils'
+import { getPageFontsFromCompilation } from '../../build/webpack/plugins/build-manifest-plugin'
 import { nonNullable } from '../../lib/non-nullable'
 
 export class WebpackHotMiddleware {
@@ -129,6 +130,7 @@ export class WebpackHotMiddleware {
           ...(stats.warnings || []),
           ...(middlewareStats.warnings || []),
         ],
+        fonts: getPageFontsFromCompilation(latestStats.stats.compilation),
       })
     }
   }
@@ -146,6 +148,7 @@ export class WebpackHotMiddleware {
       hash: stats.hash,
       warnings: stats.warnings || [],
       errors: stats.errors || [],
+      fonts: getPageFontsFromCompilation(statsResult.compilation),
     })
   }
 
