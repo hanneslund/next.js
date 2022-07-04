@@ -3,7 +3,7 @@ import chalk from 'next/dist/compiled/chalk'
 import crypto from 'crypto'
 import { webpack } from 'next/dist/compiled/webpack/webpack'
 import type { webpack5 } from 'next/dist/compiled/webpack/webpack'
-import path, { join as pathJoin, relative as relativePath } from 'path'
+import path, { dirname, join as pathJoin, relative as relativePath } from 'path'
 import { escapeStringRegexp } from '../shared/lib/escape-regexp'
 import {
   DOT_NEXT_ALIAS,
@@ -480,6 +480,12 @@ export default async function getBaseWebpackConfig(
             supportedBrowsers: config.experimental.browsersListForSwc
               ? supportedBrowsers
               : undefined,
+            swcCacheDir: path.join(
+              dir,
+              config?.distDir ?? '.next',
+              'cache',
+              'swc'
+            ),
           },
         }
       : {
@@ -621,6 +627,9 @@ export default async function getBaseWebpackConfig(
     ]
   }
 
+  const reactDir = dirname(require.resolve('react/package.json'))
+  const reactDomDir = dirname(require.resolve('react-dom/package.json'))
+
   const resolveConfig = {
     // Disable .mjs for node_modules bundling
     extensions: isNodeServer
@@ -647,6 +656,12 @@ export default async function getBaseWebpackConfig(
     alias: {
       next: NEXT_PROJECT_ROOT,
 
+      react: `${reactDir}`,
+      'react-dom$': `${reactDomDir}`,
+      'react-dom/server$': `${reactDomDir}/server`,
+      'react-dom/server.browser$': `${reactDomDir}/server.browser`,
+      'react-dom/client$': `${reactDomDir}/client`,
+
       ...customAppAliases,
       ...customErrorAlias,
       ...customDocumentAliases,
@@ -671,6 +686,10 @@ export default async function getBaseWebpackConfig(
                 false,
           }
         : {}),
+
+      '@swc/helpers': path.dirname(
+        require.resolve('@swc/helpers/package.json')
+      ),
 
       setimmediate: 'next/dist/compiled/setimmediate',
     },
@@ -808,6 +827,12 @@ export default async function getBaseWebpackConfig(
       if (notExternalModules.test(request)) {
         return
       }
+    }
+
+    // @swc/helpers should not be external as it would
+    // require hoisting the package which we can't rely on
+    if (request.includes('@swc/helpers')) {
+      return
     }
 
     // When in esm externals mode, and using import, we resolve with
