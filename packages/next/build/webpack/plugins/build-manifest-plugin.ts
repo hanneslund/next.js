@@ -17,6 +17,7 @@ import { Rewrite } from '../../../lib/load-custom-routes'
 import { getSortedRoutes } from '../../../shared/lib/router/utils'
 import { spans } from './profiling-plugin'
 import { CustomRoutes } from '../../../lib/load-custom-routes'
+import postcss from 'postcss'
 
 type DeepMutable<T> = { -readonly [P in keyof T]: DeepMutable<T[P]> }
 
@@ -97,6 +98,7 @@ export default class BuildManifestPlugin {
   private isDevFallback: boolean
   private exportRuntime: boolean
   private appDirEnabled: boolean
+  private isDev: boolean
 
   constructor(options: {
     buildId: string
@@ -104,6 +106,7 @@ export default class BuildManifestPlugin {
     isDevFallback?: boolean
     exportRuntime?: boolean
     appDirEnabled: boolean
+    isDev: boolean
   }) {
     this.buildId = options.buildId
     this.isDevFallback = !!options.isDevFallback
@@ -117,14 +120,15 @@ export default class BuildManifestPlugin {
     this.rewrites.afterFiles = options.rewrites.afterFiles.map(processRoute)
     this.rewrites.fallback = options.rewrites.fallback.map(processRoute)
     this.exportRuntime = !!options.exportRuntime
+    this.isDev = options.isDev
   }
 
-  createAssets(compiler: any, compilation: any, assets: any) {
+  async createAssets(compiler: any, compilation: any, assets: any) {
     const compilationSpan = spans.get(compilation) || spans.get(compiler)
     const createAssetsSpan = compilationSpan?.traceChild(
       'NextJsBuildManifest-createassets'
     )
-    return createAssetsSpan?.traceFn(() => {
+    return createAssetsSpan?.traceAsyncFn(async () => {
       const entrypoints: Map<string, any> = compilation.entrypoints
       const assetMap: DeepMutable<BuildManifest> = {
         polyfillFiles: [],
@@ -210,9 +214,48 @@ export default class BuildManifestPlugin {
         assetMap.pages[pagePath] = [...new Set([...mainFiles, ...filesForPage])]
       }
 
-      assetMap.pagesFontFiles = getPageFontsFromCompilation(compilation)
+      if (!this.isDev) {
+        for (const entrypoint of compilation.entrypoints.values()) {
+          const pagePath = getRouteFromEntrypoint(entrypoint.name)
 
-      if (!this.isDevFallback) {
+          if (!pagePath) {
+            continue
+          }
+
+          if (['/_app', '/_error'].includes(pagePath)) continue
+          // console.log(
+          // entrypoint.chunks.forEach(({ files }) => console.log(pagePath, files))
+          // )
+
+          // parse css with postcss to know if to preload or preconnect?
+
+          // const fontFiles = [
+          //   ...new Set(
+          //     entrypoint.chunks
+          //       .flatMap(({ auxiliaryFiles }) => [...auxiliaryFiles.values()])
+          //       .filter((file) => /\.(woff|woff2|eot|ttf|otf)$/.test(file))
+          //   ),
+          // ] as string[]
+          // console.log(assets)
+          const cssFiles = entrypoint
+            ?.getFiles()
+            .filter((file: string) => file.endsWith('.css'))
+
+          const files = []
+          for (const file of cssFiles) {
+            await postcss([postcssfontstuff(files)]).process(
+              assets[file]._cachedSource,
+              {
+                from: undefined,
+              }
+            )
+          }
+
+          if (files.length) {
+            assetMap.pagesFontFiles[pagePath] = files
+          }
+        }
+
         assets[
           `${CLIENT_STATIC_FILES_PATH}/${this.buildId}/_pageFontsManifest.js`
         ] = new sources.RawSource(
@@ -285,21 +328,21 @@ export default class BuildManifestPlugin {
   apply(compiler: webpack.Compiler) {
     compiler.hooks.make.tap('NextJsBuildManifest', (compilation) => {
       // @ts-ignore TODO: Remove ignore when webpack 5 is stable
-      compilation.hooks.processAssets.tap(
+      compilation.hooks.processAssets.tapPromise(
         {
           name: 'NextJsBuildManifest',
           // @ts-ignore TODO: Remove ignore when webpack 5 is stable
-          stage: webpack.Compilation.PROCESS_ASSETS_STAGE_ADDITIONS,
+          stage: webpack.Compilation.PROCESS_ASSETS_STAGE_ANALYSE,
+          // stage: webpack.Compilation.PROCESS_ASSETS_STAGE_ADDITIONS,
         },
-        (assets: any) => {
-          this.createAssets(compiler, compilation, assets)
-        }
+        (assets: any) => this.createAssets(compiler, compilation, assets)
       )
     })
     return
   }
 }
 
+// I dev kan SWC lägga till filens namn som queyr så att varje import blir unik? Ta bort om inte stämmer med pagepath
 export function getPageFontsFromCompilation(compilation): any {
   const fonts: any = {}
   for (const entrypoint of compilation.entrypoints.values()) {
@@ -332,4 +375,26 @@ export function getPageFontsFromCompilation(compilation): any {
   }
 
   return fonts
+}
+
+function postcssfontstuff(files: string[]) {
+  return {
+    postcssPlugin: 'NEXT-FONT-LOADER-POSTCSS-PLUGIN',
+    AtRule(atRule: any) {
+      if (atRule.name === 'font-face') {
+        atRule.nodes.forEach(({ prop, value }) => {
+          if (prop === 'font-display') {
+            if (value === 'swap') {
+              console.log('SWAP: generate fallback font')
+            } else if (value === 'optional') {
+              console.log('OPTIONAL: PRELOAD')
+            }
+          } else if (prop === 'src') {
+            files.push(value.split('url(/_next/')[1].split(')')[0])
+          }
+          // console.log(node.prop, node.value)
+        })
+      }
+    },
+  }
 }

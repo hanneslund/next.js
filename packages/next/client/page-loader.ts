@@ -166,11 +166,11 @@ export default class PageLoader {
   }
 
   loadPage(route: string): Promise<GoodPageCache> {
-    this.promisedPageFontsManifest.then((pageFonts) => {
-      pageFonts[route]?.forEach((file) => {
-        preloadFont(file)
-      })
-    })
+    // this.promisedPageFontsManifest.then((pageFonts) => {
+    //   pageFonts[route]?.forEach((file) => {
+    //     preloadFont(file)
+    //   })
+    // })
     return this.routeLoader.loadRoute(route).then((res) => {
       if ('component' in res) {
         return {

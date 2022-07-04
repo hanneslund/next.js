@@ -46,7 +46,6 @@ import { addBasePath } from '../../../client/add-base-path'
 import { hasBasePath } from '../../../client/has-base-path'
 import { getNextPathnameInfo } from './utils/get-next-pathname-info'
 import { formatNextPathnameInfo } from './utils/format-next-pathname-info'
-import { preloadFont } from '../font'
 
 declare global {
   interface Window {
@@ -2074,15 +2073,6 @@ export default class Router implements BaseRouter {
 
     // Prefetch is not supported in development mode because it would trigger on-demand-entries
     if (process.env.NODE_ENV !== 'production') {
-      if (window.__PAGE_FONTS) {
-        const route = removeTrailingSlash(pathname)
-        console.log({ route })
-        // page fonts CB promise?
-        window.__PAGE_FONTS[route]?.forEach((fontFile) => {
-          // asset path
-          preloadFont(`/_next/${fontFile}`)
-        })
-      }
       return
     }
 

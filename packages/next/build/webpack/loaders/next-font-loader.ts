@@ -28,7 +28,7 @@ export default async function nextFontLoader(src: string) {
   }
   // ).css
 
-  callback(null, src)
+  callback(null, src) // ERROR HÄR IST?
 }
 
 function nextFontPlugin() {
