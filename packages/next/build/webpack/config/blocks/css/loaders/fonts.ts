@@ -36,7 +36,7 @@ export function getFontModuleLoader(
     loader: require.resolve('../../../../loaders/css-loader/src'),
     options: {
       postcss,
-      importLoaders: 1,
+      importLoaders: isMetadata ? 1 : 0,
       // Use CJS mode for backwards compatibility:
       esModule: false,
       url: (url: string, resourcePath: string) =>

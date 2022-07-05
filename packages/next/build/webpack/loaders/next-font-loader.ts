@@ -4,8 +4,13 @@ import chalk from 'next/dist/compiled/chalk'
 
 export default async function nextFontLoader(src: string) {
   const callback = this.async()
+  this.cacheable(false) // TODO
+  const { selfHostFonts } = this.getOptions()
 
-  console.log(src)
+  if (!selfHostFonts) {
+    return callback(null, src)
+  }
+
   try {
     await postcss([nextFontPlugin()]).process(src, {
       from: undefined,
@@ -26,9 +31,8 @@ export default async function nextFontLoader(src: string) {
 
     this.emitError(err)
   }
-  // ).css
 
-  callback(null, src) // ERROR HÄR IST?
+  callback(null, src)
 }
 
 function nextFontPlugin() {
@@ -36,10 +40,7 @@ function nextFontPlugin() {
     postcssPlugin: 'NEXT-FONT-LOADER-POSTCSS-PLUGIN',
     AtRule(atRule: any) {
       if (atRule.name === 'font-face') {
-        console.log(atRule)
-        throw new Error(
-          'Found @font-face declaration outside of name.font.css file.'
-        )
+        throw new Error('Found @font-face declaration in CSS file.')
       }
     },
   }

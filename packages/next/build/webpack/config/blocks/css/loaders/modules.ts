@@ -27,7 +27,7 @@ export function getCssModuleLoader(
     loader: require.resolve('../../../../loaders/css-loader/src'),
     options: {
       postcss,
-      importLoaders: 1 + preProcessors.length,
+      importLoaders: 2 + preProcessors.length,
       // Use CJS mode for backwards compatibility:
       esModule: false,
       url: (url: string, resourcePath: string) =>
@@ -49,6 +49,13 @@ export function getCssModuleLoader(
         // character?
         getLocalIdent: getCssModuleLocalIdent,
       },
+    },
+  })
+
+  loaders.push({
+    loader: 'next-font-loader',
+    options: {
+      selfHostFonts: ctx.experimental.selfHostFonts,
     },
   })
 

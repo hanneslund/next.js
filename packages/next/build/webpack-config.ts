@@ -1667,7 +1667,7 @@ export default async function getBaseWebpackConfig(
           isDevFallback,
           exportRuntime: hasConcurrentFeatures,
           appDirEnabled: !!config.experimental.appDir,
-          isDev: dev,
+          selfHostFonts: !!config.experimental.selfHostFonts && !dev,
         }),
       new ProfilingPlugin({ runWebpackSpan }),
       config.optimizeFonts &&

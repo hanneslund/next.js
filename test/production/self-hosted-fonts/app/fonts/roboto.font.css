@@ -1,0 +1,4 @@
+@font-face {
+  font-family: 'Inter';
+  src: url(./roboto.woff2) format('woff2'), url(./roboto.woff) format('woff');
+}

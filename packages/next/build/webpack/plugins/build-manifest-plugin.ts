@@ -98,7 +98,7 @@ export default class BuildManifestPlugin {
   private isDevFallback: boolean
   private exportRuntime: boolean
   private appDirEnabled: boolean
-  private isDev: boolean
+  private selfHostFonts: boolean
 
   constructor(options: {
     buildId: string
@@ -106,7 +106,7 @@ export default class BuildManifestPlugin {
     isDevFallback?: boolean
     exportRuntime?: boolean
     appDirEnabled: boolean
-    isDev: boolean
+    selfHostFonts: boolean
   }) {
     this.buildId = options.buildId
     this.isDevFallback = !!options.isDevFallback
@@ -120,7 +120,7 @@ export default class BuildManifestPlugin {
     this.rewrites.afterFiles = options.rewrites.afterFiles.map(processRoute)
     this.rewrites.fallback = options.rewrites.fallback.map(processRoute)
     this.exportRuntime = !!options.exportRuntime
-    this.isDev = options.isDev
+    this.selfHostFonts = options.selfHostFonts
   }
 
   async createAssets(compiler: any, compilation: any, assets: any) {
@@ -214,7 +214,7 @@ export default class BuildManifestPlugin {
         assetMap.pages[pagePath] = [...new Set([...mainFiles, ...filesForPage])]
       }
 
-      if (!this.isDev) {
+      if (this.selfHostFonts) {
         for (const entrypoint of compilation.entrypoints.values()) {
           const pagePath = getRouteFromEntrypoint(entrypoint.name)
 
@@ -390,6 +390,8 @@ function postcssfontstuff(files: string[]) {
               console.log('OPTIONAL: PRELOAD')
             }
           } else if (prop === 'src') {
+            // kolla omd det är /_next först?
+            // eller ska man bara tillåtas ha lokala filer??
             files.push(value.split('url(/_next/')[1].split(')')[0])
           }
           // console.log(node.prop, node.value)
