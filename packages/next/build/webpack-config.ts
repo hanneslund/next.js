@@ -1249,7 +1249,7 @@ export default async function getBaseWebpackConfig(
         'next-flight-client-entry-loader',
         'noop-loader',
         'next-font-loader',
-        'next-font-metadata-loader',
+        'next-google-fonts-loader',
         'next-middleware-loader',
         'next-edge-function-loader',
         'next-edge-ssr-loader',
