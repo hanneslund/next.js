@@ -758,7 +758,7 @@ function assignDefaults(userConfig: { [key: string]: any }) {
       ...(result.experimental?.urlImports
         ? result.experimental?.urlImports
         : []),
-      'https://cdn.jsdelivr.net/npm/@fontsource/',
+      'https://fonts.gstatic.com/',
     ]
   }
 
