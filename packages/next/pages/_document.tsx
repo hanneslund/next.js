@@ -820,9 +820,12 @@ export class Head extends Component<HeadProps> {
       inAmpMode
     )
 
-    const pageFontFiles =
-      this.context.buildManifest.pagesFontFiles[this.context.dangerousAsPath] ??
-      []
+    const pageFontFiles = [
+      ...(this.context.buildManifest.pagesFontFiles['/_app'] ?? []),
+      ...(this.context.buildManifest.pagesFontFiles[
+        this.context.dangerousAsPath
+      ] ?? []),
+    ]
 
     return (
       <head {...getHeadHTMLProps(this.props)}>

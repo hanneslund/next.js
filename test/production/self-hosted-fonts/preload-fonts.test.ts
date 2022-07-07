@@ -4,9 +4,7 @@ import { NextInstance } from 'test/lib/next-modes/base'
 import { renderViaHTTP } from 'next-test-utils'
 import { join } from 'path'
 
-// _app
-// _app
-// _app
+// _error
 describe('self-hosted-fonts enabled', () => {
   let next: NextInstance
 
@@ -30,15 +28,24 @@ describe('self-hosted-fonts enabled', () => {
     const html = await renderViaHTTP(next.url, '/with-fonts')
     const $ = cheerio.load(html)
 
-    expect($('link[as="font"]').length).toBe(2)
+    expect($('link[as="font"]').length).toBe(3)
+    // From /_app
     expect($('link[as="font"]').get(0).attribs).toEqual({
+      as: 'font',
+      crossorigin: 'anonymous',
+      href: '/_next/static/fonts/open-sans.7be88d77.ttf',
+      rel: 'preload',
+      type: 'font/ttf',
+    })
+    // From /with-fonts
+    expect($('link[as="font"]').get(1).attribs).toEqual({
       as: 'font',
       crossorigin: 'anonymous',
       href: '/_next/static/fonts/inter.7be88d77.woff',
       rel: 'preload',
       type: 'font/woff',
     })
-    expect($('link[as="font"]').get(1).attribs).toEqual({
+    expect($('link[as="font"]').get(2).attribs).toEqual({
       as: 'font',
       crossorigin: 'anonymous',
       href: '/_next/static/fonts/roboto.7be88d77.woff2',
@@ -51,7 +58,15 @@ describe('self-hosted-fonts enabled', () => {
     const html = await renderViaHTTP(next.url, '/without-fonts')
     const $ = cheerio.load(html)
 
-    expect($('link[as="font"]').length).toBe(0)
+    expect($('link[as="font"]').length).toBe(1)
+    // From _app
+    expect($('link[as="font"]').get(0).attribs).toEqual({
+      as: 'font',
+      crossorigin: 'anonymous',
+      href: '/_next/static/fonts/open-sans.7be88d77.ttf',
+      rel: 'preload',
+      type: 'font/ttf',
+    })
   })
 })
 

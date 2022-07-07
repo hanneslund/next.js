@@ -222,21 +222,7 @@ export default class BuildManifestPlugin {
             continue
           }
 
-          if (['/_app', '/_error'].includes(pagePath)) continue
-          // console.log(
-          // entrypoint.chunks.forEach(({ files }) => console.log(pagePath, files))
-          // )
-
-          // parse css with postcss to know if to preload or preconnect?
-
-          // const fontFiles = [
-          //   ...new Set(
-          //     entrypoint.chunks
-          //       .flatMap(({ auxiliaryFiles }) => [...auxiliaryFiles.values()])
-          //       .filter((file) => /\.(woff|woff2|eot|ttf|otf)$/.test(file))
-          //   ),
-          // ] as string[]
-          // console.log(assets)
+          if (['/_error', '/404'].includes(pagePath)) continue
           const cssFiles = entrypoint
             ?.getFiles()
             .filter((file: string) => file.endsWith('.css'))
@@ -352,13 +338,6 @@ export function getPageFontsFromCompilation(compilation): any {
       continue
     }
 
-    if (['/_app', '/_error'].includes(pagePath)) continue
-    // console.log(
-    // entrypoint.chunks.forEach(({ files }) => console.log(pagePath, files))
-    // )
-
-    // parse css with postcss to know if to preload or preconnect?
-
     const fontFiles = [
       ...new Set(
         entrypoint.chunks
@@ -385,7 +364,7 @@ function postcssfontstuff(files: string[]) {
         atRule.nodes.forEach(({ prop, value }) => {
           if (prop === 'font-display') {
             if (value === 'swap') {
-              console.log('SWAP: generate fallback font')
+              console.log('SWAP: generate fallback font') // DETTA BORDE GÖRAS I LOADER
             } else if (value === 'optional') {
               console.log('OPTIONAL: PRELOAD')
             }
