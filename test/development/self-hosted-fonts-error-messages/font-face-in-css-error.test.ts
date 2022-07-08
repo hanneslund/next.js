@@ -40,9 +40,9 @@ describe('font-face-in-css-error', () => {
 
       const html = await renderViaHTTP(next.url, '/')
       if (selfHostFonts) {
-        expect(html).toContain('Found @font-face declaration in CSS file.')
+        expect(html).toContain('Found @font-face declaration in CSS file')
       } else {
-        expect(html).not.toContain('Found @font-face declaration in CSS file.')
+        expect(html).not.toContain('Found @font-face declaration in CSS file')
       }
     }
   )
@@ -72,9 +72,9 @@ describe('font-face-in-css-error', () => {
 
       const html = await renderViaHTTP(next.url, '/')
       if (selfHostFonts) {
-        expect(html).toContain('Found @font-face declaration in CSS file.')
+        expect(html).toContain('Found @font-face declaration in CSS file')
       } else {
-        expect(html).not.toContain('Found @font-face declaration in CSS file.')
+        expect(html).not.toContain('Found @font-face declaration in CSS file')
       }
     }
   )
