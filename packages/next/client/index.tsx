@@ -978,33 +978,6 @@ function doRender(input: RenderRouteInfo): Promise<any> {
       })
     }
 
-    if (
-      process.env.NODE_ENV === 'development' &&
-      window.__PAGE_FONTS &&
-      !canceled
-    ) {
-      const fontStyleTags: HTMLStyleElement[] = looseToArray<HTMLStyleElement>(
-        document.querySelectorAll('style[data-isfont]')
-      )
-      const currentFontFiles: string[] | undefined =
-        window.__PAGE_FONTS[next.router.route]
-      console.log({ currentFontFiles })
-
-      fontStyleTags.forEach((s) => {
-        if (!currentFontFiles) {
-          s.setAttribute('media', 'x')
-          return
-        }
-        const css = s.innerHTML
-        const hasFont = currentFontFiles.some((file) => css.includes(file))
-        if (hasFont) {
-          s.removeAttribute('media')
-        } else {
-          s.setAttribute('media', 'x')
-        }
-      })
-    }
-
     if (input.scroll) {
       window.scrollTo(input.scroll.x, input.scroll.y)
     }

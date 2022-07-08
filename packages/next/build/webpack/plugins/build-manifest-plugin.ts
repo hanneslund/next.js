@@ -227,7 +227,7 @@ export default class BuildManifestPlugin {
             ?.getFiles()
             .filter((file: string) => file.endsWith('.css'))
 
-          const files = []
+          const files: string[] = []
           for (const file of cssFiles) {
             await postcss([postcssfontstuff(files)]).process(
               assets[file]._cachedSource,
@@ -359,6 +359,7 @@ export function getPageFontsFromCompilation(compilation): any {
 function postcssfontstuff(files: string[]) {
   return {
     postcssPlugin: 'NEXT-FONT-LOADER-POSTCSS-PLUGIN',
+    // kolla så inget anna finns i cssen
     AtRule(atRule: any) {
       if (atRule.name === 'font-face') {
         atRule.nodes.forEach(({ prop, value }) => {

@@ -1248,13 +1248,15 @@ export default async function getBaseWebpackConfig(
         'next-flight-server-loader',
         'next-flight-client-entry-loader',
         'noop-loader',
-        'next-font-loader',
-        'next-google-fonts-loader',
         'next-middleware-loader',
         'next-edge-function-loader',
         'next-edge-ssr-loader',
         'next-middleware-wasm-loader',
         'next-app-loader',
+        'next-font-loader',
+        'next-font-export-loader',
+        'next-font-error-loader',
+        'next-font-google-loader',
       ].reduce((alias, loader) => {
         // using multiple aliases to replace `resolveLoader.modules`
         alias[loader] = path.join(__dirname, 'webpack', 'loaders', loader)

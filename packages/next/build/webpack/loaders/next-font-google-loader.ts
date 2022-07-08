@@ -15,7 +15,7 @@ const userAgents = {
   },
 }
 
-export default async function googleFontsLoader() {
+export default async function googleFontsLoader(this: any) {
   const callback = this.async()
 
   let [fontId, fileName] = this.resourcePath

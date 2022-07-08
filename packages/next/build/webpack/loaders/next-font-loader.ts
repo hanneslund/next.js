@@ -1,47 +1,43 @@
 import postcss from 'postcss'
-import path from 'path'
-import chalk from 'next/dist/compiled/chalk'
+import crypto from 'crypto'
 
-export default async function nextFontLoader(src: string) {
+export default async function nextFontLoader(this: any, src: string) {
   const callback = this.async()
   this.cacheable(false) // TODO
-  const { selfHostFonts } = this.getOptions()
 
-  if (!selfHostFonts) {
-    return callback(null, src)
-  }
+  const res = await postcss([nextFontPlugin(getHash('src'))]).process(src, {
+    from: undefined,
+  })
+  const family = res.messages[0]
+  const css = `${res.css}
+.className{font-family:${family};}
+.__FONT_FAMILY__${family.slice(1, family.length - 1)}{}`
 
-  try {
-    await postcss([nextFontPlugin()]).process(src, {
-      from: undefined,
-    })
-  } catch (e) {
-    const resource = this._module?.issuer?.resource ?? null
-    const context = this.rootContext ?? this._compiler?.context
-
-    const issuer = resource
-      ? context
-        ? path.relative(context, resource)
-        : resource
-      : null
-
-    const err = new Error(
-      e.message + (issuer ? `\nLocation: ${chalk.cyan(issuer)}` : '')
-    )
-
-    this.emitError(err)
-  }
-
-  callback(null, src)
+  callback(null, css)
 }
 
-function nextFontPlugin() {
+const processed = Symbol('processed')
+function nextFontPlugin(hash: string) {
   return {
     postcssPlugin: 'NEXT-FONT-LOADER-POSTCSS-PLUGIN',
-    AtRule(atRule: any) {
-      if (atRule.name === 'font-face') {
-        throw new Error('Found @font-face declaration in CSS file.')
+    Declaration(decl: any, { result }: any) {
+      if (!decl[processed] && decl.prop === 'font-family') {
+        decl[processed] = true
+        let family = decl.value
+          .slice(1, decl.value.length - 1)
+          .toLowerCase()
+          .replaceAll(' ', '-')
+        family = `'${family}-${hash}'`
+        result.messages.push(family) // Hur blir det om det är många @font-faces vid unicodes? if length !push
+        decl.value = family
       }
     },
   }
+}
+
+function getHash(source: string | Buffer): string {
+  return crypto
+    .createHash('shake256', { outputLength: 5 })
+    .update(source)
+    .digest('hex')
 }
