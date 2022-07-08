@@ -5,10 +5,17 @@ export default async function nextFontLoader(this: any, src: string) {
   const callback = this.async()
   this.cacheable(false) // TODO
 
-  const res = await postcss([nextFontPlugin(getHash('src'))]).process(src, {
-    from: undefined,
-  })
+  let res
+  try {
+    res = await postcss([nextFontPlugin(getHash('src'))]).process(src, {
+      from: undefined,
+    })
+  } catch (err) {
+    callback(err)
+    return
+  }
   const family = res.messages[0]
+  console.log('messages', res.messages)
   const css = `${res.css}
 .className{font-family:${family};}
 .__FONT_FAMILY__${family.slice(1, family.length - 1)}{}`
@@ -28,7 +35,15 @@ function nextFontPlugin(hash: string) {
           .toLowerCase()
           .replaceAll(' ', '-')
         family = `'${family}-${hash}'`
-        result.messages.push(family) // Hur blir det om det är många @font-faces vid unicodes? if length !push
+
+        if (result.messages.length === 0) {
+          result.messages.push(family) // Hur blir det om det är många @font-faces vid unicodes? if length !push
+        } else if (result.messages[0] !== family) {
+          throw new Error(
+            'A @font-face module may only contain one font family'
+          )
+        }
+
         decl.value = family
       }
     },

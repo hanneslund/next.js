@@ -13,7 +13,7 @@ describe('self-hosted-fonts enabled', () => {
       files: {
         pages: new FileRef(join(__dirname, 'app/pages')),
         fonts: new FileRef(join(__dirname, 'app/fonts')),
-        // 'next.config.js': new FileRef(join(__dirname, 'app/next.config.js')),
+        components: new FileRef(join(__dirname, 'app/components')),
       },
       nextConfig: {
         experimental: {
@@ -78,6 +78,7 @@ describe('self-hosted-fonts disabled', () => {
       files: {
         pages: new FileRef(join(__dirname, 'app/pages')),
         fonts: new FileRef(join(__dirname, 'app/fonts')),
+        components: new FileRef(join(__dirname, 'app/components')),
       },
     })
   })

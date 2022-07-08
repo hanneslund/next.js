@@ -36,7 +36,7 @@ function nextFontPlugin() {
     postcssPlugin: 'NEXT-FONT-ERROR-LOADER-POSTCSS-PLUGIN',
     AtRule(atRule: any) {
       if (atRule.name === 'font-face') {
-        throw new Error('Found @font-face declaration in CSS file.')
+        throw new Error('Found @font-face declaration in CSS file')
       }
     },
   }
