@@ -20,14 +20,12 @@ export function getFontModuleLoader(
     )
   }
 
-  loaders.push({ loader: 'next-font-export-loader' })
-
   // Resolve CSS `@import`s and `url()`s
   loaders.push({
     loader: require.resolve('../../../../loaders/css-loader/src'),
     options: {
       postcss,
-      importLoaders: isGoogleFonts ? 2 : 1,
+      importLoaders: isGoogleFonts ? 1 : 0,
       // Use CJS mode for backwards compatibility:
       esModule: false,
       url: (url: string, resourcePath: string) =>
@@ -48,24 +46,10 @@ export function getFontModuleLoader(
         // development.
         // TODO: Consider making production reduce this to a single
         // character?
-        getLocalIdent: function (
-          context: webpack.loader.LoaderContext,
-          _: any,
-          exportName: string,
-          options: object
-        ) {
-          if (exportName.startsWith('__FONT_FAMILY__')) {
-            return exportName.slice(15)
-          }
-          // göra den annorlinda för fonts?
-          return getCssModuleLocalIdent(context, _, exportName, options)
-        },
+        getLocalIdent: getCssModuleLocalIdent,
       },
+      fontModules: true,
     },
-  })
-
-  loaders.push({
-    loader: 'next-font-loader',
   })
 
   if (isGoogleFonts) {

@@ -18,8 +18,8 @@ export const regexLikeCss = /\.(css|scss|sass)$/
 
 // RegExps for Style Sheets
 const regexCssGlobal = /(?<!\.module)\.css$/
-const regexFontModule = /\.font\.css$/
 const regexCssModules = /\.module\.css$/
+const regexFontModule = /\.font\.css$/
 
 // RegExps for Syntactically Awesome Style Sheets
 const regexSassGlobal = /(?<!\.module)\.(scss|sass)$/
@@ -204,32 +204,28 @@ export const css = curry(async function css(
     loader({
       oneOf: [
         markRemovable({
+          // next/font
           test: path.join(__dirname, '../../../../../../font'),
-          // issuer: {
-          //   and: [ctx.rootDirectory],
-          //   not: [/node_modules/],
-          // },
-          // use: {
+          // issuer: bara _app om inte experimental?
           use: getFontModuleLoader(ctx, lazyPostCSSInitializer, true),
         }),
       ],
     })
   )
 
-  fns.push(
-    loader({
-      oneOf: [
-        markRemovable({
-          test: regexFontModule,
-          // issuer: {
-          //   and: [ctx.rootDirectory],
-          //   not: [/node_modules/],
-          // },
-          use: getFontModuleLoader(ctx, lazyPostCSSInitializer, false),
-        }),
-      ],
-    })
-  )
+  if (ctx.experimental.selfHostFonts) {
+    fns.push(
+      loader({
+        oneOf: [
+          markRemovable({
+            test: regexFontModule,
+            // issuer: bara _app om inte experimental?
+            use: getFontModuleLoader(ctx, lazyPostCSSInitializer, false),
+          }),
+        ],
+      })
+    )
+  }
 
   // CSS Modules support must be enabled on the server and client so the class
   // names are available for SSR or Prerendering.

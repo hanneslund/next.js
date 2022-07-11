@@ -1253,8 +1253,6 @@ export default async function getBaseWebpackConfig(
         'next-edge-ssr-loader',
         'next-middleware-wasm-loader',
         'next-app-loader',
-        'next-font-loader',
-        'next-font-export-loader',
         'next-font-error-loader',
         'next-font-google-loader',
       ].reduce((alias, loader) => {

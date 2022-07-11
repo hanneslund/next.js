@@ -328,34 +328,6 @@ export default class BuildManifestPlugin {
   }
 }
 
-// I dev kan SWC lägga till filens namn som queyr så att varje import blir unik? Ta bort om inte stämmer med pagepath
-export function getPageFontsFromCompilation(compilation): any {
-  const fonts: any = {}
-  for (const entrypoint of compilation.entrypoints.values()) {
-    const pagePath = getRouteFromEntrypoint(entrypoint.name)
-
-    if (!pagePath) {
-      continue
-    }
-
-    const fontFiles = [
-      ...new Set(
-        entrypoint.chunks
-          .flatMap(({ auxiliaryFiles }) => [...auxiliaryFiles.values()])
-          .filter((file) => /\.(woff|woff2|eot|ttf|otf)$/.test(file))
-      ),
-    ] as string[]
-
-    if (!fontFiles.length) {
-      continue
-    }
-
-    fonts[pagePath] = fontFiles
-  }
-
-  return fonts
-}
-
 function postcssfontstuff(files: string[]) {
   return {
     postcssPlugin: 'NEXT-FONT-LOADER-POSTCSS-PLUGIN',

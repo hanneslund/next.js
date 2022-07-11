@@ -10,7 +10,7 @@ async function getFonts() {
   ).items.slice(0, 20)
   await Promise.all(
     fonts.map(async (font) => {
-      const id = font.family.replaceAll(' ', '-')
+      const id = font.family.replaceAll(' ', '-').toLowerCase()
 
       const files = Object.keys(font.files).map((file) => {
         if (file === 'regular') return '400.js'
@@ -33,7 +33,7 @@ async function getFonts() {
       await Promise.all(
         files.map(async (file) => {
           const filePath = path.join(fontDir, file)
-          await fs.writeFile(filePath, '')
+          await fs.writeFile(filePath, font.family.replaceAll(' ', '+'))
         })
       )
     })
