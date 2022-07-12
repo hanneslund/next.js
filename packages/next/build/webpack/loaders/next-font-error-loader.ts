@@ -1,43 +1,51 @@
-import postcss from 'postcss'
-import path from 'path'
-import chalk from 'next/dist/compiled/chalk'
+import CssSyntaxError from './css-loader/src/CssSyntaxError'
 
-export default async function nextFontLoader(this: any, src: string) {
+export default async function nextFontLoader(
+  this: any,
+  src: string,
+  map: any,
+  meta: any
+) {
   const callback = this.async()
   this.cacheable(false) // TODO
 
-  try {
-    await postcss([nextFontPlugin()]).process(src, {
-      from: undefined,
-    })
-  } catch (e: any) {
-    const resource = this._module?.issuer?.resource ?? null
-    const context = this.rootContext ?? this._compiler?.context
+  // Reuse CSS AST (PostCSS AST e.g 'postcss-loader') to avoid reparsing
+  if (meta) {
+    const { ast } = meta
 
-    const issuer = resource
-      ? context
-        ? path.relative(context, resource)
-        : resource
-      : null
-
-    const err = new Error(
-      e.message + (issuer ? `\nLocation: ${chalk.cyan(issuer)}` : '')
-    )
-
-    this.emitError(err)
+    if (ast && ast.type === 'postcss') {
+      src = ast.root
+    }
   }
 
-  callback(null, src)
+  const { postcss } = await this.getOptions().postcss()
+  const { resourcePath } = this
+
+  try {
+    await postcss([nextFontErrorsPlugin()]).process(src, {
+      from: resourcePath,
+    })
+  } catch (error: any) {
+    callback(
+      error.name === 'CssSyntaxError' ? new CssSyntaxError(error) : error
+    )
+    return
+  }
+
+  callback(null, src, map /* new ast osv */)
 }
 
-function nextFontPlugin() {
+function nextFontErrorsPlugin() {
   // KOLLA SÅ MAN INTE SÄTTER FONT-FAMILY OSV SJÄLV
   return {
-    postcssPlugin: 'NEXT-FONT-ERROR-LOADER-POSTCSS-PLUGIN',
+    postcssPlugin: 'postcss-next-font-errors',
     AtRule(atRule: any) {
       if (atRule.name === 'font-face') {
-        throw new Error('Found @font-face declaration in CSS file')
+        throw atRule.error(
+          'Found @font-face in CSS file\nRead more: https://www.nextjs.org/fontmodules'
+        )
       }
     },
   }
 }
+nextFontErrorsPlugin.postcss = true

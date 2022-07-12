@@ -56,6 +56,9 @@ export function getCssModuleLoader(
   if (ctx.experimental.selfHostFonts) {
     loaders.push({
       loader: 'next-font-error-loader',
+      options: {
+        postcss,
+      },
     })
   }
 

@@ -3,8 +3,11 @@ import { webpack } from 'next/dist/compiled/webpack/webpack'
 import path from 'path'
 import { loader, plugin } from '../../helpers'
 import { ConfigurationContext, ConfigurationFn, pipe } from '../../utils'
-import { getCssModuleLoader, getGlobalCssLoader } from './loaders'
-import { getFontModuleLoader } from './loaders/fonts'
+import {
+  getCssModuleLoader,
+  getGlobalCssLoader,
+  getFontModuleLoader,
+} from './loaders'
 import {
   getCustomDocumentError,
   getGlobalImportError,
