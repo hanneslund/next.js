@@ -1,5 +1,5 @@
 import crypto from 'crypto'
-import postcss from 'postcss'
+import postcss, { AtRule } from 'postcss'
 
 const plugin = (exports: any[]) => {
   return {
@@ -10,70 +10,142 @@ const plugin = (exports: any[]) => {
       for (const node of root.nodes) {
         if (node.type === 'atrule' && node.name === 'font-face') {
           for (const decl of node.nodes) {
-            hash.update(decl.value)
+            if (decl.type === 'decl') {
+              hash.update(decl.value)
+            }
           }
         }
       }
       const hashString = hash.digest('hex')
 
-      // Replace font-family in @font-face and CLASSES?
-      let rawFamily: string | undefined
+      let firstFontFace: AtRule | undefined
+      let unicodeRanges: string[] | undefined
+      let rawFontFamily: string | undefined
+      const fontProperties: {
+        fontFamily?: string
+        fontWeight?: string
+        fontStyle?: string
+      } = {}
 
-      let fontFamily: string | undefined
-      let fontStyle: string | undefined
-      let fontWeight: string | undefined
+      const formatFamily = (family: string) => {
+        if (family[0] === "'" || family[0] === '"') {
+          family = family.slice(1, family.length - 1)
+        }
+        return `'${family}-${hashString}'`
+      }
+
       for (const node of root.nodes) {
+        if (
+          node.selector &&
+          node.selector
+            .split(/[, \n]/)
+            .map((s) => s.slice(1))
+            .includes('fontClass')
+        ) {
+          throw node.error('"fontClass" is reserved when using font modules')
+        }
+        if (
+          node.selector &&
+          node.selector
+            .split(/[, \n]/)
+            .map((s) => s.slice(1))
+            .includes('fontStyle')
+        ) {
+          throw node.error('"fontStyle" is reserved when using font modules')
+        }
+
         if (node.type === 'atrule' && node.name === 'font-face') {
-          for (const decl of node.nodes) {
-            if (decl.prop === 'font-family') {
-              if (rawFamily && decl.value !== rawFamily) {
-                throw decl.error(
-                  'A @font-face module may only contain one font family'
-                  // { word: 'font-family' }
-                )
-              }
-              rawFamily = decl.value
+          const family = node.nodes.find((decl) => decl.prop === 'font-family')
+          if (!family) {
+            throw node.error('Missing font-family in @font-face')
+          }
 
-              let family = decl.value
-              if (family[0] === "'" || family[0] === '"') {
-                family = family.slice(1, family.length - 1)
-              }
-              family = `'${family}-${hashString}'`
+          if (rawFontFamily && rawFontFamily !== family.value) {
+            throw family.error('@font-face families must match')
+          }
+          rawFontFamily = family.value
+          const formattedFamily = formatFamily(family.value)
+          if (!firstFontFace) {
+            fontProperties.fontFamily = formattedFamily
+          }
+          family.value = fontProperties.fontFamily
 
-              decl.value = family
-              fontFamily = family
-            } else if (decl.prop === 'font-weight') {
-              if (fontWeight && decl.value !== fontWeight) {
-                throw decl.error(
-                  'A @font-face module may only contain one font weight'
-                  // { word: 'font-weight' }
-                )
-              }
-              fontWeight = decl.value
-            } else if (decl.prop === 'font-style') {
-              if (fontStyle && decl.value !== fontStyle) {
-                throw decl.error(
-                  'A @font-face module may only contain one font style'
-                )
-              }
-              fontStyle = decl.value
+          const src = node.nodes.find((decl) => decl.prop === 'src')
+          if (!src) {
+            throw node.error('Missing src in @font-face')
+          }
+
+          const weight = node.nodes.find((decl) => decl.prop === 'font-weight')
+          if (fontProperties.fontWeight !== weight?.value) {
+            if (firstFontFace) {
+              throw (weight ?? node).error('@font-face weights must match')
+            } else {
+              fontProperties.fontWeight = weight?.value
             }
           }
+
+          const style = node.nodes.find((decl) => decl.prop === 'font-style')
+          if (fontProperties.fontStyle !== style?.value) {
+            if (firstFontFace) {
+              throw (style ?? node).error('@font-face styles must match')
+            } else {
+              fontProperties.fontStyle = style?.value
+            }
+          }
+
+          const unicode = node.nodes.find(
+            (decl) => decl.prop === 'unicode-range'
+          )
+          if (!firstFontFace && unicode && !unicodeRanges) {
+            unicodeRanges = [unicode?.value]
+          } else if (
+            firstFontFace &&
+            unicode &&
+            unicodeRanges &&
+            !unicodeRanges.includes(unicode.value)
+          ) {
+            unicodeRanges.push(unicode.value)
+          } else if (firstFontFace && !unicodeRanges) {
+            // Missing unicode-range
+            throw firstFontFace.error(
+              'Expected unicode-range when defining multiple font faces'
+            )
+          } else if (firstFontFace && !unicode) {
+            // Unexpecteds font-face
+            throw node.error(
+              'Expected unicode-range when defining multiple font faces'
+            )
+          } else if (firstFontFace && unicodeRanges!.includes(unicode.value)) {
+            // Duplicate unicode-range
+            throw unicode.error('Found duplicate unicode-range')
+          }
+
+          firstFontFace = node
         }
       }
 
+      if (!fontProperties.fontFamily) return
+
       // Add font class
-      const classRule = new postcss.Rule({ selector: '.className' })
+      const classRule = new postcss.Rule({ selector: '.fontClass' })
       const declarations = [
-        new postcss.Declaration({ prop: 'font-family', value: fontFamily }),
-        ...(fontStyle
-          ? [new postcss.Declaration({ prop: 'font-style', value: fontStyle })]
+        new postcss.Declaration({
+          prop: 'font-family',
+          value: fontProperties.fontFamily,
+        }),
+        ...(fontProperties.fontStyle
+          ? [
+              new postcss.Declaration({
+                prop: 'font-style',
+                value: fontProperties.fontStyle,
+              }),
+            ]
           : []),
-        ...(fontWeight
+        ...(fontProperties.fontWeight
           ? [
               new postcss.Declaration({
                 prop: 'font-weight',
-                value: fontWeight,
+                value: fontProperties.fontWeight,
               }),
             ]
           : []),
@@ -83,12 +155,8 @@ const plugin = (exports: any[]) => {
 
       // Export @font-face values
       exports.push({
-        name: 'style',
-        value: {
-          fontFamily,
-          ...(fontStyle ? { fontStyle } : {}),
-          ...(fontWeight ? { fontWeight } : {}),
-        },
+        name: 'fontStyle',
+        value: fontProperties,
       })
     },
   }

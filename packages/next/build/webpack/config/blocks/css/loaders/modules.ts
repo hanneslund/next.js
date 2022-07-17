@@ -7,7 +7,8 @@ import { getCssModuleLocalIdent } from './getCssModuleLocalIdent'
 export function getCssModuleLoader(
   ctx: ConfigurationContext,
   postcss: any,
-  preProcessors: readonly webpack.RuleSetUseItem[] = []
+  preProcessors: readonly webpack.RuleSetUseItem[] = [],
+  isGoogleFonts?: boolean
 ): webpack.RuleSetUseItem[] {
   const loaders: webpack.RuleSetUseItem[] = []
 
@@ -28,8 +29,7 @@ export function getCssModuleLoader(
     loader: require.resolve('../../../../loaders/css-loader/src'),
     options: {
       postcss,
-      importLoaders:
-        1 + preProcessors.length + (ctx.experimental.selfHostFonts ? 1 : 0),
+      importLoaders: 1 + preProcessors.length + (isGoogleFonts ? 1 : 0),
       // Use CJS mode for backwards compatibility:
       esModule: false,
       url: (url: string, resourcePath: string) =>
@@ -51,17 +51,9 @@ export function getCssModuleLoader(
         // character?
         getLocalIdent: getCssModuleLocalIdent,
       },
+      fontModule: ctx.experimental.selfHostFonts,
     },
   })
-
-  if (ctx.experimental.selfHostFonts) {
-    loaders.push({
-      loader: 'next-font-error-loader',
-      options: {
-        postcss,
-      },
-    })
-  }
 
   // Compile CSS
   loaders.push({
@@ -76,6 +68,12 @@ export function getCssModuleLoader(
     // order of preprocessors.
     ...preProcessors.slice().reverse()
   )
+
+  if (isGoogleFonts) {
+    loaders.push({
+      loader: 'next-font-google-loader',
+    })
+  }
 
   return loaders
 }

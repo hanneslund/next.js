@@ -203,32 +203,22 @@ export const css = curry(async function css(
     })
   )
 
+  // kolla i loader ist så behövs inte denna?
   fns.push(
     loader({
       oneOf: [
         markRemovable({
-          // next/font
+          sideEffects: false,
           test: path.join(__dirname, '../../../../../../font'),
-          // issuer: bara _app om inte experimental?
-          use: getFontModuleLoader(ctx, lazyPostCSSInitializer, true),
+          issuer: {
+            and: [ctx.rootDirectory],
+            not: [/node_modules/],
+          },
+          use: getCssModuleLoader(ctx, lazyPostCSSInitializer, undefined, true),
         }),
       ],
     })
   )
-
-  if (ctx.experimental.selfHostFonts) {
-    fns.push(
-      loader({
-        oneOf: [
-          markRemovable({
-            test: regexFontModule,
-            // issuer: bara _app om inte experimental?
-            use: getFontModuleLoader(ctx, lazyPostCSSInitializer, false),
-          }),
-        ],
-      })
-    )
-  }
 
   // CSS Modules support must be enabled on the server and client so the class
   // names are available for SSR or Prerendering.
