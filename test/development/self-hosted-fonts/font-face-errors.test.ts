@@ -1,9 +1,9 @@
-import { check, getRedboxSource } from 'next-test-utils'
+import { check, getRedboxSource, renderViaHTTP } from 'next-test-utils'
 import { createNext } from 'e2e-utils'
 import webdriver from 'next-webdriver'
 import { NextInstance } from 'test/lib/next-modes/base'
 
-describe('font-face-errors', () => {
+describe('font-face-errors, selfHostFonts: true', () => {
   let next: NextInstance
 
   beforeAll(async () => {
@@ -456,7 +456,7 @@ Syntax error: \\"fontClass\\" is reserved when using font modules
   })
 })
 
-describe.skip('font-face-errors, selfHostFonts: false', () => {
+describe('font-face-errors, selfHostFonts: false', () => {
   let next: NextInstance
 
   beforeAll(async () => {
@@ -464,7 +464,7 @@ describe.skip('font-face-errors, selfHostFonts: false', () => {
       files: {
         'pages/index.js': `
         import './inter.module.css'
-        export default () => null`,
+        export default () => <p>Hello world</p>`,
 
         'pages/inter.module.css': `
         @font-face {
@@ -490,17 +490,15 @@ describe.skip('font-face-errors, selfHostFonts: false', () => {
       },
       nextConfig: {
         experimental: {
-          selfHostFonts: true,
+          selfHostFonts: false,
         },
       },
     })
   })
   afterAll(() => next.destroy())
 
-  test('no errors ', async () => {
-    const browser = await webdriver(next.appPort, '/')
-    // await hasRedbox(browser, false)
-
-    expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`null`)
+  test("dont't validate font-face", async () => {
+    const html = await renderViaHTTP(next.url, '/')
+    expect(html).toInclude('Hello world')
   })
 })
