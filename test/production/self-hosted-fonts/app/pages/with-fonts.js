@@ -5,9 +5,9 @@ export default function WithFonts() {
   return (
     <>
       <CompWithFonts />
-      <pre id="with-fonts-import" className={openSans.fontClass}>
-        {JSON.stringify(openSans, null, 2)}
-      </pre>
+      <div id="with-fonts-import" className={openSans.fontClass}>
+        {JSON.stringify(openSans)}
+      </div>
     </>
   )
 }

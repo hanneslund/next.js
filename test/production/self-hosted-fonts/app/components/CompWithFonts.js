@@ -4,8 +4,8 @@ import roboto from '../fonts/roboto.module.css'
 export default function Component() {
   return (
     <>
-      <pre style={inter.fontStyle}>{JSON.stringify(inter, null, 2)}</pre>
-      <pre style={roboto.fontStyle}>{JSON.stringify(roboto, null, 2)}</pre>
+      <div style={inter.fontStyle}>{JSON.stringify(inter)}</div>
+      <div style={roboto.fontStyle}>{JSON.stringify(roboto)}</div>
     </>
   )
 }
