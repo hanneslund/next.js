@@ -3,6 +3,7 @@ import { createNext, FileRef } from 'e2e-utils'
 import { NextInstance } from 'test/lib/next-modes/base'
 import { renderViaHTTP } from 'next-test-utils'
 import { join } from 'path'
+import webdriver from 'next-webdriver'
 
 // _error
 describe('self-hosted-fonts enabled', () => {
@@ -76,6 +77,79 @@ describe('self-hosted-fonts enabled', () => {
     })
   })
 
+  describe('computed styles', () => {
+    test('css modules with font face', async () => {
+      const browser = await webdriver(next.url, '/with-fonts')
+
+      // _app.js
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#app-open-sans")).fontFamily'
+        )
+      ).toContain('Open Sans')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#app-open-sans")).fontWeight'
+        )
+      ).toBe('400')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#app-open-sans")).fontStyle'
+        )
+      ).toBe('italic')
+
+      //   // with-fonts.js
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontFamily'
+        )
+      ).toContain('Open Sans')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontWeight'
+        )
+      ).toBe('400')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontStyle'
+        )
+      ).toBe('italic')
+
+      // CompWithFonts.js
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontFamily'
+        )
+      ).toContain('Inter')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontWeight'
+        )
+      ).toBe('500')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontStyle'
+        )
+      ).toBe('normal')
+
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontFamily'
+        )
+      ).toContain('Roboto')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontWeight'
+        )
+      ).toBe('400')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontStyle'
+        )
+      ).toBe('normal')
+    })
+  })
+
   describe('preload', () => {
     test('page with fonts', async () => {
       const html = await renderViaHTTP(next.url, '/with-fonts')
@@ -144,6 +218,32 @@ describe('self-hosted-fonts disabled', () => {
     })
   })
   afterAll(() => next.destroy())
+
+  describe('import', () => {
+    test('css module without font face', async () => {
+      const html = await renderViaHTTP(next.url, '/without-fonts')
+      const $ = cheerio.load(html)
+
+      expect(
+        JSON.parse(await $('#css-module-without-font-face').text())
+      ).toEqual({})
+    })
+
+    test('css modules with font face', async () => {
+      const html = await renderViaHTTP(next.url, '/with-fonts')
+      const $ = cheerio.load(html)
+
+      // _app.js
+      expect(JSON.parse(await $('#app-open-sans').text())).toEqual({})
+
+      // with-fonts.js
+      expect(JSON.parse(await $('#with-fonts-open-sans').text())).toEqual({})
+
+      // CompWithFonts.js
+      expect(JSON.parse(await $('#comp-with-fonts-inter').text())).toEqual({})
+      expect(JSON.parse(await $('#comp-with-fonts-roboto').text())).toEqual({})
+    })
+  })
 
   describe('preload', () => {
     test('page with fonts', async () => {

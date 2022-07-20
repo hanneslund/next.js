@@ -4,10 +4,10 @@ import roboto from '../fonts/roboto.module.css'
 export default function Component() {
   return (
     <>
-      <div id="comp-with-fonts-inter" style={inter.fontStyle}>
+      <div id="comp-with-fonts-inter" className={inter.fontClass}>
         {JSON.stringify(inter)}
       </div>
-      <div id="comp-with-fonts-roboto" style={roboto.fontStyle}>
+      <div id="comp-with-fonts-roboto" className={roboto.fontClass}>
         {JSON.stringify(roboto)}
       </div>
     </>
