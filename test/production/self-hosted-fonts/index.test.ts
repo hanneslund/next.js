@@ -34,13 +34,45 @@ describe('self-hosted-fonts enabled', () => {
       ).toEqual({})
     })
 
-    test.only('css module with font face', async () => {
-      const html = await renderViaHTTP(next.url, '/without-fonts')
+    test('css modules with font face', async () => {
+      const html = await renderViaHTTP(next.url, '/with-fonts')
       const $ = cheerio.load(html)
 
-      expect(
-        JSON.parse(await $('#css-module-without-font-face').text())
-      ).toEqual({})
+      // _app.js
+      expect(JSON.parse(await $('#app-open-sans').text())).toEqual({
+        fontClass: expect.any(String),
+        fontStyle: {
+          fontFamily: expect.stringContaining('Open Sans'),
+          fontStyle: 'italic',
+          fontWeight: '400',
+        },
+      })
+
+      // with-fonts.js
+      expect(JSON.parse(await $('#with-fonts-open-sans').text())).toEqual({
+        fontClass: expect.any(String),
+        fontStyle: {
+          fontFamily: expect.stringContaining('Open Sans'),
+          fontStyle: 'italic',
+          fontWeight: '400',
+        },
+      })
+
+      // CompWithFonts.js
+      expect(JSON.parse(await $('#comp-with-fonts-inter').text())).toEqual({
+        fontClass: expect.any(String),
+        fontStyle: {
+          fontFamily: expect.stringContaining('Inter'),
+          fontWeight: '500',
+        },
+      })
+      expect(JSON.parse(await $('#comp-with-fonts-roboto').text())).toEqual({
+        fontClass: expect.any(String),
+        fontStyle: {
+          fontFamily: expect.stringContaining('Roboto'),
+          fontStyle: 'normal',
+        },
+      })
     })
   })
 
@@ -49,7 +81,7 @@ describe('self-hosted-fonts enabled', () => {
       const html = await renderViaHTTP(next.url, '/with-fonts')
       const $ = cheerio.load(html)
 
-      expect($('link[as="font"]').length).toBe(3)
+      expect($('link[as="font"]').length).toBe(4)
       // From /_app
       expect($('link[as="font"]').get(0).attribs).toEqual({
         as: 'font',
@@ -62,11 +94,18 @@ describe('self-hosted-fonts enabled', () => {
       expect($('link[as="font"]').get(1).attribs).toEqual({
         as: 'font',
         crossorigin: 'anonymous',
-        href: '/_next/static/fonts/inter.7be88d77.woff',
+        href: '/_next/static/fonts/inter-latin.b5cf718f.woff',
         rel: 'preload',
         type: 'font/woff',
       })
       expect($('link[as="font"]').get(2).attribs).toEqual({
+        as: 'font',
+        crossorigin: 'anonymous',
+        href: '/_next/static/fonts/inter-greek.5911d1a9.woff',
+        rel: 'preload',
+        type: 'font/woff',
+      })
+      expect($('link[as="font"]').get(3).attribs).toEqual({
         as: 'font',
         crossorigin: 'anonymous',
         href: '/_next/static/fonts/roboto.7be88d77.woff2',

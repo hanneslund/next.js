@@ -12,15 +12,17 @@ describe('dont-preload-fonts-in-dev', () => {
     next = await createNext({
       files: {
         'pages/index.js': `
-          import inter from './inter.font.css'
+          import inter from './inter.module.css'
           
-          export default () => null`,
+          export default () => <p>Hello world</p>`,
 
-        'pages/inter.font.css': `
+        'pages/inter.module.css': `
           @font-face {
             font-family: 'Inter';
-            src: url(/Inter.woff);
+            src: url(./inter.woff);
           }`,
+
+        'pages/inter.woff': '',
       },
       nextConfig: {
         experimental: {
@@ -33,5 +35,6 @@ describe('dont-preload-fonts-in-dev', () => {
     const $ = cheerio.load(html)
 
     expect($('link[as="font"]').length).toBe(0)
+    expect(html).toContain('Hello world')
   })
 })
