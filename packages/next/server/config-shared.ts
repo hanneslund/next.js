@@ -142,7 +142,7 @@ export interface ExperimentalConfig {
   }
   swcPlugins?: Array<[string, Record<string, unknown>]>
   largePageDataBytes?: number
-  selfHostFonts?: boolean
+  fontModules?: boolean
 }
 
 /**
@@ -551,7 +551,7 @@ export const defaultConfig: NextConfig = {
     amp: undefined,
     urlImports: undefined,
     modularizeImports: undefined,
-    selfHostFonts: undefined,
+    fontModules: undefined,
   },
 }
 
