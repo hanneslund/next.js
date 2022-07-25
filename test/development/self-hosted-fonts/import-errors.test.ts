@@ -56,7 +56,7 @@ describe('import-errors, missing urlImports', () => {
   })
 })
 
-describe('import-errors, fontModules: true', () => {
+describe('import-errors, fontModules enabled', () => {
   let next: NextInstance
 
   beforeAll(async () => {
@@ -64,7 +64,7 @@ describe('import-errors, fontModules: true', () => {
       files: {},
       nextConfig: {
         experimental: {
-          fontModules: true,
+          fontModules: { enabled: true },
         },
       },
     })
@@ -129,7 +129,7 @@ Read more: https://www.nextjs.org/fontmodules
   })
 })
 
-describe('import-errors, fontModules: false', () => {
+describe('import-errors, fontModules disabled', () => {
   let next: NextInstance
 
   beforeAll(async () => {
@@ -137,7 +137,7 @@ describe('import-errors, fontModules: false', () => {
       files: {},
       nextConfig: {
         experimental: {
-          fontModules: false,
+          fontModules: { enabled: false },
         },
       },
     })

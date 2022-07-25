@@ -18,7 +18,7 @@ describe('self-hosted-fonts enabled', () => {
       },
       nextConfig: {
         experimental: {
-          fontModules: true,
+          fontModules: { enabled: true },
         },
       },
     })

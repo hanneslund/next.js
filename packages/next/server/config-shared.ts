@@ -142,7 +142,12 @@ export interface ExperimentalConfig {
   }
   swcPlugins?: Array<[string, Record<string, unknown>]>
   largePageDataBytes?: number
-  fontModules?: boolean
+  fontModules?: {
+    enabled: boolean
+    fallbackFonts?: {
+      [fontFamily: string]: string[]
+    }
+  }
 }
 
 /**

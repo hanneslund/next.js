@@ -1,7 +1,7 @@
 import crypto from 'crypto'
 import postcss, { AtRule } from 'postcss'
 
-const plugin = (exports: any[]) => {
+const plugin = (exports: any[], fallBackFonts: any = {}) => {
   return {
     postcssPlugin: 'postcss-font-modules',
     Once(root: any) {
@@ -127,11 +127,18 @@ const plugin = (exports: any[]) => {
       if (!fontProperties.fontFamily) return
 
       // Add font class
+      let fallbackKey = rawFontFamily as string
+      if (fallbackKey[0] === '"' || fallbackKey[0] === "'") {
+        fallbackKey = fallbackKey.slice(1, fallbackKey.length - 1)
+      }
       const classRule = new postcss.Rule({ selector: '.fontClass' })
       const declarations = [
         new postcss.Declaration({
           prop: 'font-family',
-          value: fontProperties.fontFamily,
+          value: [
+            fontProperties.fontFamily,
+            ...(fallBackFonts[fallbackKey] ? fallBackFonts[fallbackKey] : []),
+          ].join(','),
         }),
         ...(fontProperties.fontStyle
           ? [

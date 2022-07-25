@@ -7,7 +7,7 @@ export default async function nextFontLoader(
   meta: any
 ) {
   const callback = this.async()
-  this.cacheable(false) // TODO
+  // this.cacheable(false) // TODO
 
   // Reuse CSS AST (PostCSS AST e.g 'postcss-loader') to avoid reparsing
   if (meta) {

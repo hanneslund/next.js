@@ -3,7 +3,7 @@ import { createNext } from 'e2e-utils'
 import webdriver from 'next-webdriver'
 import { NextInstance } from 'test/lib/next-modes/base'
 
-describe('font-face-errors, fontModules: true', () => {
+describe('font-face-errors, fontModules enabled', () => {
   let next: NextInstance
 
   beforeAll(async () => {
@@ -19,7 +19,7 @@ describe('font-face-errors, fontModules: true', () => {
       },
       nextConfig: {
         experimental: {
-          fontModules: true,
+          fontModules: { enabled: true },
         },
       },
     })
@@ -456,7 +456,7 @@ Syntax error: \\"fontClass\\" is reserved when using font modules
   })
 })
 
-describe('font-face-errors, fontModules: false', () => {
+describe('font-face-errors, fontModules disabled', () => {
   let next: NextInstance
 
   beforeAll(async () => {
@@ -490,7 +490,7 @@ describe('font-face-errors, fontModules: false', () => {
       },
       nextConfig: {
         experimental: {
-          fontModules: false,
+          fontModules: { enabled: false },
         },
       },
     })

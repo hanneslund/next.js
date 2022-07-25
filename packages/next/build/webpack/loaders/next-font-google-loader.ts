@@ -1,4 +1,5 @@
 import fs from 'fs'
+
 // https://github.com/fontsource/google-font-metadata/blob/main/lib/data/user-agents.json
 const userAgents = {
   apiv1: {
@@ -16,10 +17,7 @@ const userAgents = {
   },
 }
 
-export default async function googleFontsLoader(
-  this: any
-  // googleFontFamily: string
-) {
+export default async function googleFontsLoader(this: any) {
   const callback = this.async()
 
   const pathWithActualCasing: any = await fs.promises.realpath(
@@ -53,6 +51,7 @@ export default async function googleFontsLoader(
       }
     )
     if (!res.ok) {
+      // TODO: Custom error
       throw new Error(
         `Failed to fetch font ${this.resource.slice(
           this.resource.lastIndexOf('next/font/')

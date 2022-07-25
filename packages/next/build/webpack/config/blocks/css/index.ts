@@ -202,7 +202,7 @@ export const css = curry(async function css(
   )
 
   // next/font
-  if (!ctx.experimental.fontModules) {
+  if (!ctx.experimental.fontModules?.enabled) {
     fns.push(
       loader({
         oneOf: [

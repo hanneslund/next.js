@@ -51,8 +51,8 @@ export function getCssModuleLoader(
         // character?
         getLocalIdent: getCssModuleLocalIdent,
       },
-      fontModule: ctx.experimental.fontModules,
-      fallbackFonts: ctx.experimental.fallbackFonts,
+      fontModule: ctx.experimental.fontModules?.enabled,
+      fallbackFonts: ctx.experimental.fontModules?.fallbackFonts,
     },
   })
 

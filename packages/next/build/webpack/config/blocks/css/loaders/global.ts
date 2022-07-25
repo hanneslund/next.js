@@ -29,7 +29,9 @@ export function getGlobalCssLoader(
     options: {
       postcss,
       importLoaders:
-        1 + preProcessors.length + (ctx.experimental.fontModules ? 1 : 0),
+        1 +
+        preProcessors.length +
+        (ctx.experimental.fontModules?.enabled ? 1 : 0),
       // Next.js controls CSS Modules eligibility:
       modules: false,
       url: (url: string, resourcePath: string) =>
@@ -39,7 +41,7 @@ export function getGlobalCssLoader(
     },
   })
 
-  if (ctx.experimental.fontModules) {
+  if (ctx.experimental.fontModules?.enabled) {
     loaders.push({
       loader: 'next-font-error-loader',
       options: {
