@@ -98,7 +98,7 @@ export default class BuildManifestPlugin {
   private isDevFallback: boolean
   private exportRuntime: boolean
   private appDirEnabled: boolean
-  private selfHostFonts: boolean
+  private fontModules: boolean
 
   constructor(options: {
     buildId: string
@@ -106,7 +106,7 @@ export default class BuildManifestPlugin {
     isDevFallback?: boolean
     exportRuntime?: boolean
     appDirEnabled: boolean
-    selfHostFonts: boolean
+    fontModules: boolean
   }) {
     this.buildId = options.buildId
     this.isDevFallback = !!options.isDevFallback
@@ -120,7 +120,7 @@ export default class BuildManifestPlugin {
     this.rewrites.afterFiles = options.rewrites.afterFiles.map(processRoute)
     this.rewrites.fallback = options.rewrites.fallback.map(processRoute)
     this.exportRuntime = !!options.exportRuntime
-    this.selfHostFonts = options.selfHostFonts
+    this.fontModules = options.fontModules
   }
 
   async createAssets(compiler: any, compilation: any, assets: any) {
@@ -214,7 +214,7 @@ export default class BuildManifestPlugin {
         assetMap.pages[pagePath] = [...new Set([...mainFiles, ...filesForPage])]
       }
 
-      if (this.selfHostFonts) {
+      if (this.fontModules) {
         for (const entrypoint of compilation.entrypoints.values()) {
           const pagePath = getRouteFromEntrypoint(entrypoint.name)
 
@@ -337,16 +337,18 @@ function postcssfontstuff(files: string[]) {
         atRule.nodes.forEach(({ prop, value }) => {
           if (prop === 'font-display') {
             if (value === 'swap') {
-              console.log('SWAP: generate fallback font') // DETTA BORDE GÖRAS I LOADER
+              console.log('SWAP: generate fallback font') // DETTA BORDE GÖRAS I LOADER?
             } else if (value === 'optional') {
               console.log('OPTIONAL: PRELOAD')
             }
           } else if (prop === 'src') {
             // kolla omd det är /_next först?
             // eller ska man bara tillåtas ha lokala filer??
-            files.push(value.split('url(/_next/')[1].split(')')[0])
+            const file = value.split('url(/_next/')[1].split(')')[0]
+            if (!files.includes(file)) {
+              files.push(file)
+            }
           }
-          // console.log(node.prop, node.value)
         })
       }
     },

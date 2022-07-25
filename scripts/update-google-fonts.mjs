@@ -7,10 +7,10 @@ async function getFonts() {
     await fetch(
       `https://www.googleapis.com/webfonts/v1/webfonts?key=${process.env.GOOGLE_FONTS_API_KEY}`
     ).then((r) => r.json())
-  ).items.slice(0, 20)
+  ).items
   await Promise.all(
     fonts.map(async (font) => {
-      const id = font.family.replaceAll(' ', '-').toLowerCase()
+      const id = font.family.replaceAll(' ', '-')
 
       const files = Object.keys(font.files).map((file) => {
         if (file === 'regular') return '400.js'
@@ -33,7 +33,7 @@ async function getFonts() {
       await Promise.all(
         files.map(async (file) => {
           const filePath = path.join(fontDir, file)
-          await fs.writeFile(filePath, font.family.replaceAll(' ', '+'))
+          await fs.writeFile(filePath, '')
         })
       )
     })

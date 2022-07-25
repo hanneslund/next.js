@@ -752,12 +752,6 @@ function assignDefaults(userConfig: { [key: string]: any }) {
         `Specified experimental.fontModules should be a boolean, received "${fontModules}"`
       )
     }
-    result.experimental.urlImports = [
-      ...(result.experimental?.urlImports
-        ? result.experimental?.urlImports
-        : []),
-      'https://fonts.gstatic.com/',
-    ]
   }
 
   return result

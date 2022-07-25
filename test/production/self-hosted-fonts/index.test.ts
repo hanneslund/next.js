@@ -74,6 +74,15 @@ describe('self-hosted-fonts enabled', () => {
           fontStyle: 'normal',
         },
       })
+      expect(
+        JSON.parse(await $('#comp-with-fonts-roboto-again').text())
+      ).toEqual({
+        fontClass: expect.any(String),
+        fontStyle: {
+          fontFamily: expect.stringContaining('Roboto Again'),
+          fontStyle: 'normal',
+        },
+      })
     })
   })
 

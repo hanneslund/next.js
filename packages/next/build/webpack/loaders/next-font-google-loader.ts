@@ -1,3 +1,4 @@
+import fs from 'fs'
 // https://github.com/fontsource/google-font-metadata/blob/main/lib/data/user-agents.json
 const userAgents = {
   apiv1: {
@@ -16,12 +17,15 @@ const userAgents = {
 }
 
 export default async function googleFontsLoader(
-  this: any,
-  googleFontFamily: string
+  this: any
+  // googleFontFamily: string
 ) {
   const callback = this.async()
 
-  let [_fontId, fileName] = this.resourcePath
+  const pathWithActualCasing: any = await fs.promises.realpath(
+    this.resourcePath
+  )
+  let [fontId, fileName] = pathWithActualCasing
     .split('next/font/')
     .at(-1)
     .split('/')
@@ -38,9 +42,10 @@ export default async function googleFontsLoader(
 
   try {
     const res = await fetch(
-      `https://fonts.googleapis.com/css2?family=${googleFontFamily}:ital,wght@${
-        style === 'italic' ? 1 : 0
-      },${weight}&display=${display}`,
+      `https://fonts.googleapis.com/css2?family=${fontId.replaceAll(
+        '-',
+        '+'
+      )}:ital,wght@${style === 'italic' ? 1 : 0},${weight}&display=${display}`,
       {
         headers: {
           'user-agent': userAgents.apiv2.woff2,

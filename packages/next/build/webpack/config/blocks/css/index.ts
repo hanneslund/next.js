@@ -3,16 +3,14 @@ import { webpack } from 'next/dist/compiled/webpack/webpack'
 import path from 'path'
 import { loader, plugin } from '../../helpers'
 import { ConfigurationContext, ConfigurationFn, pipe } from '../../utils'
-import {
-  getCssModuleLoader,
-  getGlobalCssLoader,
-  getFontModuleLoader,
-} from './loaders'
+import { getCssModuleLoader, getGlobalCssLoader } from './loaders'
 import {
   getCustomDocumentError,
   getGlobalImportError,
   getGlobalModuleImportError,
   getLocalModuleImportError,
+  getUrlImportFontsError,
+  googleFontGlobalImportError,
 } from './messages'
 import { getPostCssPlugins } from './plugins'
 
@@ -203,18 +201,51 @@ export const css = curry(async function css(
     })
   )
 
+  // next/font
+  if (!ctx.experimental.fontModules) {
+    fns.push(
+      loader({
+        oneOf: [
+          markRemovable({
+            sideEffects: true,
+            test: path.join(__dirname, '../../../../../../font'),
+            issuer: {
+              and: [ctx.rootDirectory],
+              not: [/node_modules/, ctx.customAppFile],
+            },
+            use: {
+              loader: 'error-loader',
+              options: {
+                reason: googleFontGlobalImportError(),
+              },
+            },
+          }),
+        ],
+      })
+    )
+  }
+
   // kolla i loader ist så behövs inte denna?
   fns.push(
     loader({
       oneOf: [
         markRemovable({
-          sideEffects: false,
+          sideEffects: true,
           test: path.join(__dirname, '../../../../../../font'),
           issuer: {
             and: [ctx.rootDirectory],
             not: [/node_modules/],
           },
-          use: getCssModuleLoader(ctx, lazyPostCSSInitializer, undefined, true),
+          use: ctx.experimental.urlImports?.includes?.(
+            'https://fonts.gstatic.com/'
+          )
+            ? getCssModuleLoader(ctx, lazyPostCSSInitializer, undefined, true)
+            : {
+                loader: 'error-loader',
+                options: {
+                  reason: getUrlImportFontsError(),
+                },
+              },
         }),
       ],
     })
