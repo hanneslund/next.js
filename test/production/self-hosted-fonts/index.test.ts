@@ -6,7 +6,7 @@ import { join } from 'path'
 import webdriver from 'next-webdriver'
 
 // _error
-describe('self-hosted-fonts enabled', () => {
+describe('font modules enabled', () => {
   let next: NextInstance
 
   beforeAll(async () => {
@@ -18,7 +18,12 @@ describe('self-hosted-fonts enabled', () => {
       },
       nextConfig: {
         experimental: {
-          fontModules: { enabled: true },
+          fontModules: {
+            enabled: true,
+            fallbackFonts: {
+              'Open Sans': ['system-ui', 'sans-serif'],
+            },
+          },
         },
       },
     })
@@ -43,17 +48,21 @@ describe('self-hosted-fonts enabled', () => {
       expect(JSON.parse(await $('#app-open-sans').text())).toEqual({
         fontClass: expect.any(String),
         fontStyle: {
-          fontFamily: expect.stringContaining('Open Sans'),
+          fontFamily:
+            "'Open Sans-790f768d78fdebf5081feb1fd4b44f96a1333de88978efab76d51da501e04a8c'",
           fontStyle: 'italic',
           fontWeight: '400',
         },
+        // fallbackFonts: ['system-ui', 'sans-serif'],
       })
 
       // with-fonts.js
       expect(JSON.parse(await $('#with-fonts-open-sans').text())).toEqual({
+        // fallbackFonts: ['system-ui', 'sans-serif'],
         fontClass: expect.any(String),
         fontStyle: {
-          fontFamily: expect.stringContaining('Open Sans'),
+          fontFamily:
+            "'Open Sans-790f768d78fdebf5081feb1fd4b44f96a1333de88978efab76d51da501e04a8c'",
           fontStyle: 'italic',
           fontWeight: '400',
         },
@@ -63,14 +72,16 @@ describe('self-hosted-fonts enabled', () => {
       expect(JSON.parse(await $('#comp-with-fonts-inter').text())).toEqual({
         fontClass: expect.any(String),
         fontStyle: {
-          fontFamily: expect.stringContaining('Inter'),
+          fontFamily:
+            "'Inter-96526bc0aeb95ca37e991cddfa4c088732a46a4220fb1a66a15231cfe7259fbc'",
           fontWeight: '500',
         },
       })
       expect(JSON.parse(await $('#comp-with-fonts-roboto').text())).toEqual({
         fontClass: expect.any(String),
         fontStyle: {
-          fontFamily: expect.stringContaining('Roboto'),
+          fontFamily:
+            "'Roboto-385c19dd2c16e4944ae117fd6b0a01a482bb191ff1e96eb0ea2f523728526b3a'",
           fontStyle: 'normal',
         },
       })
@@ -79,7 +90,8 @@ describe('self-hosted-fonts enabled', () => {
       ).toEqual({
         fontClass: expect.any(String),
         fontStyle: {
-          fontFamily: expect.stringContaining('Roboto Again'),
+          fontFamily:
+            "'Roboto Again-6d0f197aa8acb208229991d8834e543bf01dc62a350a65402993c02006f9b680'",
           fontStyle: 'normal',
         },
       })
@@ -95,7 +107,10 @@ describe('self-hosted-fonts enabled', () => {
         await browser.eval(
           'getComputedStyle(document.querySelector("#app-open-sans")).fontFamily'
         )
-      ).toContain('Open Sans')
+      ).toBe(
+        // Includes configured fallback fonts
+        '"Open Sans-790f768d78fdebf5081feb1fd4b44f96a1333de88978efab76d51da501e04a8c", system-ui, sans-serif'
+      )
       expect(
         await browser.eval(
           'getComputedStyle(document.querySelector("#app-open-sans")).fontWeight'
@@ -112,7 +127,10 @@ describe('self-hosted-fonts enabled', () => {
         await browser.eval(
           'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontFamily'
         )
-      ).toContain('Open Sans')
+      ).toBe(
+        // Includes configured fallback fonts
+        '"Open Sans-790f768d78fdebf5081feb1fd4b44f96a1333de88978efab76d51da501e04a8c", system-ui, sans-serif'
+      )
       expect(
         await browser.eval(
           'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontWeight'
@@ -129,7 +147,9 @@ describe('self-hosted-fonts enabled', () => {
         await browser.eval(
           'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontFamily'
         )
-      ).toContain('Inter')
+      ).toBe(
+        'Inter-96526bc0aeb95ca37e991cddfa4c088732a46a4220fb1a66a15231cfe7259fbc'
+      )
       expect(
         await browser.eval(
           'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontWeight'
@@ -145,7 +165,9 @@ describe('self-hosted-fonts enabled', () => {
         await browser.eval(
           'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontFamily'
         )
-      ).toContain('Roboto')
+      ).toBe(
+        'Roboto-385c19dd2c16e4944ae117fd6b0a01a482bb191ff1e96eb0ea2f523728526b3a'
+      )
       expect(
         await browser.eval(
           'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontWeight'
@@ -214,7 +236,7 @@ describe('self-hosted-fonts enabled', () => {
   })
 })
 
-describe('self-hosted-fonts disabled', () => {
+describe('font modules disabled', () => {
   let next: NextInstance
 
   beforeAll(async () => {

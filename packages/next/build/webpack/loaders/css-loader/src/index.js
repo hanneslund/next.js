@@ -4,7 +4,6 @@
 */
 import CssSyntaxError from './CssSyntaxError'
 import Warning from '../../postcss-loader/src/Warning'
-// import { icssParser, importParser, urlParser } from './plugins'
 import { stringifyRequest } from '../../../stringify-request'
 
 const moduleRegExp = /\.module\.\w+$/i
@@ -129,6 +128,7 @@ function normalizeOptions(rawOptions, loaderContext) {
     esModule:
       typeof rawOptions.esModule === 'undefined' ? true : rawOptions.esModule,
     fontModule: rawOptions.fontModule,
+    fallbackFonts: rawOptions.fallbackFonts,
   }
 }
 
@@ -178,7 +178,7 @@ export default async function loader(content, map, meta) {
       const exports = []
 
       if (options.fontModule) {
-        plugins.push(fontModules(exports))
+        plugins.push(fontModules(exports, options.fallbackFonts))
       }
 
       if (shouldUseModulesPlugins(options)) {

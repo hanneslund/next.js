@@ -165,6 +165,14 @@ const plugin = (exports: any[], fallBackFonts: any = {}) => {
         name: 'fontStyle',
         value: fontProperties,
       })
+
+      // Export fallback fonts
+      if (fallBackFonts[fallbackKey]) {
+        exports.push({
+          name: 'fallbackFonts',
+          value: fallBackFonts[fallbackKey],
+        })
+      }
     },
   }
 }

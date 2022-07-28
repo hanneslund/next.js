@@ -1,4 +1,5 @@
 @font-face {
+  /* Font family without ' or " */
   font-family: Inter;
   font-weight: 500;
   src: url(./inter-latin.woff);

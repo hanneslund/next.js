@@ -745,14 +745,14 @@ function assignDefaults(userConfig: { [key: string]: any }) {
     }
   }
 
-  const fontModules = result.experimental?.fontModules
-  if (fontModules) {
-    if (typeof fontModules !== 'boolean') {
-      throw new Error(
-        `Specified experimental.fontModules should be a boolean, received "${fontModules}"`
-      )
-    }
-  }
+  // const fontModules = result.experimental?.fontModules
+  // if (fontModules) {
+  //   if (typeof fontModules !== 'boolean') {
+  //     throw new Error(
+  //       `Specified experimental.fontModules should be a boolean, received "${fontModules}"`
+  //     )
+  //   }
+  // }
 
   return result
 }
