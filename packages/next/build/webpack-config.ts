@@ -58,6 +58,7 @@ import { withoutRSCExtensions } from './utils'
 import browserslist from 'next/dist/compiled/browserslist'
 import loadJsConfig from './load-jsconfig'
 import { loadBindings } from './swc'
+import { clientComponentRegex } from './webpack/loaders/utils'
 
 const watchOptions = Object.freeze({
   aggregateTimeout: 5,
@@ -1271,6 +1272,7 @@ export default async function getBaseWebpackConfig(
         'next-middleware-loader',
         'next-edge-function-loader',
         'next-edge-ssr-loader',
+        'next-middleware-asset-loader',
         'next-middleware-wasm-loader',
         'next-app-loader',
         'next-font-error-loader',
@@ -1320,7 +1322,7 @@ export default async function getBaseWebpackConfig(
                   },
                 },
                 {
-                  test: /(\.client\.(js|cjs|mjs))$|\/next\/(link|image|future\/image|head|script)/,
+                  test: clientComponentRegex,
                   issuerLayer: 'sc_server',
                   use: {
                     loader: 'next-flight-client-loader',
@@ -1533,6 +1535,9 @@ export default async function getBaseWebpackConfig(
         'process.env.__NEXT_NEW_LINK_BEHAVIOR': JSON.stringify(
           config.experimental.newNextLinkBehavior
         ),
+        'process.env.__NEXT_OPTIMISTIC_CLIENT_CACHE': JSON.stringify(
+          config.experimental.optimisticClientCache
+        ),
         'process.env.__NEXT_CROSS_ORIGIN': JSON.stringify(crossOrigin),
         'process.browser': JSON.stringify(isClient),
         'process.env.__NEXT_TEST_MODE': JSON.stringify(
@@ -1575,6 +1580,7 @@ export default async function getBaseWebpackConfig(
           imageSizes: config.images.imageSizes,
           path: config.images.path,
           loader: config.images.loader,
+          dangerouslyAllowSVG: config.images.dangerouslyAllowSVG,
           experimentalUnoptimized: config?.experimental?.images?.unoptimized,
           experimentalFuture: config.experimental?.images?.allowFutureImage,
           ...(dev
@@ -1777,6 +1783,16 @@ export default async function getBaseWebpackConfig(
       loader: 'next-middleware-wasm-loader',
       type: 'javascript/auto',
       resourceQuery: /module/i,
+    })
+    webpack5Config.module?.rules?.unshift({
+      dependency: 'url',
+      loader: 'next-middleware-asset-loader',
+      type: 'javascript/auto',
+      layer: 'edge-asset',
+    })
+    webpack5Config.module?.rules?.unshift({
+      issuerLayer: 'edge-asset',
+      type: 'asset/source',
     })
   }
 
