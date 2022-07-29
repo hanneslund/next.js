@@ -1,6 +1,6 @@
-import inter from '../fonts/inter.module.css'
-import roboto from '../fonts/roboto.module.css'
-import robotoAgain from '../fonts/roboto-again.module.css'
+import inter from '../fonts/inter.font.css'
+import roboto from '../fonts/roboto.font.css'
+import robotoAgain from '../fonts/roboto-again.font.css'
 
 export default function Component() {
   return (

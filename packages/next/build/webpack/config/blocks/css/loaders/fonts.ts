@@ -4,10 +4,10 @@ import { getClientStyleLoader } from './client'
 import { cssFileResolve } from './file-resolve'
 import { getCssModuleLocalIdent } from './getCssModuleLocalIdent'
 
-export function getCssModuleLoader(
+export function getFontModuleLoader(
   ctx: ConfigurationContext,
   postcss: any,
-  preProcessors: readonly webpack.RuleSetUseItem[] = []
+  isGoogleFonts: boolean
 ): webpack.RuleSetUseItem[] {
   const loaders: webpack.RuleSetUseItem[] = []
 
@@ -28,10 +28,7 @@ export function getCssModuleLoader(
     loader: require.resolve('../../../../loaders/css-loader/src'),
     options: {
       postcss,
-      importLoaders:
-        1 +
-        preProcessors.length +
-        (ctx.experimental.fontModules?.enabled ? 1 : 0),
+      importLoaders: isGoogleFonts ? 1 : 0,
       // Use CJS mode for backwards compatibility:
       esModule: false,
       url: (url: string, resourcePath: string) =>
@@ -53,31 +50,16 @@ export function getCssModuleLoader(
         // character?
         getLocalIdent: getCssModuleLocalIdent,
       },
+      fontModule: true,
+      fallbackFonts: ctx.experimental.fontModules?.fallbackFonts,
     },
   })
 
-  if (ctx.experimental.fontModules?.enabled) {
+  if (isGoogleFonts) {
     loaders.push({
-      loader: 'next-font-error-loader',
-      options: {
-        postcss,
-      },
+      loader: 'next-font-google-loader',
     })
   }
-
-  // Compile CSS
-  loaders.push({
-    loader: require.resolve('../../../../loaders/postcss-loader/src'),
-    options: {
-      postcss,
-    },
-  })
-
-  loaders.push(
-    // Webpack loaders run like a stack, so we need to reverse the natural
-    // order of preprocessors.
-    ...preProcessors.slice().reverse()
-  )
 
   return loaders
 }

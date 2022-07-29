@@ -1,4 +1,4 @@
-import openSans from '../fonts/open-sans.module.css'
+import openSans from '../fonts/open-sans.font.css'
 
 function MyApp({ Component, pageProps }) {
   return (

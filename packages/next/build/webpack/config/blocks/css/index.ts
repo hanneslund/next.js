@@ -4,6 +4,7 @@ import path from 'path'
 import { loader, plugin } from '../../helpers'
 import { ConfigurationContext, ConfigurationFn, pipe } from '../../utils'
 import { getCssModuleLoader, getGlobalCssLoader } from './loaders'
+import { getFontModuleLoader } from './loaders/fonts'
 import {
   getCustomDocumentError,
   getGlobalImportError,
@@ -225,33 +226,56 @@ export const css = curry(async function css(
         ],
       })
     )
-  }
-
-  // kolla i loader ist så behövs inte denna?
-  fns.push(
-    loader({
-      oneOf: [
-        markRemovable({
-          sideEffects: true,
-          test: path.join(__dirname, '../../../../../../font'),
-          issuer: {
-            and: [ctx.rootDirectory],
-            not: [/node_modules/],
-          },
-          use: ctx.experimental.urlImports?.includes?.(
-            'https://fonts.gstatic.com/'
-          )
-            ? getCssModuleLoader(ctx, lazyPostCSSInitializer, undefined, true)
-            : {
-                loader: 'error-loader',
-                options: {
-                  reason: getUrlImportFontsError(),
+  } else {
+    // kolla i loader ist så behövs inte denna?
+    // resource path typ?
+    fns.push(
+      loader({
+        oneOf: [
+          markRemovable({
+            sideEffects: false,
+            test: path.join(__dirname, '../../../../../../font'),
+            issuer: {
+              and: [ctx.rootDirectory],
+              not: [/node_modules/],
+            },
+            use: ctx.experimental.urlImports?.includes?.(
+              'https://fonts.gstatic.com/'
+            )
+              ? getFontModuleLoader(ctx, lazyPostCSSInitializer, true)
+              : {
+                  loader: 'error-loader',
+                  options: {
+                    reason: getUrlImportFontsError(),
+                  },
                 },
-              },
-        }),
-      ],
-    })
-  )
+          }),
+        ],
+      })
+    )
+
+    fns.push(
+      loader({
+        oneOf: [
+          markRemovable({
+            sideEffects: false, //???
+            test: regexFontModule,
+            // CSS Modules are only supported in the user's application. We're
+            // not yet allowing CSS imports _within_ `node_modules`.
+            // issuer: {
+            //   and: [
+            //     {
+            //       or: [ctx.rootDirectory, regexClientEntry],
+            //     },
+            //   ],
+            //   not: [/node_modules/],
+            // },
+            use: getFontModuleLoader(ctx, lazyPostCSSInitializer, false),
+          }),
+        ],
+      })
+    )
+  }
 
   // CSS Modules support must be enabled on the server and client so the class
   // names are available for SSR or Prerendering.

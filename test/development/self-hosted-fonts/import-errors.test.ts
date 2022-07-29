@@ -73,8 +73,6 @@ describe('import-errors, fontModules enabled', () => {
     await next.patchFile(
       'pages/_app.js',
       `
-    import './styles.css'
-
     function MyApp({ Component, pageProps }) {
       return <Component {...pageProps} />
     }
@@ -82,7 +80,6 @@ describe('import-errors, fontModules enabled', () => {
     export default MyApp
     `
     )
-    await next.patchFile('pages/styles.css', ``)
     await next.patchFile(
       'pages/index.js',
       `export default () => <p>Hello world!</p>`
@@ -117,6 +114,44 @@ describe('import-errors, fontModules enabled', () => {
     await check(() => getRedboxSource(browser), /Found @font-face/)
     expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
 "./pages/styles.css:2:7
+Syntax error: Found @font-face in CSS file
+Read more: https://www.nextjs.org/fontmodules
+
+  1 | 
+> 2 |       @font-face {
+    |       ^
+  3 |         font-family: 'Inter';
+  4 |         src: url(/Inter.woff);"
+`)
+  })
+
+  test('@font-face in CSS module import', async () => {
+    const browser = await webdriver(next.appPort, '/')
+    await next.patchFile(
+      'pages/_app.js',
+      `
+     import './styles.module.css'
+ 
+     function MyApp({ Component, pageProps }) {
+       return <Component {...pageProps} />
+     }
+ 
+     export default MyApp
+     `
+    )
+    await next.patchFile(
+      'pages/styles.module.css',
+      `
+      @font-face {
+        font-family: 'Inter';
+        src: url(/Inter.woff);
+      }
+      `
+    )
+
+    await check(() => getRedboxSource(browser), /Found @font-face/)
+    expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
+"./pages/styles.module.css:2:7
 Syntax error: Found @font-face in CSS file
 Read more: https://www.nextjs.org/fontmodules
 

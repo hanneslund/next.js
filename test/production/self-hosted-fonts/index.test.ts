@@ -31,15 +31,6 @@ describe('font modules enabled', () => {
   afterAll(() => next.destroy())
 
   describe('import', () => {
-    test('css module without font face', async () => {
-      const html = await renderViaHTTP(next.url, '/without-fonts')
-      const $ = cheerio.load(html)
-
-      expect(
-        JSON.parse(await $('#css-module-without-font-face').text())
-      ).toEqual({})
-    })
-
     test('css modules with font face', async () => {
       const html = await renderViaHTTP(next.url, '/with-fonts')
       const $ = cheerio.load(html)
@@ -242,9 +233,11 @@ describe('font modules disabled', () => {
   beforeAll(async () => {
     next = await createNext({
       files: {
-        pages: new FileRef(join(__dirname, 'app/pages')),
+        'pages/without-fonts.js': new FileRef(
+          join(__dirname, 'app/pages/without-fonts.js')
+        ),
+        'pages/_app.js': new FileRef(join(__dirname, 'app/pages/_app.js')),
         fonts: new FileRef(join(__dirname, 'app/fonts')),
-        components: new FileRef(join(__dirname, 'app/components')),
       },
     })
   })
@@ -255,35 +248,11 @@ describe('font modules disabled', () => {
       const html = await renderViaHTTP(next.url, '/without-fonts')
       const $ = cheerio.load(html)
 
-      expect(
-        JSON.parse(await $('#css-module-without-font-face').text())
-      ).toEqual({})
-    })
-
-    test('css modules with font face', async () => {
-      const html = await renderViaHTTP(next.url, '/with-fonts')
-      const $ = cheerio.load(html)
-
-      // _app.js
-      expect(JSON.parse(await $('#app-open-sans').text())).toEqual({})
-
-      // with-fonts.js
-      expect(JSON.parse(await $('#with-fonts-open-sans').text())).toEqual({})
-
-      // CompWithFonts.js
-      expect(JSON.parse(await $('#comp-with-fonts-inter').text())).toEqual({})
-      expect(JSON.parse(await $('#comp-with-fonts-roboto').text())).toEqual({})
+      expect(JSON.parse(await $('#app-open-sans').text())).toEqual({}) // treated as global CSS
     })
   })
 
   describe('preload', () => {
-    test('page with fonts', async () => {
-      const html = await renderViaHTTP(next.url, '/with-fonts')
-      const $ = cheerio.load(html)
-
-      expect($('link[as="font"]').length).toBe(0)
-    })
-
     test('page without fonts', async () => {
       const html = await renderViaHTTP(next.url, '/without-fonts')
       const $ = cheerio.load(html)

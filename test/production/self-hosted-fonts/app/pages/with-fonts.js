@@ -1,4 +1,4 @@
-import openSans from '../fonts/open-sans.module.css' // also in _app
+import openSans from '../fonts/open-sans.font.css' // also in _app
 import CompWithFonts from '../components/CompWithFonts'
 
 export default function WithFonts() {
