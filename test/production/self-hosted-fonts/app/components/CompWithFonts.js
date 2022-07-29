@@ -5,13 +5,13 @@ import robotoAgain from '../fonts/roboto-again.module.css'
 export default function Component() {
   return (
     <>
-      <div id="comp-with-fonts-inter" className={inter.fontClass}>
+      <div id="comp-with-fonts-inter" className={inter.className}>
         {JSON.stringify(inter)}
       </div>
-      <div id="comp-with-fonts-roboto" className={roboto.fontClass}>
+      <div id="comp-with-fonts-roboto" className={roboto.className}>
         {JSON.stringify(roboto)}
       </div>
-      <div id="comp-with-fonts-roboto-again" className={robotoAgain.fontClass}>
+      <div id="comp-with-fonts-roboto-again" className={robotoAgain.className}>
         {JSON.stringify(robotoAgain)}
       </div>
     </>

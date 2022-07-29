@@ -3,7 +3,7 @@ import openSans from '../fonts/open-sans.module.css'
 function MyApp({ Component, pageProps }) {
   return (
     <>
-      <div id="app-open-sans" className={openSans.fontClass}>
+      <div id="app-open-sans" className={openSans.className}>
         {JSON.stringify(openSans)}
       </div>
       <Component {...pageProps} />

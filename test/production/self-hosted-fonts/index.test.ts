@@ -47,8 +47,8 @@ describe('font modules enabled', () => {
       // _app.js
       expect(JSON.parse(await $('#app-open-sans').text())).toEqual({
         fallbackFonts: ['system-ui', 'sans-serif'],
-        fontClass: expect.any(String),
-        fontStyle: {
+        className: expect.any(String),
+        style: {
           fontFamily:
             "'Open Sans-97c8345a46f36ef9161cc5e075dd05e73e8c45213e38587baef6f4f4286f0384'",
           fontStyle: 'italic',
@@ -59,8 +59,8 @@ describe('font modules enabled', () => {
       // with-fonts.js
       expect(JSON.parse(await $('#with-fonts-open-sans').text())).toEqual({
         fallbackFonts: ['system-ui', 'sans-serif'],
-        fontClass: expect.any(String),
-        fontStyle: {
+        className: expect.any(String),
+        style: {
           fontFamily:
             "'Open Sans-97c8345a46f36ef9161cc5e075dd05e73e8c45213e38587baef6f4f4286f0384'",
           fontStyle: 'italic',
@@ -70,16 +70,16 @@ describe('font modules enabled', () => {
 
       // CompWithFonts.js
       expect(JSON.parse(await $('#comp-with-fonts-inter').text())).toEqual({
-        fontClass: expect.any(String),
-        fontStyle: {
+        className: expect.any(String),
+        style: {
           fontFamily:
             "'Inter-96526bc0aeb95ca37e991cddfa4c088732a46a4220fb1a66a15231cfe7259fbc'",
           fontWeight: '500',
         },
       })
       expect(JSON.parse(await $('#comp-with-fonts-roboto').text())).toEqual({
-        fontClass: expect.any(String),
-        fontStyle: {
+        className: expect.any(String),
+        style: {
           fontFamily:
             "'Roboto-385c19dd2c16e4944ae117fd6b0a01a482bb191ff1e96eb0ea2f523728526b3a'",
           fontStyle: 'normal',
@@ -88,8 +88,8 @@ describe('font modules enabled', () => {
       expect(
         JSON.parse(await $('#comp-with-fonts-roboto-again').text())
       ).toEqual({
-        fontClass: expect.any(String),
-        fontStyle: {
+        className: expect.any(String),
+        style: {
           fontFamily:
             "'Roboto Again-6d0f197aa8acb208229991d8834e543bf01dc62a350a65402993c02006f9b680'",
           fontStyle: 'normal',

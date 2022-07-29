@@ -131,7 +131,7 @@ const plugin = (exports: any[], fallBackFonts: any = {}) => {
       if (fallbackKey[0] === '"' || fallbackKey[0] === "'") {
         fallbackKey = fallbackKey.slice(1, fallbackKey.length - 1)
       }
-      const classRule = new postcss.Rule({ selector: '.fontClass' })
+      const classRule = new postcss.Rule({ selector: '.className' })
       const declarations = [
         new postcss.Declaration({
           prop: 'font-family',
@@ -162,7 +162,7 @@ const plugin = (exports: any[], fallBackFonts: any = {}) => {
 
       // Export @font-face values
       exports.push({
-        name: 'fontStyle',
+        name: 'style',
         value: fontProperties,
       })
 
