@@ -50,7 +50,6 @@ mod auto_cjs;
 pub mod disallow_re_export_all_in_page;
 pub mod hook_optimizer;
 pub mod next_dynamic;
-pub mod next_font;
 pub mod next_ssg;
 pub mod page_config;
 pub mod react_remove_properties;
@@ -105,9 +104,6 @@ pub struct TransformOptions {
 
     #[serde(default)]
     pub modularize_imports: Option<modularize_imports::Config>,
-
-    #[serde(default)]
-    pub fonts: Option<next_font::Config>,
 }
 
 pub fn custom_before_pass<'a, C: Comments + 'a>(
@@ -197,10 +193,6 @@ pub fn custom_before_pass<'a, C: Comments + 'a>(
             .unwrap_or_else(|| Either::Right(noop())),
         match &opts.modularize_imports {
             Some(config) => Either::Left(modularize_imports::modularize_imports(config.clone())),
-            None => Either::Right(noop()),
-        },
-        match &opts.fonts {
-            Some(fonts) => Either::Left(next_font::next_font(fonts.clone())),
             None => Either::Right(noop()),
         }
     )

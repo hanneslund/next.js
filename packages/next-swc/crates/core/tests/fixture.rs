@@ -1,7 +1,6 @@
 use next_swc::{
     amp_attributes::amp_attributes,
     next_dynamic::next_dynamic,
-    next_font,
     next_ssg::next_ssg,
     page_config::page_config_test,
     react_remove_properties::remove_properties,
@@ -9,7 +8,7 @@ use next_swc::{
     remove_console::remove_console,
     shake_exports::{shake_exports, Config as ShakeExportsConfig},
 };
-use std::{collections::HashMap, path::PathBuf};
+use std::path::PathBuf;
 use swc_common::{chain, comments::SingleThreadedComments, FileName, Mark};
 use swc_ecma_transforms_testing::{test, test_fixture};
 use swc_ecmascript::{
@@ -206,42 +205,6 @@ fn shake_exports_fixture_default(input: PathBuf) {
                 ignore: vec![String::from("default").into()],
             })
         },
-        &input,
-        &output,
-    );
-}
-
-#[fixture("tests/fixture/next-font/1/input.js")]
-fn next_font_fixture(input: PathBuf) {
-    let output = input.parent().unwrap().join("output.js");
-    let config = next_font::Config {
-        preload_font_files: None,
-        import_css_files: Some(vec![
-            String::from("/pages/_font.css"),
-            String::from("/pages/b/_font.css"),
-        ]),
-    };
-    test_fixture(
-        syntax(),
-        &|_tr| next_font::next_font(config.clone(), true),
-        &input,
-        &output,
-    );
-}
-
-#[fixture("tests/fixture/next-font/2/input.js")]
-fn next_font_fixture2(input: PathBuf) {
-    let output = input.parent().unwrap().join("output.js");
-    let config = next_font::Config {
-        preload_font_files: Some(vec![
-            String::from("/_next/static/fonts/Inter.woff2"),
-            String::from("/_next/static/fonts/Roboto.woff2"),
-        ]),
-        import_css_files: None,
-    };
-    test_fixture(
-        syntax(),
-        &|_tr| next_font::next_font(config.clone(), false),
         &input,
         &output,
     );
