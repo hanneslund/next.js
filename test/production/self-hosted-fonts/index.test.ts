@@ -46,23 +46,23 @@ describe('font modules enabled', () => {
 
       // _app.js
       expect(JSON.parse(await $('#app-open-sans').text())).toEqual({
+        fallbackFonts: ['system-ui', 'sans-serif'],
         fontClass: expect.any(String),
         fontStyle: {
           fontFamily:
-            "'Open Sans-790f768d78fdebf5081feb1fd4b44f96a1333de88978efab76d51da501e04a8c'",
+            "'Open Sans-97c8345a46f36ef9161cc5e075dd05e73e8c45213e38587baef6f4f4286f0384'",
           fontStyle: 'italic',
           fontWeight: '400',
         },
-        // fallbackFonts: ['system-ui', 'sans-serif'],
       })
 
       // with-fonts.js
       expect(JSON.parse(await $('#with-fonts-open-sans').text())).toEqual({
-        // fallbackFonts: ['system-ui', 'sans-serif'],
+        fallbackFonts: ['system-ui', 'sans-serif'],
         fontClass: expect.any(String),
         fontStyle: {
           fontFamily:
-            "'Open Sans-790f768d78fdebf5081feb1fd4b44f96a1333de88978efab76d51da501e04a8c'",
+            "'Open Sans-97c8345a46f36ef9161cc5e075dd05e73e8c45213e38587baef6f4f4286f0384'",
           fontStyle: 'italic',
           fontWeight: '400',
         },
@@ -109,7 +109,7 @@ describe('font modules enabled', () => {
         )
       ).toBe(
         // Includes configured fallback fonts
-        '"Open Sans-790f768d78fdebf5081feb1fd4b44f96a1333de88978efab76d51da501e04a8c", system-ui, sans-serif'
+        '"Open Sans-97c8345a46f36ef9161cc5e075dd05e73e8c45213e38587baef6f4f4286f0384", system-ui, sans-serif'
       )
       expect(
         await browser.eval(
@@ -129,7 +129,7 @@ describe('font modules enabled', () => {
         )
       ).toBe(
         // Includes configured fallback fonts
-        '"Open Sans-790f768d78fdebf5081feb1fd4b44f96a1333de88978efab76d51da501e04a8c", system-ui, sans-serif'
+        '"Open Sans-97c8345a46f36ef9161cc5e075dd05e73e8c45213e38587baef6f4f4286f0384", system-ui, sans-serif'
       )
       expect(
         await browser.eval(
