@@ -113,7 +113,7 @@ describe('font modules enabled', () => {
         )
       ).toBe('italic')
 
-      //   // with-fonts.js
+      // with-fonts.js
       expect(
         await browser.eval(
           'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontFamily'
@@ -130,6 +130,16 @@ describe('font modules enabled', () => {
       expect(
         await browser.eval(
           'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontStyle'
+        )
+      ).toBe('italic')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#with-fonts-open-sans-style")).fontWeight'
+        )
+      ).toBe('400')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#with-fonts-open-sans-style")).fontStyle'
         )
       ).toBe('italic')
 

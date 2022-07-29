@@ -124,7 +124,9 @@ const plugin = (exports: any[], fallBackFonts: any = {}) => {
         }
       }
 
-      if (!fontProperties.fontFamily) return
+      if (!fontProperties.fontFamily) {
+        throw root.error('A font module needs a @font-face declaration')
+      }
 
       // Add font class
       let fallbackKey = rawFontFamily as string

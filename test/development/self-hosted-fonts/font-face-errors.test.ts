@@ -10,10 +10,10 @@ describe('font-face-errors, fontModules enabled', () => {
     next = await createNext({
       files: {
         'pages/index.js': `
-        import './inter.module.css'
+        import './inter.font.css'
         export default () => null`,
 
-        'pages/inter.module.css': '',
+        'pages/inter.font.css': '',
 
         'pages/inter.woff2': ``,
       },
@@ -32,7 +32,7 @@ describe('font-face-errors, fontModules enabled', () => {
   test('missing font-family', async () => {
     const browser = await webdriver(next.appPort, '/')
     await next.patchFile(
-      'pages/inter.module.css',
+      'pages/inter.font.css',
       `
     @font-face {
       src: url(./inter.woff2);
@@ -41,7 +41,7 @@ describe('font-face-errors, fontModules enabled', () => {
 
     await check(() => getRedboxSource(browser), /Missing font-family/)
     expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
-"./pages/inter.module.css:2:5
+"./pages/inter.font.css:2:5
 Syntax error: Missing font-family in @font-face
 
   1 | 
@@ -55,7 +55,7 @@ Syntax error: Missing font-family in @font-face
   test('missing src', async () => {
     const browser = await webdriver(next.appPort, '/')
     await next.patchFile(
-      'pages/inter.module.css',
+      'pages/inter.font.css',
       `
     @font-face {
       font-family: 'Inter';
@@ -64,7 +64,7 @@ Syntax error: Missing font-family in @font-face
 
     await check(() => getRedboxSource(browser), /Missing src/)
     expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
-"./pages/inter.module.css:2:5
+"./pages/inter.font.css:2:5
 Syntax error: Missing src in @font-face
 
   1 | 
@@ -79,7 +79,7 @@ Syntax error: Missing src in @font-face
     const browser = await webdriver(next.appPort, '/')
 
     await next.patchFile(
-      'pages/inter.module.css',
+      'pages/inter.font.css',
       `
     @font-face {
       font-family: 'Inter One';
@@ -94,7 +94,7 @@ Syntax error: Missing src in @font-face
 
     await check(() => getRedboxSource(browser), /families must match/)
     expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
-"./pages/inter.module.css:8:7
+"./pages/inter.font.css:8:7
 Syntax error: @font-face families must match
 
    6 |     
@@ -110,7 +110,7 @@ Syntax error: @font-face families must match
     const browser = await webdriver(next.appPort, '/')
 
     await next.patchFile(
-      'pages/inter.module.css',
+      'pages/inter.font.css',
       `
     @font-face {
       font-family: 'Inter';
@@ -127,7 +127,7 @@ Syntax error: @font-face families must match
 
     await check(() => getRedboxSource(browser), /weights must match/)
     expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
-"./pages/inter.module.css:10:7
+"./pages/inter.font.css:10:7
 Syntax error: @font-face weights must match
 
    8 |     @font-face {
@@ -143,7 +143,7 @@ Syntax error: @font-face weights must match
     const browser = await webdriver(next.appPort, '/')
 
     await next.patchFile(
-      'pages/inter.module.css',
+      'pages/inter.font.css',
       `
     @font-face {
       font-family: 'Inter';
@@ -159,7 +159,7 @@ Syntax error: @font-face weights must match
 
     await check(() => getRedboxSource(browser), /weights must match/)
     expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
-"./pages/inter.module.css:9:7
+"./pages/inter.font.css:9:7
 Syntax error: @font-face weights must match
 
    7 |     @font-face {
@@ -175,7 +175,7 @@ Syntax error: @font-face weights must match
     const browser = await webdriver(next.appPort, '/')
 
     await next.patchFile(
-      'pages/inter.module.css',
+      'pages/inter.font.css',
       `
     @font-face {
       font-family: 'Inter';
@@ -191,7 +191,7 @@ Syntax error: @font-face weights must match
 
     await check(() => getRedboxSource(browser), /weights must match/)
     expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
-"./pages/inter.module.css:8:5
+"./pages/inter.font.css:8:5
 Syntax error: @font-face weights must match
 
    6 |     }
@@ -207,7 +207,7 @@ Syntax error: @font-face weights must match
     const browser = await webdriver(next.appPort, '/')
 
     await next.patchFile(
-      'pages/inter.module.css',
+      'pages/inter.font.css',
       `
     @font-face {
       font-family: 'Inter';
@@ -224,7 +224,7 @@ Syntax error: @font-face weights must match
 
     await check(() => getRedboxSource(browser), /styles must match/)
     expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
-"./pages/inter.module.css:10:7
+"./pages/inter.font.css:10:7
 Syntax error: @font-face styles must match
 
    8 |     @font-face {
@@ -240,7 +240,7 @@ Syntax error: @font-face styles must match
     const browser = await webdriver(next.appPort, '/')
 
     await next.patchFile(
-      'pages/inter.module.css',
+      'pages/inter.font.css',
       `
     @font-face {
       font-family: 'Inter';
@@ -256,7 +256,7 @@ Syntax error: @font-face styles must match
 
     await check(() => getRedboxSource(browser), /styles must match/)
     expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
-"./pages/inter.module.css:9:7
+"./pages/inter.font.css:9:7
 Syntax error: @font-face styles must match
 
    7 |     @font-face {
@@ -272,7 +272,7 @@ Syntax error: @font-face styles must match
     const browser = await webdriver(next.appPort, '/')
 
     await next.patchFile(
-      'pages/inter.module.css',
+      'pages/inter.font.css',
       `
     @font-face {
       font-family: 'Inter';
@@ -288,7 +288,7 @@ Syntax error: @font-face styles must match
 
     await check(() => getRedboxSource(browser), /styles must match/)
     expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
-"./pages/inter.module.css:8:5
+"./pages/inter.font.css:8:5
 Syntax error: @font-face styles must match
 
    6 |     }
@@ -304,7 +304,7 @@ Syntax error: @font-face styles must match
     const browser = await webdriver(next.appPort, '/')
 
     await next.patchFile(
-      'pages/inter.module.css',
+      'pages/inter.font.css',
       `
     @font-face {
       font-family: 'Inter';
@@ -320,7 +320,7 @@ Syntax error: @font-face styles must match
 
     await check(() => getRedboxSource(browser), /unicode-range/)
     expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
-"./pages/inter.module.css:2:5
+"./pages/inter.font.css:2:5
 Syntax error: Expected unicode-range when defining multiple font faces
 
   1 | 
@@ -335,7 +335,7 @@ Syntax error: Expected unicode-range when defining multiple font faces
     const browser = await webdriver(next.appPort, '/')
 
     await next.patchFile(
-      'pages/inter.module.css',
+      'pages/inter.font.css',
       `
     @font-face {
       font-family: 'Inter';
@@ -351,7 +351,7 @@ Syntax error: Expected unicode-range when defining multiple font faces
 
     await check(() => getRedboxSource(browser), /unicode-range/)
     expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
-"./pages/inter.module.css:8:5
+"./pages/inter.font.css:8:5
 Syntax error: Expected unicode-range when defining multiple font faces
 
    6 |     }
@@ -367,7 +367,7 @@ Syntax error: Expected unicode-range when defining multiple font faces
     const browser = await webdriver(next.appPort, '/')
 
     await next.patchFile(
-      'pages/inter.module.css',
+      'pages/inter.font.css',
       `
     @font-face {
       font-family: 'Inter';
@@ -382,7 +382,7 @@ Syntax error: Expected unicode-range when defining multiple font faces
 
     await check(() => getRedboxSource(browser), /unicode-range/)
     expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
-"./pages/inter.module.css:2:5
+"./pages/inter.font.css:2:5
 Syntax error: Expected unicode-range when defining multiple font faces
 
   1 | 
@@ -397,7 +397,7 @@ Syntax error: Expected unicode-range when defining multiple font faces
     const browser = await webdriver(next.appPort, '/')
 
     await next.patchFile(
-      'pages/inter.module.css',
+      'pages/inter.font.css',
       `
     @font-face {
       font-family: 'Inter';
@@ -414,7 +414,7 @@ Syntax error: Expected unicode-range when defining multiple font faces
 
     await check(() => getRedboxSource(browser), /unicode-range/)
     expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
-"./pages/inter.module.css:11:7
+"./pages/inter.font.css:11:7
 Syntax error: Found duplicate unicode-range
 
    9 |       font-family: 'Inter';
@@ -428,11 +428,11 @@ Syntax error: Found duplicate unicode-range
   test('setting .fontStyle', async () => {
     const browser = await webdriver(next.appPort, '/')
 
-    await next.patchFile('pages/inter.module.css', '.fontStyle{}')
+    await next.patchFile('pages/inter.font.css', '.fontStyle{}')
 
     await check(() => getRedboxSource(browser), /is reserved/)
     expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
-"./pages/inter.module.css:1:1
+"./pages/inter.font.css:1:1
 Syntax error: \\"fontStyle\\" is reserved when using font modules
 
 > 1 | .fontStyle{}
@@ -443,11 +443,11 @@ Syntax error: \\"fontStyle\\" is reserved when using font modules
   test('setting #fontClass', async () => {
     const browser = await webdriver(next.appPort, '/')
 
-    await next.patchFile('pages/inter.module.css', '#fontClass{}')
+    await next.patchFile('pages/inter.font.css', '#fontClass{}')
 
     await check(() => getRedboxSource(browser), /is reserved/)
     expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
-"./pages/inter.module.css:1:1
+"./pages/inter.font.css:1:1
 Syntax error: \\"fontClass\\" is reserved when using font modules
 
 > 1 | #fontClass{}
@@ -463,10 +463,10 @@ describe('font-face-errors, fontModules disabled', () => {
     next = await createNext({
       files: {
         'pages/index.js': `
-        import './inter.module.css'
+        import './inter.font.css'
         export default () => <p>Hello world</p>`,
 
-        'pages/inter.module.css': `
+        'pages/inter.font.css': `
         @font-face {
           font-family: 'Inter';
           src: url(./inter.woff2);

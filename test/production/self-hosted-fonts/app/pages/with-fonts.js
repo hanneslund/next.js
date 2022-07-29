@@ -8,6 +8,7 @@ export default function WithFonts() {
       <div id="with-fonts-open-sans" className={openSans.className}>
         {JSON.stringify(openSans)}
       </div>
+      <div id="with-fonts-open-sans-style" style={openSans.style} />
     </>
   )
 }
