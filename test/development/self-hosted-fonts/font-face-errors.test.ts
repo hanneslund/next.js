@@ -13,7 +13,12 @@ describe('font-face-errors, fontModules enabled', () => {
         import './inter.font.css'
         export default () => null`,
 
-        'pages/inter.font.css': '',
+        'pages/inter.font.css': `
+        @font-face {
+          font-family: 'Inter';
+          src: url(./inter.woff2);
+        }
+        `,
 
         'pages/inter.woff2': ``,
       },
@@ -25,9 +30,6 @@ describe('font-face-errors, fontModules enabled', () => {
     })
   })
   afterAll(() => next.destroy())
-  // abort each browser??
-  // abort each browser??
-  // abort each browser??
 
   test('missing font-family', async () => {
     const browser = await webdriver(next.appPort, '/')
@@ -422,6 +424,18 @@ Syntax error: Found duplicate unicode-range
 > 11 |       unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
      |       ^
   12 |     }"
+`)
+  })
+
+  test('Missing @font-face', async () => {
+    const browser = await webdriver(next.appPort, '/')
+
+    await next.patchFile('pages/inter.font.css', '')
+
+    await check(() => getRedboxSource(browser), /font-face declaration/)
+    expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
+"./pages/inter.font.css:1:1
+Syntax error: A font module needs a @font-face declaration"
 `)
   })
 })
