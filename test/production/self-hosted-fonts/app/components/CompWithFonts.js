@@ -14,6 +14,9 @@ export default function Component() {
       <div id="comp-with-fonts-roboto-again" className={robotoAgain.className}>
         {JSON.stringify(robotoAgain)}
       </div>
+      <div id="roboto-with-fallback-fonts" className={roboto.withFallbackFonts}>
+        Roboto with fallback fonts
+      </div>
     </>
   )
 }

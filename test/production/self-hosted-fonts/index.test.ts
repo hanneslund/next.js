@@ -41,7 +41,7 @@ describe('font modules enabled', () => {
         className: expect.any(String),
         style: {
           fontFamily:
-            "'Open Sans-97c8345a46f36ef9161cc5e075dd05e73e8c45213e38587baef6f4f4286f0384'",
+            "'Open Sans-790f768d78fdebf5081feb1fd4b44f96a1333de88978efab76d51da501e04a8c'",
           fontStyle: 'italic',
           fontWeight: '400',
         },
@@ -53,7 +53,7 @@ describe('font modules enabled', () => {
         className: expect.any(String),
         style: {
           fontFamily:
-            "'Open Sans-97c8345a46f36ef9161cc5e075dd05e73e8c45213e38587baef6f4f4286f0384'",
+            "'Open Sans-790f768d78fdebf5081feb1fd4b44f96a1333de88978efab76d51da501e04a8c'",
           fontStyle: 'italic',
           fontWeight: '400',
         },
@@ -75,6 +75,7 @@ describe('font modules enabled', () => {
             "'Roboto-385c19dd2c16e4944ae117fd6b0a01a482bb191ff1e96eb0ea2f523728526b3a'",
           fontStyle: 'normal',
         },
+        withFallbackFonts: expect.any(String),
       })
       expect(
         JSON.parse(await $('#comp-with-fonts-roboto-again').text())
@@ -100,7 +101,7 @@ describe('font modules enabled', () => {
         )
       ).toBe(
         // Includes configured fallback fonts
-        '"Open Sans-97c8345a46f36ef9161cc5e075dd05e73e8c45213e38587baef6f4f4286f0384", system-ui, sans-serif'
+        '"Open Sans-790f768d78fdebf5081feb1fd4b44f96a1333de88978efab76d51da501e04a8c", system-ui, sans-serif'
       )
       expect(
         await browser.eval(
@@ -120,7 +121,7 @@ describe('font modules enabled', () => {
         )
       ).toBe(
         // Includes configured fallback fonts
-        '"Open Sans-97c8345a46f36ef9161cc5e075dd05e73e8c45213e38587baef6f4f4286f0384", system-ui, sans-serif'
+        '"Open Sans-790f768d78fdebf5081feb1fd4b44f96a1333de88978efab76d51da501e04a8c", system-ui, sans-serif'
       )
       expect(
         await browser.eval(
@@ -179,6 +180,15 @@ describe('font modules enabled', () => {
           'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontStyle'
         )
       ).toBe('normal')
+
+      // Fallback fonts from class in robot.font.css
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#roboto-with-fallback-fonts")).fontFamily'
+        )
+      ).toBe(
+        'Roboto-385c19dd2c16e4944ae117fd6b0a01a482bb191ff1e96eb0ea2f523728526b3a, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif'
+      )
     })
   })
 

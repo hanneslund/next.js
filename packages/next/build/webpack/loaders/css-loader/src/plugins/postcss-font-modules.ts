@@ -35,25 +35,6 @@ const plugin = (exports: any[], fallBackFonts: any = {}) => {
       }
 
       for (const node of root.nodes) {
-        if (
-          node.selector &&
-          node.selector
-            .split(/[, \n]/)
-            .map((s) => s.slice(1))
-            .includes('fontClass')
-        ) {
-          throw node.error('"fontClass" is reserved when using font modules')
-        }
-        if (
-          node.selector &&
-          node.selector
-            .split(/[, \n]/)
-            .map((s) => s.slice(1))
-            .includes('fontStyle')
-        ) {
-          throw node.error('"fontStyle" is reserved when using font modules')
-        }
-
         if (node.type === 'atrule' && node.name === 'font-face') {
           const family = node.nodes.find((decl) => decl.prop === 'font-family')
           if (!family) {
@@ -126,6 +107,25 @@ const plugin = (exports: any[], fallBackFonts: any = {}) => {
 
       if (!fontProperties.fontFamily) {
         throw root.error('A font module needs a @font-face declaration')
+      }
+
+      for (const node of root.nodes) {
+        if (node.type === 'rule') {
+          for (const decl of node.nodes) {
+            if (decl.type === 'decl') {
+              if (decl.prop === 'font-family') {
+                decl.value = decl.value
+                  .split(',')
+                  .map((family: string) =>
+                    family.trim() === rawFontFamily
+                      ? fontProperties.fontFamily
+                      : family
+                  )
+                  .join(',')
+              }
+            }
+          }
+        }
       }
 
       // Add font class
