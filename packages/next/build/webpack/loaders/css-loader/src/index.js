@@ -176,9 +176,10 @@ export default async function loader(content, map, meta) {
 
       const replacements = []
       const exports = []
+      const fontModuleExports = []
 
       if (options.fontModule) {
-        plugins.push(fontModules(exports, options.fallbackFonts))
+        plugins.push(fontModules(fontModuleExports, options.fallbackFonts))
       }
 
       if (shouldUseModulesPlugins(options)) {
@@ -324,7 +325,11 @@ export default async function loader(content, map, meta) {
 
       const importCode = getImportCode(imports, options)
       const moduleCode = getModuleCode(result, api, replacements, options, this)
-      const exportCode = getExportCode(exports, replacements, options)
+      const exportCode = getExportCode(
+        [...exports, ...fontModuleExports],
+        replacements,
+        options
+      )
 
       return `${importCode}${moduleCode}${exportCode}`
     })

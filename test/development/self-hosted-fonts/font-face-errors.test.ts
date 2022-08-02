@@ -424,36 +424,6 @@ Syntax error: Found duplicate unicode-range
   12 |     }"
 `)
   })
-
-  test('setting .fontStyle', async () => {
-    const browser = await webdriver(next.appPort, '/')
-
-    await next.patchFile('pages/inter.font.css', '.fontStyle{}')
-
-    await check(() => getRedboxSource(browser), /is reserved/)
-    expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
-"./pages/inter.font.css:1:1
-Syntax error: \\"fontStyle\\" is reserved when using font modules
-
-> 1 | .fontStyle{}
-    | ^"
-`)
-  })
-
-  test('setting #fontClass', async () => {
-    const browser = await webdriver(next.appPort, '/')
-
-    await next.patchFile('pages/inter.font.css', '#fontClass{}')
-
-    await check(() => getRedboxSource(browser), /is reserved/)
-    expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
-"./pages/inter.font.css:1:1
-Syntax error: \\"fontClass\\" is reserved when using font modules
-
-> 1 | #fontClass{}
-    | ^"
-`)
-  })
 })
 
 describe('font-face-errors, fontModules disabled', () => {
