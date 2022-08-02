@@ -109,10 +109,17 @@ const plugin = (exports: any[], fallBackFonts: any = {}) => {
         throw root.error('A font module needs a @font-face declaration')
       }
 
+      // Replace font-family with the hashed version in rules
       for (const node of root.nodes) {
         if (node.type === 'rule') {
           for (const decl of node.nodes) {
             if (decl.type === 'decl') {
+              if (!decl.prop.includes('font')) {
+                throw decl.error(
+                  'Only font properties are allowed in font modules'
+                )
+              }
+
               if (decl.prop === 'font-family') {
                 decl.value = decl.value
                   .split(',')
