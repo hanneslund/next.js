@@ -205,6 +205,23 @@ export const css = curry(async function css(
   )
 
   // next/font
+  if (!ctx.experimental.urlImports?.includes?.('https://fonts.gstatic.com/')) {
+    fns.push(
+      loader({
+        oneOf: [
+          markRemovable({
+            test: path.join(__dirname, '../../../../../../font'),
+            use: {
+              loader: 'error-loader',
+              options: {
+                reason: getUrlImportFontsError(),
+              },
+            },
+          }),
+        ],
+      })
+    )
+  }
   if (!ctx.experimental.fontModules?.enabled) {
     fns.push(
       loader({
@@ -227,33 +244,8 @@ export const css = curry(async function css(
       })
     )
   } else {
-    // kolla i loader ist så behövs inte denna?
+    // kolla i loader ist så behövs inte denna? is google alltså?
     // resource path typ?
-    fns.push(
-      loader({
-        oneOf: [
-          markRemovable({
-            sideEffects: false,
-            test: path.join(__dirname, '../../../../../../font'),
-            issuer: {
-              and: [ctx.rootDirectory],
-              not: [/node_modules/],
-            },
-            use: ctx.experimental.urlImports?.includes?.(
-              'https://fonts.gstatic.com/'
-            )
-              ? getFontModuleLoader(ctx, lazyPostCSSInitializer, true)
-              : {
-                  loader: 'error-loader',
-                  options: {
-                    reason: getUrlImportFontsError(),
-                  },
-                },
-          }),
-        ],
-      })
-    )
-
     fns.push(
       loader({
         oneOf: [
@@ -276,6 +268,23 @@ export const css = curry(async function css(
       })
     )
   }
+
+  // Google fonts
+  fns.push(
+    loader({
+      oneOf: [
+        markRemovable({
+          sideEffects: true, // SIDEEFFECTS?
+          test: path.join(__dirname, '../../../../../../font'),
+          issuer: {
+            and: [ctx.rootDirectory],
+            not: [/node_modules/],
+          },
+          use: getFontModuleLoader(ctx, lazyPostCSSInitializer, true),
+        }),
+      ],
+    })
+  )
 
   // CSS Modules support must be enabled on the server and client so the class
   // names are available for SSR or Prerendering.

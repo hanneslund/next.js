@@ -37,9 +37,9 @@ export function googleFontGlobalImportError() {
     'cannot'
   )} be imported from files other than your ${chalk.bold(
     'Custom <App>'
-  )}. Please move all Google fonts imports to ${chalk.cyan(
+  )}. Please move all Google font imports to ${chalk.cyan(
     'pages/_app.js'
-  )}. Or enable experimental.fontModules: https://nextjs.org/docs/font-modules`
+  )} or enable font modules: https://nextjs.org/docs/font-modules`
 }
 
 export function getUrlImportFontsError() {

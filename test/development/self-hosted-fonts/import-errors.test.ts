@@ -1,6 +1,6 @@
 import { createNext } from 'e2e-utils'
 import { NextInstance } from 'test/lib/next-modes/base'
-import { check, getRedboxSource, renderViaHTTP, waitFor } from 'next-test-utils'
+import { check, getRedboxSource, waitFor } from 'next-test-utils'
 import webdriver from 'next-webdriver'
 
 describe('import-errors, missing urlImports', () => {
@@ -65,6 +65,7 @@ describe('import-errors, fontModules enabled', () => {
       nextConfig: {
         experimental: {
           fontModules: { enabled: true },
+          urlImports: ['https://fonts.gstatic.com/'],
         },
       },
     })
@@ -90,18 +91,6 @@ describe('import-errors, fontModules enabled', () => {
   test('@font-face in CSS import', async () => {
     const browser = await webdriver(next.appPort, '/')
     await next.patchFile(
-      'pages/_app.js',
-      `
-     import './styles.css'
- 
-     function MyApp({ Component, pageProps }) {
-       return <Component {...pageProps} />
-     }
- 
-     export default MyApp
-     `
-    )
-    await next.patchFile(
       'pages/styles.css',
       `
       @font-face {
@@ -109,6 +98,18 @@ describe('import-errors, fontModules enabled', () => {
         src: url(/Inter.woff);
       }
       `
+    )
+    await next.patchFile(
+      'pages/_app.js',
+      `
+       import "./styles.css"
+
+       function MyApp({ Component, pageProps }) {
+         return <Component {...pageProps} />
+       }
+   
+       export default MyApp
+       `
     )
 
     await check(() => getRedboxSource(browser), /Found @font-face/)
@@ -128,6 +129,15 @@ Read more: https://www.nextjs.org/fontmodules
   test('@font-face in CSS module import', async () => {
     const browser = await webdriver(next.appPort, '/')
     await next.patchFile(
+      'pages/styles.module.css',
+      `
+      @font-face {
+        font-family: 'Inter';
+        src: url(/Inter.woff);
+      }
+      `
+    )
+    await next.patchFile(
       'pages/_app.js',
       `
      import './styles.module.css'
@@ -138,15 +148,6 @@ Read more: https://www.nextjs.org/fontmodules
  
      export default MyApp
      `
-    )
-    await next.patchFile(
-      'pages/styles.module.css',
-      `
-      @font-face {
-        font-family: 'Inter';
-        src: url(/Inter.woff);
-      }
-      `
     )
 
     await check(() => getRedboxSource(browser), /Found @font-face/)
@@ -173,6 +174,7 @@ describe('import-errors, fontModules disabled', () => {
       nextConfig: {
         experimental: {
           fontModules: { enabled: false },
+          urlImports: ['https://fonts.gstatic.com/'],
         },
       },
     })
