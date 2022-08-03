@@ -1,4 +1,4 @@
-import { check, getRedboxSource, renderViaHTTP } from 'next-test-utils'
+import { check, getRedboxSource } from 'next-test-utils'
 import { createNext } from 'e2e-utils'
 import webdriver from 'next-webdriver'
 import { NextInstance } from 'test/lib/next-modes/base'
@@ -483,32 +483,11 @@ describe('font-modules disabled', () => {
   beforeAll(async () => {
     next = await createNext({
       files: {
-        'pages/index.js': `
-        import './inter.font.css'
-        export default () => <p>Hello world</p>`,
-
-        'pages/inter.font.css': `
-        @font-face {
-          font-family: 'Inter';
-          src: url(./inter.woff2);
-          font-weight: 400;
-          font-style: normal;
-          unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-        }
-
-        @font-face {
-          font-family: 'Inter 2';
-          src: url(./inter.woff2);
-          font-weight: 500;
-          font-style: italic;
-          unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
-        }
-
-        @font-face {}
-        `,
-
+        'pages/index.js': 'export default () => null',
+        'pages/inter.font.css': '',
         'pages/inter.woff2': ``,
       },
+
       nextConfig: {
         experimental: {
           fontModules: { enabled: false },
@@ -518,8 +497,48 @@ describe('font-modules disabled', () => {
   })
   afterAll(() => next.destroy())
 
-  test("dont't validate font-face", async () => {
-    const html = await renderViaHTTP(next.url, '/')
-    expect(html).toInclude('Hello world')
+  test('Font module is global CSS when disabled', async () => {
+    const browser = await webdriver(next.appPort, '/')
+
+    await next.patchFile(
+      'pages/inter.font.css',
+      `
+      @font-face {
+        font-family: 'Inter';
+        src: url(./inter.woff2);
+        font-weight: 400;
+        font-style: normal;
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+
+      @font-face {
+        font-family: 'Inter 2';
+        src: url(./inter.woff2);
+        font-weight: 500;
+        font-style: italic;
+        unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+      }
+
+      @font-face {}
+      `
+    )
+    await next.patchFile(
+      'pages/index.js',
+      `
+      import './inter.font.css'
+      export default () => <p id="hello">Hello world</p>
+      `
+    )
+
+    await check(
+      () => getRedboxSource(browser),
+      /Global CSS cannot be imported from files other than your Custom <App>/
+    )
+    expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
+"./pages/inter.font.css
+Global CSS cannot be imported from files other than your Custom <App>. Due to the Global nature of stylesheets, and to avoid conflicts, Please move all first-party global CSS imports to pages/_app.js. Or convert the import to Component-Level CSS (CSS Modules).
+Read more: https://nextjs.org/docs/messages/css-global
+Location: pages/index.js"
+`)
   })
 })
