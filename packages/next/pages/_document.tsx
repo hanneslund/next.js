@@ -862,7 +862,7 @@ export class Head extends Component<HeadProps> {
           <link
             key={file}
             rel="preload"
-            href={`/_next/${file}`}
+            href={`/_next/static/fonts/${file}`}
             as="font"
             type={`font/${file.split('.').at(-1)}`}
             crossOrigin="anonymous"

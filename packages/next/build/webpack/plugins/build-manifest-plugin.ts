@@ -227,7 +227,7 @@ export default class BuildManifestPlugin {
             ?.getFiles()
             .filter((file: string) => file.endsWith('.css'))
 
-          const files: string[] = []
+          const files = new Set<string>()
           for (const file of cssFiles) {
             await postcss([postcssfontstuff(files)]).process(
               assets[file]._cachedSource,
@@ -237,8 +237,8 @@ export default class BuildManifestPlugin {
             )
           }
 
-          if (files.length) {
-            assetMap.pagesFontFiles[pagePath] = files
+          if (files.size > 0) {
+            assetMap.pagesFontFiles[pagePath] = Array.from(files)
           }
         }
 
@@ -328,25 +328,24 @@ export default class BuildManifestPlugin {
   }
 }
 
-function postcssfontstuff(files: string[]) {
+function postcssfontstuff(files: Set<string>) {
   return {
     postcssPlugin: 'NEXT-FONT-LOADER-POSTCSS-PLUGIN',
     // kolla så inget anna finns i cssen
     AtRule(atRule: any) {
       if (atRule.name === 'font-face') {
         atRule.nodes.forEach(({ prop, value }) => {
-          if (prop === 'font-display') {
-            if (value === 'swap') {
-              console.log('SWAP: generate fallback font') // DETTA BORDE GÖRAS I LOADER?
-            } else if (value === 'optional') {
-              console.log('OPTIONAL: PRELOAD')
-            }
-          } else if (prop === 'src') {
-            // kolla omd det är /_next först?
-            // eller ska man bara tillåtas ha lokala filer??
-            const file = value.split('url(/_next/')[1].split(')')[0]
-            if (!files.includes(file)) {
-              files.push(file)
+          //     if (prop === 'font-display') {
+          //       if (value === 'swap') {
+          //         console.log('SWAP: generate fallback font')
+          //       } else if (value === 'optional') {
+          //         console.log('OPTIONAL: PRELOAD')
+          //       }
+          //     } else if (prop === 'src') {
+          if (prop === 'src') {
+            const file = /url\(\/_next\/static\/fonts\/(.+?)\)/.exec(value)?.[1]
+            if (file) {
+              files.add(file)
             }
           }
         })
@@ -354,3 +353,5 @@ function postcssfontstuff(files: string[]) {
     },
   }
 }
+
+postcssfontstuff.postcss = true
