@@ -1,3 +1,3 @@
 export default function WithoutFonts() {
-  return null
+  return <p id="hello-world">Hello world</p>
 }

@@ -252,6 +252,38 @@ describe('font modules enabled', () => {
   })
 })
 
+describe('self hosted fonts disabled', () => {
+  let next: NextInstance
+
+  beforeAll(async () => {
+    next = await createNext({
+      files: {
+        'pages/without-fonts.js': new FileRef(
+          join(__dirname, 'app/pages/without-fonts.js')
+        ),
+        fonts: new FileRef(join(__dirname, 'app/fonts')),
+      },
+      nextConfig: {
+        experimental: {
+          selfHostedFonts: false,
+        },
+      },
+    })
+  })
+  afterAll(() => next.destroy())
+
+  describe('preload', () => {
+    test('page without fonts', async () => {
+      const html = await renderViaHTTP(next.url, '/without-fonts')
+      const $ = cheerio.load(html)
+
+      expect($('#hello-world').text()).toBe('Hello world')
+      expect($('link[as="font"]').length).toBe(0)
+      expect($('link[rel="preconnect"]').length).toBe(0)
+    })
+  })
+})
+
 describe('font modules disabled', () => {
   let next: NextInstance
 
