@@ -239,14 +239,80 @@ describe('font modules enabled', () => {
         rel: 'preconnect',
       })
 
-      expect($('link[as="font"]').length).toBe(1)
       // From _app
+      expect($('link[as="font"]').length).toBe(1)
       expect($('link[as="font"]').get(0).attribs).toEqual({
         as: 'font',
         crossorigin: 'anonymous',
         href: '/_next/static/fonts/open-sans.7be88d77.ttf',
         rel: 'preload',
         type: 'font/ttf',
+      })
+    })
+
+    test('preload once with two font modules with same font file - optional first', async () => {
+      const html = await renderViaHTTP(
+        next.url,
+        '/same-font-file-optional-first'
+      )
+      const $ = cheerio.load(html)
+
+      // Preconnect
+      expect($('link[rel="preconnect"]').length).toBe(1)
+      expect($('link[rel="preconnect"]').get(0).attribs).toEqual({
+        crossorigin: 'anonymous',
+        href: '/',
+        rel: 'preconnect',
+      })
+
+      // From _app
+      expect($('link[as="font"]').length).toBe(2)
+      expect($('link[as="font"]').get(0).attribs).toEqual({
+        as: 'font',
+        crossorigin: 'anonymous',
+        href: '/_next/static/fonts/open-sans.7be88d77.ttf',
+        rel: 'preload',
+        type: 'font/ttf',
+      })
+      expect($('link[as="font"]').get(1).attribs).toEqual({
+        as: 'font',
+        crossorigin: 'anonymous',
+        href: '/_next/static/fonts/inter.ef46db37.woff2',
+        rel: 'preload',
+        type: 'font/woff2',
+      })
+    })
+
+    test('preload once with two font modules with same font file - optional second', async () => {
+      const html = await renderViaHTTP(
+        next.url,
+        '/same-font-file-optional-second'
+      )
+      const $ = cheerio.load(html)
+
+      // Preconnect
+      expect($('link[rel="preconnect"]').length).toBe(1)
+      expect($('link[rel="preconnect"]').get(0).attribs).toEqual({
+        crossorigin: 'anonymous',
+        href: '/',
+        rel: 'preconnect',
+      })
+
+      // From _app
+      expect($('link[as="font"]').length).toBe(2)
+      expect($('link[as="font"]').get(0).attribs).toEqual({
+        as: 'font',
+        crossorigin: 'anonymous',
+        href: '/_next/static/fonts/open-sans.7be88d77.ttf',
+        rel: 'preload',
+        type: 'font/ttf',
+      })
+      expect($('link[as="font"]').get(1).attribs).toEqual({
+        as: 'font',
+        crossorigin: 'anonymous',
+        href: '/_next/static/fonts/inter.ef46db37.woff2',
+        rel: 'preload',
+        type: 'font/woff2',
       })
     })
   })

@@ -350,7 +350,6 @@ function pageFontDependencies(
   files: Array<{ file: string; preload: boolean }>,
   fontModulesEnabled: boolean
 ) {
-  console.log({ files, fontModulesEnabled })
   return {
     postcssPlugin: 'postcss-page-font-dependencies',
     AtRule(atRule: any) {
