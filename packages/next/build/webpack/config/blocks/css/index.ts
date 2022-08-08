@@ -10,6 +10,7 @@ import {
   getGlobalImportError,
   getGlobalModuleImportError,
   getLocalModuleImportError,
+  getNeedExperimentalSelfHostedFontsError,
   getUrlImportFontsError,
   googleFontGlobalImportError,
 } from './messages'
@@ -205,7 +206,10 @@ export const css = curry(async function css(
   )
 
   // next/font
-  if (!ctx.experimental.urlImports?.includes?.('https://fonts.gstatic.com/')) {
+  if (
+    !ctx.experimental.selfHostedFonts ||
+    !ctx.experimental.urlImports?.includes?.('https://fonts.gstatic.com/')
+  ) {
     fns.push(
       loader({
         oneOf: [
@@ -214,7 +218,9 @@ export const css = curry(async function css(
             use: {
               loader: 'error-loader',
               options: {
-                reason: getUrlImportFontsError(),
+                reason: !ctx.experimental.selfHostedFonts
+                  ? getNeedExperimentalSelfHostedFontsError()
+                  : getUrlImportFontsError(),
               },
             },
           }),
@@ -222,12 +228,11 @@ export const css = curry(async function css(
       })
     )
   }
+
   const fontModulesEnabled =
     typeof ctx.experimental.selfHostedFonts === 'object' &&
     ctx.experimental.selfHostedFonts.fontModules
   if (fontModulesEnabled) {
-    // kolla i loader ist så behövs inte denna? is google alltså?
-    // resource path typ?
     fns.push(
       loader({
         oneOf: [
@@ -236,14 +241,14 @@ export const css = curry(async function css(
             test: regexFontModule,
             // CSS Modules are only supported in the user's application. We're
             // not yet allowing CSS imports _within_ `node_modules`.
-            // issuer: {
-            //   and: [
-            //     {
-            //       or: [ctx.rootDirectory, regexClientEntry],
-            //     },
-            //   ],
-            //   not: [/node_modules/],
-            // },
+            issuer: {
+              and: [
+                {
+                  or: [ctx.rootDirectory, regexClientEntry],
+                },
+              ],
+              not: [/node_modules/],
+            },
             use: getFontModuleLoader(ctx, lazyPostCSSInitializer, false),
           }),
         ],

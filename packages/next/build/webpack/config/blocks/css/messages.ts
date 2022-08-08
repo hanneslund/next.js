@@ -42,6 +42,15 @@ export function googleFontGlobalImportError() {
   )} or enable font modules: https://nextjs.org/docs/font-modules`
 }
 
+export function getNeedExperimentalSelfHostedFontsError() {
+  return `${chalk.cyan(
+    chalk.bold('next/font')
+  )} is experimental. Enable ${chalk.bold(
+    'experimental.selfHostedFonts'
+  )} to import Google fonts.
+Read more: https://nextjs.org/nextfont`
+}
+
 export function getUrlImportFontsError() {
   return `Add ${chalk.bold('https://fonts.gstatic.com/')} to ${chalk.bold(
     'experimental.urlImports'

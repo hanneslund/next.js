@@ -10,16 +10,12 @@ describe('font modules enabled', () => {
     next = await createNext({
       files: {
         'pages/index.js': `
-        import './inter.font.css'
-        export default () => null`,
-
-        'pages/inter.font.css': `
-        @font-face {
-          font-family: 'Inter';
-          src: url(./inter.woff2);
+        import './inter.font.css'     
+  
+        export default function Page() {
+          return null
         }
-        `,
-
+      `,
         'pages/inter.woff2': ``,
       },
       nextConfig: {
@@ -30,6 +26,15 @@ describe('font modules enabled', () => {
     })
   })
   afterAll(() => next.destroy())
+  beforeEach(async () => {
+    await next.patchFile(
+      'pages/inter.font.css',
+      ` @font-face {
+        font-family: 'Inter';
+        src: url(./inter.woff2);
+      }`
+    )
+  })
 
   describe('@font-face errors', () => {
     test('missing font-family', async () => {
