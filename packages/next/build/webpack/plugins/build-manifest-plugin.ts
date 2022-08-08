@@ -98,7 +98,14 @@ export default class BuildManifestPlugin {
   private isDevFallback: boolean
   private exportRuntime: boolean
   private appDirEnabled: boolean
-  private fontModules: boolean
+  private selfHostedFonts?:
+    | boolean
+    | {
+        fontModules?: boolean
+        fallbackFonts?: {
+          [fontFamily: string]: string[]
+        }
+      }
 
   constructor(options: {
     buildId: string
@@ -106,7 +113,14 @@ export default class BuildManifestPlugin {
     isDevFallback?: boolean
     exportRuntime?: boolean
     appDirEnabled: boolean
-    fontModules: boolean
+    selfHostedFonts?:
+      | boolean
+      | {
+          fontModules?: boolean
+          fallbackFonts?: {
+            [fontFamily: string]: string[]
+          }
+        }
   }) {
     this.buildId = options.buildId
     this.isDevFallback = !!options.isDevFallback
@@ -120,7 +134,7 @@ export default class BuildManifestPlugin {
     this.rewrites.afterFiles = options.rewrites.afterFiles.map(processRoute)
     this.rewrites.fallback = options.rewrites.fallback.map(processRoute)
     this.exportRuntime = !!options.exportRuntime
-    this.fontModules = options.fontModules
+    this.selfHostedFonts = options.selfHostedFonts
   }
 
   async createAssets(compiler: any, compilation: any, assets: any) {
@@ -214,7 +228,7 @@ export default class BuildManifestPlugin {
         assetMap.pages[pagePath] = [...new Set([...mainFiles, ...filesForPage])]
       }
 
-      if (this.fontModules) {
+      if (this.selfHostedFonts) {
         for (const entrypoint of compilation.entrypoints.values()) {
           const pagePath = getRouteFromEntrypoint(entrypoint.name)
 
@@ -227,32 +241,36 @@ export default class BuildManifestPlugin {
             ?.getFiles()
             .filter((file: string) => file.endsWith('.css'))
 
-          const files = new Set<string>()
+          const files: Array<{ file: string; preload: boolean }> = []
+          const fontModulesEnabled =
+            typeof this.selfHostedFonts === 'object' &&
+            this.selfHostedFonts.fontModules
           for (const file of cssFiles) {
-            await postcss([postcssfontstuff(files)]).process(
-              assets[file]._cachedSource,
-              {
-                from: undefined,
-              }
-            )
+            await postcss([
+              pageFontDependencies(files, !!fontModulesEnabled),
+            ]).process(assets[file]._cachedSource, {
+              from: undefined,
+            })
           }
 
-          if (files.size > 0) {
-            assetMap.pagesFontFiles[pagePath] = Array.from(files)
+          if (files.length > 0) {
+            assetMap.pagesFontFiles[pagePath] = files
           }
         }
 
-        assets[
-          `${CLIENT_STATIC_FILES_PATH}/${this.buildId}/_pageFontsManifest.js`
-        ] = new sources.RawSource(
-          `self.__PAGE_FONTS =${devalue(
-            assetMap.pagesFontFiles
-          )};self.__PAGE_FONTS_CB && self.__PAGE_FONTS_CB()`
-        )
+        // if (this.fontModules) {
+        //   assets[
+        //     `${CLIENT_STATIC_FILES_PATH}/${this.buildId}/_pageFontsManifest.js`
+        //   ] = new sources.RawSource(
+        //     `self.__PAGE_FONTS =${devalue(
+        //       assetMap.pagesFontFiles
+        //     )};self.__PAGE_FONTS_CB && self.__PAGE_FONTS_CB()`
+        //   )
 
-        assetMap.lowPriorityFiles.push(
-          `${CLIENT_STATIC_FILES_PATH}/${this.buildId}/_pageFontsManifest.js`
-        )
+        //   assetMap.lowPriorityFiles.push(
+        //     `${CLIENT_STATIC_FILES_PATH}/${this.buildId}/_pageFontsManifest.js`
+        //   )
+        // }
       }
 
       if (!this.isDevFallback) {
@@ -328,30 +346,44 @@ export default class BuildManifestPlugin {
   }
 }
 
-function postcssfontstuff(files: Set<string>) {
+function pageFontDependencies(
+  files: Array<{ file: string; preload: boolean }>,
+  fontModulesEnabled: boolean
+) {
+  console.log({ files, fontModulesEnabled })
   return {
-    postcssPlugin: 'NEXT-FONT-LOADER-POSTCSS-PLUGIN',
-    // kolla så inget anna finns i cssen
+    postcssPlugin: 'postcss-page-font-dependencies',
     AtRule(atRule: any) {
       if (atRule.name === 'font-face') {
-        atRule.nodes.forEach(({ prop, value }) => {
-          //     if (prop === 'font-display') {
-          //       if (value === 'swap') {
-          //         console.log('SWAP: generate fallback font')
-          //       } else if (value === 'optional') {
-          //         console.log('OPTIONAL: PRELOAD')
-          //       }
-          //     } else if (prop === 'src') {
-          if (prop === 'src') {
-            const file = /url\(\/_next\/static\/fonts\/(.+?)\)/.exec(value)?.[1]
-            if (file) {
-              files.add(file)
+        let preload = false
+        let file: string | undefined
+
+        atRule.nodes.forEach(
+          ({ prop, value }: { prop: string; value: string }) => {
+            if (prop === 'font-display') {
+              if (value === 'optional') {
+                preload = true
+              }
+            }
+            if (prop === 'src') {
+              file = /url\(\/_next\/static\/fonts\/(.+?)\)/.exec(value)?.[1]
             }
           }
-        })
+        )
+
+        if (file) {
+          const currentFile = files.find((f) => f.file === file)
+          if (currentFile) {
+            if (!currentFile.preload && preload && fontModulesEnabled) {
+              currentFile.preload = true
+            }
+          } else {
+            files.push({ file, preload: fontModulesEnabled ? preload : false })
+          }
+        }
       }
     },
   }
 }
 
-postcssfontstuff.postcss = true
+pageFontDependencies.postcss = true

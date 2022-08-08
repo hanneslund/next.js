@@ -858,16 +858,21 @@ export class Head extends Component<HeadProps> {
 
         {children}
         {optimizeFonts && <meta name="next-font-preconnect" />}
-        {pageFontFiles.map((file) => (
-          <link
-            key={file}
-            rel="preload"
-            href={`/_next/static/fonts/${file}`}
-            as="font"
-            type={`font/${file.split('.').at(-1)}`}
-            crossOrigin="anonymous"
-          />
-        ))}
+        {pageFontFiles.length > 0 ? (
+          <link rel="preconnect" href="/" crossOrigin="anonymous" />
+        ) : null}
+        {pageFontFiles.map(({ file, preload }) =>
+          preload ? (
+            <link
+              key={file}
+              rel="preload"
+              href={`/_next/static/fonts/${file}`}
+              as="font"
+              type={`font/${file.split('.').at(-1)}`}
+              crossOrigin="anonymous"
+            />
+          ) : null
+        )}
 
         {inAmpMode && (
           <>

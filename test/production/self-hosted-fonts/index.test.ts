@@ -18,8 +18,8 @@ describe('font modules enabled', () => {
       },
       nextConfig: {
         experimental: {
-          fontModules: {
-            enabled: true,
+          selfHostedFonts: {
+            fontModules: true,
             fallbackFonts: {
               'Open Sans': ['system-ui', 'sans-serif'],
             },
@@ -41,7 +41,7 @@ describe('font modules enabled', () => {
         className: expect.any(String),
         style: {
           fontFamily:
-            "'Open Sans-790f768d78fdebf5081feb1fd4b44f96a1333de88978efab76d51da501e04a8c'",
+            "'Open Sans-ea214cbaca1d4c65206c42d84c24a95e897ff9efa27c0d9738032368c808fe6f'",
           fontStyle: 'italic',
           fontWeight: '400',
         },
@@ -53,7 +53,7 @@ describe('font modules enabled', () => {
         className: expect.any(String),
         style: {
           fontFamily:
-            "'Open Sans-790f768d78fdebf5081feb1fd4b44f96a1333de88978efab76d51da501e04a8c'",
+            "'Open Sans-ea214cbaca1d4c65206c42d84c24a95e897ff9efa27c0d9738032368c808fe6f'",
           fontStyle: 'italic',
           fontWeight: '400',
         },
@@ -83,7 +83,7 @@ describe('font modules enabled', () => {
         className: expect.any(String),
         style: {
           fontFamily:
-            "'Roboto Again-6d0f197aa8acb208229991d8834e543bf01dc62a350a65402993c02006f9b680'",
+            "'Roboto Again-1b4b87b2565da57765520b944d74bb73ba2654797c9c85e61991b62a83da501e'",
           fontStyle: 'normal',
         },
       })
@@ -94,101 +94,105 @@ describe('font modules enabled', () => {
     test('css modules with font face', async () => {
       const browser = await webdriver(next.url, '/with-fonts')
 
-      // _app.js
-      expect(
-        await browser.eval(
-          'getComputedStyle(document.querySelector("#app-open-sans")).fontFamily'
+      try {
+        // _app.js
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#app-open-sans")).fontFamily'
+          )
+        ).toBe(
+          // Includes configured fallback fonts
+          '"Open Sans-ea214cbaca1d4c65206c42d84c24a95e897ff9efa27c0d9738032368c808fe6f", system-ui, sans-serif'
         )
-      ).toBe(
-        // Includes configured fallback fonts
-        '"Open Sans-790f768d78fdebf5081feb1fd4b44f96a1333de88978efab76d51da501e04a8c", system-ui, sans-serif'
-      )
-      expect(
-        await browser.eval(
-          'getComputedStyle(document.querySelector("#app-open-sans")).fontWeight'
-        )
-      ).toBe('400')
-      expect(
-        await browser.eval(
-          'getComputedStyle(document.querySelector("#app-open-sans")).fontStyle'
-        )
-      ).toBe('italic')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#app-open-sans")).fontWeight'
+          )
+        ).toBe('400')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#app-open-sans")).fontStyle'
+          )
+        ).toBe('italic')
 
-      // with-fonts.js
-      expect(
-        await browser.eval(
-          'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontFamily'
+        // with-fonts.js
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontFamily'
+          )
+        ).toBe(
+          // Includes configured fallback fonts
+          '"Open Sans-ea214cbaca1d4c65206c42d84c24a95e897ff9efa27c0d9738032368c808fe6f", system-ui, sans-serif'
         )
-      ).toBe(
-        // Includes configured fallback fonts
-        '"Open Sans-790f768d78fdebf5081feb1fd4b44f96a1333de88978efab76d51da501e04a8c", system-ui, sans-serif'
-      )
-      expect(
-        await browser.eval(
-          'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontWeight'
-        )
-      ).toBe('400')
-      expect(
-        await browser.eval(
-          'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontStyle'
-        )
-      ).toBe('italic')
-      expect(
-        await browser.eval(
-          'getComputedStyle(document.querySelector("#with-fonts-open-sans-style")).fontWeight'
-        )
-      ).toBe('400')
-      expect(
-        await browser.eval(
-          'getComputedStyle(document.querySelector("#with-fonts-open-sans-style")).fontStyle'
-        )
-      ).toBe('italic')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontWeight'
+          )
+        ).toBe('400')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontStyle'
+          )
+        ).toBe('italic')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#with-fonts-open-sans-style")).fontWeight'
+          )
+        ).toBe('400')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#with-fonts-open-sans-style")).fontStyle'
+          )
+        ).toBe('italic')
 
-      // CompWithFonts.js
-      expect(
-        await browser.eval(
-          'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontFamily'
+        // CompWithFonts.js
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontFamily'
+          )
+        ).toBe(
+          'Inter-96526bc0aeb95ca37e991cddfa4c088732a46a4220fb1a66a15231cfe7259fbc'
         )
-      ).toBe(
-        'Inter-96526bc0aeb95ca37e991cddfa4c088732a46a4220fb1a66a15231cfe7259fbc'
-      )
-      expect(
-        await browser.eval(
-          'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontWeight'
-        )
-      ).toBe('500')
-      expect(
-        await browser.eval(
-          'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontStyle'
-        )
-      ).toBe('normal')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontWeight'
+          )
+        ).toBe('500')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontStyle'
+          )
+        ).toBe('normal')
 
-      expect(
-        await browser.eval(
-          'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontFamily'
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontFamily'
+          )
+        ).toBe(
+          'Roboto-385c19dd2c16e4944ae117fd6b0a01a482bb191ff1e96eb0ea2f523728526b3a'
         )
-      ).toBe(
-        'Roboto-385c19dd2c16e4944ae117fd6b0a01a482bb191ff1e96eb0ea2f523728526b3a'
-      )
-      expect(
-        await browser.eval(
-          'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontWeight'
-        )
-      ).toBe('400')
-      expect(
-        await browser.eval(
-          'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontStyle'
-        )
-      ).toBe('normal')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontWeight'
+          )
+        ).toBe('400')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontStyle'
+          )
+        ).toBe('normal')
 
-      // Fallback fonts from class in robot.font.css
-      expect(
-        await browser.eval(
-          'getComputedStyle(document.querySelector("#roboto-with-fallback-fonts")).fontFamily'
+        // Fallback fonts from class in robot.font.css
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#roboto-with-fallback-fonts")).fontFamily'
+          )
+        ).toBe(
+          'Roboto-385c19dd2c16e4944ae117fd6b0a01a482bb191ff1e96eb0ea2f523728526b3a, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif'
         )
-      ).toBe(
-        'Roboto-385c19dd2c16e4944ae117fd6b0a01a482bb191ff1e96eb0ea2f523728526b3a, "Segoe UI", Tahoma, Geneva, Verdana, sans-serif'
-      )
+      } finally {
+        await browser.close()
+      }
     })
   })
 
@@ -197,7 +201,15 @@ describe('font modules enabled', () => {
       const html = await renderViaHTTP(next.url, '/with-fonts')
       const $ = cheerio.load(html)
 
-      expect($('link[as="font"]').length).toBe(4)
+      // Preconnect
+      expect($('link[rel="preconnect"]').length).toBe(1)
+      expect($('link[rel="preconnect"]').get(0).attribs).toEqual({
+        crossorigin: 'anonymous',
+        href: '/',
+        rel: 'preconnect',
+      })
+
+      expect($('link[as="font"]').length).toBe(2)
       // From /_app
       expect($('link[as="font"]').get(0).attribs).toEqual({
         as: 'font',
@@ -206,22 +218,7 @@ describe('font modules enabled', () => {
         rel: 'preload',
         type: 'font/ttf',
       })
-      // From /with-fonts
       expect($('link[as="font"]').get(1).attribs).toEqual({
-        as: 'font',
-        crossorigin: 'anonymous',
-        href: '/_next/static/fonts/inter-latin.b5cf718f.woff',
-        rel: 'preload',
-        type: 'font/woff',
-      })
-      expect($('link[as="font"]').get(2).attribs).toEqual({
-        as: 'font',
-        crossorigin: 'anonymous',
-        href: '/_next/static/fonts/inter-greek.5911d1a9.woff',
-        rel: 'preload',
-        type: 'font/woff',
-      })
-      expect($('link[as="font"]').get(3).attribs).toEqual({
         as: 'font',
         crossorigin: 'anonymous',
         href: '/_next/static/fonts/roboto.7be88d77.woff2',
@@ -233,6 +230,14 @@ describe('font modules enabled', () => {
     test('page without fonts', async () => {
       const html = await renderViaHTTP(next.url, '/without-fonts')
       const $ = cheerio.load(html)
+
+      // Preconnect
+      expect($('link[rel="preconnect"]').length).toBe(1)
+      expect($('link[rel="preconnect"]').get(0).attribs).toEqual({
+        crossorigin: 'anonymous',
+        href: '/',
+        rel: 'preconnect',
+      })
 
       expect($('link[as="font"]').length).toBe(1)
       // From _app
@@ -259,12 +264,17 @@ describe('font modules disabled', () => {
         'pages/_app.js': new FileRef(join(__dirname, 'app/pages/_app.js')),
         fonts: new FileRef(join(__dirname, 'app/fonts')),
       },
+      nextConfig: {
+        experimental: {
+          selfHostedFonts: true,
+        },
+      },
     })
   })
   afterAll(() => next.destroy())
 
   describe('import', () => {
-    test('css module without font face', async () => {
+    test('page without fonts', async () => {
       const html = await renderViaHTTP(next.url, '/without-fonts')
       const $ = cheerio.load(html)
 
@@ -278,6 +288,14 @@ describe('font modules disabled', () => {
       const $ = cheerio.load(html)
 
       expect($('link[as="font"]').length).toBe(0)
+
+      // From _app
+      expect($('link[rel="preconnect"]').length).toBe(1)
+      expect($('link[rel="preconnect"]').get(0).attribs).toEqual({
+        crossorigin: 'anonymous',
+        href: '/',
+        rel: 'preconnect',
+      })
     })
   })
 })

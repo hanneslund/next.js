@@ -10,6 +10,9 @@ export function getGlobalCssLoader(
   preProcessors: readonly webpack.RuleSetUseItem[] = []
 ): webpack.RuleSetUseItem[] {
   const loaders: webpack.RuleSetUseItem[] = []
+  const fontModulesEnabled =
+    typeof ctx.experimental.selfHostedFonts === 'object' &&
+    ctx.experimental.selfHostedFonts.fontModules
 
   if (ctx.isClient) {
     // Add appropriate development more or production mode style
@@ -28,10 +31,7 @@ export function getGlobalCssLoader(
     loader: require.resolve('../../../../loaders/css-loader/src'),
     options: {
       postcss,
-      importLoaders:
-        1 +
-        preProcessors.length +
-        (ctx.experimental.fontModules?.enabled ? 1 : 0),
+      importLoaders: 1 + preProcessors.length + (fontModulesEnabled ? 1 : 0),
       // Next.js controls CSS Modules eligibility:
       modules: false,
       url: (url: string, resourcePath: string) =>
@@ -41,7 +41,7 @@ export function getGlobalCssLoader(
     },
   })
 
-  if (ctx.experimental.fontModules?.enabled) {
+  if (fontModulesEnabled) {
     loaders.push({
       loader: 'next-font-error-loader',
       options: {

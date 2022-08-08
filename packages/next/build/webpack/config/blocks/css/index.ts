@@ -222,28 +222,10 @@ export const css = curry(async function css(
       })
     )
   }
-  if (!ctx.experimental.fontModules?.enabled) {
-    fns.push(
-      loader({
-        oneOf: [
-          markRemovable({
-            sideEffects: true,
-            test: path.join(__dirname, '../../../../../../font'),
-            issuer: {
-              and: [ctx.rootDirectory],
-              not: [/node_modules/, ctx.customAppFile],
-            },
-            use: {
-              loader: 'error-loader',
-              options: {
-                reason: googleFontGlobalImportError(),
-              },
-            },
-          }),
-        ],
-      })
-    )
-  } else {
+  const fontModulesEnabled =
+    typeof ctx.experimental.selfHostedFonts === 'object' &&
+    ctx.experimental.selfHostedFonts.fontModules
+  if (fontModulesEnabled) {
     // kolla i loader ist så behövs inte denna? is google alltså?
     // resource path typ?
     fns.push(
@@ -263,6 +245,27 @@ export const css = curry(async function css(
             //   not: [/node_modules/],
             // },
             use: getFontModuleLoader(ctx, lazyPostCSSInitializer, false),
+          }),
+        ],
+      })
+    )
+  } else {
+    fns.push(
+      loader({
+        oneOf: [
+          markRemovable({
+            sideEffects: true,
+            test: path.join(__dirname, '../../../../../../font'),
+            issuer: {
+              and: [ctx.rootDirectory],
+              not: [/node_modules/, ctx.customAppFile],
+            },
+            use: {
+              loader: 'error-loader',
+              options: {
+                reason: googleFontGlobalImportError(),
+              },
+            },
           }),
         ],
       })

@@ -7,10 +7,13 @@
   font-style: italic;
   src: url(./open-sans.ttf);
   /* comment */
+  font-display: optional;
 }
 /* comment */
 
 .style {
 }
 #className {
+}
+.fallbackFonts {
 }

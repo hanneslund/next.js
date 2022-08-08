@@ -36,9 +36,11 @@ describe('import-errors, missing urlImports', () => {
 
   test('import Google font', async () => {
     const browser = await webdriver(next.appPort, '/')
-    await next.patchFile(
-      'pages/_app.js',
-      `
+
+    try {
+      await next.patchFile(
+        'pages/_app.js',
+        `
      import 'next/font/Inter/400'
  
      function MyApp({ Component, pageProps }) {
@@ -47,12 +49,15 @@ describe('import-errors, missing urlImports', () => {
  
      export default MyApp
      `
-    )
+      )
 
-    await check(() => getRedboxSource(browser), /import Google fonts/)
-    expect(await getRedboxSource(browser)).toInclude(
-      'Add https://fonts.gstatic.com/ to experimental.urlImports to import Google fonts.'
-    )
+      await check(() => getRedboxSource(browser), /import Google fonts/)
+      expect(await getRedboxSource(browser)).toInclude(
+        'Add https://fonts.gstatic.com/ to experimental.urlImports to import Google fonts.'
+      )
+    } finally {
+      await browser.close()
+    }
   })
 })
 
@@ -64,7 +69,7 @@ describe('import-errors, fontModules enabled', () => {
       files: {},
       nextConfig: {
         experimental: {
-          fontModules: { enabled: true },
+          selfHostedFonts: { fontModules: true },
           urlImports: ['https://fonts.gstatic.com/'],
         },
       },
@@ -90,18 +95,20 @@ describe('import-errors, fontModules enabled', () => {
 
   test('@font-face in CSS import', async () => {
     const browser = await webdriver(next.appPort, '/')
-    await next.patchFile(
-      'pages/styles.css',
-      `
+
+    try {
+      await next.patchFile(
+        'pages/styles.css',
+        `
       @font-face {
         font-family: 'Inter';
         src: url(/Inter.woff);
       }
       `
-    )
-    await next.patchFile(
-      'pages/_app.js',
-      `
+      )
+      await next.patchFile(
+        'pages/_app.js',
+        `
        import "./styles.css"
 
        function MyApp({ Component, pageProps }) {
@@ -110,10 +117,10 @@ describe('import-errors, fontModules enabled', () => {
    
        export default MyApp
        `
-    )
+      )
 
-    await check(() => getRedboxSource(browser), /Found @font-face/)
-    expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
+      await check(() => getRedboxSource(browser), /Found @font-face/)
+      expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
 "./pages/styles.css:2:7
 Syntax error: Found @font-face in CSS file
 Read more: https://www.nextjs.org/fontmodules
@@ -124,22 +131,27 @@ Read more: https://www.nextjs.org/fontmodules
   3 |         font-family: 'Inter';
   4 |         src: url(/Inter.woff);"
 `)
+    } finally {
+      await browser.close()
+    }
   })
 
   test('@font-face in CSS module import', async () => {
     const browser = await webdriver(next.appPort, '/')
-    await next.patchFile(
-      'pages/styles.module.css',
-      `
+
+    try {
+      await next.patchFile(
+        'pages/styles.module.css',
+        `
       @font-face {
         font-family: 'Inter';
         src: url(/Inter.woff);
       }
       `
-    )
-    await next.patchFile(
-      'pages/_app.js',
-      `
+      )
+      await next.patchFile(
+        'pages/_app.js',
+        `
      import './styles.module.css'
  
      function MyApp({ Component, pageProps }) {
@@ -148,10 +160,10 @@ Read more: https://www.nextjs.org/fontmodules
  
      export default MyApp
      `
-    )
+      )
 
-    await check(() => getRedboxSource(browser), /Found @font-face/)
-    expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
+      await check(() => getRedboxSource(browser), /Found @font-face/)
+      expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
 "./pages/styles.module.css:2:7
 Syntax error: Found @font-face in CSS file
 Read more: https://www.nextjs.org/fontmodules
@@ -162,6 +174,9 @@ Read more: https://www.nextjs.org/fontmodules
   3 |         font-family: 'Inter';
   4 |         src: url(/Inter.woff);"
 `)
+    } finally {
+      await browser.close()
+    }
   })
 })
 
@@ -173,7 +188,7 @@ describe('import-errors, fontModules disabled', () => {
       files: {},
       nextConfig: {
         experimental: {
-          fontModules: { enabled: false },
+          selfHostedFonts: true,
           urlImports: ['https://fonts.gstatic.com/'],
         },
       },
@@ -202,30 +217,37 @@ describe('import-errors, fontModules disabled', () => {
 
   test('import Google font outside _app', async () => {
     const browser = await webdriver(next.appPort, '/')
-    await next.patchFile(
-      'pages/index.js',
-      `
+
+    try {
+      await next.patchFile(
+        'pages/index.js',
+        `
       import 'next/font/Inter/400'
 
       export default () => <p>Hello world!</p>`
-    )
+      )
 
-    await check(() => getRedboxSource(browser), /Google fonts/)
-    expect(await getRedboxSource(browser)).toInclude(
-      'Google fonts cannot be imported from files other than your Custom <App>.'
-    )
+      await check(() => getRedboxSource(browser), /Google fonts/)
+      expect(await getRedboxSource(browser)).toInclude(
+        'Google fonts cannot be imported from files other than your Custom <App>.'
+      )
+    } finally {
+      await browser.close()
+    }
   })
 
   test.skip('import Google font inside _app', async () => {
     const browser = await webdriver(next.appPort, '/')
-    await next.patchFile(
-      'pages/index.js',
-      `
+
+    try {
+      await next.patchFile(
+        'pages/index.js',
+        `
       export default () => <p style={{ fontFamily: 'Inter' }}>Hello world!</p>`
-    )
-    await next.patchFile(
-      'pages/_app.js',
-      `
+      )
+      await next.patchFile(
+        'pages/_app.js',
+        `
       import 'next/font/Inter/400'
 
       function MyApp({ Component, pageProps }) {
@@ -234,16 +256,21 @@ describe('import-errors, fontModules disabled', () => {
 
       export default MyApp
       `
-    )
+      )
 
-    await waitFor(6000)
+      await waitFor(6000)
+    } finally {
+      await browser.close()
+    }
   })
 
   test('@font-face in CSS import', async () => {
     const browser = await webdriver(next.appPort, '/')
-    await next.patchFile(
-      'pages/_app.js',
-      `
+
+    try {
+      await next.patchFile(
+        'pages/_app.js',
+        `
      import './styles.css'
  
      function MyApp({ Component, pageProps }) {
@@ -252,17 +279,20 @@ describe('import-errors, fontModules disabled', () => {
  
      export default MyApp
      `
-    )
-    await next.patchFile(
-      'pages/styles.css',
-      `
+      )
+      await next.patchFile(
+        'pages/styles.css',
+        `
       @font-face {
         font-family: 'Inter';
         src: url(/Inter.woff);
       }
       `
-    )
+      )
 
-    await check(() => browser.elementByCss('p').text(), /Hello world/)
+      await check(() => browser.elementByCss('p').text(), /Hello world/)
+    } finally {
+      await browser.close()
+    }
   })
 })
