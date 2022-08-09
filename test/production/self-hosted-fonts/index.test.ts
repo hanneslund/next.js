@@ -36,7 +36,7 @@ describe('font modules enabled', () => {
       const $ = cheerio.load(html)
 
       // _app.js
-      expect(JSON.parse(await $('#app-open-sans').text())).toEqual({
+      expect(JSON.parse($('#app-open-sans').text())).toEqual({
         fallbackFonts: ['system-ui', 'sans-serif'],
         className: expect.any(String),
         style: {
@@ -48,7 +48,7 @@ describe('font modules enabled', () => {
       })
 
       // with-fonts.js
-      expect(JSON.parse(await $('#with-fonts-open-sans').text())).toEqual({
+      expect(JSON.parse($('#with-fonts-open-sans').text())).toEqual({
         fallbackFonts: ['system-ui', 'sans-serif'],
         className: expect.any(String),
         style: {
@@ -60,7 +60,7 @@ describe('font modules enabled', () => {
       })
 
       // CompWithFonts.js
-      expect(JSON.parse(await $('#comp-with-fonts-inter').text())).toEqual({
+      expect(JSON.parse($('#comp-with-fonts-inter').text())).toEqual({
         className: expect.any(String),
         style: {
           fontFamily:
@@ -68,7 +68,7 @@ describe('font modules enabled', () => {
           fontWeight: '500',
         },
       })
-      expect(JSON.parse(await $('#comp-with-fonts-roboto').text())).toEqual({
+      expect(JSON.parse($('#comp-with-fonts-roboto').text())).toEqual({
         className: expect.any(String),
         style: {
           fontFamily:
@@ -77,9 +77,7 @@ describe('font modules enabled', () => {
         },
         withFallbackFonts: expect.any(String),
       })
-      expect(
-        JSON.parse(await $('#comp-with-fonts-roboto-again').text())
-      ).toEqual({
+      expect(JSON.parse($('#comp-with-fonts-roboto-again').text())).toEqual({
         className: expect.any(String),
         style: {
           fontFamily:
@@ -376,7 +374,7 @@ describe('font modules disabled', () => {
       const html = await renderViaHTTP(next.url, '/without-fonts')
       const $ = cheerio.load(html)
 
-      expect(JSON.parse(await $('#app-open-sans').text())).toEqual({}) // treated as global CSS
+      expect(JSON.parse($('#app-open-sans').text())).toEqual({}) // treated as global CSS
     })
   })
 

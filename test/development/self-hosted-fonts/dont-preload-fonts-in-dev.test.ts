@@ -26,7 +26,7 @@ describe('dont-preload-fonts-in-dev', () => {
       },
       nextConfig: {
         experimental: {
-          fontModules: { enabled: true },
+          selfHostedFonts: { fontModules: true },
         },
       },
     })
@@ -34,9 +34,14 @@ describe('dont-preload-fonts-in-dev', () => {
     const html = await renderViaHTTP(next.url, '/')
     const $ = cheerio.load(html)
 
+    expect($('link[rel="preconnect"]').length).toBe(0)
     expect($('link[as="font"]').length).toBe(0)
-    expect($('#inter-stringified').text()).toMatchInlineSnapshot(
-      `"{\\"style\\":{\\"fontFamily\\":\\"'Inter-cfe7e0c55d77285613f22729443a7511d0633d43dab20059a067f9209d7e4997'\\"},\\"className\\":\\"inter_font_className__1jv1N\\"}"`
-    )
+    expect(JSON.parse($('#inter-stringified').text())).toEqual({
+      className: expect.any(String),
+      style: {
+        fontFamily:
+          "'Inter-cfe7e0c55d77285613f22729443a7511d0633d43dab20059a067f9209d7e4997'",
+      },
+    })
   })
 })
