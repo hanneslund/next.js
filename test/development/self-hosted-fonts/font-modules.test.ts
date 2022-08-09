@@ -93,6 +93,67 @@ Syntax error: Missing src in @font-face
       }
     })
 
+    test('domain url in src', async () => {
+      const browser = await webdriver(next.appPort, '/')
+
+      try {
+        await next.patchFile(
+          'pages/inter.font.css',
+          `
+    @font-face {
+      font-family: 'Inter';
+      src: url(/inter.woff2);
+    }`
+        )
+
+        await check(
+          () => getRedboxSource(browser),
+          /must reference a local file/
+        )
+        expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
+"./pages/inter.font.css:4:7
+Syntax error: The src property must reference a local file
+
+  2 |     @font-face {
+  3 |       font-family: 'Inter';
+> 4 |       src: url(/inter.woff2);
+    |       ^
+  5 |     }"
+`)
+      } finally {
+        await browser.close()
+      }
+    })
+
+    test('missing url in src', async () => {
+      const browser = await webdriver(next.appPort, '/')
+
+      try {
+        await next.patchFile(
+          'pages/inter.font.css',
+          `
+    @font-face {
+      font-family: 'Inter';
+      src: inter.woff2;
+    }`
+        )
+
+        await check(() => getRedboxSource(browser), /Missing/)
+        expect(await getRedboxSource(browser)).toMatchInlineSnapshot(`
+"./pages/inter.font.css:4:7
+Syntax error: Missing url in src property
+
+  2 |     @font-face {
+  3 |       font-family: 'Inter';
+> 4 |       src: inter.woff2;
+    |       ^
+  5 |     }"
+`)
+      } finally {
+        await browser.close()
+      }
+    })
+
     test('multiple families', async () => {
       const browser = await webdriver(next.appPort, '/')
 

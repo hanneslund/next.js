@@ -1,4 +1,5 @@
 import crypto from 'crypto'
+import chalk from 'next/dist/compiled/chalk'
 import postcss, { AtRule } from 'postcss'
 
 const plugin = (exports: any[], fallBackFonts: any = {}) => {
@@ -54,6 +55,16 @@ const plugin = (exports: any[], fallBackFonts: any = {}) => {
           const src = node.nodes.find((decl) => decl.prop === 'src')
           if (!src) {
             throw node.error('Missing src in @font-face')
+          }
+          if (/url\(["|']?\/.*?["|']?\)/.test(src.value)) {
+            throw src.error(
+              `The ${chalk.bold('src')} property must reference a local file`
+            )
+          }
+          if (!/url\(.*?\)/.test(src.value)) {
+            throw src.error(
+              `Missing ${chalk.bold('url')} in ${chalk.bold('src')} property`
+            )
           }
 
           const weight = node.nodes.find((decl) => decl.prop === 'font-weight')
