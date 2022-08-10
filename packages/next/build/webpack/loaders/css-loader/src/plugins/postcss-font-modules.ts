@@ -2,7 +2,7 @@ import crypto from 'crypto'
 import chalk from 'next/dist/compiled/chalk'
 import postcss, { AtRule } from 'postcss'
 
-const plugin = (exports: any[], fallBackFonts: any = {}) => {
+const plugin = (exports: any[], fallbackFonts: string[] = []) => {
   return {
     postcssPlugin: 'postcss-font-modules',
     Once(root: any) {
@@ -155,10 +155,7 @@ const plugin = (exports: any[], fallBackFonts: any = {}) => {
       const declarations = [
         new postcss.Declaration({
           prop: 'font-family',
-          value: [
-            fontProperties.fontFamily,
-            ...(fallBackFonts[fallbackKey] ? fallBackFonts[fallbackKey] : []),
-          ].join(','),
+          value: [fontProperties.fontFamily, ...fallbackFonts].join(','),
         }),
         ...(fontProperties.fontStyle
           ? [
@@ -187,10 +184,10 @@ const plugin = (exports: any[], fallBackFonts: any = {}) => {
       })
 
       // Export fallback fonts
-      if (fallBackFonts[fallbackKey]) {
+      if (fallbackFonts.length > 0) {
         exports.push({
           name: 'fallbackFonts',
-          value: fallBackFonts[fallbackKey],
+          value: fallbackFonts,
         })
       }
     },

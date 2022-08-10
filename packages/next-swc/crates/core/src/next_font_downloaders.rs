@@ -120,6 +120,29 @@ impl Fold for NextFontDownloaders {
                                                                                                 Expr::Lit(Lit::Str(str)) => {
                                                                                                     Value::String(String::from(&*str.value))
                                                                                                 },
+                                                                                                Expr::Array(ArrayLit {
+                                                                                                    elems,..
+                                                                                                }) => {
+                                                                                                    // kolla spread
+                                                                                                    Value::Array(elems.iter().map(|e| 
+                                                                                                        if let Some(expr) = e {
+                                                                                                            if spread.is_some() {
+                                                                                                                panic!("Unexpected spread");
+                                                                                                            }
+                                                                                                            match &*expr.expr {
+                                                                                                                Expr::Lit(Lit::Str(str)) => {
+                                                                                                                    Value::String(String::from(&*str.value))
+                                                                                                                },
+                                                                                                                _ => panic!()
+                                                                                                            }
+                                                                                                        } else {
+                                                                                                            panic!()
+                                                                                                        }
+                                                                                                    ).collect())
+                                                                                                },
+                                                                                                // Expr::Lit(Lit::A) => {
+                                                                                                //     Value::String(String::from(&*str.value))
+                                                                                                // },
                                                                                                 _ => panic!("expected string lit")
                                                                                             };
                                                                                             values.insert(key, val);

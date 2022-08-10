@@ -52,7 +52,6 @@ export function getFontModuleLoader(
         getLocalIdent: getCssModuleLocalIdent,
       },
       fontModule: ctx.experimental.selfHostedFonts?.fontModules,
-      fallbackFonts: ctx.experimental.selfHostedFonts?.fallbackFonts,
     },
   })
 

@@ -179,7 +179,7 @@ export default async function loader(content, map, meta) {
       const fontModuleExports = []
 
       if (options.fontModule) {
-        plugins.push(fontModules(fontModuleExports, options.fallbackFonts))
+        plugins.push(fontModules(fontModuleExports, meta.fallback))
       }
 
       if (shouldUseModulesPlugins(options)) {

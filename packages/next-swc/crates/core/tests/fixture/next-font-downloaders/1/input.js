@@ -3,6 +3,7 @@ const ballet = Ballet({
   weight: '400',
   display: 'swap',
   style: 'normal',
+  fallback: ['system-ui'],
 })
 console.log({ ballet })
 

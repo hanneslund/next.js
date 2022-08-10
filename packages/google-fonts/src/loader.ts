@@ -21,7 +21,13 @@ export default async function googleFontsLoader(this: any) {
   const params = new URLSearchParams(this.resourceQuery)
   const data = JSON.parse(params.get('d'))
 
-  const { font, variant, display = 'swap', subsets = ['latin'] } = data
+  const {
+    font,
+    variant,
+    display = 'swap',
+    subsets = ['latin'],
+    fallback,
+  } = data
   const [weight, style] = variant.split('-')
 
   // if (!['auto', 'block', 'swap', 'fallback', 'optional'].includes(display)) {
@@ -52,8 +58,7 @@ export default async function googleFontsLoader(this: any) {
       )
     }
 
-    const css = await res.text()
-    callback(null, css)
+    callback(null, await res.text(), null, { fallback })
   } catch (err) {
     callback(err)
   }
