@@ -33,27 +33,11 @@ export function getCustomDocumentError() {
 }
 
 export function googleFontGlobalImportError() {
-  return `Google fonts ${chalk.bold(
+  return `Font downaloders ${chalk.bold(
     'cannot'
-  )} be imported from files other than your ${chalk.bold(
+  )} be used in any other file than your ${chalk.bold(
     'Custom <App>'
-  )}. Please move all Google font imports to ${chalk.cyan(
+  )}. Please move all font downloads to ${chalk.cyan(
     'pages/_app.js'
   )} or enable font modules: https://nextjs.org/docs/font-modules`
-}
-
-export function getNeedExperimentalSelfHostedFontsError() {
-  return `${chalk.cyan(
-    chalk.bold('next/font')
-  )} is experimental. Enable ${chalk.bold(
-    'experimental.selfHostedFonts'
-  )} to import Google fonts.
-Read more: https://nextjs.org/nextfont`
-}
-
-export function getUrlImportFontsError() {
-  return `Add ${chalk.bold('https://fonts.gstatic.com/')} to ${chalk.bold(
-    'experimental.urlImports'
-  )} to import Google fonts.
-Read more: https://nextjs.org/docs/api-reference/next.config.js/url-imports`
 }

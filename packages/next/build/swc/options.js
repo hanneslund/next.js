@@ -115,6 +115,9 @@ function getBaseSWCOptions({
       ? false
       : nextConfig?.compiler?.reactRemoveProperties,
     modularizeImports: nextConfig?.experimental?.modularizeImports,
+    fontDownloaders: Array.isArray(nextConfig?.experimental?.fontDownloaders)
+      ? nextConfig?.experimental?.fontDownloaders
+      : [nextConfig?.experimental?.fontDownloaders],
     relay: nextConfig?.compiler?.relay,
     emotion: getEmotionOptions(nextConfig, development),
   }

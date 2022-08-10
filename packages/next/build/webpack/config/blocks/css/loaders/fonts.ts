@@ -1,4 +1,5 @@
 import { webpack } from 'next/dist/compiled/webpack/webpack'
+import path from 'path'
 import { ConfigurationContext } from '../../../utils'
 import { getClientStyleLoader } from './client'
 import { cssFileResolve } from './file-resolve'
@@ -7,7 +8,7 @@ import { getCssModuleLocalIdent } from './getCssModuleLocalIdent'
 export function getFontModuleLoader(
   ctx: ConfigurationContext,
   postcss: any,
-  isGoogleFonts: boolean
+  fontDownloader?: string
 ): webpack.RuleSetUseItem[] {
   const loaders: webpack.RuleSetUseItem[] = []
 
@@ -28,7 +29,7 @@ export function getFontModuleLoader(
     loader: require.resolve('../../../../loaders/css-loader/src'),
     options: {
       postcss,
-      importLoaders: isGoogleFonts ? 1 : 0,
+      importLoaders: !!fontDownloader ? 1 : 0,
       // Use CJS mode for backwards compatibility:
       esModule: false,
       url: (url: string, resourcePath: string) =>
@@ -55,9 +56,9 @@ export function getFontModuleLoader(
     },
   })
 
-  if (isGoogleFonts) {
+  if (fontDownloader) {
     loaders.push({
-      loader: 'next-font-google-loader',
+      loader: path.join(fontDownloader, '../loader.js'),
     })
   }
 

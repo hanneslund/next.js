@@ -49,8 +49,7 @@
     "types/index.d.ts",
     "types/global.d.ts",
     "image-types/global.d.ts",
-    "types/compiled.d.ts",
-    "font"
+    "types/compiled.d.ts"
   ],
   "bin": {
     "next": "./dist/bin/next"
@@ -122,6 +121,7 @@
     "@hapi/accept": "5.0.2",
     "@napi-rs/cli": "2.7.0",
     "@napi-rs/triples": "1.1.0",
+    "@next/google-fonts": "12.2.4-canary.12",
     "@next/polyfill-module": "12.2.4-canary.12",
     "@next/polyfill-nomodule": "12.2.4-canary.12",
     "@next/react-dev-overlay": "12.2.4-canary.12",

@@ -206,26 +206,14 @@ export const css = curry(async function css(
   )
 
   // next/font
-  if (
-    !ctx.experimental.selfHostedFonts ||
-    !ctx.experimental.urlImports?.includes?.('https://fonts.gstatic.com/')
-  ) {
-    fns.push(
-      loader({
-        oneOf: [
-          markRemovable({
-            test: path.join(__dirname, '../../../../../../font'),
-            use: {
-              loader: 'error-loader',
-              options: {
-                reason: !ctx.experimental.selfHostedFonts
-                  ? getNeedExperimentalSelfHostedFontsError()
-                  : getUrlImportFontsError(),
-              },
-            },
-          }),
-        ],
-      })
+  let fontDownloaders: string[] | undefined
+  if (ctx.experimental.fontDownloaders) {
+    fontDownloaders = Array.isArray(ctx.experimental.fontDownloaders)
+      ? ctx.experimental.fontDownloaders
+      : [ctx.experimental.fontDownloaders]
+
+    fontDownloaders = fontDownloaders.map((downloader) =>
+      require.resolve(downloader)
     )
   }
 
@@ -249,7 +237,7 @@ export const css = curry(async function css(
               ],
               not: [/node_modules/],
             },
-            use: getFontModuleLoader(ctx, lazyPostCSSInitializer, false),
+            use: getFontModuleLoader(ctx, lazyPostCSSInitializer),
           }),
         ],
       })
@@ -260,7 +248,7 @@ export const css = curry(async function css(
         oneOf: [
           markRemovable({
             sideEffects: true,
-            test: path.join(__dirname, '../../../../../../font'),
+            test: fontDownloaders,
             issuer: {
               and: [ctx.rootDirectory],
               not: [/node_modules/, ctx.customAppFile],
@@ -277,22 +265,23 @@ export const css = curry(async function css(
     )
   }
 
-  // Google fonts
-  fns.push(
-    loader({
-      oneOf: [
-        markRemovable({
-          sideEffects: true, // SIDEEFFECTS?
-          test: path.join(__dirname, '../../../../../../font'),
-          issuer: {
-            and: [ctx.rootDirectory],
-            not: [/node_modules/],
-          },
-          use: getFontModuleLoader(ctx, lazyPostCSSInitializer, true),
-        }),
-      ],
-    })
-  )
+  fontDownloaders?.forEach((downloader) => {
+    fns.push(
+      loader({
+        oneOf: [
+          markRemovable({
+            sideEffects: true, // SIDEEFFECTS?
+            test: downloader,
+            issuer: {
+              and: [ctx.rootDirectory],
+              not: [/node_modules/],
+            },
+            use: getFontModuleLoader(ctx, lazyPostCSSInitializer, downloader),
+          }),
+        ],
+      })
+    )
+  })
 
   // CSS Modules support must be enabled on the server and client so the class
   // names are available for SSR or Prerendering.

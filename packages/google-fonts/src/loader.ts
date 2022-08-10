@@ -1,5 +1,3 @@
-import fs from 'fs'
-
 // https://github.com/fontsource/google-font-metadata/blob/main/lib/data/user-agents.json
 const userAgents = {
   apiv1: {
@@ -20,30 +18,25 @@ const userAgents = {
 export default async function googleFontsLoader(this: any) {
   const callback = this.async()
 
-  const pathWithActualCasing: any = await fs.promises.realpath(
-    this.resourcePath
-  )
-  let [fontId, fileName] = pathWithActualCasing
-    .split('next/font/')
-    .at(-1)
-    .split('/')
-
-  const [weight, style] = fileName.slice(0, fileName.length - 3).split('-')
-
   const params = new URLSearchParams(this.resourceQuery)
-  const display = params.get('display') ?? 'swap'
+  const data = JSON.parse(params.get('d'))
 
-  if (!['auto', 'block', 'swap', 'fallback', 'optional'].includes(display)) {
-    callback(new Error(`Unknown display value: ${display}`))
-    return
-  }
+  const { font, variant, display = 'swap', subsets = ['latin'] } = data
+  const [weight, style] = variant.split('-')
+
+  // if (!['auto', 'block', 'swap', 'fallback', 'optional'].includes(display)) {
+  //   callback(new Error(`Unknown display value: ${display}`))
+  //   return
+  // }
 
   try {
     const res = await fetch(
-      `https://fonts.googleapis.com/css2?family=${fontId.replaceAll(
-        '-',
+      `https://fonts.googleapis.com/css2?family=${font.replaceAll(
+        '_',
         '+'
-      )}:ital,wght@${style === 'italic' ? 1 : 0},${weight}&display=${display}`,
+      )}:ital,wght@${
+        style === 'italic' ? 1 : 0
+      },${weight}&display=${display}&subset=${subsets.join(',')}`,
       {
         headers: {
           'user-agent': userAgents.apiv2.woff2,
@@ -59,7 +52,8 @@ export default async function googleFontsLoader(this: any) {
       )
     }
 
-    callback(null, await res.text())
+    const css = await res.text()
+    callback(null, css)
   } catch (err) {
     callback(err)
   }
