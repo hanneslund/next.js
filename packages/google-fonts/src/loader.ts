@@ -15,12 +15,7 @@ const userAgents = {
   },
 }
 
-export default async function googleFontsLoader(this: any) {
-  const callback = this.async()
-
-  const params = new URLSearchParams(this.resourceQuery)
-  const data = JSON.parse(params.get('d'))
-
+export async function download(data: any) {
   const {
     font,
     variant,
@@ -28,6 +23,7 @@ export default async function googleFontsLoader(this: any) {
     subsets = ['latin'],
     fallback,
   } = data
+
   const [weight, style] = variant.split('-')
 
   // if (!['auto', 'block', 'swap', 'fallback', 'optional'].includes(display)) {
@@ -35,31 +31,26 @@ export default async function googleFontsLoader(this: any) {
   //   return
   // }
 
-  try {
-    const res = await fetch(
-      `https://fonts.googleapis.com/css2?family=${font.replaceAll(
-        '_',
-        '+'
-      )}:ital,wght@${
-        style === 'italic' ? 1 : 0
-      },${weight}&display=${display}&subset=${subsets.join(',')}`,
-      {
-        headers: {
-          'user-agent': userAgents.apiv2.woff2,
-        },
-      }
-    )
-    if (!res.ok) {
-      // TODO: Custom error
-      throw new Error(
-        `Failed to fetch font ${this.resource.slice(
-          this.resource.lastIndexOf('next/font/')
-        )}. ${res.status} ${res.statusText}`
-      )
+  const res = await fetch(
+    `https://fonts.googleapis.com/css2?family=${font.replaceAll(
+      '_',
+      '+'
+    )}:ital,wght@${
+      style === 'italic' ? 1 : 0
+    },${weight}&display=${display}&subset=${subsets.join(',')}`,
+    {
+      headers: {
+        'user-agent': userAgents.apiv2.woff2,
+      },
     }
+  )
+  if (!res.ok) {
+    // TODO: Custom error
+    throw new Error(`Failed to fetch font ${font.replaceAll('_', ' ')}`)
+  }
 
-    callback(null, await res.text(), null, { fallback })
-  } catch (err) {
-    callback(err)
+  return {
+    css: await res.text(),
+    fallback,
   }
 }

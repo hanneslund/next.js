@@ -1,9 +1,9 @@
 import { webpack } from 'next/dist/compiled/webpack/webpack'
-import path from 'path'
 import { ConfigurationContext } from '../../../utils'
 import { getClientStyleLoader } from './client'
 import { cssFileResolve } from './file-resolve'
 import { getCssModuleLocalIdent } from './getCssModuleLocalIdent'
+import crypto from 'crypto'
 
 export function getFontModuleLoader(
   ctx: ConfigurationContext,
@@ -49,7 +49,14 @@ export function getFontModuleLoader(
         // development.
         // TODO: Consider making production reduce this to a single
         // character?
-        getLocalIdent: getCssModuleLocalIdent,
+        getLocalIdent: fontDownloader
+          ? (context: any) =>
+              'c' +
+              crypto
+                .createHash('shake256', { outputLength: 5 })
+                .update(context.resourceQuery)
+                .digest('hex')
+          : getCssModuleLocalIdent,
       },
       fontModule: ctx.experimental.selfHostedFonts?.fontModules,
     },
@@ -57,7 +64,7 @@ export function getFontModuleLoader(
 
   if (fontDownloader) {
     loaders.push({
-      loader: path.join(fontDownloader, '../loader.js'),
+      loader: 'next-font-downloader-loader',
     })
   }
 
