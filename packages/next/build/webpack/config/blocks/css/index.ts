@@ -10,9 +10,7 @@ import {
   getGlobalImportError,
   getGlobalModuleImportError,
   getLocalModuleImportError,
-  getNeedExperimentalSelfHostedFontsError,
-  getUrlImportFontsError,
-  googleFontGlobalImportError,
+  fontDownloaderGlobalImportError,
 } from './messages'
 import { getPostCssPlugins } from './plugins'
 
@@ -242,7 +240,7 @@ export const css = curry(async function css(
         ],
       })
     )
-  } else {
+  } else if (fontDownloaders) {
     fns.push(
       loader({
         oneOf: [
@@ -256,7 +254,7 @@ export const css = curry(async function css(
             use: {
               loader: 'error-loader',
               options: {
-                reason: googleFontGlobalImportError(),
+                reason: fontDownloaderGlobalImportError(),
               },
             },
           }),

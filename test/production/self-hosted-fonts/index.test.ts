@@ -20,9 +20,6 @@ describe('font modules enabled', () => {
         experimental: {
           selfHostedFonts: {
             fontModules: true,
-            fallbackFonts: {
-              'Open Sans': ['system-ui', 'sans-serif'],
-            },
           },
         },
       },
@@ -37,7 +34,6 @@ describe('font modules enabled', () => {
 
       // _app.js
       expect(JSON.parse($('#app-open-sans').text())).toEqual({
-        fallbackFonts: ['system-ui', 'sans-serif'],
         className: expect.any(String),
         style: {
           fontFamily:
@@ -49,7 +45,6 @@ describe('font modules enabled', () => {
 
       // with-fonts.js
       expect(JSON.parse($('#with-fonts-open-sans').text())).toEqual({
-        fallbackFonts: ['system-ui', 'sans-serif'],
         className: expect.any(String),
         style: {
           fontFamily:
@@ -99,8 +94,7 @@ describe('font modules enabled', () => {
             'getComputedStyle(document.querySelector("#app-open-sans")).fontFamily'
           )
         ).toBe(
-          // Includes configured fallback fonts
-          '"Open Sans-ea214cbaca1d4c65206c42d84c24a95e897ff9efa27c0d9738032368c808fe6f", system-ui, sans-serif'
+          '"Open Sans-ea214cbaca1d4c65206c42d84c24a95e897ff9efa27c0d9738032368c808fe6f"'
         )
         expect(
           await browser.eval(
@@ -119,8 +113,7 @@ describe('font modules enabled', () => {
             'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontFamily'
           )
         ).toBe(
-          // Includes configured fallback fonts
-          '"Open Sans-ea214cbaca1d4c65206c42d84c24a95e897ff9efa27c0d9738032368c808fe6f", system-ui, sans-serif'
+          '"Open Sans-ea214cbaca1d4c65206c42d84c24a95e897ff9efa27c0d9738032368c808fe6f"'
         )
         expect(
           await browser.eval(

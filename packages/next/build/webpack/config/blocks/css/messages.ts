@@ -32,7 +32,7 @@ export function getCustomDocumentError() {
   )}. Please move global styles to ${chalk.cyan('pages/_app.js')}.`
 }
 
-export function googleFontGlobalImportError() {
+export function fontDownloaderGlobalImportError() {
   return `Font downaloders ${chalk.bold(
     'cannot'
   )} be used in any other file than your ${chalk.bold(
