@@ -58,7 +58,7 @@ export function getFontModuleLoader(
                 .digest('hex')
           : getCssModuleLocalIdent,
       },
-      fontModule: ctx.experimental.selfHostedFonts?.fontModules,
+      fontModule: ctx.experimental.fontModules,
     },
   })
 

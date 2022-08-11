@@ -26,7 +26,7 @@ describe('dont-preload-fonts-in-dev', () => {
       },
       nextConfig: {
         experimental: {
-          selfHostedFonts: { fontModules: true },
+          fontModules: true,
         },
       },
     })

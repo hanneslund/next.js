@@ -147,14 +147,7 @@ export interface ExperimentalConfig {
   swcPlugins?: Array<[string, Record<string, unknown>]>
   largePageDataBytes?: number
   fontDownloaders?: string | string[]
-  selfHostedFonts?:
-    | boolean
-    | {
-        fontModules?: boolean
-        fallbackFonts?: {
-          [fontFamily: string]: string[]
-        }
-      }
+  fontModules?: boolean
 }
 
 export type ExportPathMap = {

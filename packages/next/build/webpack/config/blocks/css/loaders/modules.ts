@@ -10,9 +10,6 @@ export function getCssModuleLoader(
   preProcessors: readonly webpack.RuleSetUseItem[] = []
 ): webpack.RuleSetUseItem[] {
   const loaders: webpack.RuleSetUseItem[] = []
-  const fontModulesEnabled =
-    typeof ctx.experimental.selfHostedFonts === 'object' &&
-    ctx.experimental.selfHostedFonts.fontModules
 
   if (ctx.isClient) {
     // Add appropriate development more or production mode style
@@ -31,7 +28,8 @@ export function getCssModuleLoader(
     loader: require.resolve('../../../../loaders/css-loader/src'),
     options: {
       postcss,
-      importLoaders: 1 + preProcessors.length + (fontModulesEnabled ? 1 : 0),
+      importLoaders:
+        1 + preProcessors.length + (ctx.experimental.fontModules ? 1 : 0),
       // Use CJS mode for backwards compatibility:
       esModule: false,
       url: (url: string, resourcePath: string) =>
@@ -56,7 +54,7 @@ export function getCssModuleLoader(
     },
   })
 
-  if (fontModulesEnabled) {
+  if (ctx.experimental.fontModules) {
     loaders.push({
       loader: 'next-font-error-loader',
       options: {

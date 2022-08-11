@@ -1,4 +1,4 @@
-import { check, getRedboxSource, hasRedbox } from 'next-test-utils'
+import { check, getRedboxSource } from 'next-test-utils'
 import { createNext } from 'e2e-utils'
 import webdriver from 'next-webdriver'
 import { NextInstance } from 'test/lib/next-modes/base'
@@ -20,7 +20,7 @@ describe('font modules enabled', () => {
       },
       nextConfig: {
         experimental: {
-          selfHostedFonts: { fontModules: true },
+          fontModules: true,
         },
       },
     })
@@ -618,7 +618,7 @@ describe('font-modules disabled', () => {
 
       nextConfig: {
         experimental: {
-          selfHostedFonts: { fontModules: false },
+          fontModules: false,
         },
       },
     })

@@ -215,10 +215,7 @@ export const css = curry(async function css(
     )
   }
 
-  const fontModulesEnabled =
-    typeof ctx.experimental.selfHostedFonts === 'object' &&
-    ctx.experimental.selfHostedFonts.fontModules
-  if (fontModulesEnabled) {
+  if (ctx.experimental.fontModules) {
     fns.push(
       loader({
         oneOf: [

@@ -98,14 +98,8 @@ export default class BuildManifestPlugin {
   private isDevFallback: boolean
   private exportRuntime: boolean
   private appDirEnabled: boolean
-  private selfHostedFonts?:
-    | boolean
-    | {
-        fontModules?: boolean
-        fallbackFonts?: {
-          [fontFamily: string]: string[]
-        }
-      }
+  private selfHostedFonts: boolean
+  private fontModules: boolean
 
   constructor(options: {
     buildId: string
@@ -113,14 +107,8 @@ export default class BuildManifestPlugin {
     isDevFallback?: boolean
     exportRuntime?: boolean
     appDirEnabled: boolean
-    selfHostedFonts?:
-      | boolean
-      | {
-          fontModules?: boolean
-          fallbackFonts?: {
-            [fontFamily: string]: string[]
-          }
-        }
+    selfHostedFonts: boolean
+    fontModules: boolean
   }) {
     this.buildId = options.buildId
     this.isDevFallback = !!options.isDevFallback
@@ -135,6 +123,7 @@ export default class BuildManifestPlugin {
     this.rewrites.fallback = options.rewrites.fallback.map(processRoute)
     this.exportRuntime = !!options.exportRuntime
     this.selfHostedFonts = options.selfHostedFonts
+    this.fontModules = options.fontModules
   }
 
   async createAssets(compiler: any, compilation: any, assets: any) {
@@ -242,12 +231,9 @@ export default class BuildManifestPlugin {
             .filter((file: string) => file.endsWith('.css'))
 
           const files: Array<{ file: string; preload: boolean }> = []
-          const fontModulesEnabled =
-            typeof this.selfHostedFonts === 'object' &&
-            this.selfHostedFonts.fontModules
           for (const file of cssFiles) {
             await postcss([
-              pageFontDependencies(files, !!fontModulesEnabled),
+              pageFontDependencies(files, this.fontModules),
             ]).process(assets[file]._cachedSource, {
               from: undefined,
             })

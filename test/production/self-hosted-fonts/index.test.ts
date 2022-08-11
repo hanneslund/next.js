@@ -18,9 +18,7 @@ describe('font modules enabled', () => {
       },
       nextConfig: {
         experimental: {
-          selfHostedFonts: {
-            fontModules: true,
-          },
+          fontModules: true,
         },
       },
     })
@@ -320,11 +318,6 @@ describe('self hosted fonts disabled', () => {
         ),
         fonts: new FileRef(join(__dirname, 'app/fonts')),
       },
-      nextConfig: {
-        experimental: {
-          selfHostedFonts: false,
-        },
-      },
     })
   })
   afterAll(() => next.destroy())
@@ -353,11 +346,6 @@ describe('font modules disabled', () => {
         'pages/_app.js': new FileRef(join(__dirname, 'app/pages/_app.js')),
         fonts: new FileRef(join(__dirname, 'app/fonts')),
       },
-      nextConfig: {
-        experimental: {
-          selfHostedFonts: true,
-        },
-      },
     })
   })
   afterAll(() => next.destroy())
@@ -379,6 +367,7 @@ describe('font modules disabled', () => {
       expect($('link[as="font"]').length).toBe(0)
 
       // From _app
+      // Ska den lägga till preconnect oavsett?
       expect($('link[rel="preconnect"]').length).toBe(1)
       expect($('link[rel="preconnect"]').get(0).attribs).toEqual({
         crossorigin: 'anonymous',
