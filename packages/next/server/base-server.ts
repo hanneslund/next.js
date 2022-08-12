@@ -1,4 +1,4 @@
-import { __ApiPreviewProps } from './api-utils'
+import type { __ApiPreviewProps } from './api-utils'
 import type { CustomRoutes } from '../lib/load-custom-routes'
 import type { DomainLocale } from './config'
 import type { DynamicRoutes, PageChecker, Route } from './router'
@@ -6,11 +6,7 @@ import type { FontManifest } from './font-utils'
 import type { LoadComponentsReturnType } from './load-components'
 import type { RouteMatch } from '../shared/lib/router/utils/route-matcher'
 import type { Params } from '../shared/lib/router/utils/route-matcher'
-import type {
-  NextConfig,
-  NextConfigComplete,
-  ServerRuntime,
-} from './config-shared'
+import type { NextConfig, NextConfigComplete } from './config-shared'
 import type { NextParsedUrlQuery, NextUrlWithParsedQuery } from './request-meta'
 import type { ParsedUrlQuery } from 'querystring'
 import type { RenderOpts, RenderOptsPartial } from './render'
@@ -23,7 +19,7 @@ import {
   normalizeRepeatedSlashes,
   MissingStaticPage,
 } from '../shared/lib/utils'
-import type { PreviewData } from 'next/types'
+import type { PreviewData, ServerRuntime } from 'next/types'
 import type { PagesManifest } from '../build/webpack/plugins/pages-manifest-plugin'
 import type { BaseNextRequest, BaseNextResponse } from './base-http'
 import type { PayloadOptions } from './send-payload'
@@ -31,7 +27,7 @@ import type { PayloadOptions } from './send-payload'
 import { join, resolve } from '../shared/lib/isomorphic/path'
 import { parse as parseQs } from 'querystring'
 import { format as formatUrl, parse as parseUrl } from 'url'
-import { getRedirectStatus } from '../lib/load-custom-routes'
+import { getRedirectStatus } from '../lib/redirect-status'
 import {
   NEXT_BUILTIN_DOCUMENT,
   NEXT_CLIENT_SSR_ENTRY_SUFFIX,
@@ -123,6 +119,10 @@ export interface Options {
    * The port the server is running behind
    */
   port?: number
+  /**
+   * The HTTP Server that Next.js is running behind
+   */
+  httpServer?: import('http').Server
 }
 
 export interface BaseRequestHandler {
@@ -139,6 +139,25 @@ type RequestContext = {
   pathname: string
   query: NextParsedUrlQuery
   renderOpts: RenderOptsPartial
+}
+
+class NoFallbackError extends Error {}
+
+// Internal wrapper around build errors at development
+// time, to prevent us from propagating or logging them
+export class WrappedBuildError extends Error {
+  innerError: Error
+
+  constructor(innerError: Error) {
+    super()
+    this.innerError = innerError
+  }
+}
+
+type ResponsePayload = {
+  type: 'html' | 'json'
+  body: RenderResult
+  revalidateOptions?: any
 }
 
 export default abstract class Server<ServerOptions extends Options = Options> {
@@ -265,7 +284,10 @@ export default abstract class Server<ServerOptions extends Options = Options> {
     res: BaseNextResponse
   ): void
 
-  protected abstract loadEnvConfig(params: { dev: boolean }): void
+  protected abstract loadEnvConfig(params: {
+    dev: boolean
+    forceReload?: boolean
+  }): void
 
   public constructor(options: ServerOptions) {
     const {
@@ -621,7 +643,7 @@ export default abstract class Server<ServerOptions extends Options = Options> {
         }
       }
 
-      if (defaultLocale) {
+      if (!this.minimalMode && defaultLocale) {
         const redirect = getLocaleRedirect({
           defaultLocale,
           domainLocale,
@@ -668,6 +690,12 @@ export default abstract class Server<ServerOptions extends Options = Options> {
   public getRequestHandler(): BaseRequestHandler {
     return this.handleRequest.bind(this)
   }
+
+  protected async handleUpgrade(
+    _req: BaseNextRequest,
+    _socket: any,
+    _head?: any
+  ): Promise<void> {}
 
   public setAssetPrefix(prefix?: string): void {
     this.renderOpts.assetPrefix = prefix ? prefix.replace(/\/$/, '') : ''
@@ -734,6 +762,7 @@ export default abstract class Server<ServerOptions extends Options = Options> {
         match: getPathMatch('/_next/data/:path*'),
         type: 'route',
         name: '_next/data catchall',
+        check: true,
         fn: async (req, res, params, _parsedUrl) => {
           // Make sure to 404 for /_next/data/ itself and
           // we also want to 404 if the buildId isn't correct
@@ -2129,22 +2158,3 @@ export function prepareServerlessUrl(
 }
 
 export { stringifyQuery } from './server-route-utils'
-
-class NoFallbackError extends Error {}
-
-// Internal wrapper around build errors at development
-// time, to prevent us from propagating or logging them
-export class WrappedBuildError extends Error {
-  innerError: Error
-
-  constructor(innerError: Error) {
-    super()
-    this.innerError = innerError
-  }
-}
-
-type ResponsePayload = {
-  type: 'html' | 'json'
-  body: RenderResult
-  revalidateOptions?: any
-}
