@@ -216,7 +216,7 @@ fn next_font_downloaders_fixture(input: PathBuf) {
     let output = input.parent().unwrap().join("output.js");
     test_fixture(
         syntax(),
-        &|_tr| next_font_downloaders(vec!["@next/google-fonts".into()]),
+        &|_tr| next_font_downloaders(vec!["@next/google-fonts".into(), "cool-fonts".into()]),
         &input,
         &output,
     );

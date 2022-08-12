@@ -1,6 +1,6 @@
 use next_swc::{
     disallow_re_export_all_in_page::disallow_re_export_all_in_page, next_dynamic::next_dynamic,
-    next_ssg::next_ssg,
+    next_font_downloaders::next_font_downloaders, next_ssg::next_ssg,
 };
 use std::path::PathBuf;
 use swc_common::FileName;
@@ -50,6 +50,17 @@ fn next_ssg_errors(input: PathBuf) {
     test_fixture_allowing_error(
         syntax(),
         &|_tr| next_ssg(Default::default()),
+        &input,
+        &output,
+    );
+}
+
+#[fixture("tests/errors/next-font-downloaders/**/input.js")]
+fn next_font_downloaders_errors(input: PathBuf) {
+    let output = input.parent().unwrap().join("output.js");
+    test_fixture_allowing_error(
+        syntax(),
+        &|_tr| next_font_downloaders(vec!["@next/google-fonts".into(), "cool-fonts".into()]),
         &input,
         &output,
     );

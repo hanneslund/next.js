@@ -1,6 +1,7 @@
 use serde_json::{Number, Value};
 use swc_atoms::JsWord;
 use swc_common::errors::HANDLER;
+use swc_common::Spanned;
 use swc_common::DUMMY_SP;
 use swc_ecmascript::ast::*;
 use swc_ecmascript::visit::noop_visit_type;
@@ -10,71 +11,145 @@ pub struct FontImportGenerator<'a> {
     pub state: &'a mut super::State,
 }
 
+impl<'a> FontImportGenerator<'a> {
+    fn check_call_expr(&mut self, call_expr: &CallExpr, font_module_id: Option<Ident>) -> bool {
+        if let Callee::Expr(callee_expr) = &call_expr.callee {
+            if let Expr::Ident(ident) = &**callee_expr {
+                if let Some(downloader) = self.state.font_functions.get(&ident.to_id()) {
+                    if call_expr.args.len() > 1 {
+                        HANDLER.with(|handler| {
+                            handler
+                                .struct_span_err(
+                                    call_expr.span,
+                                    "Font downloaders only accepts 1 argument",
+                                )
+                                .emit()
+                        });
+                    }
+
+                    let json = match call_expr.args.get(0) {
+                        Some(ExprOrSpread { expr, spread }) => {
+                            if spread.is_some() {
+                                panic!("SPREAD FOUND")
+                            }
+                            match &**expr {
+                                Expr::Object(object_lit) => {
+                                    Ok(object_lit_to_font_json(&*ident.sym, object_lit))
+                                }
+                                _ => {
+                                    HANDLER.with(|handler| {
+                                        handler
+                                            .struct_span_err(
+                                                call_expr.span,
+                                                "Font downloader must be called with an options \
+                                                 object",
+                                            )
+                                            .emit()
+                                    });
+                                    Err(())
+                                }
+                            }
+                        }
+                        None => {
+                            HANDLER.with(|handler| {
+                                handler
+                                    .struct_span_err(
+                                        call_expr.span,
+                                        "Font downloader must be called with an options object",
+                                    )
+                                    .emit()
+                            });
+                            Err(())
+                        }
+                    };
+
+                    if let Ok(json) = json {
+                        self.state
+                            .font_imports
+                            .push(ModuleItem::ModuleDecl(ModuleDecl::Import(ImportDecl {
+                                src: Str {
+                                    value: JsWord::from(format!("{}?{}", downloader, json)),
+                                    raw: None,
+                                    span: DUMMY_SP,
+                                },
+                                specifiers: match font_module_id {
+                                    Some(id) => {
+                                        vec![ImportSpecifier::Default(ImportDefaultSpecifier {
+                                            span: DUMMY_SP,
+                                            local: id,
+                                        })]
+                                    }
+                                    None => Vec::new(),
+                                },
+                                type_only: false,
+                                asserts: None,
+                                span: DUMMY_SP,
+                            })));
+
+                        return true;
+                    }
+                }
+            }
+        }
+
+        false
+    }
+}
+
 impl<'a> Visit for FontImportGenerator<'a> {
     noop_visit_type!();
 
     fn visit_module_item(&mut self, item: &ModuleItem) {
-        if let ModuleItem::Stmt(Stmt::Decl(Decl::Var(var_decl))) = item {
-            if let Some(decl) = var_decl.decls.get(0) {
-                let name: Option<Ident> = if let Pat::Ident(ident) = &decl.name {
-                    Some(ident.id.clone())
-                } else {
-                    None
-                };
-                if let Some(expr) = &decl.init {
-                    if let Expr::Call(call_expr) = &**expr {
-                        if let Callee::Expr(callee_expr) = &call_expr.callee {
-                            if let Expr::Ident(ident) = &**callee_expr {
-                                if self.state.font_functions.contains(&ident.to_id()) {
-                                    self.state.removeable_module_items.insert(var_decl.span.lo);
+        match item {
+            ModuleItem::Stmt(Stmt::Decl(Decl::Var(var_decl))) => {
+                if let Some(decl) = var_decl.decls.get(0) {
+                    let ident = match &decl.name {
+                        Pat::Ident(ident) => Ok(ident.id.clone()),
+                        pattern => Err(pattern),
+                    };
+                    if let Some(expr) = &decl.init {
+                        if let Expr::Call(call_expr) = &**expr {
+                            if self.check_call_expr(call_expr, ident.clone().ok()) {
+                                self.state.removeable_module_items.insert(var_decl.span.lo);
 
-                                    let json = match call_expr.args.get(0) {
-                                        Some(ExprOrSpread { expr, spread }) => {
-                                            if spread.is_some() {
-                                                panic!("SPREAD FOUND")
-                                            }
-                                            match &**expr {
-                                                Expr::Object(object_lit) => {
-                                                    object_lit_to_font_json(&*ident.sym, object_lit)
-                                                }
-                                                _ => panic!("expected object"),
-                                            }
-                                        }
-                                        None => panic!("expected argument to font function"),
-                                    };
-
-                                    self.state.font_imports.push(ModuleItem::ModuleDecl(
-                                        ModuleDecl::Import(ImportDecl {
-                                            src: Str {
-                                                value: JsWord::from(format!(
-                                                    "@next/google-fonts?{}",
-                                                    json
-                                                )),
-                                                raw: None,
-                                                span: DUMMY_SP,
-                                            },
-                                            specifiers: match name {
-                                                Some(id) => {
-                                                    vec![ImportSpecifier::Default(
-                                                        ImportDefaultSpecifier {
-                                                            span: DUMMY_SP,
-                                                            local: id,
-                                                        },
-                                                    )]
-                                                }
-                                                None => Vec::new(),
-                                            },
-                                            type_only: false,
-                                            asserts: None,
-                                            span: DUMMY_SP,
-                                        }),
-                                    ));
+                                match var_decl.kind {
+                                    VarDeclKind::Const => {}
+                                    _ => {
+                                        HANDLER.with(|handler| {
+                                            handler
+                                                .struct_span_err(
+                                                    var_decl.span,
+                                                    "Font downloader result must be assigned to a \
+                                                     const",
+                                                )
+                                                .emit()
+                                        });
+                                    }
+                                }
+                                if let Err(pattern) = ident {
+                                    HANDLER.with(|handler| {
+                                        handler
+                                            .struct_span_err(
+                                                pattern.span(),
+                                                "Font downloader result must be assigned to an \
+                                                 identifier",
+                                            )
+                                            .emit()
+                                    });
                                 }
                             }
                         }
                     }
                 }
             }
+            ModuleItem::Stmt(Stmt::Expr(expr_stmt)) => {
+                if let Expr::Call(call_expr) = &*expr_stmt.expr {
+                    if self.check_call_expr(call_expr, None) {
+                        self.state.removeable_module_items.insert(expr_stmt.span.lo);
+                    }
+                }
+            }
+            _ => {}
         }
     }
 }

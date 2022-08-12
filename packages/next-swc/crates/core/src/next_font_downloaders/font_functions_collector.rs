@@ -24,7 +24,9 @@ impl<'a> Visit for FontFunctionsCollector<'a> {
                     for specifier in &import_decl.specifiers {
                         match specifier {
                             ImportSpecifier::Named(ImportNamedSpecifier { local, .. }) => {
-                                self.state.font_functions.insert(local.to_id());
+                                self.state
+                                    .font_functions
+                                    .insert(local.to_id(), import_decl.src.value.clone());
                             }
                             _ => panic!("UNEXPECTED IMPORT"),
                         }
