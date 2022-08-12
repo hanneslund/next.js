@@ -28,11 +28,19 @@ impl<'a> FontImportGenerator<'a> {
                     }
 
                     let json = match call_expr.args.get(0) {
-                        Some(ExprOrSpread { expr, spread }) => {
-                            if spread.is_some() {
-                                panic!("SPREAD FOUND")
+                        Some(ExprOrSpread { expr, spread }) => match spread {
+                            Some(spread_span) => {
+                                HANDLER.with(|handler| {
+                                    handler
+                                        .struct_span_err(
+                                            *spread_span,
+                                            "Font downloaders don't accept spreads",
+                                        )
+                                        .emit()
+                                });
+                                Err(())
                             }
-                            match &**expr {
+                            None => match &**expr {
                                 Expr::Object(object_lit) => {
                                     Ok(object_lit_to_font_json(&*ident.sym, object_lit))
                                 }
@@ -48,8 +56,8 @@ impl<'a> FontImportGenerator<'a> {
                                     });
                                     Err(())
                                 }
-                            }
-                        }
+                            },
+                        },
                         None => {
                             HANDLER.with(|handler| {
                                 handler
@@ -161,34 +169,59 @@ fn object_lit_to_font_json(font_name: &str, object_lit: &ObjectLit) -> Value {
             PropOrSpread::Prop(prop) => match &**prop {
                 Prop::KeyValue(key_val) => {
                     let key = match &key_val.key {
-                        PropName::Ident(ident) => String::from(&*ident.sym),
-                        _ => panic!("expected ident"),
+                        PropName::Ident(ident) => Ok(String::from(&*ident.sym)),
+                        key => {
+                            HANDLER.with(|handler| {
+                                handler
+                                    .struct_span_err(key.span(), "Unexpected object key type")
+                                    .emit()
+                            });
+                            Err(())
+                        }
                     };
                     let val = match &*key_val.value {
-                        Expr::Lit(Lit::Str(str)) => Value::String(String::from(&*str.value)),
-                        Expr::Array(ArrayLit { elems, .. }) => Value::Array(
-                            elems
+                        Expr::Lit(Lit::Str(str)) => Ok(Value::String(String::from(&*str.value))),
+                        Expr::Array(ArrayLit { elems, .. }) => {
+                            let elements: Result<Vec<Value>, ()> = elems
                                 .iter()
                                 .map(|e| {
                                     if let Some(expr) = e {
-                                        if expr.spread.is_some() {
-                                            panic!("Unexpected spread");
-                                        }
-                                        match &*expr.expr {
-                                            Expr::Lit(Lit::Str(str)) => {
-                                                Value::String(String::from(&*str.value))
-                                            }
-                                            _ => panic!(),
+                                        match expr.spread {
+                                            Some(spread_span) => HANDLER.with(|handler| {
+                                                handler
+                                                    .struct_span_err(
+                                                        spread_span,
+                                                        "Unexpected spread",
+                                                    )
+                                                    .emit();
+                                                Err(())
+                                            }),
+                                            None => match &*expr.expr {
+                                                Expr::Lit(Lit::Str(str)) => {
+                                                    Ok(Value::String(String::from(&*str.value)))
+                                                }
+                                                _ => panic!(),
+                                            },
                                         }
                                     } else {
                                         panic!()
                                     }
                                 })
-                                .collect(),
-                        ),
+                                .collect();
+
+                            match elements {
+                                Ok(elements) => Ok(Value::Array(elements)),
+                                Err(_) => Err(()),
+                            }
+                        }
                         _ => panic!("expected string lit"),
                     };
-                    values.insert(key, val);
+                    match (key, val) {
+                        (Ok(key), Ok(val)) => {
+                            values.insert(key, val);
+                        }
+                        _ => {}
+                    }
                 }
                 _ => panic!("expected key value"),
             },

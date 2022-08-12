@@ -1,0 +1,24 @@
+
+  x Unexpected object key type
+   ,-[input.js:4:1]
+ 4 | ABeeZee({ ['variant']: '400' })
+   :           ^^^^^^^^^^^
+   `----
+
+  x Unexpected object key type
+   ,-[input.js:6:1]
+ 6 | const i2 = ABeeZee({ 10: 'hello' })
+   :                      ^^
+   `----
+
+  x Unexpected spread
+   ,-[input.js:9:1]
+ 9 | ABeeZee({ variant: [...[], 'hello'] })
+   :                     ^^^
+   `----
+
+  x Unexpected spread
+    ,-[input.js:11:1]
+ 11 | const i4 = ABeeZee({ variant: [...[], 'hello'] })
+    :                                ^^^
+    `----
