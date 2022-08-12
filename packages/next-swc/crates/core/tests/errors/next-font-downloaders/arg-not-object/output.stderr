@@ -6,7 +6,7 @@
    `----
 
   x Font downloader must be called with an options object
-   ,-[input.js:4:1]
- 4 | const s = Sacramento([''])
-   :           ^^^^^^^^^^^^^^^^
+   ,-[input.js:5:1]
+ 5 | const s = Sacramento(obj)
+   :           ^^^^^^^^^^^^^^^
    `----

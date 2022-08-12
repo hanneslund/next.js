@@ -1,5 +1,4 @@
 fn(10);
 Inter(10);
-const s = Sacramento([
-    ''
-]);
+const obj = {};
+const s = Sacramento(obj);
