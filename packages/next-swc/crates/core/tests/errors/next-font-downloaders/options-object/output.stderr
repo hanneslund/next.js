@@ -7,8 +7,8 @@
 
   x Unexpected object key type
    ,-[input.js:6:1]
- 6 | const i2 = ABeeZee({ 10: 'hello' })
-   :                      ^^
+ 6 | const a = ABeeZee({ 10: 'hello' })
+   :                     ^^
    `----
 
   x Unexpected spread
@@ -19,6 +19,66 @@
 
   x Unexpected spread
     ,-[input.js:11:1]
- 11 | const i4 = ABeeZee({ variant: [...[], 'hello'] })
-    :                                ^^^
+ 11 | const a = ABeeZee({ variant: [...[], 'hello'] })
+    :                               ^^^
+    `----
+
+  x Unexpected value
+    ,-[input.js:14:1]
+ 14 | ABeeZee({ variant: [function () {}] })
+    :                     ^^^^^^^^^^^^^^
+    `----
+
+  x Unexpected value
+    ,-[input.js:16:1]
+ 16 | const a = ABeeZee({ variant: [i1] })
+    :                               ^^
+    `----
+
+  x Unexpected empty value in array
+    ,-[input.js:19:1]
+ 19 | ABeeZee({ variant: [, ''] })
+    :                    ^^^^^^
+    `----
+
+  x Unexpected empty value in array
+    ,-[input.js:21:1]
+ 21 | const a = ABeeZee({ variant: [, ''] })
+    :                              ^^^^^^
+    `----
+
+  x Unexpected value
+    ,-[input.js:24:1]
+ 24 | ABeeZee({ variant: i1 })
+    :                    ^^
+    `----
+
+  x Unexpected value
+    ,-[input.js:26:1]
+ 26 | const a = ABeeZee({ variant: () => {} })
+    :                              ^^^^^^^^
+    `----
+
+  x Unexpected key
+    ,-[input.js:29:1]
+ 29 | ABeeZee({ variant() {} })
+    :           ^^^^^^^^^^^^
+    `----
+
+  x Unexpected key
+    ,-[input.js:31:1]
+ 31 | const a = ABeeZee({ variant() {} })
+    :                     ^^^^^^^^^^^^
+    `----
+
+  x Unexpected spread
+    ,-[input.js:34:1]
+ 34 | ABeeZee({ ...{} })
+    :           ^^^
+    `----
+
+  x Unexpected spread
+    ,-[input.js:36:1]
+ 36 | const a = ABeeZee({ ...{} })
+    :                     ^^^
     `----

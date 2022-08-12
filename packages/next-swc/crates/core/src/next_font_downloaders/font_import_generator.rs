@@ -181,7 +181,11 @@ fn object_lit_to_font_json(font_name: &str, object_lit: &ObjectLit) -> Value {
                     };
                     let val = match &*key_val.value {
                         Expr::Lit(Lit::Str(str)) => Ok(Value::String(String::from(&*str.value))),
-                        Expr::Array(ArrayLit { elems, .. }) => {
+                        Expr::Array(ArrayLit {
+                            elems,
+                            span: array_span,
+                            ..
+                        }) => {
                             let elements: Result<Vec<Value>, ()> = elems
                                 .iter()
                                 .map(|e| {
@@ -200,21 +204,39 @@ fn object_lit_to_font_json(font_name: &str, object_lit: &ObjectLit) -> Value {
                                                 Expr::Lit(Lit::Str(str)) => {
                                                     Ok(Value::String(String::from(&*str.value)))
                                                 }
-                                                _ => panic!(),
+                                                lit => HANDLER.with(|handler| {
+                                                    handler
+                                                        .struct_span_err(
+                                                            lit.span(),
+                                                            "Unexpected value",
+                                                        )
+                                                        .emit();
+                                                    Err(())
+                                                }),
                                             },
                                         }
                                     } else {
-                                        panic!()
+                                        HANDLER.with(|handler| {
+                                            handler
+                                                .struct_span_err(
+                                                    *array_span,
+                                                    "Unexpected empty value in array",
+                                                )
+                                                .emit();
+                                            Err(())
+                                        })
                                     }
                                 })
                                 .collect();
 
-                            match elements {
-                                Ok(elements) => Ok(Value::Array(elements)),
-                                Err(_) => Err(()),
-                            }
+                            elements.map(Value::Array)
                         }
-                        _ => panic!("expected string lit"),
+                        lit => HANDLER.with(|handler| {
+                            handler
+                                .struct_span_err(lit.span(), "Unexpected value")
+                                .emit();
+                            Err(())
+                        }),
                     };
                     match (key, val) {
                         (Ok(key), Ok(val)) => {
@@ -223,9 +245,15 @@ fn object_lit_to_font_json(font_name: &str, object_lit: &ObjectLit) -> Value {
                         _ => {}
                     }
                 }
-                _ => panic!("expected key value"),
+                key => HANDLER.with(|handler| {
+                    handler.struct_span_err(key.span(), "Unexpected key").emit();
+                }),
             },
-            PropOrSpread::Spread(_) => panic!("unexpected spread in prop"),
+            PropOrSpread::Spread(spread_span) => HANDLER.with(|handler| {
+                handler
+                    .struct_span_err(spread_span.dot3_token, "Unexpected spread")
+                    .emit();
+            }),
         }
     }
 
