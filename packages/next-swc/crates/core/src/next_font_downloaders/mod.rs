@@ -1,13 +1,13 @@
 use fxhash::FxHashSet;
 use swc_atoms::JsWord;
 use swc_common::collections::AHashMap;
-use swc_common::errors::HANDLER;
 use swc_common::{BytePos, Spanned};
 use swc_ecmascript::ast::*;
 use swc_ecmascript::visit::{as_folder, noop_visit_mut_type, Fold, VisitMut, VisitWith};
 
+mod find_functions_outside_module_scope;
 mod font_functions_collector;
-mod font_import_generator;
+mod font_imports_generator;
 
 pub fn next_font_downloaders(font_downloaders: Vec<String>) -> impl Fold + VisitMut {
     as_folder(NextFontDownloaders {
@@ -23,6 +23,7 @@ pub struct State {
     font_functions: AHashMap<Id, JsWord>,
     removeable_module_items: FxHashSet<BytePos>,
     font_imports: Vec<ModuleItem>,
+    font_functions_in_allowed_scope: FxHashSet<BytePos>,
 }
 
 struct NextFontDownloaders {
@@ -34,7 +35,7 @@ impl VisitMut for NextFontDownloaders {
     noop_visit_mut_type!();
 
     fn visit_mut_module_items(&mut self, items: &mut Vec<ModuleItem>) {
-        // Find imports of font downloaders
+        // Find imported functions from font downloaders
         let mut functions_collector = font_functions_collector::FontFunctionsCollector {
             font_downloaders: &self.font_downloaders,
             state: &mut self.state,
@@ -43,12 +44,19 @@ impl VisitMut for NextFontDownloaders {
 
         if !self.state.removeable_module_items.is_empty() {
             // Generate imports from usage
-            let mut import_generator = font_import_generator::FontImportGenerator {
+            let mut import_generator = font_imports_generator::FontImportsGenerator {
                 state: &mut self.state,
             };
             items.visit_with(&mut import_generator);
 
-            // Remove tagged module items
+            // Find font function refs in wrong scope
+            let mut wrong_scope =
+                find_functions_outside_module_scope::FindFunctionsOutsideModuleScope {
+                    state: &mut self.state,
+                };
+            items.visit_with(&mut wrong_scope);
+
+            // Remove marked module items
             items.retain(|item| !self.state.removeable_module_items.contains(&item.span_lo()));
 
             // Add font imports

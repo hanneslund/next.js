@@ -1,4 +1,4 @@
-use serde_json::{Number, Value};
+use serde_json::Value;
 use swc_atoms::JsWord;
 use swc_common::errors::HANDLER;
 use swc_common::Spanned;
@@ -7,15 +7,19 @@ use swc_ecmascript::ast::*;
 use swc_ecmascript::visit::noop_visit_type;
 use swc_ecmascript::visit::Visit;
 
-pub struct FontImportGenerator<'a> {
+pub struct FontImportsGenerator<'a> {
     pub state: &'a mut super::State,
 }
 
-impl<'a> FontImportGenerator<'a> {
+impl<'a> FontImportsGenerator<'a> {
     fn check_call_expr(&mut self, call_expr: &CallExpr, font_module_id: Option<Ident>) -> bool {
         if let Callee::Expr(callee_expr) = &call_expr.callee {
             if let Expr::Ident(ident) = &**callee_expr {
                 if let Some(downloader) = self.state.font_functions.get(&ident.to_id()) {
+                    self.state
+                        .font_functions_in_allowed_scope
+                        .insert(ident.span.lo);
+
                     if call_expr.args.len() > 1 {
                         HANDLER.with(|handler| {
                             handler
@@ -104,7 +108,7 @@ impl<'a> FontImportGenerator<'a> {
     }
 }
 
-impl<'a> Visit for FontImportGenerator<'a> {
+impl<'a> Visit for FontImportsGenerator<'a> {
     noop_visit_type!();
 
     fn visit_module_item(&mut self, item: &ModuleItem) {
