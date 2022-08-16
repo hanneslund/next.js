@@ -238,26 +238,26 @@ export const css = curry(async function css(
       })
     )
   } else if (fontDownloaders) {
-    fns.push(
-      loader({
-        oneOf: [
-          markRemovable({
-            sideEffects: true,
-            test: fontDownloaders,
-            issuer: {
-              and: [ctx.rootDirectory],
-              not: [/node_modules/, ctx.customAppFile],
-            },
-            use: {
-              loader: 'error-loader',
-              options: {
-                reason: fontDownloaderGlobalImportError(),
-              },
-            },
-          }),
-        ],
-      })
-    )
+    // fns.push(
+    //   loader({
+    //     oneOf: [
+    //       markRemovable({
+    //         sideEffects: true,
+    //         test: fontDownloaders,
+    //         issuer: {
+    //           and: [ctx.rootDirectory],
+    //           not: [/node_modules/, ctx.customAppFile],
+    //         },
+    //         use: {
+    //           loader: 'error-loader',
+    //           options: {
+    //             reason: fontDownloaderGlobalImportError(),
+    //           },
+    //         },
+    //       }),
+    //     ],
+    //   })
+    // )
   }
 
   fontDownloaders?.forEach((downloader) => {
@@ -267,10 +267,14 @@ export const css = curry(async function css(
           markRemovable({
             sideEffects: true, // SIDEEFFECTS?
             test: downloader,
-            issuer: {
-              and: [ctx.rootDirectory],
-              not: [/node_modules/],
-            },
+            // issuer: {
+            //   and: [ctx.rootDirectory],
+            //   not: [/node_modules/],
+            // },
+            // issuer: {
+            //   and: [ctx.rootDirectory, /\.(js|mjs|jsx|ts|tsx)$/],
+            //   or: [regexClientEntry],
+            // },
             use: getFontModuleLoader(ctx, lazyPostCSSInitializer, downloader),
           }),
         ],

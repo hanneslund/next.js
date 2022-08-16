@@ -1,21 +1,10 @@
-// https://github.com/fontsource/google-font-metadata/blob/main/lib/data/user-agents.json
-const userAgents = {
-  apiv1: {
-    woff2:
-      'Mozilla/5.0 (Windows NT 10.0) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/42.0.2311.135 Safari/537.36 Edge/15.10130',
-    woff: 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv:11.0) like Gecko',
-    ttf: 'Mozilla/5.0',
-  },
-  apiv2: {
-    variable:
-      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.116 Safari/537.36',
-    woff2: 'Mozilla/5.0 (Windows NT 6.3; rv:39.0) Gecko/20100101 Firefox/44.0',
-    woff: 'Mozilla/4.0 (Windows NT 6.2; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/32.0.1667.0 Safari/537.36',
-    ttf: 'Mozilla/5.0',
-  },
-}
+const CHROME_UA =
+  'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36'
 
-export async function download(data: any) {
+export async function download(
+  data: any,
+  emitFile: (content: Buffer, ext: string) => string
+) {
   const {
     font,
     variant,
@@ -26,11 +15,12 @@ export async function download(data: any) {
 
   const [weight, style] = variant.split('-')
 
-  // if (!['auto', 'block', 'swap', 'fallback', 'optional'].includes(display)) {
-  //   callback(new Error(`Unknown display value: ${display}`))
-  //   return
-  // }
-
+  // SUBSETS
+  // SUBSETS
+  // SUBSETS
+  // SUBSETS
+  // SUBSETS
+  // SUBSETS
   const res = await fetch(
     `https://fonts.googleapis.com/css2?family=${font.replaceAll(
       '_',
@@ -40,17 +30,34 @@ export async function download(data: any) {
     },${weight}&display=${display}&subset=${subsets.join(',')}`,
     {
       headers: {
-        'user-agent': userAgents.apiv2.woff2,
+        'user-agent': CHROME_UA,
       },
     }
   )
+
   if (!res.ok) {
     // TODO: Custom error
     throw new Error(`Failed to fetch font ${font.replaceAll('_', ' ')}`)
   }
 
+  const css = (
+    await Promise.all(
+      (await res.text()).split('\n').map(async (line) => {
+        const url = /src: url\((.+?)\)/.exec(line)?.[1]
+        if (url) {
+          const data = await fetch(url).then((res) => res.arrayBuffer())
+          let ext: any = url.split('.')
+          ext = ext[ext.length - 1]
+          const file = emitFile(Buffer.from(data), ext)
+          return line.replace(url, file)
+        }
+        return line
+      })
+    )
+  ).join('\n')
+
   return {
-    css: await res.text(),
+    css,
     fallback,
   }
 }

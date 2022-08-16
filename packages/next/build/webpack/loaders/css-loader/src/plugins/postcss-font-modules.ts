@@ -57,9 +57,9 @@ const plugin = (exports: any[], fallbackFonts: string[] = []) => {
             throw node.error('Missing src in @font-face')
           }
           if (/url\(["|']?\/.*?["|']?\)/.test(src.value)) {
-            throw src.error(
-              `The ${chalk.bold('src')} property must reference a local file`
-            )
+            // throw src.error(
+            //   `The ${chalk.bold('src')} property must reference a local file`
+            // )
           }
           if (!/url\(.*?\)/.test(src.value)) {
             throw src.error(

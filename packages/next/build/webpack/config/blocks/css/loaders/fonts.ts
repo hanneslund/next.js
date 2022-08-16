@@ -65,6 +65,9 @@ export function getFontModuleLoader(
   if (fontDownloader) {
     loaders.push({
       loader: 'next-font-downloader-loader',
+      options: {
+        isServer: ctx.isServer,
+      },
     })
   }
 

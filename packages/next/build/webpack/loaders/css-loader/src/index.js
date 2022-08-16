@@ -128,7 +128,6 @@ function normalizeOptions(rawOptions, loaderContext) {
     esModule:
       typeof rawOptions.esModule === 'undefined' ? true : rawOptions.esModule,
     fontModule: rawOptions.fontModule,
-    fallbackFonts: rawOptions.fallbackFonts,
   }
 }
 
