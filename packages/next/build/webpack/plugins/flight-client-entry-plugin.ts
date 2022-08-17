@@ -18,6 +18,7 @@ import { SERVER_RUNTIME } from '../../../lib/constants'
 type Options = {
   dev: boolean
   isEdgeServer: boolean
+  fontDownloaders?: string[]
 }
 
 const PLUGIN_NAME = 'ClientEntryPlugin'
@@ -28,12 +29,14 @@ const regexCSS = /\.css$/
 export class FlightClientEntryPlugin {
   dev: boolean = false
   isEdgeServer: boolean
+  fontDownloaders?: string[]
 
   constructor(options: Options) {
     if (typeof options.dev === 'boolean') {
       this.dev = options.dev
     }
     this.isEdgeServer = options.isEdgeServer
+    this.fontDownloaders = options.fontDownloaders
   }
 
   apply(compiler: webpack5.Compiler) {
@@ -71,7 +74,7 @@ export class FlightClientEntryPlugin {
         const visited = new Set()
         const clientComponentImports: string[] = []
 
-        function filterClientComponents(dependency: any) {
+        const filterClientComponents = (dependency: any) => {
           const mod = compilation.moduleGraph.getResolvedModule(dependency)
           if (!mod) return
 
@@ -89,7 +92,11 @@ export class FlightClientEntryPlugin {
           if (!modRequest || visited.has(modRequest)) return
           visited.add(modRequest)
 
+          const isFontDownloader = this.fontDownloaders?.some((downloader) =>
+            modRequest.startsWith(`${downloader}?`)
+          )
           if (
+            isFontDownloader ||
             clientComponentRegex.test(modRequest) ||
             regexCSS.test(modRequest)
           ) {
