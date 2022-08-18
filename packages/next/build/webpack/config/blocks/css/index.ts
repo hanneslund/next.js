@@ -204,16 +204,10 @@ export const css = curry(async function css(
   )
 
   // next/font
-  let fontDownloaders: string[] | undefined
-  if (ctx.experimental.fontDownloaders) {
-    fontDownloaders = Array.isArray(ctx.experimental.fontDownloaders)
-      ? ctx.experimental.fontDownloaders
-      : [ctx.experimental.fontDownloaders]
-
-    fontDownloaders = fontDownloaders.map((downloader) =>
+  let fontDownloaders: string[] | undefined =
+    ctx.experimental.fontDownloaders?.map((downloader) =>
       require.resolve(downloader)
     )
-  }
 
   if (ctx.experimental.fontModules) {
     fns.push(

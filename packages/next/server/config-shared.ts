@@ -145,7 +145,7 @@ export interface ExperimentalConfig {
   }
   swcPlugins?: Array<[string, Record<string, unknown>]>
   largePageDataBytes?: number
-  fontDownloaders?: string | string[]
+  fontDownloaders?: string[]
   fontModules?: boolean
 }
 

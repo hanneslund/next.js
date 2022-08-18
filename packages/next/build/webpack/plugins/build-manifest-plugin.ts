@@ -97,8 +97,6 @@ export default class BuildManifestPlugin {
   private isDevFallback: boolean
   private exportRuntime: boolean
   private appDirEnabled: boolean
-  private selfHostedFonts: boolean
-  private fontModules: boolean
 
   constructor(options: {
     buildId: string
@@ -106,8 +104,6 @@ export default class BuildManifestPlugin {
     isDevFallback?: boolean
     exportRuntime?: boolean
     appDirEnabled: boolean
-    selfHostedFonts: boolean
-    fontModules: boolean
   }) {
     this.buildId = options.buildId
     this.isDevFallback = !!options.isDevFallback
@@ -121,8 +117,6 @@ export default class BuildManifestPlugin {
     this.rewrites.afterFiles = options.rewrites.afterFiles.map(processRoute)
     this.rewrites.fallback = options.rewrites.fallback.map(processRoute)
     this.exportRuntime = !!options.exportRuntime
-    this.selfHostedFonts = options.selfHostedFonts
-    this.fontModules = options.fontModules
   }
 
   async createAssets(compiler: any, compilation: any, assets: any) {
@@ -216,66 +210,6 @@ export default class BuildManifestPlugin {
         assetMap.pages[pagePath] = [...new Set([...mainFiles, ...filesForPage])]
       }
 
-      // if (true) {
-      //   for (const entrypoint of compilation.entrypoints.values()) {
-      //     const pagePath = getRouteFromEntrypoint(entrypoint.name, true)
-
-      //     if (!pagePath) {
-      //       continue
-      //     }
-      //     if (pagePath === '/_app' || pagePath === '/_error') {
-      //       continue
-      //     }
-
-      //     console.log(pagePath)
-      //     const cssFiles = entrypoint?.getFiles()
-      //     console.log(cssFiles)
-      //   }
-      // }
-
-      // if (false) {
-      //   for (const entrypoint of compilation.entrypoints.values()) {
-      //     const pagePath = getRouteFromEntrypoint(entrypoint.name)
-      //     // console.log(entrypoint.name)
-
-      //     if (!pagePath) {
-      //       continue
-      //     }
-
-      //     if (['/_error', '/404'].includes(pagePath)) continue
-      //     const cssFiles = entrypoint
-      //       ?.getFiles()
-      //       .filter((file: string) => file.endsWith('.css'))
-
-      //     const files: Array<{ file: string; preload: boolean }> = []
-      //     for (const file of cssFiles) {
-      //       await postcss([
-      //         pageFontDependencies(files, this.fontModules),
-      //       ]).process(assets[file]._cachedSource, {
-      //         from: undefined,
-      //       })
-      //     }
-
-      //     if (files.length > 0) {
-      //       assetMap.pagesFontFiles[pagePath] = files
-      //     }
-      //   }
-
-      //   // if (this.fontModules) {
-      //   //   assets[
-      //   //     `${CLIENT_STATIC_FILES_PATH}/${this.buildId}/_pageFontsManifest.js`
-      //   //   ] = new sources.RawSource(
-      //   //     `self.__PAGE_FONTS =${devalue(
-      //   //       assetMap.pagesFontFiles
-      //   //     )};self.__PAGE_FONTS_CB && self.__PAGE_FONTS_CB()`
-      //   //   )
-
-      //   //   assetMap.lowPriorityFiles.push(
-      //   //     `${CLIENT_STATIC_FILES_PATH}/${this.buildId}/_pageFontsManifest.js`
-      //   //   )
-      //   // }
-      // }
-
       if (!this.isDevFallback) {
         // Add the runtime build manifest file (generated later in this file)
         // as a dependency for the app. If the flag is false, the file won't be
@@ -348,44 +282,3 @@ export default class BuildManifestPlugin {
     return
   }
 }
-
-// function pageFontDependencies(
-//   files: Array<{ file: string; preload: boolean }>,
-//   fontModulesEnabled: boolean
-// ) {
-//   return {
-//     postcssPlugin: 'postcss-page-font-dependencies',
-//     AtRule(atRule: any) {
-//       if (atRule.name === 'font-face') {
-//         let preload = false
-//         let file: string | undefined
-
-//         atRule.nodes.forEach(
-//           ({ prop, value }: { prop: string; value: string }) => {
-//             if (prop === 'font-display') {
-//               if (value === 'optional') {
-//                 preload = true
-//               }
-//             }
-//             if (prop === 'src') {
-//               file = /url\(\/_next\/static\/fonts\/(.+?)\)/.exec(value)?.[1]
-//             }
-//           }
-//         )
-
-//         if (file) {
-//           const currentFile = files.find((f) => f.file === file)
-//           if (currentFile) {
-//             if (!currentFile.preload && preload && fontModulesEnabled) {
-//               currentFile.preload = true
-//             }
-//           } else {
-//             files.push({ file, preload: fontModulesEnabled ? preload : false })
-//           }
-//         }
-//       }
-//     },
-//   }
-// }
-
-// pageFontDependencies.postcss = true

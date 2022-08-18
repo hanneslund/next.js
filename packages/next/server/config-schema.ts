@@ -388,6 +388,15 @@ const configSchema = {
         workerThreads: {
           type: 'boolean',
         },
+        fontModules: {
+          type: 'boolean',
+        },
+        fontDownloaders: {
+          items: {
+            type: 'string',
+          },
+          type: 'array',
+        },
       },
       type: 'object',
     },
