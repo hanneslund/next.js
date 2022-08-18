@@ -1,0 +1,42 @@
+
+  x Unexpected object key type
+   ,-[input.js:4:1]
+ 4 | const a = ABeeZee({ 10: 'hello' })
+   :                     ^^
+   `----
+
+  x Unexpected spread
+   ,-[input.js:7:1]
+ 7 | const a = ABeeZee({ variant: [...[], 'hello'] })
+   :                               ^^^
+   `----
+
+  x Unexpected value
+    ,-[input.js:10:1]
+ 10 | const a = ABeeZee({ variant: [i1] })
+    :                               ^^
+    `----
+
+  x Unexpected empty value in array
+    ,-[input.js:13:1]
+ 13 | const a = ABeeZee({ variant: [, ''] })
+    :                              ^^^^^^
+    `----
+
+  x Unexpected value
+    ,-[input.js:16:1]
+ 16 | const a = ABeeZee({ variant: () => {} })
+    :                              ^^^^^^^^
+    `----
+
+  x Unexpected key
+    ,-[input.js:19:1]
+ 19 | const a = ABeeZee({ variant() {} })
+    :                     ^^^^^^^^^^^^
+    `----
+
+  x Unexpected spread
+    ,-[input.js:22:1]
+ 22 | const a = ABeeZee({ ...{} })
+    :                     ^^^
+    `----
