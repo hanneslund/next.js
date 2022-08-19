@@ -9,13 +9,14 @@ use swc_ecmascript::visit::Visit;
 
 pub struct FontImportsGenerator<'a> {
     pub state: &'a mut super::State,
+    pub font_modules: bool,
 }
 
 impl<'a> FontImportsGenerator<'a> {
     fn check_call_expr(&mut self, call_expr: &CallExpr, font_module_id: Option<Ident>) -> bool {
         if let Callee::Expr(callee_expr) = &call_expr.callee {
             if let Expr::Ident(ident) = &**callee_expr {
-                if let Some(downloader) = self.state.font_functions.get(&ident.to_id()) {
+                if let Some(font_function) = self.state.font_functions.get(&ident.to_id()) {
                     self.state
                         .font_functions_in_allowed_scope
                         .insert(ident.span.lo);
@@ -46,7 +47,14 @@ impl<'a> FontImportsGenerator<'a> {
                             }
                             None => match &**expr {
                                 Expr::Object(object_lit) => {
-                                    Ok(object_lit_to_font_json(&*ident.sym, object_lit))
+                                    let mut obj = object_lit_to_json(object_lit);
+                                    if let Value::Object(ref mut values) = obj {
+                                        values.insert(
+                                            "font".to_string(),
+                                            Value::String(String::from(&*font_function.font_name)),
+                                        );
+                                    }
+                                    Ok(obj)
                                 }
                                 _ => {
                                     HANDLER.with(|handler| {
@@ -80,7 +88,10 @@ impl<'a> FontImportsGenerator<'a> {
                             .font_imports
                             .push(ModuleItem::ModuleDecl(ModuleDecl::Import(ImportDecl {
                                 src: Str {
-                                    value: JsWord::from(format!("{}?{}", downloader, json)),
+                                    value: JsWord::from(format!(
+                                        "{}?{}",
+                                        font_function.downloader, json
+                                    )),
                                     raw: None,
                                     span: DUMMY_SP,
                                 },
@@ -122,6 +133,16 @@ impl<'a> Visit for FontImportsGenerator<'a> {
                     if let Some(expr) = &decl.init {
                         if let Expr::Call(call_expr) = &**expr {
                             if self.check_call_expr(call_expr, ident.clone().ok()) {
+                                if !self.font_modules {
+                                    HANDLER.with(|handler| {
+                                        handler
+                                            .struct_span_err(
+                                                var_decl.span,
+                                                "Enable font modules to use the returned value",
+                                            )
+                                            .emit()
+                                    });
+                                }
                                 self.state.removeable_module_items.insert(var_decl.span.lo);
 
                                 match var_decl.kind {
@@ -143,8 +164,8 @@ impl<'a> Visit for FontImportsGenerator<'a> {
                                         handler
                                             .struct_span_err(
                                                 pattern.span(),
-                                                "Font downloader result must be assigned to an \
-                                                 identifier",
+                                                "With font modules enabled the result must be \
+                                                 assigned to an identifier",
                                             )
                                             .emit()
                                     });
@@ -157,6 +178,17 @@ impl<'a> Visit for FontImportsGenerator<'a> {
             ModuleItem::Stmt(Stmt::Expr(expr_stmt)) => {
                 if let Expr::Call(call_expr) = &*expr_stmt.expr {
                     if self.check_call_expr(call_expr, None) {
+                        if self.font_modules {
+                            HANDLER.with(|handler| {
+                                handler
+                                    .struct_span_err(
+                                        call_expr.span,
+                                        "With font modules enabled you must assign the returned \
+                                         value to a const",
+                                    )
+                                    .emit()
+                            });
+                        }
                         self.state.removeable_module_items.insert(expr_stmt.span.lo);
                     }
                 }
@@ -166,7 +198,7 @@ impl<'a> Visit for FontImportsGenerator<'a> {
     }
 }
 
-fn object_lit_to_font_json(font_name: &str, object_lit: &ObjectLit) -> Value {
+fn object_lit_to_json(object_lit: &ObjectLit) -> Value {
     let mut values = serde_json::Map::new();
     for prop in &object_lit.props {
         match prop {
@@ -183,65 +215,7 @@ fn object_lit_to_font_json(font_name: &str, object_lit: &ObjectLit) -> Value {
                             Err(())
                         }
                     };
-                    let val = match &*key_val.value {
-                        Expr::Lit(Lit::Str(str)) => Ok(Value::String(String::from(&*str.value))),
-                        Expr::Array(ArrayLit {
-                            elems,
-                            span: array_span,
-                            ..
-                        }) => {
-                            let elements: Result<Vec<Value>, ()> = elems
-                                .iter()
-                                .map(|e| {
-                                    if let Some(expr) = e {
-                                        match expr.spread {
-                                            Some(spread_span) => HANDLER.with(|handler| {
-                                                handler
-                                                    .struct_span_err(
-                                                        spread_span,
-                                                        "Unexpected spread",
-                                                    )
-                                                    .emit();
-                                                Err(())
-                                            }),
-                                            None => match &*expr.expr {
-                                                Expr::Lit(Lit::Str(str)) => {
-                                                    Ok(Value::String(String::from(&*str.value)))
-                                                }
-                                                lit => HANDLER.with(|handler| {
-                                                    handler
-                                                        .struct_span_err(
-                                                            lit.span(),
-                                                            "Unexpected value",
-                                                        )
-                                                        .emit();
-                                                    Err(())
-                                                }),
-                                            },
-                                        }
-                                    } else {
-                                        HANDLER.with(|handler| {
-                                            handler
-                                                .struct_span_err(
-                                                    *array_span,
-                                                    "Unexpected empty value in array",
-                                                )
-                                                .emit();
-                                            Err(())
-                                        })
-                                    }
-                                })
-                                .collect();
-
-                            elements.map(Value::Array)
-                        }
-                        lit => HANDLER.with(|handler| {
-                            handler
-                                .struct_span_err(lit.span(), "Unexpected value")
-                                .emit();
-                            Err(())
-                        }),
-                    };
+                    let val = expr_to_json(&*key_val.value);
                     match (key, val) {
                         (Ok(key), Ok(val)) => {
                             values.insert(key, val);
@@ -261,7 +235,52 @@ fn object_lit_to_font_json(font_name: &str, object_lit: &ObjectLit) -> Value {
         }
     }
 
-    values.insert("font".to_string(), Value::String(String::from(font_name)));
+    // values.insert("font".to_string(), Value::String(String::from(font_name)));
 
     Value::Object(values)
+}
+
+fn expr_to_json(expr: &Expr) -> Result<Value, ()> {
+    match expr {
+        Expr::Lit(Lit::Str(str)) => Ok(Value::String(String::from(&*str.value))),
+        Expr::Lit(Lit::Bool(Bool { value, .. })) => Ok(Value::Bool(*value)),
+        Expr::Object(object_lit) => Ok(object_lit_to_json(object_lit)),
+        Expr::Array(ArrayLit {
+            elems,
+            span: array_span,
+            ..
+        }) => {
+            let elements: Result<Vec<Value>, ()> = elems
+                .iter()
+                .map(|e| {
+                    if let Some(expr) = e {
+                        match expr.spread {
+                            Some(spread_span) => HANDLER.with(|handler| {
+                                handler
+                                    .struct_span_err(spread_span, "Unexpected spread")
+                                    .emit();
+                                Err(())
+                            }),
+                            None => expr_to_json(&*expr.expr),
+                        }
+                    } else {
+                        HANDLER.with(|handler| {
+                            handler
+                                .struct_span_err(*array_span, "Unexpected empty value in array")
+                                .emit();
+                            Err(())
+                        })
+                    }
+                })
+                .collect();
+
+            elements.map(Value::Array)
+        }
+        lit => HANDLER.with(|handler| {
+            handler
+                .struct_span_err(lit.span(), "Unexpected value")
+                .emit();
+            Err(())
+        }),
+    }
 }

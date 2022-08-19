@@ -3,7 +3,9 @@ import { Fira_Code } from '@next/google-fonts'
 
 const firaCode = Fira_Code({
   variant: '400',
-  fallback: ['system-ui'],
+  fallback: ['system-ui', { key: false }, []],
+  preload: true,
+  key: { key2: {} },
 })
 
 console.log(firaCode)

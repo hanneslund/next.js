@@ -21,13 +21,25 @@ impl<'a> Visit for FontFunctionsCollector<'a> {
                 .insert(import_decl.span.lo);
             for specifier in &import_decl.specifiers {
                 match specifier {
-                    ImportSpecifier::Named(ImportNamedSpecifier { local, .. }) => {
+                    ImportSpecifier::Named(ImportNamedSpecifier {
+                        local, imported, ..
+                    }) => {
                         self.state
                             .font_functions_in_allowed_scope
                             .insert(local.span.lo);
-                        self.state
-                            .font_functions
-                            .insert(local.to_id(), import_decl.src.value.clone());
+
+                        let font_name = if let Some(ModuleExportName::Ident(ident)) = imported {
+                            ident.sym.clone()
+                        } else {
+                            local.sym.clone()
+                        };
+                        self.state.font_functions.insert(
+                            local.to_id(),
+                            super::FontFunction {
+                                downloader: import_decl.src.value.clone(),
+                                font_name,
+                            },
+                        );
                     }
                     _ => {
                         HANDLER.with(|handler| {

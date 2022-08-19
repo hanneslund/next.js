@@ -55,12 +55,28 @@ fn next_ssg_errors(input: PathBuf) {
     );
 }
 
-#[fixture("tests/errors/next-font-downloaders/**/input.js")]
+#[fixture("tests/errors/next-font-downloaders/without-font-modules/**/input.js")]
 fn next_font_downloaders_errors(input: PathBuf) {
     let output = input.parent().unwrap().join("output.js");
     test_fixture_allowing_error(
         syntax(),
-        &|_tr| next_font_downloaders(vec!["@next/google-fonts".into(), "cool-fonts".into()]),
+        &|_tr| {
+            next_font_downloaders(
+                vec!["@next/google-fonts".into(), "cool-fonts".into()],
+                false,
+            )
+        },
+        &input,
+        &output,
+    );
+}
+
+#[fixture("tests/errors/next-font-downloaders/font-modules/**/input.js")]
+fn next_font_downloaders_font_modules_errors(input: PathBuf) {
+    let output = input.parent().unwrap().join("output.js");
+    test_fixture_allowing_error(
+        syntax(),
+        &|_tr| next_font_downloaders(vec!["@next/google-fonts".into(), "cool-fonts".into()], true),
         &input,
         &output,
     );

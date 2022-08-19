@@ -9,18 +9,27 @@ mod find_functions_outside_module_scope;
 mod font_functions_collector;
 mod font_imports_generator;
 
-pub fn next_font_downloaders(font_downloaders: Vec<String>) -> impl Fold + VisitMut {
+pub fn next_font_downloaders(
+    font_downloaders: Vec<String>,
+    font_modules: bool,
+) -> impl Fold + VisitMut {
     as_folder(NextFontDownloaders {
         font_downloaders,
+        font_modules,
         state: State {
             ..Default::default()
         },
     })
 }
 
+#[derive(Debug)]
+pub struct FontFunction {
+    downloader: JsWord,
+    font_name: JsWord,
+}
 #[derive(Debug, Default)]
 pub struct State {
-    font_functions: AHashMap<Id, JsWord>,
+    font_functions: AHashMap<Id, FontFunction>,
     removeable_module_items: FxHashSet<BytePos>,
     font_imports: Vec<ModuleItem>,
     font_functions_in_allowed_scope: FxHashSet<BytePos>,
@@ -28,6 +37,7 @@ pub struct State {
 
 struct NextFontDownloaders {
     font_downloaders: Vec<String>,
+    font_modules: bool,
     state: State,
 }
 
@@ -46,6 +56,7 @@ impl VisitMut for NextFontDownloaders {
             // Generate imports from usage
             let mut import_generator = font_imports_generator::FontImportsGenerator {
                 state: &mut self.state,
+                font_modules: self.font_modules,
             };
             items.visit_with(&mut import_generator);
 
