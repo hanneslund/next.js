@@ -1,6 +1,7 @@
 {
   "extends": "../../tsconfig-tsec.json",
   "compilerOptions": {
+    "resolveJsonModule": true,
     "sourceMap": true,
     "strict": true,
     "esModuleInterop": true,
