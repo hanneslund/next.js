@@ -151,27 +151,38 @@ const plugin = (exports: any[], fallbackFonts: string[] = []) => {
       if (fallbackKey[0] === '"' || fallbackKey[0] === "'") {
         fallbackKey = fallbackKey.slice(1, fallbackKey.length - 1)
       }
+
+      const fontWeight =
+        fontProperties.fontWeight &&
+        fontProperties.fontWeight.split(' ').length === 1
+          ? fontProperties.fontWeight
+          : undefined
+
+      const fontStyle =
+        fontProperties.fontStyle &&
+        fontProperties.fontStyle.split(' ').length === 1
+          ? fontProperties.fontStyle
+          : undefined
+
       const classRule = new postcss.Rule({ selector: '.className' })
       const declarations = [
         new postcss.Declaration({
           prop: 'font-family',
           value: [fontProperties.fontFamily, ...fallbackFonts].join(','),
         }),
-        ...(fontProperties.fontStyle &&
-        fontProperties.fontStyle.split(' ').length === 1
+        ...(fontStyle
           ? [
               new postcss.Declaration({
                 prop: 'font-style',
-                value: fontProperties.fontStyle,
+                value: fontStyle,
               }),
             ]
           : []),
-        ...(fontProperties.fontWeight &&
-        fontProperties.fontWeight.split(' ').length === 1
+        ...(fontWeight
           ? [
               new postcss.Declaration({
                 prop: 'font-weight',
-                value: fontProperties.fontWeight,
+                value: fontWeight,
               }),
             ]
           : []),
@@ -182,7 +193,11 @@ const plugin = (exports: any[], fallbackFonts: string[] = []) => {
       // Export @font-face values
       exports.push({
         name: 'style',
-        value: fontProperties,
+        value: {
+          fontFamily: fontProperties.fontFamily,
+          fontWeight,
+          fontStyle,
+        },
       })
 
       // Export fallback fonts

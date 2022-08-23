@@ -20,7 +20,7 @@ export async function download(
   const googleFontName = font.replaceAll('_', '+')
   let url: string
   if (variant === 'variable') {
-    const axes = variableFontAxes[fontFamily]
+    const axes = (variableFontAxes as any)[fontFamily]
     const keys = Object.keys(axes)
     const values = Object.values(axes).map(
       ({ min, max }: any) => `${min}..${max}`
