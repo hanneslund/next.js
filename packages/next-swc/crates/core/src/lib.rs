@@ -107,7 +107,7 @@ pub struct TransformOptions {
     pub modularize_imports: Option<modularize_imports::Config>,
 
     #[serde(default)]
-    pub font_downloaders: Option<Vec<String>>,
+    pub font_loaders: Option<Vec<String>>,
 
     #[serde(default)]
     pub font_modules: bool,
@@ -202,9 +202,9 @@ pub fn custom_before_pass<'a, C: Comments + 'a>(
             Some(config) => Either::Left(modularize_imports::modularize_imports(config.clone())),
             None => Either::Right(noop()),
         },
-        match &opts.font_downloaders {
-            Some(font_downloaders) => Either::Left(next_font_loaders::next_font_loaders(
-                font_downloaders.clone(),
+        match &opts.font_loaders {
+            Some(font_loaders) => Either::Left(next_font_loaders::next_font_loaders(
+                font_loaders.clone(),
                 opts.font_modules
             )),
             None => Either::Right(noop()),

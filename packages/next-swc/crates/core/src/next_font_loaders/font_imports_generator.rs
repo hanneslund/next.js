@@ -26,7 +26,7 @@ impl<'a> FontImportsGenerator<'a> {
                             handler
                                 .struct_span_err(
                                     call_expr.span,
-                                    "Font downloaders only accepts 1 argument",
+                                    "Font loaders only accepts 1 argument",
                                 )
                                 .emit()
                         });
@@ -39,7 +39,7 @@ impl<'a> FontImportsGenerator<'a> {
                                     handler
                                         .struct_span_err(
                                             *spread_span,
-                                            "Font downloaders don't accept spreads",
+                                            "Font loaders don't accept spreads",
                                         )
                                         .emit()
                                 });
@@ -61,8 +61,7 @@ impl<'a> FontImportsGenerator<'a> {
                                         handler
                                             .struct_span_err(
                                                 call_expr.span,
-                                                "Font downloader must be called with an options \
-                                                 object",
+                                                "Font loader must be called with an options object",
                                             )
                                             .emit()
                                     });
@@ -75,7 +74,7 @@ impl<'a> FontImportsGenerator<'a> {
                                 handler
                                     .struct_span_err(
                                         call_expr.span,
-                                        "Font downloader must be called with an options object",
+                                        "Font loader must be called with an options object",
                                     )
                                     .emit()
                             });
@@ -90,7 +89,7 @@ impl<'a> FontImportsGenerator<'a> {
                                 src: Str {
                                     value: JsWord::from(format!(
                                         "{}?{}",
-                                        font_function.downloader, json
+                                        font_function.loader, json
                                     )),
                                     raw: None,
                                     span: DUMMY_SP,
@@ -152,7 +151,7 @@ impl<'a> Visit for FontImportsGenerator<'a> {
                                             handler
                                                 .struct_span_err(
                                                     var_decl.span,
-                                                    "Font downloader result must be assigned to a \
+                                                    "Font loader result must be assigned to a \
                                                      const",
                                                 )
                                                 .emit()

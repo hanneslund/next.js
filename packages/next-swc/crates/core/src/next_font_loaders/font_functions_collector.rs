@@ -4,7 +4,7 @@ use swc_ecmascript::visit::noop_visit_type;
 use swc_ecmascript::visit::Visit;
 
 pub struct FontFunctionsCollector<'a> {
-    pub font_downloaders: &'a [String],
+    pub font_loaders: &'a [String],
     pub state: &'a mut super::State,
 }
 
@@ -13,7 +13,7 @@ impl<'a> Visit for FontFunctionsCollector<'a> {
 
     fn visit_import_decl(&mut self, import_decl: &ImportDecl) {
         if self
-            .font_downloaders
+            .font_loaders
             .contains(&String::from(&*import_decl.src.value))
         {
             self.state
@@ -36,7 +36,7 @@ impl<'a> Visit for FontFunctionsCollector<'a> {
                         self.state.font_functions.insert(
                             local.to_id(),
                             super::FontFunction {
-                                downloader: import_decl.src.value.clone(),
+                                loader: import_decl.src.value.clone(),
                                 font_name,
                             },
                         );
@@ -46,7 +46,7 @@ impl<'a> Visit for FontFunctionsCollector<'a> {
                             handler
                                 .struct_span_err(
                                     import_decl.span,
-                                    "Font downloaders can only have named imports",
+                                    "Font loaders can only have named imports",
                                 )
                                 .emit()
                         });

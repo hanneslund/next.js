@@ -9,12 +9,9 @@ mod find_functions_outside_module_scope;
 mod font_functions_collector;
 mod font_imports_generator;
 
-pub fn next_font_loaders(
-    font_downloaders: Vec<String>,
-    font_modules: bool,
-) -> impl Fold + VisitMut {
+pub fn next_font_loaders(font_loaders: Vec<String>, font_modules: bool) -> impl Fold + VisitMut {
     as_folder(NextFontLoaders {
-        font_downloaders,
+        font_loaders,
         font_modules,
         state: State {
             ..Default::default()
@@ -24,7 +21,7 @@ pub fn next_font_loaders(
 
 #[derive(Debug)]
 pub struct FontFunction {
-    downloader: JsWord,
+    loader: JsWord,
     font_name: JsWord,
 }
 #[derive(Debug, Default)]
@@ -36,7 +33,7 @@ pub struct State {
 }
 
 struct NextFontLoaders {
-    font_downloaders: Vec<String>,
+    font_loaders: Vec<String>,
     font_modules: bool,
     state: State,
 }
@@ -45,9 +42,9 @@ impl VisitMut for NextFontLoaders {
     noop_visit_mut_type!();
 
     fn visit_mut_module_items(&mut self, items: &mut Vec<ModuleItem>) {
-        // Find imported functions from font downloaders
+        // Find imported functions from font loaders
         let mut functions_collector = font_functions_collector::FontFunctionsCollector {
-            font_downloaders: &self.font_downloaders,
+            font_loaders: &self.font_loaders,
             state: &mut self.state,
         };
         items.visit_with(&mut functions_collector);

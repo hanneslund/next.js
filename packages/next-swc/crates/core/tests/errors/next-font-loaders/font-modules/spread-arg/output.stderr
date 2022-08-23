@@ -1,11 +1,11 @@
 
-  x Font downloaders don't accept spreads
+  x Font loaders don't accept spreads
    ,-[input.js:4:1]
  4 | const inter = Inter(...{})
    :                     ^^^
    `----
 
-  x Font downloaders don't accept spreads
+  x Font loaders don't accept spreads
    ,-[input.js:5:1]
  5 | Inter(...{})
    :       ^^^

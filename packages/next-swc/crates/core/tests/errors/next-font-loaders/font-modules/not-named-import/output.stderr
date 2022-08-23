@@ -1,11 +1,11 @@
 
-  x Font downloaders can only have named imports
+  x Font loaders can only have named imports
    ,-[input.js:1:1]
  1 | import * as googleFonts from '@next/google-fonts'
    : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
    `----
 
-  x Font downloaders can only have named imports
+  x Font loaders can only have named imports
    ,-[input.js:2:1]
  2 | import coolFonts, { inter } from 'cool-fonts'
    : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
