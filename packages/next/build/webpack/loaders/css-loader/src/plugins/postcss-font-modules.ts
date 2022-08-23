@@ -157,7 +157,8 @@ const plugin = (exports: any[], fallbackFonts: string[] = []) => {
           prop: 'font-family',
           value: [fontProperties.fontFamily, ...fallbackFonts].join(','),
         }),
-        ...(fontProperties.fontStyle
+        ...(fontProperties.fontStyle &&
+        fontProperties.fontStyle.split(' ').length === 1
           ? [
               new postcss.Declaration({
                 prop: 'font-style',
@@ -165,7 +166,8 @@ const plugin = (exports: any[], fallbackFonts: string[] = []) => {
               }),
             ]
           : []),
-        ...(fontProperties.fontWeight
+        ...(fontProperties.fontWeight &&
+        fontProperties.fontWeight.split(' ').length === 1
           ? [
               new postcss.Declaration({
                 prop: 'font-weight',

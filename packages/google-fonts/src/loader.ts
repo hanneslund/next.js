@@ -16,29 +16,22 @@ export async function download(
     preload,
   } = data
 
+  const fontFamily = font.replaceAll('_', ' ')
+  const googleFontName = font.replaceAll('_', '+')
   let url: string
   if (variant === 'variable') {
-    const axes = variableFontAxes[font.replaceAll('_', ' ')]
-    // ERROR OM INTE FINNS
+    const axes = variableFontAxes[fontFamily]
     const keys = Object.keys(axes)
     const values = Object.values(axes).map(
       ({ min, max }: any) => `${min}..${max}`
     )
-    // console.log(axes)
-    url = `https://fonts.googleapis.com/css2?family=${font.replaceAll(
-      '_',
-      '+'
-    )}:${keys.join(',')}@${values.join(',')}`
+    url = getUrl(googleFontName, keys, values, display)
   } else {
     const [weight, style] = variant.split('-')
-    url = `https://fonts.googleapis.com/css2?family=${font.replaceAll(
-      '_',
-      '+'
-    )}:ital,wght@${
-      style === 'italic' ? 1 : 0
-    },${weight}&display=${display}&subset=${subsets.join(',')}`
+    const keys = [...(style ? ['ital'] : []), 'wght']
+    const values = [...(style ? [style === 'italic' ? 1 : 0] : []), weight]
+    url = getUrl(googleFontName, keys, values, display)
   }
-  console.log({ url })
 
   // SUBSETS
   const res = await fetch(url, {
@@ -49,7 +42,7 @@ export async function download(
 
   if (!res.ok) {
     // TODO: Custom error
-    throw new Error(`Failed to fetch font ${font.replaceAll('_', ' ')}`)
+    throw new Error(`Failed to fetch font: ${fontFamily}`)
   }
 
   const css = (
@@ -72,4 +65,15 @@ export async function download(
     css,
     fallback,
   }
+}
+
+function getUrl(
+  font: string,
+  keys: string[],
+  values: string[],
+  display: string
+) {
+  return `https://fonts.googleapis.com/css2?family=${font}:${keys.join(
+    ','
+  )}@${values.join(',')}&display=${display}`
 }
