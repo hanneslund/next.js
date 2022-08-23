@@ -1,7 +1,7 @@
 use next_swc::{
     amp_attributes::amp_attributes,
     next_dynamic::next_dynamic,
-    next_font_downloaders::next_font_downloaders,
+    next_font_loaders::next_font_loaders,
     next_ssg::next_ssg,
     page_config::page_config_test,
     react_remove_properties::remove_properties,
@@ -212,12 +212,12 @@ fn shake_exports_fixture_default(input: PathBuf) {
 }
 
 #[fixture("tests/fixture/next-font-downloaders/without-font-modules/**/input.js")]
-fn next_font_downloaders_fixture(input: PathBuf) {
+fn next_font_loaders_fixture(input: PathBuf) {
     let output = input.parent().unwrap().join("output.js");
     test_fixture(
         syntax(),
         &|_tr| {
-            next_font_downloaders(
+            next_font_loaders(
                 vec!["@next/google-fonts".into(), "cool-fonts".into()],
                 false,
             )
@@ -228,11 +228,11 @@ fn next_font_downloaders_fixture(input: PathBuf) {
 }
 
 #[fixture("tests/fixture/next-font-downloaders/font-modules/**/input.js")]
-fn next_font_downloaders_font_modules_fixture(input: PathBuf) {
+fn next_font_loaders_font_modules_fixture(input: PathBuf) {
     let output = input.parent().unwrap().join("output.js");
     test_fixture(
         syntax(),
-        &|_tr| next_font_downloaders(vec!["@next/google-fonts".into(), "cool-fonts".into()], true),
+        &|_tr| next_font_loaders(vec!["@next/google-fonts".into(), "cool-fonts".into()], true),
         &input,
         &output,
     );

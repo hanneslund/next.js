@@ -50,7 +50,7 @@ mod auto_cjs;
 pub mod disallow_re_export_all_in_page;
 pub mod hook_optimizer;
 pub mod next_dynamic;
-pub mod next_font_downloaders;
+pub mod next_font_loaders;
 pub mod next_ssg;
 pub mod page_config;
 pub mod react_remove_properties;
@@ -203,7 +203,7 @@ pub fn custom_before_pass<'a, C: Comments + 'a>(
             None => Either::Right(noop()),
         },
         match &opts.font_downloaders {
-            Some(font_downloaders) => Either::Left(next_font_downloaders::next_font_downloaders(
+            Some(font_downloaders) => Either::Left(next_font_loaders::next_font_loaders(
                 font_downloaders.clone(),
                 opts.font_modules
             )),

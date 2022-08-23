@@ -204,10 +204,9 @@ export const css = curry(async function css(
   )
 
   // next/font
-  let fontDownloaders: string[] | undefined =
-    ctx.experimental.fontDownloaders?.map((downloader) =>
-      require.resolve(downloader)
-    )
+  let fontLoaders: string[] | undefined = ctx.experimental.fontLoaders?.map(
+    (downloader) => require.resolve(downloader)
+  )
 
   if (ctx.experimental.fontModules) {
     fns.push(
@@ -231,13 +230,13 @@ export const css = curry(async function css(
         ],
       })
     )
-  } else if (fontDownloaders) {
+  } else if (fontLoaders) {
     // fns.push(
     //   loader({
     //     oneOf: [
     //       markRemovable({
     //         sideEffects: true,
-    //         test: fontDownloaders,
+    //         test: fontLoaders,
     //         issuer: {
     //           and: [ctx.rootDirectory],
     //           not: [/node_modules/, ctx.customAppFile],
@@ -254,7 +253,7 @@ export const css = curry(async function css(
     // )
   }
 
-  fontDownloaders?.forEach((downloader) => {
+  fontLoaders?.forEach((downloader) => {
     fns.push(
       loader({
         oneOf: [

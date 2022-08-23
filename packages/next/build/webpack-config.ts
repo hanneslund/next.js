@@ -1809,7 +1809,7 @@ export default async function getBaseWebpackConfig(
           : new FlightClientEntryPlugin({
               dev,
               isEdgeServer,
-              fontDownloaders: config.experimental.fontDownloaders,
+              fontLoaders: config.experimental.fontLoaders,
             })),
       !dev &&
         isClient &&

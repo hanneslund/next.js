@@ -405,7 +405,7 @@ const configSchema = {
         fontModules: {
           type: 'boolean',
         },
-        fontDownloaders: {
+        fontLoaders: {
           items: {
             type: 'string',
           },

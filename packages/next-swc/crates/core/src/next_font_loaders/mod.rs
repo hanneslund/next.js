@@ -9,11 +9,11 @@ mod find_functions_outside_module_scope;
 mod font_functions_collector;
 mod font_imports_generator;
 
-pub fn next_font_downloaders(
+pub fn next_font_loaders(
     font_downloaders: Vec<String>,
     font_modules: bool,
 ) -> impl Fold + VisitMut {
-    as_folder(NextFontDownloaders {
+    as_folder(NextFontLoaders {
         font_downloaders,
         font_modules,
         state: State {
@@ -35,13 +35,13 @@ pub struct State {
     font_functions_in_allowed_scope: FxHashSet<BytePos>,
 }
 
-struct NextFontDownloaders {
+struct NextFontLoaders {
     font_downloaders: Vec<String>,
     font_modules: bool,
     state: State,
 }
 
-impl VisitMut for NextFontDownloaders {
+impl VisitMut for NextFontLoaders {
     noop_visit_mut_type!();
 
     fn visit_mut_module_items(&mut self, items: &mut Vec<ModuleItem>) {

@@ -22,7 +22,7 @@ import { FlightCSSManifest } from './flight-manifest-plugin'
 interface Options {
   dev: boolean
   isEdgeServer: boolean
-  fontDownloaders?: string[]
+  fontLoaders?: string[]
 }
 
 const PLUGIN_NAME = 'ClientEntryPlugin'
@@ -38,12 +38,12 @@ const flightCSSManifest: FlightCSSManifest = {}
 export class FlightClientEntryPlugin {
   dev: boolean
   isEdgeServer: boolean
-  fontDownloaders?: string[]
+  fontLoaders?: string[]
 
   constructor(options: Options) {
     this.dev = options.dev
     this.isEdgeServer = options.isEdgeServer
-    this.fontDownloaders = options.fontDownloaders
+    this.fontLoaders = options.fontLoaders
   }
 
   apply(compiler: webpack.Compiler) {
@@ -236,7 +236,7 @@ export class FlightClientEntryPlugin {
         serverCSSImports[layoutOrPageRequest].push(modRequest)
       }
 
-      const isFontDownloader = this.fontDownloaders?.some((downloader) =>
+      const isFontDownloader = this.fontLoaders?.some((downloader) =>
         modRequest.startsWith(`${downloader}?`)
       )
       // Check if request is for css file.
