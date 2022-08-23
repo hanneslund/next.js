@@ -236,14 +236,14 @@ export class FlightClientEntryPlugin {
         serverCSSImports[layoutOrPageRequest].push(modRequest)
       }
 
-      const isFontDownloader = this.fontLoaders?.some((downloader) =>
+      const isFontLoader = this.fontLoaders?.some((downloader) =>
         modRequest.startsWith(`${downloader}?`)
       )
       // Check if request is for css file.
       if (
         (!inClientComponentBoundary && isClientComponent) ||
         isCSS ||
-        isFontDownloader
+        isFontLoader
       ) {
         clientComponentImports.push(modRequest)
         return

@@ -2,7 +2,11 @@ import crypto from 'crypto'
 import chalk from 'next/dist/compiled/chalk'
 import postcss, { AtRule } from 'postcss'
 
-const plugin = (exports: any[], fallbackFonts: string[] = []) => {
+const plugin = (
+  exports: any[],
+  fontLoader: boolean,
+  fallbackFonts: string[] = []
+) => {
   return {
     postcssPlugin: 'postcss-font-modules',
     Once(root: any) {
@@ -56,10 +60,10 @@ const plugin = (exports: any[], fallbackFonts: string[] = []) => {
           if (!src) {
             throw node.error('Missing src in @font-face')
           }
-          if (/url\(["|']?\/.*?["|']?\)/.test(src.value)) {
-            // throw src.error(
-            //   `The ${chalk.bold('src')} property must reference a local file`
-            // )
+          if (!fontLoader && /url\(["|']?\/.*?["|']?\)/.test(src.value)) {
+            throw src.error(
+              `The ${chalk.bold('src')} property must reference a local file`
+            )
           }
           if (!/url\(.*?\)/.test(src.value)) {
             throw src.error(

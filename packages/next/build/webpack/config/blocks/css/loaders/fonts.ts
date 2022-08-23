@@ -8,7 +8,7 @@ import crypto from 'crypto'
 export function getFontModuleLoader(
   ctx: ConfigurationContext,
   postcss: any,
-  fontDownloader?: string
+  fontLoader?: string
 ): webpack.RuleSetUseItem[] {
   const loaders: webpack.RuleSetUseItem[] = []
 
@@ -49,7 +49,7 @@ export function getFontModuleLoader(
         // development.
         // TODO: Consider making production reduce this to a single
         // character?
-        getLocalIdent: fontDownloader
+        getLocalIdent: fontLoader
           ? (context: any) =>
               'c' +
               crypto
@@ -58,11 +58,12 @@ export function getFontModuleLoader(
                 .digest('hex')
           : getCssModuleLocalIdent,
       },
+      fontLoader: !!fontLoader,
       fontModule: ctx.experimental.fontModules,
     },
   })
 
-  if (fontDownloader) {
+  if (fontLoader) {
     loaders.push({
       loader: 'next-font-downloader-loader',
       options: {

@@ -127,6 +127,7 @@ function normalizeOptions(rawOptions, loaderContext) {
         : rawOptions.importLoaders,
     esModule:
       typeof rawOptions.esModule === 'undefined' ? true : rawOptions.esModule,
+    fontLoader: rawOptions.fontLoader,
     fontModule: rawOptions.fontModule,
   }
 }
@@ -178,7 +179,9 @@ export default async function loader(content, map, meta) {
       const fontModuleExports = []
 
       if (options.fontModule) {
-        plugins.push(fontModules(fontModuleExports, meta?.fallback))
+        plugins.push(
+          fontModules(fontModuleExports, options.fontLoader, meta?.fallback)
+        )
       }
 
       if (shouldUseModulesPlugins(options)) {

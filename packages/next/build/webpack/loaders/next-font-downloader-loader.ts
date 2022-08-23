@@ -1,7 +1,7 @@
 import path from 'path'
 import loaderUtils from 'next/dist/compiled/loader-utils3'
 
-export default async function nextFontDownloaderLoader(this: any) {
+export default async function nextFontLoader(this: any) {
   const callback = this.async()
   const { isServer } = this.getOptions()
   // CACHE HERE!?
