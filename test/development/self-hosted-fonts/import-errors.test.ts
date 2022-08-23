@@ -3,120 +3,6 @@ import { NextInstance } from 'test/lib/next-modes/base'
 import { check, getRedboxSource, waitFor } from 'next-test-utils'
 import webdriver from 'next-webdriver'
 
-// describe('import-errors, selfHostedFonts disabled', () => {
-//   let next: NextInstance
-
-//   beforeAll(async () => {
-//     next = await createNext({
-//       files: {},
-//       nextConfig: {
-//         experimental: {},
-//       },
-//     })
-//   })
-//   beforeEach(async () => {
-//     await next.patchFile(
-//       'pages/_app.js',
-//       `
-//     function MyApp({ Component, pageProps }) {
-//       return <Component {...pageProps} />
-//     }
-
-//     export default MyApp
-//     `
-//     )
-//     await next.patchFile(
-//       'pages/index.js',
-//       `export default () => <p>Hello world!</p>`
-//     )
-//   })
-//   afterAll(() => next.destroy())
-
-//   test('import Google font', async () => {
-//     const browser = await webdriver(next.appPort, '/')
-
-//     try {
-//       await next.patchFile(
-//         'pages/_app.js',
-//         `
-//      import 'next/font/Inter/400'
-
-//      function MyApp({ Component, pageProps }) {
-//        return <Component {...pageProps} />
-//      }
-
-//      export default MyApp
-//      `
-//       )
-
-//       await check(() => getRedboxSource(browser), /import Google fonts/)
-//       expect(await getRedboxSource(browser)).toInclude(
-//         'Enable experimental.selfHostedFonts to import Google fonts.'
-//       )
-//     } finally {
-//       await browser.close()
-//     }
-//   })
-// })
-
-// describe('import-errors, missing urlImports', () => {
-//   let next: NextInstance
-
-//   beforeAll(async () => {
-//     next = await createNext({
-//       files: {},
-//       nextConfig: {
-//         experimental: {
-//           selfHostedFonts: true,
-//         },
-//       },
-//     })
-//   })
-//   beforeEach(async () => {
-//     await next.patchFile(
-//       'pages/_app.js',
-//       `
-//     function MyApp({ Component, pageProps }) {
-//       return <Component {...pageProps} />
-//     }
-
-//     export default MyApp
-//     `
-//     )
-//     await next.patchFile(
-//       'pages/index.js',
-//       `export default () => <p>Hello world!</p>`
-//     )
-//   })
-//   afterAll(() => next.destroy())
-
-//   test('import Google font', async () => {
-//     const browser = await webdriver(next.appPort, '/')
-
-//     try {
-//       await next.patchFile(
-//         'pages/_app.js',
-//         `
-//      import 'next/font/Inter/400'
-
-//      function MyApp({ Component, pageProps }) {
-//        return <Component {...pageProps} />
-//      }
-
-//      export default MyApp
-//      `
-//       )
-
-//       await check(() => getRedboxSource(browser), /import Google fonts/)
-//       expect(await getRedboxSource(browser)).toInclude(
-//         'Add https://fonts.gstatic.com/ to experimental.urlImports to import Google fonts.'
-//       )
-//     } finally {
-//       await browser.close()
-//     }
-//   })
-// })
-
 describe('import-errors, fontModules enabled', () => {
   let next: NextInstance
 
@@ -126,7 +12,6 @@ describe('import-errors, fontModules enabled', () => {
       nextConfig: {
         experimental: {
           fontModules: true,
-          urlImports: ['https://fonts.gstatic.com/'],
         },
       },
     })
@@ -242,9 +127,13 @@ describe('import-errors, fontModules disabled', () => {
   beforeAll(async () => {
     next = await createNext({
       files: {},
+      dependencies: {
+        '@next/google-fonts': '*',
+      },
       nextConfig: {
         experimental: {
           urlImports: ['https://fonts.gstatic.com/'],
+          fontLoaders: ['@next/google-fonts'],
         },
       },
     })
@@ -268,50 +157,26 @@ describe('import-errors, fontModules disabled', () => {
   })
   afterAll(() => next.destroy())
 
-  test('import Google font outside _app', async () => {
+  test('font loader outside _app', async () => {
     const browser = await webdriver(next.appPort, '/')
 
     try {
       await next.patchFile(
         'pages/index.js',
         `
-      import 'next/font/Inter/400'
+        import { Arvo } from '@next/google-fonts'
 
-      export default () => <p>Hello world!</p>`
+        Arvo({
+          variant: '700-italic',
+        })
+
+        export default () => <p>Hello world!</p>`
       )
 
-      await check(() => getRedboxSource(browser), /Google fonts/)
+      await check(() => getRedboxSource(browser), /Font loaders/)
       expect(await getRedboxSource(browser)).toInclude(
-        'Google fonts cannot be imported from files other than your Custom <App>.'
+        'Font loaders cannot be used in any other file than your Custom <App>.'
       )
-    } finally {
-      await browser.close()
-    }
-  })
-
-  test.skip('import Google font inside _app', async () => {
-    const browser = await webdriver(next.appPort, '/')
-
-    try {
-      await next.patchFile(
-        'pages/index.js',
-        `
-      export default () => <p style={{ fontFamily: 'Inter' }}>Hello world!</p>`
-      )
-      await next.patchFile(
-        'pages/_app.js',
-        `
-      import 'next/font/Inter/400'
-
-      function MyApp({ Component, pageProps }) {
-        return <Component {...pageProps} />
-      }
-
-      export default MyApp
-      `
-      )
-
-      await waitFor(6000)
     } finally {
       await browser.close()
     }

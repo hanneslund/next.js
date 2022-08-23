@@ -1,6 +1,5 @@
 import curry from 'next/dist/compiled/lodash.curry'
 import { webpack } from 'next/dist/compiled/webpack/webpack'
-import path from 'path'
 import { loader, plugin } from '../../helpers'
 import { ConfigurationContext, ConfigurationFn, pipe } from '../../utils'
 import { getCssModuleLoader, getGlobalCssLoader } from './loaders'
@@ -10,7 +9,7 @@ import {
   getGlobalImportError,
   getGlobalModuleImportError,
   getLocalModuleImportError,
-  fontDownloaderGlobalImportError,
+  fontLoaderGlobalImportError,
 } from './messages'
 import { getPostCssPlugins } from './plugins'
 
@@ -231,35 +230,43 @@ export const css = curry(async function css(
       })
     )
   } else if (fontLoaders) {
-    // fns.push(
-    //   loader({
-    //     oneOf: [
-    //       markRemovable({
-    //         sideEffects: true,
-    //         test: fontLoaders,
-    //         issuer: {
-    //           and: [ctx.rootDirectory],
-    //           not: [/node_modules/, ctx.customAppFile],
-    //         },
-    //         use: {
-    //           loader: 'error-loader',
-    //           options: {
-    //             reason: fontDownloaderGlobalImportError(),
-    //           },
-    //         },
-    //       }),
-    //     ],
-    //   })
-    // )
+    fns.push(
+      loader({
+        oneOf: [
+          markRemovable({
+            sideEffects: true,
+            test: fontLoaders,
+            issuer: {
+              and: [ctx.rootDirectory],
+              not: [
+                `${ctx.rootDirectory}/app`,
+                ctx.customAppFile,
+                regexClientEntry,
+              ],
+            },
+            use: {
+              loader: 'error-loader',
+              options: {
+                reason: fontLoaderGlobalImportError(),
+              },
+            },
+          }),
+        ],
+      })
+    )
+    console.log(ctx.rootDirectory)
+    console.log(ctx.rootDirectory)
+    console.log(ctx.rootDirectory)
+    console.log(ctx.rootDirectory)
   }
 
-  fontLoaders?.forEach((downloader) => {
+  fontLoaders?.forEach((fontLoader) => {
     fns.push(
       loader({
         oneOf: [
           markRemovable({
             sideEffects: true, // SIDEEFFECTS?
-            test: downloader,
+            test: fontLoader,
             // issuer: {
             //   and: [ctx.rootDirectory],
             //   not: [/node_modules/],
@@ -268,7 +275,7 @@ export const css = curry(async function css(
             //   and: [ctx.rootDirectory, /\.(js|mjs|jsx|ts|tsx)$/],
             //   or: [regexClientEntry],
             // },
-            use: getFontModuleLoader(ctx, lazyPostCSSInitializer, downloader),
+            use: getFontModuleLoader(ctx, lazyPostCSSInitializer, fontLoader),
           }),
         ],
       })

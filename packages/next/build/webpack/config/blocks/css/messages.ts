@@ -32,8 +32,8 @@ export function getCustomDocumentError() {
   )}. Please move global styles to ${chalk.cyan('pages/_app.js')}.`
 }
 
-export function fontDownloaderGlobalImportError() {
-  return `Font downaloders ${chalk.bold(
+export function fontLoaderGlobalImportError() {
+  return `Font loaders ${chalk.bold(
     'cannot'
   )} be used in any other file than your ${chalk.bold(
     'Custom <App>'
