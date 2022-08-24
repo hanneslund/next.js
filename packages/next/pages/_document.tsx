@@ -602,6 +602,7 @@ export class Head extends Component<HeadProps> {
       disableOptimizedLoading,
       optimizeCss,
       optimizeFonts,
+      assetPrefix,
     } = this.context
 
     const disableRuntimeJS = unstable_runtimeJS === false
@@ -774,8 +775,7 @@ export class Head extends Component<HeadProps> {
               <link
                 key={fontFile}
                 rel="preload"
-                // href={`${assetPrefix}/_next/${fontFile}`}
-                href={`/_next/${fontFile}`}
+                href={`${assetPrefix}/_next/${fontFile}`}
                 as="font"
                 type={`font/${ext}`}
                 crossOrigin="anonymous"

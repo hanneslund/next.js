@@ -68,6 +68,7 @@ export function getFontModuleLoader(
       loader: 'next-fontloader-loader',
       options: {
         isServer: ctx.isServer,
+        assetPrefix: ctx.assetPrefix,
       },
     })
   }

@@ -16,7 +16,7 @@ class FontLoaderError extends Error {
 
 export default async function nextFontLoader(this: any) {
   const callback = this.async()
-  const { isServer } = this.getOptions()
+  const { isServer, assetPrefix } = this.getOptions()
 
   const emitFile = (content: Buffer, ext: string, preload: true) => {
     const opts = { context: this.rootContext, content }
@@ -26,8 +26,7 @@ export default async function nextFontLoader(this: any) {
       `static/fonts/[hash]${preload ? '.p' : ''}.${ext}`,
       opts
     )
-    // const outputPath = assetPrefix + '/_next' + interpolatedName
-    const outputPath = `/_next/${interpolatedName}`
+    const outputPath = `${assetPrefix}/_next/${interpolatedName}`
     if (!isServer) {
       this.emitFile(interpolatedName, content, null)
     }
