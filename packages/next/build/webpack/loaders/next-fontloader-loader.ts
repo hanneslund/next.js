@@ -21,6 +21,8 @@ export default async function nextFontLoader(this: any) {
     return path
   }
   const data = JSON.parse(this.resourceQuery.slice(1)) // try catch
+  // Ta fallback och preload här?
+  // preloada om display
   const downloader = require(path.join(this.resourcePath, '../loader.js'))
   const { css, fallback } = await downloader.download(data, emitFile) // try catch
   callback(null, css, null, { fallback })

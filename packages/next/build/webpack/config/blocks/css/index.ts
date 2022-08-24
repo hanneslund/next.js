@@ -254,10 +254,6 @@ export const css = curry(async function css(
         ],
       })
     )
-    console.log(ctx.rootDirectory)
-    console.log(ctx.rootDirectory)
-    console.log(ctx.rootDirectory)
-    console.log(ctx.rootDirectory)
   }
 
   fontLoaders?.forEach((fontLoader) => {
