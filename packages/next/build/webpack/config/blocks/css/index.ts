@@ -9,7 +9,8 @@ import {
   getGlobalImportError,
   getGlobalModuleImportError,
   getLocalModuleImportError,
-  fontLoaderGlobalImportError,
+  getFontLoaderGlobalImportError,
+  getFontLoaderDocumentImportError,
 } from './messages'
 import { getPostCssPlugins } from './plugins'
 
@@ -207,6 +208,25 @@ export const css = curry(async function css(
     (downloader) => require.resolve(downloader)
   )
 
+  fns.push(
+    loader({
+      oneOf: [
+        markRemovable({
+          test: fontLoaders,
+          // Use a loose regex so we don't have to crawl the file system to
+          // find the real file name (if present).
+          issuer: /pages[\\/]_document\./,
+          use: {
+            loader: 'error-loader',
+            options: {
+              reason: getFontLoaderDocumentImportError(),
+            },
+          },
+        }),
+      ],
+    })
+  )
+
   if (ctx.experimental.fontModules) {
     fns.push(
       loader({
@@ -247,7 +267,7 @@ export const css = curry(async function css(
             use: {
               loader: 'error-loader',
               options: {
-                reason: fontLoaderGlobalImportError(),
+                reason: getFontLoaderGlobalImportError(),
               },
             },
           }),

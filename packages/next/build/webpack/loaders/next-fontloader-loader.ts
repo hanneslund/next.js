@@ -46,7 +46,6 @@ export default async function nextFontLoader(this: any) {
   const downloader = require(path.join(this.resourcePath, '../loader.js'))
   try {
     const { css, fallback } = await downloader.download(data, emitFile)
-    console.log({ css, fallback })
     callback(null, css, null, { fallback })
   } catch (err) {
     callback(new FontLoaderError(err, data, issuer))

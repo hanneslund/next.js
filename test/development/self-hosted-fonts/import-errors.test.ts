@@ -140,6 +140,24 @@ describe('import-errors, fontModules disabled', () => {
   })
   beforeEach(async () => {
     await next.patchFile(
+      'pages/_document.js',
+      `
+    import { Html, Head, Main, NextScript } from 'next/document'
+
+    export default function Document() {
+      return (
+        <Html>
+          <Head />
+          <body>
+            <Main />
+            <NextScript />
+          </body>
+        </Html>
+      )
+    }
+    `
+    )
+    await next.patchFile(
       'pages/_app.js',
       `
     function MyApp({ Component, pageProps }) {
@@ -176,6 +194,44 @@ describe('import-errors, fontModules disabled', () => {
       await check(() => getRedboxSource(browser), /Font loaders/)
       expect(await getRedboxSource(browser)).toInclude(
         'Font loaders cannot be used in any other file than your Custom <App>.'
+      )
+    } finally {
+      await browser.close()
+    }
+  })
+
+  test('font loader inside _document', async () => {
+    const browser = await webdriver(next.appPort, '/')
+
+    try {
+      await next.patchFile(
+        'pages/_document.js',
+        `
+      import { Html, Head, Main, NextScript } from 'next/document'
+      import { Inder } from '@next/google-fonts'
+
+      Inder({
+        variant: '400',
+      })
+
+  
+      export default function Document() {
+        return (
+          <Html>
+            <Head />
+            <body>
+              <Main />
+              <NextScript />
+            </body>
+          </Html>
+        )
+      }
+      `
+      )
+
+      await check(() => getRedboxSource(browser), /Font loaders/)
+      expect(await getRedboxSource(browser)).toInclude(
+        'Font loaders cannot be used within pages/_document.js'
       )
     } finally {
       await browser.close()
