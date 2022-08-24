@@ -18,19 +18,20 @@ export default async function nextFontLoader(this: any) {
   const callback = this.async()
   const { isServer } = this.getOptions()
 
-  const emitFile = (content: Buffer, ext: string) => {
+  const emitFile = (content: Buffer, ext: string, preload: true) => {
     const opts = { context: this.rootContext, content }
     const interpolatedName = loaderUtils.interpolateName(
       this,
-      `static/fonts/[hash].${ext}`,
+      // Add .p when it is supposed to be preloaded
+      `static/fonts/[hash]${preload ? '.p' : ''}.${ext}`,
       opts
     )
     // const outputPath = assetPrefix + '/_next' + interpolatedName
     const outputPath = `/_next/${interpolatedName}`
     if (!isServer) {
-      this.emitFile(outputPath, content, null)
+      this.emitFile(interpolatedName, content, null)
     }
-    return path
+    return outputPath
   }
 
   const data = JSON.parse(this.resourceQuery.slice(1))

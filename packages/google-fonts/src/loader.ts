@@ -55,13 +55,15 @@ export async function download(
   const css = (
     await Promise.all(
       (await res.text()).split('\n').map(async (line) => {
-        const fontfaceUrl = /src: url\((.+?)\)/.exec(line)?.[1]
-        if (fontfaceUrl) {
-          const arrayBuffer = await fetch(url).then((res) => res.arrayBuffer())
-          let ext: any = url.split('.')
+        const fontFaceUrl = /src: url\((.+?)\)/.exec(line)?.[1]
+        if (fontFaceUrl) {
+          const arrayBuffer = await fetch(fontFaceUrl).then((res) =>
+            res.arrayBuffer()
+          )
+          let ext: any = fontFaceUrl.split('.')
           ext = ext[ext.length - 1]
           const file = emitFile(Buffer.from(arrayBuffer), ext, preload)
-          return line.replace(url, file)
+          return line.replace(fontFaceUrl, file)
         }
         return line
       })

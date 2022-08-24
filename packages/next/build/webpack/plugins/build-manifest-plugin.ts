@@ -16,7 +16,6 @@ import getRouteFromEntrypoint from '../../../server/get-route-from-entrypoint'
 import { ampFirstEntryNamesMap } from './next-drop-client-page-plugin'
 import { getSortedRoutes } from '../../../shared/lib/router/utils'
 import { spans } from './profiling-plugin'
-// import postcss from 'postcss'
 
 type DeepMutable<T> = { -readonly [P in keyof T]: DeepMutable<T[P]> }
 
@@ -206,8 +205,14 @@ export default class BuildManifestPlugin {
         }
 
         const filesForPage = getEntrypointFiles(entrypoint)
-
         assetMap.pages[pagePath] = [...new Set([...mainFiles, ...filesForPage])]
+
+        const fontFiles: string[] = entrypoint.chunks
+          .flatMap((chunk: any) => [...chunk.auxiliaryFiles])
+          .filter((file: string) => /\.(woff|woff2|eot|ttf|otf)$/.exec(file))
+        if (fontFiles.length > 0) {
+          assetMap.pagesFontFiles[pagePath] = fontFiles
+        }
       }
 
       if (!this.isDevFallback) {

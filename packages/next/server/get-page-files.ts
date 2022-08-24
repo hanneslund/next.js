@@ -12,7 +12,7 @@ export type BuildManifest = {
     [page: string]: readonly string[]
   }
   pagesFontFiles: {
-    [page: string]: Array<{ file: string; preload: boolean }>
+    [page: string]: string[]
   }
   ampFirstPages: readonly string[]
 }

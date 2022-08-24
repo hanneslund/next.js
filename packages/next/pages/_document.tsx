@@ -765,18 +765,23 @@ export class Head extends Component<HeadProps> {
         {pageFontFiles.length > 0 ? (
           <link rel="preconnect" href="/" crossOrigin="anonymous" />
         ) : null}
-        {pageFontFiles.map(({ file, preload }) =>
-          preload ? (
-            <link
-              key={file}
-              rel="preload"
-              href={`/_next/static/fonts/${file}`}
-              as="font"
-              type={`font/${file.split('.').at(-1)}`}
-              crossOrigin="anonymous"
-            />
-          ) : null
-        )}
+        {pageFontFiles
+          .filter((fontFile) => /\.p.(woff|woff2|eot|ttf|otf)$/.exec(fontFile))
+          .map((fontFile) => {
+            let ext: any = fontFile.split('.')
+            ext = ext[ext.length - 1]
+            return (
+              <link
+                key={fontFile}
+                rel="preload"
+                // href={`${assetPrefix}/_next/${fontFile}`}
+                href={`/_next/${fontFile}`}
+                as="font"
+                type={`font/${ext}`}
+                crossOrigin="anonymous"
+              />
+            )
+          })}
 
         {process.env.NEXT_RUNTIME !== 'edge' && inAmpMode && (
           <>
