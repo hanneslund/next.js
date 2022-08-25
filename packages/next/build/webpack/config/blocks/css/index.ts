@@ -205,27 +205,29 @@ export const css = curry(async function css(
 
   // next/font
   let fontLoaders: string[] | undefined = ctx.experimental.fontLoaders?.map(
-    (downloader) => require.resolve(downloader)
+    (fontLoader) => require.resolve(fontLoader)
   )
 
-  fns.push(
-    loader({
-      oneOf: [
-        markRemovable({
-          test: fontLoaders,
-          // Use a loose regex so we don't have to crawl the file system to
-          // find the real file name (if present).
-          issuer: /pages[\\/]_document\./,
-          use: {
-            loader: 'error-loader',
-            options: {
-              reason: getFontLoaderDocumentImportError(),
+  if (fontLoaders && fontLoaders.length > 0) {
+    fns.push(
+      loader({
+        oneOf: [
+          markRemovable({
+            test: fontLoaders,
+            // Use a loose regex so we don't have to crawl the file system to
+            // find the real file name (if present).
+            issuer: /pages[\\/]_document\./,
+            use: {
+              loader: 'error-loader',
+              options: {
+                reason: getFontLoaderDocumentImportError(),
+              },
             },
-          },
-        }),
-      ],
-    })
-  )
+          }),
+        ],
+      })
+    )
+  }
 
   if (ctx.experimental.fontModules) {
     fns.push(

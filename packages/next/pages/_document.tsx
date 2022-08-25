@@ -767,6 +767,7 @@ export class Head extends Component<HeadProps> {
           <link rel="preconnect" href="/" crossOrigin="anonymous" />
         ) : null}
         {pageFontFiles
+          // Fonts that ends with .p.[ext] should preload
           .filter((fontFile) => /\.p.(woff|woff2|eot|ttf|otf)$/.exec(fontFile))
           .map((fontFile) => {
             let ext: any = fontFile.split('.')

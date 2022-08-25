@@ -25,26 +25,31 @@ const path = require('path')
   type Display = 'auto'|'block'|'swap'|'fallback'|'optional'
   type FontModule = {className:string,style:{fontFamily:string,fontWeight:string,fontStyle:string}}
   `
+
+  const fontData = {}
   for (const { family, subsets, weights, styles } of Object.values(fonts)) {
     const variants = []
     weights.forEach((weight) => {
       styles.forEach((style) => {
-        variants.push(`"${weight}${style === 'normal' ? '' : `-${style}`}"`)
+        variants.push(`${weight}${style === 'normal' ? '' : `-${style}`}`)
       })
     })
 
     if (variableFonts[family]) {
-      variants.push('"variable"')
+      variants.push('variable')
     }
 
+    fontData[family] = { variants, subsets, axes: variableFonts[family] }
     fn += `export function ${family.replaceAll(' ', '_')}(options: {
-      variant:${variants.join('|')}
+      variant:${variants.map((variant) => `"${variant}"`).join('|')}
       display?:Display,
-      fallback?: string[],
-      preload?: boolean,
-      subsets?:(${subsets.map((s) => `'${s}'`).join('|')})[]}):FontModule{e()}
+      preload?:(${subsets.map((s) => `'${s}'`).join('|')})[]}):void{e()}
     `
   }
 
   fs.writeFileSync(path.join(__dirname, '../src/index.ts'), fn)
+  fs.writeFileSync(
+    path.join(__dirname, '../src/font-data.json'),
+    JSON.stringify(fontData, null, 2)
+  )
 })()
