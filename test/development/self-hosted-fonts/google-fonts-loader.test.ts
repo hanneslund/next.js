@@ -165,7 +165,7 @@ describe('dont-preload-fonts-in-dev', () => {
       await check(() => getRedboxSource(browser), /expected an array/)
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
-        "Invalid preload value \`[object Object]\` for font \`Inter\`, expected an array of subsets.
+        "Invalid preload value for font \`Inter\`, expected an array of subsets.
         Available subsets: cyrillic, cyrillic-ext, greek, greek-ext, latin, latin-ext, vietnamese
         Location: pages/_app.js"
       `)
@@ -227,6 +227,127 @@ describe('dont-preload-fonts-in-dev', () => {
         .toMatchInlineSnapshot(`
         "Invalid display value \`always\` for font \`Inter\`
         Available display values: auto, block, swap, fallback, optional
+        Location: pages/_app.js"
+      `)
+    } finally {
+      await browser.close()
+    }
+  })
+
+  test('Setting axes on non variable font', async () => {
+    const browser = await webdriver(next.appPort, '/')
+
+    try {
+      await next.patchFile(
+        'pages/_app.js',
+        `
+      import { Inter } from '@next/google-fonts'
+
+      Inter({ variant: '500', axes: [] })
+
+      function MyApp({ Component, pageProps }) {
+        return <Component {...pageProps} />
+      }
+      
+      export default MyApp
+      `
+      )
+      await check(
+        () => getRedboxSource(browser),
+        /can only be defined for variable fonts/
+      )
+      expect(removeFirstLine(await getRedboxSource(browser)))
+        .toMatchInlineSnapshot(`
+        "\`axes\` can only be defined for variable fonts
+        Location: pages/_app.js"
+      `)
+    } finally {
+      await browser.close()
+    }
+  })
+
+  test('Setting axes on font without definable axes', async () => {
+    const browser = await webdriver(next.appPort, '/')
+
+    try {
+      await next.patchFile(
+        'pages/_app.js',
+        `
+      import { Lora } from '@next/google-fonts'
+
+      Lora({ variant: 'variable', axes: [] })
+
+      function MyApp({ Component, pageProps }) {
+        return <Component {...pageProps} />
+      }
+      
+      export default MyApp
+      `
+      )
+      await check(() => getRedboxSource(browser), /has no definable/)
+      expect(removeFirstLine(await getRedboxSource(browser)))
+        .toMatchInlineSnapshot(`
+        "Font \`Lora\` has no definable \`axes\`
+        Location: pages/_app.js"
+      `)
+    } finally {
+      await browser.close()
+    }
+  })
+
+  test('Invalid axes value', async () => {
+    const browser = await webdriver(next.appPort, '/')
+
+    try {
+      await next.patchFile(
+        'pages/_app.js',
+        `
+      import { Inter } from '@next/google-fonts'
+
+      Inter({ variant: 'variable', axes: "hello" })
+
+      function MyApp({ Component, pageProps }) {
+        return <Component {...pageProps} />
+      }
+      
+      export default MyApp
+      `
+      )
+      await check(() => getRedboxSource(browser), /Invalid/)
+      expect(removeFirstLine(await getRedboxSource(browser)))
+        .toMatchInlineSnapshot(`
+        "Invalid axes value for font \`Inter\`, expected an array of axes.
+        Available axes: slnt
+        Location: pages/_app.js"
+      `)
+    } finally {
+      await browser.close()
+    }
+  })
+
+  test('Invalid value in axes array', async () => {
+    const browser = await webdriver(next.appPort, '/')
+
+    try {
+      await next.patchFile(
+        'pages/_app.js',
+        `
+      import { Inter } from '@next/google-fonts'
+
+      Inter({ variant: 'variable', axes: ["hello"] })
+
+      function MyApp({ Component, pageProps }) {
+        return <Component {...pageProps} />
+      }
+      
+      export default MyApp
+      `
+      )
+      await check(() => getRedboxSource(browser), /Invalid/)
+      expect(removeFirstLine(await getRedboxSource(browser)))
+        .toMatchInlineSnapshot(`
+        "Invalid axes value \`hello\` for font \`Inter\`.
+        Available axes: slnt
         Location: pages/_app.js"
       `)
     } finally {

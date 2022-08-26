@@ -9,7 +9,7 @@ export default async function download(
   data: any,
   emitFile: (content: Buffer, ext: string, preload: boolean) => string
 ) {
-  const { font, variant, display = 'swap', preload } = data
+  const { font, variant, display = 'swap', preload, axes } = data
 
   const fontFamily = font.replaceAll('_', ' ')
   const googleFontName = font.replaceAll('_', '+')
@@ -45,7 +45,7 @@ export default async function download(
   if (typeof preload !== 'undefined') {
     if (!Array.isArray(preload)) {
       throw new Error(
-        `Invalid preload value \`${preload}\` for font \`${fontFamily}\`, expected an array of subsets.\nAvailable subsets: ${fontSubsets.join(
+        `Invalid preload value for font \`${fontFamily}\`, expected an array of subsets.\nAvailable subsets: ${fontSubsets.join(
           ', '
         )}`
       )
@@ -62,24 +62,67 @@ export default async function download(
   }
 
   let url: string
-  const getUrl = (keys: string[], values: string[]) =>
-    `https://fonts.googleapis.com/css2?family=${googleFontName}:${keys.join(
-      ','
-    )}@${values.join(',')}&display=${display}`
+  const getUrl = (keyVal: Array<[string, string]>) =>
+    `https://fonts.googleapis.com/css2?family=${googleFontName}:${keyVal
+      .map(([key]) => key)
+      .join(',')}@${keyVal.map(([, val]) => val).join(',')}&display=${display}`
 
-  if (variant === 'variable') {
-    const axes = (fontData as any)[fontFamily].axes
-    const keys = Object.keys(axes)
-    const values = Object.values(axes).map(
-      ({ min, max }: any) => `${min}..${max}`
-    )
-    url = getUrl(keys, values)
-  } else {
-    const [weight, style] = variant.split('-')
-    const keys = [...(style ? ['ital'] : []), 'wght']
-    const values = [...(style ? [style === 'italic' ? 1 : 0] : []), weight]
-    url = getUrl(keys, values)
+  const [weight, style] = variant.split('-')
+
+  if (weight !== 'variable' && axes) {
+    throw new Error('`axes` can only be defined for variable fonts')
   }
+
+  if (weight === 'variable') {
+    const fontAxes = (fontData as any)[fontFamily].axes
+
+    if (axes) {
+      const defineAbleAxes = Object.keys(fontAxes).filter(
+        (key: string) => key !== 'wght' && key !== 'ital'
+      )
+      if (defineAbleAxes.length === 0) {
+        throw new Error(`Font \`${fontFamily}\` has no definable \`axes\``)
+      }
+      if (!Array.isArray(axes)) {
+        throw new Error(
+          `Invalid axes value for font \`${fontFamily}\`, expected an array of axes.\nAvailable axes: ${defineAbleAxes.join(
+            ', '
+          )}`
+        )
+      }
+      axes.forEach((key) => {
+        if (!defineAbleAxes.includes(key)) {
+          throw new Error(
+            `Invalid axes value \`${key}\` for font \`${fontFamily}\`.\nAvailable axes: ${defineAbleAxes.join(
+              ', '
+            )}`
+          )
+        }
+      })
+    }
+
+    const usedAxes: Array<[string, string]> = Object.entries(fontAxes)
+      .filter(
+        ([key]) =>
+          key === 'wght' ||
+          (key === 'ital' && style === 'italic') ||
+          axes?.includes(key)
+      )
+      .map(([key, { min, max }]: any) => [
+        key,
+        key === 'ital' ? '1' : `${min}..${max}`,
+      ])
+    console.log({ usedAxes })
+    url = getUrl(usedAxes)
+  } else {
+    const keyVal: Array<[string, string]> = [['wght', weight]]
+    if (style === 'italic') {
+      keyVal.unshift(['ital', '1'])
+    }
+    url = getUrl(keyVal)
+  }
+
+  console.log({ url })
 
   const res = await fetch(url, {
     headers: {

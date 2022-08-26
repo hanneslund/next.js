@@ -16,15 +16,8 @@ const path = require('path')
     return fontMap
   })
 
-  fs.writeFileSync(
-    path.join(__dirname, '../src/variable-font-axes.json'),
-    JSON.stringify(variableFonts, null, 2)
-  )
-
-  let fn = `function e():never { throw new Error("Incorrectly setup") }
-  type Display = 'auto'|'block'|'swap'|'fallback'|'optional'
-  type FontModule = {className:string,style:{fontFamily:string,fontWeight:string,fontStyle:string}}
-  `
+  let fontFunctions =
+    "/* eslint-disable @typescript-eslint/no-unused-vars */\ntype Display = 'auto'|'block'|'swap'|'fallback'|'optional'\n"
 
   const fontData = {}
   for (const { family, subsets, weights, styles } of Object.values(fonts)) {
@@ -35,19 +28,32 @@ const path = require('path')
       })
     })
 
-    if (variableFonts[family]) {
+    const varAxes = variableFonts[family]
+    let functionAxes
+    if (varAxes) {
+      const additionalAxes = Object.keys(varAxes).filter(
+        (key) => key !== 'ital' && key !== 'wght'
+      )
+      if (additionalAxes.length > 0) {
+        functionAxes = additionalAxes
+      }
+
       variants.push('variable')
+      if (varAxes.ital) {
+        variants.push('variable-italic')
+      }
     }
 
     fontData[family] = { variants, subsets, axes: variableFonts[family] }
-    fn += `export function ${family.replaceAll(' ', '_')}(options: {
+    fontFunctions += `export function ${family.replaceAll(' ', '_')}(options: {
       variant:${variants.map((variant) => `"${variant}"`).join('|')}
       display?:Display,
-      preload?:(${subsets.map((s) => `'${s}'`).join('|')})[]}):void{e()}
-    `
+preload?:(${subsets.map((s) => `'${s}'`).join('|')})[]
+${functionAxes ? `axes:(${functionAxes.map((s) => `'${s}'`).join('|')})[]` : ''}
+}){}`
   }
 
-  fs.writeFileSync(path.join(__dirname, '../src/index.ts'), fn)
+  fs.writeFileSync(path.join(__dirname, '../src/index.ts'), fontFunctions)
   fs.writeFileSync(
     path.join(__dirname, '../src/font-data.json'),
     JSON.stringify(fontData, null, 2)
