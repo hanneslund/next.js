@@ -16,7 +16,7 @@ const plugin = (
       )
 
       const fontFamilies: string[] = []
-      let fontWeight: string | undefined
+      let fontWeight: number | undefined
       let fontStyle: string | undefined
 
       const formatFamily = (family: string) => {
@@ -49,7 +49,7 @@ const plugin = (
           )
           // Skip if includes ' ', then it's a range of possible values
           if (weight && !weight.value.includes(' ')) {
-            fontWeight = weight.value
+            fontWeight = Number(weight.value)
           }
 
           const style = node.nodes.find(

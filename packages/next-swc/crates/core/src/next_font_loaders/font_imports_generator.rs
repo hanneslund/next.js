@@ -218,8 +218,6 @@ fn object_lit_to_json(object_lit: &ObjectLit) -> Value {
         }
     }
 
-    // values.insert("font".to_string(), Value::String(String::from(font_name)));
-
     Value::Object(values)
 }
 

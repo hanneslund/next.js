@@ -16,8 +16,11 @@ const path = require('path')
     return fontMap
   })
 
-  let fontFunctions =
-    "/* eslint-disable @typescript-eslint/no-unused-vars */\ntype Display = 'auto'|'block'|'swap'|'fallback'|'optional'\n"
+  let fontFunctions = `/* eslint-disable @typescript-eslint/no-unused-vars */
+type Display = 'auto'|'block'|'swap'|'fallback'|'optional'
+type FontModule = { className: string, style: { fontFamily: string, fontWeight?: number, fontStyle?: string } }
+function e():never { throw new Error() }
+`
 
   const fontData = {}
   for (const { family, subsets, weights, styles } of Object.values(fonts)) {
@@ -50,8 +53,11 @@ const path = require('path')
       display?:Display,
 subsets?:(${subsets.map((s) => `'${s}'`).join('|')})[]
 preload?: boolean
-${functionAxes ? `axes:(${functionAxes.map((s) => `'${s}'`).join('|')})[]` : ''}
-}){}`
+${
+  functionAxes ? `axes?:(${functionAxes.map((s) => `'${s}'`).join('|')})[]` : ''
+}
+}):FontModule{e()}
+`
   }
 
   fs.writeFileSync(
