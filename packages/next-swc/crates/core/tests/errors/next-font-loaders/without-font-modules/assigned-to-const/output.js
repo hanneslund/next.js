@@ -1,1 +1,1 @@
-import inter from '@next/google-fonts?{"font":"Inter","variant":"400"}';
+import inter from '@next/font/google?{"font":"Inter","variant":"400"}'

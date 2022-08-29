@@ -402,9 +402,6 @@ const configSchema = {
         workerThreads: {
           type: 'boolean',
         },
-        fontModules: {
-          type: 'boolean',
-        },
         fontLoaders: {
           items: {
             type: 'string',

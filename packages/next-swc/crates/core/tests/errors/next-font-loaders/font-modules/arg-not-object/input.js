@@ -1,4 +1,4 @@
-import { Inter, Sacramento } from '@next/google-fonts'
+import { Inter, Sacramento } from '@next/font/google'
 fn(10)
 Inter(10)
 const obj = {}

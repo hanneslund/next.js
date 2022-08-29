@@ -1,4 +1,4 @@
-import { Inter } from '@next/google-fonts'
+import { Inter } from '@next/font/google'
 
 var i = 10
 var inter1 = Inter({

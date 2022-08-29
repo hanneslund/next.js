@@ -146,7 +146,6 @@ export interface ExperimentalConfig {
   swcPlugins?: Array<[string, Record<string, unknown>]>
   largePageDataBytes?: number
   fontLoaders?: string[]
-  fontModules?: boolean
 }
 
 export type ExportPathMap = {
@@ -580,7 +579,6 @@ export const defaultConfig: NextConfig = {
     amp: undefined,
     urlImports: undefined,
     modularizeImports: undefined,
-    fontModules: undefined,
   },
 }
 

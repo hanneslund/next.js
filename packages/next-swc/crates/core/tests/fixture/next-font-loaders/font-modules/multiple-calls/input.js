@@ -1,5 +1,5 @@
 import React from 'react'
-import { Inter } from '@next/google-fonts'
+import { Inter } from '@next/font/google'
 
 const inter1 = Inter({
   variant: '900',

@@ -1,4 +1,4 @@
-import { ABeeZee } from '@next/google-fonts'
+import { ABeeZee } from '@next/font/google'
 
 const a = fn({ 10: 'hello' })
 const a = ABeeZee({ 10: 'hello' })

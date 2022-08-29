@@ -1,36 +1,28 @@
-import a from '@next/google-fonts?{"font":"ABeeZee"}';
-import a from '@next/google-fonts?{"font":"ABeeZee"}';
-import a from '@next/google-fonts?{"font":"ABeeZee"}';
-import a from '@next/google-fonts?{"font":"ABeeZee"}';
-import a from '@next/google-fonts?{"font":"ABeeZee"}';
-import a from '@next/google-fonts?{"font":"ABeeZee"}';
-import a from '@next/google-fonts?{"font":"ABeeZee"}';
+import a from '@next/font/google?{"font":"ABeeZee"}'
+import a from '@next/font/google?{"font":"ABeeZee"}'
+import a from '@next/font/google?{"font":"ABeeZee"}'
+import a from '@next/font/google?{"font":"ABeeZee"}'
+import a from '@next/font/google?{"font":"ABeeZee"}'
+import a from '@next/font/google?{"font":"ABeeZee"}'
+import a from '@next/font/google?{"font":"ABeeZee"}'
 const a = fn({
-    10: 'hello'
-});
+  10: 'hello',
+})
 const a = fn({
-    variant: [
-        ...[],
-        'hello'
-    ]
-});
+  variant: [...[], 'hello'],
+})
 const a = fn({
-    variant: [
-        i1
-    ]
-});
+  variant: [i1],
+})
 const a = fn({
-    variant: [
-        ,
-        ''
-    ]
-});
+  variant: [, ''],
+})
 const a = fn({
-    variant: ()=>{}
-});
+  variant: () => {},
+})
 const a = fn({
-    variant () {}
-});
+  variant() {},
+})
 const a = fn({
-    ...{}
-});
+  ...{},
+})

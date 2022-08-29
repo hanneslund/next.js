@@ -1,5 +1,5 @@
 import React from 'react'
-import { Fira_Code } from '@next/google-fonts'
+import { Fira_Code } from '@next/font/google'
 
 const firaCode = Fira_Code({
   variant: '400',

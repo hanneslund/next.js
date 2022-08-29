@@ -216,12 +216,7 @@ fn next_font_loaders_fixture(input: PathBuf) {
     let output = input.parent().unwrap().join("output.js");
     test_fixture(
         syntax(),
-        &|_tr| {
-            next_font_loaders(
-                vec!["@next/google-fonts".into(), "cool-fonts".into()],
-                false,
-            )
-        },
+        &|_tr| next_font_loaders(vec!["@next/font/google".into(), "cool-fonts".into()], false),
         &input,
         &output,
     );
@@ -232,7 +227,7 @@ fn next_font_loaders_font_modules_fixture(input: PathBuf) {
     let output = input.parent().unwrap().join("output.js");
     test_fixture(
         syntax(),
-        &|_tr| next_font_loaders(vec!["@next/google-fonts".into(), "cool-fonts".into()], true),
+        &|_tr| next_font_loaders(vec!["@next/font/google".into(), "cool-fonts".into()], true),
         &input,
         &output,
     );

@@ -1,2 +1,2 @@
-import inter from '@next/google-fonts?{"font":"Inter"}';
-fn({}, 10);
+import inter from '@next/font/google?{"font":"Inter"}'
+fn({}, 10)

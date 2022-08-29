@@ -1,8 +1,8 @@
 
   x Font loaders can only have named imports
    ,-[input.js:1:1]
- 1 | import * as googleFonts from '@next/google-fonts'
-   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ 1 | import * as googleFonts from '@next/font/google'
+   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
    `----
 
   x Font loaders can only have named imports

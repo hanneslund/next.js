@@ -1,4 +1,4 @@
-import { Inter } from '@next/google-fonts'
+import { Inter } from '@next/font/google'
 fn()
 Inter()
 const inter = Inter()

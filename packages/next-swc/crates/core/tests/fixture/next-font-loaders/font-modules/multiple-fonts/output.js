@@ -1,4 +1,4 @@
-import firaCode from '@next/google-fonts?{"fallback":["system-ui"],"font":"Fira_Code","variant":"400"}';
-import inter from '@next/google-fonts?{"display":"swap","font":"Inter","variant":"900"}';
-import React from 'react';
-console.log(firaCode, inter);
+import firaCode from '@next/font/google?{"fallback":["system-ui"],"font":"Fira_Code","variant":"400"}'
+import inter from '@next/font/google?{"display":"swap","font":"Inter","variant":"900"}'
+import React from 'react'
+console.log(firaCode, inter)

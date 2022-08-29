@@ -118,7 +118,6 @@ function getBaseSWCOptions({
     relay: nextConfig?.compiler?.relay,
     emotion: getEmotionOptions(nextConfig, development),
     fontLoaders: nextConfig?.experimental?.fontLoaders,
-    fontModules: nextConfig?.experimental.fontModules,
   }
 }
 

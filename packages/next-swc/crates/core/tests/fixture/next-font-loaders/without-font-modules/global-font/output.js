@@ -1,2 +1,2 @@
-import '@next/google-fonts?{"font":"Inter","variant":"900"}';
-import React from 'react';
+import '@next/font/google?{"font":"Inter","variant":"900"}'
+import React from 'react'
