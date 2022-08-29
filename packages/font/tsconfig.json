@@ -3,12 +3,12 @@
     "resolveJsonModule": true,
     "strict": true,
     "esModuleInterop": true,
-    "outDir": "dist",
+    "outDir": "google",
     "module": "commonjs",
     "target": "es2019",
     "downlevelIteration": true,
     "preserveWatchOutput": true
   },
-  "include": ["src/**/*.ts"],
+  "include": ["src/google/**/*.ts"],
   "exclude": ["node_modules"]
 }

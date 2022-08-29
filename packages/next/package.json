@@ -121,7 +121,7 @@
     "@hapi/accept": "5.0.2",
     "@napi-rs/cli": "2.7.0",
     "@napi-rs/triples": "1.1.0",
-    "@next/google-fonts": "12.2.6-canary.1",
+    "@next/font": "12.2.6-canary.1",
     "@next/polyfill-module": "12.2.6-canary.1",
     "@next/polyfill-nomodule": "12.2.6-canary.1",
     "@next/react-dev-overlay": "12.2.6-canary.1",

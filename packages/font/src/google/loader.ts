@@ -122,19 +122,30 @@ export default async function download(
     url = getUrl(keyVal)
   }
 
-  console.log({ url })
-
-  const res = await fetch(url, {
-    headers: {
-      'user-agent': CHROME_UA,
-    },
-  })
-
-  if (!res.ok) {
-    throw new Error(`Failed to fetch font  \`${fontFamily}\`\nURL: ${url}`)
+  let fixture
+  if (process.env.NEXT_FONT_GOOGLE_MOCKED_RESPONSES) {
+    const fixtures = require(process.env.NEXT_FONT_GOOGLE_MOCKED_RESPONSES)
+    fixture = fixtures[url]
+    if (!fixture) throw new Error('Missing fixture for URL: ' + url)
   }
 
-  const cssResponse = await res.text()
+  let cssResponse
+  if (fixture) {
+    cssResponse = fixture.css
+  } else {
+    const res = await fetch(url, {
+      headers: {
+        'user-agent': CHROME_UA,
+      },
+    })
+
+    if (!res.ok) {
+      throw new Error(`Failed to fetch font  \`${fontFamily}\`\nURL: ${url}`)
+    }
+
+    cssResponse = await res.text()
+  }
+
   const lines = []
   let currentLocale = ''
   for (const line of cssResponse.split('\n')) {
@@ -144,13 +155,20 @@ export default async function download(
     } else {
       const fontFaceUrl = /src: url\((.+?)\)/.exec(line)?.[1]
       if (fontFaceUrl) {
-        const arrayBuffer = await fetch(fontFaceUrl).then((r) =>
-          r.arrayBuffer()
-        )
+        let fontFileBuffer: Buffer
+        if (fixture) {
+          fontFileBuffer = Buffer.from(fontFaceUrl)
+        } else {
+          const arrayBuffer = await fetch(fontFaceUrl).then((r) =>
+            r.arrayBuffer()
+          )
+          fontFileBuffer = Buffer.from(arrayBuffer)
+        }
+
         let ext: any = fontFaceUrl.split('.')
         ext = ext[ext.length - 1]
         const file = emitFile(
-          Buffer.from(arrayBuffer),
+          fontFileBuffer,
           ext,
           (preload as any)?.includes(currentLocale)
         )

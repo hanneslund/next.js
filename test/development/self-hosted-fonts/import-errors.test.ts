@@ -128,13 +128,7 @@ describe('import-errors, fontModules disabled', () => {
     next = await createNext({
       files: {},
       dependencies: {
-        '@next/google-fonts': '*',
-      },
-      nextConfig: {
-        experimental: {
-          urlImports: ['https://fonts.gstatic.com/'],
-          fontLoaders: ['@next/google-fonts'],
-        },
+        '@next/font': '*',
       },
     })
   })
@@ -182,7 +176,7 @@ describe('import-errors, fontModules disabled', () => {
       await next.patchFile(
         'pages/index.js',
         `
-        import { Arvo } from '@next/google-fonts'
+        import { Arvo } from '@next/font/google'
 
         Arvo({
           variant: '700-italic',
@@ -208,7 +202,7 @@ describe('import-errors, fontModules disabled', () => {
         'pages/_document.js',
         `
       import { Html, Head, Main, NextScript } from 'next/document'
-      import { Inder } from '@next/google-fonts'
+      import { Inder } from '@next/font/google'
 
       Inder({
         variant: '400',

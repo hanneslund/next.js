@@ -53,9 +53,12 @@ ${functionAxes ? `axes:(${functionAxes.map((s) => `'${s}'`).join('|')})[]` : ''}
 }){}`
   }
 
-  fs.writeFileSync(path.join(__dirname, '../src/index.ts'), fontFunctions)
   fs.writeFileSync(
-    path.join(__dirname, '../src/font-data.json'),
+    path.join(__dirname, '../src/google/index.ts'),
+    fontFunctions
+  )
+  fs.writeFileSync(
+    path.join(__dirname, '../src/google/font-data.json'),
     JSON.stringify(fontData, null, 2)
   )
 })()

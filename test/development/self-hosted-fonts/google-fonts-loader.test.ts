@@ -1,13 +1,7 @@
 import cheerio from 'cheerio'
 import { createNext, FileRef } from 'e2e-utils'
 import { NextInstance } from 'test/lib/next-modes/base'
-import {
-  check,
-  findPort,
-  getRedboxSource,
-  renderViaHTTP,
-  waitFor,
-} from 'next-test-utils'
+import { check, getRedboxSource, renderViaHTTP, waitFor } from 'next-test-utils'
 import webdriver from 'next-webdriver'
 import { join } from 'path'
 
@@ -19,18 +13,12 @@ describe('dont-preload-fonts-in-dev', () => {
   let next: NextInstance
 
   beforeAll(async () => {
-    const port = await findPort()
-    console.log({ port })
-    console.log({ port })
-    console.log({ port })
     next = await createNext({
-      forcedPort: String(port),
       dependencies: {
-        '@next/google-fonts': '*',
+        '@next/font': '*',
       },
       files: {
         pages: new FileRef(join(__dirname, 'app/pages')),
-        'next.config.js': new FileRef(join(__dirname, 'app/next.config.js')),
       },
     })
 
@@ -62,7 +50,7 @@ describe('dont-preload-fonts-in-dev', () => {
       await next.patchFile(
         'pages/_app.js',
         `
-      import { Unknown } from '@next/google-fonts'
+      import { Unknown } from '@next/font/google'
 
       Unknown({ variant: '400' })
 
@@ -91,7 +79,7 @@ describe('dont-preload-fonts-in-dev', () => {
       await next.patchFile(
         'pages/_app.js',
         `
-      import { Oooh_Baby } from '@next/google-fonts'
+      import { Oooh_Baby } from '@next/font/google'
 
       Oooh_Baby({})
 
@@ -121,7 +109,7 @@ describe('dont-preload-fonts-in-dev', () => {
       await next.patchFile(
         'pages/_app.js',
         `
-      import { Oooh_Baby } from '@next/google-fonts'
+      import { Oooh_Baby } from '@next/font/google'
 
       Oooh_Baby({ variant: '500' })
 
@@ -151,7 +139,7 @@ describe('dont-preload-fonts-in-dev', () => {
       await next.patchFile(
         'pages/_app.js',
         `
-      import { Inter } from '@next/google-fonts'
+      import { Inter } from '@next/font/google'
 
       Inter({ variant: '500', preload: {} })
 
@@ -181,7 +169,7 @@ describe('dont-preload-fonts-in-dev', () => {
       await next.patchFile(
         'pages/_app.js',
         `
-      import { Inter } from '@next/google-fonts'
+      import { Inter } from '@next/font/google'
 
       Inter({ variant: '500', preload: ['japanese'] })
 
@@ -211,7 +199,7 @@ describe('dont-preload-fonts-in-dev', () => {
       await next.patchFile(
         'pages/_app.js',
         `
-      import { Inter } from '@next/google-fonts'
+      import { Inter } from '@next/font/google'
 
       Inter({ variant: '500', display: 'always' })
 
@@ -241,7 +229,7 @@ describe('dont-preload-fonts-in-dev', () => {
       await next.patchFile(
         'pages/_app.js',
         `
-      import { Inter } from '@next/google-fonts'
+      import { Inter } from '@next/font/google'
 
       Inter({ variant: '500', axes: [] })
 
@@ -273,7 +261,7 @@ describe('dont-preload-fonts-in-dev', () => {
       await next.patchFile(
         'pages/_app.js',
         `
-      import { Lora } from '@next/google-fonts'
+      import { Lora } from '@next/font/google'
 
       Lora({ variant: 'variable', axes: [] })
 
@@ -302,7 +290,7 @@ describe('dont-preload-fonts-in-dev', () => {
       await next.patchFile(
         'pages/_app.js',
         `
-      import { Inter } from '@next/google-fonts'
+      import { Inter } from '@next/font/google'
 
       Inter({ variant: 'variable', axes: "hello" })
 
@@ -332,7 +320,7 @@ describe('dont-preload-fonts-in-dev', () => {
       await next.patchFile(
         'pages/_app.js',
         `
-      import { Inter } from '@next/google-fonts'
+      import { Inter } from '@next/font/google'
 
       Inter({ variant: 'variable', axes: ["hello"] })
 
