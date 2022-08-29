@@ -32,16 +32,6 @@ export function getCustomDocumentError() {
   )}. Please move global styles to ${chalk.cyan('pages/_app.js')}.`
 }
 
-export function getFontLoaderGlobalImportError() {
-  return `Font loaders ${chalk.bold(
-    'cannot'
-  )} be used in any other file than your ${chalk.bold(
-    'Custom <App>'
-  )}. Please move all font downloads to ${chalk.cyan(
-    'pages/_app.js'
-  )} or enable font modules: https://nextjs.org/docs/font-modules`
-}
-
 export function getFontLoaderDocumentImportError() {
   return `Font loaders ${chalk.bold('cannot')} be used within ${chalk.cyan(
     'pages/_document.js'

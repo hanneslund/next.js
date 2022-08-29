@@ -128,7 +128,6 @@ function normalizeOptions(rawOptions, loaderContext) {
     esModule:
       typeof rawOptions.esModule === 'undefined' ? true : rawOptions.esModule,
     fontLoader: rawOptions.fontLoader,
-    fontModule: rawOptions.fontModule,
   }
 }
 
@@ -171,17 +170,15 @@ export default async function loader(content, map, meta) {
         icssParser,
         importParser,
         urlParser,
-        fontModules,
+        fontLoaderModule,
       } = require('./plugins')
 
       const replacements = []
       const exports = []
-      const fontModuleExports = []
+      const fontLoaderExports = []
 
-      if (options.fontModule) {
-        plugins.push(
-          fontModules(fontModuleExports, options.fontLoader, meta?.fallback)
-        )
+      if (options.fontLoader && meta?.isModule) {
+        plugins.push(fontLoaderModule(fontLoaderExports, this.resourceQuery))
       }
 
       if (shouldUseModulesPlugins(options)) {
@@ -328,7 +325,7 @@ export default async function loader(content, map, meta) {
       const importCode = getImportCode(imports, options)
       const moduleCode = getModuleCode(result, api, replacements, options, this)
       const exportCode = getExportCode(
-        [...exports, ...fontModuleExports],
+        [...exports, ...fontLoaderExports],
         replacements,
         options
       )

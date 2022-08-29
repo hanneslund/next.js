@@ -1,10 +1,10 @@
-import a from '@next/font/google?{"font":"ABeeZee"}';
+import a from '@next/font/google?module{"font":"ABeeZee"}';
 import '@next/font/google?{"font":"ABeeZee"}';
-import a from '@next/font/google?{"font":"ABeeZee"}';
+import a from '@next/font/google?module{"font":"ABeeZee"}';
 import '@next/font/google?{"font":"ABeeZee"}';
-import a from '@next/font/google?{"font":"ABeeZee"}';
+import a from '@next/font/google?module{"font":"ABeeZee"}';
 import '@next/font/google?{"font":"ABeeZee"}';
-import a from '@next/font/google?{"font":"ABeeZee"}';
+import a from '@next/font/google?module{"font":"ABeeZee"}';
 const a = fn({
     10: 'hello'
 });

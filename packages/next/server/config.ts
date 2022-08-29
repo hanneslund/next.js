@@ -734,22 +734,6 @@ function assignDefaults(userConfig: { [key: string]: any }) {
     }
   }
 
-  const fontLoaders = result.experimental?.fontLoaders
-  // Default font loaders
-  ;['@next/font/google'].forEach((pkg) => {
-    try {
-      require.resolve(pkg)
-      if (fontLoaders) {
-        fontLoaders.push(pkg)
-      } else {
-        if (!result.experimental) {
-          result.experimental = {}
-        }
-        result.experimental.fontLoaders = [pkg]
-      }
-    } catch {}
-  })
-
   return result
 }
 

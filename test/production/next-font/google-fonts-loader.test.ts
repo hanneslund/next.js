@@ -19,6 +19,11 @@ describe('@next/font/google loader', () => {
       dependencies: {
         '@next/font': '*',
       },
+      nextConfig: {
+        experimental: {
+          fontLoaders: ['@next/font/google'],
+        },
+      },
       env: {
         NEXT_FONT_GOOGLE_MOCKED_RESPONSES: googleFontsFixtures,
       },

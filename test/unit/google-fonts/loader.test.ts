@@ -1,6 +1,6 @@
-import loader from '@next/google-fonts/dist/loader'
+import loader from '@next/font/google/loader'
 
-describe('@next/google-fonts loader', () => {
+describe('@next/font/google loader', () => {
   beforeEach(() => {
     global.fetch = jest.fn()
   })

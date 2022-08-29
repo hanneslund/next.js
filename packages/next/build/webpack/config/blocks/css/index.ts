@@ -227,71 +227,14 @@ export const css = curry(async function css(
     )
   }
 
-  if (ctx.experimental.fontModules) {
-    fns.push(
-      loader({
-        oneOf: [
-          markRemovable({
-            sideEffects: false, //???
-            test: regexFontModule,
-            // CSS Modules are only supported in the user's application. We're
-            // not yet allowing CSS imports _within_ `node_modules`.
-            issuer: {
-              and: [
-                {
-                  or: [ctx.rootDirectory, regexClientEntry],
-                },
-              ],
-              not: [/node_modules/],
-            },
-            use: getFontLoader(ctx, lazyPostCSSInitializer),
-          }),
-        ],
-      })
-    )
-  } else if (fontLoaders) {
-    fns.push(
-      loader({
-        oneOf: [
-          markRemovable({
-            sideEffects: true,
-            test: fontLoaders,
-            issuer: {
-              and: [ctx.rootDirectory],
-              not: [
-                `${ctx.rootDirectory}/app`,
-                ctx.customAppFile,
-                regexClientEntry,
-              ],
-            },
-            use: {
-              loader: 'error-loader',
-              options: {
-                reason: getFontLoaderGlobalImportError(),
-              },
-            },
-          }),
-        ],
-      })
-    )
-  }
-
   fontLoaders?.forEach((fontLoader) => {
     fns.push(
       loader({
         oneOf: [
           markRemovable({
-            sideEffects: true, // SIDEEFFECTS?
+            sideEffects: true,
             test: fontLoader,
-            // issuer: {
-            //   and: [ctx.rootDirectory],
-            //   not: [/node_modules/],
-            // },
-            // issuer: {
-            //   and: [ctx.rootDirectory, /\.(js|mjs|jsx|ts|tsx)$/],
-            //   or: [regexClientEntry],
-            // },
-            use: getFontLoader(ctx, lazyPostCSSInitializer, fontLoader),
+            use: getFontLoader(ctx, lazyPostCSSInitializer),
           }),
         ],
       })

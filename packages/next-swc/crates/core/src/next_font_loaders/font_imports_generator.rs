@@ -87,8 +87,14 @@ impl<'a> FontImportsGenerator<'a> {
                             .push(ModuleItem::ModuleDecl(ModuleDecl::Import(ImportDecl {
                                 src: Str {
                                     value: JsWord::from(format!(
-                                        "{}?{}",
-                                        font_function.loader, json
+                                        "{}?{}{}",
+                                        font_function.loader,
+                                        if font_module_id.is_some() {
+                                            "module"
+                                        } else {
+                                            ""
+                                        },
+                                        json
                                     )),
                                     raw: None,
                                     span: DUMMY_SP,

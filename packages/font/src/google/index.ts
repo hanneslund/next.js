@@ -492,7 +492,7 @@ export function Anek_Bangla(options: {
   display?: Display
   subsets?: ('bengali' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Anek_Devanagari(options: {
   variant:
@@ -508,7 +508,7 @@ export function Anek_Devanagari(options: {
   display?: Display
   subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Anek_Gujarati(options: {
   variant:
@@ -524,7 +524,7 @@ export function Anek_Gujarati(options: {
   display?: Display
   subsets?: ('gujarati' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Anek_Gurmukhi(options: {
   variant:
@@ -540,7 +540,7 @@ export function Anek_Gurmukhi(options: {
   display?: Display
   subsets?: ('gurmukhi' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Anek_Kannada(options: {
   variant:
@@ -556,7 +556,7 @@ export function Anek_Kannada(options: {
   display?: Display
   subsets?: ('kannada' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Anek_Latin(options: {
   variant:
@@ -572,7 +572,7 @@ export function Anek_Latin(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Anek_Malayalam(options: {
   variant:
@@ -588,7 +588,7 @@ export function Anek_Malayalam(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'malayalam')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Anek_Odia(options: {
   variant:
@@ -604,7 +604,7 @@ export function Anek_Odia(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'oriya')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Anek_Tamil(options: {
   variant:
@@ -620,7 +620,7 @@ export function Anek_Tamil(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'tamil')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Anek_Telugu(options: {
   variant:
@@ -636,7 +636,7 @@ export function Anek_Telugu(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'telugu')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Angkor(options: {
   variant: '400'
@@ -711,7 +711,7 @@ export function Anybody(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Arapey(options: {
   variant: '400-italic' | '400'
@@ -762,7 +762,7 @@ export function Archivo(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Archivo_Black(options: {
   variant: '400'
@@ -1114,7 +1114,7 @@ export function Ballet(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'opsz'[]
+  axes?: 'opsz'[]
 }) {}
 export function Baloo_2(options: {
   variant: '400' | '500' | '600' | '700' | '800' | 'variable'
@@ -1697,7 +1697,7 @@ export function Bodoni_Moda(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'opsz'[]
+  axes?: 'opsz'[]
 }) {}
 export function Bokor(options: {
   variant: '400'
@@ -1865,7 +1865,7 @@ export function Cabin(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Cabin_Condensed(options: {
   variant: '400' | '500' | '600' | '700'
@@ -2832,7 +2832,7 @@ export function DynaPuff(options: {
   display?: Display
   subsets?: ('cyrillic-ext' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Eagle_Lake(options: {
   variant: '400'
@@ -2971,7 +2971,7 @@ export function Encode_Sans(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Encode_Sans_Condensed(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
@@ -3000,7 +3000,7 @@ export function Encode_Sans_SC(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Encode_Sans_Semi_Condensed(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
@@ -3577,7 +3577,7 @@ export function Fraunces(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: ('opsz' | 'SOFT' | 'WONK')[]
+  axes?: ('opsz' | 'SOFT' | 'WONK')[]
 }) {}
 export function Freckle_Face(options: {
   variant: '400'
@@ -3596,7 +3596,7 @@ export function Fredoka(options: {
   display?: Display
   subsets?: ('hebrew' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Fredoka_One(options: {
   variant: '400'
@@ -3831,7 +3831,7 @@ export function Georama(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Geostar(options: {
   variant: '400'
@@ -3950,7 +3950,7 @@ export function Gluten(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'slnt'[]
+  axes?: 'slnt'[]
 }) {}
 export function Goblin_One(options: {
   variant: '400'
@@ -4598,7 +4598,7 @@ export function Imbue(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'opsz'[]
+  axes?: 'opsz'[]
 }) {}
 export function Imperial_Script(options: {
   variant: '400'
@@ -4626,7 +4626,7 @@ export function Inconsolata(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Inder(options: {
   variant: '400'
@@ -4699,7 +4699,7 @@ export function Inter(options: {
     | 'vietnamese'
   )[]
   preload?: boolean
-  axes: 'slnt'[]
+  axes?: 'slnt'[]
 }) {}
 export function Irish_Grover(options: {
   variant: '400'
@@ -5472,7 +5472,7 @@ export function League_Gothic(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function League_Script(options: {
   variant: '400'
@@ -5823,7 +5823,7 @@ export function Literata(options: {
     | 'vietnamese'
   )[]
   preload?: boolean
-  axes: 'opsz'[]
+  axes?: 'opsz'[]
 }) {}
 export function Liu_Jian_Mao_Cao(options: {
   variant: '400'
@@ -6036,7 +6036,7 @@ export function M_PLUS_Code_Latin(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function M_PLUS_Rounded_1c(options: {
   variant: '100' | '300' | '400' | '500' | '700' | '800' | '900'
@@ -6552,7 +6552,7 @@ export function Montagu_Slab(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'opsz'[]
+  axes?: 'opsz'[]
 }) {}
 export function MonteCarlo(options: {
   variant: '400'
@@ -6924,7 +6924,7 @@ export function Newsreader(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'opsz'[]
+  axes?: 'opsz'[]
 }) {}
 export function Niconne(options: {
   variant: '400'
@@ -7120,7 +7120,7 @@ export function Noto_Sans_Arabic(options: {
   display?: Display
   subsets?: 'arabic'[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_Armenian(options: {
   variant:
@@ -7137,7 +7137,7 @@ export function Noto_Sans_Armenian(options: {
   display?: Display
   subsets?: 'armenian'[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_Avestan(options: {
   variant: '400'
@@ -7184,7 +7184,7 @@ export function Noto_Sans_Bengali(options: {
   display?: Display
   subsets?: ('bengali' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_Bhaiksuki(options: {
   variant: '400'
@@ -7315,7 +7315,7 @@ export function Noto_Sans_Devanagari(options: {
   display?: Display
   subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_Display(options: {
   variant:
@@ -7350,7 +7350,7 @@ export function Noto_Sans_Display(options: {
     | 'vietnamese'
   )[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_Duployan(options: {
   variant: '400'
@@ -7391,7 +7391,7 @@ export function Noto_Sans_Georgian(options: {
   display?: Display
   subsets?: ('georgian' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_Glagolitic(options: {
   variant: '400'
@@ -7426,7 +7426,7 @@ export function Noto_Sans_Gujarati(options: {
   display?: Display
   subsets?: ('gujarati' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_Gunjala_Gondi(options: {
   variant: '400'
@@ -7449,7 +7449,7 @@ export function Noto_Sans_Gurmukhi(options: {
   display?: Display
   subsets?: 'gurmukhi'[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_Hanifi_Rohingya(options: {
   variant: '400' | '500' | '600' | '700' | 'variable'
@@ -7484,7 +7484,7 @@ export function Noto_Sans_Hebrew(options: {
   display?: Display
   subsets?: ('hebrew' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_HK(options: {
   variant: '100' | '300' | '400' | '500' | '700' | '900'
@@ -7549,7 +7549,7 @@ export function Noto_Sans_Kannada(options: {
   display?: Display
   subsets?: ('kannada' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_Kayah_Li(options: {
   variant: '400' | '500' | '600' | '700' | 'variable'
@@ -7578,7 +7578,7 @@ export function Noto_Sans_Khmer(options: {
   display?: Display
   subsets?: ('khmer' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_Khojki(options: {
   variant: '400'
@@ -7613,7 +7613,7 @@ export function Noto_Sans_Lao(options: {
   display?: Display
   subsets?: ('lao' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_Lepcha(options: {
   variant: '400'
@@ -7678,7 +7678,7 @@ export function Noto_Sans_Malayalam(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'malayalam')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_Mandaic(options: {
   variant: '400'
@@ -7785,7 +7785,7 @@ export function Noto_Sans_Mono(options: {
     | 'vietnamese'
   )[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_Mro(options: {
   variant: '400'
@@ -8012,7 +8012,7 @@ export function Noto_Sans_Sinhala(options: {
   display?: Display
   subsets?: 'sinhala'[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_Sogdian(options: {
   variant: '400'
@@ -8123,7 +8123,7 @@ export function Noto_Sans_Tamil(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'tamil')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_Tamil_Supplement(options: {
   variant: '400'
@@ -8152,7 +8152,7 @@ export function Noto_Sans_Telugu(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'telugu')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_Thaana(options: {
   variant:
@@ -8185,7 +8185,7 @@ export function Noto_Sans_Thai(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'thai')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Sans_Thai_Looped(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
@@ -8276,7 +8276,7 @@ export function Noto_Serif_Armenian(options: {
   display?: Display
   subsets?: 'armenian'[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Serif_Balinese(options: {
   variant: '400'
@@ -8299,7 +8299,7 @@ export function Noto_Serif_Bengali(options: {
   display?: Display
   subsets?: ('bengali' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Serif_Devanagari(options: {
   variant:
@@ -8316,7 +8316,7 @@ export function Noto_Serif_Devanagari(options: {
   display?: Display
   subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Serif_Display(options: {
   variant:
@@ -8351,7 +8351,7 @@ export function Noto_Serif_Display(options: {
     | 'vietnamese'
   )[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Serif_Dogra(options: {
   variant: '400'
@@ -8374,7 +8374,7 @@ export function Noto_Serif_Ethiopic(options: {
   display?: Display
   subsets?: ('ethiopic' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Serif_Georgian(options: {
   variant:
@@ -8391,7 +8391,7 @@ export function Noto_Serif_Georgian(options: {
   display?: Display
   subsets?: ('georgian' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Serif_Grantha(options: {
   variant: '400'
@@ -8446,7 +8446,7 @@ export function Noto_Serif_Hebrew(options: {
   display?: Display
   subsets?: ('hebrew' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Serif_HK(options: {
   variant:
@@ -8506,7 +8506,7 @@ export function Noto_Serif_Khmer(options: {
   display?: Display
   subsets?: ('khmer' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Serif_KR(options: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '900'
@@ -8529,7 +8529,7 @@ export function Noto_Serif_Lao(options: {
   display?: Display
   subsets?: ('lao' | 'latin' | 'latin-ext')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Serif_Malayalam(options: {
   variant:
@@ -8580,7 +8580,7 @@ export function Noto_Serif_Sinhala(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'sinhala')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Serif_Tamil(options: {
   variant:
@@ -8607,7 +8607,7 @@ export function Noto_Serif_Tamil(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'tamil')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Serif_Tangut(options: {
   variant: '400'
@@ -8652,7 +8652,7 @@ export function Noto_Serif_Thai(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'thai')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Noto_Serif_Tibetan(options: {
   variant:
@@ -8906,7 +8906,7 @@ export function Open_Sans(options: {
     | 'vietnamese'
   )[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Oranienbaum(options: {
   variant: '400'
@@ -9267,7 +9267,7 @@ export function Piazzolla(options: {
     | 'vietnamese'
   )[]
   preload?: boolean
-  axes: 'opsz'[]
+  axes?: 'opsz'[]
 }) {}
 export function Piedra(options: {
   variant: '400'
@@ -9707,7 +9707,7 @@ export function Radio_Canada(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Radley(options: {
   variant: '400-italic' | '400'
@@ -9854,7 +9854,7 @@ export function Recursive(options: {
   display?: Display
   subsets?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: ('slnt' | 'CASL' | 'CRSV' | 'MONO')[]
+  axes?: ('slnt' | 'CASL' | 'CRSV' | 'MONO')[]
 }) {}
 export function Red_Hat_Display(options: {
   variant:
@@ -10050,7 +10050,7 @@ export function Roboto_Flex(options: {
     | 'vietnamese'
   )[]
   preload?: boolean
-  axes: (
+  axes?: (
     | 'opsz'
     | 'slnt'
     | 'wdth'
@@ -10118,7 +10118,7 @@ export function Roboto_Serif(options: {
   display?: Display
   subsets?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: ('opsz' | 'wdth' | 'GRAD')[]
+  axes?: ('opsz' | 'wdth' | 'GRAD')[]
 }) {}
 export function Roboto_Slab(options: {
   variant:
@@ -10435,7 +10435,7 @@ export function Saira(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Saira_Condensed(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
@@ -11026,7 +11026,7 @@ export function Source_Serif_4(options: {
     | 'vietnamese'
   )[]
   preload?: boolean
-  axes: 'opsz'[]
+  axes?: 'opsz'[]
 }) {}
 export function Source_Serif_Pro(options: {
   variant:
@@ -11495,7 +11495,7 @@ export function Texturina(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'opsz'[]
+  axes?: 'opsz'[]
 }) {}
 export function Thasadith(options: {
   variant: '400-italic' | '400' | '700-italic' | '700'
@@ -11669,7 +11669,7 @@ export function Tourney(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Trade_Winds(options: {
   variant: '400'
@@ -11721,7 +11721,7 @@ export function Trispace(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: 'wdth'[]
+  axes?: 'wdth'[]
 }) {}
 export function Trocchi(options: {
   variant: '400'
@@ -11750,7 +11750,7 @@ export function Truculenta(options: {
   display?: Display
   subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
   preload?: boolean
-  axes: ('opsz' | 'wdth')[]
+  axes?: ('opsz' | 'wdth')[]
 }) {}
 export function Trykker(options: {
   variant: '400'

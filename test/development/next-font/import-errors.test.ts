@@ -12,6 +12,11 @@ describe('@next/font/google import errors', () => {
       dependencies: {
         '@next/font': '*',
       },
+      nextConfig: {
+        experimental: {
+          fontLoaders: ['@next/font/google'],
+        },
+      },
     })
   })
   beforeEach(async () => {

@@ -1,4 +1,3 @@
-import cheerio from 'cheerio'
 import { createNext, FileRef } from 'e2e-utils'
 import { NextInstance } from 'test/lib/next-modes/base'
 import { check, getRedboxSource, renderViaHTTP, waitFor } from 'next-test-utils'
@@ -9,7 +8,7 @@ function removeFirstLine(str: string) {
   return str.split('\n').slice(1).join('\n')
 }
 
-describe('dont-preload-fonts-in-dev', () => {
+describe('@next/font/google option errors', () => {
   let next: NextInstance
 
   beforeAll(async () => {
@@ -20,27 +19,16 @@ describe('dont-preload-fonts-in-dev', () => {
       files: {
         pages: new FileRef(join(__dirname, 'app/pages')),
       },
+      nextConfig: {
+        experimental: {
+          fontLoaders: ['@next/font/google'],
+        },
+      },
     })
 
     await renderViaHTTP(next.url, '/api/google-fonts-mock')
   })
 
-  // beforeEach(async () => {
-  //   await next.patchFile(
-  //     'pages/_app.js',
-  //     `
-  //   function MyApp({ Component, pageProps }) {
-  //     return <Component {...pageProps} />
-  //   }
-
-  //   export default MyApp
-  //   `
-  //   )
-  //   await next.patchFile(
-  //     'pages/index.js',
-  //     `export default () => <p>Hello world!</p>`
-  //   )
-  // })
   afterAll(() => next.destroy())
 
   test('Unknown font', async () => {
@@ -65,7 +53,6 @@ describe('dont-preload-fonts-in-dev', () => {
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Unknown font \`Unknown\`
-        Location: pages/_app.js"
       `)
     } finally {
       await browser.close()
@@ -95,7 +82,6 @@ describe('dont-preload-fonts-in-dev', () => {
         .toMatchInlineSnapshot(`
         "Missing variant for font \`Oooh Baby\`
         Available variants: 400
-        Location: pages/_app.js"
       `)
     } finally {
       await browser.close()
@@ -125,7 +111,6 @@ describe('dont-preload-fonts-in-dev', () => {
         .toMatchInlineSnapshot(`
         "Unknown variant \`500\` for font \`Oooh Baby\`
         Available variants: 400
-        Location: pages/_app.js"
       `)
     } finally {
       await browser.close()
@@ -155,7 +140,6 @@ describe('dont-preload-fonts-in-dev', () => {
         .toMatchInlineSnapshot(`
         "Invalid \`subsets\` value for font \`Inter\`, expected an array of subsets.
         Available subsets: cyrillic, cyrillic-ext, greek, greek-ext, latin, latin-ext, vietnamese
-        Location: pages/_app.js"
       `)
     } finally {
       await browser.close()
@@ -185,7 +169,6 @@ describe('dont-preload-fonts-in-dev', () => {
         .toMatchInlineSnapshot(`
         "Unknown subset \`japanese\` for font \`Inter\`
         Available subsets: cyrillic, cyrillic-ext, greek, greek-ext, latin, latin-ext, vietnamese
-        Location: pages/_app.js"
       `)
     } finally {
       await browser.close()
@@ -215,7 +198,6 @@ describe('dont-preload-fonts-in-dev', () => {
         .toMatchInlineSnapshot(`
         "Please specify \`subsets\` for font \`Inter\` to preload.
         Available subsets: cyrillic, cyrillic-ext, greek, greek-ext, latin, latin-ext, vietnamese
-        Location: pages/_app.js"
       `)
     } finally {
       await browser.close()
@@ -245,7 +227,6 @@ describe('dont-preload-fonts-in-dev', () => {
         .toMatchInlineSnapshot(`
         "Invalid display value \`always\` for font \`Inter\`
         Available display values: auto, block, swap, fallback, optional
-        Location: pages/_app.js"
       `)
     } finally {
       await browser.close()
@@ -277,7 +258,6 @@ describe('dont-preload-fonts-in-dev', () => {
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "\`axes\` can only be defined for variable fonts
-        Location: pages/_app.js"
       `)
     } finally {
       await browser.close()
@@ -306,7 +286,6 @@ describe('dont-preload-fonts-in-dev', () => {
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Font \`Lora\` has no definable \`axes\`
-        Location: pages/_app.js"
       `)
     } finally {
       await browser.close()
@@ -336,7 +315,6 @@ describe('dont-preload-fonts-in-dev', () => {
         .toMatchInlineSnapshot(`
         "Invalid axes value for font \`Inter\`, expected an array of axes.
         Available axes: slnt
-        Location: pages/_app.js"
       `)
     } finally {
       await browser.close()
@@ -366,7 +344,6 @@ describe('dont-preload-fonts-in-dev', () => {
         .toMatchInlineSnapshot(`
         "Invalid axes value \`hello\` for font \`Fraunces\`.
         Available axes: opsz, SOFT, WONK
-        Location: pages/_app.js"
       `)
     } finally {
       await browser.close()
