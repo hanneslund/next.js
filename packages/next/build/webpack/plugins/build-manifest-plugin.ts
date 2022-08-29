@@ -118,12 +118,12 @@ export default class BuildManifestPlugin {
     this.exportRuntime = !!options.exportRuntime
   }
 
-  async createAssets(compiler: any, compilation: any, assets: any) {
+  createAssets(compiler: any, compilation: any, assets: any) {
     const compilationSpan = spans.get(compilation) || spans.get(compiler)
     const createAssetsSpan = compilationSpan?.traceChild(
       'NextJsBuildManifest-createassets'
     )
-    return createAssetsSpan?.traceAsyncFn(async () => {
+    return createAssetsSpan?.traceFn(() => {
       const entrypoints: Map<string, any> = compilation.entrypoints
       const assetMap: DeepMutable<BuildManifest> = {
         polyfillFiles: [],
@@ -274,14 +274,15 @@ export default class BuildManifestPlugin {
   apply(compiler: webpack.Compiler) {
     compiler.hooks.make.tap('NextJsBuildManifest', (compilation) => {
       // @ts-ignore TODO: Remove ignore when webpack 5 is stable
-      compilation.hooks.processAssets.tapPromise(
+      compilation.hooks.processAssets.tap(
         {
           name: 'NextJsBuildManifest',
           // @ts-ignore TODO: Remove ignore when webpack 5 is stable
-          // stage: webpack.Compilation.PROCESS_ASSETS_STAGE_ANALYSE,
           stage: webpack.Compilation.PROCESS_ASSETS_STAGE_ADDITIONS,
         },
-        (assets: any) => this.createAssets(compiler, compilation, assets)
+        (assets: any) => {
+          this.createAssets(compiler, compilation, assets)
+        }
       )
     })
     return

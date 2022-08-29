@@ -10,6 +10,7 @@ export function getGlobalCssLoader(
   preProcessors: readonly webpack.RuleSetUseItem[] = []
 ): webpack.RuleSetUseItem[] {
   const loaders: webpack.RuleSetUseItem[] = []
+
   if (ctx.isClient) {
     // Add appropriate development more or production mode style
     // loader

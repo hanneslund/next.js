@@ -2338,8 +2338,6 @@ export default class Router implements BaseRouter {
 
     const route = removeTrailingSlash(pathname)
 
-    // prefetch / preload fonts
-
     await Promise.all([
       this.pageLoader._isSsg(route).then((isSsg) => {
         return isSsg
