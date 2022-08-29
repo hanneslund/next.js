@@ -8,7 +8,6 @@ import { isDynamicRoute } from '../shared/lib/router/utils/is-dynamic'
 import { parseRelativeUrl } from '../shared/lib/router/utils/parse-relative-url'
 import { removeTrailingSlash } from '../shared/lib/router/utils/remove-trailing-slash'
 import { createRouteLoader, getClientBuildManifest } from './route-loader'
-import { preloadFont } from '../shared/lib/font'
 
 declare global {
   interface Window {
@@ -30,7 +29,6 @@ export default class PageLoader {
   private buildId: string
   private assetPrefix: string
   private promisedSsgManifest: Promise<Set<string>>
-  private promisedPageFontsManifest: Promise<any>
   private promisedDevPagesManifest?: Promise<string[]>
   private promisedMiddlewareManifest?: Promise<{ location: string }>
 
@@ -48,15 +46,6 @@ export default class PageLoader {
       } else {
         window.__SSG_MANIFEST_CB = () => {
           resolve(window.__SSG_MANIFEST!)
-        }
-      }
-    })
-    this.promisedPageFontsManifest = new Promise((resolve) => {
-      if (window.__PAGE_FONTS) {
-        resolve(window.__PAGE_FONTS)
-      } else {
-        window.__PAGE_FONTS_CB = () => {
-          resolve(window.__PAGE_FONTS!)
         }
       }
     })
@@ -163,11 +152,6 @@ export default class PageLoader {
   }
 
   loadPage(route: string): Promise<GoodPageCache> {
-    // this.promisedPageFontsManifest.then((pageFonts) => {
-    //   pageFonts[route]?.forEach((file) => {
-    //     preloadFont(file)
-    //   })
-    // })
     return this.routeLoader.loadRoute(route).then((res) => {
       if ('component' in res) {
         return {
@@ -184,11 +168,6 @@ export default class PageLoader {
   }
 
   prefetch(route: string): Promise<void> {
-    this.promisedPageFontsManifest.then((pageFonts) => {
-      pageFonts[route]?.forEach((file) => {
-        preloadFont(file)
-      })
-    })
     return this.routeLoader.prefetch(route)
   }
 }

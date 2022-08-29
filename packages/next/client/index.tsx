@@ -1,7 +1,6 @@
 /* global location */
 import '../build/polyfills/polyfill-module'
-import React, { ReactNode, useState } from 'react'
-import { preloadFont } from '../shared/lib/font'
+import React from 'react'
 import { HeadManagerContext } from '../shared/lib/head-manager-context'
 import mitt, { MittEmitter } from '../shared/lib/mitt'
 import { RouterContext } from '../shared/lib/router-context'

@@ -205,6 +205,7 @@ export default class BuildManifestPlugin {
         }
 
         const filesForPage = getEntrypointFiles(entrypoint)
+
         assetMap.pages[pagePath] = [...new Set([...mainFiles, ...filesForPage])]
 
         const fontFiles: string[] = entrypoint.chunks
