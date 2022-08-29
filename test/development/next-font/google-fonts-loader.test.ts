@@ -50,10 +50,9 @@ describe('@next/font/google option errors', () => {
       `
       )
       await check(() => getRedboxSource(browser), /Unknown font/)
-      expect(removeFirstLine(await getRedboxSource(browser)))
-        .toMatchInlineSnapshot(`
-        "Unknown font \`Unknown\`
-      `)
+      expect(
+        removeFirstLine(await getRedboxSource(browser))
+      ).toMatchInlineSnapshot(`"Unknown font \`Unknown\`"`)
     } finally {
       await browser.close()
     }
@@ -81,7 +80,7 @@ describe('@next/font/google option errors', () => {
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Missing variant for font \`Oooh Baby\`
-        Available variants: 400
+        Available variants: 400"
       `)
     } finally {
       await browser.close()
@@ -110,7 +109,7 @@ describe('@next/font/google option errors', () => {
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Unknown variant \`500\` for font \`Oooh Baby\`
-        Available variants: 400
+        Available variants: 400"
       `)
     } finally {
       await browser.close()
@@ -139,7 +138,7 @@ describe('@next/font/google option errors', () => {
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Invalid \`subsets\` value for font \`Inter\`, expected an array of subsets.
-        Available subsets: cyrillic, cyrillic-ext, greek, greek-ext, latin, latin-ext, vietnamese
+        Available subsets: cyrillic, cyrillic-ext, greek, greek-ext, latin, latin-ext, vietnamese"
       `)
     } finally {
       await browser.close()
@@ -168,7 +167,7 @@ describe('@next/font/google option errors', () => {
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Unknown subset \`japanese\` for font \`Inter\`
-        Available subsets: cyrillic, cyrillic-ext, greek, greek-ext, latin, latin-ext, vietnamese
+        Available subsets: cyrillic, cyrillic-ext, greek, greek-ext, latin, latin-ext, vietnamese"
       `)
     } finally {
       await browser.close()
@@ -197,7 +196,7 @@ describe('@next/font/google option errors', () => {
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Please specify \`subsets\` for font \`Inter\` to preload.
-        Available subsets: cyrillic, cyrillic-ext, greek, greek-ext, latin, latin-ext, vietnamese
+        Available subsets: cyrillic, cyrillic-ext, greek, greek-ext, latin, latin-ext, vietnamese"
       `)
     } finally {
       await browser.close()
@@ -226,7 +225,7 @@ describe('@next/font/google option errors', () => {
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Invalid display value \`always\` for font \`Inter\`
-        Available display values: auto, block, swap, fallback, optional
+        Available display values: auto, block, swap, fallback, optional"
       `)
     } finally {
       await browser.close()
@@ -255,10 +254,11 @@ describe('@next/font/google option errors', () => {
         () => getRedboxSource(browser),
         /can only be defined for variable fonts/
       )
-      expect(removeFirstLine(await getRedboxSource(browser)))
-        .toMatchInlineSnapshot(`
-        "\`axes\` can only be defined for variable fonts
-      `)
+      expect(
+        removeFirstLine(await getRedboxSource(browser))
+      ).toMatchInlineSnapshot(
+        `"\`axes\` can only be defined for variable fonts"`
+      )
     } finally {
       await browser.close()
     }
@@ -283,10 +283,9 @@ describe('@next/font/google option errors', () => {
       `
       )
       await check(() => getRedboxSource(browser), /has no definable/)
-      expect(removeFirstLine(await getRedboxSource(browser)))
-        .toMatchInlineSnapshot(`
-        "Font \`Lora\` has no definable \`axes\`
-      `)
+      expect(
+        removeFirstLine(await getRedboxSource(browser))
+      ).toMatchInlineSnapshot(`"Font \`Lora\` has no definable \`axes\`"`)
     } finally {
       await browser.close()
     }
@@ -314,7 +313,7 @@ describe('@next/font/google option errors', () => {
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Invalid axes value for font \`Inter\`, expected an array of axes.
-        Available axes: slnt
+        Available axes: slnt"
       `)
     } finally {
       await browser.close()
@@ -343,7 +342,7 @@ describe('@next/font/google option errors', () => {
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Invalid axes value \`hello\` for font \`Fraunces\`.
-        Available axes: opsz, SOFT, WONK
+        Available axes: opsz, SOFT, WONK"
       `)
     } finally {
       await browser.close()
