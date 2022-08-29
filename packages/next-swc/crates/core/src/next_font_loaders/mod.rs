@@ -9,10 +9,9 @@ mod find_functions_outside_module_scope;
 mod font_functions_collector;
 mod font_imports_generator;
 
-pub fn next_font_loaders(font_loaders: Vec<String>, font_modules: bool) -> impl Fold + VisitMut {
+pub fn next_font_loaders(font_loaders: Vec<String>) -> impl Fold + VisitMut {
     as_folder(NextFontLoaders {
         font_loaders,
-        font_modules,
         state: State {
             ..Default::default()
         },
@@ -34,7 +33,6 @@ pub struct State {
 
 struct NextFontLoaders {
     font_loaders: Vec<String>,
-    font_modules: bool,
     state: State,
 }
 
@@ -53,7 +51,6 @@ impl VisitMut for NextFontLoaders {
             // Generate imports from usage
             let mut import_generator = font_imports_generator::FontImportsGenerator {
                 state: &mut self.state,
-                font_modules: self.font_modules,
             };
             items.visit_with(&mut import_generator);
 

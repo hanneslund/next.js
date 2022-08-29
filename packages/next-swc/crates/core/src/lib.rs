@@ -108,9 +108,6 @@ pub struct TransformOptions {
 
     #[serde(default)]
     pub font_loaders: Option<Vec<String>>,
-
-    #[serde(default)]
-    pub font_modules: bool,
 }
 
 pub fn custom_before_pass<'a, C: Comments + 'a>(
@@ -203,10 +200,8 @@ pub fn custom_before_pass<'a, C: Comments + 'a>(
             None => Either::Right(noop()),
         },
         match &opts.font_loaders {
-            Some(font_loaders) => Either::Left(next_font_loaders::next_font_loaders(
-                font_loaders.clone(),
-                opts.font_modules
-            )),
+            Some(font_loaders) =>
+                Either::Left(next_font_loaders::next_font_loaders(font_loaders.clone())),
             None => Either::Right(noop()),
         }
     )

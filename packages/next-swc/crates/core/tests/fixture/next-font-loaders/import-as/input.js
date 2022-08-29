@@ -5,6 +5,6 @@ const acme1 = a({
   variant: '400',
 })
 
-const acme2 = a({
+a({
   variant: '400',
 })

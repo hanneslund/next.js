@@ -1,6 +1,0 @@
-
-  x Enable font modules to use the returned value
-   ,-[input.js:2:1]
- 2 | const inter = Inter({ variant: '400' })
-   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   `----

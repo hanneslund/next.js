@@ -6,9 +6,7 @@ const inter = Inter({
   variant: '900',
 })
 
-const firaCode = Fira_Code({
+Fira_Code({
   variant: '400',
   display: 'swap',
 })
-
-console.log(inter, firaCode)

@@ -4,3 +4,9 @@
  3 | const inter = Inter({}, 10)
    :               ^^^^^^^^^^^^^
    `----
+
+  x Font loaders only accepts 1 argument
+   ,-[input.js:4:1]
+ 4 | Inter({}, 10)
+   : ^^^^^^^^^^^^^
+   `----

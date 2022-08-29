@@ -211,23 +211,12 @@ fn shake_exports_fixture_default(input: PathBuf) {
     );
 }
 
-#[fixture("tests/fixture/next-font-loaders/without-font-modules/**/input.js")]
+#[fixture("tests/fixture/next-font-loaders/**/input.js")]
 fn next_font_loaders_fixture(input: PathBuf) {
     let output = input.parent().unwrap().join("output.js");
     test_fixture(
         syntax(),
-        &|_tr| next_font_loaders(vec!["@next/font/google".into(), "cool-fonts".into()], false),
-        &input,
-        &output,
-    );
-}
-
-#[fixture("tests/fixture/next-font-loaders/font-modules/**/input.js")]
-fn next_font_loaders_font_modules_fixture(input: PathBuf) {
-    let output = input.parent().unwrap().join("output.js");
-    test_fixture(
-        syntax(),
-        &|_tr| next_font_loaders(vec!["@next/font/google".into(), "cool-fonts".into()], true),
+        &|_tr| next_font_loaders(vec!["@next/font/google".into(), "cool-fonts".into()]),
         &input,
         &output,
     );

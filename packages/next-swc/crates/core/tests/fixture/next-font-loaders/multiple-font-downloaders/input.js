@@ -1,14 +1,12 @@
 import React from 'react'
 import { Inter } from '@next/font/google'
+import { Fira_Code } from 'cool-fonts'
 
-const inter1 = Inter({
+const inter = Inter({
   variant: '900',
-  display: 'swap',
 })
 
-const inter2 = Inter({
-  variant: '900',
+Fira_Code({
+  variant: '400',
   display: 'swap',
 })
-
-console.log(inter1, inter2)

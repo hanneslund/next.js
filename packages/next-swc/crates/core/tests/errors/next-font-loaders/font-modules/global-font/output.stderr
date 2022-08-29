@@ -1,7 +1,0 @@
-
-  x With font modules enabled you must assign the returned value to a const
-   ,-[input.js:4:1]
- 4 | ,-> Inter({
- 5 | |     variant: '900',
- 6 | `-> })
-   `----

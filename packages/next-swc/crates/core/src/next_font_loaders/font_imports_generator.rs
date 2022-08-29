@@ -9,7 +9,6 @@ use swc_ecmascript::visit::Visit;
 
 pub struct FontImportsGenerator<'a> {
     pub state: &'a mut super::State,
-    pub font_modules: bool,
 }
 
 impl<'a> FontImportsGenerator<'a> {
@@ -132,16 +131,6 @@ impl<'a> Visit for FontImportsGenerator<'a> {
                     if let Some(expr) = &decl.init {
                         if let Expr::Call(call_expr) = &**expr {
                             if self.check_call_expr(call_expr, ident.clone().ok()) {
-                                if !self.font_modules {
-                                    HANDLER.with(|handler| {
-                                        handler
-                                            .struct_span_err(
-                                                var_decl.span,
-                                                "Enable font modules to use the returned value",
-                                            )
-                                            .emit()
-                                    });
-                                }
                                 self.state.removeable_module_items.insert(var_decl.span.lo);
 
                                 match var_decl.kind {
@@ -177,17 +166,6 @@ impl<'a> Visit for FontImportsGenerator<'a> {
             ModuleItem::Stmt(Stmt::Expr(expr_stmt)) => {
                 if let Expr::Call(call_expr) = &*expr_stmt.expr {
                     if self.check_call_expr(call_expr, None) {
-                        if self.font_modules {
-                            HANDLER.with(|handler| {
-                                handler
-                                    .struct_span_err(
-                                        call_expr.span,
-                                        "With font modules enabled you must assign the returned \
-                                         value to a const",
-                                    )
-                                    .emit()
-                            });
-                        }
                         self.state.removeable_module_items.insert(expr_stmt.span.lo);
                     }
                 }
