@@ -48,7 +48,8 @@ const path = require('path')
     fontFunctions += `export function ${family.replaceAll(' ', '_')}(options: {
       variant:${variants.map((variant) => `"${variant}"`).join('|')}
       display?:Display,
-preload?:(${subsets.map((s) => `'${s}'`).join('|')})[]
+subsets?:(${subsets.map((s) => `'${s}'`).join('|')})[]
+preload?: boolean
 ${functionAxes ? `axes:(${functionAxes.map((s) => `'${s}'`).join('|')})[]` : ''}
 }){}`
   }

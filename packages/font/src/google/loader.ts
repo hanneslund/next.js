@@ -9,7 +9,7 @@ export default async function download(
   data: any,
   emitFile: (content: Buffer, ext: string, preload: boolean) => string
 ) {
-  const { font, variant, display = 'swap', preload, axes } = data
+  const { font, variant, display = 'swap', subsets, preload, axes } = data
 
   const fontFamily = font.replaceAll('_', ' ')
   const googleFontName = font.replaceAll('_', '+')
@@ -42,23 +42,29 @@ export default async function download(
   }
 
   const fontSubsets = (fontData as any)[fontFamily].subsets
-  if (typeof preload !== 'undefined') {
-    if (!Array.isArray(preload)) {
+  if (typeof subsets !== 'undefined') {
+    if (!Array.isArray(subsets)) {
       throw new Error(
-        `Invalid preload value for font \`${fontFamily}\`, expected an array of subsets.\nAvailable subsets: ${fontSubsets.join(
+        `Invalid \`subsets\` value for font \`${fontFamily}\`, expected an array of subsets.\nAvailable subsets: ${fontSubsets.join(
           ', '
         )}`
       )
     }
-    preload.forEach((subset) => {
+    subsets.forEach((subset: string) => {
       if (!fontSubsets.includes(subset)) {
         throw new Error(
-          `Unknown preload subset \`${subset}\` for font \`${fontFamily}\`\nAvailable subsets: ${fontSubsets.join(
+          `Unknown subset \`${subset}\` for font \`${fontFamily}\`\nAvailable subsets: ${fontSubsets.join(
             ', '
           )}`
         )
       }
     })
+  } else if (preload) {
+    throw new Error(
+      `Please specify \`subsets\` for font \`${fontFamily}\` to preload.\nAvailable subsets: ${fontSubsets.join(
+        ', '
+      )}`
+    )
   }
 
   let url: string
@@ -126,12 +132,12 @@ export default async function download(
   if (process.env.NEXT_FONT_GOOGLE_MOCKED_RESPONSES) {
     const fixtures = require(process.env.NEXT_FONT_GOOGLE_MOCKED_RESPONSES)
     fixture = fixtures[url]
-    if (!fixture) throw new Error('Missing fixture for URL: ' + url)
+    if (!fixture) throw new Error('Missing mocked response for URL: ' + url)
   }
 
   let cssResponse
   if (fixture) {
-    cssResponse = fixture.css
+    cssResponse = fixture
   } else {
     const res = await fetch(url, {
       headers: {
@@ -152,6 +158,8 @@ export default async function download(
     const newLocale = /\/\* (.+?) \*\//.exec(line)?.[1]
     if (newLocale) {
       currentLocale = newLocale
+    } else if (subsets && !subsets.includes(currentLocale)) {
+      continue
     } else {
       const fontFaceUrl = /src: url\((.+?)\)/.exec(line)?.[1]
       if (fontFaceUrl) {
@@ -167,11 +175,7 @@ export default async function download(
 
         let ext: any = fontFaceUrl.split('.')
         ext = ext[ext.length - 1]
-        const file = emitFile(
-          fontFileBuffer,
-          ext,
-          (preload as any)?.includes(currentLocale)
-        )
+        const file = emitFile(fontFileBuffer, ext, preload)
         lines.push(line.replace(fontFaceUrl, file))
         continue
       }

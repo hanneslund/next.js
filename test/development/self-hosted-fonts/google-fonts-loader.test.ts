@@ -132,7 +132,7 @@ describe('dont-preload-fonts-in-dev', () => {
     }
   })
 
-  test('Invalid preload type', async () => {
+  test('Invalid subsets type', async () => {
     const browser = await webdriver(next.appPort, '/')
 
     try {
@@ -141,7 +141,7 @@ describe('dont-preload-fonts-in-dev', () => {
         `
       import { Inter } from '@next/font/google'
 
-      Inter({ variant: '500', preload: {} })
+      Inter({ variant: '500', subsets: {} })
 
       function MyApp({ Component, pageProps }) {
         return <Component {...pageProps} />
@@ -153,7 +153,7 @@ describe('dont-preload-fonts-in-dev', () => {
       await check(() => getRedboxSource(browser), /expected an array/)
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
-        "Invalid preload value for font \`Inter\`, expected an array of subsets.
+        "Invalid \`subsets\` value for font \`Inter\`, expected an array of subsets.
         Available subsets: cyrillic, cyrillic-ext, greek, greek-ext, latin, latin-ext, vietnamese
         Location: pages/_app.js"
       `)
@@ -162,7 +162,7 @@ describe('dont-preload-fonts-in-dev', () => {
     }
   })
 
-  test('Unknown preload subset', async () => {
+  test('Unknown subset', async () => {
     const browser = await webdriver(next.appPort, '/')
 
     try {
@@ -171,7 +171,7 @@ describe('dont-preload-fonts-in-dev', () => {
         `
       import { Inter } from '@next/font/google'
 
-      Inter({ variant: '500', preload: ['japanese'] })
+      Inter({ variant: '500', subsets: ['japanese'] })
 
       function MyApp({ Component, pageProps }) {
         return <Component {...pageProps} />
@@ -180,10 +180,40 @@ describe('dont-preload-fonts-in-dev', () => {
       export default MyApp
       `
       )
-      await check(() => getRedboxSource(browser), /Unknown preload subset/)
+      await check(() => getRedboxSource(browser), /Unknown subset/)
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
-        "Unknown preload subset \`japanese\` for font \`Inter\`
+        "Unknown subset \`japanese\` for font \`Inter\`
+        Available subsets: cyrillic, cyrillic-ext, greek, greek-ext, latin, latin-ext, vietnamese
+        Location: pages/_app.js"
+      `)
+    } finally {
+      await browser.close()
+    }
+  })
+
+  test('Preload without subsets', async () => {
+    const browser = await webdriver(next.appPort, '/')
+
+    try {
+      await next.patchFile(
+        'pages/_app.js',
+        `
+      import { Inter } from '@next/font/google'
+
+      Inter({ variant: '500', preload: true })
+
+      function MyApp({ Component, pageProps }) {
+        return <Component {...pageProps} />
+      }
+      
+      export default MyApp
+      `
+      )
+      await check(() => getRedboxSource(browser), /to preload/)
+      expect(removeFirstLine(await getRedboxSource(browser)))
+        .toMatchInlineSnapshot(`
+        "Please specify \`subsets\` for font \`Inter\` to preload.
         Available subsets: cyrillic, cyrillic-ext, greek, greek-ext, latin, latin-ext, vietnamese
         Location: pages/_app.js"
       `)
@@ -320,9 +350,9 @@ describe('dont-preload-fonts-in-dev', () => {
       await next.patchFile(
         'pages/_app.js',
         `
-      import { Inter } from '@next/font/google'
+      import { Fraunces } from '@next/font/google'
 
-      Inter({ variant: 'variable', axes: ["hello"] })
+      Fraunces({ variant: 'variable', axes: ["hello"] })
 
       function MyApp({ Component, pageProps }) {
         return <Component {...pageProps} />
@@ -334,8 +364,8 @@ describe('dont-preload-fonts-in-dev', () => {
       await check(() => getRedboxSource(browser), /Invalid/)
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
-        "Invalid axes value \`hello\` for font \`Inter\`.
-        Available axes: slnt
+        "Invalid axes value \`hello\` for font \`Fraunces\`.
+        Available axes: opsz, SOFT, WONK
         Location: pages/_app.js"
       `)
     } finally {
