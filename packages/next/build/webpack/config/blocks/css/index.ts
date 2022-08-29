@@ -3,7 +3,7 @@ import { webpack } from 'next/dist/compiled/webpack/webpack'
 import { loader, plugin } from '../../helpers'
 import { ConfigurationContext, ConfigurationFn, pipe } from '../../utils'
 import { getCssModuleLoader, getGlobalCssLoader } from './loaders'
-import { getFontModuleLoader } from './loaders/fonts'
+import { getFontLoader } from './loaders/font-loader'
 import {
   getCustomDocumentError,
   getGlobalImportError,
@@ -20,7 +20,6 @@ export const regexLikeCss = /\.(css|scss|sass)$/
 // RegExps for Style Sheets
 const regexCssGlobal = /(?<!\.module)\.css$/
 const regexCssModules = /\.module\.css$/
-const regexFontModule = /\.font\.css$/
 
 // RegExps for Syntactically Awesome Style Sheets
 const regexSassGlobal = /(?<!\.module)\.(scss|sass)$/
@@ -203,7 +202,6 @@ export const css = curry(async function css(
     })
   )
 
-  // next/font
   let fontLoaders: string[] | undefined = ctx.experimental.fontLoaders?.map(
     (fontLoader) => require.resolve(fontLoader)
   )
@@ -246,7 +244,7 @@ export const css = curry(async function css(
               ],
               not: [/node_modules/],
             },
-            use: getFontModuleLoader(ctx, lazyPostCSSInitializer),
+            use: getFontLoader(ctx, lazyPostCSSInitializer),
           }),
         ],
       })
@@ -293,7 +291,7 @@ export const css = curry(async function css(
             //   and: [ctx.rootDirectory, /\.(js|mjs|jsx|ts|tsx)$/],
             //   or: [regexClientEntry],
             // },
-            use: getFontModuleLoader(ctx, lazyPostCSSInitializer, fontLoader),
+            use: getFontLoader(ctx, lazyPostCSSInitializer, fontLoader),
           }),
         ],
       })

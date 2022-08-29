@@ -5,10 +5,10 @@ import { cssFileResolve } from './file-resolve'
 import { getCssModuleLocalIdent } from './getCssModuleLocalIdent'
 import crypto from 'crypto'
 
-export function getFontModuleLoader(
+export function getFontLoader(
   ctx: ConfigurationContext,
   postcss: any,
-  fontLoader?: string
+  fontLoader: string
 ): webpack.RuleSetUseItem[] {
   const loaders: webpack.RuleSetUseItem[] = []
 
@@ -50,7 +50,8 @@ export function getFontModuleLoader(
         // TODO: Consider making production reduce this to a single
         // character?
         getLocalIdent: fontLoader
-          ? (context: any) =>
+          ? // LOADER UTIL HASH
+            (context: any) =>
               'c' +
               crypto
                 .createHash('shake256', { outputLength: 5 })
@@ -58,20 +59,17 @@ export function getFontModuleLoader(
                 .digest('hex')
           : getCssModuleLocalIdent,
       },
-      fontLoader: !!fontLoader,
-      fontModule: ctx.experimental.fontModules,
+      fontLoader: true,
     },
   })
 
-  if (fontLoader) {
-    loaders.push({
-      loader: 'next-fontloader-loader',
-      options: {
-        isServer: ctx.isServer,
-        assetPrefix: ctx.assetPrefix,
-      },
-    })
-  }
+  loaders.push({
+    loader: 'next-fontloader-loader',
+    options: {
+      isServer: ctx.isServer,
+      assetPrefix: ctx.assetPrefix,
+    },
+  })
 
   return loaders
 }

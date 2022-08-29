@@ -60,7 +60,6 @@ import loadJsConfig from './load-jsconfig'
 import { loadBindings } from './swc'
 import { clientComponentRegex } from './webpack/loaders/utils'
 import { AppBuildManifestPlugin } from './webpack/plugins/app-build-manifest-plugin'
-import PathResourcesManifestPlugin from './webpack/plugins/path-resources-manifest-plugin'
 
 const NEXT_PROJECT_ROOT = pathJoin(__dirname, '..', '..')
 const NEXT_PROJECT_ROOT_DIST = pathJoin(NEXT_PROJECT_ROOT, 'dist')
@@ -1480,13 +1479,6 @@ export default async function getBaseWebpackConfig(
     },
     module: {
       rules: [
-        {
-          test: /\.(woff|woff2|eot|ttf|otf)$/i,
-          type: 'asset/resource',
-          generator: {
-            filename: 'static/fonts/[hash][ext]',
-          },
-        },
         // TODO: FIXME: do NOT webpack 5 support with this
         // x-ref: https://github.com/webpack/webpack/issues/11467
         ...(!config.experimental.fullySpecified
@@ -1759,7 +1751,6 @@ export default async function getBaseWebpackConfig(
       // MiddlewarePlugin should be after DefinePlugin so  NEXT_PUBLIC_*
       // replacement is done before its process.env.* handling
       isEdgeServer && new MiddlewarePlugin({ dev }),
-      // isClient && new PathResourcesManifestPlugin(),
       isClient &&
         new BuildManifestPlugin({
           buildId,

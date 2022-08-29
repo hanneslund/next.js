@@ -16,11 +16,6 @@ describe('font modules enabled', () => {
         fonts: new FileRef(join(__dirname, 'app/fonts')),
         components: new FileRef(join(__dirname, 'app/components')),
       },
-      nextConfig: {
-        experimental: {
-          fontModules: true,
-        },
-      },
     })
   })
   afterAll(() => next.destroy())
