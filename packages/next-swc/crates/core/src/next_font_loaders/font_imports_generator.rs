@@ -12,7 +12,7 @@ pub struct FontImportsGenerator<'a> {
 }
 
 impl<'a> FontImportsGenerator<'a> {
-    fn check_call_expr(&mut self, call_expr: &CallExpr, font_module_id: Option<Ident>) -> bool {
+    fn check_call_expr(&mut self, call_expr: &CallExpr) -> Option<ImportDecl> {
         if let Callee::Expr(callee_expr) = &call_expr.callee {
             if let Expr::Ident(ident) = &**callee_expr {
                 if let Some(font_function) = self.state.font_functions.get(&ident.to_id()) {
@@ -42,19 +42,10 @@ impl<'a> FontImportsGenerator<'a> {
                                         )
                                         .emit()
                                 });
-                                Err(())
+                                None
                             }
                             None => match &**expr {
-                                Expr::Object(object_lit) => {
-                                    let mut obj = object_lit_to_json(object_lit);
-                                    if let Value::Object(ref mut values) = obj {
-                                        values.insert(
-                                            "font".to_string(),
-                                            Value::String(String::from(&*font_function.font_name)),
-                                        );
-                                    }
-                                    Ok(obj)
-                                }
+                                Expr::Object(object_lit) => Some(object_lit_to_json(object_lit)),
                                 _ => {
                                     HANDLER.with(|handler| {
                                         handler
@@ -64,62 +55,37 @@ impl<'a> FontImportsGenerator<'a> {
                                             )
                                             .emit()
                                     });
-                                    Err(())
+                                    None
                                 }
                             },
                         },
-                        None => {
-                            HANDLER.with(|handler| {
-                                handler
-                                    .struct_span_err(
-                                        call_expr.span,
-                                        "Font loader must be called with an options object",
-                                    )
-                                    .emit()
-                            });
-                            Err(())
-                        }
+                        None => None,
                     };
 
-                    if let Ok(json) = json {
-                        self.state
-                            .font_imports
-                            .push(ModuleItem::ModuleDecl(ModuleDecl::Import(ImportDecl {
-                                src: Str {
-                                    value: JsWord::from(format!(
-                                        "{}?{}{}",
-                                        font_function.loader,
-                                        if font_module_id.is_some() {
-                                            "module"
-                                        } else {
-                                            ""
-                                        },
-                                        json
-                                    )),
-                                    raw: None,
-                                    span: DUMMY_SP,
-                                },
-                                specifiers: match font_module_id {
-                                    Some(id) => {
-                                        vec![ImportSpecifier::Default(ImportDefaultSpecifier {
-                                            span: DUMMY_SP,
-                                            local: id,
-                                        })]
-                                    }
-                                    None => Vec::new(),
-                                },
-                                type_only: false,
-                                asserts: None,
-                                span: DUMMY_SP,
-                            })));
-
-                        return true;
-                    }
+                    return Some(ImportDecl {
+                        src: Str {
+                            value: JsWord::from(format!(
+                                "{}?{};{}",
+                                font_function.loader,
+                                String::from(&*font_function.font_name),
+                                match json {
+                                    Some(json) => format!("{}", json),
+                                    None => String::from("{}"),
+                                }
+                            )),
+                            raw: None,
+                            span: DUMMY_SP,
+                        },
+                        specifiers: vec![],
+                        type_only: false,
+                        asserts: None,
+                        span: DUMMY_SP,
+                    });
                 }
             }
         }
 
-        false
+        None
     }
 }
 
@@ -136,7 +102,9 @@ impl<'a> Visit for FontImportsGenerator<'a> {
                     };
                     if let Some(expr) = &decl.init {
                         if let Expr::Call(call_expr) = &**expr {
-                            if self.check_call_expr(call_expr, ident.clone().ok()) {
+                            let import_decl = self.check_call_expr(call_expr);
+
+                            if let Some(mut import_decl) = import_decl {
                                 self.state.removeable_module_items.insert(var_decl.span.lo);
 
                                 match var_decl.kind {
@@ -153,26 +121,34 @@ impl<'a> Visit for FontImportsGenerator<'a> {
                                         });
                                     }
                                 }
-                                if let Err(pattern) = ident {
-                                    HANDLER.with(|handler| {
-                                        handler
-                                            .struct_span_err(
-                                                pattern.span(),
-                                                "With font modules enabled the result must be \
-                                                 assigned to an identifier",
-                                            )
-                                            .emit()
-                                    });
+
+                                match ident {
+                                    Ok(ident) => {
+                                        import_decl.specifiers = vec![ImportSpecifier::Default(
+                                            ImportDefaultSpecifier {
+                                                span: DUMMY_SP,
+                                                local: ident,
+                                            },
+                                        )];
+
+                                        self.state.font_imports.push(ModuleItem::ModuleDecl(
+                                            ModuleDecl::Import(import_decl),
+                                        ));
+                                    }
+                                    Err(pattern) => {
+                                        HANDLER.with(|handler| {
+                                            handler
+                                                .struct_span_err(
+                                                    pattern.span(),
+                                                    "With font modules enabled the result must be \
+                                                     assigned to an identifier",
+                                                )
+                                                .emit()
+                                        });
+                                    }
                                 }
                             }
                         }
-                    }
-                }
-            }
-            ModuleItem::Stmt(Stmt::Expr(expr_stmt)) => {
-                if let Expr::Call(call_expr) = &*expr_stmt.expr {
-                    if self.check_call_expr(call_expr, None) {
-                        self.state.removeable_module_items.insert(expr_stmt.span.lo);
                     }
                 }
             }
