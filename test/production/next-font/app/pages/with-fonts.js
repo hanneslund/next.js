@@ -1,4 +1,6 @@
-import openSans from '../fonts/open-sans.font.css' // also in _app
+import { Open_Sans } from '@next/font/google'
+const openSans = Open_Sans() // also in _app
+
 import CompWithFonts from '../components/CompWithFonts'
 
 export default function WithFonts() {

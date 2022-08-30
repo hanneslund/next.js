@@ -1,6 +1,10 @@
-import inter from '../fonts/inter.font.css'
-import roboto from '../fonts/roboto.font.css'
-import robotoAgain from '../fonts/roboto-again.font.css'
+import { Inter, Roboto } from '@next/font/google'
+const inter = Inter({ variant: '900', display: 'swap' }) // Don't preload by default when swap
+const roboto = Roboto({
+  variant: '100-italic',
+  display: 'swap',
+  preload: ['latin'],
+})
 
 export default function Component() {
   return (
@@ -8,14 +12,8 @@ export default function Component() {
       <div id="comp-with-fonts-inter" className={inter.className}>
         {JSON.stringify(inter)}
       </div>
-      <div id="comp-with-fonts-roboto" className={roboto.className}>
+      <div id="comp-with-fonts-roboto" style={roboto.style}>
         {JSON.stringify(roboto)}
-      </div>
-      <div id="comp-with-fonts-roboto-again" className={robotoAgain.className}>
-        {JSON.stringify(robotoAgain)}
-      </div>
-      <div id="roboto-with-fallback-fonts" className={roboto.withFallbackFonts}>
-        Roboto with fallback fonts
       </div>
     </>
   )
