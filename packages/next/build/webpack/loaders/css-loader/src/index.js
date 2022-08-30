@@ -177,7 +177,7 @@ export default async function loader(content, map, meta) {
       const exports = []
       const fontLoaderExports = []
 
-      if (options.fontLoader && meta?.isModule) {
+      if (options.fontLoader) {
         plugins.push(fontLoaderModule(fontLoaderExports, this.resourceQuery))
       }
 

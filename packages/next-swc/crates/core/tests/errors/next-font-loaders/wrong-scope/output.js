@@ -1,3 +1,4 @@
+Aladin({});
 let b;
 const a = b = Aladin({
     variant: '400'

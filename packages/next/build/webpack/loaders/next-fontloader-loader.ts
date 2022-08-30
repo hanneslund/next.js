@@ -31,13 +31,12 @@ export default async function nextFontLoader(this: any) {
     return outputPath
   }
 
-  const isModule = this.resourceQuery.startsWith('?module')
-  const data = JSON.parse(this.resourceQuery.slice(isModule ? 7 : 1))
+  const [font, data] = this.resourceQuery.slice(1).split(';')
 
   const loader = require(path.join(this.resourcePath, '../loader.js'))
   try {
-    const css = await loader.default(data, emitFile)
-    callback(null, css, null, { isModule })
+    const css = await loader.default(font, JSON.parse(data), emitFile)
+    callback(null, css, null)
   } catch (err) {
     callback(new FontLoaderError(err))
   }

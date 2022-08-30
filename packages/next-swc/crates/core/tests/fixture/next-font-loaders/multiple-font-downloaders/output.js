@@ -1,3 +1,3 @@
-import inter from '@next/font/google?module{"font":"Inter","variant":"900"}';
-import 'cool-fonts?{"display":"swap","font":"Fira_Code","variant":"400"}';
+import inter from '@next/font/google?Inter;{"variant":"900"}';
+import fira from 'cool-fonts?Fira_Code;{"display":"swap","variant":"400"}';
 import React from 'react';

@@ -22,7 +22,7 @@ impl<'a> Visit for FindFunctionsOutsideModuleScope<'a> {
                 handler
                     .struct_span_err(
                         ident.span,
-                        "Font loaders can only be used in the module scope",
+                        "Font loaders can only be assigned to a const in the module scope",
                     )
                     .emit()
             });

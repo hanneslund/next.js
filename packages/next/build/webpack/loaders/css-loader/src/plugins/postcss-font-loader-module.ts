@@ -11,7 +11,7 @@ const plugin = (
       const hash = loaderUtils.getHashDigest(
         Buffer.from(resourceQuery),
         'md5',
-        'base64',
+        'hex',
         5
       )
 
@@ -49,7 +49,7 @@ const plugin = (
           )
           // Skip if includes ' ', then it's a range of possible values
           if (weight && !weight.value.includes(' ')) {
-            fontWeight = Number(weight.value)
+            fontWeight = weight.value
           }
 
           const style = node.nodes.find(
@@ -94,7 +94,7 @@ const plugin = (
         name: 'style',
         value: {
           fontFamily: fontFamilies.join(','),
-          fontWeight,
+          fontWeight: Number(fontWeight),
           fontStyle,
         },
       })

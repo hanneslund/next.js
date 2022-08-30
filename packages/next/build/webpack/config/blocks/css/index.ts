@@ -232,7 +232,7 @@ export const css = curry(async function css(
       loader({
         oneOf: [
           markRemovable({
-            sideEffects: true,
+            sideEffects: false,
             test: fontLoader,
             use: getFontLoader(ctx, lazyPostCSSInitializer),
           }),

@@ -6,7 +6,7 @@ const inter = Inter({
   display: 'swap',
 })
 
-Inter({
+const inter = Inter({
   variant: '900',
   display: 'swap',
 })

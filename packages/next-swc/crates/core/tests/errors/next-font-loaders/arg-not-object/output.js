@@ -1,4 +1,3 @@
-fn(10);
-Inter(10);
+import s from "@next/font/google?Sacramento;{}";
+import s from "@next/font/google?Sacramento;{}";
 const obj = {};
-const s = Sacramento(obj);

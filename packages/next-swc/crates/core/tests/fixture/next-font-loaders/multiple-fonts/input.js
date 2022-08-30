@@ -5,7 +5,7 @@ const firaCode = Fira_Code({
   variant: '400',
   fallback: ['system-ui'],
 })
-Inter({
+const inter = Inter({
   variant: '900',
   display: 'swap',
 })

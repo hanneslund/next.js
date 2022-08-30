@@ -46,7 +46,7 @@ export function getFontLoader(
           const hash = loaderUtils.getHashDigest(
             Buffer.from(context.resourceQuery),
             'md5',
-            'base64',
+            'hex',
             5
           )
 

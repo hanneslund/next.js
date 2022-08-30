@@ -4,9 +4,3 @@
  4 | const inter = Inter(...{})
    :                     ^^^
    `----
-
-  x Font loaders don't accept spreads
-   ,-[input.js:5:1]
- 5 | Inter(...{})
-   :       ^^^
-   `----

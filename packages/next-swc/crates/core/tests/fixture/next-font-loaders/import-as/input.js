@@ -4,7 +4,3 @@ import { Acme as a } from 'cool-fonts'
 const acme1 = a({
   variant: '400',
 })
-
-a({
-  variant: '400',
-})

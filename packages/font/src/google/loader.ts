@@ -6,10 +6,11 @@ const CHROME_UA =
 const allowedDisplayValues = ['auto', 'block', 'swap', 'fallback', 'optional']
 
 export default async function download(
+  font: any,
   data: any,
   emitFile: (content: Buffer, ext: string, preload: boolean) => string
 ) {
-  const { font, variant, display = 'swap', subsets, preload, axes } = data
+  const { variant, display = 'swap', subsets, preload, axes } = data
 
   const fontFamily = font.replaceAll('_', ' ')
   const googleFontName = font.replaceAll('_', '+')
