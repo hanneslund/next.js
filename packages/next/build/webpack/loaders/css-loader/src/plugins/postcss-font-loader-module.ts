@@ -16,7 +16,8 @@ const plugin = (
       )
 
       const fontFamilies: string[] = []
-      let fontWeight: number | undefined
+      let rawFamily: string | undefined
+      let fontWeight: string | undefined
       let fontStyle: string | undefined
 
       const formatFamily = (family: string) => {
@@ -28,15 +29,22 @@ const plugin = (
 
       for (const node of root.nodes) {
         if (node.type === 'atrule' && node.name === 'font-face') {
-          const family = node.nodes.find(
+          const familyNode = node.nodes.find(
             (decl: Declaration) => decl.prop === 'font-family'
           )
-          if (!family) {
+          if (!familyNode) {
             continue
           }
 
-          const formattedFamily = formatFamily(family.value)
-          family.value = formattedFamily
+          if (!rawFamily) {
+            let family: string = familyNode.value
+            if (family[0] === "'" || family[0] === '"') {
+              family = family.slice(1, family.length - 1)
+            }
+            rawFamily = family
+          }
+          const formattedFamily = formatFamily(familyNode.value)
+          familyNode.value = formattedFamily
 
           if (fontFamilies.includes(formattedFamily)) {
             continue
@@ -64,7 +72,7 @@ const plugin = (
 
       // Add font class
       const classRule = new postcss.Rule({ selector: '.className' })
-      const declarations = [
+      classRule.nodes = [
         new postcss.Declaration({
           prop: 'font-family',
           value: fontFamilies.join(','),
@@ -86,15 +94,28 @@ const plugin = (
             ]
           : []),
       ]
-      classRule.nodes = declarations
       root.nodes.push(classRule)
+
+      // Add varible class
+      const varialbeRule = new postcss.Rule({ selector: '.variables' })
+      varialbeRule.nodes = [
+        new postcss.Declaration({
+          prop: rawFamily
+            ? `--next-font-${rawFamily.toLowerCase().replaceAll(' ', '-')}${
+                fontWeight ? `-${fontWeight}` : ''
+              }`
+            : '',
+          value: fontFamilies.join(','),
+        }),
+      ]
+      root.nodes.push(varialbeRule)
 
       // Export @font-face values
       exports.push({
         name: 'style',
         value: {
           fontFamily: fontFamilies.join(','),
-          fontWeight: Number(fontWeight),
+          fontWeight: fontWeight && Number(fontWeight),
           fontStyle,
         },
       })

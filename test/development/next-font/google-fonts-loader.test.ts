@@ -40,7 +40,7 @@ describe('@next/font/google option errors', () => {
         `
       import { Unknown } from '@next/font/google'
 
-      Unknown({ variant: '400' })
+      const u = Unknown({ variant: '400' })
 
       function MyApp({ Component, pageProps }) {
         return <Component {...pageProps} />
@@ -58,35 +58,6 @@ describe('@next/font/google option errors', () => {
     }
   })
 
-  test('Missing variant', async () => {
-    const browser = await webdriver(next.appPort, '/')
-
-    try {
-      await next.patchFile(
-        'pages/_app.js',
-        `
-      import { Oooh_Baby } from '@next/font/google'
-
-      Oooh_Baby({})
-
-      function MyApp({ Component, pageProps }) {
-        return <Component {...pageProps} />
-      }
-      
-      export default MyApp
-      `
-      )
-      await check(() => getRedboxSource(browser), /Missing variant/)
-      expect(removeFirstLine(await getRedboxSource(browser)))
-        .toMatchInlineSnapshot(`
-        "Missing variant for font \`Oooh Baby\`
-        Available variants: 400"
-      `)
-    } finally {
-      await browser.close()
-    }
-  })
-
   test('Unknown variant', async () => {
     const browser = await webdriver(next.appPort, '/')
 
@@ -96,7 +67,7 @@ describe('@next/font/google option errors', () => {
         `
       import { Oooh_Baby } from '@next/font/google'
 
-      Oooh_Baby({ variant: '500' })
+      const o = Oooh_Baby({ variant: '500' })
 
       function MyApp({ Component, pageProps }) {
         return <Component {...pageProps} />
@@ -109,14 +80,14 @@ describe('@next/font/google option errors', () => {
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Unknown variant \`500\` for font \`Oooh Baby\`
-        Available variants: 400"
+        Available variants: \`400\`"
       `)
     } finally {
       await browser.close()
     }
   })
 
-  test('Invalid subsets type', async () => {
+  test('Invalid preload type', async () => {
     const browser = await webdriver(next.appPort, '/')
 
     try {
@@ -125,7 +96,7 @@ describe('@next/font/google option errors', () => {
         `
       import { Inter } from '@next/font/google'
 
-      Inter({ variant: '500', subsets: {} })
+      const i = Inter({ variant: '500', preload: {} })
 
       function MyApp({ Component, pageProps }) {
         return <Component {...pageProps} />
@@ -137,15 +108,15 @@ describe('@next/font/google option errors', () => {
       await check(() => getRedboxSource(browser), /expected an array/)
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
-        "Invalid \`subsets\` value for font \`Inter\`, expected an array of subsets.
-        Available subsets: cyrillic, cyrillic-ext, greek, greek-ext, latin, latin-ext, vietnamese"
+        "Invalid preload value for font \`Inter\`, expected an array of subsets.
+        Available subsets: \`cyrillic\`,\`cyrillic-ext\`,\`greek\`,\`greek-ext\`,\`latin\`,\`latin-ext\`,\`vietnamese\`"
       `)
     } finally {
       await browser.close()
     }
   })
 
-  test('Unknown subset', async () => {
+  test('Unknown preload subset', async () => {
     const browser = await webdriver(next.appPort, '/')
 
     try {
@@ -154,7 +125,7 @@ describe('@next/font/google option errors', () => {
         `
       import { Inter } from '@next/font/google'
 
-      Inter({ variant: '500', subsets: ['japanese'] })
+      const i = Inter({ variant: '500', preload: ['japanese'] })
 
       function MyApp({ Component, pageProps }) {
         return <Component {...pageProps} />
@@ -163,40 +134,11 @@ describe('@next/font/google option errors', () => {
       export default MyApp
       `
       )
-      await check(() => getRedboxSource(browser), /Unknown subset/)
+      await check(() => getRedboxSource(browser), /Unknown preload subset/)
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
-        "Unknown subset \`japanese\` for font \`Inter\`
-        Available subsets: cyrillic, cyrillic-ext, greek, greek-ext, latin, latin-ext, vietnamese"
-      `)
-    } finally {
-      await browser.close()
-    }
-  })
-
-  test('Preload without subsets', async () => {
-    const browser = await webdriver(next.appPort, '/')
-
-    try {
-      await next.patchFile(
-        'pages/_app.js',
-        `
-      import { Inter } from '@next/font/google'
-
-      Inter({ variant: '500', preload: true })
-
-      function MyApp({ Component, pageProps }) {
-        return <Component {...pageProps} />
-      }
-      
-      export default MyApp
-      `
-      )
-      await check(() => getRedboxSource(browser), /to preload/)
-      expect(removeFirstLine(await getRedboxSource(browser)))
-        .toMatchInlineSnapshot(`
-        "Please specify \`subsets\` for font \`Inter\` to preload.
-        Available subsets: cyrillic, cyrillic-ext, greek, greek-ext, latin, latin-ext, vietnamese"
+        "Unknown preload subset \`japanese\` for font \`Inter\`
+        Available subsets: \`cyrillic\`,\`cyrillic-ext\`,\`greek\`,\`greek-ext\`,\`latin\`,\`latin-ext\`,\`vietnamese\`"
       `)
     } finally {
       await browser.close()
@@ -212,7 +154,7 @@ describe('@next/font/google option errors', () => {
         `
       import { Inter } from '@next/font/google'
 
-      Inter({ variant: '500', display: 'always' })
+      const i = Inter({ variant: '500', display: 'always' })
 
       function MyApp({ Component, pageProps }) {
         return <Component {...pageProps} />
@@ -225,7 +167,7 @@ describe('@next/font/google option errors', () => {
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Invalid display value \`always\` for font \`Inter\`
-        Available display values: auto, block, swap, fallback, optional"
+        Available display values: \`auto\`,\`block\`,\`swap\`,\`fallback\`,\`optional\`"
       `)
     } finally {
       await browser.close()
@@ -241,7 +183,7 @@ describe('@next/font/google option errors', () => {
         `
       import { Inter } from '@next/font/google'
 
-      Inter({ variant: '500', axes: [] })
+      const i = Inter({ variant: '500', axes: [] })
 
       function MyApp({ Component, pageProps }) {
         return <Component {...pageProps} />
@@ -256,9 +198,7 @@ describe('@next/font/google option errors', () => {
       )
       expect(
         removeFirstLine(await getRedboxSource(browser))
-      ).toMatchInlineSnapshot(
-        `"\`axes\` can only be defined for variable fonts"`
-      )
+      ).toMatchInlineSnapshot(`"Axes can only be defined for variable fonts"`)
     } finally {
       await browser.close()
     }
@@ -273,7 +213,7 @@ describe('@next/font/google option errors', () => {
         `
       import { Lora } from '@next/font/google'
 
-      Lora({ variant: 'variable', axes: [] })
+      const l = Lora({ variant: 'variable', axes: [] })
 
       function MyApp({ Component, pageProps }) {
         return <Component {...pageProps} />
@@ -300,7 +240,7 @@ describe('@next/font/google option errors', () => {
         `
       import { Inter } from '@next/font/google'
 
-      Inter({ variant: 'variable', axes: "hello" })
+      const i = Inter({ variant: 'variable', axes: "hello" })
 
       function MyApp({ Component, pageProps }) {
         return <Component {...pageProps} />
@@ -313,7 +253,7 @@ describe('@next/font/google option errors', () => {
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Invalid axes value for font \`Inter\`, expected an array of axes.
-        Available axes: slnt"
+        Available axes: \`slnt\`"
       `)
     } finally {
       await browser.close()
@@ -329,7 +269,7 @@ describe('@next/font/google option errors', () => {
         `
       import { Fraunces } from '@next/font/google'
 
-      Fraunces({ variant: 'variable', axes: ["hello"] })
+      const f = Fraunces({ variant: 'variable', axes: ["hello"] })
 
       function MyApp({ Component, pageProps }) {
         return <Component {...pageProps} />
@@ -342,7 +282,7 @@ describe('@next/font/google option errors', () => {
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Invalid axes value \`hello\` for font \`Fraunces\`.
-        Available axes: opsz, SOFT, WONK"
+        Available axes: \`opsz\`,\`SOFT\`,\`WONK\`"
       `)
     } finally {
       await browser.close()

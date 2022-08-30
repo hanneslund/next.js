@@ -42,7 +42,7 @@ export function getFontLoader(
         // Disallow global style exports so we can code-split CSS and
         // not worry about loading order.
         mode: 'pure',
-        getLocalIdent: (context: any) => {
+        getLocalIdent: (context: any, _: any, exportName: string) => {
           const hash = loaderUtils.getHashDigest(
             Buffer.from(context.resourceQuery),
             'md5',
@@ -50,7 +50,7 @@ export function getFontLoader(
             5
           )
 
-          return `_${hash}`
+          return `__${exportName}_${hash}`
         },
       },
       fontLoader: true,

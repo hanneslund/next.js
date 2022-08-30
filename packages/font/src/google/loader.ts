@@ -5,12 +5,14 @@ const CHROME_UA =
 
 const allowedDisplayValues = ['auto', 'block', 'swap', 'fallback', 'optional']
 
+const formatValues = (values: string[]) => values.map((val) => `\`${val}\``)
+
 export default async function download(
   font: any,
   data: any,
   emitFile: (content: Buffer, ext: string, preload: boolean) => string
 ) {
-  const { variant, display = 'swap', subsets, preload, axes } = data
+  let { variant, display = 'optional', preload, axes } = data
 
   const fontFamily = font.replaceAll('_', ' ')
   const googleFontName = font.replaceAll('_', '+')
@@ -19,53 +21,45 @@ export default async function download(
   if (!fontVariants) {
     throw new Error(`Unknown font \`${fontFamily}\``)
   }
+  // Set variable as default if available, otherwise set 400
   if (!variant) {
-    throw new Error(
-      `Missing variant for font \`${fontFamily}\`\nAvailable variants: ${fontVariants.join(
-        ', '
-      )}`
-    )
+    variant = fontVariants.includes('variable') ? 'variable' : '400'
   }
+
   if (!fontVariants.includes(variant)) {
     throw new Error(
-      `Unknown variant \`${variant}\` for font \`${fontFamily}\`\nAvailable variants: ${fontVariants.join(
-        ', '
-      )}`
+      `Unknown variant \`${variant}\` for font \`${fontFamily}\`\nAvailable variants: ${fontVariants
+        .map((s) => `\`${s}\``)
+        .join(', ')}`
     )
   }
 
   if (!allowedDisplayValues.includes(display)) {
     throw new Error(
-      `Invalid display value \`${display}\` for font \`${fontFamily}\`\nAvailable display values: ${allowedDisplayValues.join(
-        ', '
+      `Invalid display value \`${display}\` for font \`${fontFamily}\`\nAvailable display values: ${formatValues(
+        allowedDisplayValues
       )}`
     )
   }
 
   const fontSubsets = (fontData as any)[fontFamily].subsets
-  if (typeof subsets !== 'undefined') {
-    if (!Array.isArray(subsets)) {
+  if (typeof preload !== 'undefined') {
+    if (!Array.isArray(preload)) {
       throw new Error(
-        `Invalid \`subsets\` value for font \`${fontFamily}\`, expected an array of subsets.\nAvailable subsets: ${fontSubsets.join(
-          ', '
+        `Invalid preload value for font \`${fontFamily}\`, expected an array of subsets.\nAvailable subsets: ${formatValues(
+          fontSubsets
         )}`
       )
     }
-    subsets.forEach((subset: string) => {
+    preload.forEach((subset: string) => {
       if (!fontSubsets.includes(subset)) {
         throw new Error(
-          `Unknown subset \`${subset}\` for font \`${fontFamily}\`\nAvailable subsets: ${fontSubsets.join(
-            ', '
+          `Unknown preload subset \`${subset}\` for font \`${fontFamily}\`\nAvailable subsets: ${formatValues(
+            fontSubsets
           )}`
         )
       }
     })
-  } else if (preload) {
-    throw new Error(
-      `Please specify \`subsets\` for font \`${fontFamily}\` to preload.\nAvailable subsets: ${fontSubsets.join(
-        ', '
-      )}`
-    )
   }
 
   let url: string
@@ -77,7 +71,7 @@ export default async function download(
   const [weight, style] = variant.split('-')
 
   if (weight !== 'variable' && axes) {
-    throw new Error('`axes` can only be defined for variable fonts')
+    throw new Error('Axes can only be defined for variable fonts')
   }
 
   if (weight === 'variable') {
@@ -92,16 +86,16 @@ export default async function download(
       }
       if (!Array.isArray(axes)) {
         throw new Error(
-          `Invalid axes value for font \`${fontFamily}\`, expected an array of axes.\nAvailable axes: ${defineAbleAxes.join(
-            ', '
+          `Invalid axes value for font \`${fontFamily}\`, expected an array of axes.\nAvailable axes: ${formatValues(
+            defineAbleAxes
           )}`
         )
       }
       axes.forEach((key) => {
         if (!defineAbleAxes.includes(key)) {
           throw new Error(
-            `Invalid axes value \`${key}\` for font \`${fontFamily}\`.\nAvailable axes: ${defineAbleAxes.join(
-              ', '
+            `Invalid axes value \`${key}\` for font \`${fontFamily}\`.\nAvailable axes: ${formatValues(
+              defineAbleAxes
             )}`
           )
         }
@@ -119,7 +113,6 @@ export default async function download(
         key,
         key === 'ital' ? '1' : `${min}..${max}`,
       ])
-    console.log({ usedAxes })
     url = getUrl(usedAxes)
   } else {
     const keyVal: Array<[string, string]> = [['wght', weight]]
@@ -153,14 +146,17 @@ export default async function download(
     cssResponse = await res.text()
   }
 
+  // Add default preload on optional display
+  if (display === 'optional' && !preload) {
+    preload = ['latin']
+  }
+
   const lines = []
-  let currentLocale = ''
+  let currentSubset = ''
   for (const line of cssResponse.split('\n')) {
     const newLocale = /\/\* (.+?) \*\//.exec(line)?.[1]
     if (newLocale) {
-      currentLocale = newLocale
-    } else if (subsets && !subsets.includes(currentLocale)) {
-      continue
+      currentSubset = newLocale
     } else {
       const fontFaceUrl = /src: url\((.+?)\)/.exec(line)?.[1]
       if (fontFaceUrl) {
@@ -176,7 +172,11 @@ export default async function download(
 
         let ext: any = fontFaceUrl.split('.')
         ext = ext[ext.length - 1]
-        const file = emitFile(fontFileBuffer, ext, preload)
+        const file = emitFile(
+          fontFileBuffer,
+          ext,
+          preload?.includes(currentSubset)
+        )
         lines.push(line.replace(fontFaceUrl, file))
         continue
       }

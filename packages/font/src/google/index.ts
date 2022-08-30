@@ -2,156 +2,139 @@
 type Display = 'auto' | 'block' | 'swap' | 'fallback' | 'optional'
 type FontModule = {
   className: string
+  variables: string
   style: { fontFamily: string; fontWeight?: number; fontStyle?: string }
 }
 function e(): never {
   throw new Error()
 }
-export function ABeeZee(options: {
+export function ABeeZee(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Abel(options: {
+export function Abel(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Abhaya_Libre(options: {
+export function Abhaya_Libre(options?: {
   variant: '400' | '500' | '600' | '700' | '800'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'sinhala')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'sinhala')[]
 }): FontModule {
   e()
 }
-export function Aboreto(options: {
+export function Aboreto(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Abril_Fatface(options: {
+export function Abril_Fatface(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Aclonica(options: {
+export function Aclonica(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Acme(options: {
+export function Acme(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Actor(options: {
+export function Actor(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Adamina(options: {
+export function Adamina(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Advent_Pro(options: {
+export function Advent_Pro(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('greek' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('greek' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Aguafina_Script(options: {
+export function Aguafina_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Akaya_Kanadaka(options: {
+export function Akaya_Kanadaka(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('kannada' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('kannada' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Akaya_Telivigala(options: {
+export function Akaya_Telivigala(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Akronim(options: {
+export function Akronim(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Akshar(options: {
+export function Akshar(options?: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Aladin(options: {
+export function Aladin(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Alata(options: {
+export function Alata(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Alatsi(options: {
+export function Alatsi(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Albert_Sans(options: {
+export function Albert_Sans(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -174,28 +157,25 @@ export function Albert_Sans(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Aldrich(options: {
+export function Aldrich(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Alef(options: {
+export function Alef(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('hebrew' | 'latin')[]
-  preload?: boolean
+  preload?: ('hebrew' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Alegreya(options: {
+export function Alegreya(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -212,7 +192,7 @@ export function Alegreya(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -221,11 +201,10 @@ export function Alegreya(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Alegreya_Sans(options: {
+export function Alegreya_Sans(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -242,7 +221,7 @@ export function Alegreya_Sans(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -251,11 +230,10 @@ export function Alegreya_Sans(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Alegreya_Sans_SC(options: {
+export function Alegreya_Sans_SC(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -272,7 +250,7 @@ export function Alegreya_Sans_SC(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -281,11 +259,10 @@ export function Alegreya_Sans_SC(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Alegreya_SC(options: {
+export function Alegreya_SC(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -298,7 +275,7 @@ export function Alegreya_SC(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -307,131 +284,115 @@ export function Alegreya_SC(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Aleo(options: {
+export function Aleo(options?: {
   variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Alex_Brush(options: {
+export function Alex_Brush(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Alfa_Slab_One(options: {
+export function Alfa_Slab_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Alice(options: {
+export function Alice(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Alike(options: {
+export function Alike(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Alike_Angular(options: {
+export function Alike_Angular(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Allan(options: {
+export function Allan(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Allerta(options: {
+export function Allerta(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Allerta_Stencil(options: {
+export function Allerta_Stencil(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Allison(options: {
+export function Allison(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Allura(options: {
+export function Allura(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Almarai(options: {
+export function Almarai(options?: {
   variant: '300' | '400' | '700' | '800'
   display?: Display
-  subsets?: 'arabic'[]
-  preload?: boolean
+  preload?: 'arabic'[]
 }): FontModule {
   e()
 }
-export function Almendra(options: {
+export function Almendra(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Almendra_Display(options: {
+export function Almendra_Display(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Almendra_SC(options: {
+export function Almendra_SC(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Alumni_Sans(options: {
+export function Alumni_Sans(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -454,112 +415,100 @@ export function Alumni_Sans(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Alumni_Sans_Collegiate_One(options: {
+export function Alumni_Sans_Collegiate_One(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Alumni_Sans_Inline_One(options: {
+export function Alumni_Sans_Inline_One(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Alumni_Sans_Pinstripe(options: {
+export function Alumni_Sans_Pinstripe(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Amarante(options: {
+export function Amarante(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Amaranth(options: {
+export function Amaranth(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Amatic_SC(options: {
+export function Amatic_SC(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('cyrillic' | 'hebrew' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'hebrew' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Amethysta(options: {
+export function Amethysta(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Amiko(options: {
+export function Amiko(options?: {
   variant: '400' | '600' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Amiri(options: {
+export function Amiri(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Amita(options: {
+export function Amita(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Anaheim(options: {
+export function Anaheim(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Andada_Pro(options: {
+export function Andada_Pro(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -574,26 +523,24 @@ export function Andada_Pro(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Andika(options: {
+export function Andika(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Anek_Bangla(options: {
+export function Anek_Bangla(options?: {
   variant:
     | '100'
     | '200'
@@ -605,13 +552,12 @@ export function Anek_Bangla(options: {
     | '800'
     | 'variable'
   display?: Display
-  subsets?: ('bengali' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('bengali' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Anek_Devanagari(options: {
+export function Anek_Devanagari(options?: {
   variant:
     | '100'
     | '200'
@@ -623,13 +569,12 @@ export function Anek_Devanagari(options: {
     | '800'
     | 'variable'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Anek_Gujarati(options: {
+export function Anek_Gujarati(options?: {
   variant:
     | '100'
     | '200'
@@ -641,13 +586,12 @@ export function Anek_Gujarati(options: {
     | '800'
     | 'variable'
   display?: Display
-  subsets?: ('gujarati' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('gujarati' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Anek_Gurmukhi(options: {
+export function Anek_Gurmukhi(options?: {
   variant:
     | '100'
     | '200'
@@ -659,13 +603,12 @@ export function Anek_Gurmukhi(options: {
     | '800'
     | 'variable'
   display?: Display
-  subsets?: ('gurmukhi' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('gurmukhi' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Anek_Kannada(options: {
+export function Anek_Kannada(options?: {
   variant:
     | '100'
     | '200'
@@ -677,13 +620,12 @@ export function Anek_Kannada(options: {
     | '800'
     | 'variable'
   display?: Display
-  subsets?: ('kannada' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('kannada' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Anek_Latin(options: {
+export function Anek_Latin(options?: {
   variant:
     | '100'
     | '200'
@@ -695,13 +637,12 @@ export function Anek_Latin(options: {
     | '800'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Anek_Malayalam(options: {
+export function Anek_Malayalam(options?: {
   variant:
     | '100'
     | '200'
@@ -713,13 +654,12 @@ export function Anek_Malayalam(options: {
     | '800'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'malayalam')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'malayalam')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Anek_Odia(options: {
+export function Anek_Odia(options?: {
   variant:
     | '100'
     | '200'
@@ -731,13 +671,12 @@ export function Anek_Odia(options: {
     | '800'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'oriya')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'oriya')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Anek_Tamil(options: {
+export function Anek_Tamil(options?: {
   variant:
     | '100'
     | '200'
@@ -749,13 +688,12 @@ export function Anek_Tamil(options: {
     | '800'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'tamil')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'tamil')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Anek_Telugu(options: {
+export function Anek_Telugu(options?: {
   variant:
     | '100'
     | '200'
@@ -767,77 +705,68 @@ export function Anek_Telugu(options: {
     | '800'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'telugu')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Angkor(options: {
+export function Angkor(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Annie_Use_Your_Telescope(options: {
+export function Annie_Use_Your_Telescope(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Anonymous_Pro(options: {
+export function Anonymous_Pro(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('cyrillic' | 'greek' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'greek' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Antic(options: {
+export function Antic(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Antic_Didone(options: {
+export function Antic_Didone(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Antic_Slab(options: {
+export function Antic_Slab(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Anton(options: {
+export function Anton(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Antonio(options: {
+export function Antonio(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Anybody(options: {
+export function Anybody(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -860,45 +789,40 @@ export function Anybody(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Arapey(options: {
+export function Arapey(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Arbutus(options: {
+export function Arbutus(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Arbutus_Slab(options: {
+export function Arbutus_Slab(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Architects_Daughter(options: {
+export function Architects_Daughter(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Archivo(options: {
+export function Archivo(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -921,21 +845,19 @@ export function Archivo(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Archivo_Black(options: {
+export function Archivo_Black(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Archivo_Narrow(options: {
+export function Archivo_Narrow(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -948,31 +870,28 @@ export function Archivo_Narrow(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Are_You_Serious(options: {
+export function Are_You_Serious(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Aref_Ruqaa(options: {
+export function Aref_Ruqaa(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Arima(options: {
+export function Arima(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'greek'
     | 'greek-ext'
     | 'latin'
@@ -981,19 +900,17 @@ export function Arima(options: {
     | 'tamil'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Arima_Madurai(options: {
+export function Arima_Madurai(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '700' | '800' | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'tamil' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'tamil' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Arimo(options: {
+export function Arimo(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -1006,7 +923,7 @@ export function Arimo(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -1016,65 +933,58 @@ export function Arimo(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Arizonia(options: {
+export function Arizonia(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Armata(options: {
+export function Armata(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Arsenal(options: {
+export function Arsenal(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Artifika(options: {
+export function Artifika(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Arvo(options: {
+export function Arvo(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Arya(options: {
+export function Arya(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Asap(options: {
+export function Asap(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -1087,12 +997,11 @@ export function Asap(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Asap_Condensed(options: {
+export function Asap_Condensed(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -1103,156 +1012,137 @@ export function Asap_Condensed(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Asar(options: {
+export function Asar(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Asset(options: {
+export function Asset(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Assistant(options: {
+export function Assistant(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Astloch(options: {
+export function Astloch(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Asul(options: {
+export function Asul(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Athiti(options: {
+export function Athiti(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Atkinson_Hyperlegible(options: {
+export function Atkinson_Hyperlegible(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Atma(options: {
+export function Atma(options?: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('bengali' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('bengali' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Atomic_Age(options: {
+export function Atomic_Age(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Aubrey(options: {
+export function Aubrey(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Audiowide(options: {
+export function Audiowide(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Autour_One(options: {
+export function Autour_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Average(options: {
+export function Average(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Average_Sans(options: {
+export function Average_Sans(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Averia_Gruesa_Libre(options: {
+export function Averia_Gruesa_Libre(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Averia_Libre(options: {
+export function Averia_Libre(options?: {
   variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Averia_Sans_Libre(options: {
+export function Averia_Sans_Libre(options?: {
   variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Averia_Serif_Libre(options: {
+export function Averia_Serif_Libre(options?: {
   variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Azeret_Mono(options: {
+export function Azeret_Mono(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -1275,60 +1165,53 @@ export function Azeret_Mono(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function B612(options: {
+export function B612(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function B612_Mono(options: {
+export function B612_Mono(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Babylonica(options: {
+export function Babylonica(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Bad_Script(options: {
+export function Bad_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Bahiana(options: {
+export function Bahiana(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Bahianita(options: {
+export function Bahianita(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Bai_Jamjuree(options: {
+export function Bai_Jamjuree(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -1343,133 +1226,117 @@ export function Bai_Jamjuree(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Bakbak_One(options: {
+export function Bakbak_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Ballet(options: {
+export function Ballet(options?: {
   variant: '400' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'opsz'[]
 }): FontModule {
   e()
 }
-export function Baloo_2(options: {
+export function Baloo_2(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Baloo_Bhai_2(options: {
+export function Baloo_Bhai_2(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('gujarati' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('gujarati' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Baloo_Bhaijaan_2(options: {
+export function Baloo_Bhaijaan_2(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Baloo_Bhaina_2(options: {
+export function Baloo_Bhaina_2(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'oriya' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'oriya' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Baloo_Chettan_2(options: {
+export function Baloo_Chettan_2(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'malayalam' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'malayalam' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Baloo_Da_2(options: {
+export function Baloo_Da_2(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('bengali' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('bengali' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Baloo_Paaji_2(options: {
+export function Baloo_Paaji_2(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('gurmukhi' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('gurmukhi' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Baloo_Tamma_2(options: {
+export function Baloo_Tamma_2(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('kannada' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('kannada' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Baloo_Tammudu_2(options: {
+export function Baloo_Tammudu_2(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'telugu' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'telugu' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Baloo_Thambi_2(options: {
+export function Baloo_Thambi_2(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'tamil' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'tamil' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Balsamiq_Sans(options: {
+export function Balsamiq_Sans(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Balthazar(options: {
+export function Balthazar(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Bangers(options: {
+export function Bangers(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Barlow(options: {
+export function Barlow(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -1490,12 +1357,11 @@ export function Barlow(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Barlow_Condensed(options: {
+export function Barlow_Condensed(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -1516,12 +1382,11 @@ export function Barlow_Condensed(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Barlow_Semi_Condensed(options: {
+export function Barlow_Semi_Condensed(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -1542,68 +1407,60 @@ export function Barlow_Semi_Condensed(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Barriecito(options: {
+export function Barriecito(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Barrio(options: {
+export function Barrio(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Basic(options: {
+export function Basic(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Baskervville(options: {
+export function Baskervville(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Battambang(options: {
+export function Battambang(options?: {
   variant: '100' | '300' | '400' | '700' | '900'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Baumans(options: {
+export function Baumans(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Bayon(options: {
+export function Bayon(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Be_Vietnam_Pro(options: {
+export function Be_Vietnam_Pro(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -1624,100 +1481,88 @@ export function Be_Vietnam_Pro(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Beau_Rivage(options: {
+export function Beau_Rivage(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Bebas_Neue(options: {
+export function Bebas_Neue(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Belgrano(options: {
+export function Belgrano(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Bellefair(options: {
+export function Bellefair(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Belleza(options: {
+export function Belleza(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Bellota(options: {
+export function Bellota(options?: {
   variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Bellota_Text(options: {
+export function Bellota_Text(options?: {
   variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function BenchNine(options: {
+export function BenchNine(options?: {
   variant: '300' | '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Benne(options: {
+export function Benne(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('kannada' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('kannada' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Bentham(options: {
+export function Bentham(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Berkshire_Swash(options: {
+export function Berkshire_Swash(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Besley(options: {
+export function Besley(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -1734,36 +1579,32 @@ export function Besley(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Beth_Ellen(options: {
+export function Beth_Ellen(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Bevan(options: {
+export function Bevan(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function BhuTuka_Expanded_One(options: {
+export function BhuTuka_Expanded_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('gurmukhi' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('gurmukhi' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Big_Shoulders_Display(options: {
+export function Big_Shoulders_Display(options?: {
   variant:
     | '100'
     | '200'
@@ -1776,12 +1617,11 @@ export function Big_Shoulders_Display(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Big_Shoulders_Inline_Display(options: {
+export function Big_Shoulders_Inline_Display(options?: {
   variant:
     | '100'
     | '200'
@@ -1794,12 +1634,11 @@ export function Big_Shoulders_Inline_Display(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Big_Shoulders_Inline_Text(options: {
+export function Big_Shoulders_Inline_Text(options?: {
   variant:
     | '100'
     | '200'
@@ -1812,12 +1651,11 @@ export function Big_Shoulders_Inline_Text(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Big_Shoulders_Stencil_Display(options: {
+export function Big_Shoulders_Stencil_Display(options?: {
   variant:
     | '100'
     | '200'
@@ -1830,12 +1668,11 @@ export function Big_Shoulders_Stencil_Display(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Big_Shoulders_Stencil_Text(options: {
+export function Big_Shoulders_Stencil_Text(options?: {
   variant:
     | '100'
     | '200'
@@ -1848,12 +1685,11 @@ export function Big_Shoulders_Stencil_Text(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Big_Shoulders_Text(options: {
+export function Big_Shoulders_Text(options?: {
   variant:
     | '100'
     | '200'
@@ -1866,84 +1702,74 @@ export function Big_Shoulders_Text(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Bigelow_Rules(options: {
+export function Bigelow_Rules(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Bigshot_One(options: {
+export function Bigshot_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Bilbo(options: {
+export function Bilbo(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Bilbo_Swash_Caps(options: {
+export function Bilbo_Swash_Caps(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function BioRhyme(options: {
+export function BioRhyme(options?: {
   variant: '200' | '300' | '400' | '700' | '800'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function BioRhyme_Expanded(options: {
+export function BioRhyme_Expanded(options?: {
   variant: '200' | '300' | '400' | '700' | '800'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Birthstone(options: {
+export function Birthstone(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Birthstone_Bounce(options: {
+export function Birthstone_Bounce(options?: {
   variant: '400' | '500'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Biryani(options: {
+export function Biryani(options?: {
   variant: '200' | '300' | '400' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Bitter(options: {
+export function Bitter(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -1966,98 +1792,87 @@ export function Bitter(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function BIZ_UDGothic(options: {
+export function BIZ_UDGothic(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('cyrillic' | 'greek-ext' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'greek-ext' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function BIZ_UDMincho(options: {
+export function BIZ_UDMincho(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'greek-ext' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'greek-ext' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function BIZ_UDPGothic(options: {
+export function BIZ_UDPGothic(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('cyrillic' | 'greek-ext' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'greek-ext' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function BIZ_UDPMincho(options: {
+export function BIZ_UDPMincho(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'greek-ext' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'greek-ext' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Black_And_White_Picture(options: {
+export function Black_And_White_Picture(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Black_Han_Sans(options: {
+export function Black_Han_Sans(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Black_Ops_One(options: {
+export function Black_Ops_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Blaka(options: {
+export function Blaka(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Blaka_Hollow(options: {
+export function Blaka_Hollow(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Blinker(options: {
+export function Blinker(options?: {
   variant: '100' | '200' | '300' | '400' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Bodoni_Moda(options: {
+export function Bodoni_Moda(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -2074,24 +1889,22 @@ export function Bodoni_Moda(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
   axes?: 'opsz'[]
 }): FontModule {
   e()
 }
-export function Bokor(options: {
+export function Bokor(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Bona_Nova(options: {
+export function Bona_Nova(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -2100,67 +1913,59 @@ export function Bona_Nova(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Bonbon(options: {
+export function Bonbon(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Bonheur_Royale(options: {
+export function Bonheur_Royale(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Boogaloo(options: {
+export function Boogaloo(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Bowlby_One(options: {
+export function Bowlby_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Bowlby_One_SC(options: {
+export function Bowlby_One_SC(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Brawler(options: {
+export function Brawler(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Bree_Serif(options: {
+export function Bree_Serif(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Brygada_1918(options: {
+export function Brygada_1918(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -2173,7 +1978,7 @@ export function Brygada_1918(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -2181,99 +1986,87 @@ export function Brygada_1918(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Bubblegum_Sans(options: {
+export function Bubblegum_Sans(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Bubbler_One(options: {
+export function Bubbler_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Buda(options: {
+export function Buda(options?: {
   variant: '300'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Buenard(options: {
+export function Buenard(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Bungee(options: {
+export function Bungee(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Bungee_Hairline(options: {
+export function Bungee_Hairline(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Bungee_Inline(options: {
+export function Bungee_Inline(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Bungee_Outline(options: {
+export function Bungee_Outline(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Bungee_Shade(options: {
+export function Bungee_Shade(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Butcherman(options: {
+export function Butcherman(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Butterfly_Kids(options: {
+export function Butterfly_Kids(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Cabin(options: {
+export function Cabin(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -2286,45 +2079,40 @@ export function Cabin(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Cabin_Condensed(options: {
+export function Cabin_Condensed(options?: {
   variant: '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Cabin_Sketch(options: {
+export function Cabin_Sketch(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Caesar_Dressing(options: {
+export function Caesar_Dressing(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Cagliostro(options: {
+export function Cagliostro(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Cairo(options: {
+export function Cairo(options?: {
   variant:
     | '200'
     | '300'
@@ -2336,156 +2124,137 @@ export function Cairo(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Caladea(options: {
+export function Caladea(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Calistoga(options: {
+export function Calistoga(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Calligraffitti(options: {
+export function Calligraffitti(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Cambay(options: {
+export function Cambay(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Cambo(options: {
+export function Cambo(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Candal(options: {
+export function Candal(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Cantarell(options: {
+export function Cantarell(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Cantata_One(options: {
+export function Cantata_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Cantora_One(options: {
+export function Cantora_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Capriola(options: {
+export function Capriola(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Caramel(options: {
+export function Caramel(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Carattere(options: {
+export function Carattere(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Cardo(options: {
+export function Cardo(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('greek' | 'greek-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('greek' | 'greek-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Carme(options: {
+export function Carme(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Carrois_Gothic(options: {
+export function Carrois_Gothic(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Carrois_Gothic_SC(options: {
+export function Carrois_Gothic_SC(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Carter_One(options: {
+export function Carter_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Castoro(options: {
+export function Castoro(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Catamaran(options: {
+export function Catamaran(options?: {
   variant:
     | '100'
     | '200'
@@ -2498,52 +2267,46 @@ export function Catamaran(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'tamil')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'tamil')[]
 }): FontModule {
   e()
 }
-export function Caudex(options: {
+export function Caudex(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('greek' | 'greek-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('greek' | 'greek-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Caveat(options: {
+export function Caveat(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Caveat_Brush(options: {
+export function Caveat_Brush(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Cedarville_Cursive(options: {
+export function Cedarville_Cursive(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Ceviche_One(options: {
+export function Ceviche_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Chakra_Petch(options: {
+export function Chakra_Petch(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -2556,154 +2319,136 @@ export function Chakra_Petch(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Changa(options: {
+export function Changa(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Changa_One(options: {
+export function Changa_One(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Chango(options: {
+export function Chango(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Charis_SIL(options: {
+export function Charis_SIL(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Charm(options: {
+export function Charm(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Charmonman(options: {
+export function Charmonman(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Chathura(options: {
+export function Chathura(options?: {
   variant: '100' | '300' | '400' | '700' | '800'
   display?: Display
-  subsets?: ('latin' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Chau_Philomene_One(options: {
+export function Chau_Philomene_One(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Chela_One(options: {
+export function Chela_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Chelsea_Market(options: {
+export function Chelsea_Market(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Chenla(options: {
+export function Chenla(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'khmer'[]
-  preload?: boolean
+  preload?: 'khmer'[]
 }): FontModule {
   e()
 }
-export function Cherish(options: {
+export function Cherish(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Cherry_Cream_Soda(options: {
+export function Cherry_Cream_Soda(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Cherry_Swash(options: {
+export function Cherry_Swash(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Chewy(options: {
+export function Chewy(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Chicle(options: {
+export function Chicle(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Chilanka(options: {
+export function Chilanka(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'malayalam')[]
-  preload?: boolean
+  preload?: ('latin' | 'malayalam')[]
 }): FontModule {
   e()
 }
-export function Chivo(options: {
+export function Chivo(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -2714,87 +2459,77 @@ export function Chivo(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Chonburi(options: {
+export function Chonburi(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Cinzel(options: {
+export function Cinzel(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Cinzel_Decorative(options: {
+export function Cinzel_Decorative(options?: {
   variant: '400' | '700' | '900'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Clicker_Script(options: {
+export function Clicker_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Coda(options: {
+export function Coda(options?: {
   variant: '400' | '800'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Coda_Caption(options: {
+export function Coda_Caption(options?: {
   variant: '800'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Codystar(options: {
+export function Codystar(options?: {
   variant: '300' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Coiny(options: {
+export function Coiny(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'tamil' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'tamil' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Combo(options: {
+export function Combo(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Comfortaa(options: {
+export function Comfortaa(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -2802,43 +2537,38 @@ export function Comfortaa(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Comforter(options: {
+export function Comforter(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Comforter_Brush(options: {
+export function Comforter_Brush(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Comic_Neue(options: {
+export function Comic_Neue(options?: {
   variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Coming_Soon(options: {
+export function Coming_Soon(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Commissioner(options: {
+export function Commissioner(options?: {
   variant:
     | '100'
     | '200'
@@ -2851,7 +2581,7 @@ export function Commissioner(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -2859,83 +2589,73 @@ export function Commissioner(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Concert_One(options: {
+export function Concert_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Condiment(options: {
+export function Condiment(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Content(options: {
+export function Content(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: 'khmer'[]
-  preload?: boolean
+  preload?: 'khmer'[]
 }): FontModule {
   e()
 }
-export function Contrail_One(options: {
+export function Contrail_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Convergence(options: {
+export function Convergence(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Cookie(options: {
+export function Cookie(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Copse(options: {
+export function Copse(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Corben(options: {
+export function Corben(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Corinthia(options: {
+export function Corinthia(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Cormorant(options: {
+export function Cormorant(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -2950,18 +2670,17 @@ export function Cormorant(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Cormorant_Garamond(options: {
+export function Cormorant_Garamond(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -2974,18 +2693,17 @@ export function Cormorant_Garamond(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Cormorant_Infant(options: {
+export function Cormorant_Infant(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -2998,73 +2716,67 @@ export function Cormorant_Infant(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Cormorant_SC(options: {
+export function Cormorant_SC(options?: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Cormorant_Unicase(options: {
+export function Cormorant_Unicase(options?: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Cormorant_Upright(options: {
+export function Cormorant_Upright(options?: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Courgette(options: {
+export function Courgette(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Courier_Prime(options: {
+export function Courier_Prime(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Cousine(options: {
+export function Cousine(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -3074,51 +2786,45 @@ export function Cousine(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Coustard(options: {
+export function Coustard(options?: {
   variant: '400' | '900'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Covered_By_Your_Grace(options: {
+export function Covered_By_Your_Grace(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Crafty_Girls(options: {
+export function Crafty_Girls(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Creepster(options: {
+export function Creepster(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Crete_Round(options: {
+export function Crete_Round(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Crimson_Pro(options: {
+export function Crimson_Pro(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -3139,36 +2845,32 @@ export function Crimson_Pro(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Crimson_Text(options: {
+export function Crimson_Text(options?: {
   variant: '400-italic' | '400' | '600-italic' | '600' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Croissant_One(options: {
+export function Croissant_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Crushed(options: {
+export function Crushed(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Cuprum(options: {
+export function Cuprum(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -3181,109 +2883,97 @@ export function Cuprum(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Cute_Font(options: {
+export function Cute_Font(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Cutive(options: {
+export function Cutive(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Cutive_Mono(options: {
+export function Cutive_Mono(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Damion(options: {
+export function Damion(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Dancing_Script(options: {
+export function Dancing_Script(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Dangrek(options: {
+export function Dangrek(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Darker_Grotesque(options: {
+export function Darker_Grotesque(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function David_Libre(options: {
+export function David_Libre(options?: {
   variant: '400' | '500' | '700'
   display?: Display
-  subsets?: ('hebrew' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('hebrew' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Dawning_of_a_New_Day(options: {
+export function Dawning_of_a_New_Day(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Days_One(options: {
+export function Days_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Dekko(options: {
+export function Dekko(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Dela_Gothic_One(options: {
+export function Dela_Gothic_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'greek'
     | 'japanese'
@@ -3291,70 +2981,62 @@ export function Dela_Gothic_One(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Delius(options: {
+export function Delius(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Delius_Swash_Caps(options: {
+export function Delius_Swash_Caps(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Delius_Unicase(options: {
+export function Delius_Unicase(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Della_Respira(options: {
+export function Della_Respira(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Denk_One(options: {
+export function Denk_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Devonshire(options: {
+export function Devonshire(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Dhurjati(options: {
+export function Dhurjati(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Didact_Gothic(options: {
+export function Didact_Gothic(options?: {
   variant: '400'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -3362,188 +3044,165 @@ export function Didact_Gothic(options: {
     | 'latin'
     | 'latin-ext'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Diplomata(options: {
+export function Diplomata(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Diplomata_SC(options: {
+export function Diplomata_SC(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function DM_Mono(options: {
+export function DM_Mono(options?: {
   variant: '300-italic' | '300' | '400-italic' | '400' | '500-italic' | '500'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function DM_Sans(options: {
+export function DM_Sans(options?: {
   variant: '400-italic' | '400' | '500-italic' | '500' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function DM_Serif_Display(options: {
+export function DM_Serif_Display(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function DM_Serif_Text(options: {
+export function DM_Serif_Text(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Do_Hyeon(options: {
+export function Do_Hyeon(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Dokdo(options: {
+export function Dokdo(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Domine(options: {
+export function Domine(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Donegal_One(options: {
+export function Donegal_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Dongle(options: {
+export function Dongle(options?: {
   variant: '300' | '400' | '700'
   display?: Display
-  subsets?: ('korean' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Doppio_One(options: {
+export function Doppio_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Dorsa(options: {
+export function Dorsa(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Dosis(options: {
+export function Dosis(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function DotGothic16(options: {
+export function DotGothic16(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Dr_Sugiyama(options: {
+export function Dr_Sugiyama(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Duru_Sans(options: {
+export function Duru_Sans(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Dynalight(options: {
+export function Dynalight(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function DynaPuff(options: {
+export function DynaPuff(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('cyrillic-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic-ext' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Eagle_Lake(options: {
+export function Eagle_Lake(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function East_Sea_Dokdo(options: {
+export function East_Sea_Dokdo(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Eater(options: {
+export function Eater(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function EB_Garamond(options: {
+export function EB_Garamond(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -3558,7 +3217,7 @@ export function EB_Garamond(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -3567,115 +3226,101 @@ export function EB_Garamond(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Economica(options: {
+export function Economica(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Eczar(options: {
+export function Eczar(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('devanagari' | 'greek' | 'greek-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'greek' | 'greek-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Edu_NSW_ACT_Foundation(options: {
+export function Edu_NSW_ACT_Foundation(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Edu_QLD_Beginner(options: {
+export function Edu_QLD_Beginner(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Edu_SA_Beginner(options: {
+export function Edu_SA_Beginner(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Edu_TAS_Beginner(options: {
+export function Edu_TAS_Beginner(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Edu_VIC_WA_NT_Beginner(options: {
+export function Edu_VIC_WA_NT_Beginner(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function El_Messiri(options: {
+export function El_Messiri(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('arabic' | 'cyrillic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('arabic' | 'cyrillic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Electrolize(options: {
+export function Electrolize(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Elsie(options: {
+export function Elsie(options?: {
   variant: '400' | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Elsie_Swash_Caps(options: {
+export function Elsie_Swash_Caps(options?: {
   variant: '400' | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Emblema_One(options: {
+export function Emblema_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Emilys_Candy(options: {
+export function Emilys_Candy(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Encode_Sans(options: {
+export function Encode_Sans(options?: {
   variant:
     | '100'
     | '200'
@@ -3688,29 +3333,26 @@ export function Encode_Sans(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Encode_Sans_Condensed(options: {
+export function Encode_Sans_Condensed(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Encode_Sans_Expanded(options: {
+export function Encode_Sans_Expanded(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Encode_Sans_SC(options: {
+export function Encode_Sans_SC(options?: {
   variant:
     | '100'
     | '200'
@@ -3723,61 +3365,54 @@ export function Encode_Sans_SC(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Encode_Sans_Semi_Condensed(options: {
+export function Encode_Sans_Semi_Condensed(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Encode_Sans_Semi_Expanded(options: {
+export function Encode_Sans_Semi_Expanded(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Engagement(options: {
+export function Engagement(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Englebert(options: {
+export function Englebert(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Enriqueta(options: {
+export function Enriqueta(options?: {
   variant: '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Ephesis(options: {
+export function Ephesis(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Epilogue(options: {
+export function Epilogue(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -3800,52 +3435,46 @@ export function Epilogue(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Erica_One(options: {
+export function Erica_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Esteban(options: {
+export function Esteban(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Estonia(options: {
+export function Estonia(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Euphoria_Script(options: {
+export function Euphoria_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Ewert(options: {
+export function Ewert(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Exo(options: {
+export function Exo(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -3868,12 +3497,11 @@ export function Exo(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Exo_2(options: {
+export function Exo_2(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -3896,18 +3524,17 @@ export function Exo_2(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Expletus_Sans(options: {
+export function Expletus_Sans(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -3920,20 +3547,18 @@ export function Expletus_Sans(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Explora(options: {
+export function Explora(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cherokee' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cherokee' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Fahkwang(options: {
+export function Fahkwang(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -3948,12 +3573,11 @@ export function Fahkwang(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Familjen_Grotesk(options: {
+export function Familjen_Grotesk(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -3966,76 +3590,67 @@ export function Familjen_Grotesk(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Fanwood_Text(options: {
+export function Fanwood_Text(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Farro(options: {
+export function Farro(options?: {
   variant: '300' | '400' | '500' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Farsan(options: {
+export function Farsan(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('gujarati' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('gujarati' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Fascinate(options: {
+export function Fascinate(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Fascinate_Inline(options: {
+export function Fascinate_Inline(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Faster_One(options: {
+export function Faster_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Fasthand(options: {
+export function Fasthand(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Fauna_One(options: {
+export function Fauna_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Faustina(options: {
+export function Faustina(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -4052,68 +3667,60 @@ export function Faustina(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Federant(options: {
+export function Federant(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Federo(options: {
+export function Federo(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Felipa(options: {
+export function Felipa(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Fenix(options: {
+export function Fenix(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Festive(options: {
+export function Festive(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Figtree(options: {
+export function Figtree(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Finger_Paint(options: {
+export function Finger_Paint(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Finlandica(options: {
+export function Finlandica(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -4126,15 +3733,14 @@ export function Finlandica(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Fira_Code(options: {
+export function Fira_Code(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -4142,14 +3748,13 @@ export function Fira_Code(options: {
     | 'latin'
     | 'latin-ext'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Fira_Mono(options: {
+export function Fira_Mono(options?: {
   variant: '400' | '500' | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -4157,11 +3762,10 @@ export function Fira_Mono(options: {
     | 'latin'
     | 'latin-ext'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Fira_Sans(options: {
+export function Fira_Sans(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -4182,7 +3786,7 @@ export function Fira_Sans(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -4191,11 +3795,10 @@ export function Fira_Sans(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Fira_Sans_Condensed(options: {
+export function Fira_Sans_Condensed(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -4216,7 +3819,7 @@ export function Fira_Sans_Condensed(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -4225,11 +3828,10 @@ export function Fira_Sans_Condensed(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Fira_Sans_Extra_Condensed(options: {
+export function Fira_Sans_Extra_Condensed(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -4250,7 +3852,7 @@ export function Fira_Sans_Extra_Condensed(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -4259,133 +3861,119 @@ export function Fira_Sans_Extra_Condensed(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Fjalla_One(options: {
+export function Fjalla_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Fjord_One(options: {
+export function Fjord_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Flamenco(options: {
+export function Flamenco(options?: {
   variant: '300' | '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Flavors(options: {
+export function Flavors(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Fleur_De_Leah(options: {
+export function Fleur_De_Leah(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Flow_Block(options: {
+export function Flow_Block(options?: {
   variant: '400'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Flow_Circular(options: {
+export function Flow_Circular(options?: {
   variant: '400'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Flow_Rounded(options: {
+export function Flow_Rounded(options?: {
   variant: '400'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Fondamento(options: {
+export function Fondamento(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Fontdiner_Swanky(options: {
+export function Fontdiner_Swanky(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Forum(options: {
+export function Forum(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Francois_One(options: {
+export function Francois_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Frank_Ruhl_Libre(options: {
+export function Frank_Ruhl_Libre(options?: {
   variant: '300' | '400' | '500' | '700' | '900'
   display?: Display
-  subsets?: ('hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Fraunces(options: {
+export function Fraunces(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -4408,158 +3996,139 @@ export function Fraunces(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: ('opsz' | 'SOFT' | 'WONK')[]
 }): FontModule {
   e()
 }
-export function Freckle_Face(options: {
+export function Freckle_Face(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Fredericka_the_Great(options: {
+export function Fredericka_the_Great(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Fredoka(options: {
+export function Fredoka(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('hebrew' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Fredoka_One(options: {
+export function Fredoka_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Freehand(options: {
+export function Freehand(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Fresca(options: {
+export function Fresca(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Frijole(options: {
+export function Frijole(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Fruktur(options: {
+export function Fruktur(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Fugaz_One(options: {
+export function Fugaz_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Fuggles(options: {
+export function Fuggles(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Fuzzy_Bubbles(options: {
+export function Fuzzy_Bubbles(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Gabriela(options: {
+export function Gabriela(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Gaegu(options: {
+export function Gaegu(options?: {
   variant: '300' | '400' | '700'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Gafata(options: {
+export function Gafata(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Galada(options: {
+export function Galada(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('bengali' | 'latin')[]
-  preload?: boolean
+  preload?: ('bengali' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Galdeano(options: {
+export function Galdeano(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Galindo(options: {
+export function Galindo(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Gamja_Flower(options: {
+export function Gamja_Flower(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Gantari(options: {
+export function Gantari(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -4582,20 +4151,18 @@ export function Gantari(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Gayathri(options: {
+export function Gayathri(options?: {
   variant: '100' | '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'malayalam')[]
-  preload?: boolean
+  preload?: ('latin' | 'malayalam')[]
 }): FontModule {
   e()
 }
-export function Gelasio(options: {
+export function Gelasio(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -4606,20 +4173,18 @@ export function Gelasio(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Gemunu_Libre(options: {
+export function Gemunu_Libre(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'sinhala')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'sinhala')[]
 }): FontModule {
   e()
 }
-export function Genos(options: {
+export function Genos(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -4642,23 +4207,21 @@ export function Genos(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('cherokee' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cherokee' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Gentium_Book_Basic(options: {
+export function Gentium_Book_Basic(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Gentium_Book_Plus(options: {
+export function Gentium_Book_Plus(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -4667,14 +4230,13 @@ export function Gentium_Book_Plus(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Gentium_Plus(options: {
+export function Gentium_Plus(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -4683,19 +4245,17 @@ export function Gentium_Plus(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Geo(options: {
+export function Geo(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Georama(options: {
+export function Georama(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -4718,117 +4278,103 @@ export function Georama(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Geostar(options: {
+export function Geostar(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Geostar_Fill(options: {
+export function Geostar_Fill(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Germania_One(options: {
+export function Germania_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function GFS_Didot(options: {
+export function GFS_Didot(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'greek'[]
-  preload?: boolean
+  preload?: 'greek'[]
 }): FontModule {
   e()
 }
-export function GFS_Neohellenic(options: {
+export function GFS_Neohellenic(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: 'greek'[]
-  preload?: boolean
+  preload?: 'greek'[]
 }): FontModule {
   e()
 }
-export function Gideon_Roman(options: {
+export function Gideon_Roman(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Gidugu(options: {
+export function Gidugu(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Gilda_Display(options: {
+export function Gilda_Display(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Girassol(options: {
+export function Girassol(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Give_You_Glory(options: {
+export function Give_You_Glory(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Glass_Antiqua(options: {
+export function Glass_Antiqua(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Glegoo(options: {
+export function Glegoo(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Gloria_Hallelujah(options: {
+export function Gloria_Hallelujah(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Glory(options: {
+export function Glory(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -4849,12 +4395,11 @@ export function Glory(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Gluten(options: {
+export function Gluten(options?: {
   variant:
     | '100'
     | '200'
@@ -4867,101 +4412,89 @@ export function Gluten(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'slnt'[]
 }): FontModule {
   e()
 }
-export function Goblin_One(options: {
+export function Goblin_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Gochi_Hand(options: {
+export function Gochi_Hand(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Goldman(options: {
+export function Goldman(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Gorditas(options: {
+export function Gorditas(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Gothic_A1(options: {
+export function Gothic_A1(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Gotu(options: {
+export function Gotu(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Goudy_Bookletter_1911(options: {
+export function Goudy_Bookletter_1911(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Gowun_Batang(options: {
+export function Gowun_Batang(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('korean' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Gowun_Dodum(options: {
+export function Gowun_Dodum(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Graduate(options: {
+export function Graduate(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Grand_Hotel(options: {
+export function Grand_Hotel(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Grandstander(options: {
+export function Grandstander(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -4984,44 +4517,39 @@ export function Grandstander(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Grape_Nuts(options: {
+export function Grape_Nuts(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Gravitas_One(options: {
+export function Gravitas_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Great_Vibes(options: {
+export function Great_Vibes(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Grechen_Fuemen(options: {
+export function Grechen_Fuemen(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Grenze(options: {
+export function Grenze(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -5042,12 +4570,11 @@ export function Grenze(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Grenze_Gotisch(options: {
+export function Grenze_Gotisch(options?: {
   variant:
     | '100'
     | '200'
@@ -5060,100 +4587,88 @@ export function Grenze_Gotisch(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Grey_Qo(options: {
+export function Grey_Qo(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Griffy(options: {
+export function Griffy(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Gruppo(options: {
+export function Gruppo(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Gudea(options: {
+export function Gudea(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Gugi(options: {
+export function Gugi(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Gulzar(options: {
+export function Gulzar(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Gupter(options: {
+export function Gupter(options?: {
   variant: '400' | '500' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Gurajada(options: {
+export function Gurajada(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Gwendolyn(options: {
+export function Gwendolyn(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Habibi(options: {
+export function Habibi(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Hachi_Maru_Pop(options: {
+export function Hachi_Maru_Pop(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Hahmlet(options: {
+export function Hahmlet(options?: {
   variant:
     | '100'
     | '200'
@@ -5166,84 +4681,74 @@ export function Hahmlet(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('korean' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Halant(options: {
+export function Halant(options?: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Hammersmith_One(options: {
+export function Hammersmith_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Hanalei(options: {
+export function Hanalei(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Hanalei_Fill(options: {
+export function Hanalei_Fill(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Handlee(options: {
+export function Handlee(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Hanuman(options: {
+export function Hanuman(options?: {
   variant: '100' | '300' | '400' | '700' | '900'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Happy_Monkey(options: {
+export function Happy_Monkey(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Harmattan(options: {
+export function Harmattan(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Headland_One(options: {
+export function Headland_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Heebo(options: {
+export function Heebo(options?: {
   variant:
     | '100'
     | '200'
@@ -5256,20 +4761,18 @@ export function Heebo(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('hebrew' | 'latin')[]
-  preload?: boolean
+  preload?: ('hebrew' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Henny_Penny(options: {
+export function Henny_Penny(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Hepta_Slab(options: {
+export function Hepta_Slab(options?: {
   variant:
     | '100'
     | '200'
@@ -5282,116 +4785,102 @@ export function Hepta_Slab(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Herr_Von_Muellerhoff(options: {
+export function Herr_Von_Muellerhoff(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Hi_Melody(options: {
+export function Hi_Melody(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Hina_Mincho(options: {
+export function Hina_Mincho(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Hind(options: {
+export function Hind(options?: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Hind_Guntur(options: {
+export function Hind_Guntur(options?: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Hind_Madurai(options: {
+export function Hind_Madurai(options?: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'tamil')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'tamil')[]
 }): FontModule {
   e()
 }
-export function Hind_Siliguri(options: {
+export function Hind_Siliguri(options?: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('bengali' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('bengali' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Hind_Vadodara(options: {
+export function Hind_Vadodara(options?: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('gujarati' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('gujarati' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Holtwood_One_SC(options: {
+export function Holtwood_One_SC(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Homemade_Apple(options: {
+export function Homemade_Apple(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Homenaje(options: {
+export function Homenaje(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Hubballi(options: {
+export function Hubballi(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('kannada' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('kannada' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Hurricane(options: {
+export function Hurricane(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Ibarra_Real_Nova(options: {
+export function Ibarra_Real_Nova(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -5404,12 +4893,11 @@ export function Ibarra_Real_Nova(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function IBM_Plex_Mono(options: {
+export function IBM_Plex_Mono(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -5426,18 +4914,17 @@ export function IBM_Plex_Mono(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function IBM_Plex_Sans(options: {
+export function IBM_Plex_Sans(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -5454,7 +4941,7 @@ export function IBM_Plex_Sans(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -5462,19 +4949,17 @@ export function IBM_Plex_Sans(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function IBM_Plex_Sans_Arabic(options: {
+export function IBM_Plex_Sans_Arabic(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('arabic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('arabic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function IBM_Plex_Sans_Condensed(options: {
+export function IBM_Plex_Sans_Condensed(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -5491,52 +4976,46 @@ export function IBM_Plex_Sans_Condensed(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function IBM_Plex_Sans_Devanagari(options: {
+export function IBM_Plex_Sans_Devanagari(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('cyrillic-ext' | 'devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic-ext' | 'devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function IBM_Plex_Sans_Hebrew(options: {
+export function IBM_Plex_Sans_Hebrew(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function IBM_Plex_Sans_KR(options: {
+export function IBM_Plex_Sans_KR(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('korean' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function IBM_Plex_Sans_Thai(options: {
+export function IBM_Plex_Sans_Thai(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'thai')[]
-  preload?: boolean
+  preload?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'thai')[]
 }): FontModule {
   e()
 }
-export function IBM_Plex_Sans_Thai_Looped(options: {
+export function IBM_Plex_Sans_Thai_Looped(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'thai')[]
-  preload?: boolean
+  preload?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'thai')[]
 }): FontModule {
   e()
 }
-export function IBM_Plex_Serif(options: {
+export function IBM_Plex_Serif(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -5553,114 +5032,101 @@ export function IBM_Plex_Serif(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Iceberg(options: {
+export function Iceberg(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Iceland(options: {
+export function Iceland(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function IM_Fell_Double_Pica(options: {
+export function IM_Fell_Double_Pica(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function IM_Fell_Double_Pica_SC(options: {
+export function IM_Fell_Double_Pica_SC(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function IM_Fell_DW_Pica(options: {
+export function IM_Fell_DW_Pica(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function IM_Fell_DW_Pica_SC(options: {
+export function IM_Fell_DW_Pica_SC(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function IM_Fell_English(options: {
+export function IM_Fell_English(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function IM_Fell_English_SC(options: {
+export function IM_Fell_English_SC(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function IM_Fell_French_Canon(options: {
+export function IM_Fell_French_Canon(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function IM_Fell_French_Canon_SC(options: {
+export function IM_Fell_French_Canon_SC(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function IM_Fell_Great_Primer(options: {
+export function IM_Fell_Great_Primer(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function IM_Fell_Great_Primer_SC(options: {
+export function IM_Fell_Great_Primer_SC(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Imbue(options: {
+export function Imbue(options?: {
   variant:
     | '100'
     | '200'
@@ -5673,29 +5139,26 @@ export function Imbue(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'opsz'[]
 }): FontModule {
   e()
 }
-export function Imperial_Script(options: {
+export function Imperial_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Imprima(options: {
+export function Imprima(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Inconsolata(options: {
+export function Inconsolata(options?: {
   variant:
     | '200'
     | '300'
@@ -5707,77 +5170,68 @@ export function Inconsolata(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Inder(options: {
+export function Inder(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Indie_Flower(options: {
+export function Indie_Flower(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Ingrid_Darling(options: {
+export function Ingrid_Darling(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Inika(options: {
+export function Inika(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Inknut_Antiqua(options: {
+export function Inknut_Antiqua(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Inria_Sans(options: {
+export function Inria_Sans(options?: {
   variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Inria_Serif(options: {
+export function Inria_Serif(options?: {
   variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Inspiration(options: {
+export function Inspiration(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Inter(options: {
+export function Inter(options?: {
   variant:
     | '100'
     | '200'
@@ -5790,7 +5244,7 @@ export function Inter(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -5799,84 +5253,74 @@ export function Inter(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
   axes?: 'slnt'[]
 }): FontModule {
   e()
 }
-export function Irish_Grover(options: {
+export function Irish_Grover(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Island_Moments(options: {
+export function Island_Moments(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Istok_Web(options: {
+export function Istok_Web(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Italiana(options: {
+export function Italiana(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Italianno(options: {
+export function Italianno(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Itim(options: {
+export function Itim(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Jacques_Francois(options: {
+export function Jacques_Francois(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Jacques_Francois_Shadow(options: {
+export function Jacques_Francois_Shadow(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Jaldi(options: {
+export function Jaldi(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function JetBrains_Mono(options: {
+export function JetBrains_Mono(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -5897,7 +5341,7 @@ export function JetBrains_Mono(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -5905,59 +5349,52 @@ export function JetBrains_Mono(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Jim_Nightshade(options: {
+export function Jim_Nightshade(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Joan(options: {
+export function Joan(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Jockey_One(options: {
+export function Jockey_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Jolly_Lodger(options: {
+export function Jolly_Lodger(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Jomhuria(options: {
+export function Jomhuria(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Jomolhari(options: {
+export function Jomolhari(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'tibetan')[]
-  preload?: boolean
+  preload?: ('latin' | 'tibetan')[]
 }): FontModule {
   e()
 }
-export function Josefin_Sans(options: {
+export function Josefin_Sans(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -5976,12 +5413,11 @@ export function Josefin_Sans(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Josefin_Slab(options: {
+export function Josefin_Slab(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -6000,12 +5436,11 @@ export function Josefin_Slab(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Jost(options: {
+export function Jost(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -6028,63 +5463,56 @@ export function Jost(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Joti_One(options: {
+export function Joti_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Jua(options: {
+export function Jua(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Judson(options: {
+export function Judson(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Julee(options: {
+export function Julee(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Julius_Sans_One(options: {
+export function Julius_Sans_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Junge(options: {
+export function Junge(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Jura(options: {
+export function Jura(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -6094,27 +5522,24 @@ export function Jura(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Just_Another_Hand(options: {
+export function Just_Another_Hand(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Just_Me_Again_Down_Here(options: {
+export function Just_Me_Again_Down_Here(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function K2D(options: {
+export function K2D(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -6133,68 +5558,60 @@ export function K2D(options: {
     | '800-italic'
     | '800'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Kadwa(options: {
+export function Kadwa(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Kaisei_Decol(options: {
+export function Kaisei_Decol(options?: {
   variant: '400' | '500' | '700'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kaisei_HarunoUmi(options: {
+export function Kaisei_HarunoUmi(options?: {
   variant: '400' | '500' | '700'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kaisei_Opti(options: {
+export function Kaisei_Opti(options?: {
   variant: '400' | '500' | '700'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kaisei_Tokumin(options: {
+export function Kaisei_Tokumin(options?: {
   variant: '400' | '500' | '700' | '800'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kalam(options: {
+export function Kalam(options?: {
   variant: '300' | '400' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kameron(options: {
+export function Kameron(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Kanit(options: {
+export function Kanit(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -6215,20 +5632,18 @@ export function Kanit(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Kantumruy(options: {
+export function Kantumruy(options?: {
   variant: '300' | '400' | '700'
   display?: Display
-  subsets?: 'khmer'[]
-  preload?: boolean
+  preload?: 'khmer'[]
 }): FontModule {
   e()
 }
-export function Kantumruy_Pro(options: {
+export function Kantumruy_Pro(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -6247,20 +5662,18 @@ export function Kantumruy_Pro(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('khmer' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Karantina(options: {
+export function Karantina(options?: {
   variant: '300' | '400' | '700'
   display?: Display
-  subsets?: ('hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Karla(options: {
+export function Karla(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -6279,156 +5692,137 @@ export function Karla(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Karma(options: {
+export function Karma(options?: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Katibeh(options: {
+export function Katibeh(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kaushan_Script(options: {
+export function Kaushan_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kavivanar(options: {
+export function Kavivanar(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'tamil')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'tamil')[]
 }): FontModule {
   e()
 }
-export function Kavoon(options: {
+export function Kavoon(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kdam_Thmor_Pro(options: {
+export function Kdam_Thmor_Pro(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('khmer' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Keania_One(options: {
+export function Keania_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kelly_Slab(options: {
+export function Kelly_Slab(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kenia(options: {
+export function Kenia(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Khand(options: {
+export function Khand(options?: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Khmer(options: {
+export function Khmer(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'khmer'[]
-  preload?: boolean
+  preload?: 'khmer'[]
 }): FontModule {
   e()
 }
-export function Khula(options: {
+export function Khula(options?: {
   variant: '300' | '400' | '600' | '700' | '800'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kings(options: {
+export function Kings(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Kirang_Haerang(options: {
+export function Kirang_Haerang(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Kite_One(options: {
+export function Kite_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Kiwi_Maru(options: {
+export function Kiwi_Maru(options?: {
   variant: '300' | '400' | '500'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Klee_One(options: {
+export function Klee_One(options?: {
   variant: '400' | '600'
   display?: Display
-  subsets?: ('cyrillic' | 'greek-ext' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'greek-ext' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Knewave(options: {
+export function Knewave(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kodchasan(options: {
+export function Kodchasan(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -6443,20 +5837,18 @@ export function Kodchasan(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Koh_Santepheap(options: {
+export function Koh_Santepheap(options?: {
   variant: '100' | '300' | '400' | '700' | '900'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function KoHo(options: {
+export function KoHo(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -6471,84 +5863,74 @@ export function KoHo(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Kolker_Brush(options: {
+export function Kolker_Brush(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Kosugi(options: {
+export function Kosugi(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kosugi_Maru(options: {
+export function Kosugi_Maru(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kotta_One(options: {
+export function Kotta_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Koulen(options: {
+export function Koulen(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Kranky(options: {
+export function Kranky(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Kreon(options: {
+export function Kreon(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kristi(options: {
+export function Kristi(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Krona_One(options: {
+export function Krona_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Krub(options: {
+export function Krub(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -6563,12 +5945,11 @@ export function Krub(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Kufam(options: {
+export function Kufam(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -6585,12 +5966,11 @@ export function Kufam(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Kulim_Park(options: {
+export function Kulim_Park(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -6603,28 +5983,25 @@ export function Kulim_Park(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kumar_One(options: {
+export function Kumar_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('gujarati' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('gujarati' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kumar_One_Outline(options: {
+export function Kumar_One_Outline(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('gujarati' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('gujarati' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kumbh_Sans(options: {
+export function Kumbh_Sans(options?: {
   variant:
     | '100'
     | '200'
@@ -6637,90 +6014,80 @@ export function Kumbh_Sans(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Kurale(options: {
+export function Kurale(options?: {
   variant: '400'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'devanagari'
     | 'latin'
     | 'latin-ext'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function La_Belle_Aurore(options: {
+export function La_Belle_Aurore(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Lacquer(options: {
+export function Lacquer(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Laila(options: {
+export function Laila(options?: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Lakki_Reddy(options: {
+export function Lakki_Reddy(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Lalezar(options: {
+export function Lalezar(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Lancelot(options: {
+export function Lancelot(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Langar(options: {
+export function Langar(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('gurmukhi' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('gurmukhi' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Lateef(options: {
+export function Lateef(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('arabic' | 'latin')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Lato(options: {
+export function Lato(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -6733,37 +6100,33 @@ export function Lato(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Lavishly_Yours(options: {
+export function Lavishly_Yours(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function League_Gothic(options: {
+export function League_Gothic(options?: {
   variant: '400' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function League_Script(options: {
+export function League_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function League_Spartan(options: {
+export function League_Spartan(options?: {
   variant:
     | '100'
     | '200'
@@ -6776,52 +6139,46 @@ export function League_Spartan(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Leckerli_One(options: {
+export function Leckerli_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Ledger(options: {
+export function Ledger(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Lekton(options: {
+export function Lekton(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Lemon(options: {
+export function Lemon(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Lemonada(options: {
+export function Lemonada(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Lexend(options: {
+export function Lexend(options?: {
   variant:
     | '100'
     | '200'
@@ -6834,12 +6191,11 @@ export function Lexend(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Lexend_Deca(options: {
+export function Lexend_Deca(options?: {
   variant:
     | '100'
     | '200'
@@ -6852,12 +6208,11 @@ export function Lexend_Deca(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Lexend_Exa(options: {
+export function Lexend_Exa(options?: {
   variant:
     | '100'
     | '200'
@@ -6870,12 +6225,11 @@ export function Lexend_Exa(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Lexend_Giga(options: {
+export function Lexend_Giga(options?: {
   variant:
     | '100'
     | '200'
@@ -6888,12 +6242,11 @@ export function Lexend_Giga(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Lexend_Mega(options: {
+export function Lexend_Mega(options?: {
   variant:
     | '100'
     | '200'
@@ -6906,12 +6259,11 @@ export function Lexend_Mega(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Lexend_Peta(options: {
+export function Lexend_Peta(options?: {
   variant:
     | '100'
     | '200'
@@ -6924,12 +6276,11 @@ export function Lexend_Peta(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Lexend_Tera(options: {
+export function Lexend_Tera(options?: {
   variant:
     | '100'
     | '200'
@@ -6942,12 +6293,11 @@ export function Lexend_Tera(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Lexend_Zetta(options: {
+export function Lexend_Zetta(options?: {
   variant:
     | '100'
     | '200'
@@ -6960,76 +6310,67 @@ export function Lexend_Zetta(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Libre_Barcode_128(options: {
+export function Libre_Barcode_128(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Libre_Barcode_128_Text(options: {
+export function Libre_Barcode_128_Text(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Libre_Barcode_39(options: {
+export function Libre_Barcode_39(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Libre_Barcode_39_Extended(options: {
+export function Libre_Barcode_39_Extended(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Libre_Barcode_39_Extended_Text(options: {
+export function Libre_Barcode_39_Extended_Text(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Libre_Barcode_39_Text(options: {
+export function Libre_Barcode_39_Text(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Libre_Barcode_EAN13_Text(options: {
+export function Libre_Barcode_EAN13_Text(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Libre_Baskerville(options: {
+export function Libre_Baskerville(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Libre_Bodoni(options: {
+export function Libre_Bodoni(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -7042,28 +6383,25 @@ export function Libre_Bodoni(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Libre_Caslon_Display(options: {
+export function Libre_Caslon_Display(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Libre_Caslon_Text(options: {
+export function Libre_Caslon_Text(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Libre_Franklin(options: {
+export function Libre_Franklin(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -7086,60 +6424,53 @@ export function Libre_Franklin(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Licorice(options: {
+export function Licorice(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Life_Savers(options: {
+export function Life_Savers(options?: {
   variant: '400' | '700' | '800'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Lilita_One(options: {
+export function Lilita_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Lily_Script_One(options: {
+export function Lily_Script_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Limelight(options: {
+export function Limelight(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Linden_Hill(options: {
+export function Linden_Hill(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Literata(options: {
+export function Literata(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -7160,7 +6491,7 @@ export function Literata(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -7169,20 +6500,18 @@ export function Literata(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
   axes?: 'opsz'[]
 }): FontModule {
   e()
 }
-export function Liu_Jian_Mao_Cao(options: {
+export function Liu_Jian_Mao_Cao(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('chinese-simplified' | 'latin')[]
-  preload?: boolean
+  preload?: ('chinese-simplified' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Livvic(options: {
+export function Livvic(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -7201,74 +6530,66 @@ export function Livvic(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Lobster(options: {
+export function Lobster(options?: {
   variant: '400'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Lobster_Two(options: {
+export function Lobster_Two(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Londrina_Outline(options: {
+export function Londrina_Outline(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Londrina_Shadow(options: {
+export function Londrina_Shadow(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Londrina_Sketch(options: {
+export function Londrina_Sketch(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Londrina_Solid(options: {
+export function Londrina_Solid(options?: {
   variant: '100' | '300' | '400' | '900'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Long_Cang(options: {
+export function Long_Cang(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('chinese-simplified' | 'latin')[]
-  preload?: boolean
+  preload?: ('chinese-simplified' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Lora(options: {
+export function Lora(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -7281,90 +6602,80 @@ export function Lora(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Love_Light(options: {
+export function Love_Light(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Love_Ya_Like_A_Sister(options: {
+export function Love_Ya_Like_A_Sister(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Loved_by_the_King(options: {
+export function Loved_by_the_King(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Lovers_Quarrel(options: {
+export function Lovers_Quarrel(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Luckiest_Guy(options: {
+export function Luckiest_Guy(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Lusitana(options: {
+export function Lusitana(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Lustria(options: {
+export function Lustria(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Luxurious_Roman(options: {
+export function Luxurious_Roman(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Luxurious_Script(options: {
+export function Luxurious_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function M_PLUS_1(options: {
+export function M_PLUS_1(options?: {
   variant:
     | '100'
     | '200'
@@ -7377,23 +6688,21 @@ export function M_PLUS_1(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('japanese' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('japanese' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function M_PLUS_1_Code(options: {
+export function M_PLUS_1_Code(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('japanese' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('japanese' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function M_PLUS_1p(options: {
+export function M_PLUS_1p(options?: {
   variant: '100' | '300' | '400' | '500' | '700' | '800' | '900'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -7404,11 +6713,10 @@ export function M_PLUS_1p(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function M_PLUS_2(options: {
+export function M_PLUS_2(options?: {
   variant:
     | '100'
     | '200'
@@ -7421,24 +6729,22 @@ export function M_PLUS_2(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('japanese' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('japanese' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function M_PLUS_Code_Latin(options: {
+export function M_PLUS_Code_Latin(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function M_PLUS_Rounded_1c(options: {
+export function M_PLUS_Rounded_1c(options?: {
   variant: '100' | '300' | '400' | '500' | '700' | '800' | '900'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -7449,83 +6755,73 @@ export function M_PLUS_Rounded_1c(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Ma_Shan_Zheng(options: {
+export function Ma_Shan_Zheng(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('chinese-simplified' | 'latin')[]
-  preload?: boolean
+  preload?: ('chinese-simplified' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Macondo(options: {
+export function Macondo(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Macondo_Swash_Caps(options: {
+export function Macondo_Swash_Caps(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Mada(options: {
+export function Mada(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '900'
   display?: Display
-  subsets?: ('arabic' | 'latin')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Magra(options: {
+export function Magra(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Maiden_Orange(options: {
+export function Maiden_Orange(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Maitree(options: {
+export function Maitree(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Major_Mono_Display(options: {
+export function Major_Mono_Display(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Mako(options: {
+export function Mako(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Mali(options: {
+export function Mali(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -7540,39 +6836,35 @@ export function Mali(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Mallanna(options: {
+export function Mallanna(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Mandali(options: {
+export function Mandali(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Manjari(options: {
+export function Manjari(options?: {
   variant: '100' | '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'malayalam')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'malayalam')[]
 }): FontModule {
   e()
 }
-export function Manrope(options: {
+export function Manrope(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -7580,19 +6872,17 @@ export function Manrope(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Mansalva(options: {
+export function Mansalva(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Manuale(options: {
+export function Manuale(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -7609,204 +6899,179 @@ export function Manuale(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Marcellus(options: {
+export function Marcellus(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Marcellus_SC(options: {
+export function Marcellus_SC(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Marck_Script(options: {
+export function Marck_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Margarine(options: {
+export function Margarine(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Markazi_Text(options: {
+export function Markazi_Text(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Marko_One(options: {
+export function Marko_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Marmelad(options: {
+export function Marmelad(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Martel(options: {
+export function Martel(options?: {
   variant: '200' | '300' | '400' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Martel_Sans(options: {
+export function Martel_Sans(options?: {
   variant: '200' | '300' | '400' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Marvel(options: {
+export function Marvel(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Mate(options: {
+export function Mate(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Mate_SC(options: {
+export function Mate_SC(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Maven_Pro(options: {
+export function Maven_Pro(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function McLaren(options: {
+export function McLaren(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Mea_Culpa(options: {
+export function Mea_Culpa(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Meddon(options: {
+export function Meddon(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function MedievalSharp(options: {
+export function MedievalSharp(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Medula_One(options: {
+export function Medula_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Meera_Inimai(options: {
+export function Meera_Inimai(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'tamil')[]
-  preload?: boolean
+  preload?: ('latin' | 'tamil')[]
 }): FontModule {
   e()
 }
-export function Megrim(options: {
+export function Megrim(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Meie_Script(options: {
+export function Meie_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Meow_Script(options: {
+export function Meow_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Merienda(options: {
+export function Merienda(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Merienda_One(options: {
+export function Merienda_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Merriweather(options: {
+export function Merriweather(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -7817,18 +7082,17 @@ export function Merriweather(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Merriweather_Sans(options: {
+export function Merriweather_Sans(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -7845,172 +7109,151 @@ export function Merriweather_Sans(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Metal(options: {
+export function Metal(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Metal_Mania(options: {
+export function Metal_Mania(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Metamorphous(options: {
+export function Metamorphous(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Metrophobic(options: {
+export function Metrophobic(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Michroma(options: {
+export function Michroma(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Milonga(options: {
+export function Milonga(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Miltonian(options: {
+export function Miltonian(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Miltonian_Tattoo(options: {
+export function Miltonian_Tattoo(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Mina(options: {
+export function Mina(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('bengali' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('bengali' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Mingzat(options: {
+export function Mingzat(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'lepcha')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'lepcha')[]
 }): FontModule {
   e()
 }
-export function Miniver(options: {
+export function Miniver(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Miriam_Libre(options: {
+export function Miriam_Libre(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Mirza(options: {
+export function Mirza(options?: {
   variant: '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Miss_Fajardose(options: {
+export function Miss_Fajardose(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Mitr(options: {
+export function Mitr(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Mochiy_Pop_One(options: {
+export function Mochiy_Pop_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('japanese' | 'latin')[]
-  preload?: boolean
+  preload?: ('japanese' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Mochiy_Pop_P_One(options: {
+export function Mochiy_Pop_P_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('japanese' | 'latin')[]
-  preload?: boolean
+  preload?: ('japanese' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Modak(options: {
+export function Modak(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Modern_Antiqua(options: {
+export function Modern_Antiqua(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Mogra(options: {
+export function Mogra(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('gujarati' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('gujarati' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Mohave(options: {
+export function Mohave(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -8025,93 +7268,82 @@ export function Mohave(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Molengo(options: {
+export function Molengo(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Molle(options: {
+export function Molle(options?: {
   variant: '400-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Monda(options: {
+export function Monda(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Monofett(options: {
+export function Monofett(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Monoton(options: {
+export function Monoton(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Monsieur_La_Doulaise(options: {
+export function Monsieur_La_Doulaise(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Montaga(options: {
+export function Montaga(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Montagu_Slab(options: {
+export function Montagu_Slab(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'opsz'[]
 }): FontModule {
   e()
 }
-export function MonteCarlo(options: {
+export function MonteCarlo(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Montez(options: {
+export function Montez(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Montserrat(options: {
+export function Montserrat(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -8134,18 +7366,17 @@ export function Montserrat(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Montserrat_Alternates(options: {
+export function Montserrat_Alternates(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -8166,154 +7397,136 @@ export function Montserrat_Alternates(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Montserrat_Subrayada(options: {
+export function Montserrat_Subrayada(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Moo_Lah_Lah(options: {
+export function Moo_Lah_Lah(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Moon_Dance(options: {
+export function Moon_Dance(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Moul(options: {
+export function Moul(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Moulpali(options: {
+export function Moulpali(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Mountains_of_Christmas(options: {
+export function Mountains_of_Christmas(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Mouse_Memoirs(options: {
+export function Mouse_Memoirs(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Mr_Bedfort(options: {
+export function Mr_Bedfort(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Mr_Dafoe(options: {
+export function Mr_Dafoe(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Mr_De_Haviland(options: {
+export function Mr_De_Haviland(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Mrs_Saint_Delafield(options: {
+export function Mrs_Saint_Delafield(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Mrs_Sheppards(options: {
+export function Mrs_Sheppards(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Ms_Madi(options: {
+export function Ms_Madi(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Mukta(options: {
+export function Mukta(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '800'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Mukta_Mahee(options: {
+export function Mukta_Mahee(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '800'
   display?: Display
-  subsets?: ('gurmukhi' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('gurmukhi' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Mukta_Malar(options: {
+export function Mukta_Malar(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '800'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'tamil')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'tamil')[]
 }): FontModule {
   e()
 }
-export function Mukta_Vaani(options: {
+export function Mukta_Vaani(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '800'
   display?: Display
-  subsets?: ('gujarati' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('gujarati' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Mulish(options: {
+export function Mulish(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -8334,18 +7547,17 @@ export function Mulish(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Murecho(options: {
+export function Murecho(options?: {
   variant:
     | '100'
     | '200'
@@ -8358,7 +7570,7 @@ export function Murecho(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -8366,11 +7578,10 @@ export function Murecho(options: {
     | 'latin'
     | 'latin-ext'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function MuseoModerno(options: {
+export function MuseoModerno(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -8393,92 +7604,81 @@ export function MuseoModerno(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function My_Soul(options: {
+export function My_Soul(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Mystery_Quest(options: {
+export function Mystery_Quest(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Nanum_Brush_Script(options: {
+export function Nanum_Brush_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Nanum_Gothic(options: {
+export function Nanum_Gothic(options?: {
   variant: '400' | '700' | '800'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Nanum_Gothic_Coding(options: {
+export function Nanum_Gothic_Coding(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Nanum_Myeongjo(options: {
+export function Nanum_Myeongjo(options?: {
   variant: '400' | '700' | '800'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Nanum_Pen_Script(options: {
+export function Nanum_Pen_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Neonderthaw(options: {
+export function Neonderthaw(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Nerko_One(options: {
+export function Nerko_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Neucha(options: {
+export function Neucha(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Neuton(options: {
+export function Neuton(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -8491,36 +7691,32 @@ export function Neuton(options: {
     | '800-italic'
     | '800'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function New_Rocker(options: {
+export function New_Rocker(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function New_Tegomin(options: {
+export function New_Tegomin(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function News_Cycle(options: {
+export function News_Cycle(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Newsreader(options: {
+export function Newsreader(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -8539,21 +7735,19 @@ export function Newsreader(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'opsz'[]
 }): FontModule {
   e()
 }
-export function Niconne(options: {
+export function Niconne(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Niramit(options: {
+export function Niramit(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -8568,84 +7762,74 @@ export function Niramit(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Nixie_One(options: {
+export function Nixie_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Nobile(options: {
+export function Nobile(options?: {
   variant: '400-italic' | '400' | '500-italic' | '500' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Nokora(options: {
+export function Nokora(options?: {
   variant: '100' | '300' | '400' | '700' | '900'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Norican(options: {
+export function Norican(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Nosifer(options: {
+export function Nosifer(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Notable(options: {
+export function Notable(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Nothing_You_Could_Do(options: {
+export function Nothing_You_Could_Do(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Noticia_Text(options: {
+export function Noticia_Text(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Noto_Emoji(options: {
+export function Noto_Emoji(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'emoji'[]
-  preload?: boolean
+  preload?: 'emoji'[]
 }): FontModule {
   e()
 }
-export function Noto_Kufi_Arabic(options: {
+export function Noto_Kufi_Arabic(options?: {
   variant:
     | '100'
     | '200'
@@ -8658,36 +7842,32 @@ export function Noto_Kufi_Arabic(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: 'arabic'[]
-  preload?: boolean
+  preload?: 'arabic'[]
 }): FontModule {
   e()
 }
-export function Noto_Music(options: {
+export function Noto_Music(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'music'[]
-  preload?: boolean
+  preload?: 'music'[]
 }): FontModule {
   e()
 }
-export function Noto_Naskh_Arabic(options: {
+export function Noto_Naskh_Arabic(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'arabic'[]
-  preload?: boolean
+  preload?: 'arabic'[]
 }): FontModule {
   e()
 }
-export function Noto_Nastaliq_Urdu(options: {
+export function Noto_Nastaliq_Urdu(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: 'arabic'[]
-  preload?: boolean
+  preload?: 'arabic'[]
 }): FontModule {
   e()
 }
-export function Noto_Rashi_Hebrew(options: {
+export function Noto_Rashi_Hebrew(options?: {
   variant:
     | '100'
     | '200'
@@ -8700,12 +7880,11 @@ export function Noto_Rashi_Hebrew(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Noto_Sans(options: {
+export function Noto_Sans(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -8726,7 +7905,7 @@ export function Noto_Sans(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'devanagari'
@@ -8736,35 +7915,31 @@ export function Noto_Sans(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Adlam(options: {
+export function Noto_Sans_Adlam(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'adlam'[]
-  preload?: boolean
+  preload?: 'adlam'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Adlam_Unjoined(options: {
+export function Noto_Sans_Adlam_Unjoined(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'adlam'[]
-  preload?: boolean
+  preload?: 'adlam'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Anatolian_Hieroglyphs(options: {
+export function Noto_Sans_Anatolian_Hieroglyphs(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'anatolian-hieroglyphs'[]
-  preload?: boolean
+  preload?: 'anatolian-hieroglyphs'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Arabic(options: {
+export function Noto_Sans_Arabic(options?: {
   variant:
     | '100'
     | '200'
@@ -8777,13 +7952,12 @@ export function Noto_Sans_Arabic(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: 'arabic'[]
-  preload?: boolean
+  preload?: 'arabic'[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Armenian(options: {
+export function Noto_Sans_Armenian(options?: {
   variant:
     | '100'
     | '200'
@@ -8796,53 +7970,47 @@ export function Noto_Sans_Armenian(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: 'armenian'[]
-  preload?: boolean
+  preload?: 'armenian'[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Avestan(options: {
+export function Noto_Sans_Avestan(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('avestan' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('avestan' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Balinese(options: {
+export function Noto_Sans_Balinese(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('balinese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('balinese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Bamum(options: {
+export function Noto_Sans_Bamum(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'bamum'[]
-  preload?: boolean
+  preload?: 'bamum'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Bassa_Vah(options: {
+export function Noto_Sans_Bassa_Vah(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'bassa-vah'[]
-  preload?: boolean
+  preload?: 'bassa-vah'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Batak(options: {
+export function Noto_Sans_Batak(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'batak'[]
-  preload?: boolean
+  preload?: 'batak'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Bengali(options: {
+export function Noto_Sans_Bengali(options?: {
   variant:
     | '100'
     | '200'
@@ -8855,45 +8023,40 @@ export function Noto_Sans_Bengali(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('bengali' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('bengali' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Bhaiksuki(options: {
+export function Noto_Sans_Bhaiksuki(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'bhaiksuki'[]
-  preload?: boolean
+  preload?: 'bhaiksuki'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Brahmi(options: {
+export function Noto_Sans_Brahmi(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'brahmi'[]
-  preload?: boolean
+  preload?: 'brahmi'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Buginese(options: {
+export function Noto_Sans_Buginese(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'buginese'[]
-  preload?: boolean
+  preload?: 'buginese'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Buhid(options: {
+export function Noto_Sans_Buhid(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('buhid' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('buhid' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Canadian_Aboriginal(options: {
+export function Noto_Sans_Canadian_Aboriginal(options?: {
   variant:
     | '100'
     | '200'
@@ -8906,36 +8069,32 @@ export function Noto_Sans_Canadian_Aboriginal(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: 'canadian-aboriginal'[]
-  preload?: boolean
+  preload?: 'canadian-aboriginal'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Carian(options: {
+export function Noto_Sans_Carian(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'carian'[]
-  preload?: boolean
+  preload?: 'carian'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Caucasian_Albanian(options: {
+export function Noto_Sans_Caucasian_Albanian(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'caucasian-albanian'[]
-  preload?: boolean
+  preload?: 'caucasian-albanian'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Chakma(options: {
+export function Noto_Sans_Chakma(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'chakma'[]
-  preload?: boolean
+  preload?: 'chakma'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Cham(options: {
+export function Noto_Sans_Cham(options?: {
   variant:
     | '100'
     | '200'
@@ -8948,12 +8107,11 @@ export function Noto_Sans_Cham(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: 'cham'[]
-  preload?: boolean
+  preload?: 'cham'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Cherokee(options: {
+export function Noto_Sans_Cherokee(options?: {
   variant:
     | '100'
     | '200'
@@ -8966,44 +8124,39 @@ export function Noto_Sans_Cherokee(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: 'cherokee'[]
-  preload?: boolean
+  preload?: 'cherokee'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Coptic(options: {
+export function Noto_Sans_Coptic(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'coptic'[]
-  preload?: boolean
+  preload?: 'coptic'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Cuneiform(options: {
+export function Noto_Sans_Cuneiform(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'cuneiform'[]
-  preload?: boolean
+  preload?: 'cuneiform'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Cypriot(options: {
+export function Noto_Sans_Cypriot(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'cypriot'[]
-  preload?: boolean
+  preload?: 'cypriot'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Deseret(options: {
+export function Noto_Sans_Deseret(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'deseret'[]
-  preload?: boolean
+  preload?: 'deseret'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Devanagari(options: {
+export function Noto_Sans_Devanagari(options?: {
   variant:
     | '100'
     | '200'
@@ -9016,13 +8169,12 @@ export function Noto_Sans_Devanagari(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Display(options: {
+export function Noto_Sans_Display(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -9045,7 +8197,7 @@ export function Noto_Sans_Display(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -9054,44 +8206,39 @@ export function Noto_Sans_Display(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Duployan(options: {
+export function Noto_Sans_Duployan(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'duployan'[]
-  preload?: boolean
+  preload?: 'duployan'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Egyptian_Hieroglyphs(options: {
+export function Noto_Sans_Egyptian_Hieroglyphs(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'egyptian-hieroglyphs'[]
-  preload?: boolean
+  preload?: 'egyptian-hieroglyphs'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Elbasan(options: {
+export function Noto_Sans_Elbasan(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'elbasan'[]
-  preload?: boolean
+  preload?: 'elbasan'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Elymaic(options: {
+export function Noto_Sans_Elymaic(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'elymaic'[]
-  preload?: boolean
+  preload?: 'elymaic'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Georgian(options: {
+export function Noto_Sans_Georgian(options?: {
   variant:
     | '100'
     | '200'
@@ -9104,37 +8251,33 @@ export function Noto_Sans_Georgian(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('georgian' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('georgian' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Glagolitic(options: {
+export function Noto_Sans_Glagolitic(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'glagolitic'[]
-  preload?: boolean
+  preload?: 'glagolitic'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Gothic(options: {
+export function Noto_Sans_Gothic(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'gothic'[]
-  preload?: boolean
+  preload?: 'gothic'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Grantha(options: {
+export function Noto_Sans_Grantha(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'grantha'[]
-  preload?: boolean
+  preload?: 'grantha'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Gujarati(options: {
+export function Noto_Sans_Gujarati(options?: {
   variant:
     | '100'
     | '200'
@@ -9147,21 +8290,19 @@ export function Noto_Sans_Gujarati(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('gujarati' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('gujarati' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Gunjala_Gondi(options: {
+export function Noto_Sans_Gunjala_Gondi(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'gunjala-gondi'[]
-  preload?: boolean
+  preload?: 'gunjala-gondi'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Gurmukhi(options: {
+export function Noto_Sans_Gurmukhi(options?: {
   variant:
     | '100'
     | '200'
@@ -9174,37 +8315,33 @@ export function Noto_Sans_Gurmukhi(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: 'gurmukhi'[]
-  preload?: boolean
+  preload?: 'gurmukhi'[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Hanifi_Rohingya(options: {
+export function Noto_Sans_Hanifi_Rohingya(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'hanifi-rohingya'[]
-  preload?: boolean
+  preload?: 'hanifi-rohingya'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Hanunoo(options: {
+export function Noto_Sans_Hanunoo(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'hanunoo'[]
-  preload?: boolean
+  preload?: 'hanunoo'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Hatran(options: {
+export function Noto_Sans_Hatran(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'hatran'[]
-  preload?: boolean
+  preload?: 'hatran'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Hebrew(options: {
+export function Noto_Sans_Hebrew(options?: {
   variant:
     | '100'
     | '200'
@@ -9217,77 +8354,68 @@ export function Noto_Sans_Hebrew(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('hebrew' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_HK(options: {
+export function Noto_Sans_HK(options?: {
   variant: '100' | '300' | '400' | '500' | '700' | '900'
   display?: Display
-  subsets?: ('chinese-hongkong' | 'latin')[]
-  preload?: boolean
+  preload?: ('chinese-hongkong' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Imperial_Aramaic(options: {
+export function Noto_Sans_Imperial_Aramaic(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'imperial-aramaic'[]
-  preload?: boolean
+  preload?: 'imperial-aramaic'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Indic_Siyaq_Numbers(options: {
+export function Noto_Sans_Indic_Siyaq_Numbers(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'indic-siyaq-numbers'[]
-  preload?: boolean
+  preload?: 'indic-siyaq-numbers'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Inscriptional_Pahlavi(options: {
+export function Noto_Sans_Inscriptional_Pahlavi(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'inscriptional-pahlavi'[]
-  preload?: boolean
+  preload?: 'inscriptional-pahlavi'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Inscriptional_Parthian(options: {
+export function Noto_Sans_Inscriptional_Parthian(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'inscriptional-parthian'[]
-  preload?: boolean
+  preload?: 'inscriptional-parthian'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Javanese(options: {
+export function Noto_Sans_Javanese(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: 'javanese'[]
-  preload?: boolean
+  preload?: 'javanese'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_JP(options: {
+export function Noto_Sans_JP(options?: {
   variant: '100' | '300' | '400' | '500' | '700' | '900'
   display?: Display
-  subsets?: ('japanese' | 'latin')[]
-  preload?: boolean
+  preload?: ('japanese' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Kaithi(options: {
+export function Noto_Sans_Kaithi(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'kaithi'[]
-  preload?: boolean
+  preload?: 'kaithi'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Kannada(options: {
+export function Noto_Sans_Kannada(options?: {
   variant:
     | '100'
     | '200'
@@ -9300,29 +8428,26 @@ export function Noto_Sans_Kannada(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('kannada' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('kannada' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Kayah_Li(options: {
+export function Noto_Sans_Kayah_Li(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'kayah-li'[]
-  preload?: boolean
+  preload?: 'kayah-li'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Kharoshthi(options: {
+export function Noto_Sans_Kharoshthi(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'kharoshthi'[]
-  preload?: boolean
+  preload?: 'kharoshthi'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Khmer(options: {
+export function Noto_Sans_Khmer(options?: {
   variant:
     | '100'
     | '200'
@@ -9335,37 +8460,33 @@ export function Noto_Sans_Khmer(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('khmer' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Khojki(options: {
+export function Noto_Sans_Khojki(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'khojki'[]
-  preload?: boolean
+  preload?: 'khojki'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Khudawadi(options: {
+export function Noto_Sans_Khudawadi(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'khudawadi'[]
-  preload?: boolean
+  preload?: 'khudawadi'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_KR(options: {
+export function Noto_Sans_KR(options?: {
   variant: '100' | '300' | '400' | '500' | '700' | '900'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Lao(options: {
+export function Noto_Sans_Lao(options?: {
   variant:
     | '100'
     | '200'
@@ -9378,77 +8499,68 @@ export function Noto_Sans_Lao(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('lao' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('lao' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Lepcha(options: {
+export function Noto_Sans_Lepcha(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'lepcha'[]
-  preload?: boolean
+  preload?: 'lepcha'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Limbu(options: {
+export function Noto_Sans_Limbu(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'limbu'[]
-  preload?: boolean
+  preload?: 'limbu'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Linear_A(options: {
+export function Noto_Sans_Linear_A(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'linear-a'[]
-  preload?: boolean
+  preload?: 'linear-a'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Linear_B(options: {
+export function Noto_Sans_Linear_B(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'linear-b'[]
-  preload?: boolean
+  preload?: 'linear-b'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Lisu(options: {
+export function Noto_Sans_Lisu(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'lisu')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'lisu')[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Lycian(options: {
+export function Noto_Sans_Lycian(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'lycian'[]
-  preload?: boolean
+  preload?: 'lycian'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Lydian(options: {
+export function Noto_Sans_Lydian(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'lydian'[]
-  preload?: boolean
+  preload?: 'lydian'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Mahajani(options: {
+export function Noto_Sans_Mahajani(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'mahajani'[]
-  preload?: boolean
+  preload?: 'mahajani'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Malayalam(options: {
+export function Noto_Sans_Malayalam(options?: {
   variant:
     | '100'
     | '200'
@@ -9461,69 +8573,61 @@ export function Noto_Sans_Malayalam(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'malayalam')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'malayalam')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Mandaic(options: {
+export function Noto_Sans_Mandaic(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'mandaic'[]
-  preload?: boolean
+  preload?: 'mandaic'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Manichaean(options: {
+export function Noto_Sans_Manichaean(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'manichaean'[]
-  preload?: boolean
+  preload?: 'manichaean'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Marchen(options: {
+export function Noto_Sans_Marchen(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'marchen'[]
-  preload?: boolean
+  preload?: 'marchen'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Masaram_Gondi(options: {
+export function Noto_Sans_Masaram_Gondi(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'masaram-gondi'[]
-  preload?: boolean
+  preload?: 'masaram-gondi'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Math(options: {
+export function Noto_Sans_Math(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'math'[]
-  preload?: boolean
+  preload?: 'math'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Mayan_Numerals(options: {
+export function Noto_Sans_Mayan_Numerals(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'mayan-numerals'[]
-  preload?: boolean
+  preload?: 'mayan-numerals'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Medefaidrin(options: {
+export function Noto_Sans_Medefaidrin(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'medefaidrin'[]
-  preload?: boolean
+  preload?: 'medefaidrin'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Meetei_Mayek(options: {
+export function Noto_Sans_Meetei_Mayek(options?: {
   variant:
     | '100'
     | '200'
@@ -9536,44 +8640,39 @@ export function Noto_Sans_Meetei_Mayek(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: 'meetei-mayek'[]
-  preload?: boolean
+  preload?: 'meetei-mayek'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Meroitic(options: {
+export function Noto_Sans_Meroitic(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'meroitic'[]
-  preload?: boolean
+  preload?: 'meroitic'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Miao(options: {
+export function Noto_Sans_Miao(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'miao'[]
-  preload?: boolean
+  preload?: 'miao'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Modi(options: {
+export function Noto_Sans_Modi(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'modi'[]
-  preload?: boolean
+  preload?: 'modi'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Mongolian(options: {
+export function Noto_Sans_Mongolian(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'mongolian'[]
-  preload?: boolean
+  preload?: 'mongolian'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Mono(options: {
+export function Noto_Sans_Mono(options?: {
   variant:
     | '100'
     | '200'
@@ -9586,7 +8685,7 @@ export function Noto_Sans_Mono(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -9595,292 +8694,256 @@ export function Noto_Sans_Mono(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Mro(options: {
+export function Noto_Sans_Mro(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'mro'[]
-  preload?: boolean
+  preload?: 'mro'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Multani(options: {
+export function Noto_Sans_Multani(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'multani'[]
-  preload?: boolean
+  preload?: 'multani'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Myanmar(options: {
+export function Noto_Sans_Myanmar(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: 'myanmar'[]
-  preload?: boolean
+  preload?: 'myanmar'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_N_Ko(options: {
+export function Noto_Sans_N_Ko(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'nko'[]
-  preload?: boolean
+  preload?: 'nko'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Nabataean(options: {
+export function Noto_Sans_Nabataean(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'nabataean'[]
-  preload?: boolean
+  preload?: 'nabataean'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_New_Tai_Lue(options: {
+export function Noto_Sans_New_Tai_Lue(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'new-tai-lue'[]
-  preload?: boolean
+  preload?: 'new-tai-lue'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Newa(options: {
+export function Noto_Sans_Newa(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'newa'[]
-  preload?: boolean
+  preload?: 'newa'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Nushu(options: {
+export function Noto_Sans_Nushu(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'nushu'[]
-  preload?: boolean
+  preload?: 'nushu'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Ogham(options: {
+export function Noto_Sans_Ogham(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'ogham'[]
-  preload?: boolean
+  preload?: 'ogham'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Ol_Chiki(options: {
+export function Noto_Sans_Ol_Chiki(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'ol-chiki'[]
-  preload?: boolean
+  preload?: 'ol-chiki'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Old_Hungarian(options: {
+export function Noto_Sans_Old_Hungarian(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'old-hungarian'[]
-  preload?: boolean
+  preload?: 'old-hungarian'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Old_Italic(options: {
+export function Noto_Sans_Old_Italic(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'old-italic'[]
-  preload?: boolean
+  preload?: 'old-italic'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Old_North_Arabian(options: {
+export function Noto_Sans_Old_North_Arabian(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'old-north-arabian'[]
-  preload?: boolean
+  preload?: 'old-north-arabian'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Old_Permic(options: {
+export function Noto_Sans_Old_Permic(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'old-permic'[]
-  preload?: boolean
+  preload?: 'old-permic'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Old_Persian(options: {
+export function Noto_Sans_Old_Persian(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'old-persian'[]
-  preload?: boolean
+  preload?: 'old-persian'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Old_Sogdian(options: {
+export function Noto_Sans_Old_Sogdian(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'old-sogdian'[]
-  preload?: boolean
+  preload?: 'old-sogdian'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Old_South_Arabian(options: {
+export function Noto_Sans_Old_South_Arabian(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'old-south-arabian'[]
-  preload?: boolean
+  preload?: 'old-south-arabian'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Old_Turkic(options: {
+export function Noto_Sans_Old_Turkic(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'old-turkic'[]
-  preload?: boolean
+  preload?: 'old-turkic'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Oriya(options: {
+export function Noto_Sans_Oriya(options?: {
   variant: '100' | '400' | '700' | '900'
   display?: Display
-  subsets?: 'oriya'[]
-  preload?: boolean
+  preload?: 'oriya'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Osage(options: {
+export function Noto_Sans_Osage(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'osage'[]
-  preload?: boolean
+  preload?: 'osage'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Osmanya(options: {
+export function Noto_Sans_Osmanya(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'osmanya'[]
-  preload?: boolean
+  preload?: 'osmanya'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Pahawh_Hmong(options: {
+export function Noto_Sans_Pahawh_Hmong(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'pahawh-hmong'[]
-  preload?: boolean
+  preload?: 'pahawh-hmong'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Palmyrene(options: {
+export function Noto_Sans_Palmyrene(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'palmyrene'[]
-  preload?: boolean
+  preload?: 'palmyrene'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Pau_Cin_Hau(options: {
+export function Noto_Sans_Pau_Cin_Hau(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'pau-cin-hau'[]
-  preload?: boolean
+  preload?: 'pau-cin-hau'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Phags_Pa(options: {
+export function Noto_Sans_Phags_Pa(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'phags-pa'[]
-  preload?: boolean
+  preload?: 'phags-pa'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Phoenician(options: {
+export function Noto_Sans_Phoenician(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'phoenician'[]
-  preload?: boolean
+  preload?: 'phoenician'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Psalter_Pahlavi(options: {
+export function Noto_Sans_Psalter_Pahlavi(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'psalter-pahlavi'[]
-  preload?: boolean
+  preload?: 'psalter-pahlavi'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Rejang(options: {
+export function Noto_Sans_Rejang(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'rejang'[]
-  preload?: boolean
+  preload?: 'rejang'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Runic(options: {
+export function Noto_Sans_Runic(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'runic'[]
-  preload?: boolean
+  preload?: 'runic'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Samaritan(options: {
+export function Noto_Sans_Samaritan(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'samaritan'[]
-  preload?: boolean
+  preload?: 'samaritan'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Saurashtra(options: {
+export function Noto_Sans_Saurashtra(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'saurashtra'[]
-  preload?: boolean
+  preload?: 'saurashtra'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_SC(options: {
+export function Noto_Sans_SC(options?: {
   variant: '100' | '300' | '400' | '500' | '700' | '900'
   display?: Display
-  subsets?: ('chinese-simplified' | 'latin')[]
-  preload?: boolean
+  preload?: ('chinese-simplified' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Sharada(options: {
+export function Noto_Sans_Sharada(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'sharada'[]
-  preload?: boolean
+  preload?: 'sharada'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Shavian(options: {
+export function Noto_Sans_Shavian(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'shavian'[]
-  preload?: boolean
+  preload?: 'shavian'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Siddham(options: {
+export function Noto_Sans_Siddham(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'siddham'[]
-  preload?: boolean
+  preload?: 'siddham'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Sinhala(options: {
+export function Noto_Sans_Sinhala(options?: {
   variant:
     | '100'
     | '200'
@@ -9893,53 +8956,47 @@ export function Noto_Sans_Sinhala(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: 'sinhala'[]
-  preload?: boolean
+  preload?: 'sinhala'[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Sogdian(options: {
+export function Noto_Sans_Sogdian(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'sogdian'[]
-  preload?: boolean
+  preload?: 'sogdian'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Sora_Sompeng(options: {
+export function Noto_Sans_Sora_Sompeng(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'sora-sompeng'[]
-  preload?: boolean
+  preload?: 'sora-sompeng'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Soyombo(options: {
+export function Noto_Sans_Soyombo(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'soyombo'[]
-  preload?: boolean
+  preload?: 'soyombo'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Sundanese(options: {
+export function Noto_Sans_Sundanese(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'sundanese'[]
-  preload?: boolean
+  preload?: 'sundanese'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Syloti_Nagri(options: {
+export function Noto_Sans_Syloti_Nagri(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'syloti-nagri'[]
-  preload?: boolean
+  preload?: 'syloti-nagri'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Symbols(options: {
+export function Noto_Sans_Symbols(options?: {
   variant:
     | '100'
     | '200'
@@ -9952,76 +9009,67 @@ export function Noto_Sans_Symbols(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: 'symbols'[]
-  preload?: boolean
+  preload?: 'symbols'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Symbols_2(options: {
+export function Noto_Sans_Symbols_2(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'symbols'[]
-  preload?: boolean
+  preload?: 'symbols'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Syriac(options: {
+export function Noto_Sans_Syriac(options?: {
   variant: '100' | '400' | '900'
   display?: Display
-  subsets?: 'syriac'[]
-  preload?: boolean
+  preload?: 'syriac'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Tagalog(options: {
+export function Noto_Sans_Tagalog(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'tagalog'[]
-  preload?: boolean
+  preload?: 'tagalog'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Tagbanwa(options: {
+export function Noto_Sans_Tagbanwa(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'tagbanwa'[]
-  preload?: boolean
+  preload?: 'tagbanwa'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Tai_Le(options: {
+export function Noto_Sans_Tai_Le(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'tai-le'[]
-  preload?: boolean
+  preload?: 'tai-le'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Tai_Tham(options: {
+export function Noto_Sans_Tai_Tham(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'tai-tham'[]
-  preload?: boolean
+  preload?: 'tai-tham'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Tai_Viet(options: {
+export function Noto_Sans_Tai_Viet(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'tai-viet'[]
-  preload?: boolean
+  preload?: 'tai-viet'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Takri(options: {
+export function Noto_Sans_Takri(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'takri'[]
-  preload?: boolean
+  preload?: 'takri'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Tamil(options: {
+export function Noto_Sans_Tamil(options?: {
   variant:
     | '100'
     | '200'
@@ -10034,29 +9082,26 @@ export function Noto_Sans_Tamil(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'tamil')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'tamil')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Tamil_Supplement(options: {
+export function Noto_Sans_Tamil_Supplement(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'tamil-supplement'[]
-  preload?: boolean
+  preload?: 'tamil-supplement'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_TC(options: {
+export function Noto_Sans_TC(options?: {
   variant: '100' | '300' | '400' | '500' | '700' | '900'
   display?: Display
-  subsets?: ('chinese-traditional' | 'latin')[]
-  preload?: boolean
+  preload?: ('chinese-traditional' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Telugu(options: {
+export function Noto_Sans_Telugu(options?: {
   variant:
     | '100'
     | '200'
@@ -10069,13 +9114,12 @@ export function Noto_Sans_Telugu(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'telugu')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Thaana(options: {
+export function Noto_Sans_Thaana(options?: {
   variant:
     | '100'
     | '200'
@@ -10088,12 +9132,11 @@ export function Noto_Sans_Thaana(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: 'thaana'[]
-  preload?: boolean
+  preload?: 'thaana'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Thai(options: {
+export function Noto_Sans_Thai(options?: {
   variant:
     | '100'
     | '200'
@@ -10106,88 +9149,78 @@ export function Noto_Sans_Thai(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Thai_Looped(options: {
+export function Noto_Sans_Thai_Looped(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: 'thai'[]
-  preload?: boolean
+  preload?: 'thai'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Tifinagh(options: {
+export function Noto_Sans_Tifinagh(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'tifinagh'[]
-  preload?: boolean
+  preload?: 'tifinagh'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Tirhuta(options: {
+export function Noto_Sans_Tirhuta(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'tirhuta'[]
-  preload?: boolean
+  preload?: 'tirhuta'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Ugaritic(options: {
+export function Noto_Sans_Ugaritic(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'ugaritic'[]
-  preload?: boolean
+  preload?: 'ugaritic'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Vai(options: {
+export function Noto_Sans_Vai(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'vai'[]
-  preload?: boolean
+  preload?: 'vai'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Wancho(options: {
+export function Noto_Sans_Wancho(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'wancho'[]
-  preload?: boolean
+  preload?: 'wancho'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Warang_Citi(options: {
+export function Noto_Sans_Warang_Citi(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'warang-citi'[]
-  preload?: boolean
+  preload?: 'warang-citi'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Yi(options: {
+export function Noto_Sans_Yi(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'yi'[]
-  preload?: boolean
+  preload?: 'yi'[]
 }): FontModule {
   e()
 }
-export function Noto_Sans_Zanabazar_Square(options: {
+export function Noto_Sans_Zanabazar_Square(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'zanabazar-square'[]
-  preload?: boolean
+  preload?: 'zanabazar-square'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif(options: {
+export function Noto_Serif(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -10196,19 +9229,17 @@ export function Noto_Serif(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Serif_Ahom(options: {
+export function Noto_Serif_Ahom(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('ahom' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('ahom' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Armenian(options: {
+export function Noto_Serif_Armenian(options?: {
   variant:
     | '100'
     | '200'
@@ -10221,21 +9252,19 @@ export function Noto_Serif_Armenian(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: 'armenian'[]
-  preload?: boolean
+  preload?: 'armenian'[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Balinese(options: {
+export function Noto_Serif_Balinese(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('balinese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('balinese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Bengali(options: {
+export function Noto_Serif_Bengali(options?: {
   variant:
     | '100'
     | '200'
@@ -10248,13 +9277,12 @@ export function Noto_Serif_Bengali(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('bengali' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('bengali' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Devanagari(options: {
+export function Noto_Serif_Devanagari(options?: {
   variant:
     | '100'
     | '200'
@@ -10267,13 +9295,12 @@ export function Noto_Serif_Devanagari(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Display(options: {
+export function Noto_Serif_Display(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -10296,7 +9323,7 @@ export function Noto_Serif_Display(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -10305,20 +9332,18 @@ export function Noto_Serif_Display(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Dogra(options: {
+export function Noto_Serif_Dogra(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'dogra'[]
-  preload?: boolean
+  preload?: 'dogra'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Ethiopic(options: {
+export function Noto_Serif_Ethiopic(options?: {
   variant:
     | '100'
     | '200'
@@ -10331,13 +9356,12 @@ export function Noto_Serif_Ethiopic(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('ethiopic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('ethiopic' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Georgian(options: {
+export function Noto_Serif_Georgian(options?: {
   variant:
     | '100'
     | '200'
@@ -10350,21 +9374,19 @@ export function Noto_Serif_Georgian(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('georgian' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('georgian' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Grantha(options: {
+export function Noto_Serif_Grantha(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'grantha'[]
-  preload?: boolean
+  preload?: 'grantha'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Gujarati(options: {
+export function Noto_Serif_Gujarati(options?: {
   variant:
     | '100'
     | '200'
@@ -10377,12 +9399,11 @@ export function Noto_Serif_Gujarati(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('gujarati' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('gujarati' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Gurmukhi(options: {
+export function Noto_Serif_Gurmukhi(options?: {
   variant:
     | '100'
     | '200'
@@ -10395,12 +9416,11 @@ export function Noto_Serif_Gurmukhi(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('gurmukhi' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('gurmukhi' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Hebrew(options: {
+export function Noto_Serif_Hebrew(options?: {
   variant:
     | '100'
     | '200'
@@ -10413,13 +9433,12 @@ export function Noto_Serif_Hebrew(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('hebrew' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_HK(options: {
+export function Noto_Serif_HK(options?: {
   variant:
     | '200'
     | '300'
@@ -10431,26 +9450,24 @@ export function Noto_Serif_HK(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'chinese-hongkong'
     | 'cyrillic'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Serif_JP(options: {
+export function Noto_Serif_JP(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '900'
   display?: Display
-  subsets?: ('japanese' | 'latin')[]
-  preload?: boolean
+  preload?: ('japanese' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Kannada(options: {
+export function Noto_Serif_Kannada(options?: {
   variant:
     | '100'
     | '200'
@@ -10463,12 +9480,11 @@ export function Noto_Serif_Kannada(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('kannada' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('kannada' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Khmer(options: {
+export function Noto_Serif_Khmer(options?: {
   variant:
     | '100'
     | '200'
@@ -10481,21 +9497,19 @@ export function Noto_Serif_Khmer(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('khmer' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_KR(options: {
+export function Noto_Serif_KR(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '900'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Lao(options: {
+export function Noto_Serif_Lao(options?: {
   variant:
     | '100'
     | '200'
@@ -10508,13 +9522,12 @@ export function Noto_Serif_Lao(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('lao' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('lao' | 'latin' | 'latin-ext')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Malayalam(options: {
+export function Noto_Serif_Malayalam(options?: {
   variant:
     | '100'
     | '200'
@@ -10527,36 +9540,32 @@ export function Noto_Serif_Malayalam(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'malayalam')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'malayalam')[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Myanmar(options: {
+export function Noto_Serif_Myanmar(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: 'myanmar'[]
-  preload?: boolean
+  preload?: 'myanmar'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Nyiakeng_Puachue_Hmong(options: {
+export function Noto_Serif_Nyiakeng_Puachue_Hmong(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'nyiakeng-puachue-hmong'[]
-  preload?: boolean
+  preload?: 'nyiakeng-puachue-hmong'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_SC(options: {
+export function Noto_Serif_SC(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '900'
   display?: Display
-  subsets?: ('chinese-simplified' | 'latin')[]
-  preload?: boolean
+  preload?: ('chinese-simplified' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Sinhala(options: {
+export function Noto_Serif_Sinhala(options?: {
   variant:
     | '100'
     | '200'
@@ -10569,13 +9578,12 @@ export function Noto_Serif_Sinhala(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'sinhala')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'sinhala')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Tamil(options: {
+export function Noto_Serif_Tamil(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -10598,29 +9606,26 @@ export function Noto_Serif_Tamil(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'tamil')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'tamil')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Tangut(options: {
+export function Noto_Serif_Tangut(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'tangut'[]
-  preload?: boolean
+  preload?: 'tangut'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_TC(options: {
+export function Noto_Serif_TC(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '900'
   display?: Display
-  subsets?: ('chinese-traditional' | 'latin')[]
-  preload?: boolean
+  preload?: ('chinese-traditional' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Telugu(options: {
+export function Noto_Serif_Telugu(options?: {
   variant:
     | '100'
     | '200'
@@ -10633,12 +9638,11 @@ export function Noto_Serif_Telugu(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Thai(options: {
+export function Noto_Serif_Thai(options?: {
   variant:
     | '100'
     | '200'
@@ -10651,13 +9655,12 @@ export function Noto_Serif_Thai(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Tibetan(options: {
+export function Noto_Serif_Tibetan(options?: {
   variant:
     | '100'
     | '200'
@@ -10670,108 +9673,95 @@ export function Noto_Serif_Tibetan(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: 'tibetan'[]
-  preload?: boolean
+  preload?: 'tibetan'[]
 }): FontModule {
   e()
 }
-export function Noto_Serif_Yezidi(options: {
+export function Noto_Serif_Yezidi(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: 'yezidi'[]
-  preload?: boolean
+  preload?: 'yezidi'[]
 }): FontModule {
   e()
 }
-export function Noto_Traditional_Nushu(options: {
+export function Noto_Traditional_Nushu(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'nushu'[]
-  preload?: boolean
+  preload?: 'nushu'[]
 }): FontModule {
   e()
 }
-export function Nova_Cut(options: {
+export function Nova_Cut(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Nova_Flat(options: {
+export function Nova_Flat(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Nova_Mono(options: {
+export function Nova_Mono(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('greek' | 'latin')[]
-  preload?: boolean
+  preload?: ('greek' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Nova_Oval(options: {
+export function Nova_Oval(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Nova_Round(options: {
+export function Nova_Round(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Nova_Script(options: {
+export function Nova_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Nova_Slim(options: {
+export function Nova_Slim(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Nova_Square(options: {
+export function Nova_Square(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function NTR(options: {
+export function NTR(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Numans(options: {
+export function Numans(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Nunito(options: {
+export function Nunito(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -10792,18 +9782,17 @@ export function Nunito(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Nunito_Sans(options: {
+export function Nunito_Sans(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -10820,53 +9809,48 @@ export function Nunito_Sans(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Nuosu_SIL(options: {
+export function Nuosu_SIL(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'yi')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'yi')[]
 }): FontModule {
   e()
 }
-export function Odibee_Sans(options: {
+export function Odibee_Sans(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Odor_Mean_Chey(options: {
+export function Odor_Mean_Chey(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Offside(options: {
+export function Offside(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Oi(options: {
+export function Oi(options?: {
   variant: '400'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -10875,65 +9859,58 @@ export function Oi(options: {
     | 'tamil'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Old_Standard_TT(options: {
+export function Old_Standard_TT(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Oldenburg(options: {
+export function Oldenburg(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Ole(options: {
+export function Ole(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Oleo_Script(options: {
+export function Oleo_Script(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Oleo_Script_Swash_Caps(options: {
+export function Oleo_Script_Swash_Caps(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Oooh_Baby(options: {
+export function Oooh_Baby(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Open_Sans(options: {
+export function Open_Sans(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -10950,7 +9927,7 @@ export function Open_Sans(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -10960,74 +9937,66 @@ export function Open_Sans(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Oranienbaum(options: {
+export function Oranienbaum(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Orbitron(options: {
+export function Orbitron(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Oregano(options: {
+export function Oregano(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Orelega_One(options: {
+export function Orelega_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Orienta(options: {
+export function Orienta(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Original_Surfer(options: {
+export function Original_Surfer(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Oswald(options: {
+export function Oswald(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Outfit(options: {
+export function Outfit(options?: {
   variant:
     | '100'
     | '200'
@@ -11040,36 +10009,32 @@ export function Outfit(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Over_the_Rainbow(options: {
+export function Over_the_Rainbow(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Overlock(options: {
+export function Overlock(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700' | '900-italic' | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Overlock_SC(options: {
+export function Overlock_SC(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Overpass(options: {
+export function Overpass(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -11092,252 +10057,224 @@ export function Overpass(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Overpass_Mono(options: {
+export function Overpass_Mono(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Ovo(options: {
+export function Ovo(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Oxanium(options: {
+export function Oxanium(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Oxygen(options: {
+export function Oxygen(options?: {
   variant: '300' | '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Oxygen_Mono(options: {
+export function Oxygen_Mono(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Pacifico(options: {
+export function Pacifico(options?: {
   variant: '400'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Padauk(options: {
+export function Padauk(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'myanmar')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'myanmar')[]
 }): FontModule {
   e()
 }
-export function Palanquin(options: {
+export function Palanquin(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Palanquin_Dark(options: {
+export function Palanquin_Dark(options?: {
   variant: '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Pangolin(options: {
+export function Pangolin(options?: {
   variant: '400'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Paprika(options: {
+export function Paprika(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Parisienne(options: {
+export function Parisienne(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Passero_One(options: {
+export function Passero_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Passion_One(options: {
+export function Passion_One(options?: {
   variant: '400' | '700' | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Passions_Conflict(options: {
+export function Passions_Conflict(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Pathway_Gothic_One(options: {
+export function Pathway_Gothic_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Patrick_Hand(options: {
+export function Patrick_Hand(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Patrick_Hand_SC(options: {
+export function Patrick_Hand_SC(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Pattaya(options: {
+export function Pattaya(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Patua_One(options: {
+export function Patua_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Pavanam(options: {
+export function Pavanam(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'tamil')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'tamil')[]
 }): FontModule {
   e()
 }
-export function Paytone_One(options: {
+export function Paytone_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Peddana(options: {
+export function Peddana(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Peralta(options: {
+export function Peralta(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Permanent_Marker(options: {
+export function Permanent_Marker(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Petemoss(options: {
+export function Petemoss(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Petit_Formal_Script(options: {
+export function Petit_Formal_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Petrona(options: {
+export function Petrona(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -11360,20 +10297,18 @@ export function Petrona(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Philosopher(options: {
+export function Philosopher(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Piazzolla(options: {
+export function Piazzolla(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -11396,7 +10331,7 @@ export function Piazzolla(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -11405,47 +10340,42 @@ export function Piazzolla(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
   axes?: 'opsz'[]
 }): FontModule {
   e()
 }
-export function Piedra(options: {
+export function Piedra(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Pinyon_Script(options: {
+export function Pinyon_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Pirata_One(options: {
+export function Pirata_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Plaster(options: {
+export function Plaster(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Play(options: {
+export function Play(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -11453,19 +10383,17 @@ export function Play(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Playball(options: {
+export function Playball(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Playfair_Display(options: {
+export function Playfair_Display(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -11482,20 +10410,18 @@ export function Playfair_Display(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Playfair_Display_SC(options: {
+export function Playfair_Display_SC(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700' | '900-italic' | '900'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Plus_Jakarta_Sans(options: {
+export function Plus_Jakarta_Sans(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -11514,74 +10440,66 @@ export function Plus_Jakarta_Sans(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Podkova(options: {
+export function Podkova(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Poiret_One(options: {
+export function Poiret_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Poller_One(options: {
+export function Poller_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Poly(options: {
+export function Poly(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Pompiere(options: {
+export function Pompiere(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Pontano_Sans(options: {
+export function Pontano_Sans(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Poor_Story(options: {
+export function Poor_Story(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Poppins(options: {
+export function Poppins(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -11602,100 +10520,88 @@ export function Poppins(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Port_Lligat_Sans(options: {
+export function Port_Lligat_Sans(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Port_Lligat_Slab(options: {
+export function Port_Lligat_Slab(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Potta_One(options: {
+export function Potta_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('japanese' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('japanese' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Pragati_Narrow(options: {
+export function Pragati_Narrow(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Praise(options: {
+export function Praise(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Prata(options: {
+export function Prata(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Preahvihear(options: {
+export function Preahvihear(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Press_Start_2P(options: {
+export function Press_Start_2P(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'greek' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'greek' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Pridi(options: {
+export function Pridi(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Princess_Sofia(options: {
+export function Princess_Sofia(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Prociono(options: {
+export function Prociono(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Prompt(options: {
+export function Prompt(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -11716,20 +10622,18 @@ export function Prompt(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Prosto_One(options: {
+export function Prosto_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Proza_Libre(options: {
+export function Proza_Libre(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -11742,60 +10646,53 @@ export function Proza_Libre(options: {
     | '800-italic'
     | '800'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function PT_Mono(options: {
+export function PT_Mono(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function PT_Sans(options: {
+export function PT_Sans(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function PT_Sans_Caption(options: {
+export function PT_Sans_Caption(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function PT_Sans_Narrow(options: {
+export function PT_Sans_Narrow(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function PT_Serif(options: {
+export function PT_Serif(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function PT_Serif_Caption(options: {
+export function PT_Serif_Caption(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Public_Sans(options: {
+export function Public_Sans(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -11818,124 +10715,109 @@ export function Public_Sans(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Puppies_Play(options: {
+export function Puppies_Play(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Puritan(options: {
+export function Puritan(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Purple_Purse(options: {
+export function Purple_Purse(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Qahiri(options: {
+export function Qahiri(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('arabic' | 'latin')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Quando(options: {
+export function Quando(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Quantico(options: {
+export function Quantico(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Quattrocento(options: {
+export function Quattrocento(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Quattrocento_Sans(options: {
+export function Quattrocento_Sans(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Questrial(options: {
+export function Questrial(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Quicksand(options: {
+export function Quicksand(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Quintessential(options: {
+export function Quintessential(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Qwigley(options: {
+export function Qwigley(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Qwitcher_Grypen(options: {
+export function Qwitcher_Grypen(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Racing_Sans_One(options: {
+export function Racing_Sans_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Radio_Canada(options: {
+export function Radio_Canada(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -11950,37 +10832,33 @@ export function Radio_Canada(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Radley(options: {
+export function Radley(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rajdhani(options: {
+export function Rajdhani(options?: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rakkas(options: {
+export function Rakkas(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Raleway(options: {
+export function Raleway(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -12003,90 +10881,80 @@ export function Raleway(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Raleway_Dots(options: {
+export function Raleway_Dots(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Ramabhadra(options: {
+export function Ramabhadra(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Ramaraja(options: {
+export function Ramaraja(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Rambla(options: {
+export function Rambla(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rammetto_One(options: {
+export function Rammetto_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rampart_One(options: {
+export function Rampart_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Ranchers(options: {
+export function Ranchers(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rancho(options: {
+export function Rancho(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Ranga(options: {
+export function Ranga(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rasa(options: {
+export function Rasa(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -12101,45 +10969,40 @@ export function Rasa(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('gujarati' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('gujarati' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Rationale(options: {
+export function Rationale(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Ravi_Prakash(options: {
+export function Ravi_Prakash(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Readex_Pro(options: {
+export function Readex_Pro(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Recursive(options: {
+export function Recursive(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
   display?: Display
-  subsets?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'vietnamese')[]
   axes?: ('slnt' | 'CASL' | 'CRSV' | 'MONO')[]
 }): FontModule {
   e()
 }
-export function Red_Hat_Display(options: {
+export function Red_Hat_Display(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -12158,12 +11021,11 @@ export function Red_Hat_Display(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Red_Hat_Mono(options: {
+export function Red_Hat_Mono(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -12178,12 +11040,11 @@ export function Red_Hat_Mono(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Red_Hat_Text(options: {
+export function Red_Hat_Text(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -12198,124 +11059,109 @@ export function Red_Hat_Text(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Red_Rose(options: {
+export function Red_Rose(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Redacted(options: {
+export function Redacted(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Redacted_Script(options: {
+export function Redacted_Script(options?: {
   variant: '300' | '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Redressed(options: {
+export function Redressed(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Reem_Kufi(options: {
+export function Reem_Kufi(options?: {
   variant: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('arabic' | 'latin')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Reenie_Beanie(options: {
+export function Reenie_Beanie(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Reggae_One(options: {
+export function Reggae_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Revalia(options: {
+export function Revalia(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rhodium_Libre(options: {
+export function Rhodium_Libre(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Ribeye(options: {
+export function Ribeye(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Ribeye_Marrow(options: {
+export function Ribeye_Marrow(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Righteous(options: {
+export function Righteous(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Risque(options: {
+export function Risque(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Road_Rage(options: {
+export function Road_Rage(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Roboto(options: {
+export function Roboto(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -12330,7 +11176,7 @@ export function Roboto(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -12339,14 +11185,13 @@ export function Roboto(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Roboto_Condensed(options: {
+export function Roboto_Condensed(options?: {
   variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -12355,14 +11200,13 @@ export function Roboto_Condensed(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Roboto_Flex(options: {
+export function Roboto_Flex(options?: {
   variant: '400' | 'variable'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -12370,7 +11214,6 @@ export function Roboto_Flex(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
   axes?: (
     | 'opsz'
     | 'slnt'
@@ -12387,7 +11230,7 @@ export function Roboto_Flex(options: {
 }): FontModule {
   e()
 }
-export function Roboto_Mono(options: {
+export function Roboto_Mono(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -12406,7 +11249,7 @@ export function Roboto_Mono(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -12414,11 +11257,10 @@ export function Roboto_Mono(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Roboto_Serif(options: {
+export function Roboto_Serif(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -12441,13 +11283,12 @@ export function Roboto_Serif(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic-ext' | 'latin' | 'latin-ext' | 'vietnamese')[]
   axes?: ('opsz' | 'wdth' | 'GRAD')[]
 }): FontModule {
   e()
 }
-export function Roboto_Slab(options: {
+export function Roboto_Slab(options?: {
   variant:
     | '100'
     | '200'
@@ -12460,7 +11301,7 @@ export function Roboto_Slab(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -12469,35 +11310,31 @@ export function Roboto_Slab(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Rochester(options: {
+export function Rochester(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Rock_Salt(options: {
+export function Rock_Salt(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function RocknRoll_One(options: {
+export function RocknRoll_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rokkitt(options: {
+export function Rokkitt(options?: {
   variant:
     | '100'
     | '200'
@@ -12510,28 +11347,25 @@ export function Rokkitt(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Romanesco(options: {
+export function Romanesco(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Ropa_Sans(options: {
+export function Ropa_Sans(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rosario(options: {
+export function Rosario(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -12546,44 +11380,39 @@ export function Rosario(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Rosarivo(options: {
+export function Rosarivo(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rouge_Script(options: {
+export function Rouge_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Rowdies(options: {
+export function Rowdies(options?: {
   variant: '300' | '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Rozha_One(options: {
+export function Rozha_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rubik(options: {
+export function Rubik(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -12602,220 +11431,193 @@ export function Rubik(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rubik_Beastly(options: {
+export function Rubik_Beastly(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rubik_Bubbles(options: {
+export function Rubik_Bubbles(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rubik_Burned(options: {
+export function Rubik_Burned(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rubik_Dirt(options: {
+export function Rubik_Dirt(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rubik_Distressed(options: {
+export function Rubik_Distressed(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rubik_Glitch(options: {
+export function Rubik_Glitch(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rubik_Iso(options: {
+export function Rubik_Iso(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rubik_Marker_Hatch(options: {
+export function Rubik_Marker_Hatch(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rubik_Maze(options: {
+export function Rubik_Maze(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rubik_Microbe(options: {
+export function Rubik_Microbe(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rubik_Mono_One(options: {
+export function Rubik_Mono_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rubik_Moonrocks(options: {
+export function Rubik_Moonrocks(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rubik_Puddles(options: {
+export function Rubik_Puddles(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rubik_Wet_Paint(options: {
+export function Rubik_Wet_Paint(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Ruda(options: {
+export function Ruda(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Rufina(options: {
+export function Rufina(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Ruge_Boogie(options: {
+export function Ruge_Boogie(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Ruluko(options: {
+export function Ruluko(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Rum_Raisin(options: {
+export function Rum_Raisin(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Ruslan_Display(options: {
+export function Ruslan_Display(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Russo_One(options: {
+export function Russo_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Ruthie(options: {
+export function Ruthie(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Rye(options: {
+export function Rye(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Sacramento(options: {
+export function Sacramento(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Sahitya(options: {
+export function Sahitya(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Sail(options: {
+export function Sail(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Saira(options: {
+export function Saira(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -12838,69 +11640,61 @@ export function Saira(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Saira_Condensed(options: {
+export function Saira_Condensed(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Saira_Extra_Condensed(options: {
+export function Saira_Extra_Condensed(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Saira_Semi_Condensed(options: {
+export function Saira_Semi_Condensed(options?: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Saira_Stencil_One(options: {
+export function Saira_Stencil_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Salsa(options: {
+export function Salsa(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Sanchez(options: {
+export function Sanchez(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Sancreek(options: {
+export function Sancreek(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Sansita(options: {
+export function Sansita(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -12911,20 +11705,18 @@ export function Sansita(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Sansita_Swashed(options: {
+export function Sansita_Swashed(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Sarabun(options: {
+export function Sarabun(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -12943,404 +11735,354 @@ export function Sarabun(options: {
     | '800-italic'
     | '800'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Sarala(options: {
+export function Sarala(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Sarina(options: {
+export function Sarina(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Sarpanch(options: {
+export function Sarpanch(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Sassy_Frass(options: {
+export function Sassy_Frass(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Satisfy(options: {
+export function Satisfy(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Sawarabi_Gothic(options: {
+export function Sawarabi_Gothic(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Sawarabi_Mincho(options: {
+export function Sawarabi_Mincho(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Scada(options: {
+export function Scada(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'cyrillic-ext' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Scheherazade_New(options: {
+export function Scheherazade_New(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Schoolbell(options: {
+export function Schoolbell(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Scope_One(options: {
+export function Scope_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Seaweed_Script(options: {
+export function Seaweed_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Secular_One(options: {
+export function Secular_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Sedgwick_Ave(options: {
+export function Sedgwick_Ave(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Sedgwick_Ave_Display(options: {
+export function Sedgwick_Ave_Display(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Sen(options: {
+export function Sen(options?: {
   variant: '400' | '700' | '800'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Send_Flowers(options: {
+export function Send_Flowers(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Sevillana(options: {
+export function Sevillana(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Seymour_One(options: {
+export function Seymour_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Shadows_Into_Light(options: {
+export function Shadows_Into_Light(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Shadows_Into_Light_Two(options: {
+export function Shadows_Into_Light_Two(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Shalimar(options: {
+export function Shalimar(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Shanti(options: {
+export function Shanti(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Share(options: {
+export function Share(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Share_Tech(options: {
+export function Share_Tech(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Share_Tech_Mono(options: {
+export function Share_Tech_Mono(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Shippori_Antique(options: {
+export function Shippori_Antique(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Shippori_Antique_B1(options: {
+export function Shippori_Antique_B1(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Shippori_Mincho(options: {
+export function Shippori_Mincho(options?: {
   variant: '400' | '500' | '600' | '700' | '800'
   display?: Display
-  subsets?: ('japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Shippori_Mincho_B1(options: {
+export function Shippori_Mincho_B1(options?: {
   variant: '400' | '500' | '600' | '700' | '800'
   display?: Display
-  subsets?: ('japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Shojumaru(options: {
+export function Shojumaru(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Short_Stack(options: {
+export function Short_Stack(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Shrikhand(options: {
+export function Shrikhand(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('gujarati' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('gujarati' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Siemreap(options: {
+export function Siemreap(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'khmer'[]
-  preload?: boolean
+  preload?: 'khmer'[]
 }): FontModule {
   e()
 }
-export function Sigmar_One(options: {
+export function Sigmar_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Signika(options: {
+export function Signika(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Signika_Negative(options: {
+export function Signika_Negative(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Silkscreen(options: {
+export function Silkscreen(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Simonetta(options: {
+export function Simonetta(options?: {
   variant: '400-italic' | '400' | '900-italic' | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Single_Day(options: {
+export function Single_Day(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'korean'[]
-  preload?: boolean
+  preload?: 'korean'[]
 }): FontModule {
   e()
 }
-export function Sintony(options: {
+export function Sintony(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Sirin_Stencil(options: {
+export function Sirin_Stencil(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Six_Caps(options: {
+export function Six_Caps(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Skranji(options: {
+export function Skranji(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Slabo_13px(options: {
+export function Slabo_13px(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Slabo_27px(options: {
+export function Slabo_27px(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Slackey(options: {
+export function Slackey(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Smokum(options: {
+export function Smokum(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Smooch(options: {
+export function Smooch(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Smooch_Sans(options: {
+export function Smooch_Sans(options?: {
   variant:
     | '100'
     | '200'
@@ -13353,84 +12095,74 @@ export function Smooch_Sans(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Smythe(options: {
+export function Smythe(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Sniglet(options: {
+export function Sniglet(options?: {
   variant: '400' | '800'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Snippet(options: {
+export function Snippet(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Snowburst_One(options: {
+export function Snowburst_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Sofadi_One(options: {
+export function Sofadi_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Sofia(options: {
+export function Sofia(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Solway(options: {
+export function Solway(options?: {
   variant: '300' | '400' | '500' | '700' | '800'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Song_Myung(options: {
+export function Song_Myung(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Sonsie_One(options: {
+export function Sonsie_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Sora(options: {
+export function Sora(options?: {
   variant:
     | '100'
     | '200'
@@ -13442,20 +12174,18 @@ export function Sora(options: {
     | '800'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Sorts_Mill_Goudy(options: {
+export function Sorts_Mill_Goudy(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Source_Code_Pro(options: {
+export function Source_Code_Pro(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -13476,7 +12206,7 @@ export function Source_Code_Pro(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -13485,11 +12215,10 @@ export function Source_Code_Pro(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Source_Sans_3(options: {
+export function Source_Sans_3(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -13510,7 +12239,7 @@ export function Source_Sans_3(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -13519,11 +12248,10 @@ export function Source_Sans_3(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Source_Sans_Pro(options: {
+export function Source_Sans_Pro(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -13538,7 +12266,7 @@ export function Source_Sans_Pro(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -13547,11 +12275,10 @@ export function Source_Sans_Pro(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Source_Serif_4(options: {
+export function Source_Serif_4(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -13572,7 +12299,7 @@ export function Source_Serif_4(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -13580,12 +12307,11 @@ export function Source_Serif_4(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
   axes?: 'opsz'[]
 }): FontModule {
   e()
 }
-export function Source_Serif_Pro(options: {
+export function Source_Serif_Pro(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -13600,7 +12326,7 @@ export function Source_Serif_Pro(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -13608,35 +12334,31 @@ export function Source_Serif_Pro(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Space_Grotesk(options: {
+export function Space_Grotesk(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Space_Mono(options: {
+export function Space_Mono(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Special_Elite(options: {
+export function Special_Elite(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Spectral(options: {
+export function Spectral(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -13653,12 +12375,11 @@ export function Spectral(options: {
     | '800-italic'
     | '800'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Spectral_SC(options: {
+export function Spectral_SC(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -13675,52 +12396,46 @@ export function Spectral_SC(options: {
     | '800-italic'
     | '800'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Spicy_Rice(options: {
+export function Spicy_Rice(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Spinnaker(options: {
+export function Spinnaker(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Spirax(options: {
+export function Spirax(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Splash(options: {
+export function Splash(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Spline_Sans(options: {
+export function Spline_Sans(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Spline_Sans_Mono(options: {
+export function Spline_Sans_Mono(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -13735,116 +12450,102 @@ export function Spline_Sans_Mono(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Squada_One(options: {
+export function Squada_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Square_Peg(options: {
+export function Square_Peg(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Sree_Krushnadevaraya(options: {
+export function Sree_Krushnadevaraya(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Sriracha(options: {
+export function Sriracha(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Srisakdi(options: {
+export function Srisakdi(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Staatliches(options: {
+export function Staatliches(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Stalemate(options: {
+export function Stalemate(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Stalinist_One(options: {
+export function Stalinist_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Stardos_Stencil(options: {
+export function Stardos_Stencil(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Stick(options: {
+export function Stick(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Stick_No_Bills(options: {
+export function Stick_No_Bills(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'sinhala')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'sinhala')[]
 }): FontModule {
   e()
 }
-export function Stint_Ultra_Condensed(options: {
+export function Stint_Ultra_Condensed(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Stint_Ultra_Expanded(options: {
+export function Stint_Ultra_Expanded(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function STIX_Two_Text(options: {
+export function STIX_Two_Text(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -13857,7 +12558,7 @@ export function STIX_Two_Text(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -13865,219 +12566,192 @@ export function STIX_Two_Text(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Stoke(options: {
+export function Stoke(options?: {
   variant: '300' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Strait(options: {
+export function Strait(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Style_Script(options: {
+export function Style_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Stylish(options: {
+export function Stylish(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Sue_Ellen_Francisco(options: {
+export function Sue_Ellen_Francisco(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Suez_One(options: {
+export function Suez_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('hebrew' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('hebrew' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Sulphur_Point(options: {
+export function Sulphur_Point(options?: {
   variant: '300' | '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Sumana(options: {
+export function Sumana(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Sunflower(options: {
+export function Sunflower(options?: {
   variant: '300' | '500' | '700'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Sunshiney(options: {
+export function Sunshiney(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Supermercado_One(options: {
+export function Supermercado_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Sura(options: {
+export function Sura(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Suranna(options: {
+export function Suranna(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Suravaram(options: {
+export function Suravaram(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Suwannaphum(options: {
+export function Suwannaphum(options?: {
   variant: '100' | '300' | '400' | '700' | '900'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Swanky_and_Moo_Moo(options: {
+export function Swanky_and_Moo_Moo(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Syncopate(options: {
+export function Syncopate(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Syne(options: {
+export function Syne(options?: {
   variant: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
-  subsets?: ('greek' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('greek' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Syne_Mono(options: {
+export function Syne_Mono(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Syne_Tactile(options: {
+export function Syne_Tactile(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Tai_Heritage_Pro(options: {
+export function Tai_Heritage_Pro(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'tai-viet' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'tai-viet' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Tajawal(options: {
+export function Tajawal(options?: {
   variant: '200' | '300' | '400' | '500' | '700' | '800' | '900'
   display?: Display
-  subsets?: ('arabic' | 'latin')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Tangerine(options: {
+export function Tangerine(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Tapestry(options: {
+export function Tapestry(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Taprom(options: {
+export function Taprom(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('khmer' | 'latin')[]
-  preload?: boolean
+  preload?: ('khmer' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Tauri(options: {
+export function Tauri(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Taviraj(options: {
+export function Taviraj(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -14098,52 +12772,46 @@ export function Taviraj(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Teko(options: {
+export function Teko(options?: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Telex(options: {
+export function Telex(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Tenali_Ramakrishna(options: {
+export function Tenali_Ramakrishna(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Tenor_Sans(options: {
+export function Tenor_Sans(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Text_Me_One(options: {
+export function Text_Me_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Texturina(options: {
+export function Texturina(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -14166,64 +12834,57 @@ export function Texturina(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'opsz'[]
 }): FontModule {
   e()
 }
-export function Thasadith(options: {
+export function Thasadith(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function The_Girl_Next_Door(options: {
+export function The_Girl_Next_Door(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function The_Nautigal(options: {
+export function The_Nautigal(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Tienne(options: {
+export function Tienne(options?: {
   variant: '400' | '700' | '900'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Tillana(options: {
+export function Tillana(options?: {
   variant: '400' | '500' | '600' | '700' | '800'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Timmana(options: {
+export function Timmana(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Tinos(options: {
+export function Tinos(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -14233,83 +12894,73 @@ export function Tinos(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Tiro_Bangla(options: {
+export function Tiro_Bangla(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('bengali' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('bengali' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Tiro_Devanagari_Hindi(options: {
+export function Tiro_Devanagari_Hindi(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Tiro_Devanagari_Marathi(options: {
+export function Tiro_Devanagari_Marathi(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Tiro_Devanagari_Sanskrit(options: {
+export function Tiro_Devanagari_Sanskrit(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Tiro_Gurmukhi(options: {
+export function Tiro_Gurmukhi(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('gurmukhi' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('gurmukhi' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Tiro_Kannada(options: {
+export function Tiro_Kannada(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('kannada' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('kannada' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Tiro_Tamil(options: {
+export function Tiro_Tamil(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'tamil')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'tamil')[]
 }): FontModule {
   e()
 }
-export function Tiro_Telugu(options: {
+export function Tiro_Telugu(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'telugu')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'telugu')[]
 }): FontModule {
   e()
 }
-export function Titan_One(options: {
+export function Titan_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Titillium_Web(options: {
+export function Titillium_Web(options?: {
   variant:
     | '200-italic'
     | '200'
@@ -14324,12 +12975,11 @@ export function Titillium_Web(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Tomorrow(options: {
+export function Tomorrow(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -14350,12 +13000,11 @@ export function Tomorrow(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Tourney(options: {
+export function Tourney(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -14378,29 +13027,26 @@ export function Tourney(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Trade_Winds(options: {
+export function Trade_Winds(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Train_One(options: {
+export function Train_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Trirong(options: {
+export function Trirong(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -14421,12 +13067,11 @@ export function Trirong(options: {
     | '900-italic'
     | '900'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'thai' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Trispace(options: {
+export function Trispace(options?: {
   variant:
     | '100'
     | '200'
@@ -14438,29 +13083,26 @@ export function Trispace(options: {
     | '800'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Trocchi(options: {
+export function Trocchi(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Trochut(options: {
+export function Trochut(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Truculenta(options: {
+export function Truculenta(options?: {
   variant:
     | '100'
     | '200'
@@ -14473,45 +13115,40 @@ export function Truculenta(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
   axes?: ('opsz' | 'wdth')[]
 }): FontModule {
   e()
 }
-export function Trykker(options: {
+export function Trykker(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Tulpen_One(options: {
+export function Tulpen_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Turret_Road(options: {
+export function Turret_Road(options?: {
   variant: '200' | '300' | '400' | '500' | '700' | '800'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Twinkle_Star(options: {
+export function Twinkle_Star(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Ubuntu(options: {
+export function Ubuntu(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -14522,7 +13159,7 @@ export function Ubuntu(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -14530,14 +13167,13 @@ export function Ubuntu(options: {
     | 'latin'
     | 'latin-ext'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Ubuntu_Condensed(options: {
+export function Ubuntu_Condensed(options?: {
   variant: '400'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -14545,14 +13181,13 @@ export function Ubuntu_Condensed(options: {
     | 'latin'
     | 'latin-ext'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Ubuntu_Mono(options: {
+export function Ubuntu_Mono(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -14560,99 +13195,87 @@ export function Ubuntu_Mono(options: {
     | 'latin'
     | 'latin-ext'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Uchen(options: {
+export function Uchen(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'tibetan')[]
-  preload?: boolean
+  preload?: ('latin' | 'tibetan')[]
 }): FontModule {
   e()
 }
-export function Ultra(options: {
+export function Ultra(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Uncial_Antiqua(options: {
+export function Uncial_Antiqua(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Underdog(options: {
+export function Underdog(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Unica_One(options: {
+export function Unica_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function UnifrakturCook(options: {
+export function UnifrakturCook(options?: {
   variant: '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function UnifrakturMaguntia(options: {
+export function UnifrakturMaguntia(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Unkempt(options: {
+export function Unkempt(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Unlock(options: {
+export function Unlock(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Unna(options: {
+export function Unna(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Updock(options: {
+export function Updock(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Urbanist(options: {
+export function Urbanist(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -14675,52 +13298,46 @@ export function Urbanist(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Vampiro_One(options: {
+export function Vampiro_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Varela(options: {
+export function Varela(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Varela_Round(options: {
+export function Varela_Round(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('hebrew' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('hebrew' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Varta(options: {
+export function Varta(options?: {
   variant: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Vast_Shadow(options: {
+export function Vast_Shadow(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Vazirmatn(options: {
+export function Vazirmatn(options?: {
   variant:
     | '100'
     | '200'
@@ -14733,82 +13350,73 @@ export function Vazirmatn(options: {
     | '900'
     | 'variable'
   display?: Display
-  subsets?: ('arabic' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Vesper_Libre(options: {
+export function Vesper_Libre(options?: {
   variant: '400' | '500' | '700' | '900'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Viaoda_Libre(options: {
+export function Viaoda_Libre(options?: {
   variant: '400'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Vibes(options: {
+export function Vibes(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('arabic' | 'latin')[]
-  preload?: boolean
+  preload?: ('arabic' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Vibur(options: {
+export function Vibur(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Vidaloka(options: {
+export function Vidaloka(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Viga(options: {
+export function Viga(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Voces(options: {
+export function Voces(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Volkhov(options: {
+export function Volkhov(options?: {
   variant: '400-italic' | '400' | '700-italic' | '700'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Vollkorn(options: {
+export function Vollkorn(options?: {
   variant:
     | '400-italic'
     | '400'
@@ -14825,7 +13433,7 @@ export function Vollkorn(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'greek'
@@ -14833,137 +13441,121 @@ export function Vollkorn(options: {
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Vollkorn_SC(options: {
+export function Vollkorn_SC(options?: {
   variant: '400' | '600' | '700' | '900'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Voltaire(options: {
+export function Voltaire(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function VT323(options: {
+export function VT323(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Vujahday_Script(options: {
+export function Vujahday_Script(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Waiting_for_the_Sunrise(options: {
+export function Waiting_for_the_Sunrise(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Wallpoet(options: {
+export function Wallpoet(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Walter_Turncoat(options: {
+export function Walter_Turncoat(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Warnes(options: {
+export function Warnes(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Water_Brush(options: {
+export function Water_Brush(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Waterfall(options: {
+export function Waterfall(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Wellfleet(options: {
+export function Wellfleet(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Wendy_One(options: {
+export function Wendy_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Whisper(options: {
+export function Whisper(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function WindSong(options: {
+export function WindSong(options?: {
   variant: '400' | '500'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Wire_One(options: {
+export function Wire_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Work_Sans(options: {
+export function Work_Sans(options?: {
   variant:
     | '100-italic'
     | '100'
@@ -14986,98 +13578,87 @@ export function Work_Sans(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Xanh_Mono(options: {
+export function Xanh_Mono(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Yaldevi(options: {
+export function Yaldevi(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'sinhala')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'sinhala')[]
 }): FontModule {
   e()
 }
-export function Yanone_Kaffeesatz(options: {
+export function Yanone_Kaffeesatz(options?: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
-  subsets?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Yantramanav(options: {
+export function Yantramanav(options?: {
   variant: '100' | '300' | '400' | '500' | '700' | '900'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Yatra_One(options: {
+export function Yatra_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('devanagari' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('devanagari' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Yellowtail(options: {
+export function Yellowtail(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Yeon_Sung(options: {
+export function Yeon_Sung(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('korean' | 'latin')[]
-  preload?: boolean
+  preload?: ('korean' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Yeseva_One(options: {
+export function Yeseva_One(options?: {
   variant: '400'
   display?: Display
-  subsets?: (
+  preload?: (
     | 'cyrillic'
     | 'cyrillic-ext'
     | 'latin'
     | 'latin-ext'
     | 'vietnamese'
   )[]
-  preload?: boolean
 }): FontModule {
   e()
 }
-export function Yesteryear(options: {
+export function Yesteryear(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Yomogi(options: {
+export function Yomogi(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Yrsa(options: {
+export function Yrsa(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -15092,164 +13673,144 @@ export function Yrsa(options: {
     | 'variable'
     | 'variable-italic'
   display?: Display
-  subsets?: ('latin' | 'latin-ext' | 'vietnamese')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext' | 'vietnamese')[]
 }): FontModule {
   e()
 }
-export function Yuji_Boku(options: {
+export function Yuji_Boku(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Yuji_Mai(options: {
+export function Yuji_Mai(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Yuji_Syuku(options: {
+export function Yuji_Syuku(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Yusei_Magic(options: {
+export function Yusei_Magic(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function ZCOOL_KuaiLe(options: {
+export function ZCOOL_KuaiLe(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('chinese-simplified' | 'latin')[]
-  preload?: boolean
+  preload?: ('chinese-simplified' | 'latin')[]
 }): FontModule {
   e()
 }
-export function ZCOOL_QingKe_HuangYou(options: {
+export function ZCOOL_QingKe_HuangYou(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('chinese-simplified' | 'latin')[]
-  preload?: boolean
+  preload?: ('chinese-simplified' | 'latin')[]
 }): FontModule {
   e()
 }
-export function ZCOOL_XiaoWei(options: {
+export function ZCOOL_XiaoWei(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('chinese-simplified' | 'latin')[]
-  preload?: boolean
+  preload?: ('chinese-simplified' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Zen_Antique(options: {
+export function Zen_Antique(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'greek' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'greek' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Zen_Antique_Soft(options: {
+export function Zen_Antique_Soft(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'greek' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'greek' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Zen_Dots(options: {
+export function Zen_Dots(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Zen_Kaku_Gothic_Antique(options: {
+export function Zen_Kaku_Gothic_Antique(options?: {
   variant: '300' | '400' | '500' | '700' | '900'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Zen_Kaku_Gothic_New(options: {
+export function Zen_Kaku_Gothic_New(options?: {
   variant: '300' | '400' | '500' | '700' | '900'
   display?: Display
-  subsets?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Zen_Kurenaido(options: {
+export function Zen_Kurenaido(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('cyrillic' | 'greek' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'greek' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Zen_Loop(options: {
+export function Zen_Loop(options?: {
   variant: '400-italic' | '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Zen_Maru_Gothic(options: {
+export function Zen_Maru_Gothic(options?: {
   variant: '300' | '400' | '500' | '700' | '900'
   display?: Display
-  subsets?: ('cyrillic' | 'greek' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'greek' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Zen_Old_Mincho(options: {
+export function Zen_Old_Mincho(options?: {
   variant: '400' | '700' | '900'
   display?: Display
-  subsets?: ('cyrillic' | 'greek' | 'japanese' | 'latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('cyrillic' | 'greek' | 'japanese' | 'latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Zen_Tokyo_Zoo(options: {
+export function Zen_Tokyo_Zoo(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Zeyada(options: {
+export function Zeyada(options?: {
   variant: '400'
   display?: Display
-  subsets?: 'latin'[]
-  preload?: boolean
+  preload?: 'latin'[]
 }): FontModule {
   e()
 }
-export function Zhi_Mang_Xing(options: {
+export function Zhi_Mang_Xing(options?: {
   variant: '400'
   display?: Display
-  subsets?: ('chinese-simplified' | 'latin')[]
-  preload?: boolean
+  preload?: ('chinese-simplified' | 'latin')[]
 }): FontModule {
   e()
 }
-export function Zilla_Slab(options: {
+export function Zilla_Slab(options?: {
   variant:
     | '300-italic'
     | '300'
@@ -15262,16 +13823,14 @@ export function Zilla_Slab(options: {
     | '700-italic'
     | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }
-export function Zilla_Slab_Highlight(options: {
+export function Zilla_Slab_Highlight(options?: {
   variant: '400' | '700'
   display?: Display
-  subsets?: ('latin' | 'latin-ext')[]
-  preload?: boolean
+  preload?: ('latin' | 'latin-ext')[]
 }): FontModule {
   e()
 }

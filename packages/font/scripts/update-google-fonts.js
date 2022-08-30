@@ -18,7 +18,7 @@ const path = require('path')
 
   let fontFunctions = `/* eslint-disable @typescript-eslint/no-unused-vars */
 type Display = 'auto'|'block'|'swap'|'fallback'|'optional'
-type FontModule = { className: string, style: { fontFamily: string, fontWeight?: number, fontStyle?: string } }
+type FontModule = { className: string, variables: string, style: { fontFamily: string, fontWeight?: number, fontStyle?: string } }
 function e():never { throw new Error() }
 `
 
@@ -48,11 +48,10 @@ function e():never { throw new Error() }
     }
 
     fontData[family] = { variants, subsets, axes: variableFonts[family] }
-    fontFunctions += `export function ${family.replaceAll(' ', '_')}(options: {
+    fontFunctions += `export function ${family.replaceAll(' ', '_')}(options?: {
       variant:${variants.map((variant) => `"${variant}"`).join('|')}
       display?:Display,
-subsets?:(${subsets.map((s) => `'${s}'`).join('|')})[]
-preload?: boolean
+preload?:(${subsets.map((s) => `'${s}'`).join('|')})[]
 ${
   functionAxes ? `axes?:(${functionAxes.map((s) => `'${s}'`).join('|')})[]` : ''
 }
