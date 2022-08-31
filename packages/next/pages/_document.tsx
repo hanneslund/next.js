@@ -764,6 +764,7 @@ export class Head extends Component<HeadProps> {
         {children}
         {optimizeFonts && <meta name="next-font-preconnect" />}
         {pageFontFiles.length > 0 ? (
+          // Add preconnect if the current page has self-hosted font files
           <link rel="preconnect" href="/" crossOrigin="anonymous" />
         ) : null}
         {pageFontFiles

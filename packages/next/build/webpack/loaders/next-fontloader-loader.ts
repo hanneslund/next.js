@@ -19,7 +19,7 @@ export default async function nextFontLoader(this: any) {
     const opts = { context: this.rootContext, content }
     const interpolatedName = loaderUtils.interpolateName(
       this,
-      // Add .p when it is supposed to be preloaded
+      // Font files ending with .p.[ext] will be preloaded
       `static/fonts/[hash]${preload ? '.p' : ''}.${ext}`,
       opts
     )
