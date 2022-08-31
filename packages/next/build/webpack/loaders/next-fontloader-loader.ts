@@ -3,18 +3,17 @@ import loaderUtils from 'next/dist/compiled/loader-utils3'
 import chalk from 'next/dist/compiled/chalk'
 
 class FontLoaderError extends Error {
-  constructor(error: any, issuer?: string) {
+  constructor(error: any) {
     super(error)
     this.name = 'FontLoaderError'
-    this.message =
-      error.message + (issuer ? `\nLocation: ${chalk.cyan(issuer)}` : '')
+    this.message = error.message
     this.stack = undefined
   }
 }
 
 export default async function nextFontLoader(this: any) {
   const callback = this.async()
-  const { isServer, assetPrefix } = this.getOptions()
+  const { isServer, assetPrefix, fontLoaderOptions } = this.getOptions()
 
   const emitFile = (content: Buffer, ext: string, preload: true) => {
     const opts = { context: this.rootContext, content }
@@ -35,7 +34,12 @@ export default async function nextFontLoader(this: any) {
 
   const loader = require(path.join(this.resourcePath, '../loader.js'))
   try {
-    const css = await loader.default(font, JSON.parse(data), emitFile)
+    const css = await loader.default(
+      font,
+      JSON.parse(data),
+      fontLoaderOptions,
+      emitFile
+    )
     callback(null, css, null)
   } catch (err) {
     callback(new FontLoaderError(err))

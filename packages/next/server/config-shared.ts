@@ -145,7 +145,7 @@ export interface ExperimentalConfig {
   }
   swcPlugins?: Array<[string, Record<string, unknown>]>
   largePageDataBytes?: number
-  fontLoaders?: string[]
+  fontLoaders?: { [fontLoader: string]: any }
 }
 
 export type ExportPathMap = {

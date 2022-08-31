@@ -17,11 +17,19 @@ describe('@next/font/google option errors', () => {
         '@next/font': '*',
       },
       files: {
-        pages: new FileRef(join(__dirname, 'app/pages')),
+        'pages/index.js': `
+        export default function Page() {
+          return <p>Hello world</p>
+        }
+        `,
       },
       nextConfig: {
         experimental: {
-          fontLoaders: ['@next/font/google'],
+          fontLoaders: {
+            '@next/font/google': {
+              subsets: ['latin'],
+            },
+          },
         },
       },
     })
@@ -36,17 +44,15 @@ describe('@next/font/google option errors', () => {
 
     try {
       await next.patchFile(
-        'pages/_app.js',
+        'pages/index.js',
         `
       import { Unknown } from '@next/font/google'
 
       const u = Unknown({ variant: '400' })
 
-      function MyApp({ Component, pageProps }) {
-        return <Component {...pageProps} />
+      export default function Page() {
+        return <p>Hello world</p>
       }
-      
-      export default MyApp
       `
       )
       await check(() => getRedboxSource(browser), /Unknown font/)
@@ -63,17 +69,15 @@ describe('@next/font/google option errors', () => {
 
     try {
       await next.patchFile(
-        'pages/_app.js',
+        'pages/index.js',
         `
       import { Oooh_Baby } from '@next/font/google'
 
       const o = Oooh_Baby({ variant: '500' })
 
-      function MyApp({ Component, pageProps }) {
-        return <Component {...pageProps} />
+      export default function Page() {
+        return <p>Hello world</p>
       }
-      
-      export default MyApp
       `
       )
       await check(() => getRedboxSource(browser), /Unknown variant/)
@@ -92,17 +96,15 @@ describe('@next/font/google option errors', () => {
 
     try {
       await next.patchFile(
-        'pages/_app.js',
+        'pages/index.js',
         `
       import { Inter } from '@next/font/google'
 
       const i = Inter({ variant: '500', preload: {} })
 
-      function MyApp({ Component, pageProps }) {
-        return <Component {...pageProps} />
+      export default function Page() {
+        return <p>Hello world</p>
       }
-      
-      export default MyApp
       `
       )
       await check(() => getRedboxSource(browser), /expected an array/)
@@ -121,17 +123,15 @@ describe('@next/font/google option errors', () => {
 
     try {
       await next.patchFile(
-        'pages/_app.js',
+        'pages/index.js',
         `
       import { Inter } from '@next/font/google'
 
       const i = Inter({ variant: '500', preload: ['japanese'] })
 
-      function MyApp({ Component, pageProps }) {
-        return <Component {...pageProps} />
+      export default function Page() {
+        return <p>Hello world</p>
       }
-      
-      export default MyApp
       `
       )
       await check(() => getRedboxSource(browser), /Unknown preload subset/)
@@ -150,17 +150,15 @@ describe('@next/font/google option errors', () => {
 
     try {
       await next.patchFile(
-        'pages/_app.js',
+        'pages/index.js',
         `
       import { Inter } from '@next/font/google'
 
       const i = Inter({ variant: '500', display: 'always' })
 
-      function MyApp({ Component, pageProps }) {
-        return <Component {...pageProps} />
+      export default function Page() {
+        return <p>Hello world</p>
       }
-      
-      export default MyApp
       `
       )
       await check(() => getRedboxSource(browser), /Invalid display value/)
@@ -179,17 +177,15 @@ describe('@next/font/google option errors', () => {
 
     try {
       await next.patchFile(
-        'pages/_app.js',
+        'pages/index.js',
         `
       import { Inter } from '@next/font/google'
 
       const i = Inter({ variant: '500', axes: [] })
 
-      function MyApp({ Component, pageProps }) {
-        return <Component {...pageProps} />
+      export default function Page() {
+        return <p>Hello world</p>
       }
-      
-      export default MyApp
       `
       )
       await check(
@@ -209,17 +205,15 @@ describe('@next/font/google option errors', () => {
 
     try {
       await next.patchFile(
-        'pages/_app.js',
+        'pages/index.js',
         `
       import { Lora } from '@next/font/google'
 
       const l = Lora({ variant: 'variable', axes: [] })
 
-      function MyApp({ Component, pageProps }) {
-        return <Component {...pageProps} />
+      export default function Page() {
+        return <p>Hello world</p>
       }
-      
-      export default MyApp
       `
       )
       await check(() => getRedboxSource(browser), /has no definable/)
@@ -236,17 +230,15 @@ describe('@next/font/google option errors', () => {
 
     try {
       await next.patchFile(
-        'pages/_app.js',
+        'pages/index.js',
         `
       import { Inter } from '@next/font/google'
 
       const i = Inter({ variant: 'variable', axes: "hello" })
 
-      function MyApp({ Component, pageProps }) {
-        return <Component {...pageProps} />
+      export default function Page() {
+        return <p>Hello world</p>
       }
-      
-      export default MyApp
       `
       )
       await check(() => getRedboxSource(browser), /Invalid/)
@@ -265,17 +257,15 @@ describe('@next/font/google option errors', () => {
 
     try {
       await next.patchFile(
-        'pages/_app.js',
+        'pages/index.js',
         `
       import { Fraunces } from '@next/font/google'
 
       const f = Fraunces({ variant: 'variable', axes: ["hello"] })
 
-      function MyApp({ Component, pageProps }) {
-        return <Component {...pageProps} />
+      export default function Page() {
+        return <p>Hello world</p>
       }
-      
-      export default MyApp
       `
       )
       await check(() => getRedboxSource(browser), /Invalid/)

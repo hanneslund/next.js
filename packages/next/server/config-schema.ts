@@ -403,10 +403,7 @@ const configSchema = {
           type: 'boolean',
         },
         fontLoaders: {
-          items: {
-            type: 'string',
-          },
-          type: 'array',
+          type: 'object',
         },
       },
       type: 'object',

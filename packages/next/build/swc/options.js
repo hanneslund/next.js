@@ -117,7 +117,9 @@ function getBaseSWCOptions({
     modularizeImports: nextConfig?.experimental?.modularizeImports,
     relay: nextConfig?.compiler?.relay,
     emotion: getEmotionOptions(nextConfig, development),
-    fontLoaders: nextConfig?.experimental?.fontLoaders,
+    fontLoaders:
+      nextConfig?.experimental?.fontLoaders &&
+      Object.keys(nextConfig?.experimental?.fontLoaders),
   }
 }
 

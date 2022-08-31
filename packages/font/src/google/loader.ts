@@ -10,8 +10,14 @@ const formatValues = (values: string[]) => values.map((val) => `\`${val}\``)
 export default async function download(
   font: any,
   data: any,
+  config: any,
   emitFile: (content: Buffer, ext: string, preload: boolean) => string
 ) {
+  if (!config?.subsets) {
+    throw new Error(
+      'Please specify subsets for `@next/font/google` in your `next.config.js`'
+    )
+  }
   let { variant, display = 'optional', preload, axes } = data
 
   const fontFamily = font.replaceAll('_', ' ')
@@ -28,9 +34,9 @@ export default async function download(
 
   if (!fontVariants.includes(variant)) {
     throw new Error(
-      `Unknown variant \`${variant}\` for font \`${fontFamily}\`\nAvailable variants: ${fontVariants
-        .map((s) => `\`${s}\``)
-        .join(', ')}`
+      `Unknown variant \`${variant}\` for font \`${fontFamily}\`\nAvailable variants: ${formatValues(
+        fontVariants
+      )}`
     )
   }
 
@@ -146,9 +152,9 @@ export default async function download(
     cssResponse = await res.text()
   }
 
-  // Add default preload on optional display
+  // Preload by default on optional display
   if (display === 'optional' && !preload) {
-    preload = ['latin']
+    preload = true
   }
 
   const lines = []
@@ -175,7 +181,7 @@ export default async function download(
         const file = emitFile(
           fontFileBuffer,
           ext,
-          preload?.includes(currentSubset)
+          preload && config.subsets.includes(currentSubset)
         )
         lines.push(line.replace(fontFaceUrl, file))
         continue
