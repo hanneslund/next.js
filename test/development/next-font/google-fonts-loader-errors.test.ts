@@ -91,60 +91,6 @@ describe('@next/font/google option errors', () => {
     }
   })
 
-  test('Invalid preload type', async () => {
-    const browser = await webdriver(next.appPort, '/')
-
-    try {
-      await next.patchFile(
-        'pages/index.js',
-        `
-      import { Inter } from '@next/font/google'
-
-      const i = Inter({ variant: '500', preload: {} })
-
-      export default function Page() {
-        return <p>Hello world</p>
-      }
-      `
-      )
-      await check(() => getRedboxSource(browser), /expected an array/)
-      expect(removeFirstLine(await getRedboxSource(browser)))
-        .toMatchInlineSnapshot(`
-        "Invalid preload value for font \`Inter\`, expected an array of subsets.
-        Available subsets: \`cyrillic\`,\`cyrillic-ext\`,\`greek\`,\`greek-ext\`,\`latin\`,\`latin-ext\`,\`vietnamese\`"
-      `)
-    } finally {
-      await browser.close()
-    }
-  })
-
-  test('Unknown preload subset', async () => {
-    const browser = await webdriver(next.appPort, '/')
-
-    try {
-      await next.patchFile(
-        'pages/index.js',
-        `
-      import { Inter } from '@next/font/google'
-
-      const i = Inter({ variant: '500', preload: ['japanese'] })
-
-      export default function Page() {
-        return <p>Hello world</p>
-      }
-      `
-      )
-      await check(() => getRedboxSource(browser), /Unknown preload subset/)
-      expect(removeFirstLine(await getRedboxSource(browser)))
-        .toMatchInlineSnapshot(`
-        "Unknown preload subset \`japanese\` for font \`Inter\`
-        Available subsets: \`cyrillic\`,\`cyrillic-ext\`,\`greek\`,\`greek-ext\`,\`latin\`,\`latin-ext\`,\`vietnamese\`"
-      `)
-    } finally {
-      await browser.close()
-    }
-  })
-
   test('Invalid display value', async () => {
     const browser = await webdriver(next.appPort, '/')
 
@@ -164,8 +110,8 @@ describe('@next/font/google option errors', () => {
       await check(() => getRedboxSource(browser), /Invalid display value/)
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
-        "Invalid display value \`always\` for font \`Inter\`
-        Available display values: \`auto\`,\`block\`,\`swap\`,\`fallback\`,\`optional\`"
+        "Invalid display value \`always\` for font \`Inter\`.
+        Available display values: \`auto\`, \`block\`, \`swap\`, \`fallback\`, \`optional\`"
       `)
     } finally {
       await browser.close()
@@ -272,7 +218,7 @@ describe('@next/font/google option errors', () => {
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Invalid axes value \`hello\` for font \`Fraunces\`.
-        Available axes: \`opsz\`,\`SOFT\`,\`WONK\`"
+        Available axes: \`opsz\`, \`SOFT\`, \`WONK\`"
       `)
     } finally {
       await browser.close()

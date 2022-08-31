@@ -39,7 +39,7 @@ describe('@next/font/google', () => {
         className: expect.any(String),
         variables: expect.any(String),
         style: {
-          fontFamily: "'Open Sans-ecb0d'",
+          fontFamily: "'Open Sans-aba68'",
           fontStyle: 'normal',
         },
       })
@@ -49,7 +49,7 @@ describe('@next/font/google', () => {
         className: expect.any(String),
         variables: expect.any(String),
         style: {
-          fontFamily: "'Open Sans-ecb0d'",
+          fontFamily: "'Open Sans-aba68'",
           fontStyle: 'normal',
         },
       })
@@ -86,7 +86,7 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#app-open-sans")).fontFamily'
           )
-        ).toBe('"Open Sans-ecb0d"')
+        ).toBe('"Open Sans-aba68"')
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#app-open-sans")).fontWeight'
@@ -103,7 +103,7 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontFamily'
           )
-        ).toBe('"Open Sans-ecb0d"')
+        ).toBe('"Open Sans-aba68"')
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontWeight'

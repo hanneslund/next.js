@@ -1,6 +1,0 @@
-
-  x Font loaders only accepts 1 argument
-   ,-[input.js:2:1]
- 2 | const inter = Inter({}, 10)
-   :               ^^^^^^^^^^^^^
-   `----

@@ -5,7 +5,8 @@ const CHROME_UA =
 
 const allowedDisplayValues = ['auto', 'block', 'swap', 'fallback', 'optional']
 
-const formatValues = (values: string[]) => values.map((val) => `\`${val}\``)
+const formatValues = (values: string[]) =>
+  values.map((val) => `\`${val}\``).join(', ')
 
 export default async function download(
   font: any,
@@ -18,7 +19,12 @@ export default async function download(
       'Please specify subsets for `@next/font/google` in your `next.config.js`'
     )
   }
-  let { variant, display = 'optional', preload, axes } = data
+  let {
+    variant,
+    display = 'optional',
+    preload = display === 'optional',
+    axes,
+  } = JSON.parse(data[0] || '{}')
 
   const fontFamily = font.replaceAll('_', ' ')
   const googleFontName = font.replaceAll('_', '+')
@@ -42,30 +48,10 @@ export default async function download(
 
   if (!allowedDisplayValues.includes(display)) {
     throw new Error(
-      `Invalid display value \`${display}\` for font \`${fontFamily}\`\nAvailable display values: ${formatValues(
+      `Invalid display value \`${display}\` for font \`${fontFamily}\`.\nAvailable display values: ${formatValues(
         allowedDisplayValues
       )}`
     )
-  }
-
-  const fontSubsets = (fontData as any)[fontFamily].subsets
-  if (typeof preload !== 'undefined') {
-    if (!Array.isArray(preload)) {
-      throw new Error(
-        `Invalid preload value for font \`${fontFamily}\`, expected an array of subsets.\nAvailable subsets: ${formatValues(
-          fontSubsets
-        )}`
-      )
-    }
-    preload.forEach((subset: string) => {
-      if (!fontSubsets.includes(subset)) {
-        throw new Error(
-          `Unknown preload subset \`${subset}\` for font \`${fontFamily}\`\nAvailable subsets: ${formatValues(
-            fontSubsets
-          )}`
-        )
-      }
-    })
   }
 
   let url: string
@@ -152,11 +138,6 @@ export default async function download(
     cssResponse = await res.text()
   }
 
-  // Preload by default on optional display
-  if (display === 'optional' && !preload) {
-    preload = true
-  }
-
   const lines = []
   let currentSubset = ''
   for (const line of cssResponse.split('\n')) {
@@ -181,7 +162,7 @@ export default async function download(
         const file = emitFile(
           fontFileBuffer,
           ext,
-          preload && config.subsets.includes(currentSubset)
+          !!preload && config.subsets.includes(currentSubset)
         )
         lines.push(line.replace(fontFaceUrl, file))
         continue
