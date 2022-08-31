@@ -141,9 +141,9 @@ export default async function download(
   const lines = []
   let currentSubset = ''
   for (const line of cssResponse.split('\n')) {
-    const newLocale = /\/\* (.+?) \*\//.exec(line)?.[1]
-    if (newLocale) {
-      currentSubset = newLocale
+    const newSubset = /\/\* (.+?) \*\//.exec(line)?.[1]
+    if (newSubset) {
+      currentSubset = newSubset
     } else {
       const fontFaceUrl = /src: url\((.+?)\)/.exec(line)?.[1]
       if (fontFaceUrl) {
