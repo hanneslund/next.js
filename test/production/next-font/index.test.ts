@@ -68,7 +68,7 @@ describe('@next/font/google', () => {
         className: expect.any(String),
         variables: expect.any(String),
         style: {
-          fontFamily: "'Roboto-0bc4d'",
+          fontFamily: "'Roboto-adfcc'",
           fontStyle: 'italic',
           fontWeight: 100,
         },
@@ -77,7 +77,7 @@ describe('@next/font/google', () => {
   })
 
   describe('computed styles', () => {
-    test('css modules with font face', async () => {
+    test('page with fonts', async () => {
       const browser = await webdriver(next.url, '/with-fonts')
 
       try {
@@ -146,7 +146,7 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontFamily'
           )
-        ).toBe('Roboto-0bc4d')
+        ).toBe('Roboto-adfcc')
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontWeight'
@@ -157,6 +157,63 @@ describe('@next/font/google', () => {
             'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontStyle'
           )
         ).toBe('italic')
+      } finally {
+        await browser.close()
+      }
+    })
+
+    test('page using variables', async () => {
+      const browser = await webdriver(next.url, '/variables')
+
+      try {
+        // variables.js
+        // Fira Code Variable
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#variables-fira-code")).fontFamily'
+          )
+        ).toBe('"Fira Code-81c88"')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#without-variables-fira-code")).fontFamily'
+          )
+        ).not.toBe('"Fira Code-81c88"')
+
+        // Albert Sant Variable Italic
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#variables-albert-sans-italic")).fontFamily'
+          )
+        ).toBe('"Albert Sans-1615c"')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#without-variables-albert-sans-italic")).fontFamily'
+          )
+        ).not.toBe('"Albert Sans-1615c"')
+
+        // Inter 900
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#variables-inter-900")).fontFamily'
+          )
+        ).toBe('Inter-56dc7')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#without-variables-inter-900")).fontFamily'
+          )
+        ).not.toBe('Inter-56dc7')
+
+        // Roboto 100 Italic
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#variables-roboto-100-italic")).fontFamily'
+          )
+        ).toBe('Roboto-adfcc')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#without-variables-roboto-100-italic")).fontFamily'
+          )
+        ).not.toBe('Roboto-adfcc')
       } finally {
         await browser.close()
       }

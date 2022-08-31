@@ -103,7 +103,7 @@ const plugin = (
           prop: rawFamily
             ? `--next-font-${rawFamily.toLowerCase().replaceAll(' ', '-')}${
                 fontWeight ? `-${fontWeight}` : ''
-              }`
+              }${fontStyle === 'italic' ? `-${fontStyle}` : ''}`
             : '',
           value: fontFamilies.join(','),
         }),

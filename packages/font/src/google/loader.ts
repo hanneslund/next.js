@@ -24,7 +24,7 @@ export default async function download(
     display = 'optional',
     preload = display === 'optional',
     axes,
-  } = JSON.parse(data[0] || '{}')
+  } = data[0] || {}
 
   const fontFamily = font.replaceAll('_', ' ')
   const googleFontName = font.replaceAll('_', '+')

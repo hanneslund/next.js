@@ -3,7 +3,7 @@ const inter = Inter({ variant: '900', display: 'swap' }) // Don't preload by def
 const roboto = Roboto({
   variant: '100-italic',
   display: 'swap',
-  preload: ['latin'],
+  preload: true,
 })
 
 export default function Component() {

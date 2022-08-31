@@ -20,7 +20,8 @@ export default async function nextFontLoader(this: any) {
     return outputPath
   }
 
-  const [font, ...data] = this.resourceQuery.slice(1).split(';')
+  let [font, ...data] = this.resourceQuery.slice(1).split(';')
+  data = data.map((value: string) => JSON.parse(value))
 
   const loader = require(path.join(this.resourcePath, '../loader.js'))
   try {

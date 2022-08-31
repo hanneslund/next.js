@@ -12,7 +12,9 @@ describe('@next/font/google loader', () => {
       ok: false,
     })
 
-    const err = await loader('Inter', {}, jest.fn()).catch((err) => err)
+    const err = await loader('Inter', [], { subsets: [] }, jest.fn()).catch(
+      (err) => err
+    )
 
     expect(err.message).toMatchInlineSnapshot(`
 "Failed to fetch font  \`Inter\`
@@ -76,12 +78,17 @@ URL: https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=option
       { variant: '400' },
       'https://fonts.googleapis.com/css2?family=Oooh+Baby:wght@400&display=optional',
     ],
+    [
+      'Albert_Sans',
+      { variant: 'variable-italic' },
+      'https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@1,100..900&display=optional',
+    ],
   ])('Correct url: %s %p', async (font, data, url) => {
     self.fetch.mockResolvedValue({
       ok: true,
       text: async () => 'OK',
     })
-    const css = await loader(font, data, jest.fn())
+    const css = await loader(font, [data], { subsets: [] }, jest.fn())
     expect(css).toBe('OK')
     expect(self.fetch).toHaveBeenCalledTimes(1)
     expect(self.fetch).toHaveBeenCalledWith(url, expect.any(Object))
