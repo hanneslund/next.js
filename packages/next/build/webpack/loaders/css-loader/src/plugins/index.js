@@ -1,6 +1,6 @@
 import importParser from './postcss-import-parser'
 import icssParser from './postcss-icss-parser'
 import urlParser from './postcss-url-parser'
-import fontLoaderModule from './postcss-font-loader-module'
+import fontLoader from './postcss-font-loader'
 
-export { importParser, icssParser, urlParser, fontLoaderModule }
+export { importParser, icssParser, urlParser, fontLoader }

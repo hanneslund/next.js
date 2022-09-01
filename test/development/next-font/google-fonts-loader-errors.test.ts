@@ -106,7 +106,7 @@ describe('@next/font/google option errors', () => {
       }
       `
       )
-      await check(() => getRedboxSource(browser), /Unknown variant/)
+      await check(() => getRedboxSource(browser), /Missing variant/)
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Missing variant for font \`Abel\`.

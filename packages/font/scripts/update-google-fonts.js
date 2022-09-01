@@ -8,7 +8,7 @@ const path = require('path')
 
   let fontFunctions = `/* eslint-disable @typescript-eslint/no-unused-vars */
   type Display = 'auto'|'block'|'swap'|'fallback'|'optional'
-  type FontModule = { className: string, variables: string, style: { fontFamily: string, fontWeight?: number, fontStyle?: string } }
+  type FontModule = { className: string, variable: string, style: { fontFamily: string, fontWeight?: number, fontStyle?: string } }
   function e():never { throw new Error('@next/font/google is not configured as a font loader') }
   `
   const fontData = {}

@@ -2,7 +2,7 @@
 type Display = 'auto' | 'block' | 'swap' | 'fallback' | 'optional'
 type FontModule = {
   className: string
-  variables: string
+  variable: string
   style: { fontFamily: string; fontWeight?: number; fontStyle?: string }
 }
 function e(): never {

@@ -37,7 +37,7 @@ describe('@next/font/google', () => {
       // _app.js
       expect(JSON.parse($('#app-open-sans').text())).toEqual({
         className: expect.any(String),
-        variables: expect.any(String),
+        variable: expect.any(String),
         style: {
           fontFamily: "'Open Sans-aba68'",
           fontStyle: 'normal',
@@ -47,7 +47,7 @@ describe('@next/font/google', () => {
       // with-fonts.js
       expect(JSON.parse($('#with-fonts-open-sans').text())).toEqual({
         className: expect.any(String),
-        variables: expect.any(String),
+        variable: expect.any(String),
         style: {
           fontFamily: "'Open Sans-aba68'",
           fontStyle: 'normal',
@@ -57,7 +57,7 @@ describe('@next/font/google', () => {
       // CompWithFonts.js
       expect(JSON.parse($('#comp-with-fonts-inter').text())).toEqual({
         className: expect.any(String),
-        variables: expect.any(String),
+        variable: expect.any(String),
         style: {
           fontFamily: "'Inter-56dc7'",
           fontStyle: 'normal',
@@ -66,7 +66,7 @@ describe('@next/font/google', () => {
       })
       expect(JSON.parse($('#comp-with-fonts-roboto').text())).toEqual({
         className: expect.any(String),
-        variables: expect.any(String),
+        variable: expect.any(String),
         style: {
           fontFamily: "'Roboto-adfcc'",
           fontStyle: 'italic',

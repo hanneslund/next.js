@@ -1,20 +1,12 @@
-import loaderUtils from 'next/dist/compiled/loader-utils3'
 import postcss, { Declaration } from 'postcss'
 
 const plugin = (
   exports: { name: any; value: any }[],
-  resourceQuery: string
+  classNameHash: string
 ) => {
   return {
-    postcssPlugin: 'postcss-font-loader-module',
+    postcssPlugin: 'postcss-font-loader',
     Once(root: any) {
-      const hash = loaderUtils.getHashDigest(
-        Buffer.from(resourceQuery),
-        'md5',
-        'hex',
-        5
-      )
-
       const fontFamilies: string[] = []
       let rawFamily: string | undefined
       let fontWeight: string | undefined
@@ -24,7 +16,7 @@ const plugin = (
         if (family[0] === "'" || family[0] === '"') {
           family = family.slice(1, family.length - 1)
         }
-        return `'${family}-${hash}'`
+        return `'${family}-${classNameHash}'`
       }
 
       for (const node of root.nodes) {
@@ -97,7 +89,7 @@ const plugin = (
       root.nodes.push(classRule)
 
       // Add varible class
-      const varialbeRule = new postcss.Rule({ selector: '.variables' })
+      const varialbeRule = new postcss.Rule({ selector: '.variable' })
       varialbeRule.nodes = [
         new postcss.Declaration({
           prop: rawFamily

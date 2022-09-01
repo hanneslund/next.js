@@ -14,7 +14,7 @@ export default function WithFonts() {
       {/* Fira Code Variable */}
       <div
         id="variables-fira-code"
-        className={firaCode.variables}
+        className={firaCode.variable}
         style={{ fontFamily: 'var(--next-font-fira-code)' }}
       >
         With variables
@@ -29,7 +29,7 @@ export default function WithFonts() {
       {/* Albert Sant Variable Italic */}
       <div
         id="variables-albert-sans-italic"
-        className={albertSans.variables}
+        className={albertSans.variable}
         style={{ fontFamily: 'var(--next-font-albert-sans-italic)' }}
       >
         With variables
@@ -44,7 +44,7 @@ export default function WithFonts() {
       {/* Inter 900 */}
       <div
         id="variables-inter-900"
-        className={inter.variables}
+        className={inter.variable}
         style={{ fontFamily: 'var(--next-font-inter-900)' }}
       >
         With variables
@@ -59,7 +59,7 @@ export default function WithFonts() {
       {/* Roboto 100 Italic */}
       <div
         id="variables-roboto-100-italic"
-        className={roboto.variables}
+        className={roboto.variable}
         style={{ fontFamily: 'var(--next-font-roboto-100-italic)' }}
       >
         With variables

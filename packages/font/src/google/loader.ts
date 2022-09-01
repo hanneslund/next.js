@@ -27,7 +27,6 @@ export default async function download(
   } = data[0] || ({} as any)
 
   const fontFamily = font.replaceAll('_', ' ')
-  const googleFontName = font.replaceAll('_', '+')
 
   const fontVariants = (fontData as any)[fontFamily]?.variants
   if (!fontVariants) {
@@ -75,9 +74,12 @@ export default async function download(
       return a > b ? 1 : -1
     })
 
-    return `https://fonts.googleapis.com/css2?family=${googleFontName}:${keyVal
-      .map(([key]) => key)
-      .join(',')}@${keyVal.map(([, val]) => val).join(',')}&display=${display}`
+    return `https://fonts.googleapis.com/css2?family=${font.replaceAll(
+      '_',
+      '+'
+    )}:${keyVal.map(([key]) => key).join(',')}@${keyVal
+      .map(([, val]) => val)
+      .join(',')}&display=${display}`
   }
 
   const [weight, style] = variant.split('-')
@@ -158,7 +160,10 @@ export default async function download(
   }
 
   // Find font files to download
-  const fontFiles: Array<{ fontFileUrl: string; preloadFontFile: boolean }> = []
+  const fontFiles: Array<{
+    googleFontFileUrl: string
+    preloadFontFile: boolean
+  }> = []
   let currentSubset = ''
   for (const line of cssResponse.split('\n')) {
     // Each @font-face has the subset above it in a comment
@@ -166,10 +171,10 @@ export default async function download(
     if (newSubset) {
       currentSubset = newSubset
     } else {
-      const fontFileUrl = /src: url\((.+?)\)/.exec(line)?.[1]
-      if (fontFileUrl) {
+      const googleFontFileUrl = /src: url\((.+?)\)/.exec(line)?.[1]
+      if (googleFontFileUrl) {
         fontFiles.push({
-          fontFileUrl,
+          googleFontFileUrl,
           preloadFontFile: !!preload && config.subsets.includes(currentSubset),
         })
       }
@@ -178,33 +183,36 @@ export default async function download(
 
   // Download font files
   const downloadedFiles = await Promise.all(
-    fontFiles.map(async ({ fontFileUrl, preloadFontFile }) => {
+    fontFiles.map(async ({ googleFontFileUrl, preloadFontFile }) => {
       let fontFileBuffer: Buffer
       if (mockedResponse) {
-        fontFileBuffer = Buffer.from(fontFileUrl)
+        fontFileBuffer = Buffer.from(googleFontFileUrl)
       } else {
-        const arrayBuffer = await fetch(fontFileUrl).then((r) =>
+        const arrayBuffer = await fetch(googleFontFileUrl).then((r) =>
           r.arrayBuffer()
         )
         fontFileBuffer = Buffer.from(arrayBuffer)
       }
 
-      // Emit font file to _next/static/fonts
-      let ext: any = fontFileUrl.split('.')
+      let ext: any = googleFontFileUrl.split('.')
       ext = ext[ext.length - 1]
-      const selfHostedFile = emitFile(fontFileBuffer, ext, preloadFontFile)
+      // Emit font file to .next/static/fonts
+      const selfHostedFileUrl = emitFile(fontFileBuffer, ext, preloadFontFile)
 
       return {
-        fontFileUrl,
-        selfHostedFile,
+        googleFontFileUrl,
+        selfHostedFileUrl,
       }
     })
   )
 
   // Replace @font-face sources with self-hosted files
   let updatedCssResponse = cssResponse
-  for (const { fontFileUrl, selfHostedFile } of downloadedFiles) {
-    updatedCssResponse = updatedCssResponse.replace(fontFileUrl, selfHostedFile)
+  for (const { googleFontFileUrl, selfHostedFileUrl } of downloadedFiles) {
+    updatedCssResponse = updatedCssResponse.replace(
+      googleFontFileUrl,
+      selfHostedFileUrl
+    )
   }
 
   return updatedCssResponse

@@ -2,6 +2,7 @@
   MIT License http://www.opensource.org/licenses/mit-license.php
   Author Tobias Koppers @sokra
 */
+import loaderUtils from 'next/dist/compiled/loader-utils3'
 import CssSyntaxError from './CssSyntaxError'
 import Warning from '../../postcss-loader/src/Warning'
 import { stringifyRequest } from '../../../stringify-request'
@@ -170,7 +171,7 @@ export default async function loader(content, map, meta) {
         icssParser,
         importParser,
         urlParser,
-        fontLoaderModule,
+        fontLoader,
       } = require('./plugins')
 
       const replacements = []
@@ -178,7 +179,13 @@ export default async function loader(content, map, meta) {
       const fontLoaderExports = []
 
       if (options.fontLoader) {
-        plugins.push(fontLoaderModule(fontLoaderExports, this.resourceQuery))
+        const hash = loaderUtils.getHashDigest(
+          Buffer.from(this.resourceQuery),
+          'md5',
+          'hex',
+          5
+        )
+        plugins.push(fontLoader(fontLoaderExports, hash))
       }
 
       if (shouldUseModulesPlugins(options)) {
