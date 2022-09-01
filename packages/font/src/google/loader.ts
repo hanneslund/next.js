@@ -24,7 +24,7 @@ export default async function download(
     display = 'optional',
     preload = display === 'optional',
     axes,
-  } = data[0] || {}
+  } = data[0] || ({} as any)
 
   const fontFamily = font.replaceAll('_', ' ')
   const googleFontName = font.replaceAll('_', '+')
@@ -33,14 +33,23 @@ export default async function download(
   if (!fontVariants) {
     throw new Error(`Unknown font \`${fontFamily}\``)
   }
-  // Set variable as default if available, otherwise set 400
+
+  // Set variable as default
   if (!variant) {
-    variant = fontVariants.includes('variable') ? 'variable' : '400'
+    if (fontVariants.includes('variable')) {
+      variant = 'variable'
+    } else {
+      throw new Error(
+        `Missing variant for font \`${fontFamily}\`.\nAvailable variants: ${formatValues(
+          fontVariants
+        )}`
+      )
+    }
   }
 
   if (!fontVariants.includes(variant)) {
     throw new Error(
-      `Unknown variant \`${variant}\` for font \`${fontFamily}\`\nAvailable variants: ${formatValues(
+      `Unknown variant \`${variant}\` for font \`${fontFamily}\`.\nAvailable variants: ${formatValues(
         fontVariants
       )}`
     )
@@ -55,10 +64,21 @@ export default async function download(
   }
 
   let url: string
-  const getUrl = (keyVal: Array<[string, string]>) =>
-    `https://fonts.googleapis.com/css2?family=${googleFontName}:${keyVal
+  const getUrl = (keyVal: Array<[string, string]>) => {
+    // Google api requires the axes to be sorted, starting with lowercase words
+    keyVal.sort(([a], [b]) => {
+      const aIsLowercase = a.charCodeAt(0) > 96
+      const bIsLowercase = b.charCodeAt(0) > 96
+      if (aIsLowercase && !bIsLowercase) return -1
+      if (bIsLowercase && !aIsLowercase) return 1
+
+      return a > b ? 1 : -1
+    })
+
+    return `https://fonts.googleapis.com/css2?family=${googleFontName}:${keyVal
       .map(([key]) => key)
       .join(',')}@${keyVal.map(([, val]) => val).join(',')}&display=${display}`
+  }
 
   const [weight, style] = variant.split('-')
 
@@ -67,12 +87,14 @@ export default async function download(
   }
 
   if (weight === 'variable') {
-    const fontAxes = (fontData as any)[fontFamily].axes
+    const fontAxes: { tag: string; min: number; max: number }[] = (
+      fontData as any
+    )[fontFamily].axes
 
     if (axes) {
-      const defineAbleAxes = Object.keys(fontAxes).filter(
-        (key: string) => key !== 'wght' && key !== 'ital'
-      )
+      const defineAbleAxes: string[] = fontAxes
+        .map(({ tag }) => tag)
+        .filter((tag) => tag !== 'wght')
       if (defineAbleAxes.length === 0) {
         throw new Error(`Font \`${fontFamily}\` has no definable \`axes\``)
       }
@@ -84,7 +106,7 @@ export default async function download(
         )
       }
       axes.forEach((key) => {
-        if (!defineAbleAxes.includes(key)) {
+        if (!defineAbleAxes.some((tag) => tag === key)) {
           throw new Error(
             `Invalid axes value \`${key}\` for font \`${fontFamily}\`.\nAvailable axes: ${formatValues(
               defineAbleAxes
@@ -93,18 +115,14 @@ export default async function download(
         }
       })
     }
+    const usedAxes: Array<[string, string]> = fontAxes
+      .filter(({ tag }) => tag === 'wght' || axes?.includes(tag))
+      .map(({ tag, min, max }) => [tag, `${min}..${max}`])
 
-    const usedAxes: Array<[string, string]> = Object.entries(fontAxes)
-      .filter(
-        ([key]) =>
-          key === 'wght' ||
-          (key === 'ital' && style === 'italic') ||
-          axes?.includes(key)
-      )
-      .map(([key, { min, max }]: any) => [
-        key,
-        key === 'ital' ? '1' : `${min}..${max}`,
-      ])
+    if (style === 'italic') {
+      usedAxes.unshift(['ital', '1'])
+    }
+
     url = getUrl(usedAxes)
   } else {
     const keyVal: Array<[string, string]> = [['wght', weight]]
@@ -132,7 +150,7 @@ export default async function download(
     })
 
     if (!res.ok) {
-      throw new Error(`Failed to fetch font  \`${fontFamily}\`\nURL: ${url}`)
+      throw new Error(`Failed to fetch font  \`${fontFamily}\`.\nURL: ${url}`)
     }
 
     cssResponse = await res.text()

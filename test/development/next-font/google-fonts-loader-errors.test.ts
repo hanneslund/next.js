@@ -1,8 +1,7 @@
-import { createNext, FileRef } from 'e2e-utils'
+import { createNext } from 'e2e-utils'
 import { NextInstance } from 'test/lib/next-modes/base'
-import { check, getRedboxSource, renderViaHTTP, waitFor } from 'next-test-utils'
+import { check, getRedboxSource, renderViaHTTP } from 'next-test-utils'
 import webdriver from 'next-webdriver'
-import { join } from 'path'
 
 function removeFirstLine(str: string) {
   return str.split('\n').slice(1).join('\n')
@@ -83,7 +82,34 @@ describe('@next/font/google option errors', () => {
       await check(() => getRedboxSource(browser), /Unknown variant/)
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
-        "Unknown variant \`500\` for font \`Oooh Baby\`
+        "Unknown variant \`500\` for font \`Oooh Baby\`.
+        Available variants: \`400\`"
+      `)
+    } finally {
+      await browser.close()
+    }
+  })
+
+  test('Missing default variant', async () => {
+    const browser = await webdriver(next.appPort, '/')
+
+    try {
+      await next.patchFile(
+        'pages/index.js',
+        `
+      import { Abel } from '@next/font/google'
+
+      const a = Abel()
+
+      export default function Page() {
+        return <p>Hello world</p>
+      }
+      `
+      )
+      await check(() => getRedboxSource(browser), /Unknown variant/)
+      expect(removeFirstLine(await getRedboxSource(browser)))
+        .toMatchInlineSnapshot(`
+        "Missing variant for font \`Abel\`.
         Available variants: \`400\`"
       `)
     } finally {
@@ -218,7 +244,7 @@ describe('@next/font/google option errors', () => {
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Invalid axes value \`hello\` for font \`Fraunces\`.
-        Available axes: \`opsz\`, \`SOFT\`, \`WONK\`"
+        Available axes: \`SOFT\`, \`WONK\`, \`opsz\`"
       `)
     } finally {
       await browser.close()

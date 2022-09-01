@@ -49,6 +49,7 @@ describe('@next/font/google with-font-declarations-file', () => {
       rel: 'preconnect',
     })
 
+    // Preload
     expect($('link[as="font"]').length).toBe(2)
     // From /_app
     expect($('link[as="font"]').get(0).attribs).toEqual({
@@ -80,6 +81,7 @@ describe('@next/font/google with-font-declarations-file', () => {
       rel: 'preconnect',
     })
 
+    // Preload
     expect($('link[as="font"]').length).toBe(2)
     // From /_app
     expect($('link[as="font"]').get(0).attribs).toEqual({
@@ -89,7 +91,7 @@ describe('@next/font/google with-font-declarations-file', () => {
       rel: 'preload',
       type: 'font/woff2',
     })
-    // From /inter
+    // From /roboto
     expect($('link[as="font"]').get(1).attribs).toEqual({
       as: 'font',
       crossorigin: 'anonymous',

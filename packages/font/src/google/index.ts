@@ -6,100 +6,100 @@ type FontModule = {
   style: { fontFamily: string; fontWeight?: number; fontStyle?: string }
 }
 function e(): never {
-  throw new Error()
+  throw new Error('@next/font/google is not configured as a font loader')
 }
-export function ABeeZee(options?: {
-  variant: '400-italic' | '400'
+export function ABeeZee(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Abel(options?: {
+export function Abel(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Abhaya_Libre(options?: {
+export function Abhaya_Libre(options: {
   variant: '400' | '500' | '600' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Aboreto(options?: {
+export function Aboreto(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Abril_Fatface(options?: {
+export function Abril_Fatface(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Aclonica(options?: {
+export function Aclonica(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Acme(options?: {
+export function Acme(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Actor(options?: {
+export function Actor(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Adamina(options?: {
+export function Adamina(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Advent_Pro(options?: {
+export function Advent_Pro(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Aguafina_Script(options?: {
+export function Aguafina_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Akaya_Kanadaka(options?: {
+export function Akaya_Kanadaka(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Akaya_Telivigala(options?: {
+export function Akaya_Telivigala(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Akronim(options?: {
+export function Akronim(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -107,27 +107,27 @@ export function Akronim(options?: {
   e()
 }
 export function Akshar(options?: {
-  variant: '300' | '400' | '500' | '600' | '700'
+  variant?: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Aladin(options?: {
+export function Aladin(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Alata(options?: {
+export function Alata(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Alatsi(options?: {
+export function Alatsi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -135,25 +135,25 @@ export function Alatsi(options?: {
   e()
 }
 export function Albert_Sans(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -161,14 +161,14 @@ export function Albert_Sans(options?: {
 }): FontModule {
   e()
 }
-export function Aldrich(options?: {
+export function Aldrich(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Alef(options?: {
+export function Alef(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
@@ -176,19 +176,19 @@ export function Alef(options?: {
   e()
 }
 export function Alegreya(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -196,164 +196,164 @@ export function Alegreya(options?: {
 }): FontModule {
   e()
 }
-export function Alegreya_Sans(options?: {
+export function Alegreya_SC(options: {
   variant:
-    | '100-italic'
+    | '400'
+    | '500'
+    | '700'
+    | '800'
+    | '900'
+    | '400-italic'
+    | '500-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Alegreya_Sans(options: {
+  variant:
     | '100'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Alegreya_Sans_SC(options?: {
-  variant:
     | '100-italic'
-    | '100'
     | '300-italic'
-    | '300'
     | '400-italic'
-    | '400'
     | '500-italic'
-    | '500'
     | '700-italic'
-    | '700'
     | '800-italic'
-    | '800'
     | '900-italic'
-    | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Alegreya_SC(options?: {
+export function Alegreya_Sans_SC(options: {
   variant:
-    | '400-italic'
+    | '100'
+    | '300'
     | '400'
-    | '500-italic'
     | '500'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Aleo(options?: {
-  variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
+export function Aleo(options: {
+  variant: '300' | '400' | '700' | '300-italic' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Alex_Brush(options?: {
+export function Alex_Brush(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Alfa_Slab_One(options?: {
+export function Alfa_Slab_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Alice(options?: {
+export function Alice(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Alike(options?: {
+export function Alike(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Alike_Angular(options?: {
+export function Alike_Angular(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Allan(options?: {
+export function Allan(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Allerta(options?: {
+export function Allerta(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Allerta_Stencil(options?: {
+export function Allerta_Stencil(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Allison(options?: {
+export function Allison(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Allura(options?: {
+export function Allura(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Almarai(options?: {
+export function Almarai(options: {
   variant: '300' | '400' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Almendra(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Almendra(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Almendra_Display(options?: {
+export function Almendra_Display(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Almendra_SC(options?: {
+export function Almendra_SC(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -361,25 +361,25 @@ export function Almendra_SC(options?: {
   e()
 }
 export function Alumni_Sans(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -387,77 +387,77 @@ export function Alumni_Sans(options?: {
 }): FontModule {
   e()
 }
-export function Alumni_Sans_Collegiate_One(options?: {
-  variant: '400-italic' | '400'
+export function Alumni_Sans_Collegiate_One(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Alumni_Sans_Inline_One(options?: {
-  variant: '400-italic' | '400'
+export function Alumni_Sans_Inline_One(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Alumni_Sans_Pinstripe(options?: {
-  variant: '400-italic' | '400'
+export function Alumni_Sans_Pinstripe(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Amarante(options?: {
+export function Amarante(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Amaranth(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Amaranth(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Amatic_SC(options?: {
+export function Amatic_SC(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Amethysta(options?: {
+export function Amethysta(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Amiko(options?: {
+export function Amiko(options: {
   variant: '400' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Amiri(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Amiri(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Amita(options?: {
+export function Amita(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Anaheim(options?: {
+export function Anaheim(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -465,17 +465,17 @@ export function Anaheim(options?: {
   e()
 }
 export function Andada_Pro(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -483,15 +483,15 @@ export function Andada_Pro(options?: {
 }): FontModule {
   e()
 }
-export function Andika(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Andika(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Anek_Bangla(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -508,7 +508,7 @@ export function Anek_Bangla(options?: {
   e()
 }
 export function Anek_Devanagari(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -525,7 +525,7 @@ export function Anek_Devanagari(options?: {
   e()
 }
 export function Anek_Gujarati(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -542,7 +542,7 @@ export function Anek_Gujarati(options?: {
   e()
 }
 export function Anek_Gurmukhi(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -559,7 +559,7 @@ export function Anek_Gurmukhi(options?: {
   e()
 }
 export function Anek_Kannada(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -576,7 +576,7 @@ export function Anek_Kannada(options?: {
   e()
 }
 export function Anek_Latin(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -593,7 +593,7 @@ export function Anek_Latin(options?: {
   e()
 }
 export function Anek_Malayalam(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -610,7 +610,7 @@ export function Anek_Malayalam(options?: {
   e()
 }
 export function Anek_Odia(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -627,7 +627,7 @@ export function Anek_Odia(options?: {
   e()
 }
 export function Anek_Tamil(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -644,7 +644,7 @@ export function Anek_Tamil(options?: {
   e()
 }
 export function Anek_Telugu(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -660,49 +660,49 @@ export function Anek_Telugu(options?: {
 }): FontModule {
   e()
 }
-export function Angkor(options?: {
+export function Angkor(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Annie_Use_Your_Telescope(options?: {
+export function Annie_Use_Your_Telescope(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Anonymous_Pro(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Anonymous_Pro(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Antic(options?: {
+export function Antic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Antic_Didone(options?: {
+export function Antic_Didone(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Antic_Slab(options?: {
+export function Antic_Slab(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Anton(options?: {
+export function Anton(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -710,32 +710,32 @@ export function Anton(options?: {
   e()
 }
 export function Antonio(options?: {
-  variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '100' | '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Anybody(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -744,28 +744,28 @@ export function Anybody(options?: {
 }): FontModule {
   e()
 }
-export function Arapey(options?: {
-  variant: '400-italic' | '400'
+export function Arapey(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Arbutus(options?: {
+export function Arbutus(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Arbutus_Slab(options?: {
+export function Arbutus_Slab(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Architects_Daughter(options?: {
+export function Architects_Daughter(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -773,25 +773,25 @@ export function Architects_Daughter(options?: {
   e()
 }
 export function Archivo(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -800,7 +800,7 @@ export function Archivo(options?: {
 }): FontModule {
   e()
 }
-export function Archivo_Black(options?: {
+export function Archivo_Black(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -808,15 +808,15 @@ export function Archivo_Black(options?: {
   e()
 }
 export function Archivo_Narrow(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -824,14 +824,14 @@ export function Archivo_Narrow(options?: {
 }): FontModule {
   e()
 }
-export function Are_You_Serious(options?: {
+export function Are_You_Serious(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Aref_Ruqaa(options?: {
+export function Aref_Ruqaa(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
@@ -839,13 +839,13 @@ export function Aref_Ruqaa(options?: {
   e()
 }
 export function Arima(options?: {
-  variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '100' | '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Arima_Madurai(options?: {
+export function Arima_Madurai(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
@@ -853,15 +853,15 @@ export function Arima_Madurai(options?: {
   e()
 }
 export function Arimo(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -869,42 +869,42 @@ export function Arimo(options?: {
 }): FontModule {
   e()
 }
-export function Arizonia(options?: {
+export function Arizonia(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Armata(options?: {
+export function Armata(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Arsenal(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Arsenal(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Artifika(options?: {
+export function Artifika(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Arvo(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Arvo(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Arya(options?: {
+export function Arya(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
@@ -912,15 +912,15 @@ export function Arya(options?: {
   e()
 }
 export function Asap(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -928,29 +928,29 @@ export function Asap(options?: {
 }): FontModule {
   e()
 }
-export function Asap_Condensed(options?: {
+export function Asap_Condensed(options: {
   variant:
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Asar(options?: {
+export function Asar(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Asset(options?: {
+export function Asset(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -958,137 +958,137 @@ export function Asset(options?: {
   e()
 }
 export function Assistant(options?: {
-  variant: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Astloch(options?: {
+export function Astloch(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Asul(options?: {
+export function Asul(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Athiti(options?: {
+export function Athiti(options: {
   variant: '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Atkinson_Hyperlegible(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Atkinson_Hyperlegible(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Atma(options?: {
+export function Atma(options: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Atomic_Age(options?: {
+export function Atomic_Age(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Aubrey(options?: {
+export function Aubrey(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Audiowide(options?: {
+export function Audiowide(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Autour_One(options?: {
+export function Autour_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Average(options?: {
+export function Average(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Average_Sans(options?: {
+export function Average_Sans(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Averia_Gruesa_Libre(options?: {
+export function Averia_Gruesa_Libre(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Averia_Libre(options?: {
-  variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
+export function Averia_Libre(options: {
+  variant: '300' | '400' | '700' | '300-italic' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Averia_Sans_Libre(options?: {
-  variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
+export function Averia_Sans_Libre(options: {
+  variant: '300' | '400' | '700' | '300-italic' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Averia_Serif_Libre(options?: {
-  variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
+export function Averia_Serif_Libre(options: {
+  variant: '300' | '400' | '700' | '300-italic' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Azeret_Mono(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -1096,68 +1096,96 @@ export function Azeret_Mono(options?: {
 }): FontModule {
   e()
 }
-export function B612(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function B612(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function B612_Mono(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function B612_Mono(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Babylonica(options?: {
+export function BIZ_UDGothic(options: {
+  variant: '400' | '700'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function BIZ_UDMincho(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bad_Script(options?: {
+export function BIZ_UDPGothic(options: {
+  variant: '400' | '700'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function BIZ_UDPMincho(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bahiana(options?: {
+export function Babylonica(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bahianita(options?: {
+export function Bad_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bai_Jamjuree(options?: {
+export function Bahiana(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Bahianita(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Bai_Jamjuree(options: {
   variant:
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bakbak_One(options?: {
+export function Bakbak_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -1165,7 +1193,7 @@ export function Bakbak_One(options?: {
   e()
 }
 export function Ballet(options?: {
-  variant: '400' | 'variable'
+  variant?: '400' | 'variable'
   display?: Display
   preload?: boolean
   axes?: 'opsz'[]
@@ -1173,316 +1201,316 @@ export function Ballet(options?: {
   e()
 }
 export function Baloo_2(options?: {
-  variant: '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Baloo_Bhai_2(options?: {
-  variant: '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Baloo_Bhaijaan_2(options?: {
-  variant: '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Baloo_Bhaina_2(options?: {
-  variant: '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Baloo_Chettan_2(options?: {
-  variant: '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Baloo_Da_2(options?: {
-  variant: '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Baloo_Paaji_2(options?: {
-  variant: '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Baloo_Tamma_2(options?: {
-  variant: '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Baloo_Tammudu_2(options?: {
-  variant: '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Baloo_Thambi_2(options?: {
-  variant: '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Balsamiq_Sans(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Balsamiq_Sans(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Balthazar(options?: {
+export function Balthazar(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bangers(options?: {
+export function Bangers(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Barlow(options?: {
+export function Barlow(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Barlow_Condensed(options?: {
+export function Barlow_Condensed(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Barlow_Semi_Condensed(options?: {
+export function Barlow_Semi_Condensed(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Barriecito(options?: {
+export function Barriecito(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Barrio(options?: {
+export function Barrio(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Basic(options?: {
+export function Basic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Baskervville(options?: {
-  variant: '400-italic' | '400'
+export function Baskervville(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Battambang(options?: {
+export function Battambang(options: {
   variant: '100' | '300' | '400' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Baumans(options?: {
+export function Baumans(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bayon(options?: {
+export function Bayon(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Be_Vietnam_Pro(options?: {
+export function Be_Vietnam_Pro(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Beau_Rivage(options?: {
+export function Beau_Rivage(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bebas_Neue(options?: {
+export function Bebas_Neue(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Belgrano(options?: {
+export function Belgrano(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bellefair(options?: {
+export function Bellefair(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Belleza(options?: {
+export function Belleza(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bellota(options?: {
-  variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
+export function Bellota(options: {
+  variant: '300' | '400' | '700' | '300-italic' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bellota_Text(options?: {
-  variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
+export function Bellota_Text(options: {
+  variant: '300' | '400' | '700' | '300-italic' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function BenchNine(options?: {
+export function BenchNine(options: {
   variant: '300' | '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Benne(options?: {
+export function Benne(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bentham(options?: {
+export function Bentham(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Berkshire_Swash(options?: {
+export function Berkshire_Swash(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -1490,19 +1518,19 @@ export function Berkshire_Swash(options?: {
   e()
 }
 export function Besley(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -1510,21 +1538,21 @@ export function Besley(options?: {
 }): FontModule {
   e()
 }
-export function Beth_Ellen(options?: {
+export function Beth_Ellen(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bevan(options?: {
-  variant: '400-italic' | '400'
+export function Bevan(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function BhuTuka_Expanded_One(options?: {
+export function BhuTuka_Expanded_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -1532,7 +1560,7 @@ export function BhuTuka_Expanded_One(options?: {
   e()
 }
 export function Big_Shoulders_Display(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -1549,7 +1577,7 @@ export function Big_Shoulders_Display(options?: {
   e()
 }
 export function Big_Shoulders_Inline_Display(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -1566,7 +1594,7 @@ export function Big_Shoulders_Inline_Display(options?: {
   e()
 }
 export function Big_Shoulders_Inline_Text(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -1583,7 +1611,7 @@ export function Big_Shoulders_Inline_Text(options?: {
   e()
 }
 export function Big_Shoulders_Stencil_Display(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -1600,7 +1628,7 @@ export function Big_Shoulders_Stencil_Display(options?: {
   e()
 }
 export function Big_Shoulders_Stencil_Text(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -1617,7 +1645,7 @@ export function Big_Shoulders_Stencil_Text(options?: {
   e()
 }
 export function Big_Shoulders_Text(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -1633,63 +1661,63 @@ export function Big_Shoulders_Text(options?: {
 }): FontModule {
   e()
 }
-export function Bigelow_Rules(options?: {
+export function Bigelow_Rules(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bigshot_One(options?: {
+export function Bigshot_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bilbo(options?: {
+export function Bilbo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bilbo_Swash_Caps(options?: {
+export function Bilbo_Swash_Caps(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function BioRhyme(options?: {
+export function BioRhyme(options: {
   variant: '200' | '300' | '400' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function BioRhyme_Expanded(options?: {
+export function BioRhyme_Expanded(options: {
   variant: '200' | '300' | '400' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Birthstone(options?: {
+export function Birthstone(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Birthstone_Bounce(options?: {
+export function Birthstone_Bounce(options: {
   variant: '400' | '500'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Biryani(options?: {
+export function Biryani(options: {
   variant: '200' | '300' | '400' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
@@ -1697,25 +1725,25 @@ export function Biryani(options?: {
   e()
 }
 export function Bitter(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -1723,70 +1751,42 @@ export function Bitter(options?: {
 }): FontModule {
   e()
 }
-export function BIZ_UDGothic(options?: {
-  variant: '400' | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function BIZ_UDMincho(options?: {
+export function Black_And_White_Picture(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function BIZ_UDPGothic(options?: {
-  variant: '400' | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function BIZ_UDPMincho(options?: {
+export function Black_Han_Sans(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Black_And_White_Picture(options?: {
+export function Black_Ops_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Black_Han_Sans(options?: {
+export function Blaka(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Black_Ops_One(options?: {
+export function Blaka_Hollow(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Blaka(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Blaka_Hollow(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Blinker(options?: {
+export function Blinker(options: {
   variant: '100' | '200' | '300' | '400' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
@@ -1794,19 +1794,19 @@ export function Blinker(options?: {
   e()
 }
 export function Bodoni_Moda(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -1815,63 +1815,63 @@ export function Bodoni_Moda(options?: {
 }): FontModule {
   e()
 }
-export function Bokor(options?: {
+export function Bokor(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bona_Nova(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Bona_Nova(options: {
+  variant: '400' | '700' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bonbon(options?: {
+export function Bonbon(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bonheur_Royale(options?: {
+export function Bonheur_Royale(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Boogaloo(options?: {
+export function Boogaloo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bowlby_One(options?: {
+export function Bowlby_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bowlby_One_SC(options?: {
+export function Bowlby_One_SC(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Brawler(options?: {
+export function Brawler(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bree_Serif(options?: {
+export function Bree_Serif(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -1879,15 +1879,15 @@ export function Bree_Serif(options?: {
   e()
 }
 export function Brygada_1918(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -1895,77 +1895,77 @@ export function Brygada_1918(options?: {
 }): FontModule {
   e()
 }
-export function Bubblegum_Sans(options?: {
+export function Bubblegum_Sans(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bubbler_One(options?: {
+export function Bubbler_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Buda(options?: {
+export function Buda(options: {
   variant: '300'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Buenard(options?: {
+export function Buenard(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bungee(options?: {
+export function Bungee(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bungee_Hairline(options?: {
+export function Bungee_Hairline(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bungee_Inline(options?: {
+export function Bungee_Inline(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bungee_Outline(options?: {
+export function Bungee_Outline(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Bungee_Shade(options?: {
+export function Bungee_Shade(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Butcherman(options?: {
+export function Butcherman(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Butterfly_Kids(options?: {
+export function Butterfly_Kids(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -1973,15 +1973,15 @@ export function Butterfly_Kids(options?: {
   e()
 }
 export function Cabin(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -1990,28 +1990,28 @@ export function Cabin(options?: {
 }): FontModule {
   e()
 }
-export function Cabin_Condensed(options?: {
+export function Cabin_Condensed(options: {
   variant: '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cabin_Sketch(options?: {
+export function Cabin_Sketch(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Caesar_Dressing(options?: {
+export function Caesar_Dressing(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cagliostro(options?: {
+export function Cagliostro(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -2019,7 +2019,7 @@ export function Cagliostro(options?: {
   e()
 }
 export function Cairo(options?: {
-  variant:
+  variant?:
     | '200'
     | '300'
     | '400'
@@ -2034,134 +2034,134 @@ export function Cairo(options?: {
 }): FontModule {
   e()
 }
-export function Caladea(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Caladea(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Calistoga(options?: {
+export function Calistoga(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Calligraffitti(options?: {
+export function Calligraffitti(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cambay(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Cambay(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cambo(options?: {
+export function Cambo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Candal(options?: {
+export function Candal(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cantarell(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Cantarell(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cantata_One(options?: {
+export function Cantata_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cantora_One(options?: {
+export function Cantora_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Capriola(options?: {
+export function Capriola(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Caramel(options?: {
+export function Caramel(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Carattere(options?: {
+export function Carattere(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cardo(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Cardo(options: {
+  variant: '400' | '700' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Carme(options?: {
+export function Carme(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Carrois_Gothic(options?: {
+export function Carrois_Gothic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Carrois_Gothic_SC(options?: {
+export function Carrois_Gothic_SC(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Carter_One(options?: {
+export function Carter_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Castoro(options?: {
-  variant: '400-italic' | '400'
+export function Castoro(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Catamaran(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -2177,193 +2177,193 @@ export function Catamaran(options?: {
 }): FontModule {
   e()
 }
-export function Caudex(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Caudex(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Caveat(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Caveat_Brush(options?: {
+export function Caveat_Brush(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cedarville_Cursive(options?: {
+export function Cedarville_Cursive(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ceviche_One(options?: {
+export function Ceviche_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Chakra_Petch(options?: {
+export function Chakra_Petch(options: {
   variant:
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Changa(options?: {
-  variant: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Changa_One(options?: {
-  variant: '400-italic' | '400'
+export function Changa_One(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Chango(options?: {
+export function Chango(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Charis_SIL(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Charis_SIL(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Charm(options?: {
+export function Charm(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Charmonman(options?: {
+export function Charmonman(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Chathura(options?: {
+export function Chathura(options: {
   variant: '100' | '300' | '400' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Chau_Philomene_One(options?: {
-  variant: '400-italic' | '400'
+export function Chau_Philomene_One(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Chela_One(options?: {
+export function Chela_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Chelsea_Market(options?: {
+export function Chelsea_Market(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Chenla(options?: {
+export function Chenla(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cherish(options?: {
+export function Cherish(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cherry_Cream_Soda(options?: {
+export function Cherry_Cream_Soda(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cherry_Swash(options?: {
+export function Cherry_Swash(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Chewy(options?: {
+export function Chewy(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Chicle(options?: {
+export function Chicle(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Chilanka(options?: {
+export function Chilanka(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Chivo(options?: {
+export function Chivo(options: {
   variant:
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '700-italic'
     | '700'
-    | '900-italic'
     | '900'
+    | '300-italic'
+    | '400-italic'
+    | '700-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Chonburi(options?: {
+export function Chonburi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -2371,55 +2371,55 @@ export function Chonburi(options?: {
   e()
 }
 export function Cinzel(options?: {
-  variant: '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cinzel_Decorative(options?: {
+export function Cinzel_Decorative(options: {
   variant: '400' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Clicker_Script(options?: {
+export function Clicker_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Coda(options?: {
+export function Coda(options: {
   variant: '400' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Coda_Caption(options?: {
+export function Coda_Caption(options: {
   variant: '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Codystar(options?: {
+export function Codystar(options: {
   variant: '300' | '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Coiny(options?: {
+export function Coiny(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Combo(options?: {
+export function Combo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -2427,34 +2427,34 @@ export function Combo(options?: {
   e()
 }
 export function Comfortaa(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Comforter(options?: {
+export function Comforter(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Comforter_Brush(options?: {
+export function Comforter_Brush(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Comic_Neue(options?: {
-  variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
+export function Comic_Neue(options: {
+  variant: '300' | '400' | '700' | '300-italic' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Coming_Soon(options?: {
+export function Coming_Soon(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -2462,7 +2462,7 @@ export function Coming_Soon(options?: {
   e()
 }
 export function Commissioner(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -2478,63 +2478,63 @@ export function Commissioner(options?: {
 }): FontModule {
   e()
 }
-export function Concert_One(options?: {
+export function Concert_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Condiment(options?: {
+export function Condiment(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Content(options?: {
+export function Content(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Contrail_One(options?: {
+export function Contrail_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Convergence(options?: {
+export function Convergence(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cookie(options?: {
+export function Cookie(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Copse(options?: {
+export function Copse(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Corben(options?: {
+export function Corben(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Corinthia(options?: {
+export function Corinthia(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
@@ -2542,17 +2542,17 @@ export function Corinthia(options?: {
   e()
 }
 export function Cormorant(options?: {
-  variant:
-    | '300-italic'
+  variant?:
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -2560,135 +2560,135 @@ export function Cormorant(options?: {
 }): FontModule {
   e()
 }
-export function Cormorant_Garamond(options?: {
+export function Cormorant_Garamond(options: {
   variant:
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cormorant_Infant(options?: {
+export function Cormorant_Infant(options: {
   variant:
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cormorant_SC(options?: {
+export function Cormorant_SC(options: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cormorant_Unicase(options?: {
+export function Cormorant_Unicase(options: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cormorant_Upright(options?: {
+export function Cormorant_Upright(options: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Courgette(options?: {
+export function Courgette(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Courier_Prime(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Courier_Prime(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cousine(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Cousine(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Coustard(options?: {
+export function Coustard(options: {
   variant: '400' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Covered_By_Your_Grace(options?: {
+export function Covered_By_Your_Grace(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Crafty_Girls(options?: {
+export function Crafty_Girls(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Creepster(options?: {
+export function Creepster(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Crete_Round(options?: {
-  variant: '400-italic' | '400'
+export function Crete_Round(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Crimson_Pro(options?: {
-  variant:
-    | '200-italic'
+  variant?:
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -2696,21 +2696,21 @@ export function Crimson_Pro(options?: {
 }): FontModule {
   e()
 }
-export function Crimson_Text(options?: {
-  variant: '400-italic' | '400' | '600-italic' | '600' | '700-italic' | '700'
+export function Crimson_Text(options: {
+  variant: '400' | '600' | '700' | '400-italic' | '600-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Croissant_One(options?: {
+export function Croissant_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Crushed(options?: {
+export function Crushed(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -2718,15 +2718,15 @@ export function Crushed(options?: {
   e()
 }
 export function Cuprum(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -2734,28 +2734,56 @@ export function Cuprum(options?: {
 }): FontModule {
   e()
 }
-export function Cute_Font(options?: {
+export function Cute_Font(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cutive(options?: {
+export function Cutive(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Cutive_Mono(options?: {
+export function Cutive_Mono(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Damion(options?: {
+export function DM_Mono(options: {
+  variant: '300' | '400' | '500' | '300-italic' | '400-italic' | '500-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function DM_Sans(options: {
+  variant: '400' | '500' | '700' | '400-italic' | '500-italic' | '700-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function DM_Serif_Display(options: {
+  variant: '400' | '400-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function DM_Serif_Text(options: {
+  variant: '400' | '400-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Damion(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -2763,167 +2791,139 @@ export function Damion(options?: {
   e()
 }
 export function Dancing_Script(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Dangrek(options?: {
+export function Dangrek(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Darker_Grotesque(options?: {
+export function Darker_Grotesque(options: {
   variant: '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function David_Libre(options?: {
+export function David_Libre(options: {
   variant: '400' | '500' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Dawning_of_a_New_Day(options?: {
+export function Dawning_of_a_New_Day(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Days_One(options?: {
+export function Days_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Dekko(options?: {
+export function Dekko(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Dela_Gothic_One(options?: {
+export function Dela_Gothic_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Delius(options?: {
+export function Delius(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Delius_Swash_Caps(options?: {
+export function Delius_Swash_Caps(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Delius_Unicase(options?: {
+export function Delius_Unicase(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Della_Respira(options?: {
+export function Della_Respira(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Denk_One(options?: {
+export function Denk_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Devonshire(options?: {
+export function Devonshire(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Dhurjati(options?: {
+export function Dhurjati(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Didact_Gothic(options?: {
+export function Didact_Gothic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Diplomata(options?: {
+export function Diplomata(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Diplomata_SC(options?: {
+export function Diplomata_SC(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function DM_Mono(options?: {
-  variant: '300-italic' | '300' | '400-italic' | '400' | '500-italic' | '500'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function DM_Sans(options?: {
-  variant: '400-italic' | '400' | '500-italic' | '500' | '700-italic' | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function DM_Serif_Display(options?: {
-  variant: '400-italic' | '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function DM_Serif_Text(options?: {
-  variant: '400-italic' | '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Do_Hyeon(options?: {
+export function Do_Hyeon(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Dokdo(options?: {
+export function Dokdo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -2931,34 +2931,34 @@ export function Dokdo(options?: {
   e()
 }
 export function Domine(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Donegal_One(options?: {
+export function Donegal_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Dongle(options?: {
+export function Dongle(options: {
   variant: '300' | '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Doppio_One(options?: {
+export function Doppio_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Dorsa(options?: {
+export function Dorsa(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -2966,34 +2966,27 @@ export function Dorsa(options?: {
   e()
 }
 export function Dosis(options?: {
-  variant: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function DotGothic16(options?: {
+export function DotGothic16(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Dr_Sugiyama(options?: {
+export function Dr_Sugiyama(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Duru_Sans(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Dynalight(options?: {
+export function Duru_Sans(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -3001,28 +2994,14 @@ export function Dynalight(options?: {
   e()
 }
 export function DynaPuff(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Eagle_Lake(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function East_Sea_Dokdo(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Eater(options?: {
+export function Dynalight(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -3030,17 +3009,17 @@ export function Eater(options?: {
   e()
 }
 export function EB_Garamond(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -3048,91 +3027,112 @@ export function EB_Garamond(options?: {
 }): FontModule {
   e()
 }
-export function Economica(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Eagle_Lake(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function East_Sea_Dokdo(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Eater(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Economica(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Eczar(options?: {
-  variant: '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Edu_NSW_ACT_Foundation(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Edu_QLD_Beginner(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Edu_SA_Beginner(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Edu_TAS_Beginner(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Edu_VIC_WA_NT_Beginner(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function El_Messiri(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Electrolize(options?: {
+export function Electrolize(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Elsie(options?: {
+export function Elsie(options: {
   variant: '400' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Elsie_Swash_Caps(options?: {
+export function Elsie_Swash_Caps(options: {
   variant: '400' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Emblema_One(options?: {
+export function Emblema_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Emilys_Candy(options?: {
+export function Emilys_Candy(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -3140,7 +3140,7 @@ export function Emilys_Candy(options?: {
   e()
 }
 export function Encode_Sans(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -3157,14 +3157,14 @@ export function Encode_Sans(options?: {
 }): FontModule {
   e()
 }
-export function Encode_Sans_Condensed(options?: {
+export function Encode_Sans_Condensed(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Encode_Sans_Expanded(options?: {
+export function Encode_Sans_Expanded(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
@@ -3172,7 +3172,7 @@ export function Encode_Sans_Expanded(options?: {
   e()
 }
 export function Encode_Sans_SC(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -3189,42 +3189,42 @@ export function Encode_Sans_SC(options?: {
 }): FontModule {
   e()
 }
-export function Encode_Sans_Semi_Condensed(options?: {
+export function Encode_Sans_Semi_Condensed(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Encode_Sans_Semi_Expanded(options?: {
+export function Encode_Sans_Semi_Expanded(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Engagement(options?: {
+export function Engagement(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Englebert(options?: {
+export function Englebert(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Enriqueta(options?: {
+export function Enriqueta(options: {
   variant: '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ephesis(options?: {
+export function Ephesis(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -3232,25 +3232,25 @@ export function Ephesis(options?: {
   e()
 }
 export function Epilogue(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -3258,35 +3258,35 @@ export function Epilogue(options?: {
 }): FontModule {
   e()
 }
-export function Erica_One(options?: {
+export function Erica_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Esteban(options?: {
+export function Esteban(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Estonia(options?: {
+export function Estonia(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Euphoria_Script(options?: {
+export function Euphoria_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ewert(options?: {
+export function Ewert(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -3294,25 +3294,25 @@ export function Ewert(options?: {
   e()
 }
 export function Exo(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -3321,25 +3321,25 @@ export function Exo(options?: {
   e()
 }
 export function Exo_2(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -3348,15 +3348,15 @@ export function Exo_2(options?: {
   e()
 }
 export function Expletus_Sans(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -3364,42 +3364,42 @@ export function Expletus_Sans(options?: {
 }): FontModule {
   e()
 }
-export function Explora(options?: {
+export function Explora(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fahkwang(options?: {
+export function Fahkwang(options: {
   variant:
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Familjen_Grotesk(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -3407,56 +3407,56 @@ export function Familjen_Grotesk(options?: {
 }): FontModule {
   e()
 }
-export function Fanwood_Text(options?: {
-  variant: '400-italic' | '400'
+export function Fanwood_Text(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Farro(options?: {
+export function Farro(options: {
   variant: '300' | '400' | '500' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Farsan(options?: {
+export function Farsan(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fascinate(options?: {
+export function Fascinate(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fascinate_Inline(options?: {
+export function Fascinate_Inline(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Faster_One(options?: {
+export function Faster_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fasthand(options?: {
+export function Fasthand(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fauna_One(options?: {
+export function Fauna_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -3464,19 +3464,19 @@ export function Fauna_One(options?: {
   e()
 }
 export function Faustina(options?: {
-  variant:
-    | '300-italic'
+  variant?:
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -3484,35 +3484,35 @@ export function Faustina(options?: {
 }): FontModule {
   e()
 }
-export function Federant(options?: {
+export function Federant(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Federo(options?: {
+export function Federo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Felipa(options?: {
+export function Felipa(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fenix(options?: {
+export function Fenix(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Festive(options?: {
+export function Festive(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -3520,13 +3520,13 @@ export function Festive(options?: {
   e()
 }
 export function Figtree(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Finger_Paint(options?: {
+export function Finger_Paint(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -3534,15 +3534,15 @@ export function Finger_Paint(options?: {
   e()
 }
 export function Finlandica(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -3551,179 +3551,179 @@ export function Finlandica(options?: {
   e()
 }
 export function Fira_Code(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fira_Mono(options?: {
+export function Fira_Mono(options: {
   variant: '400' | '500' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fira_Sans(options?: {
+export function Fira_Sans(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fira_Sans_Condensed(options?: {
+export function Fira_Sans_Condensed(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fira_Sans_Extra_Condensed(options?: {
+export function Fira_Sans_Extra_Condensed(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fjalla_One(options?: {
+export function Fjalla_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fjord_One(options?: {
+export function Fjord_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Flamenco(options?: {
+export function Flamenco(options: {
   variant: '300' | '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Flavors(options?: {
+export function Flavors(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fleur_De_Leah(options?: {
+export function Fleur_De_Leah(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Flow_Block(options?: {
+export function Flow_Block(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Flow_Circular(options?: {
+export function Flow_Circular(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Flow_Rounded(options?: {
+export function Flow_Rounded(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fondamento(options?: {
-  variant: '400-italic' | '400'
+export function Fondamento(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fontdiner_Swanky(options?: {
+export function Fontdiner_Swanky(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Forum(options?: {
+export function Forum(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Francois_One(options?: {
+export function Francois_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Frank_Ruhl_Libre(options?: {
+export function Frank_Ruhl_Libre(options: {
   variant: '300' | '400' | '500' | '700' | '900'
   display?: Display
   preload?: boolean
@@ -3731,41 +3731,41 @@ export function Frank_Ruhl_Libre(options?: {
   e()
 }
 export function Fraunces(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
   preload?: boolean
-  axes?: ('opsz' | 'SOFT' | 'WONK')[]
+  axes?: ('SOFT' | 'WONK' | 'opsz')[]
 }): FontModule {
   e()
 }
-export function Freckle_Face(options?: {
+export function Freckle_Face(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fredericka_the_Great(options?: {
+export function Fredericka_the_Great(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -3773,112 +3773,126 @@ export function Fredericka_the_Great(options?: {
   e()
 }
 export function Fredoka(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function Fredoka_One(options?: {
+export function Fredoka_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Freehand(options?: {
+export function Freehand(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fresca(options?: {
+export function Fresca(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Frijole(options?: {
+export function Frijole(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fruktur(options?: {
+export function Fruktur(options: {
+  variant: '400' | '400-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Fugaz_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fugaz_One(options?: {
+export function Fuggles(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Fuggles(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Fuzzy_Bubbles(options?: {
+export function Fuzzy_Bubbles(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gabriela(options?: {
+export function GFS_Didot(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gaegu(options?: {
+export function GFS_Neohellenic(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Gabriela(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Gaegu(options: {
   variant: '300' | '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gafata(options?: {
+export function Gafata(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Galada(options?: {
+export function Galada(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Galdeano(options?: {
+export function Galdeano(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Galindo(options?: {
+export function Galindo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gamja_Flower(options?: {
+export function Gamja_Flower(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -3886,25 +3900,25 @@ export function Gamja_Flower(options?: {
   e()
 }
 export function Gantari(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -3912,55 +3926,55 @@ export function Gantari(options?: {
 }): FontModule {
   e()
 }
-export function Gayathri(options?: {
+export function Gayathri(options: {
   variant: '100' | '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gelasio(options?: {
+export function Gelasio(options: {
   variant:
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Gemunu_Libre(options?: {
-  variant: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Genos(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -3968,54 +3982,54 @@ export function Genos(options?: {
 }): FontModule {
   e()
 }
-export function Gentium_Book_Basic(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Gentium_Book_Basic(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gentium_Book_Plus(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Gentium_Book_Plus(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gentium_Plus(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Gentium_Plus(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Geo(options?: {
-  variant: '400-italic' | '400'
+export function Geo(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Georama(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -4024,91 +4038,77 @@ export function Georama(options?: {
 }): FontModule {
   e()
 }
-export function Geostar(options?: {
+export function Geostar(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Geostar_Fill(options?: {
+export function Geostar_Fill(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Germania_One(options?: {
+export function Germania_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function GFS_Didot(options?: {
+export function Gideon_Roman(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function GFS_Neohellenic(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Gideon_Roman(options?: {
+export function Gidugu(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gidugu(options?: {
+export function Gilda_Display(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gilda_Display(options?: {
+export function Girassol(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Girassol(options?: {
+export function Give_You_Glory(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Give_You_Glory(options?: {
+export function Glass_Antiqua(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Glass_Antiqua(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Glegoo(options?: {
+export function Glegoo(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gloria_Hallelujah(options?: {
+export function Gloria_Hallelujah(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -4116,23 +4116,23 @@ export function Gloria_Hallelujah(options?: {
   e()
 }
 export function Glory(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -4141,7 +4141,7 @@ export function Glory(options?: {
   e()
 }
 export function Gluten(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -4158,77 +4158,77 @@ export function Gluten(options?: {
 }): FontModule {
   e()
 }
-export function Goblin_One(options?: {
+export function Goblin_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gochi_Hand(options?: {
+export function Gochi_Hand(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Goldman(options?: {
+export function Goldman(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gorditas(options?: {
+export function Gorditas(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gothic_A1(options?: {
+export function Gothic_A1(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gotu(options?: {
+export function Gotu(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Goudy_Bookletter_1911(options?: {
+export function Goudy_Bookletter_1911(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gowun_Batang(options?: {
+export function Gowun_Batang(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gowun_Dodum(options?: {
+export function Gowun_Dodum(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Graduate(options?: {
+export function Graduate(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Grand_Hotel(options?: {
+export function Grand_Hotel(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -4236,25 +4236,25 @@ export function Grand_Hotel(options?: {
   e()
 }
 export function Grandstander(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -4262,61 +4262,61 @@ export function Grandstander(options?: {
 }): FontModule {
   e()
 }
-export function Grape_Nuts(options?: {
+export function Grape_Nuts(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gravitas_One(options?: {
+export function Gravitas_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Great_Vibes(options?: {
+export function Great_Vibes(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Grechen_Fuemen(options?: {
+export function Grechen_Fuemen(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Grenze(options?: {
+export function Grenze(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Grenze_Gotisch(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -4332,77 +4332,77 @@ export function Grenze_Gotisch(options?: {
 }): FontModule {
   e()
 }
-export function Grey_Qo(options?: {
+export function Grey_Qo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Griffy(options?: {
+export function Griffy(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gruppo(options?: {
+export function Gruppo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gudea(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Gudea(options: {
+  variant: '400' | '700' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gugi(options?: {
+export function Gugi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gulzar(options?: {
+export function Gulzar(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gupter(options?: {
+export function Gupter(options: {
   variant: '400' | '500' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gurajada(options?: {
+export function Gurajada(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Gwendolyn(options?: {
+export function Gwendolyn(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Habibi(options?: {
+export function Habibi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Hachi_Maru_Pop(options?: {
+export function Hachi_Maru_Pop(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -4410,7 +4410,7 @@ export function Hachi_Maru_Pop(options?: {
   e()
 }
 export function Hahmlet(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -4426,63 +4426,63 @@ export function Hahmlet(options?: {
 }): FontModule {
   e()
 }
-export function Halant(options?: {
+export function Halant(options: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Hammersmith_One(options?: {
+export function Hammersmith_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Hanalei(options?: {
+export function Hanalei(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Hanalei_Fill(options?: {
+export function Hanalei_Fill(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Handlee(options?: {
+export function Handlee(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Hanuman(options?: {
+export function Hanuman(options: {
   variant: '100' | '300' | '400' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Happy_Monkey(options?: {
+export function Happy_Monkey(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Harmattan(options?: {
+export function Harmattan(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Headland_One(options?: {
+export function Headland_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -4490,7 +4490,7 @@ export function Headland_One(options?: {
   e()
 }
 export function Heebo(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -4506,7 +4506,7 @@ export function Heebo(options?: {
 }): FontModule {
   e()
 }
-export function Henny_Penny(options?: {
+export function Henny_Penny(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -4514,7 +4514,7 @@ export function Henny_Penny(options?: {
   e()
 }
 export function Hepta_Slab(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -4530,91 +4530,287 @@ export function Hepta_Slab(options?: {
 }): FontModule {
   e()
 }
-export function Herr_Von_Muellerhoff(options?: {
+export function Herr_Von_Muellerhoff(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Hi_Melody(options?: {
+export function Hi_Melody(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Hina_Mincho(options?: {
+export function Hina_Mincho(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Hind(options?: {
+export function Hind(options: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Hind_Guntur(options?: {
+export function Hind_Guntur(options: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Hind_Madurai(options?: {
+export function Hind_Madurai(options: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Hind_Siliguri(options?: {
+export function Hind_Siliguri(options: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Hind_Vadodara(options?: {
+export function Hind_Vadodara(options: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Holtwood_One_SC(options?: {
+export function Holtwood_One_SC(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Homemade_Apple(options?: {
+export function Homemade_Apple(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Homenaje(options?: {
+export function Homenaje(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Hubballi(options?: {
+export function Hubballi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Hurricane(options?: {
+export function Hurricane(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IBM_Plex_Mono(options: {
+  variant:
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IBM_Plex_Sans(options: {
+  variant:
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IBM_Plex_Sans_Arabic(options: {
+  variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IBM_Plex_Sans_Condensed(options: {
+  variant:
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IBM_Plex_Sans_Devanagari(options: {
+  variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IBM_Plex_Sans_Hebrew(options: {
+  variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IBM_Plex_Sans_KR(options: {
+  variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IBM_Plex_Sans_Thai(options: {
+  variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IBM_Plex_Sans_Thai_Looped(options: {
+  variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IBM_Plex_Serif(options: {
+  variant:
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IM_Fell_DW_Pica(options: {
+  variant: '400' | '400-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IM_Fell_DW_Pica_SC(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IM_Fell_Double_Pica(options: {
+  variant: '400' | '400-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IM_Fell_Double_Pica_SC(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IM_Fell_English(options: {
+  variant: '400' | '400-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IM_Fell_English_SC(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IM_Fell_French_Canon(options: {
+  variant: '400' | '400-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IM_Fell_French_Canon_SC(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IM_Fell_Great_Primer(options: {
+  variant: '400' | '400-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function IM_Fell_Great_Primer_SC(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -4622,15 +4818,15 @@ export function Hurricane(options?: {
   e()
 }
 export function Ibarra_Real_Nova(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -4638,210 +4834,14 @@ export function Ibarra_Real_Nova(options?: {
 }): FontModule {
   e()
 }
-export function IBM_Plex_Mono(options?: {
-  variant:
-    | '100-italic'
-    | '100'
-    | '200-italic'
-    | '200'
-    | '300-italic'
-    | '300'
-    | '400-italic'
-    | '400'
-    | '500-italic'
-    | '500'
-    | '600-italic'
-    | '600'
-    | '700-italic'
-    | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IBM_Plex_Sans(options?: {
-  variant:
-    | '100-italic'
-    | '100'
-    | '200-italic'
-    | '200'
-    | '300-italic'
-    | '300'
-    | '400-italic'
-    | '400'
-    | '500-italic'
-    | '500'
-    | '600-italic'
-    | '600'
-    | '700-italic'
-    | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IBM_Plex_Sans_Arabic(options?: {
-  variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IBM_Plex_Sans_Condensed(options?: {
-  variant:
-    | '100-italic'
-    | '100'
-    | '200-italic'
-    | '200'
-    | '300-italic'
-    | '300'
-    | '400-italic'
-    | '400'
-    | '500-italic'
-    | '500'
-    | '600-italic'
-    | '600'
-    | '700-italic'
-    | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IBM_Plex_Sans_Devanagari(options?: {
-  variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IBM_Plex_Sans_Hebrew(options?: {
-  variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IBM_Plex_Sans_KR(options?: {
-  variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IBM_Plex_Sans_Thai(options?: {
-  variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IBM_Plex_Sans_Thai_Looped(options?: {
-  variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IBM_Plex_Serif(options?: {
-  variant:
-    | '100-italic'
-    | '100'
-    | '200-italic'
-    | '200'
-    | '300-italic'
-    | '300'
-    | '400-italic'
-    | '400'
-    | '500-italic'
-    | '500'
-    | '600-italic'
-    | '600'
-    | '700-italic'
-    | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Iceberg(options?: {
+export function Iceberg(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Iceland(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IM_Fell_Double_Pica(options?: {
-  variant: '400-italic' | '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IM_Fell_Double_Pica_SC(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IM_Fell_DW_Pica(options?: {
-  variant: '400-italic' | '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IM_Fell_DW_Pica_SC(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IM_Fell_English(options?: {
-  variant: '400-italic' | '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IM_Fell_English_SC(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IM_Fell_French_Canon(options?: {
-  variant: '400-italic' | '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IM_Fell_French_Canon_SC(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IM_Fell_Great_Primer(options?: {
-  variant: '400-italic' | '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function IM_Fell_Great_Primer_SC(options?: {
+export function Iceland(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -4849,7 +4849,7 @@ export function IM_Fell_Great_Primer_SC(options?: {
   e()
 }
 export function Imbue(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -4866,14 +4866,14 @@ export function Imbue(options?: {
 }): FontModule {
   e()
 }
-export function Imperial_Script(options?: {
+export function Imperial_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Imprima(options?: {
+export function Imprima(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -4881,7 +4881,7 @@ export function Imprima(options?: {
   e()
 }
 export function Inconsolata(options?: {
-  variant:
+  variant?:
     | '200'
     | '300'
     | '400'
@@ -4897,56 +4897,56 @@ export function Inconsolata(options?: {
 }): FontModule {
   e()
 }
-export function Inder(options?: {
+export function Inder(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Indie_Flower(options?: {
+export function Indie_Flower(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ingrid_Darling(options?: {
+export function Ingrid_Darling(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Inika(options?: {
+export function Inika(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Inknut_Antiqua(options?: {
+export function Inknut_Antiqua(options: {
   variant: '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Inria_Sans(options?: {
-  variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
+export function Inria_Sans(options: {
+  variant: '300' | '400' | '700' | '300-italic' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Inria_Serif(options?: {
-  variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
+export function Inria_Serif(options: {
+  variant: '300' | '400' | '700' | '300-italic' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Inspiration(options?: {
+export function Inspiration(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -4954,7 +4954,7 @@ export function Inspiration(options?: {
   e()
 }
 export function Inter(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -4971,63 +4971,63 @@ export function Inter(options?: {
 }): FontModule {
   e()
 }
-export function Irish_Grover(options?: {
+export function Irish_Grover(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Island_Moments(options?: {
+export function Island_Moments(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Istok_Web(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Istok_Web(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Italiana(options?: {
+export function Italiana(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Italianno(options?: {
+export function Italianno(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Itim(options?: {
+export function Itim(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Jacques_Francois(options?: {
+export function Jacques_Francois(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Jacques_Francois_Shadow(options?: {
+export function Jacques_Francois_Shadow(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Jaldi(options?: {
+export function Jaldi(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
@@ -5035,23 +5035,23 @@ export function Jaldi(options?: {
   e()
 }
 export function JetBrains_Mono(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -5059,42 +5059,42 @@ export function JetBrains_Mono(options?: {
 }): FontModule {
   e()
 }
-export function Jim_Nightshade(options?: {
+export function Jim_Nightshade(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Joan(options?: {
+export function Joan(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Jockey_One(options?: {
+export function Jockey_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Jolly_Lodger(options?: {
+export function Jolly_Lodger(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Jomhuria(options?: {
+export function Jomhuria(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Jomolhari(options?: {
+export function Jomolhari(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -5102,21 +5102,21 @@ export function Jomolhari(options?: {
   e()
 }
 export function Josefin_Sans(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -5125,21 +5125,21 @@ export function Josefin_Sans(options?: {
   e()
 }
 export function Josefin_Slab(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -5148,25 +5148,25 @@ export function Josefin_Slab(options?: {
   e()
 }
 export function Jost(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -5174,42 +5174,42 @@ export function Jost(options?: {
 }): FontModule {
   e()
 }
-export function Joti_One(options?: {
+export function Joti_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Jua(options?: {
+export function Jua(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Judson(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Judson(options: {
+  variant: '400' | '700' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Julee(options?: {
+export function Julee(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Julius_Sans_One(options?: {
+export function Julius_Sans_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Junge(options?: {
+export function Junge(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -5217,124 +5217,124 @@ export function Junge(options?: {
   e()
 }
 export function Jura(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Just_Another_Hand(options?: {
+export function Just_Another_Hand(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Just_Me_Again_Down_Here(options?: {
+export function Just_Me_Again_Down_Here(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function K2D(options?: {
+export function K2D(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kadwa(options?: {
+export function Kadwa(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kaisei_Decol(options?: {
+export function Kaisei_Decol(options: {
   variant: '400' | '500' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kaisei_HarunoUmi(options?: {
+export function Kaisei_HarunoUmi(options: {
   variant: '400' | '500' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kaisei_Opti(options?: {
+export function Kaisei_Opti(options: {
   variant: '400' | '500' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kaisei_Tokumin(options?: {
+export function Kaisei_Tokumin(options: {
   variant: '400' | '500' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kalam(options?: {
+export function Kalam(options: {
   variant: '300' | '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kameron(options?: {
+export function Kameron(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kanit(options?: {
+export function Kanit(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kantumruy(options?: {
+export function Kantumruy(options: {
   variant: '300' | '400' | '700'
   display?: Display
   preload?: boolean
@@ -5342,21 +5342,21 @@ export function Kantumruy(options?: {
   e()
 }
 export function Kantumruy_Pro(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -5364,7 +5364,7 @@ export function Kantumruy_Pro(options?: {
 }): FontModule {
   e()
 }
-export function Karantina(options?: {
+export function Karantina(options: {
   variant: '300' | '400' | '700'
   display?: Display
   preload?: boolean
@@ -5372,21 +5372,21 @@ export function Karantina(options?: {
   e()
 }
 export function Karla(options?: {
-  variant:
-    | '200-italic'
+  variant?:
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -5394,213 +5394,213 @@ export function Karla(options?: {
 }): FontModule {
   e()
 }
-export function Karma(options?: {
+export function Karma(options: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Katibeh(options?: {
+export function Katibeh(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kaushan_Script(options?: {
+export function Kaushan_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kavivanar(options?: {
+export function Kavivanar(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kavoon(options?: {
+export function Kavoon(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kdam_Thmor_Pro(options?: {
+export function Kdam_Thmor_Pro(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Keania_One(options?: {
+export function Keania_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kelly_Slab(options?: {
+export function Kelly_Slab(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kenia(options?: {
+export function Kenia(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Khand(options?: {
+export function Khand(options: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Khmer(options?: {
+export function Khmer(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Khula(options?: {
+export function Khula(options: {
   variant: '300' | '400' | '600' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kings(options?: {
+export function Kings(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kirang_Haerang(options?: {
+export function Kirang_Haerang(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kite_One(options?: {
+export function Kite_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kiwi_Maru(options?: {
+export function Kiwi_Maru(options: {
   variant: '300' | '400' | '500'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Klee_One(options?: {
+export function Klee_One(options: {
   variant: '400' | '600'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Knewave(options?: {
+export function Knewave(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kodchasan(options?: {
+export function KoHo(options: {
   variant:
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Koh_Santepheap(options?: {
+export function Kodchasan(options: {
+  variant:
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Koh_Santepheap(options: {
   variant: '100' | '300' | '400' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function KoHo(options?: {
-  variant:
-    | '200-italic'
-    | '200'
-    | '300-italic'
-    | '300'
-    | '400-italic'
-    | '400'
-    | '500-italic'
-    | '500'
-    | '600-italic'
-    | '600'
-    | '700-italic'
-    | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Kolker_Brush(options?: {
+export function Kolker_Brush(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kosugi(options?: {
+export function Kosugi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kosugi_Maru(options?: {
+export function Kosugi_Maru(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kotta_One(options?: {
+export function Kotta_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Koulen(options?: {
+export function Koulen(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kranky(options?: {
+export function Kranky(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -5608,59 +5608,59 @@ export function Kranky(options?: {
   e()
 }
 export function Kreon(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kristi(options?: {
+export function Kristi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Krona_One(options?: {
+export function Krona_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Krub(options?: {
+export function Krub(options: {
   variant:
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Kufam(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -5668,31 +5668,31 @@ export function Kufam(options?: {
 }): FontModule {
   e()
 }
-export function Kulim_Park(options?: {
+export function Kulim_Park(options: {
   variant:
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '600-italic'
+    | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kumar_One(options?: {
+export function Kumar_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Kumar_One_Outline(options?: {
+export function Kumar_One_Outline(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -5700,7 +5700,7 @@ export function Kumar_One_Outline(options?: {
   e()
 }
 export function Kumbh_Sans(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -5716,87 +5716,87 @@ export function Kumbh_Sans(options?: {
 }): FontModule {
   e()
 }
-export function Kurale(options?: {
+export function Kurale(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function La_Belle_Aurore(options?: {
+export function La_Belle_Aurore(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Lacquer(options?: {
+export function Lacquer(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Laila(options?: {
+export function Laila(options: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Lakki_Reddy(options?: {
+export function Lakki_Reddy(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Lalezar(options?: {
+export function Lalezar(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Lancelot(options?: {
+export function Lancelot(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Langar(options?: {
+export function Langar(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Lateef(options?: {
+export function Lateef(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Lato(options?: {
+export function Lato(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '700-italic'
     | '700'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '300-italic'
+    | '400-italic'
+    | '700-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Lavishly_Yours(options?: {
+export function Lavishly_Yours(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -5804,14 +5804,14 @@ export function Lavishly_Yours(options?: {
   e()
 }
 export function League_Gothic(options?: {
-  variant: '400' | 'variable'
+  variant?: '400' | 'variable'
   display?: Display
   preload?: boolean
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function League_Script(options?: {
+export function League_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -5819,7 +5819,7 @@ export function League_Script(options?: {
   e()
 }
 export function League_Spartan(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -5835,28 +5835,28 @@ export function League_Spartan(options?: {
 }): FontModule {
   e()
 }
-export function Leckerli_One(options?: {
+export function Leckerli_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ledger(options?: {
+export function Ledger(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Lekton(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Lekton(options: {
+  variant: '400' | '700' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Lemon(options?: {
+export function Lemon(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -5864,14 +5864,14 @@ export function Lemon(options?: {
   e()
 }
 export function Lemonada(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Lexend(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -5888,7 +5888,7 @@ export function Lexend(options?: {
   e()
 }
 export function Lexend_Deca(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -5905,7 +5905,7 @@ export function Lexend_Deca(options?: {
   e()
 }
 export function Lexend_Exa(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -5922,7 +5922,7 @@ export function Lexend_Exa(options?: {
   e()
 }
 export function Lexend_Giga(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -5939,7 +5939,7 @@ export function Lexend_Giga(options?: {
   e()
 }
 export function Lexend_Mega(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -5956,7 +5956,7 @@ export function Lexend_Mega(options?: {
   e()
 }
 export function Lexend_Peta(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -5973,7 +5973,7 @@ export function Lexend_Peta(options?: {
   e()
 }
 export function Lexend_Tera(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -5990,7 +5990,7 @@ export function Lexend_Tera(options?: {
   e()
 }
 export function Lexend_Zetta(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -6006,72 +6006,72 @@ export function Lexend_Zetta(options?: {
 }): FontModule {
   e()
 }
-export function Libre_Barcode_128(options?: {
+export function Libre_Barcode_128(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Libre_Barcode_128_Text(options?: {
+export function Libre_Barcode_128_Text(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Libre_Barcode_39(options?: {
+export function Libre_Barcode_39(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Libre_Barcode_39_Extended(options?: {
+export function Libre_Barcode_39_Extended(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Libre_Barcode_39_Extended_Text(options?: {
+export function Libre_Barcode_39_Extended_Text(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Libre_Barcode_39_Text(options?: {
+export function Libre_Barcode_39_Text(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Libre_Barcode_EAN13_Text(options?: {
+export function Libre_Barcode_EAN13_Text(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Libre_Baskerville(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Libre_Baskerville(options: {
+  variant: '400' | '700' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Libre_Bodoni(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -6079,40 +6079,40 @@ export function Libre_Bodoni(options?: {
 }): FontModule {
   e()
 }
-export function Libre_Caslon_Display(options?: {
+export function Libre_Caslon_Display(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Libre_Caslon_Text(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Libre_Caslon_Text(options: {
+  variant: '400' | '700' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Libre_Franklin(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -6120,66 +6120,66 @@ export function Libre_Franklin(options?: {
 }): FontModule {
   e()
 }
-export function Licorice(options?: {
+export function Licorice(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Life_Savers(options?: {
+export function Life_Savers(options: {
   variant: '400' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Lilita_One(options?: {
+export function Lilita_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Lily_Script_One(options?: {
+export function Lily_Script_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Limelight(options?: {
+export function Limelight(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Linden_Hill(options?: {
-  variant: '400-italic' | '400'
+export function Linden_Hill(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Literata(options?: {
-  variant:
-    | '200-italic'
+  variant?:
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -6188,79 +6188,79 @@ export function Literata(options?: {
 }): FontModule {
   e()
 }
-export function Liu_Jian_Mao_Cao(options?: {
+export function Liu_Jian_Mao_Cao(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Livvic(options?: {
+export function Livvic(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Lobster(options?: {
+export function Lobster(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Lobster_Two(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Lobster_Two(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Londrina_Outline(options?: {
+export function Londrina_Outline(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Londrina_Shadow(options?: {
+export function Londrina_Shadow(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Londrina_Sketch(options?: {
+export function Londrina_Sketch(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Londrina_Solid(options?: {
+export function Londrina_Solid(options: {
   variant: '100' | '300' | '400' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Long_Cang(options?: {
+export function Long_Cang(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -6268,15 +6268,15 @@ export function Long_Cang(options?: {
   e()
 }
 export function Lora(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -6284,63 +6284,63 @@ export function Lora(options?: {
 }): FontModule {
   e()
 }
-export function Love_Light(options?: {
+export function Love_Light(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Love_Ya_Like_A_Sister(options?: {
+export function Love_Ya_Like_A_Sister(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Loved_by_the_King(options?: {
+export function Loved_by_the_King(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Lovers_Quarrel(options?: {
+export function Lovers_Quarrel(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Luckiest_Guy(options?: {
+export function Luckiest_Guy(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Lusitana(options?: {
+export function Lusitana(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Lustria(options?: {
+export function Lustria(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Luxurious_Roman(options?: {
+export function Luxurious_Roman(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Luxurious_Script(options?: {
+export function Luxurious_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -6348,7 +6348,7 @@ export function Luxurious_Script(options?: {
   e()
 }
 export function M_PLUS_1(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -6365,13 +6365,13 @@ export function M_PLUS_1(options?: {
   e()
 }
 export function M_PLUS_1_Code(options?: {
-  variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '100' | '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function M_PLUS_1p(options?: {
+export function M_PLUS_1p(options: {
   variant: '100' | '300' | '400' | '500' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
@@ -6379,7 +6379,7 @@ export function M_PLUS_1p(options?: {
   e()
 }
 export function M_PLUS_2(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -6396,117 +6396,117 @@ export function M_PLUS_2(options?: {
   e()
 }
 export function M_PLUS_Code_Latin(options?: {
-  variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '100' | '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
   axes?: 'wdth'[]
 }): FontModule {
   e()
 }
-export function M_PLUS_Rounded_1c(options?: {
+export function M_PLUS_Rounded_1c(options: {
   variant: '100' | '300' | '400' | '500' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ma_Shan_Zheng(options?: {
+export function Ma_Shan_Zheng(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Macondo(options?: {
+export function Macondo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Macondo_Swash_Caps(options?: {
+export function Macondo_Swash_Caps(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mada(options?: {
+export function Mada(options: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Magra(options?: {
+export function Magra(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Maiden_Orange(options?: {
+export function Maiden_Orange(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Maitree(options?: {
+export function Maitree(options: {
   variant: '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Major_Mono_Display(options?: {
+export function Major_Mono_Display(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mako(options?: {
+export function Mako(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mali(options?: {
+export function Mali(options: {
   variant:
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mallanna(options?: {
+export function Mallanna(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mandali(options?: {
+export function Mandali(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Manjari(options?: {
+export function Manjari(options: {
   variant: '100' | '400' | '700'
   display?: Display
   preload?: boolean
@@ -6514,13 +6514,13 @@ export function Manjari(options?: {
   e()
 }
 export function Manrope(options?: {
-  variant: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mansalva(options?: {
+export function Mansalva(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -6528,19 +6528,19 @@ export function Mansalva(options?: {
   e()
 }
 export function Manuale(options?: {
-  variant:
-    | '300-italic'
+  variant?:
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -6548,28 +6548,28 @@ export function Manuale(options?: {
 }): FontModule {
   e()
 }
-export function Marcellus(options?: {
+export function Marcellus(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Marcellus_SC(options?: {
+export function Marcellus_SC(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Marck_Script(options?: {
+export function Marck_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Margarine(options?: {
+export function Margarine(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -6577,55 +6577,55 @@ export function Margarine(options?: {
   e()
 }
 export function Markazi_Text(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Marko_One(options?: {
+export function Marko_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Marmelad(options?: {
+export function Marmelad(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Martel(options?: {
+export function Martel(options: {
   variant: '200' | '300' | '400' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Martel_Sans(options?: {
+export function Martel_Sans(options: {
   variant: '200' | '300' | '400' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Marvel(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Marvel(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mate(options?: {
-  variant: '400-italic' | '400'
+export function Mate(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mate_SC(options?: {
+export function Mate_SC(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -6633,118 +6633,118 @@ export function Mate_SC(options?: {
   e()
 }
 export function Maven_Pro(options?: {
-  variant: '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function McLaren(options?: {
+export function McLaren(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mea_Culpa(options?: {
+export function Mea_Culpa(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Meddon(options?: {
+export function Meddon(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function MedievalSharp(options?: {
+export function MedievalSharp(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Medula_One(options?: {
+export function Medula_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Meera_Inimai(options?: {
+export function Meera_Inimai(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Megrim(options?: {
+export function Megrim(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Meie_Script(options?: {
+export function Meie_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Meow_Script(options?: {
+export function Meow_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Merienda(options?: {
+export function Merienda(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Merienda_One(options?: {
+export function Merienda_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Merriweather(options?: {
+export function Merriweather(options: {
   variant:
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '700-italic'
     | '700'
-    | '900-italic'
     | '900'
+    | '300-italic'
+    | '400-italic'
+    | '700-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Merriweather_Sans(options?: {
-  variant:
-    | '300-italic'
+  variant?:
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -6752,140 +6752,140 @@ export function Merriweather_Sans(options?: {
 }): FontModule {
   e()
 }
-export function Metal(options?: {
+export function Metal(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Metal_Mania(options?: {
+export function Metal_Mania(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Metamorphous(options?: {
+export function Metamorphous(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Metrophobic(options?: {
+export function Metrophobic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Michroma(options?: {
+export function Michroma(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Milonga(options?: {
+export function Milonga(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Miltonian(options?: {
+export function Miltonian(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Miltonian_Tattoo(options?: {
+export function Miltonian_Tattoo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mina(options?: {
+export function Mina(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mingzat(options?: {
+export function Mingzat(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Miniver(options?: {
+export function Miniver(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Miriam_Libre(options?: {
+export function Miriam_Libre(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mirza(options?: {
+export function Mirza(options: {
   variant: '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Miss_Fajardose(options?: {
+export function Miss_Fajardose(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mitr(options?: {
+export function Mitr(options: {
   variant: '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mochiy_Pop_One(options?: {
+export function Mochiy_Pop_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mochiy_Pop_P_One(options?: {
+export function Mochiy_Pop_P_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Modak(options?: {
+export function Modak(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Modern_Antiqua(options?: {
+export function Modern_Antiqua(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mogra(options?: {
+export function Mogra(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -6893,17 +6893,17 @@ export function Mogra(options?: {
   e()
 }
 export function Mohave(options?: {
-  variant:
-    | '300-italic'
+  variant?:
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -6911,49 +6911,49 @@ export function Mohave(options?: {
 }): FontModule {
   e()
 }
-export function Molengo(options?: {
+export function Molengo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Molle(options?: {
+export function Molle(options: {
   variant: '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Monda(options?: {
+export function Monda(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Monofett(options?: {
+export function Monofett(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Monoton(options?: {
+export function Monoton(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Monsieur_La_Doulaise(options?: {
+export function Monsieur_La_Doulaise(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Montaga(options?: {
+export function Montaga(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -6961,21 +6961,21 @@ export function Montaga(options?: {
   e()
 }
 export function Montagu_Slab(options?: {
-  variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '100' | '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
   axes?: 'opsz'[]
 }): FontModule {
   e()
 }
-export function MonteCarlo(options?: {
+export function MonteCarlo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Montez(options?: {
+export function Montez(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -6983,25 +6983,25 @@ export function Montez(options?: {
   e()
 }
 export function Montserrat(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -7009,144 +7009,144 @@ export function Montserrat(options?: {
 }): FontModule {
   e()
 }
-export function Montserrat_Alternates(options?: {
+export function Montserrat_Alternates(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Montserrat_Subrayada(options?: {
+export function Montserrat_Subrayada(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Moo_Lah_Lah(options?: {
+export function Moo_Lah_Lah(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Moon_Dance(options?: {
+export function Moon_Dance(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Moul(options?: {
+export function Moul(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Moulpali(options?: {
+export function Moulpali(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mountains_of_Christmas(options?: {
+export function Mountains_of_Christmas(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mouse_Memoirs(options?: {
+export function Mouse_Memoirs(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mr_Bedfort(options?: {
+export function Mr_Bedfort(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mr_Dafoe(options?: {
+export function Mr_Dafoe(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mr_De_Haviland(options?: {
+export function Mr_De_Haviland(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mrs_Saint_Delafield(options?: {
+export function Mrs_Saint_Delafield(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mrs_Sheppards(options?: {
+export function Mrs_Sheppards(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ms_Madi(options?: {
+export function Ms_Madi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mukta(options?: {
+export function Mukta(options: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mukta_Mahee(options?: {
+export function Mukta_Mahee(options: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mukta_Malar(options?: {
+export function Mukta_Malar(options: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mukta_Vaani(options?: {
+export function Mukta_Vaani(options: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '800'
   display?: Display
   preload?: boolean
@@ -7154,23 +7154,23 @@ export function Mukta_Vaani(options?: {
   e()
 }
 export function Mulish(options?: {
-  variant:
-    | '200-italic'
+  variant?:
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -7179,7 +7179,7 @@ export function Mulish(options?: {
   e()
 }
 export function Murecho(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -7196,25 +7196,25 @@ export function Murecho(options?: {
   e()
 }
 export function MuseoModerno(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -7222,108 +7222,105 @@ export function MuseoModerno(options?: {
 }): FontModule {
   e()
 }
-export function My_Soul(options?: {
+export function My_Soul(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Mystery_Quest(options?: {
+export function Mystery_Quest(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nanum_Brush_Script(options?: {
+export function NTR(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nanum_Gothic(options?: {
+export function Nanum_Brush_Script(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Nanum_Gothic(options: {
   variant: '400' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nanum_Gothic_Coding(options?: {
+export function Nanum_Gothic_Coding(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nanum_Myeongjo(options?: {
+export function Nanum_Myeongjo(options: {
   variant: '400' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nanum_Pen_Script(options?: {
+export function Nanum_Pen_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Neonderthaw(options?: {
+export function Neonderthaw(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nerko_One(options?: {
+export function Nerko_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Neucha(options?: {
+export function Neucha(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Neuton(options?: {
-  variant:
-    | '200-italic'
-    | '200'
-    | '300-italic'
-    | '300'
-    | '400-italic'
-    | '400'
-    | '700-italic'
-    | '700'
-    | '800-italic'
-    | '800'
+export function Neuton(options: {
+  variant: '200' | '300' | '400' | '700' | '800' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function New_Rocker(options?: {
+export function New_Rocker(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function New_Tegomin(options?: {
+export function New_Tegomin(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function News_Cycle(options?: {
+export function News_Cycle(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
@@ -7331,21 +7328,21 @@ export function News_Cycle(options?: {
   e()
 }
 export function Newsreader(options?: {
-  variant:
-    | '200-italic'
+  variant?:
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -7354,97 +7351,97 @@ export function Newsreader(options?: {
 }): FontModule {
   e()
 }
-export function Niconne(options?: {
+export function Niconne(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Niramit(options?: {
+export function Niramit(options: {
   variant:
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nixie_One(options?: {
+export function Nixie_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nobile(options?: {
-  variant: '400-italic' | '400' | '500-italic' | '500' | '700-italic' | '700'
+export function Nobile(options: {
+  variant: '400' | '500' | '700' | '400-italic' | '500-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nokora(options?: {
+export function Nokora(options: {
   variant: '100' | '300' | '400' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Norican(options?: {
+export function Norican(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nosifer(options?: {
+export function Nosifer(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Notable(options?: {
+export function Notable(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nothing_You_Could_Do(options?: {
+export function Nothing_You_Could_Do(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noticia_Text(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Noticia_Text(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Noto_Emoji(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Noto_Kufi_Arabic(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -7460,7 +7457,7 @@ export function Noto_Kufi_Arabic(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Music(options?: {
+export function Noto_Music(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -7468,13 +7465,13 @@ export function Noto_Music(options?: {
   e()
 }
 export function Noto_Naskh_Arabic(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Nastaliq_Urdu(options?: {
+export function Noto_Nastaliq_Urdu(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
@@ -7482,7 +7479,7 @@ export function Noto_Nastaliq_Urdu(options?: {
   e()
 }
 export function Noto_Rashi_Hebrew(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -7498,46 +7495,46 @@ export function Noto_Rashi_Hebrew(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans(options?: {
+export function Noto_Sans(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Noto_Sans_Adlam(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Noto_Sans_Adlam_Unjoined(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Anatolian_Hieroglyphs(options?: {
+export function Noto_Sans_Anatolian_Hieroglyphs(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -7545,7 +7542,7 @@ export function Noto_Sans_Anatolian_Hieroglyphs(options?: {
   e()
 }
 export function Noto_Sans_Arabic(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -7563,7 +7560,7 @@ export function Noto_Sans_Arabic(options?: {
   e()
 }
 export function Noto_Sans_Armenian(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -7580,7 +7577,7 @@ export function Noto_Sans_Armenian(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_Avestan(options?: {
+export function Noto_Sans_Avestan(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -7588,27 +7585,27 @@ export function Noto_Sans_Avestan(options?: {
   e()
 }
 export function Noto_Sans_Balinese(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Noto_Sans_Bamum(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Bassa_Vah(options?: {
+export function Noto_Sans_Bassa_Vah(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Batak(options?: {
+export function Noto_Sans_Batak(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -7616,7 +7613,7 @@ export function Noto_Sans_Batak(options?: {
   e()
 }
 export function Noto_Sans_Bengali(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -7633,28 +7630,28 @@ export function Noto_Sans_Bengali(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_Bhaiksuki(options?: {
+export function Noto_Sans_Bhaiksuki(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Brahmi(options?: {
+export function Noto_Sans_Brahmi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Buginese(options?: {
+export function Noto_Sans_Buginese(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Buhid(options?: {
+export function Noto_Sans_Buhid(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -7662,7 +7659,7 @@ export function Noto_Sans_Buhid(options?: {
   e()
 }
 export function Noto_Sans_Canadian_Aboriginal(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -7678,21 +7675,21 @@ export function Noto_Sans_Canadian_Aboriginal(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_Carian(options?: {
+export function Noto_Sans_Carian(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Caucasian_Albanian(options?: {
+export function Noto_Sans_Caucasian_Albanian(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Chakma(options?: {
+export function Noto_Sans_Chakma(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -7700,7 +7697,7 @@ export function Noto_Sans_Chakma(options?: {
   e()
 }
 export function Noto_Sans_Cham(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -7717,7 +7714,7 @@ export function Noto_Sans_Cham(options?: {
   e()
 }
 export function Noto_Sans_Cherokee(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -7733,28 +7730,28 @@ export function Noto_Sans_Cherokee(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_Coptic(options?: {
+export function Noto_Sans_Coptic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Cuneiform(options?: {
+export function Noto_Sans_Cuneiform(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Cypriot(options?: {
+export function Noto_Sans_Cypriot(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Deseret(options?: {
+export function Noto_Sans_Deseret(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -7762,7 +7759,7 @@ export function Noto_Sans_Deseret(options?: {
   e()
 }
 export function Noto_Sans_Devanagari(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -7780,25 +7777,25 @@ export function Noto_Sans_Devanagari(options?: {
   e()
 }
 export function Noto_Sans_Display(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -7807,28 +7804,28 @@ export function Noto_Sans_Display(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_Duployan(options?: {
+export function Noto_Sans_Duployan(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Egyptian_Hieroglyphs(options?: {
+export function Noto_Sans_Egyptian_Hieroglyphs(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Elbasan(options?: {
+export function Noto_Sans_Elbasan(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Elymaic(options?: {
+export function Noto_Sans_Elymaic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -7836,7 +7833,7 @@ export function Noto_Sans_Elymaic(options?: {
   e()
 }
 export function Noto_Sans_Georgian(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -7853,21 +7850,21 @@ export function Noto_Sans_Georgian(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_Glagolitic(options?: {
+export function Noto_Sans_Glagolitic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Gothic(options?: {
+export function Noto_Sans_Gothic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Grantha(options?: {
+export function Noto_Sans_Grantha(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -7875,7 +7872,7 @@ export function Noto_Sans_Grantha(options?: {
   e()
 }
 export function Noto_Sans_Gujarati(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -7892,7 +7889,7 @@ export function Noto_Sans_Gujarati(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_Gunjala_Gondi(options?: {
+export function Noto_Sans_Gunjala_Gondi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -7900,7 +7897,7 @@ export function Noto_Sans_Gunjala_Gondi(options?: {
   e()
 }
 export function Noto_Sans_Gurmukhi(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -7917,21 +7914,28 @@ export function Noto_Sans_Gurmukhi(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_Hanifi_Rohingya(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+export function Noto_Sans_HK(options: {
+  variant: '100' | '300' | '400' | '500' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Hanunoo(options?: {
+export function Noto_Sans_Hanifi_Rohingya(options?: {
+  variant?: '400' | '500' | '600' | '700' | 'variable'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Noto_Sans_Hanunoo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Hatran(options?: {
+export function Noto_Sans_Hatran(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -7939,7 +7943,7 @@ export function Noto_Sans_Hatran(options?: {
   e()
 }
 export function Noto_Sans_Hebrew(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -7956,56 +7960,56 @@ export function Noto_Sans_Hebrew(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_HK(options?: {
+export function Noto_Sans_Imperial_Aramaic(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Noto_Sans_Indic_Siyaq_Numbers(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Noto_Sans_Inscriptional_Pahlavi(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Noto_Sans_Inscriptional_Parthian(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Noto_Sans_JP(options: {
   variant: '100' | '300' | '400' | '500' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Imperial_Aramaic(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Noto_Sans_Indic_Siyaq_Numbers(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Noto_Sans_Inscriptional_Pahlavi(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Noto_Sans_Inscriptional_Parthian(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Noto_Sans_Javanese(options?: {
+export function Noto_Sans_Javanese(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_JP(options?: {
+export function Noto_Sans_KR(options: {
   variant: '100' | '300' | '400' | '500' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Kaithi(options?: {
+export function Noto_Sans_Kaithi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -8013,7 +8017,7 @@ export function Noto_Sans_Kaithi(options?: {
   e()
 }
 export function Noto_Sans_Kannada(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8031,13 +8035,13 @@ export function Noto_Sans_Kannada(options?: {
   e()
 }
 export function Noto_Sans_Kayah_Li(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Kharoshthi(options?: {
+export function Noto_Sans_Kharoshthi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -8045,7 +8049,7 @@ export function Noto_Sans_Kharoshthi(options?: {
   e()
 }
 export function Noto_Sans_Khmer(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8062,29 +8066,22 @@ export function Noto_Sans_Khmer(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_Khojki(options?: {
+export function Noto_Sans_Khojki(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Khudawadi(options?: {
+export function Noto_Sans_Khudawadi(options: {
   variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Noto_Sans_KR(options?: {
-  variant: '100' | '300' | '400' | '500' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Noto_Sans_Lao(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8101,28 +8098,28 @@ export function Noto_Sans_Lao(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_Lepcha(options?: {
+export function Noto_Sans_Lepcha(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Limbu(options?: {
+export function Noto_Sans_Limbu(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Linear_A(options?: {
+export function Noto_Sans_Linear_A(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Linear_B(options?: {
+export function Noto_Sans_Linear_B(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -8130,27 +8127,27 @@ export function Noto_Sans_Linear_B(options?: {
   e()
 }
 export function Noto_Sans_Lisu(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Lycian(options?: {
+export function Noto_Sans_Lycian(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Lydian(options?: {
+export function Noto_Sans_Lydian(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Mahajani(options?: {
+export function Noto_Sans_Mahajani(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -8158,7 +8155,7 @@ export function Noto_Sans_Mahajani(options?: {
   e()
 }
 export function Noto_Sans_Malayalam(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8175,42 +8172,42 @@ export function Noto_Sans_Malayalam(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_Mandaic(options?: {
+export function Noto_Sans_Mandaic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Manichaean(options?: {
+export function Noto_Sans_Manichaean(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Marchen(options?: {
+export function Noto_Sans_Marchen(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Masaram_Gondi(options?: {
+export function Noto_Sans_Masaram_Gondi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Math(options?: {
+export function Noto_Sans_Math(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Mayan_Numerals(options?: {
+export function Noto_Sans_Mayan_Numerals(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -8218,14 +8215,14 @@ export function Noto_Sans_Mayan_Numerals(options?: {
   e()
 }
 export function Noto_Sans_Medefaidrin(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Noto_Sans_Meetei_Mayek(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8241,28 +8238,28 @@ export function Noto_Sans_Meetei_Mayek(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_Meroitic(options?: {
+export function Noto_Sans_Meroitic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Miao(options?: {
+export function Noto_Sans_Miao(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Modi(options?: {
+export function Noto_Sans_Modi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Mongolian(options?: {
+export function Noto_Sans_Mongolian(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -8270,7 +8267,7 @@ export function Noto_Sans_Mongolian(options?: {
   e()
 }
 export function Noto_Sans_Mono(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8287,63 +8284,63 @@ export function Noto_Sans_Mono(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_Mro(options?: {
+export function Noto_Sans_Mro(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Multani(options?: {
+export function Noto_Sans_Multani(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Myanmar(options?: {
+export function Noto_Sans_Myanmar(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_N_Ko(options?: {
+export function Noto_Sans_N_Ko(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Nabataean(options?: {
+export function Noto_Sans_Nabataean(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_New_Tai_Lue(options?: {
+export function Noto_Sans_New_Tai_Lue(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Newa(options?: {
+export function Noto_Sans_Newa(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Nushu(options?: {
+export function Noto_Sans_Nushu(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Ogham(options?: {
+export function Noto_Sans_Ogham(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -8351,181 +8348,181 @@ export function Noto_Sans_Ogham(options?: {
   e()
 }
 export function Noto_Sans_Ol_Chiki(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Old_Hungarian(options?: {
+export function Noto_Sans_Old_Hungarian(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Old_Italic(options?: {
+export function Noto_Sans_Old_Italic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Old_North_Arabian(options?: {
+export function Noto_Sans_Old_North_Arabian(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Old_Permic(options?: {
+export function Noto_Sans_Old_Permic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Old_Persian(options?: {
+export function Noto_Sans_Old_Persian(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Old_Sogdian(options?: {
+export function Noto_Sans_Old_Sogdian(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Old_South_Arabian(options?: {
+export function Noto_Sans_Old_South_Arabian(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Old_Turkic(options?: {
+export function Noto_Sans_Old_Turkic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Oriya(options?: {
+export function Noto_Sans_Oriya(options: {
   variant: '100' | '400' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Osage(options?: {
+export function Noto_Sans_Osage(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Osmanya(options?: {
+export function Noto_Sans_Osmanya(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Pahawh_Hmong(options?: {
+export function Noto_Sans_Pahawh_Hmong(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Palmyrene(options?: {
+export function Noto_Sans_Palmyrene(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Pau_Cin_Hau(options?: {
+export function Noto_Sans_Pau_Cin_Hau(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Phags_Pa(options?: {
+export function Noto_Sans_Phags_Pa(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Phoenician(options?: {
+export function Noto_Sans_Phoenician(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Psalter_Pahlavi(options?: {
+export function Noto_Sans_Psalter_Pahlavi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Rejang(options?: {
+export function Noto_Sans_Rejang(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Runic(options?: {
+export function Noto_Sans_Runic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Samaritan(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Noto_Sans_Saurashtra(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Noto_Sans_SC(options?: {
+export function Noto_Sans_SC(options: {
   variant: '100' | '300' | '400' | '500' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Sharada(options?: {
+export function Noto_Sans_Samaritan(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Shavian(options?: {
+export function Noto_Sans_Saurashtra(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Siddham(options?: {
+export function Noto_Sans_Sharada(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Noto_Sans_Shavian(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Noto_Sans_Siddham(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -8533,7 +8530,7 @@ export function Noto_Sans_Siddham(options?: {
   e()
 }
 export function Noto_Sans_Sinhala(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8550,7 +8547,7 @@ export function Noto_Sans_Sinhala(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_Sogdian(options?: {
+export function Noto_Sans_Sogdian(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -8558,13 +8555,13 @@ export function Noto_Sans_Sogdian(options?: {
   e()
 }
 export function Noto_Sans_Sora_Sompeng(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Soyombo(options?: {
+export function Noto_Sans_Soyombo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -8572,13 +8569,13 @@ export function Noto_Sans_Soyombo(options?: {
   e()
 }
 export function Noto_Sans_Sundanese(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Syloti_Nagri(options?: {
+export function Noto_Sans_Syloti_Nagri(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -8586,7 +8583,7 @@ export function Noto_Sans_Syloti_Nagri(options?: {
   e()
 }
 export function Noto_Sans_Symbols(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8602,35 +8599,42 @@ export function Noto_Sans_Symbols(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_Symbols_2(options?: {
+export function Noto_Sans_Symbols_2(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Syriac(options?: {
+export function Noto_Sans_Syriac(options: {
   variant: '100' | '400' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Tagalog(options?: {
+export function Noto_Sans_TC(options: {
+  variant: '100' | '300' | '400' | '500' | '700' | '900'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Noto_Sans_Tagalog(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Tagbanwa(options?: {
+export function Noto_Sans_Tagbanwa(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Tai_Le(options?: {
+export function Noto_Sans_Tai_Le(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -8638,20 +8642,20 @@ export function Noto_Sans_Tai_Le(options?: {
   e()
 }
 export function Noto_Sans_Tai_Tham(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Tai_Viet(options?: {
+export function Noto_Sans_Tai_Viet(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Takri(options?: {
+export function Noto_Sans_Takri(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -8659,7 +8663,7 @@ export function Noto_Sans_Takri(options?: {
   e()
 }
 export function Noto_Sans_Tamil(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8676,22 +8680,15 @@ export function Noto_Sans_Tamil(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_Tamil_Supplement(options?: {
+export function Noto_Sans_Tamil_Supplement(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_TC(options?: {
-  variant: '100' | '300' | '400' | '500' | '700' | '900'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
 export function Noto_Sans_Telugu(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8709,7 +8706,7 @@ export function Noto_Sans_Telugu(options?: {
   e()
 }
 export function Noto_Sans_Thaana(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8726,7 +8723,7 @@ export function Noto_Sans_Thaana(options?: {
   e()
 }
 export function Noto_Sans_Thai(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8743,77 +8740,77 @@ export function Noto_Sans_Thai(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Sans_Thai_Looped(options?: {
+export function Noto_Sans_Thai_Looped(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Tifinagh(options?: {
+export function Noto_Sans_Tifinagh(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Tirhuta(options?: {
+export function Noto_Sans_Tirhuta(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Ugaritic(options?: {
+export function Noto_Sans_Ugaritic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Vai(options?: {
+export function Noto_Sans_Vai(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Wancho(options?: {
+export function Noto_Sans_Wancho(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Warang_Citi(options?: {
+export function Noto_Sans_Warang_Citi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Yi(options?: {
+export function Noto_Sans_Yi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Sans_Zanabazar_Square(options?: {
+export function Noto_Sans_Zanabazar_Square(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Serif(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Noto_Serif(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Serif_Ahom(options?: {
+export function Noto_Serif_Ahom(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -8821,7 +8818,7 @@ export function Noto_Serif_Ahom(options?: {
   e()
 }
 export function Noto_Serif_Armenian(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8838,7 +8835,7 @@ export function Noto_Serif_Armenian(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Serif_Balinese(options?: {
+export function Noto_Serif_Balinese(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -8846,7 +8843,7 @@ export function Noto_Serif_Balinese(options?: {
   e()
 }
 export function Noto_Serif_Bengali(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8864,7 +8861,7 @@ export function Noto_Serif_Bengali(options?: {
   e()
 }
 export function Noto_Serif_Devanagari(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8882,25 +8879,25 @@ export function Noto_Serif_Devanagari(options?: {
   e()
 }
 export function Noto_Serif_Display(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -8909,7 +8906,7 @@ export function Noto_Serif_Display(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Serif_Dogra(options?: {
+export function Noto_Serif_Dogra(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -8917,7 +8914,7 @@ export function Noto_Serif_Dogra(options?: {
   e()
 }
 export function Noto_Serif_Ethiopic(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8935,7 +8932,7 @@ export function Noto_Serif_Ethiopic(options?: {
   e()
 }
 export function Noto_Serif_Georgian(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8952,7 +8949,7 @@ export function Noto_Serif_Georgian(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Serif_Grantha(options?: {
+export function Noto_Serif_Grantha(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -8960,7 +8957,7 @@ export function Noto_Serif_Grantha(options?: {
   e()
 }
 export function Noto_Serif_Gujarati(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8977,7 +8974,7 @@ export function Noto_Serif_Gujarati(options?: {
   e()
 }
 export function Noto_Serif_Gurmukhi(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -8993,8 +8990,24 @@ export function Noto_Serif_Gurmukhi(options?: {
 }): FontModule {
   e()
 }
+export function Noto_Serif_HK(options?: {
+  variant?:
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | 'variable'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
 export function Noto_Serif_Hebrew(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -9011,23 +9024,14 @@ export function Noto_Serif_Hebrew(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Serif_HK(options?: {
-  variant:
-    | '200'
-    | '300'
-    | '400'
-    | '500'
-    | '600'
-    | '700'
-    | '800'
-    | '900'
-    | 'variable'
+export function Noto_Serif_JP(options: {
+  variant: '200' | '300' | '400' | '500' | '600' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Serif_JP(options?: {
+export function Noto_Serif_KR(options: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '900'
   display?: Display
   preload?: boolean
@@ -9035,7 +9039,7 @@ export function Noto_Serif_JP(options?: {
   e()
 }
 export function Noto_Serif_Kannada(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -9052,7 +9056,7 @@ export function Noto_Serif_Kannada(options?: {
   e()
 }
 export function Noto_Serif_Khmer(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -9069,15 +9073,8 @@ export function Noto_Serif_Khmer(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Serif_KR(options?: {
-  variant: '200' | '300' | '400' | '500' | '600' | '700' | '900'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
 export function Noto_Serif_Lao(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -9095,7 +9092,7 @@ export function Noto_Serif_Lao(options?: {
   e()
 }
 export function Noto_Serif_Malayalam(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -9111,7 +9108,7 @@ export function Noto_Serif_Malayalam(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Serif_Myanmar(options?: {
+export function Noto_Serif_Myanmar(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
@@ -9119,13 +9116,13 @@ export function Noto_Serif_Myanmar(options?: {
   e()
 }
 export function Noto_Serif_Nyiakeng_Puachue_Hmong(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Serif_SC(options?: {
+export function Noto_Serif_SC(options: {
   variant: '200' | '300' | '400' | '500' | '600' | '700' | '900'
   display?: Display
   preload?: boolean
@@ -9133,7 +9130,7 @@ export function Noto_Serif_SC(options?: {
   e()
 }
 export function Noto_Serif_Sinhala(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -9150,26 +9147,33 @@ export function Noto_Serif_Sinhala(options?: {
 }): FontModule {
   e()
 }
+export function Noto_Serif_TC(options: {
+  variant: '200' | '300' | '400' | '500' | '600' | '700' | '900'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
 export function Noto_Serif_Tamil(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -9178,22 +9182,15 @@ export function Noto_Serif_Tamil(options?: {
 }): FontModule {
   e()
 }
-export function Noto_Serif_Tangut(options?: {
+export function Noto_Serif_Tangut(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Serif_TC(options?: {
-  variant: '200' | '300' | '400' | '500' | '600' | '700' | '900'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
 export function Noto_Serif_Telugu(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -9210,7 +9207,7 @@ export function Noto_Serif_Telugu(options?: {
   e()
 }
 export function Noto_Serif_Thai(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -9228,7 +9225,7 @@ export function Noto_Serif_Thai(options?: {
   e()
 }
 export function Noto_Serif_Tibetan(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -9245,83 +9242,76 @@ export function Noto_Serif_Tibetan(options?: {
   e()
 }
 export function Noto_Serif_Yezidi(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Noto_Traditional_Nushu(options?: {
+export function Noto_Traditional_Nushu(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nova_Cut(options?: {
+export function Nova_Cut(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nova_Flat(options?: {
+export function Nova_Flat(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nova_Mono(options?: {
+export function Nova_Mono(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nova_Oval(options?: {
+export function Nova_Oval(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nova_Round(options?: {
+export function Nova_Round(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nova_Script(options?: {
+export function Nova_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nova_Slim(options?: {
+export function Nova_Slim(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nova_Square(options?: {
+export function Nova_Square(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function NTR(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Numans(options?: {
+export function Numans(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -9329,23 +9319,23 @@ export function Numans(options?: {
   e()
 }
 export function Nunito(options?: {
-  variant:
-    | '200-italic'
+  variant?:
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -9353,98 +9343,98 @@ export function Nunito(options?: {
 }): FontModule {
   e()
 }
-export function Nunito_Sans(options?: {
+export function Nunito_Sans(options: {
   variant:
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Nuosu_SIL(options?: {
+export function Nuosu_SIL(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Odibee_Sans(options?: {
+export function Odibee_Sans(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Odor_Mean_Chey(options?: {
+export function Odor_Mean_Chey(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Offside(options?: {
+export function Offside(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Oi(options?: {
+export function Oi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Old_Standard_TT(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Old_Standard_TT(options: {
+  variant: '400' | '700' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Oldenburg(options?: {
+export function Oldenburg(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ole(options?: {
+export function Ole(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Oleo_Script(options?: {
+export function Oleo_Script(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Oleo_Script_Swash_Caps(options?: {
+export function Oleo_Script_Swash_Caps(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Oooh_Baby(options?: {
+export function Oooh_Baby(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -9452,19 +9442,19 @@ export function Oooh_Baby(options?: {
   e()
 }
 export function Open_Sans(options?: {
-  variant:
-    | '300-italic'
+  variant?:
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -9473,7 +9463,7 @@ export function Open_Sans(options?: {
 }): FontModule {
   e()
 }
-export function Oranienbaum(options?: {
+export function Oranienbaum(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -9481,34 +9471,34 @@ export function Oranienbaum(options?: {
   e()
 }
 export function Orbitron(options?: {
-  variant: '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Oregano(options?: {
-  variant: '400-italic' | '400'
+export function Oregano(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Orelega_One(options?: {
+export function Orelega_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Orienta(options?: {
+export function Orienta(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Original_Surfer(options?: {
+export function Original_Surfer(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -9516,14 +9506,14 @@ export function Original_Surfer(options?: {
   e()
 }
 export function Oswald(options?: {
-  variant: '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Outfit(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -9539,21 +9529,21 @@ export function Outfit(options?: {
 }): FontModule {
   e()
 }
-export function Over_the_Rainbow(options?: {
+export function Over_the_Rainbow(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Overlock(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700' | '900-italic' | '900'
+export function Overlock(options: {
+  variant: '400' | '700' | '900' | '400-italic' | '700-italic' | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Overlock_SC(options?: {
+export function Overlock_SC(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -9561,25 +9551,25 @@ export function Overlock_SC(options?: {
   e()
 }
 export function Overpass(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -9588,13 +9578,13 @@ export function Overpass(options?: {
   e()
 }
 export function Overpass_Mono(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ovo(options?: {
+export function Ovo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -9602,174 +9592,216 @@ export function Ovo(options?: {
   e()
 }
 export function Oxanium(options?: {
-  variant: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Oxygen(options?: {
+export function Oxygen(options: {
   variant: '300' | '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Oxygen_Mono(options?: {
+export function Oxygen_Mono(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Pacifico(options?: {
+export function PT_Mono(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Padauk(options?: {
+export function PT_Sans(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function PT_Sans_Caption(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Palanquin(options?: {
+export function PT_Sans_Narrow(options: {
+  variant: '400' | '700'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function PT_Serif(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function PT_Serif_Caption(options: {
+  variant: '400' | '400-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Pacifico(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Padauk(options: {
+  variant: '400' | '700'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Palanquin(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Palanquin_Dark(options?: {
+export function Palanquin_Dark(options: {
   variant: '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Pangolin(options?: {
+export function Pangolin(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Paprika(options?: {
+export function Paprika(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Parisienne(options?: {
+export function Parisienne(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Passero_One(options?: {
+export function Passero_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Passion_One(options?: {
+export function Passion_One(options: {
   variant: '400' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Passions_Conflict(options?: {
+export function Passions_Conflict(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Pathway_Gothic_One(options?: {
+export function Pathway_Gothic_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Patrick_Hand(options?: {
+export function Patrick_Hand(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Patrick_Hand_SC(options?: {
+export function Patrick_Hand_SC(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Pattaya(options?: {
+export function Pattaya(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Patua_One(options?: {
+export function Patua_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Pavanam(options?: {
+export function Pavanam(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Paytone_One(options?: {
+export function Paytone_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Peddana(options?: {
+export function Peddana(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Peralta(options?: {
+export function Peralta(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Permanent_Marker(options?: {
+export function Permanent_Marker(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Petemoss(options?: {
+export function Petemoss(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Petit_Formal_Script(options?: {
+export function Petit_Formal_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -9777,25 +9809,25 @@ export function Petit_Formal_Script(options?: {
   e()
 }
 export function Petrona(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -9803,33 +9835,33 @@ export function Petrona(options?: {
 }): FontModule {
   e()
 }
-export function Philosopher(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Philosopher(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Piazzolla(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -9838,42 +9870,42 @@ export function Piazzolla(options?: {
 }): FontModule {
   e()
 }
-export function Piedra(options?: {
+export function Piedra(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Pinyon_Script(options?: {
+export function Pinyon_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Pirata_One(options?: {
+export function Pirata_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Plaster(options?: {
+export function Plaster(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Play(options?: {
+export function Play(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Playball(options?: {
+export function Playball(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -9881,19 +9913,19 @@ export function Playball(options?: {
   e()
 }
 export function Playfair_Display(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -9901,29 +9933,29 @@ export function Playfair_Display(options?: {
 }): FontModule {
   e()
 }
-export function Playfair_Display_SC(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700' | '900-italic' | '900'
+export function Playfair_Display_SC(options: {
+  variant: '400' | '700' | '900' | '400-italic' | '700-italic' | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Plus_Jakarta_Sans(options?: {
-  variant:
-    | '200-italic'
+  variant?:
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -9932,267 +9964,225 @@ export function Plus_Jakarta_Sans(options?: {
   e()
 }
 export function Podkova(options?: {
-  variant: '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Poiret_One(options?: {
+export function Poiret_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Poller_One(options?: {
+export function Poller_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Poly(options?: {
-  variant: '400-italic' | '400'
+export function Poly(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Pompiere(options?: {
+export function Pompiere(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Pontano_Sans(options?: {
+export function Pontano_Sans(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Poor_Story(options?: {
+export function Poor_Story(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Poppins(options?: {
+export function Poppins(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Port_Lligat_Sans(options?: {
+export function Port_Lligat_Sans(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Port_Lligat_Slab(options?: {
+export function Port_Lligat_Slab(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Potta_One(options?: {
+export function Potta_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Pragati_Narrow(options?: {
+export function Pragati_Narrow(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Praise(options?: {
+export function Praise(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Prata(options?: {
+export function Prata(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Preahvihear(options?: {
+export function Preahvihear(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Press_Start_2P(options?: {
+export function Press_Start_2P(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Pridi(options?: {
+export function Pridi(options: {
   variant: '200' | '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Princess_Sofia(options?: {
+export function Princess_Sofia(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Prociono(options?: {
+export function Prociono(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Prompt(options?: {
+export function Prompt(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Prosto_One(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Proza_Libre(options?: {
-  variant:
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
     | '400-italic'
-    | '400'
     | '500-italic'
-    | '500'
     | '600-italic'
-    | '600'
     | '700-italic'
-    | '700'
     | '800-italic'
-    | '800'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function PT_Mono(options?: {
+export function Prosto_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function PT_Sans(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function PT_Sans_Caption(options?: {
-  variant: '400' | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function PT_Sans_Narrow(options?: {
-  variant: '400' | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function PT_Serif(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function PT_Serif_Caption(options?: {
-  variant: '400-italic' | '400'
+export function Proza_Libre(options: {
+  variant:
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Public_Sans(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -10200,63 +10190,63 @@ export function Public_Sans(options?: {
 }): FontModule {
   e()
 }
-export function Puppies_Play(options?: {
+export function Puppies_Play(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Puritan(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Puritan(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Purple_Purse(options?: {
+export function Purple_Purse(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Qahiri(options?: {
+export function Qahiri(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Quando(options?: {
+export function Quando(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Quantico(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Quantico(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Quattrocento(options?: {
+export function Quattrocento(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Quattrocento_Sans(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Quattrocento_Sans(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Questrial(options?: {
+export function Questrial(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -10264,34 +10254,34 @@ export function Questrial(options?: {
   e()
 }
 export function Quicksand(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Quintessential(options?: {
+export function Quintessential(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Qwigley(options?: {
+export function Qwigley(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Qwitcher_Grypen(options?: {
+export function Qwitcher_Grypen(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Racing_Sans_One(options?: {
+export function Racing_Sans_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -10299,17 +10289,17 @@ export function Racing_Sans_One(options?: {
   e()
 }
 export function Radio_Canada(options?: {
-  variant:
-    | '300-italic'
+  variant?:
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -10318,21 +10308,21 @@ export function Radio_Canada(options?: {
 }): FontModule {
   e()
 }
-export function Radley(options?: {
-  variant: '400-italic' | '400'
+export function Radley(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rajdhani(options?: {
+export function Rajdhani(options: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rakkas(options?: {
+export function Rakkas(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -10340,25 +10330,25 @@ export function Rakkas(options?: {
   e()
 }
 export function Raleway(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -10366,63 +10356,63 @@ export function Raleway(options?: {
 }): FontModule {
   e()
 }
-export function Raleway_Dots(options?: {
+export function Raleway_Dots(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ramabhadra(options?: {
+export function Ramabhadra(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ramaraja(options?: {
+export function Ramaraja(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rambla(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Rambla(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rammetto_One(options?: {
+export function Rammetto_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rampart_One(options?: {
+export function Rampart_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ranchers(options?: {
+export function Ranchers(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rancho(options?: {
+export function Rancho(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ranga(options?: {
+export function Ranga(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
@@ -10430,17 +10420,17 @@ export function Ranga(options?: {
   e()
 }
 export function Rasa(options?: {
-  variant:
-    | '300-italic'
+  variant?:
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -10448,14 +10438,14 @@ export function Rasa(options?: {
 }): FontModule {
   e()
 }
-export function Rationale(options?: {
+export function Rationale(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ravi_Prakash(options?: {
+export function Ravi_Prakash(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -10463,36 +10453,36 @@ export function Ravi_Prakash(options?: {
   e()
 }
 export function Readex_Pro(options?: {
-  variant: '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Recursive(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
   display?: Display
   preload?: boolean
-  axes?: ('slnt' | 'CASL' | 'CRSV' | 'MONO')[]
+  axes?: ('CASL' | 'CRSV' | 'MONO' | 'slnt')[]
 }): FontModule {
   e()
 }
 export function Red_Hat_Display(options?: {
-  variant:
-    | '300-italic'
+  variant?:
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -10501,17 +10491,17 @@ export function Red_Hat_Display(options?: {
   e()
 }
 export function Red_Hat_Mono(options?: {
-  variant:
-    | '300-italic'
+  variant?:
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -10520,17 +10510,17 @@ export function Red_Hat_Mono(options?: {
   e()
 }
 export function Red_Hat_Text(options?: {
-  variant:
-    | '300-italic'
+  variant?:
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -10539,27 +10529,27 @@ export function Red_Hat_Text(options?: {
   e()
 }
 export function Red_Rose(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Redacted(options?: {
+export function Redacted(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Redacted_Script(options?: {
+export function Redacted_Script(options: {
   variant: '300' | '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Redressed(options?: {
+export function Redressed(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -10567,109 +10557,117 @@ export function Redressed(options?: {
   e()
 }
 export function Reem_Kufi(options?: {
-  variant: '400' | '500' | '600' | '700' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Reenie_Beanie(options?: {
+export function Reenie_Beanie(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Reggae_One(options?: {
+export function Reggae_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Revalia(options?: {
+export function Revalia(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rhodium_Libre(options?: {
+export function Rhodium_Libre(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ribeye(options?: {
+export function Ribeye(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ribeye_Marrow(options?: {
+export function Ribeye_Marrow(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Righteous(options?: {
+export function Righteous(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Risque(options?: {
+export function Risque(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Road_Rage(options?: {
+export function Road_Rage(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Roboto(options?: {
+export function Roboto(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '700-italic'
     | '700'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '700-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Roboto_Condensed(options?: {
-  variant: '300-italic' | '300' | '400-italic' | '400' | '700-italic' | '700'
+export function Roboto_Condensed(options: {
+  variant: '300' | '400' | '700' | '300-italic' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Roboto_Flex(options?: {
-  variant: '400' | 'variable'
+  variant?:
+    | '100'
+    | '200'
+    | '300'
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '800'
+    | '900'
+    | '1000'
+    | 'variable'
   display?: Display
   preload?: boolean
   axes?: (
-    | 'opsz'
-    | 'slnt'
-    | 'wdth'
     | 'GRAD'
     | 'XTRA'
     | 'YOPQ'
@@ -10678,26 +10676,29 @@ export function Roboto_Flex(options?: {
     | 'YTFI'
     | 'YTLC'
     | 'YTUC'
+    | 'opsz'
+    | 'slnt'
+    | 'wdth'
   )[]
 }): FontModule {
   e()
 }
 export function Roboto_Mono(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -10706,35 +10707,35 @@ export function Roboto_Mono(options?: {
   e()
 }
 export function Roboto_Serif(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
   preload?: boolean
-  axes?: ('opsz' | 'wdth' | 'GRAD')[]
+  axes?: ('GRAD' | 'opsz' | 'wdth')[]
 }): FontModule {
   e()
 }
 export function Roboto_Slab(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -10750,21 +10751,21 @@ export function Roboto_Slab(options?: {
 }): FontModule {
   e()
 }
-export function Rochester(options?: {
+export function Rochester(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rock_Salt(options?: {
+export function Rock_Salt(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function RocknRoll_One(options?: {
+export function RocknRoll_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -10772,7 +10773,7 @@ export function RocknRoll_One(options?: {
   e()
 }
 export function Rokkitt(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -10788,32 +10789,32 @@ export function Rokkitt(options?: {
 }): FontModule {
   e()
 }
-export function Romanesco(options?: {
+export function Romanesco(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ropa_Sans(options?: {
-  variant: '400-italic' | '400'
+export function Ropa_Sans(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Rosario(options?: {
-  variant:
-    | '300-italic'
+  variant?:
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -10821,28 +10822,28 @@ export function Rosario(options?: {
 }): FontModule {
   e()
 }
-export function Rosarivo(options?: {
-  variant: '400-italic' | '400'
+export function Rosarivo(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rouge_Script(options?: {
+export function Rouge_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rowdies(options?: {
+export function Rowdies(options: {
   variant: '300' | '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rozha_One(options?: {
+export function Rozha_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -10850,21 +10851,21 @@ export function Rozha_One(options?: {
   e()
 }
 export function Rubik(options?: {
-  variant:
-    | '300-italic'
+  variant?:
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -10872,98 +10873,98 @@ export function Rubik(options?: {
 }): FontModule {
   e()
 }
-export function Rubik_Beastly(options?: {
+export function Rubik_Beastly(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rubik_Bubbles(options?: {
+export function Rubik_Bubbles(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rubik_Burned(options?: {
+export function Rubik_Burned(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rubik_Dirt(options?: {
+export function Rubik_Dirt(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rubik_Distressed(options?: {
+export function Rubik_Distressed(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rubik_Glitch(options?: {
+export function Rubik_Glitch(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rubik_Iso(options?: {
+export function Rubik_Iso(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rubik_Marker_Hatch(options?: {
+export function Rubik_Marker_Hatch(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rubik_Maze(options?: {
+export function Rubik_Maze(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rubik_Microbe(options?: {
+export function Rubik_Microbe(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rubik_Mono_One(options?: {
+export function Rubik_Mono_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rubik_Moonrocks(options?: {
+export function Rubik_Moonrocks(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rubik_Puddles(options?: {
+export function Rubik_Puddles(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rubik_Wet_Paint(options?: {
+export function Rubik_Wet_Paint(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -10971,83 +10972,100 @@ export function Rubik_Wet_Paint(options?: {
   e()
 }
 export function Ruda(options?: {
-  variant: '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rufina(options?: {
+export function Rufina(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ruge_Boogie(options?: {
+export function Ruge_Boogie(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ruluko(options?: {
+export function Ruluko(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rum_Raisin(options?: {
+export function Rum_Raisin(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ruslan_Display(options?: {
+export function Ruslan_Display(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Russo_One(options?: {
+export function Russo_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ruthie(options?: {
+export function Ruthie(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Rye(options?: {
+export function Rye(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sacramento(options?: {
+export function STIX_Two_Text(options?: {
+  variant?:
+    | '400'
+    | '500'
+    | '600'
+    | '700'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | 'variable'
+    | 'variable-italic'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Sacramento(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sahitya(options?: {
+export function Sahitya(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sail(options?: {
+export function Sail(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -11055,25 +11073,25 @@ export function Sail(options?: {
   e()
 }
 export function Saira(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -11082,339 +11100,339 @@ export function Saira(options?: {
 }): FontModule {
   e()
 }
-export function Saira_Condensed(options?: {
+export function Saira_Condensed(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Saira_Extra_Condensed(options?: {
+export function Saira_Extra_Condensed(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Saira_Semi_Condensed(options?: {
+export function Saira_Semi_Condensed(options: {
   variant: '100' | '200' | '300' | '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Saira_Stencil_One(options?: {
+export function Saira_Stencil_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Salsa(options?: {
+export function Salsa(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sanchez(options?: {
-  variant: '400-italic' | '400'
+export function Sanchez(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sancreek(options?: {
+export function Sancreek(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sansita(options?: {
+export function Sansita(options: {
   variant:
-    | '400-italic'
     | '400'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '400-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Sansita_Swashed(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | '800' | '900' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sarabun(options?: {
+export function Sarabun(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sarala(options?: {
+export function Sarala(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sarina(options?: {
+export function Sarina(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sarpanch(options?: {
+export function Sarpanch(options: {
   variant: '400' | '500' | '600' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sassy_Frass(options?: {
+export function Sassy_Frass(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Satisfy(options?: {
+export function Satisfy(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sawarabi_Gothic(options?: {
+export function Sawarabi_Gothic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sawarabi_Mincho(options?: {
+export function Sawarabi_Mincho(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Scada(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Scada(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Scheherazade_New(options?: {
+export function Scheherazade_New(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Schoolbell(options?: {
+export function Schoolbell(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Scope_One(options?: {
+export function Scope_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Seaweed_Script(options?: {
+export function Seaweed_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Secular_One(options?: {
+export function Secular_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sedgwick_Ave(options?: {
+export function Sedgwick_Ave(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sedgwick_Ave_Display(options?: {
+export function Sedgwick_Ave_Display(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sen(options?: {
+export function Sen(options: {
   variant: '400' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Send_Flowers(options?: {
+export function Send_Flowers(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sevillana(options?: {
+export function Sevillana(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Seymour_One(options?: {
+export function Seymour_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Shadows_Into_Light(options?: {
+export function Shadows_Into_Light(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Shadows_Into_Light_Two(options?: {
+export function Shadows_Into_Light_Two(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Shalimar(options?: {
+export function Shalimar(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Shanti(options?: {
+export function Shanti(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Share(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Share(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Share_Tech(options?: {
+export function Share_Tech(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Share_Tech_Mono(options?: {
+export function Share_Tech_Mono(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Shippori_Antique(options?: {
+export function Shippori_Antique(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Shippori_Antique_B1(options?: {
+export function Shippori_Antique_B1(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Shippori_Mincho(options?: {
+export function Shippori_Mincho(options: {
   variant: '400' | '500' | '600' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Shippori_Mincho_B1(options?: {
+export function Shippori_Mincho_B1(options: {
   variant: '400' | '500' | '600' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Shojumaru(options?: {
+export function Shojumaru(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Short_Stack(options?: {
+export function Short_Stack(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Shrikhand(options?: {
+export function Shrikhand(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Siemreap(options?: {
+export function Siemreap(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sigmar_One(options?: {
+export function Sigmar_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -11422,97 +11440,97 @@ export function Sigmar_One(options?: {
   e()
 }
 export function Signika(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Signika_Negative(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Silkscreen(options?: {
+export function Silkscreen(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Simonetta(options?: {
-  variant: '400-italic' | '400' | '900-italic' | '900'
+export function Simonetta(options: {
+  variant: '400' | '900' | '400-italic' | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Single_Day(options?: {
+export function Single_Day(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sintony(options?: {
+export function Sintony(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sirin_Stencil(options?: {
+export function Sirin_Stencil(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Six_Caps(options?: {
+export function Six_Caps(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Skranji(options?: {
+export function Skranji(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Slabo_13px(options?: {
+export function Slabo_13px(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Slabo_27px(options?: {
+export function Slabo_27px(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Slackey(options?: {
+export function Slackey(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Smokum(options?: {
+export function Smokum(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Smooch(options?: {
+export function Smooch(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -11520,7 +11538,7 @@ export function Smooch(options?: {
   e()
 }
 export function Smooch_Sans(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -11536,63 +11554,63 @@ export function Smooch_Sans(options?: {
 }): FontModule {
   e()
 }
-export function Smythe(options?: {
+export function Smythe(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sniglet(options?: {
+export function Sniglet(options: {
   variant: '400' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Snippet(options?: {
+export function Snippet(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Snowburst_One(options?: {
+export function Snowburst_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sofadi_One(options?: {
+export function Sofadi_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sofia(options?: {
+export function Sofia(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Solway(options?: {
+export function Solway(options: {
   variant: '300' | '400' | '500' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Song_Myung(options?: {
+export function Song_Myung(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sonsie_One(options?: {
+export function Sonsie_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -11600,7 +11618,7 @@ export function Sonsie_One(options?: {
   e()
 }
 export function Sora(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -11615,31 +11633,31 @@ export function Sora(options?: {
 }): FontModule {
   e()
 }
-export function Sorts_Mill_Goudy(options?: {
-  variant: '400-italic' | '400'
+export function Sorts_Mill_Goudy(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Source_Code_Pro(options?: {
-  variant:
-    | '200-italic'
+  variant?:
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -11648,23 +11666,23 @@ export function Source_Code_Pro(options?: {
   e()
 }
 export function Source_Sans_3(options?: {
-  variant:
-    | '200-italic'
+  variant?:
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -11672,43 +11690,43 @@ export function Source_Sans_3(options?: {
 }): FontModule {
   e()
 }
-export function Source_Sans_Pro(options?: {
+export function Source_Sans_Pro(options: {
   variant:
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '900-italic'
     | '900'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '600-italic'
+    | '700-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Source_Serif_4(options?: {
-  variant:
-    | '200-italic'
+  variant?:
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -11717,110 +11735,110 @@ export function Source_Serif_4(options?: {
 }): FontModule {
   e()
 }
-export function Source_Serif_Pro(options?: {
+export function Source_Serif_Pro(options: {
   variant:
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '900-italic'
     | '900'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '600-italic'
+    | '700-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Space_Grotesk(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Space_Mono(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Space_Mono(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Special_Elite(options?: {
+export function Special_Elite(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Spectral(options?: {
+export function Spectral(options: {
   variant:
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Spectral_SC(options?: {
+export function Spectral_SC(options: {
   variant:
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Spicy_Rice(options?: {
+export function Spicy_Rice(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Spinnaker(options?: {
+export function Spinnaker(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Spirax(options?: {
+export function Spirax(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Splash(options?: {
+export function Splash(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -11828,24 +11846,24 @@ export function Splash(options?: {
   e()
 }
 export function Spline_Sans(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Spline_Sans_Mono(options?: {
-  variant:
-    | '300-italic'
+  variant?:
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -11853,70 +11871,70 @@ export function Spline_Sans_Mono(options?: {
 }): FontModule {
   e()
 }
-export function Squada_One(options?: {
+export function Squada_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Square_Peg(options?: {
+export function Square_Peg(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sree_Krushnadevaraya(options?: {
+export function Sree_Krushnadevaraya(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sriracha(options?: {
+export function Sriracha(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Srisakdi(options?: {
+export function Srisakdi(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Staatliches(options?: {
+export function Staatliches(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Stalemate(options?: {
+export function Stalemate(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Stalinist_One(options?: {
+export function Stalinist_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Stardos_Stencil(options?: {
+export function Stardos_Stencil(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Stick(options?: {
+export function Stick(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -11924,156 +11942,139 @@ export function Stick(options?: {
   e()
 }
 export function Stick_No_Bills(options?: {
-  variant: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '200' | '300' | '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Stint_Ultra_Condensed(options?: {
+export function Stint_Ultra_Condensed(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Stint_Ultra_Expanded(options?: {
+export function Stint_Ultra_Expanded(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function STIX_Two_Text(options?: {
-  variant:
-    | '400-italic'
-    | '400'
-    | '500-italic'
-    | '500'
-    | '600-italic'
-    | '600'
-    | '700-italic'
-    | '700'
-    | 'variable'
-    | 'variable-italic'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function Stoke(options?: {
+export function Stoke(options: {
   variant: '300' | '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Strait(options?: {
+export function Strait(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Style_Script(options?: {
+export function Style_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Stylish(options?: {
+export function Stylish(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sue_Ellen_Francisco(options?: {
+export function Sue_Ellen_Francisco(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Suez_One(options?: {
+export function Suez_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sulphur_Point(options?: {
+export function Sulphur_Point(options: {
   variant: '300' | '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sumana(options?: {
+export function Sumana(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sunflower(options?: {
+export function Sunflower(options: {
   variant: '300' | '500' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sunshiney(options?: {
+export function Sunshiney(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Supermercado_One(options?: {
+export function Supermercado_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Sura(options?: {
+export function Sura(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Suranna(options?: {
+export function Suranna(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Suravaram(options?: {
+export function Suravaram(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Suwannaphum(options?: {
+export function Suwannaphum(options: {
   variant: '100' | '300' | '400' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Swanky_and_Moo_Moo(options?: {
+export function Swanky_and_Moo_Moo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Syncopate(options?: {
+export function Syncopate(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
@@ -12081,122 +12082,122 @@ export function Syncopate(options?: {
   e()
 }
 export function Syne(options?: {
-  variant: '400' | '500' | '600' | '700' | '800' | 'variable'
+  variant?: '400' | '500' | '600' | '700' | '800' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Syne_Mono(options?: {
+export function Syne_Mono(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Syne_Tactile(options?: {
+export function Syne_Tactile(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tai_Heritage_Pro(options?: {
+export function Tai_Heritage_Pro(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tajawal(options?: {
+export function Tajawal(options: {
   variant: '200' | '300' | '400' | '500' | '700' | '800' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tangerine(options?: {
+export function Tangerine(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tapestry(options?: {
+export function Tapestry(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Taprom(options?: {
+export function Taprom(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tauri(options?: {
+export function Tauri(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Taviraj(options?: {
+export function Taviraj(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Teko(options?: {
+export function Teko(options: {
   variant: '300' | '400' | '500' | '600' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Telex(options?: {
+export function Telex(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tenali_Ramakrishna(options?: {
+export function Tenali_Ramakrishna(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tenor_Sans(options?: {
+export function Tenor_Sans(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Text_Me_One(options?: {
+export function Text_Me_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -12204,25 +12205,25 @@ export function Text_Me_One(options?: {
   e()
 }
 export function Texturina(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -12231,182 +12232,181 @@ export function Texturina(options?: {
 }): FontModule {
   e()
 }
-export function Thasadith(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Thasadith(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function The_Girl_Next_Door(options?: {
+export function The_Girl_Next_Door(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function The_Nautigal(options?: {
+export function The_Nautigal(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tienne(options?: {
+export function Tienne(options: {
   variant: '400' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tillana(options?: {
+export function Tillana(options: {
   variant: '400' | '500' | '600' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Timmana(options?: {
+export function Timmana(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tinos(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Tinos(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tiro_Bangla(options?: {
-  variant: '400-italic' | '400'
+export function Tiro_Bangla(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tiro_Devanagari_Hindi(options?: {
-  variant: '400-italic' | '400'
+export function Tiro_Devanagari_Hindi(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tiro_Devanagari_Marathi(options?: {
-  variant: '400-italic' | '400'
+export function Tiro_Devanagari_Marathi(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tiro_Devanagari_Sanskrit(options?: {
-  variant: '400-italic' | '400'
+export function Tiro_Devanagari_Sanskrit(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tiro_Gurmukhi(options?: {
-  variant: '400-italic' | '400'
+export function Tiro_Gurmukhi(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tiro_Kannada(options?: {
-  variant: '400-italic' | '400'
+export function Tiro_Kannada(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tiro_Tamil(options?: {
-  variant: '400-italic' | '400'
+export function Tiro_Tamil(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tiro_Telugu(options?: {
-  variant: '400-italic' | '400'
+export function Tiro_Telugu(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Titan_One(options?: {
+export function Titan_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Titillium_Web(options?: {
+export function Titillium_Web(options: {
   variant:
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '900-italic'
     | '900'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '600-italic'
+    | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tomorrow(options?: {
+export function Tomorrow(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Tourney(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -12415,47 +12415,47 @@ export function Tourney(options?: {
 }): FontModule {
   e()
 }
-export function Trade_Winds(options?: {
+export function Trade_Winds(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Train_One(options?: {
+export function Train_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Trirong(options?: {
+export function Trirong(options: {
   variant:
-    | '100-italic'
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Trispace(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -12471,22 +12471,22 @@ export function Trispace(options?: {
 }): FontModule {
   e()
 }
-export function Trocchi(options?: {
+export function Trocchi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Trochut(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Trochut(options: {
+  variant: '400' | '700' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Truculenta(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -12503,134 +12503,134 @@ export function Truculenta(options?: {
 }): FontModule {
   e()
 }
-export function Trykker(options?: {
+export function Trykker(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Tulpen_One(options?: {
+export function Tulpen_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Turret_Road(options?: {
+export function Turret_Road(options: {
   variant: '200' | '300' | '400' | '500' | '700' | '800'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Twinkle_Star(options?: {
+export function Twinkle_Star(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ubuntu(options?: {
+export function Ubuntu(options: {
   variant:
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '700-italic'
     | '700'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ubuntu_Condensed(options?: {
+export function Ubuntu_Condensed(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ubuntu_Mono(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Ubuntu_Mono(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Uchen(options?: {
+export function Uchen(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Ultra(options?: {
+export function Ultra(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Uncial_Antiqua(options?: {
+export function Uncial_Antiqua(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Underdog(options?: {
+export function Underdog(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Unica_One(options?: {
+export function Unica_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function UnifrakturCook(options?: {
+export function UnifrakturCook(options: {
   variant: '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function UnifrakturMaguntia(options?: {
+export function UnifrakturMaguntia(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Unkempt(options?: {
+export function Unkempt(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Unlock(options?: {
+export function Unlock(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Unna(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Unna(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Updock(options?: {
+export function Updock(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -12638,25 +12638,25 @@ export function Updock(options?: {
   e()
 }
 export function Urbanist(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -12664,21 +12664,28 @@ export function Urbanist(options?: {
 }): FontModule {
   e()
 }
-export function Vampiro_One(options?: {
+export function VT323(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Varela(options?: {
+export function Vampiro_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Varela_Round(options?: {
+export function Varela(options: {
+  variant: '400'
+  display?: Display
+  preload?: boolean
+}): FontModule {
+  e()
+}
+export function Varela_Round(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -12686,13 +12693,13 @@ export function Varela_Round(options?: {
   e()
 }
 export function Varta(options?: {
-  variant: '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Vast_Shadow(options?: {
+export function Vast_Shadow(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -12700,7 +12707,7 @@ export function Vast_Shadow(options?: {
   e()
 }
 export function Vazirmatn(options?: {
-  variant:
+  variant?:
     | '100'
     | '200'
     | '300'
@@ -12716,76 +12723,76 @@ export function Vazirmatn(options?: {
 }): FontModule {
   e()
 }
-export function Vesper_Libre(options?: {
+export function Vesper_Libre(options: {
   variant: '400' | '500' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Viaoda_Libre(options?: {
+export function Viaoda_Libre(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Vibes(options?: {
+export function Vibes(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Vibur(options?: {
+export function Vibur(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Vidaloka(options?: {
+export function Vidaloka(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Viga(options?: {
+export function Viga(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Voces(options?: {
+export function Voces(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Volkhov(options?: {
-  variant: '400-italic' | '400' | '700-italic' | '700'
+export function Volkhov(options: {
+  variant: '400' | '700' | '400-italic' | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Vollkorn(options?: {
-  variant:
-    | '400-italic'
+  variant?:
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -12793,105 +12800,98 @@ export function Vollkorn(options?: {
 }): FontModule {
   e()
 }
-export function Vollkorn_SC(options?: {
+export function Vollkorn_SC(options: {
   variant: '400' | '600' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Voltaire(options?: {
+export function Voltaire(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function VT323(options?: {
+export function Vujahday_Script(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Vujahday_Script(options?: {
+export function Waiting_for_the_Sunrise(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Waiting_for_the_Sunrise(options?: {
+export function Wallpoet(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Wallpoet(options?: {
+export function Walter_Turncoat(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Walter_Turncoat(options?: {
+export function Warnes(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Warnes(options?: {
+export function Water_Brush(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Water_Brush(options?: {
+export function Waterfall(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Waterfall(options?: {
+export function Wellfleet(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Wellfleet(options?: {
+export function Wendy_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Wendy_One(options?: {
+export function Whisper(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Whisper(options?: {
-  variant: '400'
-  display?: Display
-  preload?: boolean
-}): FontModule {
-  e()
-}
-export function WindSong(options?: {
+export function WindSong(options: {
   variant: '400' | '500'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Wire_One(options?: {
+export function Wire_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -12899,25 +12899,25 @@ export function Wire_One(options?: {
   e()
 }
 export function Work_Sans(options?: {
-  variant:
-    | '100-italic'
+  variant?:
     | '100'
-    | '200-italic'
     | '200'
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
-    | '800-italic'
     | '800'
-    | '900-italic'
     | '900'
+    | '100-italic'
+    | '200-italic'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
+    | '800-italic'
+    | '900-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -12925,70 +12925,70 @@ export function Work_Sans(options?: {
 }): FontModule {
   e()
 }
-export function Xanh_Mono(options?: {
-  variant: '400-italic' | '400'
+export function Xanh_Mono(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Yaldevi(options?: {
-  variant: '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
 export function Yanone_Kaffeesatz(options?: {
-  variant: '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
+  variant?: '200' | '300' | '400' | '500' | '600' | '700' | 'variable'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Yantramanav(options?: {
+export function Yantramanav(options: {
   variant: '100' | '300' | '400' | '500' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Yatra_One(options?: {
+export function Yatra_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Yellowtail(options?: {
+export function Yellowtail(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Yeon_Sung(options?: {
+export function Yeon_Sung(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Yeseva_One(options?: {
+export function Yeseva_One(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Yesteryear(options?: {
+export function Yesteryear(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Yomogi(options?: {
+export function Yomogi(options: {
   variant: '400'
   display?: Display
   preload?: boolean
@@ -12996,17 +12996,17 @@ export function Yomogi(options?: {
   e()
 }
 export function Yrsa(options?: {
-  variant:
-    | '300-italic'
+  variant?:
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
     | 'variable'
     | 'variable-italic'
   display?: Display
@@ -13014,157 +13014,157 @@ export function Yrsa(options?: {
 }): FontModule {
   e()
 }
-export function Yuji_Boku(options?: {
+export function Yuji_Boku(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Yuji_Mai(options?: {
+export function Yuji_Mai(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Yuji_Syuku(options?: {
+export function Yuji_Syuku(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Yusei_Magic(options?: {
+export function Yusei_Magic(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function ZCOOL_KuaiLe(options?: {
+export function ZCOOL_KuaiLe(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function ZCOOL_QingKe_HuangYou(options?: {
+export function ZCOOL_QingKe_HuangYou(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function ZCOOL_XiaoWei(options?: {
+export function ZCOOL_XiaoWei(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Zen_Antique(options?: {
+export function Zen_Antique(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Zen_Antique_Soft(options?: {
+export function Zen_Antique_Soft(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Zen_Dots(options?: {
+export function Zen_Dots(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Zen_Kaku_Gothic_Antique(options?: {
+export function Zen_Kaku_Gothic_Antique(options: {
   variant: '300' | '400' | '500' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Zen_Kaku_Gothic_New(options?: {
+export function Zen_Kaku_Gothic_New(options: {
   variant: '300' | '400' | '500' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Zen_Kurenaido(options?: {
+export function Zen_Kurenaido(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Zen_Loop(options?: {
-  variant: '400-italic' | '400'
+export function Zen_Loop(options: {
+  variant: '400' | '400-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Zen_Maru_Gothic(options?: {
+export function Zen_Maru_Gothic(options: {
   variant: '300' | '400' | '500' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Zen_Old_Mincho(options?: {
+export function Zen_Old_Mincho(options: {
   variant: '400' | '700' | '900'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Zen_Tokyo_Zoo(options?: {
+export function Zen_Tokyo_Zoo(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Zeyada(options?: {
+export function Zeyada(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Zhi_Mang_Xing(options?: {
+export function Zhi_Mang_Xing(options: {
   variant: '400'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Zilla_Slab(options?: {
+export function Zilla_Slab(options: {
   variant:
-    | '300-italic'
     | '300'
-    | '400-italic'
     | '400'
-    | '500-italic'
     | '500'
-    | '600-italic'
     | '600'
-    | '700-italic'
     | '700'
+    | '300-italic'
+    | '400-italic'
+    | '500-italic'
+    | '600-italic'
+    | '700-italic'
   display?: Display
   preload?: boolean
 }): FontModule {
   e()
 }
-export function Zilla_Slab_Highlight(options?: {
+export function Zilla_Slab_Highlight(options: {
   variant: '400' | '700'
   display?: Display
   preload?: boolean

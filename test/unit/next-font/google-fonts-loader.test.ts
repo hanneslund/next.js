@@ -17,12 +17,10 @@ describe('@next/font/google loader', () => {
     )
 
     expect(err.message).toMatchInlineSnapshot(`
-"Failed to fetch font  \`Inter\`
+"Failed to fetch font  \`Inter\`.
 URL: https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=optional"
 `)
   })
-
-  // Failed to fetch file?
 
   test.each([
     [
@@ -42,8 +40,8 @@ URL: https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=option
     ],
     [
       'Source_Sans_Pro',
-      { display: 'auto' },
-      'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=auto',
+      { variant: '900', display: 'auto' },
+      'https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@900&display=auto',
     ],
     [
       'Source_Sans_Pro',
@@ -70,11 +68,6 @@ URL: https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=option
     ],
     [
       'Oooh_Baby',
-      {},
-      'https://fonts.googleapis.com/css2?family=Oooh+Baby:wght@400&display=optional',
-    ],
-    [
-      'Oooh_Baby',
       { variant: '400' },
       'https://fonts.googleapis.com/css2?family=Oooh+Baby:wght@400&display=optional',
     ],
@@ -82,6 +75,11 @@ URL: https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=option
       'Albert_Sans',
       { variant: 'variable-italic' },
       'https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@1,100..900&display=optional',
+    ],
+    [
+      'Fraunces',
+      { variant: 'variable-italic', axes: ['WONK', 'opsz', 'SOFT'] },
+      'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@1,9..144,100..900,0..100,0..1&display=optional',
     ],
   ])('Correct url: %s %p', async (font, data, url) => {
     self.fetch.mockResolvedValue({

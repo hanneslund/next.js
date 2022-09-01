@@ -2,63 +2,68 @@ const fs = require('fs')
 const path = require('path')
 
 ;(async () => {
-  const [fonts, variableResponses] = await Promise.all([
-    fetch(
-      'https://raw.githubusercontent.com/fontsource/google-font-metadata/main/data/google-fonts-v2.json'
-    ).then((r) => r.json()),
-    fetch(
-      'https://raw.githubusercontent.com/fontsource/google-font-metadata/main/data/variable-response.json'
-    ).then((r) => r.json()),
-  ])
-
-  const variableFonts = variableResponses.reduce((fontMap, font) => {
-    fontMap[font.family] = font.axes
-    return fontMap
-  })
+  const { familyMetadataList } = await fetch(
+    'https://fonts.google.com/metadata/fonts'
+  ).then((r) => r.json())
 
   let fontFunctions = `/* eslint-disable @typescript-eslint/no-unused-vars */
-type Display = 'auto'|'block'|'swap'|'fallback'|'optional'
-type FontModule = { className: string, variables: string, style: { fontFamily: string, fontWeight?: number, fontStyle?: string } }
-function e():never { throw new Error() }
-`
-
+  type Display = 'auto'|'block'|'swap'|'fallback'|'optional'
+  type FontModule = { className: string, variables: string, style: { fontFamily: string, fontWeight?: number, fontStyle?: string } }
+  function e():never { throw new Error('@next/font/google is not configured as a font loader') }
+  `
   const fontData = {}
-  for (const { family, subsets, weights, styles } of Object.values(fonts)) {
-    const variants = []
-    weights.forEach((weight) => {
-      styles.forEach((style) => {
-        variants.push(`${weight}${style === 'normal' ? '' : `-${style}`}`)
-      })
+  for (let { family, subsets, fonts, axes } of familyMetadataList) {
+    subsets = subsets.filter((s) => s !== 'menu')
+
+    let hasItalic = false
+    const variants = Object.keys(fonts).map((variant) => {
+      if (variant.endsWith('i')) {
+        hasItalic = true
+        return `${variant.slice(0, 3)}-italic`
+      }
+      return variant
     })
 
-    const varAxes = variableFonts[family]
+    const hasVariableFont = axes.length > 0
+
     let functionAxes
-    if (varAxes) {
-      const additionalAxes = Object.keys(varAxes).filter(
-        (key) => key !== 'ital' && key !== 'wght'
-      )
-      if (additionalAxes.length > 0) {
-        functionAxes = additionalAxes
+    if (hasVariableFont) {
+      variants.push('variable')
+      if (hasItalic) {
+        variants.push('variable-italic')
       }
 
-      variants.push('variable')
-      if (varAxes.ital) {
-        variants.push('variable-italic')
+      const additionalAxes = axes.filter(({ tag }) => tag !== 'wght')
+      if (additionalAxes.length > 0) {
+        functionAxes = additionalAxes.map(({ tag, min, max }) => ({
+          tag,
+          min,
+          max,
+        }))
       }
     }
 
-    fontData[family] = { variants, subsets, axes: variableFonts[family] }
-    fontFunctions += `export function ${family.replaceAll(' ', '_')}(options?: {
-      variant:${variants.map((variant) => `"${variant}"`).join('|')}
-      display?:Display,
-preload?:(${subsets.map((s) => `'${s}'`).join('|')})[]
-${
-  functionAxes ? `axes?:(${functionAxes.map((s) => `'${s}'`).join('|')})[]` : ''
-}
-}):FontModule{e()}
-`
+    fontData[family] = {
+      variants,
+      subsets,
+      axes: hasVariableFont ? axes : undefined,
+    }
+    const isOptional = hasVariableFont ? '?' : ''
+    fontFunctions += `export function ${family.replaceAll(
+      ' ',
+      '_'
+    )}(options${isOptional}: {
+    variant${isOptional}:${variants.map((variant) => `"${variant}"`).join('|')}
+    display?:Display,
+    preload?:boolean
+    ${
+      functionAxes
+        ? `axes?:(${functionAxes.map(({ tag }) => `'${tag}'`).join('|')})[]`
+        : ''
+    }
+    }):FontModule{e()}
+    `
   }
-
   fs.writeFileSync(
     path.join(__dirname, '../src/google/index.ts'),
     fontFunctions
