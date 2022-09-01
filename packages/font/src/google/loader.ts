@@ -87,7 +87,7 @@ export default async function download(
   }
 
   if (weight === 'variable') {
-    const fontAxes: { tag: string; min: number; max: number }[] = (
+    const fontAxes: Array<{ tag: string; min: number; max: number }> = (
       fontData as any
     )[fontFamily].axes
 
@@ -132,16 +132,17 @@ export default async function download(
     url = getUrl(keyVal)
   }
 
-  let fixture
+  let mockedResponse: string | undefined
   if (process.env.NEXT_FONT_GOOGLE_MOCKED_RESPONSES) {
-    const fixtures = require(process.env.NEXT_FONT_GOOGLE_MOCKED_RESPONSES)
-    fixture = fixtures[url]
-    if (!fixture) throw new Error('Missing mocked response for URL: ' + url)
+    const mockFile = require(process.env.NEXT_FONT_GOOGLE_MOCKED_RESPONSES)
+    mockedResponse = mockFile[url]
+    if (!mockedResponse)
+      throw new Error('Missing mocked response for URL: ' + url)
   }
 
   let cssResponse
-  if (fixture) {
-    cssResponse = fixture
+  if (mockedResponse) {
+    cssResponse = mockedResponse
   } else {
     const res = await fetch(url, {
       headers: {
@@ -156,39 +157,55 @@ export default async function download(
     cssResponse = await res.text()
   }
 
-  const lines = []
+  // Find font files to download
+  const fontFiles: Array<{ fontFileUrl: string; preloadFontFile: boolean }> = []
   let currentSubset = ''
   for (const line of cssResponse.split('\n')) {
+    // Each @font-face has the subset above it in a comment
     const newSubset = /\/\* (.+?) \*\//.exec(line)?.[1]
     if (newSubset) {
       currentSubset = newSubset
     } else {
-      const fontFaceUrl = /src: url\((.+?)\)/.exec(line)?.[1]
-      if (fontFaceUrl) {
-        let fontFileBuffer: Buffer
-        if (fixture) {
-          fontFileBuffer = Buffer.from(fontFaceUrl)
-        } else {
-          const arrayBuffer = await fetch(fontFaceUrl).then((r) =>
-            r.arrayBuffer()
-          )
-          fontFileBuffer = Buffer.from(arrayBuffer)
-        }
-
-        let ext: any = fontFaceUrl.split('.')
-        ext = ext[ext.length - 1]
-        const file = emitFile(
-          fontFileBuffer,
-          ext,
-          !!preload && config.subsets.includes(currentSubset)
-        )
-        lines.push(line.replace(fontFaceUrl, file))
-        continue
+      const fontFileUrl = /src: url\((.+?)\)/.exec(line)?.[1]
+      if (fontFileUrl) {
+        fontFiles.push({
+          fontFileUrl,
+          preloadFontFile: !!preload && config.subsets.includes(currentSubset),
+        })
       }
     }
-
-    lines.push(line)
   }
 
-  return lines.join('\n')
+  // Download font files
+  const downloadedFiles = await Promise.all(
+    fontFiles.map(async ({ fontFileUrl, preloadFontFile }) => {
+      let fontFileBuffer: Buffer
+      if (mockedResponse) {
+        fontFileBuffer = Buffer.from(fontFileUrl)
+      } else {
+        const arrayBuffer = await fetch(fontFileUrl).then((r) =>
+          r.arrayBuffer()
+        )
+        fontFileBuffer = Buffer.from(arrayBuffer)
+      }
+
+      // Emit font file to _next/static/fonts
+      let ext: any = fontFileUrl.split('.')
+      ext = ext[ext.length - 1]
+      const selfHostedFile = emitFile(fontFileBuffer, ext, preloadFontFile)
+
+      return {
+        fontFileUrl,
+        selfHostedFile,
+      }
+    })
+  )
+
+  // Replace @font-face sources with self-hosted files
+  let updatedCssResponse = cssResponse
+  for (const { fontFileUrl, selfHostedFile } of downloadedFiles) {
+    updatedCssResponse = updatedCssResponse.replace(fontFileUrl, selfHostedFile)
+  }
+
+  return updatedCssResponse
 }

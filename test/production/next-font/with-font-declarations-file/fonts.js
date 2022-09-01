@@ -8,9 +8,9 @@ import {
 
 const openSans = Open_Sans()
 const sourceCodePro = Source_Code_Pro({ display: 'swap' })
-const abel = Abel({ display: 'optional', preload: false })
+const abel = Abel({ variant: '400', display: 'optional', preload: false })
 
 const inter = Inter({ display: 'block', preload: true })
-const roboto = Roboto()
+const roboto = Roboto({ variant: '400' })
 
 export { openSans, sourceCodePro, abel, inter, roboto }
