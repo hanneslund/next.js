@@ -196,8 +196,7 @@ export default async function download(
         fontFileBuffer = Buffer.from(arrayBuffer)
       }
 
-      let ext: any = googleFontFileUrl.split('.')
-      ext = ext[ext.length - 1]
+      const ext = /\.(woff|woff2|eot|ttf|otf)$/.exec(googleFontFileUrl)![1]
       // Emit font file to .next/static/fonts
       const selfHostedFileUrl = emitFontFile(
         fontFileBuffer,

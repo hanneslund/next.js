@@ -764,20 +764,18 @@ export class Head extends Component<HeadProps> {
         {children}
         {optimizeFonts && <meta name="next-font-preconnect" />}
         {pageFontFiles.length > 0 ? (
-          // Add preconnect if the current page has self-hosted font files
           <link rel="preconnect" href="/" crossOrigin="anonymous" />
         ) : null}
         {pageFontFiles
-          // Fonts that ends with .p.[ext] should preload
-          .filter((fontFile) => /\.p.(woff|woff2|eot|ttf|otf)$/.exec(fontFile))
+          // Fonts that end with .p.(woff|woff2|eot|ttf|otf) should preload
+          .filter((fontFile) => /\.p.(woff|woff2|eot|ttf|otf)$/.test(fontFile))
           .map((fontFile) => {
-            let ext: any = fontFile.split('.')
-            ext = ext[ext.length - 1]
+            const ext = /\.(woff|woff2|eot|ttf|otf)$/.exec(fontFile)![1]
             return (
               <link
                 key={fontFile}
                 rel="preload"
-                href={`${assetPrefix}/_next/${fontFile}`}
+                href={`${assetPrefix}/_next/${encodeURI(fontFile)}`}
                 as="font"
                 type={`font/${ext}`}
                 crossOrigin="anonymous"
