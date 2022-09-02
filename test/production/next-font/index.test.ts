@@ -166,7 +166,6 @@ describe('@next/font/google', () => {
       const browser = await webdriver(next.url, '/variables')
 
       try {
-        // variables.js
         // Fira Code Variable
         expect(
           await browser.eval(
@@ -214,6 +213,35 @@ describe('@next/font/google', () => {
             'getComputedStyle(document.querySelector("#without-variables-roboto-100-italic")).fontFamily'
           )
         ).not.toBe('Roboto-adfcc')
+      } finally {
+        await browser.close()
+      }
+    })
+
+    test('page using fallback fonts', async () => {
+      const browser = await webdriver(next.url, '/with-fallback')
+
+      try {
+        // .className
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#with-fallback-fonts-classname")).fontFamily'
+          )
+        ).toBe('"Open Sans-9765a", system-ui, Arial')
+
+        // .style
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#with-fallback-fonts-style")).fontFamily'
+          )
+        ).toBe('"Open Sans-9765a", system-ui, Arial')
+
+        // .variable
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#with-fallback-fonts-variable")).fontFamily'
+          )
+        ).toBe('"Open Sans-9765a", system-ui, Arial')
       } finally {
         await browser.close()
       }

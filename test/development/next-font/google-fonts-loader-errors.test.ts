@@ -213,7 +213,7 @@ describe('@next/font/google option errors', () => {
       }
       `
       )
-      await check(() => getRedboxSource(browser), /Invalid/)
+      await check(() => getRedboxSource(browser), /expected an array of axes/)
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Invalid axes value for font \`Inter\`, expected an array of axes.
@@ -240,7 +240,7 @@ describe('@next/font/google option errors', () => {
       }
       `
       )
-      await check(() => getRedboxSource(browser), /Invalid/)
+      await check(() => getRedboxSource(browser), /Fraunces/)
       expect(removeFirstLine(await getRedboxSource(browser)))
         .toMatchInlineSnapshot(`
         "Invalid axes value \`hello\` for font \`Fraunces\`.

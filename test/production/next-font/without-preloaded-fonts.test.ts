@@ -8,15 +8,15 @@ const mockedGoogleFontResponses = require.resolve(
   './google-font-mocked-responses.js'
 )
 
-describe('@next/font/google base-path-and-no-fonts', () => {
+describe('@next/font/google without-preloaded-fonts', () => {
   let next: NextInstance
 
   beforeAll(async () => {
     next = await createNext({
       files: {
-        pages: new FileRef(join(__dirname, 'base-path-and-no-fonts/pages')),
+        pages: new FileRef(join(__dirname, 'without-preloaded-fonts/pages')),
         'next.config.js': new FileRef(
-          join(__dirname, 'base-path-and-no-fonts/next.config.js')
+          join(__dirname, 'without-preloaded-fonts/next.config.js')
         ),
       },
       dependencies: {
@@ -29,31 +29,8 @@ describe('@next/font/google base-path-and-no-fonts', () => {
   })
   afterAll(() => next.destroy())
 
-  test('preload correct files', async () => {
-    const html = await renderViaHTTP(next.url, '/dashboard')
-    const $ = cheerio.load(html)
-
-    // Preconnect
-    expect($('link[rel="preconnect"]').length).toBe(1)
-    expect($('link[rel="preconnect"]').get(0).attribs).toEqual({
-      crossorigin: 'anonymous',
-      href: '/',
-      rel: 'preconnect',
-    })
-
-    // Preload
-    expect($('link[as="font"]').length).toBe(1)
-    expect($('link[as="font"]').get(0).attribs).toEqual({
-      as: 'font',
-      crossorigin: 'anonymous',
-      href: '/dashboard/_next/static/fonts/0812efcfaefec5ea.p.woff2',
-      rel: 'preload',
-      type: 'font/woff2',
-    })
-  })
-
   test('without preload', async () => {
-    const html = await renderViaHTTP(next.url, '/dashboard/no-preload')
+    const html = await renderViaHTTP(next.url, '/no-preload')
     const $ = cheerio.load(html)
 
     // Preconnect
@@ -69,7 +46,7 @@ describe('@next/font/google base-path-and-no-fonts', () => {
   })
 
   test('without fonts', async () => {
-    const html = await renderViaHTTP(next.url, '/dashboard/without-fonts')
+    const html = await renderViaHTTP(next.url, '/without-fonts')
     const $ = cheerio.load(html)
 
     expect($('link[rel="preconnect"]').length).toBe(0)

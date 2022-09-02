@@ -185,7 +185,7 @@ export default async function loader(content, map, meta) {
           'hex',
           5
         )
-        plugins.push(fontLoader(fontLoaderExports, hash))
+        plugins.push(fontLoader(fontLoaderExports, hash, meta?.fallbackFonts))
       }
 
       if (shouldUseModulesPlugins(options)) {

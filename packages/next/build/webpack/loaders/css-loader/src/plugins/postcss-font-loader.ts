@@ -2,7 +2,8 @@ import postcss, { Declaration } from 'postcss'
 
 const plugin = (
   exports: { name: any; value: any }[],
-  classNameHash: string
+  classNameHash: string,
+  fallbackFonts: string[] = []
 ) => {
   return {
     postcssPlugin: 'postcss-font-loader',
@@ -62,12 +63,13 @@ const plugin = (
         }
       }
 
+      const formattedFontFamilies = [fontFamilies, ...fallbackFonts].join(', ')
       // Add font class
       const classRule = new postcss.Rule({ selector: '.className' })
       classRule.nodes = [
         new postcss.Declaration({
           prop: 'font-family',
-          value: fontFamilies.join(','),
+          value: formattedFontFamilies,
         }),
         ...(fontStyle
           ? [
@@ -93,11 +95,11 @@ const plugin = (
       varialbeRule.nodes = [
         new postcss.Declaration({
           prop: rawFamily
-            ? `--next-font-${rawFamily.toLowerCase().replaceAll(' ', '-')}${
+            ? `--next-font-${rawFamily.toLowerCase().replace(/ /g, '-')}${
                 fontWeight ? `-${fontWeight}` : ''
               }${fontStyle === 'italic' ? `-${fontStyle}` : ''}`
             : '',
-          value: fontFamilies.join(','),
+          value: formattedFontFamilies,
         }),
       ]
       root.nodes.push(varialbeRule)
@@ -106,7 +108,7 @@ const plugin = (
       exports.push({
         name: 'style',
         value: {
-          fontFamily: fontFamilies.join(','),
+          fontFamily: formattedFontFamilies,
           fontWeight: fontWeight && Number(fontWeight),
           fontStyle,
         },

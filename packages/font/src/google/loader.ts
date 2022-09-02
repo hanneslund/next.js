@@ -24,6 +24,7 @@ export default async function download(
     display = 'optional',
     preload = display === 'optional',
     axes,
+    fallback,
   } = data[0] || ({} as any)
 
   const fontFamily = functionName.replace(/_/g, ' ')
@@ -220,5 +221,8 @@ export default async function download(
     )
   }
 
-  return updatedCssResponse
+  return {
+    css: updatedCssResponse,
+    fallbackFonts: fallback,
+  }
 }

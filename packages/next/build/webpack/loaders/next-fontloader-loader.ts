@@ -30,13 +30,13 @@ export default async function nextFontLoader(this: any) {
 
     const loader = require(path.join(this.resourcePath, '../loader.js'))
     try {
-      const css = await loader.default(
+      const { css, fallbackFonts } = await loader.default(
         functionName,
         args,
         fontLoaderOptions,
         emitFontFile
       )
-      callback(null, css)
+      callback(null, css, null, { fallbackFonts })
     } catch (err: any) {
       err.stack = false
       callback(err)

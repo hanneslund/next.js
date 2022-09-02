@@ -12,9 +12,7 @@ const path = require('path')
   function e():never { throw new Error('@next/font/google is not configured as a font loader') }
   `
   const fontData = {}
-  for (let { family, subsets, fonts, axes } of familyMetadataList) {
-    subsets = subsets.filter((s) => s !== 'menu')
-
+  for (let { family, fonts, axes } of familyMetadataList) {
     let hasItalic = false
     const variants = Object.keys(fonts).map((variant) => {
       if (variant.endsWith('i')) {
@@ -41,7 +39,6 @@ const path = require('path')
 
     fontData[family] = {
       variants,
-      subsets,
       axes: hasVariableFont ? axes : undefined,
     }
     const optionalIfVariableFont = hasVariableFont ? '?' : ''
@@ -53,7 +50,8 @@ const path = require('path')
       .map((variant) => `"${variant}"`)
       .join('|')}
     display?:Display,
-    preload?:boolean
+    preload?:boolean,
+    fallback?: string[]
     ${
       optionalAxes
         ? `axes?:(${optionalAxes.map(({ tag }) => `'${tag}'`).join('|')})[]`
