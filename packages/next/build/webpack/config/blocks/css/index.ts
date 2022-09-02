@@ -9,7 +9,6 @@ import {
   getGlobalImportError,
   getGlobalModuleImportError,
   getLocalModuleImportError,
-  getFontLoaderGlobalImportError,
   getFontLoaderDocumentImportError,
 } from './messages'
 import { getPostCssPlugins } from './plugins'
