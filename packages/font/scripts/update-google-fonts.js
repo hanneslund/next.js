@@ -1,4 +1,4 @@
-const fs = require('fs')
+const fs = require('fs/promises')
 const path = require('path')
 
 ;(async () => {
@@ -26,20 +26,16 @@ const path = require('path')
 
     const hasVariableFont = axes.length > 0
 
-    let functionAxes
+    let optionalAxes
     if (hasVariableFont) {
       variants.push('variable')
       if (hasItalic) {
         variants.push('variable-italic')
       }
 
-      const additionalAxes = axes.filter(({ tag }) => tag !== 'wght')
-      if (additionalAxes.length > 0) {
-        functionAxes = additionalAxes.map(({ tag, min, max }) => ({
-          tag,
-          min,
-          max,
-        }))
+      const nonWeightAxes = axes.filter(({ tag }) => tag !== 'wght')
+      if (nonWeightAxes.length > 0) {
+        optionalAxes = nonWeightAxes
       }
     }
 
@@ -48,28 +44,30 @@ const path = require('path')
       subsets,
       axes: hasVariableFont ? axes : undefined,
     }
-    const isOptional = hasVariableFont ? '?' : ''
+    const optionalIfVariableFont = hasVariableFont ? '?' : ''
     fontFunctions += `export function ${family.replaceAll(
       ' ',
       '_'
-    )}(options${isOptional}: {
-    variant${isOptional}:${variants.map((variant) => `"${variant}"`).join('|')}
+    )}(options${optionalIfVariableFont}: {
+    variant${optionalIfVariableFont}:${variants
+      .map((variant) => `"${variant}"`)
+      .join('|')}
     display?:Display,
     preload?:boolean
     ${
-      functionAxes
-        ? `axes?:(${functionAxes.map(({ tag }) => `'${tag}'`).join('|')})[]`
+      optionalAxes
+        ? `axes?:(${optionalAxes.map(({ tag }) => `'${tag}'`).join('|')})[]`
         : ''
     }
     }):FontModule{e()}
     `
   }
-  fs.writeFileSync(
-    path.join(__dirname, '../src/google/index.ts'),
-    fontFunctions
-  )
-  fs.writeFileSync(
-    path.join(__dirname, '../src/google/font-data.json'),
-    JSON.stringify(fontData, null, 2)
-  )
+
+  await Promise.all([
+    fs.writeFile(path.join(__dirname, '../src/google/index.ts'), fontFunctions),
+    fs.writeFile(
+      path.join(__dirname, '../src/google/font-data.json'),
+      JSON.stringify(fontData, null, 2)
+    ),
+  ])
 })()

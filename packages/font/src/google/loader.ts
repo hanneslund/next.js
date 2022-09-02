@@ -9,10 +9,10 @@ const formatValues = (values: string[]) =>
   values.map((val) => `\`${val}\``).join(', ')
 
 export default async function download(
-  font: any,
-  data: any,
+  functionName: string,
+  data: any[],
   config: any,
-  emitFile: (content: Buffer, ext: string, preload: boolean) => string
+  emitFontFile: (content: Buffer, ext: string, preload: boolean) => string
 ) {
   if (!config?.subsets) {
     throw new Error(
@@ -26,7 +26,7 @@ export default async function download(
     axes,
   } = data[0] || ({} as any)
 
-  const fontFamily = font.replaceAll('_', ' ')
+  const fontFamily = functionName.replace(/_/g, ' ')
 
   const fontVariants = (fontData as any)[fontFamily]?.variants
   if (!fontVariants) {
@@ -74,8 +74,8 @@ export default async function download(
       return a > b ? 1 : -1
     })
 
-    return `https://fonts.googleapis.com/css2?family=${font.replaceAll(
-      '_',
+    return `https://fonts.googleapis.com/css2?family=${fontFamily.replace(
+      / /g,
       '+'
     )}:${keyVal.map(([key]) => key).join(',')}@${keyVal
       .map(([, val]) => val)
@@ -138,8 +138,9 @@ export default async function download(
   if (process.env.NEXT_FONT_GOOGLE_MOCKED_RESPONSES) {
     const mockFile = require(process.env.NEXT_FONT_GOOGLE_MOCKED_RESPONSES)
     mockedResponse = mockFile[url]
-    if (!mockedResponse)
+    if (!mockedResponse) {
       throw new Error('Missing mocked response for URL: ' + url)
+    }
   }
 
   let cssResponse
@@ -197,7 +198,11 @@ export default async function download(
       let ext: any = googleFontFileUrl.split('.')
       ext = ext[ext.length - 1]
       // Emit font file to .next/static/fonts
-      const selfHostedFileUrl = emitFile(fontFileBuffer, ext, preloadFontFile)
+      const selfHostedFileUrl = emitFontFile(
+        fontFileBuffer,
+        ext,
+        preloadFontFile
+      )
 
       return {
         googleFontFileUrl,

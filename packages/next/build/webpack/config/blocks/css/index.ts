@@ -201,16 +201,21 @@ export const css = curry(async function css(
     })
   )
 
-  let fontLoaders: [string, string][] | undefined = Object.entries(
-    ctx.experimental.fontLoaders || {}
-  ).map(([fontLoader, options]: any) => [require.resolve(fontLoader), options])
+  let fontLoaders: [string, string][] | undefined = ctx.experimental.fontLoaders
+    ? Object.entries(ctx.experimental.fontLoaders).map(
+        ([fontLoader, fontLoaderOptions]: any) => [
+          require.resolve(fontLoader),
+          fontLoaderOptions,
+        ]
+      )
+    : undefined
 
-  fontLoaders.forEach(([fontLoader, fontLoaderOptions]) => {
+  fontLoaders?.forEach(([fontLoaderPath, fontLoaderOptions]) => {
     fns.push(
       loader({
         oneOf: [
           markRemovable({
-            test: fontLoader,
+            test: fontLoaderPath,
             // Use a loose regex so we don't have to crawl the file system to
             // find the real file name (if present).
             issuer: /pages[\\/]_document\./,
@@ -230,7 +235,7 @@ export const css = curry(async function css(
         oneOf: [
           markRemovable({
             sideEffects: false,
-            test: fontLoader,
+            test: fontLoaderPath,
             use: getFontLoader(ctx, lazyPostCSSInitializer, fontLoaderOptions),
           }),
         ],

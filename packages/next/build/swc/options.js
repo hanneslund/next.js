@@ -119,7 +119,7 @@ function getBaseSWCOptions({
     emotion: getEmotionOptions(nextConfig, development),
     fontLoaders:
       nextConfig?.experimental?.fontLoaders &&
-      Object.keys(nextConfig?.experimental?.fontLoaders),
+      Object.keys(nextConfig.experimental.fontLoaders),
   }
 }
 

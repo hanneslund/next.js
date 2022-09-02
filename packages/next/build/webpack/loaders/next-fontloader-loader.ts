@@ -5,7 +5,7 @@ export default async function nextFontLoader(this: any) {
   const callback = this.async()
   const { isServer, assetPrefix, fontLoaderOptions } = this.getOptions()
 
-  const emitFile = (content: Buffer, ext: string, preload: true) => {
+  const emitFontFile = (content: Buffer, ext: string, preload: true) => {
     const opts = { context: this.rootContext, content }
     const interpolatedName = loaderUtils.interpolateName(
       this,
@@ -15,17 +15,23 @@ export default async function nextFontLoader(this: any) {
     )
     const outputPath = `${assetPrefix}/_next/${interpolatedName}`
     if (!isServer) {
-      this.emitFile(interpolatedName, content, null)
+      this.emitFontFile(interpolatedName, content, null)
     }
     return outputPath
   }
 
-  let [font, ...data] = this.resourceQuery.slice(1).split(';')
-  data = data.map((value: string) => JSON.parse(value))
+  // next-swc next_font_loaders turns each function call argument into JSON seperated by a semicolon
+  let [functionName, ...args] = this.resourceQuery.slice(1).split(';')
+  args = args.map((value: string) => JSON.parse(value))
 
   const loader = require(path.join(this.resourcePath, '../loader.js'))
   try {
-    const css = await loader.default(font, data, fontLoaderOptions, emitFile)
+    const css = await loader.default(
+      functionName,
+      args,
+      fontLoaderOptions,
+      emitFontFile
+    )
     callback(null, css)
   } catch (err: any) {
     err.stack = false
