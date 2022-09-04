@@ -81,12 +81,12 @@ URL: https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=option
       { variant: 'variable-italic', axes: ['WONK', 'opsz', 'SOFT'] },
       'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@1,9..144,100..900,0..100,0..1&display=optional',
     ],
-  ])('Correct url: %s %p', async (font, data, url) => {
+  ])('Correct url: %s %p', async (font: string, data: any, url: string) => {
     self.fetch.mockResolvedValue({
       ok: true,
       text: async () => 'OK',
     })
-    const css = await loader(font, [data], { subsets: [] }, jest.fn())
+    const { css } = await loader(font, [data], { subsets: [] }, jest.fn())
     expect(css).toBe('OK')
     expect(self.fetch).toHaveBeenCalledTimes(1)
     expect(self.fetch).toHaveBeenCalledWith(url, expect.any(Object))
