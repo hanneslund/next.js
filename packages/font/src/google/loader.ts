@@ -5,12 +5,19 @@ import {
   validateData,
 } from './utils'
 
-export default async function download(
-  functionName: string,
-  data: any[],
-  config: any,
+type FontLoaderOptions = {
+  functionName: string
+  data: any[]
+  config: any
   emitFontFile: (content: Buffer, ext: string, preload: boolean) => string
-) {
+}
+
+export default async function fetchFonts({
+  functionName,
+  data,
+  config,
+  emitFontFile,
+}: FontLoaderOptions) {
   if (!config?.subsets) {
     throw new Error(
       'Please specify subsets for `@next/font/google` in your `next.config.js`'
