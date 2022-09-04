@@ -17,7 +17,7 @@ export function validateData(functionName: string, data: any): FontOptions {
   let {
     variant,
     display = 'optional',
-    preload = display === 'optional',
+    preload = true,
     axes,
     fallback,
   } = data[0] || ({} as any)

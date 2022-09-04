@@ -39,7 +39,11 @@ impl<'a> FontImportsGenerator<'a> {
                     if let Ok(json) = json {
                         let mut json_values: Vec<String> =
                             json.iter().map(|value| value.to_string()).collect();
-                        let mut values = vec![String::from(&*font_function.font_name)];
+                        let function_name = match &font_function.function_name {
+                            Some(function) => String::from(&**function),
+                            None => String::new(),
+                        };
+                        let mut values = vec![function_name];
                         values.append(&mut json_values);
 
                         return Some(ImportDecl {

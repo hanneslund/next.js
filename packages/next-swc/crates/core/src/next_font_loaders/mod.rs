@@ -21,7 +21,7 @@ pub fn next_font_loaders(font_loaders: Vec<String>) -> impl Fold + VisitMut {
 #[derive(Debug)]
 pub struct FontFunction {
     loader: JsWord,
-    font_name: JsWord,
+    function_name: Option<JsWord>,
 }
 #[derive(Debug, Default)]
 pub struct State {

@@ -59,7 +59,7 @@ describe('@next/font/google', () => {
         className: expect.any(String),
         variable: expect.any(String),
         style: {
-          fontFamily: "'Inter-56dc7'",
+          fontFamily: "'Inter-e5349'",
           fontStyle: 'normal',
           fontWeight: 900,
         },
@@ -130,7 +130,7 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontFamily'
           )
-        ).toBe('Inter-56dc7')
+        ).toBe('Inter-e5349')
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontWeight'

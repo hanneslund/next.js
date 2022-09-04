@@ -28,7 +28,7 @@ impl<'a> Visit for FontFunctionsCollector<'a> {
                             .font_functions_in_allowed_scope
                             .insert(local.span.lo);
 
-                        let font_name = if let Some(ModuleExportName::Ident(ident)) = imported {
+                        let function_name = if let Some(ModuleExportName::Ident(ident)) = imported {
                             ident.sym.clone()
                         } else {
                             local.sym.clone()
@@ -37,16 +37,28 @@ impl<'a> Visit for FontFunctionsCollector<'a> {
                             local.to_id(),
                             super::FontFunction {
                                 loader: import_decl.src.value.clone(),
-                                font_name,
+                                function_name: Some(function_name),
                             },
                         );
                     }
-                    _ => {
+                    ImportSpecifier::Default(ImportDefaultSpecifier { local, span }) => {
+                        self.state
+                            .font_functions_in_allowed_scope
+                            .insert(local.span.lo);
+                        self.state.font_functions.insert(
+                            local.to_id(),
+                            super::FontFunction {
+                                loader: import_decl.src.value.clone(),
+                                function_name: None,
+                            },
+                        );
+                    }
+                    ImportSpecifier::Namespace(_) => {
                         HANDLER.with(|handler| {
                             handler
                                 .struct_span_err(
                                     import_decl.span,
-                                    "Font loaders can only have named imports",
+                                    "Font loaders can't have namespace imports",
                                 )
                                 .emit()
                         });

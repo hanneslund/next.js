@@ -1,5 +1,5 @@
 import { Inter, Roboto } from '@next/font/google'
-const inter = Inter({ variant: '900', display: 'swap' }) // Don't preload by default when swap
+const inter = Inter({ variant: '900', display: 'swap', preload: false })
 const roboto = Roboto({
   variant: '100-italic',
   display: 'swap',
