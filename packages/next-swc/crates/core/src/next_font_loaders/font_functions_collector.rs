@@ -41,7 +41,7 @@ impl<'a> Visit for FontFunctionsCollector<'a> {
                             },
                         );
                     }
-                    ImportSpecifier::Default(ImportDefaultSpecifier { local, span }) => {
+                    ImportSpecifier::Default(ImportDefaultSpecifier { local, .. }) => {
                         self.state
                             .font_functions_in_allowed_scope
                             .insert(local.span.lo);

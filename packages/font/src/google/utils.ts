@@ -21,6 +21,9 @@ export function validateData(functionName: string, data: any): FontOptions {
     axes,
     fallback,
   } = data[0] || ({} as any)
+  if (functionName === '') {
+    throw new Error(`@next/font/google has no default export`)
+  }
 
   const fontFamily = functionName.replace(/_/g, ' ')
 

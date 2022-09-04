@@ -38,6 +38,31 @@ describe('@next/font/google option errors', () => {
 
   afterAll(() => next.destroy())
 
+  test('Using default import', async () => {
+    const browser = await webdriver(next.appPort, '/')
+
+    try {
+      await next.patchFile(
+        'pages/index.js',
+        `
+      import def from '@next/font/google'
+
+      const d = def()
+
+      export default function Page() {
+        return <p>Hello world</p>
+      }
+      `
+      )
+      await check(() => getRedboxSource(browser), /default/)
+      expect(
+        removeFirstLine(await getRedboxSource(browser))
+      ).toMatchInlineSnapshot(`"@next/font/google has no default export"`)
+    } finally {
+      await browser.close()
+    }
+  })
+
   test('Unknown font', async () => {
     const browser = await webdriver(next.appPort, '/')
 
