@@ -1,7 +1,7 @@
-use swc_common::errors::HANDLER;
-use swc_ecmascript::ast::*;
-use swc_ecmascript::visit::noop_visit_type;
-use swc_ecmascript::visit::Visit;
+use swc_core::common::errors::HANDLER;
+use swc_core::ecma::ast::*;
+use swc_core::ecma::visit::noop_visit_type;
+use swc_core::ecma::visit::Visit;
 
 pub struct FontFunctionsCollector<'a> {
     pub font_loaders: &'a [String],

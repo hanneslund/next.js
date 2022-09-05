@@ -1,9 +1,12 @@
 use fxhash::FxHashSet;
-use swc_atoms::JsWord;
-use swc_common::collections::AHashMap;
-use swc_common::{BytePos, Spanned};
-use swc_ecmascript::ast::*;
-use swc_ecmascript::visit::{as_folder, noop_visit_mut_type, Fold, VisitMut, VisitWith};
+use swc_core::{
+    common::{collections::AHashMap, BytePos, Spanned},
+    ecma::{
+        ast::Id,
+        visit::{as_folder, noop_visit_mut_type, Fold, VisitMut, VisitWith},
+    },
+    ecma::{ast::ModuleItem, atoms::JsWord},
+};
 
 mod find_functions_outside_module_scope;
 mod font_functions_collector;
