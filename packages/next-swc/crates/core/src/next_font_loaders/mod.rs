@@ -48,7 +48,7 @@ impl VisitMut for NextFontLoaders {
         items.visit_with(&mut functions_collector);
 
         if !self.state.removeable_module_items.is_empty() {
-            // Generate imports from usage
+            // Generate imports from font function calls
             let mut import_generator = font_imports_generator::FontImportsGenerator {
                 state: &mut self.state,
             };
