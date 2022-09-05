@@ -7,7 +7,7 @@ describe('@next/font/google loader', () => {
     self.fetch = jest.fn()
   })
 
-  describe('URL:s from options', () => {
+  describe('URL from options', () => {
     test.each([
       [
         'Inter',
@@ -69,24 +69,21 @@ describe('@next/font/google loader', () => {
         [{ variant: 'variable-italic', axes: ['WONK', 'opsz', 'SOFT'] }],
         'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@1,9..144,100..900,0..100,0..1&display=optional',
       ],
-    ])(
-      'Correct url: %s %p',
-      async (functionName: string, data: any, url: string) => {
-        self.fetch.mockResolvedValue({
-          ok: true,
-          text: async () => 'OK',
-        })
-        const { css } = await loader({
-          functionName,
-          data,
-          config: { subsets: [] },
-          emitFontFile: jest.fn(),
-        })
-        expect(css).toBe('OK')
-        expect(self.fetch).toHaveBeenCalledTimes(1)
-        expect(self.fetch).toHaveBeenCalledWith(url, expect.any(Object))
-      }
-    )
+    ])('%s', async (functionName: string, data: any, url: string) => {
+      self.fetch.mockResolvedValue({
+        ok: true,
+        text: async () => 'OK',
+      })
+      const { css } = await loader({
+        functionName,
+        data,
+        config: { subsets: [] },
+        emitFontFile: jest.fn(),
+      })
+      expect(css).toBe('OK')
+      expect(self.fetch).toHaveBeenCalledTimes(1)
+      expect(self.fetch).toHaveBeenCalledWith(url, expect.any(Object))
+    })
   })
 
   describe('Errors', () => {
