@@ -1,5 +1,6 @@
 import path from 'path'
 import loaderUtils from 'next/dist/compiled/loader-utils3'
+import postcssFontLoaderPlugn from './postcss-font-loader'
 
 type FontLoader = (options: {
   functionName: string
@@ -9,12 +10,11 @@ type FontLoader = (options: {
 }) => Promise<{ css: string; fallbackFonts: string[] }>
 
 export default async function nextFontLoader(this: any) {
-  const fontLoaderSpan = this.currentTraceSpan.traceChild(
-    'next-fontloader-loader'
-  )
+  const fontLoaderSpan = this.currentTraceSpan.traceChild('next-font-loader')
   return fontLoaderSpan.traceAsyncFn(async () => {
     const callback = this.async()
-    const { isServer, assetPrefix, fontLoaderOptions } = this.getOptions()
+    const { isServer, assetPrefix, fontLoaderOptions, postcss } =
+      this.getOptions()
 
     const emitFontFile = (content: Buffer, ext: string, preload: boolean) => {
       const opts = { context: this.rootContext, content }
@@ -40,13 +40,35 @@ export default async function nextFontLoader(this: any) {
         this.resourcePath,
         '../loader.js'
       )).default
-      const { css, fallbackFonts } = await loader({
+      let { css, fallbackFonts } = await loader({
         functionName,
         data,
         config: fontLoaderOptions,
         emitFontFile,
       })
-      callback(null, css, null, { fallbackFonts })
+
+      const { postcss: pcss } = await postcss()
+
+      const exports: any = []
+      const hash = loaderUtils.getHashDigest(
+        Buffer.from(this.resourceQuery),
+        'md5',
+        'hex',
+        5
+      )
+      const result = await pcss(
+        postcssFontLoaderPlugn(exports, hash, fallbackFonts)
+      ).process(css, {
+        from: undefined,
+      })
+
+      // Reuse ast in next loader
+      const ast = {
+        type: 'postcss',
+        version: result.processor.version,
+        root: result.root,
+      }
+      callback(null, result.css, null, { exports, ast })
     } catch (err: any) {
       err.stack = false
       callback(err)

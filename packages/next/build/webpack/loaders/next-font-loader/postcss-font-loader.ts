@@ -1,8 +1,8 @@
 import postcss, { Declaration } from 'postcss'
 
-const plugin = (
+const postcssFontLoaderPlugn = (
   exports: { name: any; value: any }[],
-  classNameHash: string,
+  fontFamilyHash: string,
   fallbackFonts: string[] = []
 ) => {
   return {
@@ -17,7 +17,7 @@ const plugin = (
         if (family[0] === "'" || family[0] === '"') {
           family = family.slice(1, family.length - 1)
         }
-        return `'${family}-${classNameHash}'`
+        return `'${family}-${fontFamilyHash}'`
       }
 
       for (const node of root.nodes) {
@@ -117,6 +117,6 @@ const plugin = (
   }
 }
 
-plugin.postcss = true
+postcssFontLoaderPlugn.postcss = true
 
-export default plugin
+export default postcssFontLoaderPlugn

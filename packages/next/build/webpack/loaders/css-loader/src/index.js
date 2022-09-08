@@ -2,7 +2,6 @@
   MIT License http://www.opensource.org/licenses/mit-license.php
   Author Tobias Koppers @sokra
 */
-import loaderUtils from 'next/dist/compiled/loader-utils3'
 import CssSyntaxError from './CssSyntaxError'
 import Warning from '../../postcss-loader/src/Warning'
 import { stringifyRequest } from '../../../stringify-request'
@@ -167,26 +166,10 @@ export default async function loader(content, map, meta) {
         sort,
       } = require('./utils')
 
-      const {
-        icssParser,
-        importParser,
-        urlParser,
-        fontLoader,
-      } = require('./plugins')
+      const { icssParser, importParser, urlParser } = require('./plugins')
 
       const replacements = []
-      const exports = []
-      const fontLoaderExports = []
-
-      if (options.fontLoader) {
-        const hash = loaderUtils.getHashDigest(
-          Buffer.from(this.resourceQuery),
-          'md5',
-          'hex',
-          5
-        )
-        plugins.push(fontLoader(fontLoaderExports, hash, meta?.fallbackFonts))
-      }
+      let exports = options.fontLoader ? meta.exports : []
 
       if (shouldUseModulesPlugins(options)) {
         plugins.push(...getModulesPlugins(options, this))
@@ -331,11 +314,7 @@ export default async function loader(content, map, meta) {
 
       const importCode = getImportCode(imports, options)
       const moduleCode = getModuleCode(result, api, replacements, options, this)
-      const exportCode = getExportCode(
-        [...exports, ...fontLoaderExports],
-        replacements,
-        options
-      )
+      const exportCode = getExportCode(exports, replacements, options)
 
       return `${importCode}${moduleCode}${exportCode}`
     })
