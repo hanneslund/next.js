@@ -1,3 +1,5 @@
+// @ts-ignore
+import fetch from 'next/dist/compiled/node-fetch'
 import {
   fetchCSSFromGoogleFonts,
   getFontAxes,
@@ -12,7 +14,7 @@ type FontLoaderOptions = {
   emitFontFile: (content: Buffer, ext: string, preload: boolean) => string
 }
 
-export default async function fetchFonts({
+export default async function downloadGoogleFonts({
   functionName,
   data,
   config,
@@ -67,7 +69,7 @@ export default async function fetchFonts({
       if (process.env.NEXT_FONT_GOOGLE_MOCKED_RESPONSES) {
         fontFileBuffer = Buffer.from(googleFontFileUrl)
       } else {
-        const arrayBuffer = await fetch(googleFontFileUrl).then((r) =>
+        const arrayBuffer = await fetch(googleFontFileUrl).then((r: any) =>
           r.arrayBuffer()
         )
         fontFileBuffer = Buffer.from(arrayBuffer)

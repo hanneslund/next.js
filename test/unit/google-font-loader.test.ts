@@ -1,10 +1,11 @@
 import loader from '@next/font/google/loader'
+import fetch from 'next/dist/compiled/node-fetch'
 
-const self: any = global
+jest.mock('next/dist/compiled/node-fetch')
 
 describe('@next/font/google loader', () => {
-  beforeEach(() => {
-    self.fetch = jest.fn()
+  afterEach(() => {
+    jest.resetAllMocks()
   })
 
   describe('URL from options', () => {
@@ -70,7 +71,7 @@ describe('@next/font/google loader', () => {
         'https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@1,9..144,100..900,0..100,0..1&display=optional',
       ],
     ])('%s', async (functionName: string, data: any, url: string) => {
-      self.fetch.mockResolvedValue({
+      fetch.mockResolvedValue({
         ok: true,
         text: async () => 'OK',
       })
@@ -81,14 +82,14 @@ describe('@next/font/google loader', () => {
         emitFontFile: jest.fn(),
       })
       expect(css).toBe('OK')
-      expect(self.fetch).toHaveBeenCalledTimes(1)
-      expect(self.fetch).toHaveBeenCalledWith(url, expect.any(Object))
+      expect(fetch).toHaveBeenCalledTimes(1)
+      expect(fetch).toHaveBeenCalledWith(url, expect.any(Object))
     })
   })
 
   describe('Errors', () => {
     test('Failed to fetch', async () => {
-      self.fetch.mockResolvedValue({
+      fetch.mockResolvedValue({
         ok: false,
       })
 
@@ -100,9 +101,9 @@ describe('@next/font/google loader', () => {
           emitFontFile: jest.fn(),
         })
       ).rejects.toThrowErrorMatchingInlineSnapshot(`
-          "Failed to fetch font  \`Inter\`.
-          URL: https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=optional"
-        `)
+                        "Failed to fetch font  \`Inter\`.
+                        URL: https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=optional"
+                    `)
     })
 
     test('Missing config with subsets', async () => {
@@ -153,36 +154,37 @@ describe('@next/font/google loader', () => {
           emitFontFile: jest.fn(),
         })
       ).rejects.toThrowErrorMatchingInlineSnapshot(`
-        "Unknown variant \`123\` for font \`Inter\`.
-        Available variants: \`100\`, \`200\`, \`300\`, \`400\`, \`500\`, \`600\`, \`700\`, \`800\`, \`900\`, \`variable\`"
-      `)
+                      "Unknown variant \`123\` for font \`Inter\`.
+                      Available variants: \`100\`, \`200\`, \`300\`, \`400\`, \`500\`, \`600\`, \`700\`, \`800\`, \`900\`, \`variable\`"
+                  `)
     })
 
-    test('Missing default variant', async () => {
+    test('Missing variant for non variable font', async () => {
       await expect(
         loader({
-          functionName: 'Inter',
+          functionName: 'Abel',
           data: [],
           config: { subsets: [] },
           emitFontFile: jest.fn(),
         })
-      ).rejects.toThrowErrorMatchingInlineSnapshot(
-        `"Cannot read properties of undefined (reading 'ok')"`
-      )
+      ).rejects.toThrowErrorMatchingInlineSnapshot(`
+              "Missing variant for font \`Abel\`.
+              Available variants: \`400\`"
+            `)
     })
 
     test('Invalid display value', async () => {
       await expect(
         loader({
           functionName: 'Inter',
-          data: [{ display: 'unvalid' }],
+          data: [{ display: 'invalid' }],
           config: { subsets: [] },
           emitFontFile: jest.fn(),
         })
       ).rejects.toThrowErrorMatchingInlineSnapshot(`
-        "Invalid display value \`unvalid\` for font \`Inter\`.
-        Available display values: \`auto\`, \`block\`, \`swap\`, \`fallback\`, \`optional\`"
-      `)
+                      "Invalid display value \`invalid\` for font \`Inter\`.
+                      Available display values: \`auto\`, \`block\`, \`swap\`, \`fallback\`, \`optional\`"
+                  `)
     })
 
     test('Setting axes on non variable font', async () => {
