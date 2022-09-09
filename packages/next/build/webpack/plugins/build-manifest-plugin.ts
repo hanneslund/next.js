@@ -210,7 +210,7 @@ export default class BuildManifestPlugin {
 
         const fontFiles: string[] = entrypoint.chunks
           .flatMap((chunk: any) => [...chunk.auxiliaryFiles])
-          .filter((file: string) => /\.(woff|woff2|eot|ttf|otf)$/.exec(file))
+          .filter((file: string) => /\.(woff|woff2|eot|ttf|otf)$/.test(file))
         if (fontFiles.length > 0) {
           assetMap.pagesFontFiles[pagePath] = fontFiles
         }

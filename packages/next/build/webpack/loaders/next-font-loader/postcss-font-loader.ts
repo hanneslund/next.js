@@ -49,7 +49,7 @@ const postcssFontLoaderPlugn = (
           const weight = node.nodes.find(
             (decl: Declaration) => decl.prop === 'font-weight'
           )
-          // Skip if includes ' ', then it's a range of possible values
+          // Skip if the value includes ' ', then it's a range of possible values
           if (weight && !weight.value.includes(' ')) {
             fontWeight = weight.value
           }
@@ -57,7 +57,7 @@ const postcssFontLoaderPlugn = (
           const style = node.nodes.find(
             (decl: Declaration) => decl.prop === 'font-style'
           )
-          // Skip if includes ' ', then it's a range of possible values
+          // Skip if the value includes ' ', then it's a range of possible values
           if (style && !style.value.includes(' ')) {
             fontStyle = style.value
           }
@@ -93,7 +93,7 @@ const postcssFontLoaderPlugn = (
       ]
       root.nodes.push(classRule)
 
-      // Add class that defined CSS variables
+      // Add class that defines a variable with the font family
       const varialbeRule = new postcss.Rule({ selector: '.variable' })
       varialbeRule.nodes = [
         new postcss.Declaration({

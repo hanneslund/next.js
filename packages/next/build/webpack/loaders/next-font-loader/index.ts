@@ -53,7 +53,7 @@ export default async function nextFontLoader(this: any) {
 
       const { postcss } = await getPostcss()
 
-      // Exports will be exported as is from css-loader, instead of a css module export
+      // Exports will be exported as is from css-loader, instead of a CSS module export
       const exports: { name: any; value: any }[] = []
       const fontFamilyHash = loaderUtils.getHashDigest(
         Buffer.from(this.resourceQuery),
@@ -61,7 +61,7 @@ export default async function nextFontLoader(this: any) {
         'hex',
         5
       )
-      // Add classes, exports and make the font-family localy scoped by making it unguessable
+      // Add CSS classes, exports and make the font-family localy scoped by making it unguessable
       const result = await postcss(
         postcssFontLoaderPlugn(exports, fontFamilyHash, fallbackFonts)
       ).process(css, {
