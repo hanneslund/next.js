@@ -13,8 +13,12 @@ export default async function nextFontLoader(this: any) {
   const fontLoaderSpan = this.currentTraceSpan.traceChild('next-font-loader')
   return fontLoaderSpan.traceAsyncFn(async () => {
     const callback = this.async()
-    const { isServer, assetPrefix, fontLoaderOptions, postcss } =
-      this.getOptions()
+    const {
+      isServer,
+      assetPrefix,
+      fontLoaderOptions,
+      postcss: getPostcss,
+    } = this.getOptions()
 
     const emitFontFile = (content: Buffer, ext: string, preload: boolean) => {
       const opts = { context: this.rootContext, content }
@@ -31,38 +35,40 @@ export default async function nextFontLoader(this: any) {
       return outputPath
     }
 
-    // next-swc next_font_loaders turns each function call argument into JSON seperated by a semicolon
+    // next-swc next_font_loaders turns each function call argument into JSON seperated by semicolons
     let [functionName, ...data] = this.resourceQuery.slice(1).split(';')
     data = data.map((value: string) => JSON.parse(value))
 
     try {
-      const loader: FontLoader = require(path.join(
+      const fontLoader: FontLoader = require(path.join(
         this.resourcePath,
         '../loader.js'
       )).default
-      let { css, fallbackFonts } = await loader({
+      let { css, fallbackFonts } = await fontLoader({
         functionName,
         data,
         config: fontLoaderOptions,
         emitFontFile,
       })
 
-      const { postcss: pcss } = await postcss()
+      const { postcss } = await getPostcss()
 
-      const exports: any = []
-      const hash = loaderUtils.getHashDigest(
+      // Exports will be exported as is from css-loader, instead of a css module export
+      const exports: { name: any; value: any }[] = []
+      const fontFamilyHash = loaderUtils.getHashDigest(
         Buffer.from(this.resourceQuery),
         'md5',
         'hex',
         5
       )
-      const result = await pcss(
-        postcssFontLoaderPlugn(exports, hash, fallbackFonts)
+      // Add classes, exports and make the font-family localy scoped by making it unguessable
+      const result = await postcss(
+        postcssFontLoaderPlugn(exports, fontFamilyHash, fallbackFonts)
       ).process(css, {
         from: undefined,
       })
 
-      // Reuse ast in next loader
+      // Reuse ast in css-loader
       const ast = {
         type: 'postcss',
         version: result.processor.version,

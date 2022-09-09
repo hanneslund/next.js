@@ -169,7 +169,7 @@ export default async function loader(content, map, meta) {
       const { icssParser, importParser, urlParser } = require('./plugins')
 
       const replacements = []
-      let exports = options.fontLoader ? meta.exports : []
+      const exports = options.fontLoader ? meta.exports : []
 
       if (shouldUseModulesPlugins(options)) {
         plugins.push(...getModulesPlugins(options, this))

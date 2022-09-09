@@ -17,6 +17,7 @@ const postcssFontLoaderPlugn = (
         if (family[0] === "'" || family[0] === '"') {
           family = family.slice(1, family.length - 1)
         }
+        // Makes the font family unguessable to ensure you import it to use it
         return `'${family}-${fontFamilyHash}'`
       }
 
@@ -63,22 +64,16 @@ const postcssFontLoaderPlugn = (
         }
       }
 
-      const formattedFontFamilies = [fontFamilies, ...fallbackFonts].join(', ')
-      // Add font class
+      const formattedFontFamilies = [...fontFamilies, ...fallbackFonts].join(
+        ', '
+      )
+      // Add class with family, weight and style
       const classRule = new postcss.Rule({ selector: '.className' })
       classRule.nodes = [
         new postcss.Declaration({
           prop: 'font-family',
           value: formattedFontFamilies,
         }),
-        ...(fontStyle
-          ? [
-              new postcss.Declaration({
-                prop: 'font-style',
-                value: fontStyle,
-              }),
-            ]
-          : []),
         ...(fontWeight
           ? [
               new postcss.Declaration({
@@ -87,10 +82,18 @@ const postcssFontLoaderPlugn = (
               }),
             ]
           : []),
+        ...(fontStyle
+          ? [
+              new postcss.Declaration({
+                prop: 'font-style',
+                value: fontStyle,
+              }),
+            ]
+          : []),
       ]
       root.nodes.push(classRule)
 
-      // Add varible class
+      // Add class that defined CSS variables
       const varialbeRule = new postcss.Rule({ selector: '.variable' })
       varialbeRule.nodes = [
         new postcss.Declaration({
@@ -104,7 +107,7 @@ const postcssFontLoaderPlugn = (
       ]
       root.nodes.push(varialbeRule)
 
-      // Export @font-face values
+      // Export @font-face values as is
       exports.push({
         name: 'style',
         value: {
