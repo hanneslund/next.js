@@ -603,6 +603,7 @@ export class Head extends Component<HeadProps> {
       optimizeCss,
       optimizeFonts,
       assetPrefix,
+      fontLoaderManifest,
     } = this.context
 
     const disableRuntimeJS = unstable_runtimeJS === false
@@ -717,12 +718,12 @@ export class Head extends Component<HeadProps> {
       process.env.NEXT_RUNTIME !== 'edge' && inAmpMode
     )
 
-    const pageFontFiles = [
-      ...(this.context.buildManifest.pagesFontFiles['/_app'] ?? []),
-      ...(this.context.buildManifest.pagesFontFiles[
-        this.context.dangerousAsPath
-      ] ?? []),
-    ]
+    const pageFontFiles = fontLoaderManifest
+      ? [
+          ...(fontLoaderManifest.pages['/_app'] ?? []),
+          ...(fontLoaderManifest.pages[dangerousAsPath] ?? []),
+        ]
+      : undefined
 
     return (
       <head {...getHeadHTMLProps(this.props)}>
@@ -763,25 +764,29 @@ export class Head extends Component<HeadProps> {
 
         {children}
         {optimizeFonts && <meta name="next-font-preconnect" />}
-        {pageFontFiles.length > 0 ? (
+        {pageFontFiles && pageFontFiles.length > 0 ? (
           <link rel="preconnect" href="/" crossOrigin="anonymous" />
         ) : null}
         {pageFontFiles
-          // Fonts that end with .p.(woff|woff2|eot|ttf|otf) should preload
-          .filter((fontFile) => /\.p.(woff|woff2|eot|ttf|otf)$/.test(fontFile))
-          .map((fontFile) => {
-            const ext = /\.(woff|woff2|eot|ttf|otf)$/.exec(fontFile)![1]
-            return (
-              <link
-                key={fontFile}
-                rel="preload"
-                href={`${assetPrefix}/_next/${encodeURI(fontFile)}`}
-                as="font"
-                type={`font/${ext}`}
-                crossOrigin="anonymous"
-              />
-            )
-          })}
+          ? pageFontFiles
+              // Fonts that end with .p.(woff|woff2|eot|ttf|otf) should preload
+              .filter((fontFile) =>
+                /\.p.(woff|woff2|eot|ttf|otf)$/.test(fontFile)
+              )
+              .map((fontFile) => {
+                const ext = /\.(woff|woff2|eot|ttf|otf)$/.exec(fontFile)![1]
+                return (
+                  <link
+                    key={fontFile}
+                    rel="preload"
+                    href={`${assetPrefix}/_next/${encodeURI(fontFile)}`}
+                    as="font"
+                    type={`font/${ext}`}
+                    crossOrigin="anonymous"
+                  />
+                )
+              })
+          : null}
 
         {process.env.NEXT_RUNTIME !== 'edge' && inAmpMode && (
           <>

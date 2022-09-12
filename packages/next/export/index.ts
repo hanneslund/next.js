@@ -22,6 +22,7 @@ import {
   CLIENT_STATIC_FILES_PATH,
   EXPORT_DETAIL,
   EXPORT_MARKER,
+  FONT_LOADER_MANIFEST,
   PAGES_MANIFEST,
   PHASE_EXPORT,
   PRERENDER_MANIFEST,
@@ -385,6 +386,9 @@ export default async function exportApp(
       nextScriptWorkers: nextConfig.experimental.nextScriptWorkers,
       optimizeFonts: nextConfig.optimizeFonts,
       largePageDataBytes: nextConfig.experimental.largePageDataBytes,
+      fontLoaderManifest: nextConfig.experimental.fontLoaders
+        ? require(join(distDir, 'server', FONT_LOADER_MANIFEST))
+        : undefined,
     }
 
     const { serverRuntimeConfig, publicRuntimeConfig } = nextConfig

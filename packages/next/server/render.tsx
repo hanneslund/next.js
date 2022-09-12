@@ -26,6 +26,7 @@ import type {
 } from 'next/types'
 import type { UnwrapPromise } from '../lib/coalesced-function'
 import type { ReactReadableStream } from './node-web-streams-helper'
+import type { FontLoaderManifest } from '../build/webpack/plugins/font-loader-manifest-plugin'
 
 import React from 'react'
 import { StyleRegistry, createStyleRegistry } from 'styled-jsx'
@@ -231,6 +232,7 @@ export type RenderOptsPartial = {
   resolvedAsPath?: string
   serverComponentManifest?: any
   serverCSSManifest?: any
+  fontLoaderManifest?: FontLoaderManifest
   distDir?: string
   locale?: string
   locales?: string[]
@@ -1460,6 +1462,7 @@ export async function renderToHTML(
     nextScriptWorkers: renderOpts.nextScriptWorkers,
     runtime: globalRuntime,
     largePageDataBytes: renderOpts.largePageDataBytes,
+    fontLoaderManifest: renderOpts.fontLoaderManifest,
   }
 
   const document = (

@@ -1120,6 +1120,10 @@ export default class DevServer extends Server {
     return undefined
   }
 
+  protected getFontLoaderManifest() {
+    return undefined
+  }
+
   protected async hasMiddleware(): Promise<boolean> {
     return this.hasPage(this.actualMiddlewareFile!)
   }
@@ -1341,6 +1345,7 @@ export default class DevServer extends Server {
         this.serverComponentManifest = super.getServerComponentManifest()
         this.serverCSSManifest = super.getServerCSSManifest()
       }
+      this.fontLoaderManifest = super.getFontLoaderManifest()
 
       return super.findPageComponents({ pathname, query, params, isAppPath })
     } catch (err) {

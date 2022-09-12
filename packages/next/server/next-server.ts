@@ -45,6 +45,7 @@ import {
   FLIGHT_SERVER_CSS_MANIFEST,
   SERVERLESS_DIRECTORY,
   SERVER_DIRECTORY,
+  FONT_LOADER_MANIFEST,
 } from '../shared/lib/constants'
 import { recursiveReadDirSync } from './lib/recursive-readdir-sync'
 import { format as formatUrl, UrlWithParsedQuery } from 'url'
@@ -820,6 +821,7 @@ export default class NextNodeServer extends BaseServer {
     // https://github.com/vercel/next.js/blob/df7cbd904c3bd85f399d1ce90680c0ecf92d2752/packages/next/server/render.tsx#L947-L952
     renderOpts.serverComponentManifest = this.serverComponentManifest
     renderOpts.serverCSSManifest = this.serverCSSManifest
+    renderOpts.fontLoaderManifest = this.fontLoaderManifest
 
     if (
       this.nextConfig.experimental.appDir &&
@@ -1013,6 +1015,11 @@ export default class NextNodeServer extends BaseServer {
       'server',
       FLIGHT_SERVER_CSS_MANIFEST + '.json'
     ))
+  }
+
+  protected getFontLoaderManifest() {
+    if (!this.nextConfig.experimental.fontLoaders) return undefined
+    return require(join(this.distDir, 'server', FONT_LOADER_MANIFEST))
   }
 
   protected getFallback(page: string): Promise<string> {
