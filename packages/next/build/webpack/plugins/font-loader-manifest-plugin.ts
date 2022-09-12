@@ -4,11 +4,16 @@ import getAppRouteFromEntrypoint from '../../../server/get-app-route-from-entryp
 import { FONT_LOADER_MANIFEST } from '../../../shared/lib/constants'
 
 export type FontLoaderManifest = {
-  pages: { [entrypoint: string]: string[] }
-  app: { [entrypoint: string]: string[] }
+  pages: {
+    [entrypoint: string]: string[]
+  }
+  app: {
+    [entrypoint: string]: string[]
+  }
 }
 const PLUGIN_NAME = 'FontLoaderManifestPlugin'
 
+// Creates a manifest of all fonts that should be preloaded given a route
 export default class FontLoaderManifestPlugin {
   private appDirEnabled: boolean
 
@@ -24,11 +29,16 @@ export default class FontLoaderManifestPlugin {
           stage: webpack.Compilation.PROCESS_ASSETS_STAGE_ADDITIONS,
         },
         (assets: any) => {
-          const fontLoaderManifest: FontLoaderManifest = { pages: {}, app: {} }
+          const fontLoaderManifest: FontLoaderManifest = {
+            pages: {},
+            app: {},
+          }
 
           for (const entrypoint of compilation.entrypoints.values()) {
             const pagePath = getRouteFromEntrypoint(entrypoint.name!)
-            const appPath = getAppRouteFromEntrypoint(entrypoint.name!)
+            const appPath = this.appDirEnabled
+              ? getAppRouteFromEntrypoint(entrypoint.name!)
+              : undefined
 
             if (!pagePath && !appPath) {
               continue
@@ -40,12 +50,17 @@ export default class FontLoaderManifestPlugin {
                 /\.(woff|woff2|eot|ttf|otf)$/.test(file)
               )
 
+            // Font files ending with .p.(woff|woff2|eot|ttf|otf) are preloaded
+            const preloadedFontFiles: string[] = fontFiles.filter(
+              (file: string) => /\.p.(woff|woff2|eot|ttf|otf)$/.test(file)
+            )
+
+            // Create an entry for the path even if no files should preload. If that's the case a preconnect tag is added.
             if (fontFiles.length > 0) {
               if (pagePath) {
-                fontLoaderManifest.pages[pagePath] = fontFiles
+                fontLoaderManifest.pages[pagePath] = preloadedFontFiles
               } else if (appPath) {
-                // fontLoaderManifest.app[normalizeAppPath(appPath!)] = fontFiles
-                fontLoaderManifest.app[appPath] = fontFiles
+                fontLoaderManifest.app[appPath] = preloadedFontFiles
               }
             }
           }

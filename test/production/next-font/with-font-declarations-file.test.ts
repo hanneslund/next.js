@@ -42,12 +42,7 @@ describe('@next/font/google with-font-declarations-file', () => {
     const $ = cheerio.load(html)
 
     // Preconnect
-    expect($('link[rel="preconnect"]').length).toBe(1)
-    expect($('link[rel="preconnect"]').get(0).attribs).toEqual({
-      crossorigin: 'anonymous',
-      href: '/',
-      rel: 'preconnect',
-    })
+    expect($('link[rel="preconnect"]').length).toBe(0)
 
     // Preload
     expect($('link[as="font"]').length).toBe(2)
@@ -74,12 +69,7 @@ describe('@next/font/google with-font-declarations-file', () => {
     const $ = cheerio.load(html)
 
     // Preconnect
-    expect($('link[rel="preconnect"]').length).toBe(1)
-    expect($('link[rel="preconnect"]').get(0).attribs).toEqual({
-      crossorigin: 'anonymous',
-      href: '/',
-      rel: 'preconnect',
-    })
+    expect($('link[rel="preconnect"]').length).toBe(0)
 
     // Preload
     expect($('link[as="font"]').length).toBe(2)

@@ -11,6 +11,7 @@ import type {
   NEXT_DATA,
 } from '../shared/lib/utils'
 import type { ScriptProps } from '../client/script'
+import type { FontLoaderManifest } from '../build/webpack/plugins/font-loader-manifest-plugin'
 
 import { BuildManifest, getPageFiles } from '../server/get-page-files'
 import { htmlEscapeJsonString } from '../server/htmlescape'
@@ -351,6 +352,54 @@ function getHeadHTMLProps(props: HeadProps) {
 
 function getAmpPath(ampPath: string, asPath: string): string {
   return ampPath || `${asPath}${asPath.includes('?') ? '&' : '?'}amp=1`
+}
+
+function getFontLoaderLinks(
+  fontLoaderManifest: FontLoaderManifest | undefined,
+  dangerousAsPath: string,
+  assetPrefix: string = ''
+) {
+  if (!fontLoaderManifest) {
+    return {
+      preconnect: null,
+      preload: null,
+    }
+  }
+
+  const appFontsEntry = fontLoaderManifest.pages['/_app']
+  const pageFontsEntry = fontLoaderManifest.pages[dangerousAsPath]
+
+  const preloadedFontFiles = [
+    ...(appFontsEntry ?? []),
+    ...(pageFontsEntry ?? []),
+  ]
+
+  // If no font files should preload but there's an entry for the path, add a preconnect tag.
+  const preconnectToSelf = !!(
+    preloadedFontFiles.length === 0 &&
+    (appFontsEntry || pageFontsEntry)
+  )
+
+  return {
+    preconnect: preconnectToSelf ? (
+      <link rel="preconnect" href="/" crossOrigin="anonymous" />
+    ) : null,
+    preload: preloadedFontFiles
+      ? preloadedFontFiles.map((fontFile) => {
+          const ext = /\.(woff|woff2|eot|ttf|otf)$/.exec(fontFile)![1]
+          return (
+            <link
+              key={fontFile}
+              rel="preload"
+              href={`${assetPrefix}/_next/${encodeURI(fontFile)}`}
+              as="font"
+              type={`font/${ext}`}
+              crossOrigin="anonymous"
+            />
+          )
+        })
+      : null,
+  }
 }
 
 export class Head extends Component<HeadProps> {
@@ -718,12 +767,11 @@ export class Head extends Component<HeadProps> {
       process.env.NEXT_RUNTIME !== 'edge' && inAmpMode
     )
 
-    const pageFontFiles = fontLoaderManifest
-      ? [
-          ...(fontLoaderManifest.pages['/_app'] ?? []),
-          ...(fontLoaderManifest.pages[dangerousAsPath] ?? []),
-        ]
-      : undefined
+    const fontLoaderLinks = getFontLoaderLinks(
+      fontLoaderManifest,
+      dangerousAsPath,
+      assetPrefix
+    )
 
     return (
       <head {...getHeadHTMLProps(this.props)}>
@@ -764,29 +812,9 @@ export class Head extends Component<HeadProps> {
 
         {children}
         {optimizeFonts && <meta name="next-font-preconnect" />}
-        {pageFontFiles && pageFontFiles.length > 0 ? (
-          <link rel="preconnect" href="/" crossOrigin="anonymous" />
-        ) : null}
-        {pageFontFiles
-          ? pageFontFiles
-              // Fonts that end with .p.(woff|woff2|eot|ttf|otf) should preload
-              .filter((fontFile) =>
-                /\.p.(woff|woff2|eot|ttf|otf)$/.test(fontFile)
-              )
-              .map((fontFile) => {
-                const ext = /\.(woff|woff2|eot|ttf|otf)$/.exec(fontFile)![1]
-                return (
-                  <link
-                    key={fontFile}
-                    rel="preload"
-                    href={`${assetPrefix}/_next/${encodeURI(fontFile)}`}
-                    as="font"
-                    type={`font/${ext}`}
-                    crossOrigin="anonymous"
-                  />
-                )
-              })
-          : null}
+
+        {fontLoaderLinks.preconnect}
+        {fontLoaderLinks.preload}
 
         {process.env.NEXT_RUNTIME !== 'edge' && inAmpMode && (
           <>
