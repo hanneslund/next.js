@@ -222,12 +222,17 @@ export class FlightClientEntryPlugin {
       // Request could be undefined or ''
       if (!rawRequest) return
 
+      const isFontLoader = this.fontLoaders?.some((downloader) =>
+        rawRequest.startsWith(`${downloader}?`)
+      )
       const modRequest: string | undefined =
         !rawRequest.endsWith('.css') &&
         !rawRequest.startsWith('.') &&
         !rawRequest.startsWith('/') &&
         !rawRequest.startsWith(APP_DIR_ALIAS)
-          ? rawRequest
+          ? isFontLoader
+            ? `${mod.resourceResolveData?.path}${mod.resourceResolveData?.query}`
+            : rawRequest
           : mod.resourceResolveData?.path
 
       // Ensure module is not walked again if it's already been visited
@@ -242,7 +247,7 @@ export class FlightClientEntryPlugin {
       }
       visitedBySegment[layoutOrPageRequest].add(modRequest)
 
-      const isCSS = regexCSS.test(modRequest)
+      const isCSS = isFontLoader || regexCSS.test(modRequest)
       const isClientComponent = clientComponentRegex.test(modRequest)
 
       if (isCSS) {
@@ -251,15 +256,7 @@ export class FlightClientEntryPlugin {
         serverCSSImports[layoutOrPageRequest].push(modRequest)
       }
 
-      const isFontLoader = this.fontLoaders?.some((downloader) =>
-        modRequest.startsWith(`${downloader}?`)
-      )
-      // Check if request is for css file.
-      if (
-        (!inClientComponentBoundary && isClientComponent) ||
-        isCSS ||
-        isFontLoader
-      ) {
+      if ((!inClientComponentBoundary && isClientComponent) || isCSS) {
         clientComponentImports.push(modRequest)
         return
       }

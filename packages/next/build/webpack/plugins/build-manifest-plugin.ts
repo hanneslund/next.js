@@ -133,7 +133,6 @@ export default class BuildManifestPlugin {
         rootMainFiles: [],
         pages: { '/_app': [] },
         ampFirstPages: [],
-        pagesFontFiles: {},
       }
 
       const ampFirstEntryNames = ampFirstEntryNamesMap.get(compilation)
@@ -207,13 +206,6 @@ export default class BuildManifestPlugin {
         const filesForPage = getEntrypointFiles(entrypoint)
 
         assetMap.pages[pagePath] = [...new Set([...mainFiles, ...filesForPage])]
-
-        const fontFiles: string[] = entrypoint.chunks
-          .flatMap((chunk: any) => [...chunk.auxiliaryFiles])
-          .filter((file: string) => /\.(woff|woff2|eot|ttf|otf)$/.test(file))
-        if (fontFiles.length > 0) {
-          assetMap.pagesFontFiles[pagePath] = fontFiles
-        }
       }
 
       if (!this.isDevFallback) {

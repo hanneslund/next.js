@@ -12,9 +12,6 @@ export type BuildManifest = {
     [page: string]: readonly string[]
   }
   ampFirstPages: readonly string[]
-  pagesFontFiles: {
-    [page: string]: string[]
-  }
 }
 
 export function getPageFiles(

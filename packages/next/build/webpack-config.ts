@@ -62,6 +62,7 @@ import { loadBindings } from './swc'
 import { clientComponentRegex } from './webpack/loaders/utils'
 import { AppBuildManifestPlugin } from './webpack/plugins/app-build-manifest-plugin'
 import { SubresourceIntegrityPlugin } from './webpack/plugins/subresource-integrity-plugin'
+import FontLoaderManifestPlugin from './webpack/plugins/font-loader-manifest-plugin'
 
 const NEXT_PROJECT_ROOT = pathJoin(__dirname, '..', '..')
 const NEXT_PROJECT_ROOT_DIST = pathJoin(NEXT_PROJECT_ROOT, 'dist')
@@ -1805,11 +1806,19 @@ export default async function getBaseWebpackConfig(
           : new FlightClientEntryPlugin({
               dev,
               isEdgeServer,
+              fontLoaders:
+                config.experimental.fontLoaders &&
+                Object.keys(config.experimental.fontLoaders),
             })),
       !dev &&
         isClient &&
         !!config.experimental.sri?.algorithm &&
         new SubresourceIntegrityPlugin(config.experimental.sri.algorithm),
+      isClient &&
+        config.experimental.fontLoaders &&
+        new FontLoaderManifestPlugin({
+          appDirEnabled: !!config.experimental.appDir,
+        }),
       !dev &&
         isClient &&
         new (require('./webpack/plugins/telemetry-plugin').TelemetryPlugin)(
