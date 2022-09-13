@@ -1818,6 +1818,9 @@ export default async function getBaseWebpackConfig(
         config.experimental.fontLoaders &&
         new FontLoaderManifestPlugin({
           appDirEnabled: !!config.experimental.appDir,
+          fontLoaders:
+            config.experimental.fontLoaders &&
+            Object.keys(config.experimental.fontLoaders),
         }),
       !dev &&
         isClient &&

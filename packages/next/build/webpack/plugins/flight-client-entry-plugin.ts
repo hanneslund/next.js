@@ -222,8 +222,8 @@ export class FlightClientEntryPlugin {
       // Request could be undefined or ''
       if (!rawRequest) return
 
-      const isFontLoader = this.fontLoaders?.some((downloader) =>
-        rawRequest.startsWith(`${downloader}?`)
+      const isFontLoader = this.fontLoaders?.some((fontLoader) =>
+        rawRequest.startsWith(`${fontLoader}?`)
       )
       const modRequest: string | undefined =
         !rawRequest.endsWith('.css') &&
