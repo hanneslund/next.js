@@ -98,8 +98,12 @@ export default class FontLoaderManifestPlugin {
             }
           }
 
-          assets[`server/${FONT_LOADER_MANIFEST}`] = new sources.RawSource(
-            JSON.stringify(fontLoaderManifest, null, 2)
+          const manifest = JSON.stringify(fontLoaderManifest, null, 2)
+          assets[`server/${FONT_LOADER_MANIFEST}.js`] = new sources.RawSource(
+            `self.__FONT_LOADER_MANIFEST=${manifest}`
+          )
+          assets[`server/${FONT_LOADER_MANIFEST}.json`] = new sources.RawSource(
+            manifest
           )
         }
       )

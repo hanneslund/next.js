@@ -387,7 +387,7 @@ export default async function exportApp(
       optimizeFonts: nextConfig.optimizeFonts,
       largePageDataBytes: nextConfig.experimental.largePageDataBytes,
       fontLoaderManifest: nextConfig.experimental.fontLoaders
-        ? require(join(distDir, 'server', FONT_LOADER_MANIFEST))
+        ? require(join(distDir, 'server', `${FONT_LOADER_MANIFEST}.json`))
         : undefined,
     }
 

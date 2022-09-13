@@ -74,6 +74,32 @@ describe('@next/font/google', () => {
         },
       })
     })
+
+    test('page with edge runtime', async () => {
+      const html = await renderViaHTTP(next.url, '/edge-runtime')
+      const $ = cheerio.load(html)
+
+      // _app.js
+      expect(JSON.parse($('#app-open-sans').text())).toEqual({
+        className: expect.any(String),
+        variable: expect.any(String),
+        style: {
+          fontFamily: "'Open Sans-aba68'",
+          fontStyle: 'normal',
+        },
+      })
+
+      // edge-runtime.js
+      expect(JSON.parse($('#edge-runtime-roboto').text())).toEqual({
+        className: expect.any(String),
+        variable: expect.any(String),
+        style: {
+          fontFamily: "'Roboto-adfcc'",
+          fontStyle: 'italic',
+          fontWeight: 100,
+        },
+      })
+    })
   })
 
   describe('computed styles', () => {
@@ -246,6 +272,48 @@ describe('@next/font/google', () => {
         await browser.close()
       }
     })
+
+    test('page using edge runtime', async () => {
+      const browser = await webdriver(next.url, '/edge-runtime')
+
+      try {
+        // _app.js
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#app-open-sans")).fontFamily'
+          )
+        ).toBe('"Open Sans-aba68"')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#app-open-sans")).fontWeight'
+          )
+        ).toBe('400')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#app-open-sans")).fontStyle'
+          )
+        ).toBe('normal')
+
+        // edge-runtime.js
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#edge-runtime-roboto")).fontFamily'
+          )
+        ).toBe('Roboto-adfcc')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#edge-runtime-roboto")).fontWeight'
+          )
+        ).toBe('100')
+        expect(
+          await browser.eval(
+            'getComputedStyle(document.querySelector("#edge-runtime-roboto")).fontStyle'
+          )
+        ).toBe('italic')
+      } finally {
+        await browser.close()
+      }
+    })
   })
 
   describe('preload', () => {
@@ -287,6 +355,33 @@ describe('@next/font/google', () => {
         as: 'font',
         crossorigin: 'anonymous',
         href: '/_next/static/fonts/0812efcfaefec5ea.p.woff2',
+        rel: 'preload',
+        type: 'font/woff2',
+      })
+    })
+
+    test('page with edge runtime', async () => {
+      const html = await renderViaHTTP(next.url, '/edge-runtime')
+      const $ = cheerio.load(html)
+
+      // Preconnect
+      expect($('link[rel="preconnect"]').length).toBe(0)
+
+      // Preload
+      expect($('link[as="font"]').length).toBe(2)
+      // _app
+      expect($('link[as="font"]').get(0).attribs).toEqual({
+        as: 'font',
+        crossorigin: 'anonymous',
+        href: '/_next/static/fonts/0812efcfaefec5ea.p.woff2',
+        rel: 'preload',
+        type: 'font/woff2',
+      })
+      // edge-runtime
+      expect($('link[as="font"]').get(1).attribs).toEqual({
+        as: 'font',
+        crossorigin: 'anonymous',
+        href: '/_next/static/fonts/4f3dcdf40b3ca86d.p.woff2',
         rel: 'preload',
         type: 'font/woff2',
       })
