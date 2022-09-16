@@ -172,7 +172,7 @@ export default async function loader(content, map, meta) {
       const exports = options.fontLoader ? meta.exports : []
 
       if (shouldUseModulesPlugins(options)) {
-        plugins.push(...getModulesPlugins(options, this))
+        plugins.push(...getModulesPlugins(options, this, meta))
       }
 
       const importPluginImports = []

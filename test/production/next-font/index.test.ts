@@ -39,7 +39,7 @@ describe('@next/font/google', () => {
         className: expect.any(String),
         variable: expect.any(String),
         style: {
-          fontFamily: "'Open Sans-aba68'",
+          fontFamily: expect.stringMatching(/^'__open_sans_.{6}'$/),
           fontStyle: 'normal',
         },
       })
@@ -49,7 +49,7 @@ describe('@next/font/google', () => {
         className: expect.any(String),
         variable: expect.any(String),
         style: {
-          fontFamily: "'Open Sans-aba68'",
+          fontFamily: expect.stringMatching(/^'__open_sans_.{6}'$/),
           fontStyle: 'normal',
         },
       })
@@ -59,7 +59,7 @@ describe('@next/font/google', () => {
         className: expect.any(String),
         variable: expect.any(String),
         style: {
-          fontFamily: "'Inter-e5349'",
+          fontFamily: expect.stringMatching(/^'__inter_.{6}'$/),
           fontStyle: 'normal',
           fontWeight: 900,
         },
@@ -68,7 +68,7 @@ describe('@next/font/google', () => {
         className: expect.any(String),
         variable: expect.any(String),
         style: {
-          fontFamily: "'Roboto-adfcc'",
+          fontFamily: expect.stringMatching(/^'__roboto_.{6}'$/),
           fontStyle: 'italic',
           fontWeight: 100,
         },
@@ -84,7 +84,7 @@ describe('@next/font/google', () => {
         className: expect.any(String),
         variable: expect.any(String),
         style: {
-          fontFamily: "'Open Sans-aba68'",
+          fontFamily: expect.stringMatching(/^'__open_sans_.{6}'$/),
           fontStyle: 'normal',
         },
       })
@@ -94,7 +94,7 @@ describe('@next/font/google', () => {
         className: expect.any(String),
         variable: expect.any(String),
         style: {
-          fontFamily: "'Roboto-adfcc'",
+          fontFamily: expect.stringMatching(/^'__roboto_.{6}'$/),
           fontStyle: 'italic',
           fontWeight: 100,
         },
@@ -112,7 +112,7 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#app-open-sans")).fontFamily'
           )
-        ).toBe('"Open Sans-aba68"')
+        ).toMatch(/^__open_sans_.{6}$/)
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#app-open-sans")).fontWeight'
@@ -129,7 +129,7 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontFamily'
           )
-        ).toBe('"Open Sans-aba68"')
+        ).toMatch(/^__open_sans_.{6}$/)
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontWeight'
@@ -156,7 +156,7 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontFamily'
           )
-        ).toBe('Inter-e5349')
+        ).toMatch(/^__inter_.{6}$/)
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontWeight'
@@ -172,7 +172,7 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontFamily'
           )
-        ).toBe('Roboto-adfcc')
+        ).toMatch(/^__roboto_.{6}$/)
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontWeight'
@@ -197,48 +197,48 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#variables-fira-code")).fontFamily'
           )
-        ).toBe('"Fira Code-81c88"')
+        ).toMatch(/^__fira_code_.{6}$/)
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#without-variables-fira-code")).fontFamily'
           )
-        ).not.toBe('"Fira Code-81c88"')
+        ).not.toMatch(/^__fira_code_.{6}$/)
 
         // Albert Sant Variable Italic
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#variables-albert-sans-italic")).fontFamily'
           )
-        ).toBe('"Albert Sans-1615c"')
+        ).toMatch(/^__albert_sans_.{6}$/)
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#without-variables-albert-sans-italic")).fontFamily'
           )
-        ).not.toBe('"Albert Sans-1615c"')
+        ).not.toMatch(/^__albert_sans_.{6}$/)
 
         // Inter 900
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#variables-inter-900")).fontFamily'
           )
-        ).toBe('Inter-56dc7')
+        ).toMatch(/^__inter_.{6}$/)
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#without-variables-inter-900")).fontFamily'
           )
-        ).not.toBe('Inter-56dc7')
+        ).not.toMatch(/^__inter_.{6}$/)
 
         // Roboto 100 Italic
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#variables-roboto-100-italic")).fontFamily'
           )
-        ).toBe('Roboto-adfcc')
+        ).toMatch(/^__roboto_.{6}$/)
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#without-variables-roboto-100-italic")).fontFamily'
           )
-        ).not.toBe('Roboto-adfcc')
+        ).not.toMatch(/^__roboto_.{6}$/)
       } finally {
         await browser.close()
       }
@@ -253,21 +253,21 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#with-fallback-fonts-classname")).fontFamily'
           )
-        ).toBe('"Open Sans-9765a", system-ui, Arial')
+        ).toMatch(/^__open_sans_.{6}, system-ui, Arial$/)
 
         // .style
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#with-fallback-fonts-style")).fontFamily'
           )
-        ).toBe('"Open Sans-9765a", system-ui, Arial')
+        ).toMatch(/^__open_sans_.{6}, system-ui, Arial$/)
 
         // .variable
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#with-fallback-fonts-variable")).fontFamily'
           )
-        ).toBe('"Open Sans-9765a", system-ui, Arial')
+        ).toMatch(/^__open_sans_.{6}, system-ui, Arial$/)
       } finally {
         await browser.close()
       }
@@ -282,7 +282,7 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#app-open-sans")).fontFamily'
           )
-        ).toBe('"Open Sans-aba68"')
+        ).toMatch(/^__open_sans_.{6}$/)
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#app-open-sans")).fontWeight'
@@ -299,7 +299,7 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#edge-runtime-roboto")).fontFamily'
           )
-        ).toBe('Roboto-adfcc')
+        ).toMatch(/^__roboto_.{6}$/)
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#edge-runtime-roboto")).fontWeight'
