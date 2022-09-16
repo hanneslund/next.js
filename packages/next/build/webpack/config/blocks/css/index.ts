@@ -236,6 +236,14 @@ export const css = curry(async function css(
           markRemovable({
             sideEffects: false,
             test: fontLoaderPath,
+            issuer: {
+              and: [
+                {
+                  or: [ctx.rootDirectory, regexClientEntry],
+                },
+              ],
+              not: [/node_modules/],
+            },
             use: getFontLoader(ctx, lazyPostCSSInitializer, fontLoaderOptions),
           }),
         ],
