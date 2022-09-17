@@ -36,39 +36,39 @@ describe('@next/font/google', () => {
 
       // _app.js
       expect(JSON.parse($('#app-open-sans').text())).toEqual({
-        className: expect.any(String),
-        variable: expect.any(String),
+        className: '__className_b1719e',
+        variable: '__variable_b1719e',
         style: {
-          fontFamily: expect.stringMatching(/^'__open_sans_.{6}'$/),
+          fontFamily: "'__Open_Sans_b1719e'",
           fontStyle: 'normal',
         },
       })
 
       // with-fonts.js
       expect(JSON.parse($('#with-fonts-open-sans').text())).toEqual({
-        className: expect.any(String),
-        variable: expect.any(String),
+        className: '__className_b1719e',
+        variable: '__variable_b1719e',
         style: {
-          fontFamily: expect.stringMatching(/^'__open_sans_.{6}'$/),
+          fontFamily: "'__Open_Sans_b1719e'",
           fontStyle: 'normal',
         },
       })
 
       // CompWithFonts.js
       expect(JSON.parse($('#comp-with-fonts-inter').text())).toEqual({
-        className: expect.any(String),
-        variable: expect.any(String),
+        className: '__className_27b1a2',
+        variable: '__variable_27b1a2',
         style: {
-          fontFamily: expect.stringMatching(/^'__inter_.{6}'$/),
+          fontFamily: "'__Inter_27b1a2'",
           fontStyle: 'normal',
           fontWeight: 900,
         },
       })
       expect(JSON.parse($('#comp-with-fonts-roboto').text())).toEqual({
-        className: expect.any(String),
-        variable: expect.any(String),
+        className: '__className_09001c',
+        variable: '__variable_09001c',
         style: {
-          fontFamily: expect.stringMatching(/^'__roboto_.{6}'$/),
+          fontFamily: "'__Roboto_09001c'",
           fontStyle: 'italic',
           fontWeight: 100,
         },
@@ -81,20 +81,20 @@ describe('@next/font/google', () => {
 
       // _app.js
       expect(JSON.parse($('#app-open-sans').text())).toEqual({
-        className: expect.any(String),
-        variable: expect.any(String),
+        className: '__className_b1719e',
+        variable: '__variable_b1719e',
         style: {
-          fontFamily: expect.stringMatching(/^'__open_sans_.{6}'$/),
+          fontFamily: "'__Open_Sans_b1719e'",
           fontStyle: 'normal',
         },
       })
 
       // edge-runtime.js
       expect(JSON.parse($('#edge-runtime-roboto').text())).toEqual({
-        className: expect.any(String),
-        variable: expect.any(String),
+        className: '__className_09001c',
+        variable: '__variable_09001c',
         style: {
-          fontFamily: expect.stringMatching(/^'__roboto_.{6}'$/),
+          fontFamily: "'__Roboto_09001c'",
           fontStyle: 'italic',
           fontWeight: 100,
         },
@@ -112,7 +112,7 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#app-open-sans")).fontFamily'
           )
-        ).toMatch(/^__open_sans_.{6}$/)
+        ).toBe('__Open_Sans_b1719e')
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#app-open-sans")).fontWeight'
@@ -129,7 +129,7 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontFamily'
           )
-        ).toMatch(/^__open_sans_.{6}$/)
+        ).toBe('__Open_Sans_b1719e')
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontWeight'
@@ -156,7 +156,7 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontFamily'
           )
-        ).toMatch(/^__inter_.{6}$/)
+        ).toBe('__Inter_27b1a2')
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontWeight'
@@ -172,7 +172,7 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontFamily'
           )
-        ).toMatch(/^__roboto_.{6}$/)
+        ).toBe('__Roboto_09001c')
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontWeight'
@@ -197,48 +197,48 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#variables-fira-code")).fontFamily'
           )
-        ).toMatch(/^__fira_code_.{6}$/)
+        ).toBe('__Fira_Code_11633c')
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#without-variables-fira-code")).fontFamily'
           )
-        ).not.toMatch(/^__fira_code_.{6}$/)
+        ).not.toBe('__Fira_Code_11633c')
 
         // Albert Sant Variable Italic
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#variables-albert-sans-italic")).fontFamily'
           )
-        ).toMatch(/^__albert_sans_.{6}$/)
+        ).toBe('__Albert_Sans_2b85d2')
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#without-variables-albert-sans-italic")).fontFamily'
           )
-        ).not.toMatch(/^__albert_sans_.{6}$/)
+        ).not.toBe('__Albert_Sans_2b85d2')
 
         // Inter 900
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#variables-inter-900")).fontFamily'
           )
-        ).toMatch(/^__inter_.{6}$/)
+        ).toBe('__Inter_0603b0')
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#without-variables-inter-900")).fontFamily'
           )
-        ).not.toMatch(/^__inter_.{6}$/)
+        ).not.toBe('__Inter_0603b0')
 
         // Roboto 100 Italic
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#variables-roboto-100-italic")).fontFamily'
           )
-        ).toMatch(/^__roboto_.{6}$/)
+        ).toBe('__Roboto_09001c')
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#without-variables-roboto-100-italic")).fontFamily'
           )
-        ).not.toMatch(/^__roboto_.{6}$/)
+        ).not.toBe('__Roboto_09001c')
       } finally {
         await browser.close()
       }
@@ -253,21 +253,21 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#with-fallback-fonts-classname")).fontFamily'
           )
-        ).toMatch(/^__open_sans_.{6}, system-ui, Arial$/)
+        ).toBe('__Open_Sans_b1719e, system-ui, Arial')
 
         // .style
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#with-fallback-fonts-style")).fontFamily'
           )
-        ).toMatch(/^__open_sans_.{6}, system-ui, Arial$/)
+        ).toBe('__Open_Sans_b1719e, system-ui, Arial')
 
         // .variable
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#with-fallback-fonts-variable")).fontFamily'
           )
-        ).toMatch(/^__open_sans_.{6}, system-ui, Arial$/)
+        ).toBe('__Open_Sans_b1719e, system-ui, Arial')
       } finally {
         await browser.close()
       }
@@ -282,7 +282,7 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#app-open-sans")).fontFamily'
           )
-        ).toMatch(/^__open_sans_.{6}$/)
+        ).toBe('__Open_Sans_b1719e')
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#app-open-sans")).fontWeight'
@@ -299,7 +299,7 @@ describe('@next/font/google', () => {
           await browser.eval(
             'getComputedStyle(document.querySelector("#edge-runtime-roboto")).fontFamily'
           )
-        ).toMatch(/^__roboto_.{6}$/)
+        ).toBe('__Roboto_09001c')
         expect(
           await browser.eval(
             'getComputedStyle(document.querySelector("#edge-runtime-roboto")).fontWeight'

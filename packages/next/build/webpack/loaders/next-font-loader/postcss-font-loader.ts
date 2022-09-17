@@ -17,10 +17,8 @@ const postcssFontLoaderPlugn = (
         if (family[0] === "'" || family[0] === '"') {
           family = family.slice(1, family.length - 1)
         }
-        // Makes the font family unguessable to ensure you import it to use it
-        return `'__${family
-          .toLowerCase()
-          .replace(/ /g, '_')}_${fontFamilyHash}'`
+        // Turn the font family unguessable to make it localy scoped
+        return `'__${family.replace(/ /g, '_')}_${fontFamilyHash}'`
       }
 
       for (const node of root.nodes) {
