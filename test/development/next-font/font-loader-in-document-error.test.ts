@@ -24,14 +24,9 @@ describe('font-loader-in-document-error', () => {
 
   test('font loader inside _document', async () => {
     const browser = await webdriver(next.appPort, '/')
-
-    try {
-      await check(() => getRedboxSource(browser), /Font loaders/)
-      expect(await getRedboxSource(browser)).toInclude(
-        'Font loaders cannot be used within pages/_document.js'
-      )
-    } finally {
-      await browser.close()
-    }
+    await check(() => getRedboxSource(browser), /Font loaders/)
+    expect(await getRedboxSource(browser)).toInclude(
+      'Font loaders cannot be used within pages/_document.js'
+    )
   })
 })

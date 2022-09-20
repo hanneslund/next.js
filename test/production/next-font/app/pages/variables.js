@@ -1,6 +1,9 @@
 import { Fira_Code, Albert_Sans, Inter, Roboto } from '@next/font/google'
 const firaCode = Fira_Code()
-const albertSans = Albert_Sans({ variant: 'variable-italic' })
+const albertSans = Albert_Sans({
+  variant: 'variable-italic',
+  adjustFontFallback: false,
+})
 const inter = Inter({ variant: '900', display: 'swap' }) // Don't preload by default when swap
 const roboto = Roboto({
   variant: '100-italic',

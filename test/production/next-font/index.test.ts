@@ -36,39 +36,39 @@ describe('@next/font/google', () => {
 
       // _app.js
       expect(JSON.parse($('#app-open-sans').text())).toEqual({
-        className: '__className_b1719e',
-        variable: '__variable_b1719e',
+        className: '__className_bbc724',
+        variable: '__variable_bbc724',
         style: {
-          fontFamily: "'__Open_Sans_b1719e'",
+          fontFamily: "'__Open_Sans_bbc724', '__open-sans-fallback_bbc724'",
           fontStyle: 'normal',
         },
       })
 
       // with-fonts.js
       expect(JSON.parse($('#with-fonts-open-sans').text())).toEqual({
-        className: '__className_b1719e',
-        variable: '__variable_b1719e',
+        className: '__className_bbc724',
+        variable: '__variable_bbc724',
         style: {
-          fontFamily: "'__Open_Sans_b1719e'",
+          fontFamily: "'__Open_Sans_bbc724', '__open-sans-fallback_bbc724'",
           fontStyle: 'normal',
         },
       })
 
       // CompWithFonts.js
       expect(JSON.parse($('#comp-with-fonts-inter').text())).toEqual({
-        className: '__className_27b1a2',
-        variable: '__variable_27b1a2',
+        className: '__className_17e98a',
+        variable: '__variable_17e98a',
         style: {
-          fontFamily: "'__Inter_27b1a2'",
+          fontFamily: "'__Inter_17e98a', '__inter-fallback_17e98a'",
           fontStyle: 'normal',
           fontWeight: 900,
         },
       })
       expect(JSON.parse($('#comp-with-fonts-roboto').text())).toEqual({
-        className: '__className_09001c',
-        variable: '__variable_09001c',
+        className: '__className_72084b',
+        variable: '__variable_72084b',
         style: {
-          fontFamily: "'__Roboto_09001c'",
+          fontFamily: "'__Roboto_72084b', '__roboto-fallback_72084b'",
           fontStyle: 'italic',
           fontWeight: 100,
         },
@@ -81,20 +81,20 @@ describe('@next/font/google', () => {
 
       // _app.js
       expect(JSON.parse($('#app-open-sans').text())).toEqual({
-        className: '__className_b1719e',
-        variable: '__variable_b1719e',
+        className: '__className_bbc724',
+        variable: '__variable_bbc724',
         style: {
-          fontFamily: "'__Open_Sans_b1719e'",
+          fontFamily: "'__Open_Sans_bbc724', '__open-sans-fallback_bbc724'",
           fontStyle: 'normal',
         },
       })
 
       // edge-runtime.js
       expect(JSON.parse($('#edge-runtime-roboto').text())).toEqual({
-        className: '__className_09001c',
-        variable: '__variable_09001c',
+        className: '__className_72084b',
+        variable: '__variable_72084b',
         style: {
-          fontFamily: "'__Roboto_09001c'",
+          fontFamily: "'__Roboto_72084b', '__roboto-fallback_72084b'",
           fontStyle: 'italic',
           fontWeight: 100,
         },
@@ -106,213 +106,203 @@ describe('@next/font/google', () => {
     test('page with fonts', async () => {
       const browser = await webdriver(next.url, '/with-fonts')
 
-      try {
-        // _app.js
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#app-open-sans")).fontFamily'
-          )
-        ).toBe('__Open_Sans_b1719e')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#app-open-sans")).fontWeight'
-          )
-        ).toBe('400')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#app-open-sans")).fontStyle'
-          )
-        ).toBe('normal')
+      // _app.js
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#app-open-sans")).fontFamily'
+        )
+      ).toBe('__Open_Sans_bbc724, __open-sans-fallback_bbc724')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#app-open-sans")).fontWeight'
+        )
+      ).toBe('400')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#app-open-sans")).fontStyle'
+        )
+      ).toBe('normal')
 
-        // with-fonts.js
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontFamily'
-          )
-        ).toBe('__Open_Sans_b1719e')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontWeight'
-          )
-        ).toBe('400')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontStyle'
-          )
-        ).toBe('normal')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#with-fonts-open-sans-style")).fontWeight'
-          )
-        ).toBe('400')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#with-fonts-open-sans-style")).fontStyle'
-          )
-        ).toBe('normal')
+      // with-fonts.js
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontFamily'
+        )
+      ).toBe('__Open_Sans_bbc724, __open-sans-fallback_bbc724')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontWeight'
+        )
+      ).toBe('400')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#with-fonts-open-sans")).fontStyle'
+        )
+      ).toBe('normal')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#with-fonts-open-sans-style")).fontWeight'
+        )
+      ).toBe('400')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#with-fonts-open-sans-style")).fontStyle'
+        )
+      ).toBe('normal')
 
-        // CompWithFonts.js
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontFamily'
-          )
-        ).toBe('__Inter_27b1a2')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontWeight'
-          )
-        ).toBe('900')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontStyle'
-          )
-        ).toBe('normal')
+      // CompWithFonts.js
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontFamily'
+        )
+      ).toBe('__Inter_17e98a, __inter-fallback_17e98a')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontWeight'
+        )
+      ).toBe('900')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#comp-with-fonts-inter")).fontStyle'
+        )
+      ).toBe('normal')
 
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontFamily'
-          )
-        ).toBe('__Roboto_09001c')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontWeight'
-          )
-        ).toBe('100')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontStyle'
-          )
-        ).toBe('italic')
-      } finally {
-        await browser.close()
-      }
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontFamily'
+        )
+      ).toBe('__Roboto_72084b, __roboto-fallback_72084b')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontWeight'
+        )
+      ).toBe('100')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#comp-with-fonts-roboto")).fontStyle'
+        )
+      ).toBe('italic')
     })
 
     test('page using variables', async () => {
       const browser = await webdriver(next.url, '/variables')
 
-      try {
-        // Fira Code Variable
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#variables-fira-code")).fontFamily'
-          )
-        ).toBe('__Fira_Code_11633c')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#without-variables-fira-code")).fontFamily'
-          )
-        ).not.toBe('__Fira_Code_11633c')
+      // Fira Code Variable
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#variables-fira-code")).fontFamily'
+        )
+      ).toBe('__Fira_Code_a1dc08, __fira-code-fallback_a1dc08')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#without-variables-fira-code")).fontFamily'
+        )
+      ).not.toBe('__Fira_Code_a1dc08, __fira-code-fallback_a1dc08')
 
-        // Albert Sant Variable Italic
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#variables-albert-sans-italic")).fontFamily'
-          )
-        ).toBe('__Albert_Sans_2b85d2')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#without-variables-albert-sans-italic")).fontFamily'
-          )
-        ).not.toBe('__Albert_Sans_2b85d2')
+      // Albert Sant Variable Italic
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#variables-albert-sans-italic")).fontFamily'
+        )
+      ).toBe('__Albert_Sans_2b85d2')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#without-variables-albert-sans-italic")).fontFamily'
+        )
+      ).not.toBe('__Albert_Sans_2b85d2')
 
-        // Inter 900
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#variables-inter-900")).fontFamily'
-          )
-        ).toBe('__Inter_0603b0')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#without-variables-inter-900")).fontFamily'
-          )
-        ).not.toBe('__Inter_0603b0')
+      // Inter 900
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#variables-inter-900")).fontFamily'
+        )
+      ).toBe('__Inter_ea3712, __inter-fallback_ea3712')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#without-variables-inter-900")).fontFamily'
+        )
+      ).not.toBe('__Inter_ea3712, __inter-fallback_ea3712')
 
-        // Roboto 100 Italic
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#variables-roboto-100-italic")).fontFamily'
-          )
-        ).toBe('__Roboto_09001c')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#without-variables-roboto-100-italic")).fontFamily'
-          )
-        ).not.toBe('__Roboto_09001c')
-      } finally {
-        await browser.close()
-      }
+      // Roboto 100 Italic
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#variables-roboto-100-italic")).fontFamily'
+        )
+      ).toBe('__Roboto_72084b, __roboto-fallback_72084b')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#without-variables-roboto-100-italic")).fontFamily'
+        )
+      ).not.toBe('__Roboto_72084b')
     })
 
     test('page using fallback fonts', async () => {
       const browser = await webdriver(next.url, '/with-fallback')
 
-      try {
-        // .className
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#with-fallback-fonts-classname")).fontFamily'
-          )
-        ).toBe('__Open_Sans_b1719e, system-ui, Arial')
+      // .className
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#with-fallback-fonts-classname")).fontFamily'
+        )
+      ).toBe(
+        '__Open_Sans_bbc724, system-ui, Arial, __open-sans-fallback_bbc724'
+      )
 
-        // .style
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#with-fallback-fonts-style")).fontFamily'
-          )
-        ).toBe('__Open_Sans_b1719e, system-ui, Arial')
+      // .style
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#with-fallback-fonts-style")).fontFamily'
+        )
+      ).toBe(
+        '__Open_Sans_bbc724, system-ui, Arial, __open-sans-fallback_bbc724'
+      )
 
-        // .variable
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#with-fallback-fonts-variable")).fontFamily'
-          )
-        ).toBe('__Open_Sans_b1719e, system-ui, Arial')
-      } finally {
-        await browser.close()
-      }
+      // .variable
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#with-fallback-fonts-variable")).fontFamily'
+        )
+      ).toBe(
+        '__Open_Sans_bbc724, system-ui, Arial, __open-sans-fallback_bbc724'
+      )
     })
 
     test('page using edge runtime', async () => {
       const browser = await webdriver(next.url, '/edge-runtime')
 
-      try {
-        // _app.js
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#app-open-sans")).fontFamily'
-          )
-        ).toBe('__Open_Sans_b1719e')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#app-open-sans")).fontWeight'
-          )
-        ).toBe('400')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#app-open-sans")).fontStyle'
-          )
-        ).toBe('normal')
+      // _app.js
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#app-open-sans")).fontFamily'
+        )
+      ).toBe('__Open_Sans_bbc724, __open-sans-fallback_bbc724')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#app-open-sans")).fontWeight'
+        )
+      ).toBe('400')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#app-open-sans")).fontStyle'
+        )
+      ).toBe('normal')
 
-        // edge-runtime.js
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#edge-runtime-roboto")).fontFamily'
-          )
-        ).toBe('__Roboto_09001c')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#edge-runtime-roboto")).fontWeight'
-          )
-        ).toBe('100')
-        expect(
-          await browser.eval(
-            'getComputedStyle(document.querySelector("#edge-runtime-roboto")).fontStyle'
-          )
-        ).toBe('italic')
-      } finally {
-        await browser.close()
-      }
+      // edge-runtime.js
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#edge-runtime-roboto")).fontFamily'
+        )
+      ).toBe('__Roboto_72084b, __roboto-fallback_72084b')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#edge-runtime-roboto")).fontWeight'
+        )
+      ).toBe('100')
+      expect(
+        await browser.eval(
+          'getComputedStyle(document.querySelector("#edge-runtime-roboto")).fontStyle'
+        )
+      ).toBe('italic')
     })
   })
 
