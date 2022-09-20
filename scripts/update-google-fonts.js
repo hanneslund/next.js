@@ -7,10 +7,8 @@ const fetch = require('node-fetch')
     'https://fonts.google.com/metadata/fonts'
   ).then((r) => r.json())
 
-  let fontFunctions = `/* eslint-disable @typescript-eslint/no-unused-vars */
-  type Display = 'auto'|'block'|'swap'|'fallback'|'optional'
-  type FontModule = { className: string, variable: string, style: { fontFamily: string, fontWeight?: number, fontStyle?: string } }
-  function e():never { throw new Error('@next/font/google is not configured as a font loader') }
+  let fontFunctions = `type Display = 'auto'|'block'|'swap'|'fallback'|'optional'
+type FontModule = { className: string, variable: string, style: { fontFamily: string, fontWeight?: number, fontStyle?: string } }
   `
   const fontData = {}
   for (let { family, fonts, axes } of familyMetadataList) {
@@ -43,7 +41,7 @@ const fetch = require('node-fetch')
       axes: hasVariableFont ? axes : undefined,
     }
     const optionalIfVariableFont = hasVariableFont ? '?' : ''
-    fontFunctions += `export function ${family.replaceAll(
+    fontFunctions += `export declare function ${family.replaceAll(
       ' ',
       '_'
     )}(options${optionalIfVariableFont}: {
@@ -53,12 +51,13 @@ const fetch = require('node-fetch')
     display?:Display,
     preload?:boolean,
     fallback?: string[]
+    adjustFontFallback?: boolean
     ${
       optionalAxes
         ? `axes?:(${optionalAxes.map(({ tag }) => `'${tag}'`).join('|')})[]`
         : ''
     }
-    }):FontModule{e()}
+    }):FontModule
     `
   }
 

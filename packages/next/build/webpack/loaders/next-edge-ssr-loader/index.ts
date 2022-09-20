@@ -124,7 +124,7 @@ export default async function edgeSSRLoader(this: any) {
       buildId: ${JSON.stringify(buildId)},
       fontLoaderManifest,
     })
-    
+
     export const ComponentMod = pageMod
 
     export default function(opts) {

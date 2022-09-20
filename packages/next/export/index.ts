@@ -42,6 +42,7 @@ import { PrerenderManifest } from '../build'
 import { PagesManifest } from '../build/webpack/plugins/pages-manifest-plugin'
 import { getPagePath } from '../server/require'
 import { Span } from '../trace'
+import { FontConfig } from '../server/font-utils'
 
 const exists = promisify(existsOrig)
 
@@ -384,7 +385,7 @@ export default async function exportApp(
       crossOrigin: nextConfig.crossOrigin,
       optimizeCss: nextConfig.experimental.optimizeCss,
       nextScriptWorkers: nextConfig.experimental.nextScriptWorkers,
-      optimizeFonts: nextConfig.optimizeFonts,
+      optimizeFonts: nextConfig.optimizeFonts as FontConfig,
       largePageDataBytes: nextConfig.experimental.largePageDataBytes,
       fontLoaderManifest: nextConfig.experimental.fontLoaders
         ? require(join(distDir, 'server', `${FONT_LOADER_MANIFEST}.json`))
@@ -591,7 +592,7 @@ export default async function exportApp(
             subFolders,
             buildExport: options.buildExport,
             serverless: isTargetLikeServerless(nextConfig.target),
-            optimizeFonts: nextConfig.optimizeFonts,
+            optimizeFonts: nextConfig.optimizeFonts as FontConfig,
             optimizeCss: nextConfig.experimental.optimizeCss,
             disableOptimizedLoading:
               nextConfig.experimental.disableOptimizedLoading,
@@ -643,13 +644,13 @@ export default async function exportApp(
         Object.keys(prerenderManifest.routes).map(async (route) => {
           const { srcRoute } = prerenderManifest!.routes[route]
           const pageName = srcRoute || route
-          route = normalizePagePath(route)
 
           // returning notFound: true from getStaticProps will not
           // output html/json files during the build
           if (prerenderManifest!.notFoundRoutes.includes(route)) {
             return
           }
+          route = normalizePagePath(route)
 
           const pagePath = getPagePath(pageName, distDir, isLikeServerless)
           const distPagesDir = join(

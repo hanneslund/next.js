@@ -150,6 +150,7 @@ export interface ExperimentalConfig {
   sri?: {
     algorithm?: SubresourceIntegrityAlgorithm
   }
+  adjustFontFallbacks?: boolean
   fontLoaders?: { [fontLoader: string]: any }
 }
 
@@ -582,6 +583,7 @@ export const defaultConfig: NextConfig = {
     amp: undefined,
     urlImports: undefined,
     modularizeImports: undefined,
+    adjustFontFallbacks: false,
   },
 }
 
