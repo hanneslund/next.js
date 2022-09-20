@@ -12,4 +12,5 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
+export { openSans }
 export default MyApp
