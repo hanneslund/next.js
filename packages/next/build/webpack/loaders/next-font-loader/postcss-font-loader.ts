@@ -45,10 +45,16 @@ const postcssFontLoaderPlugn = (
           }
           fontFamilies.push(formattedFamily)
 
+          // Only extract weight and style from first encountered family, the rest will treated as fallbacks
+          if (fontFamilies.length > 1) {
+            continue
+          }
+
           // Extract weight and style from first encountered @font-face
           const weight = node.nodes.find(
             (decl: Declaration) => decl.prop === 'font-weight'
           )
+
           // Skip if the value includes ' ', then it's a range of possible values
           if (weight && !weight.value.includes(' ')) {
             fontWeight = weight.value
@@ -65,6 +71,7 @@ const postcssFontLoaderPlugn = (
       }
 
       const [mainFontFamily, ...adjustFontFallbacks] = fontFamilies
+      // If fallback fonts were provided from the font loader, they should be used before the adjustFontFallbacks
       const formattedFontFamilies = [
         mainFontFamily,
         ...fallbackFonts,
