@@ -22,7 +22,6 @@ import { isClientComponentModule } from '../loaders/utils'
 interface Options {
   dev: boolean
   isEdgeServer: boolean
-  fontLoaders?: string[]
 }
 
 const PLUGIN_NAME = 'ClientEntryPlugin'
@@ -43,7 +42,6 @@ export class FlightClientEntryPlugin {
   constructor(options: Options) {
     this.dev = options.dev
     this.isEdgeServer = options.isEdgeServer
-    this.fontLoaders = options.fontLoaders
   }
 
   apply(compiler: webpack.Compiler) {
@@ -219,17 +217,12 @@ export class FlightClientEntryPlugin {
       // Request could be undefined or ''
       if (!rawRequest) return
 
-      const isFontLoader = this.fontLoaders?.some((fontLoader) =>
-        rawRequest.startsWith(`${fontLoader}?`)
-      )
       const modRequest: string | undefined =
         !rawRequest.endsWith('.css') &&
         !rawRequest.startsWith('.') &&
         !rawRequest.startsWith('/') &&
         !rawRequest.startsWith(APP_DIR_ALIAS)
-          ? isFontLoader
-            ? `${mod.resourceResolveData?.path}${mod.resourceResolveData?.query}`
-            : rawRequest
+          ? rawRequest
           : mod.resourceResolveData?.path
 
       // Ensure module is not walked again if it's already been visited
@@ -244,7 +237,7 @@ export class FlightClientEntryPlugin {
       }
       visitedBySegment[layoutOrPageRequest].add(modRequest)
 
-      const isCSS = isFontLoader || regexCSS.test(modRequest)
+      const isCSS = regexCSS.test(modRequest)
       const isClientComponent = isClientComponentModule(mod)
 
       if (isCSS) {

@@ -1,4 +1,3 @@
-import loaderUtils from 'next/dist/compiled/loader-utils3'
 import { webpack } from 'next/dist/compiled/webpack/webpack'
 import { ConfigurationContext } from '../../../utils'
 import { getClientStyleLoader } from './client'
@@ -23,7 +22,6 @@ export function getFontLoader(
     )
   }
 
-  // Resolve CSS `@import`s and `url()`s
   loaders.push({
     loader: require.resolve('../../../../loaders/css-loader/src'),
     options: {
@@ -50,6 +48,7 @@ export function getFontLoader(
           _options: any,
           meta: any
         ) => {
+          // hash from next-font-loader
           return `__${exportName}_${meta.fontFamilyHash}`
         },
       },

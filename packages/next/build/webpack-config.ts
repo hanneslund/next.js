@@ -1831,9 +1831,6 @@ export default async function getBaseWebpackConfig(
           : new FlightClientEntryPlugin({
               dev,
               isEdgeServer,
-              fontLoaders:
-                config.experimental.fontLoaders &&
-                Object.keys(config.experimental.fontLoaders),
             })),
       !dev &&
         isClient &&
@@ -1841,12 +1838,7 @@ export default async function getBaseWebpackConfig(
         new SubresourceIntegrityPlugin(config.experimental.sri.algorithm),
       isClient &&
         config.experimental.fontLoaders &&
-        new FontLoaderManifestPlugin({
-          appDirEnabled: !!config.experimental.appDir,
-          fontLoaders:
-            config.experimental.fontLoaders &&
-            Object.keys(config.experimental.fontLoaders),
-        }),
+        new FontLoaderManifestPlugin(),
       !dev &&
         isClient &&
         new (require('./webpack/plugins/telemetry-plugin').TelemetryPlugin)(

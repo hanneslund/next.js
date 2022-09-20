@@ -201,6 +201,7 @@ export const css = curry(async function css(
     })
   )
 
+  // Resolve the configured font loaders, the resolved files are noop files that next-font-loader will match
   let fontLoaders: [string, string][] | undefined = ctx.experimental.fontLoaders
     ? Object.entries(ctx.experimental.fontLoaders).map(
         ([fontLoader, fontLoaderOptions]: any) => [
@@ -210,6 +211,7 @@ export const css = curry(async function css(
       )
     : undefined
 
+  // Font loaders cannot be imported in _document.
   fontLoaders?.forEach(([fontLoaderPath, fontLoaderOptions]) => {
     fns.push(
       loader({
@@ -230,6 +232,7 @@ export const css = curry(async function css(
       })
     )
 
+    // Matches the resolved font loaders noop files to run next-font-loader
     fns.push(
       loader({
         oneOf: [
