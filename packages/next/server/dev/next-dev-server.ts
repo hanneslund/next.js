@@ -1267,9 +1267,15 @@ export default class DevServer extends Server {
     return !snippet.includes('data-amp-development-mode-only')
   }
 
-  protected async getStaticPaths(pathname: string): Promise<{
-    staticPaths: string[] | undefined
-    fallbackMode: false | 'static' | 'blocking'
+  protected async getStaticPaths({
+    pathname,
+    originalAppPath,
+  }: {
+    pathname: string
+    originalAppPath?: string
+  }): Promise<{
+    staticPaths?: string[]
+    fallbackMode?: false | 'static' | 'blocking'
   }> {
     // we lazy load the staticPaths to prevent the user
     // from waiting on them for the page to load in dev mode
@@ -1283,20 +1289,22 @@ export default class DevServer extends Server {
       } = this.nextConfig
       const { locales, defaultLocale } = this.nextConfig.i18n || {}
 
-      const paths = await this.getStaticPathsWorker().loadStaticPaths(
-        this.distDir,
+      const pathsResult = await this.getStaticPathsWorker().loadStaticPaths({
+        distDir: this.distDir,
         pathname,
-        !this.renderOpts.dev && this._isLikeServerless,
-        {
+        serverless: !this.renderOpts.dev && this._isLikeServerless,
+        config: {
           configFileName,
           publicRuntimeConfig,
           serverRuntimeConfig,
         },
         httpAgentOptions,
         locales,
-        defaultLocale
-      )
-      return paths
+        defaultLocale,
+        originalAppPath,
+        isAppPath: !!originalAppPath,
+      })
+      return pathsResult
     }
     const { paths: staticPaths, fallback } = (
       await withCoalescedInvoke(__getStaticPaths)(`staticPaths-${pathname}`, [])
@@ -1309,7 +1317,7 @@ export default class DevServer extends Server {
           ? 'blocking'
           : fallback === true
           ? 'static'
-          : false,
+          : fallback,
     }
   }
 
