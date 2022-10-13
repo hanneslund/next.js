@@ -35,7 +35,7 @@ export const serverModuleIds = new Map<string, string | number>()
 export const edgeServerModuleIds = new Map<string, string | number>()
 
 // TODO-APP: ensure .scss / .sass also works.
-const regexCSS = /\.css$/
+const regexCSS = /\.css(\?.*)?$/
 
 // TODO-APP: move CSS manifest generation to the flight manifest plugin.
 const flightCSSManifest: FlightCSSManifest = {}
@@ -387,7 +387,7 @@ export class FlightClientEntryPlugin {
           ? isFontLoader
             ? mod.userRequest
             : rawRequest
-          : mod.resourceResolveData?.path
+          : mod.resourceResolveData?.path + mod.resourceResolveData?.query
 
       // Ensure module is not walked again if it's already been visited
       if (!visitedBySegment[layoutOrPageRequest]) {

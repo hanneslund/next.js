@@ -5,16 +5,17 @@
  */
 
 export function pitch(this: any) {
-  const content = this.fs.readFileSync(this.resource)
-  this.data.__checksum = (
-    typeof content === 'string' ? Buffer.from(content) : content
-  ).toString('hex')
+  const content = this.fs.readFileSync(this.resourcePath)
+  this.data.__checksum =
+    (typeof content === 'string' ? Buffer.from(content) : content).toString(
+      'hex'
+    ) + Buffer.from(this.resourceQuery).toString('hex')
 }
 
 const NextServerCSSLoader = function (this: any, content: string) {
   this.cacheable && this.cacheable()
 
-  const isCSSModule = this.resource.match(/\.module\.css$/)
+  const isCSSModule = this.resourcePath.match(/\.module\.css$/)
   if (isCSSModule) {
     return (
       content +

@@ -83,6 +83,8 @@ const PLUGIN_NAME = 'FlightManifestPlugin'
 // So that react could unwrap the async module from promise and render module itself.
 export const ASYNC_CLIENT_MODULES = new Set<string>()
 
+const regexCSS = /\.css(\?.*)?$/
+
 export function traverseModules(
   compilation: webpack.Compilation,
   callback: (
@@ -186,7 +188,7 @@ export class FlightManifestPlugin {
         )
         const isCSSModule =
           isFontLoader ||
-          mod.resource?.endsWith('.css') ||
+          regexCSS.test(mod.resource) ||
           mod.type === 'css/mini-extract' ||
           (!!mod.loaders &&
             (dev
