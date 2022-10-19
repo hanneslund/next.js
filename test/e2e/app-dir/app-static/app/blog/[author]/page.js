@@ -1,10 +1,12 @@
 import Link from 'next/link'
+import { useTestHook } from 'next/dist/client/test-hook'
 
 export const config = {
   dynamicParams: false,
 }
 
 export default function Page({ params }) {
+  useTestHook()
   return (
     <>
       <p id="page">/blog/[author]</p>
