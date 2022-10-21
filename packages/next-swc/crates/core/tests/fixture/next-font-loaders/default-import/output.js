@@ -1,1 +1,1 @@
-import font from 'cool-fonts/target.css?{"arguments":[{"prop":true}],"import":"","path":"pages/test.tsx"}';
+import font from 'next/font/target.module.css?{"arguments":[{"prop":true}],"import":"","loader":"cool-fonts","path":"pages/test.tsx"}';

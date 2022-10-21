@@ -45,6 +45,10 @@ impl<'a> FontImportsGenerator<'a> {
                             String::from("path"),
                             Value::String(self.relative_path.to_string()),
                         );
+                        query_json_values.insert(
+                            String::from("loader"),
+                            Value::String(String::from(&*font_function.loader)),
+                        );
                         query_json_values
                             .insert(String::from("import"), Value::String(function_name));
                         query_json_values.insert(String::from("arguments"), Value::Array(json));
@@ -54,8 +58,8 @@ impl<'a> FontImportsGenerator<'a> {
                         return Some(ImportDecl {
                             src: Box::new(Str {
                                 value: JsWord::from(format!(
-                                    "{}/target.css?{}",
-                                    font_function.loader, query_json
+                                    "next/font/target.module.css?{}",
+                                    query_json
                                 )),
                                 raw: None,
                                 span: DUMMY_SP,
