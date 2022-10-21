@@ -14,6 +14,7 @@ import {
   getFontLoaderImportError,
 } from './messages'
 import { getPostCssPlugins } from './plugins'
+import { FONT_LOADERS_TARGET } from '../../../../../shared/lib/constants'
 
 // RegExps for all Style Sheet variants
 export const regexLikeCss = /\.(css|scss|sass)$/
@@ -182,72 +183,60 @@ export const css = curry(async function css(
 
   const fns: ConfigurationFn[] = []
 
-  // Resolve the configured font loaders, the resolved files are noop files that next-font-loader will match
-  let fontLoaders: [string, string][] | undefined = ctx.experimental.fontLoaders
-    ? ctx.experimental.fontLoaders.map(({ loader: fontLoader, options }) => [
-        path.join(require.resolve(fontLoader), '../target.css'),
-        options,
-      ])
-    : undefined
-
+  const fontLoadersTargetFile = require.resolve(FONT_LOADERS_TARGET)
   // Font loaders cannot be imported in _document.
-  fontLoaders?.forEach(([fontLoaderPath, fontLoaderOptions]) => {
-    fns.push(
-      loader({
-        oneOf: [
-          markRemovable({
-            test: fontLoaderPath,
-            // Use a loose regex so we don't have to crawl the file system to
-            // find the real file name (if present).
-            issuer: /pages[\\/]_document\./,
-            use: {
-              loader: 'error-loader',
-              options: {
-                reason: getFontLoaderDocumentImportError(),
+  fns.push(
+    loader({
+      oneOf: [
+        markRemovable({
+          test: fontLoadersTargetFile,
+          // Use a loose regex so we don't have to crawl the file system to
+          // find the real file name (if present).
+          issuer: /pages[\\/]_document\./,
+          use: {
+            loader: 'error-loader',
+            options: {
+              reason: getFontLoaderDocumentImportError(),
+            },
+          },
+        }),
+      ],
+    })
+  )
+  fns.push(
+    loader({
+      oneOf: [
+        markRemovable({
+          sideEffects: false,
+          test: fontLoadersTargetFile,
+          issuer: {
+            and: [
+              {
+                or: [ctx.rootDirectory, regexClientEntry],
               },
+            ],
+            not: [/node_modules/],
+          },
+          use: getFontLoader(ctx, lazyPostCSSInitializer),
+        }),
+      ],
+    })
+  )
+  fns.push(
+    loader({
+      oneOf: [
+        markRemovable({
+          test: fontLoadersTargetFile,
+          use: {
+            loader: 'error-loader',
+            options: {
+              reason: getFontLoaderImportError(),
             },
-          }),
-        ],
-      })
-    )
-
-    // Matches the resolved font loaders noop files to run next-font-loader
-    fns.push(
-      loader({
-        oneOf: [
-          markRemovable({
-            sideEffects: false,
-            test: fontLoaderPath,
-            issuer: {
-              and: [
-                {
-                  or: [ctx.rootDirectory, regexClientEntry],
-                },
-              ],
-              not: [/node_modules/],
-            },
-            use: getFontLoader(ctx, lazyPostCSSInitializer, fontLoaderOptions),
-          }),
-        ],
-      })
-    )
-
-    fns.push(
-      loader({
-        oneOf: [
-          markRemovable({
-            test: fontLoaderPath,
-            use: {
-              loader: 'error-loader',
-              options: {
-                reason: getFontLoaderImportError(),
-              },
-            },
-          }),
-        ],
-      })
-    )
-  })
+          },
+        }),
+      ],
+    })
+  )
 
   // CSS cannot be imported in _document. This comes before everything because
   // global CSS nor CSS modules work in said file.

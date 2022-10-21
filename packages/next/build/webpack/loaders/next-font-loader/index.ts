@@ -34,21 +34,25 @@ export default async function nextFontLoader(this: any) {
 
     // next-swc next_font_loaders turns each font loader call into JSON
     const {
+      loader,
       path: relativeFilePathFromRoot,
       import: functionName,
       arguments: data,
     } = JSON.parse(this.resourceQuery.slice(1))
 
+    const config = fontLoaderOptions?.find(
+      (option: any) => option.loader === loader
+    )?.options
     try {
       const fontLoader: FontLoader = require(path.join(
-        this.resourcePath,
+        require.resolve(loader),
         '../loader.js'
       )).default
       let { css, fallbackFonts, adjustFontFallback, weight, style, variable } =
         await fontLoader({
           functionName,
           data,
-          config: fontLoaderOptions,
+          config,
           emitFontFile,
           resolve: (src: string) =>
             promisify(this.resolve)(

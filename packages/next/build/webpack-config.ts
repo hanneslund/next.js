@@ -1226,13 +1226,6 @@ export default async function getBaseWebpackConfig(
     },
   }
 
-  const fontLoaderTargets =
-    config.experimental.fontLoaders &&
-    config.experimental.fontLoaders.map(({ loader }) => {
-      const resolved = require.resolve(loader)
-      return path.join(resolved, '../target.css')
-    })
-
   let webpackConfig: webpack.Configuration = {
     parallelism: Number(process.env.NEXT_WEBPACK_PARALLELISM) || undefined,
     // @ts-ignore
@@ -2005,10 +1998,9 @@ export default async function getBaseWebpackConfig(
         !!config.experimental.sri?.algorithm &&
         new SubresourceIntegrityPlugin(config.experimental.sri.algorithm),
       isClient &&
-        fontLoaderTargets &&
+        config.experimental.fontLoaders &&
         new FontLoaderManifestPlugin({
           appDirEnabled: !!config.experimental.appDir,
-          fontLoaderTargets,
         }),
       !dev &&
         isClient &&

@@ -1,6 +1,9 @@
 import { webpack, sources } from 'next/dist/compiled/webpack/webpack'
 import getRouteFromEntrypoint from '../../../server/get-route-from-entrypoint'
-import { FONT_LOADER_MANIFEST } from '../../../shared/lib/constants'
+import {
+  FONT_LOADERS_TARGET,
+  FONT_LOADER_MANIFEST,
+} from '../../../shared/lib/constants'
 
 export type FontLoaderManifest = {
   pages: {
@@ -15,14 +18,9 @@ const PLUGIN_NAME = 'FontLoaderManifestPlugin'
 // Creates a manifest of all fonts that should be preloaded given a route
 export class FontLoaderManifestPlugin {
   private appDirEnabled: boolean
-  private fontLoaderTargets: string[]
 
-  constructor(options: {
-    appDirEnabled: boolean
-    fontLoaderTargets: string[]
-  }) {
+  constructor(options: { appDirEnabled: boolean }) {
     this.appDirEnabled = options.appDirEnabled
-    this.fontLoaderTargets = options.fontLoaderTargets
   }
 
   apply(compiler: webpack.Compiler) {
@@ -31,12 +29,11 @@ export class FontLoaderManifestPlugin {
 
       // Get all font loader modules
       if (this.appDirEnabled) {
+        const fontLoaderTarget = require.resolve(FONT_LOADERS_TARGET)
         compilation.hooks.finishModules.tap(PLUGIN_NAME, (modules) => {
           const modulesArr = Array.from(modules)
           fontLoaderModules = modulesArr.filter((mod: any) =>
-            this.fontLoaderTargets.some((fontLoaderTarget) =>
-              mod.userRequest?.startsWith(`${fontLoaderTarget}?`)
-            )
+            mod.userRequest?.startsWith(`${fontLoaderTarget}?`)
           )
         })
       }
