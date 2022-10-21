@@ -131,15 +131,6 @@ function getBaseSWCOptions({
           isServer: !!isServerLayer,
         }
       : false,
-    fontLoaders:
-      nextConfig?.experimental?.fontLoaders && relativeFilePathFromRoot
-        ? {
-            fontLoaders: nextConfig.experimental.fontLoaders.map(
-              ({ loader }) => loader
-            ),
-            relativeFilePathFromRoot,
-          }
-        : null,
   }
 }
 
@@ -254,6 +245,18 @@ export function getLoaderSWCOptions({
     relativeFilePathFromRoot,
     hasServerComponents,
   })
+
+  const fontLoaders = new Set(
+    nextConfig?.experimental?.fontLoaders?.map(({ loader }) => loader) ?? []
+  )
+  // Add @next/font loaders by default
+  fontLoaders.add('@next/font/google')
+  fontLoaders.add('@next/font/local')
+
+  baseOptions.fontLoaders = {
+    fontLoaders: [...fontLoaders],
+    relativeFilePathFromRoot: relativeFilePathFromRoot ?? '',
+  }
 
   const isNextDist = nextDistPath.test(filename)
 
