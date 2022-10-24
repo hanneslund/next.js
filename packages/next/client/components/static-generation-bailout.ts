@@ -1,0 +1,22 @@
+import { DynamicServerError } from './hooks-server-context'
+import { staticGenerationAsyncStorage } from './static-generation-async-storage'
+
+export function staticGenerationBailout(reason: string) {
+  const staticGenerationStore =
+    staticGenerationAsyncStorage && 'getStore' in staticGenerationAsyncStorage
+      ? staticGenerationAsyncStorage?.getStore()
+      : staticGenerationAsyncStorage
+
+  console.log(
+    'staticGenerationAsyncStorage',
+    staticGenerationStore?.isStaticGeneration
+  )
+
+  if (staticGenerationStore?.isStaticGeneration) {
+    // TODO: honor the dynamic: 'force-static'
+    if (staticGenerationStore) {
+      staticGenerationStore.revalidate = 0
+    }
+    throw new DynamicServerError(reason)
+  }
+}

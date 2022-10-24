@@ -1,8 +1,10 @@
+import { staticGenerationBailout } from 'next/dist/client/components/static-generation-bailout'
 import Link from 'next/link'
 
 export const dynamicParams = false
 
 export default function Page({ params }) {
+  staticGenerationBailout()
   return (
     <>
       <p id="page">/blog/[author]</p>
