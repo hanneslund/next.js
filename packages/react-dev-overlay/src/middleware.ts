@@ -122,7 +122,7 @@ function findOriginalSourcePositionAndContentFromCompilation(
   return module?.buildInfo?.importLocByPath?.get(importedModule) ?? null
 }
 
-export function findCallStackFramePackage(
+function findCallStackFramePackage(
   id: string,
   compilation?: webpack.Compilation
 ): string | undefined {
@@ -379,10 +379,6 @@ function getOverlayMiddleware(options: OverlayMiddlewareOptions) {
             moduleId,
             edgeCompilation
           )
-          // Testa så att detta går ens, hmmm, throw på servern?
-          // Testa så att detta går ens, hmmm, throw på servern?
-          // Testa så att detta går ens, hmmm, throw på servern?
-          // Testa så att detta går ens, hmmm, throw på servern?
           sourcePackage = findCallStackFramePackage(moduleId, edgeCompilation)
         }
       } catch (err) {
