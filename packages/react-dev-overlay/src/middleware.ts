@@ -126,15 +126,11 @@ function findCallStackFramePackage(
   id: string,
   compilation?: webpack.Compilation
 ): string | undefined {
-  try {
-    if (!compilation) {
-      return undefined
-    }
-    const module = getModuleById(id, compilation)
-    return (module as any).resourceResolveData.descriptionFileData.name
-  } catch {
+  if (!compilation) {
     return undefined
   }
+  const module = getModuleById(id, compilation)
+  return (module as any)?.resourceResolveData?.descriptionFileData?.name
 }
 
 export async function createOriginalStackFrame({
