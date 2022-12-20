@@ -19,6 +19,7 @@ import { getErrorSource } from '../helpers/nodeStackFrames'
 import { noop as css } from '../helpers/noop-template'
 import { CloseIcon } from '../icons/CloseIcon'
 import { RuntimeError } from './RuntimeError'
+import { ComponentStackFrame } from '../helpers/parse-component-stack'
 
 export type SupportedErrorEvent = {
   id: number
@@ -27,6 +28,7 @@ export type SupportedErrorEvent = {
 export type ErrorsProps = {
   errors: SupportedErrorEvent[]
   initialDisplayState: DisplayState
+  componentStackFrames?: ComponentStackFrame[]
 }
 
 type ReadyErrorEvent = ReadyRuntimeError
@@ -81,6 +83,7 @@ const HotlinkedText: React.FC<{
 export const Errors: React.FC<ErrorsProps> = function Errors({
   errors,
   initialDisplayState,
+  componentStackFrames,
 }) {
   const [lookups, setLookups] = React.useState(
     {} as { [eventId: string]: ReadyErrorEvent }
@@ -289,7 +292,11 @@ export const Errors: React.FC<ErrorsProps> = function Errors({
             ) : undefined}
           </DialogHeader>
           <DialogBody className="nextjs-container-errors-body">
-            <RuntimeError key={activeError.id.toString()} error={activeError} />
+            <RuntimeError
+              key={activeError.id.toString()}
+              error={activeError}
+              componentStackFrames={componentStackFrames}
+            />
           </DialogBody>
         </DialogContent>
       </Dialog>

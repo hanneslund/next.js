@@ -3,6 +3,7 @@ import * as React from 'react'
 import { StackFrame } from 'next/dist/compiled/stacktrace-parser'
 import stripAnsi from 'next/dist/compiled/strip-ansi'
 import { getFrameSource } from '../../helpers/stack-frame'
+import { useOpenInEditor } from '../../helpers/use-open-in-editor'
 
 export type CodeFrameProps = { stackFrame: StackFrame; codeFrame: string }
 
@@ -44,25 +45,15 @@ export const CodeFrame: React.FC<CodeFrameProps> = function CodeFrame({
     })
   }, [formattedFrame])
 
-  const open = React.useCallback(() => {
-    const params = new URLSearchParams()
-    for (const key in stackFrame) {
-      params.append(key, ((stackFrame as any)[key] ?? '').toString())
-    }
-
-    self
-      .fetch(
-        `${
-          process.env.__NEXT_ROUTER_BASEPATH || ''
-        }/__nextjs_launch-editor?${params.toString()}`
-      )
-      .then(
-        () => {},
-        () => {
-          console.error('There was an issue opening this code in your editor.')
+  const open = useOpenInEditor(
+    stackFrame.file && stackFrame.lineNumber && stackFrame.column
+      ? {
+          file: stackFrame.file,
+          lineNumber: stackFrame.lineNumber,
+          column: stackFrame.column,
         }
-      )
-  }, [stackFrame])
+      : undefined
+  )
 
   // TODO: make the caret absolute
   return (
