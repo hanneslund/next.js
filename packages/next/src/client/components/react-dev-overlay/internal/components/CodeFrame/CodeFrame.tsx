@@ -45,15 +45,11 @@ export const CodeFrame: React.FC<CodeFrameProps> = function CodeFrame({
     })
   }, [formattedFrame])
 
-  const open = useOpenInEditor(
-    stackFrame.file && stackFrame.lineNumber && stackFrame.column
-      ? {
-          file: stackFrame.file,
-          lineNumber: stackFrame.lineNumber,
-          column: stackFrame.column,
-        }
-      : undefined
-  )
+  const open = useOpenInEditor({
+    file: stackFrame.file,
+    lineNumber: stackFrame.lineNumber,
+    column: stackFrame.column,
+  })
 
   // TODO: make the caret absolute
   return (

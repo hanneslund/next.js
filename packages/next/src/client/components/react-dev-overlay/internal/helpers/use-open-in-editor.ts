@@ -5,12 +5,12 @@ export function useOpenInEditor({
   lineNumber,
   column,
 }: {
-  file?: string
-  lineNumber?: number
-  column?: number
+  file?: string | null
+  lineNumber?: number | null
+  column?: number | null
 } = {}) {
   const openInEditor = useCallback(() => {
-    if (!file || !lineNumber || !column) return
+    if (file == null || lineNumber == null || column == null) return
 
     const params = new URLSearchParams()
     params.append('file', file)
