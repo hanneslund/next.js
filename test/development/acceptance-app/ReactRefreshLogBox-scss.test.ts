@@ -4,9 +4,7 @@ import { createNext, FileRef } from 'e2e-utils'
 import { NextInstance } from 'test/lib/next-modes/base'
 import path from 'path'
 
-// TODO: figure out why snapshots mismatch on GitHub actions
-// specifically but work in docker and locally
-describe.skip('ReactRefreshLogBox app', () => {
+describe('ReactRefreshLogBox app', () => {
   let next: NextInstance
 
   beforeAll(async () => {
@@ -40,13 +38,17 @@ describe.skip('ReactRefreshLogBox app', () => {
       `
     )
 
-    expect(await session.hasRedbox()).toBe(false)
+    expect(await session.hasRedbox(false)).toBe(false)
 
     // Syntax error
     await session.patch('index.module.scss', `.button { font-size: :5px; }`)
     expect(await session.hasRedbox(true)).toBe(true)
     const source = await session.getRedboxSource()
     expect(source).toMatchSnapshot()
+
+    // Fix syntax error
+    await session.patch('index.module.scss', `.button { font-size: 5px; }`)
+    expect(await session.hasRedbox(false)).toBe(false)
 
     // Not local error
     await session.patch('index.module.scss', `button { font-size: 5px; }`)
