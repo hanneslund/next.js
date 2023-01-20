@@ -17,6 +17,11 @@ export function parseComponentStack(
       const component = match[1]
       const webpackFile = match[3]
 
+      // Stop parsing the component stack if we reach a Next.js component
+      if (webpackFile?.includes('next/dist/client/components/')) {
+        break
+      }
+
       const modulePath = webpackFile?.replace(
         /^(webpack-internal:\/\/\/|file:\/\/)(\(.*\)\/)?/,
         ''
