@@ -295,7 +295,7 @@ export const Errors: React.FC<ErrorsProps> = function Errors({
             <RuntimeError
               key={activeError.id.toString()}
               error={activeError}
-              componentStackFrames={componentStackFrames}
+              componentStackFrames={activeError.componentStackFrames}
             />
           </DialogBody>
         </DialogContent>
