@@ -427,9 +427,8 @@ export default function HotReload({
       type: ACTION_UNHANDLED_ERROR,
       reason: error,
       frames: parseStack(error.stack!),
-      componentStackFrames: componentStack
-        ? parseComponentStack(componentStack)
-        : undefined,
+      componentStackFrames:
+        componentStack && parseComponentStack(componentStack),
     })
   }, [])
   const handleOnUnhandledRejection = useCallback((reason: Error): void => {

@@ -13,14 +13,9 @@ import { ComponentStyles } from './styles/ComponentStyles'
 import { CssReset } from './styles/CssReset'
 import { parseStack } from './helpers/parseStack'
 import { RootLayoutError } from './container/RootLayoutError'
-import {
-  ComponentStackFrame,
-  parseComponentStack,
-} from './helpers/parse-component-stack'
 
 interface ReactDevOverlayState {
   reactError: SupportedErrorEvent | null
-  componentStackFrames?: ComponentStackFrame[]
 }
 class ReactDevOverlay extends React.PureComponent<
   {
@@ -30,7 +25,7 @@ class ReactDevOverlay extends React.PureComponent<
   },
   ReactDevOverlayState
 > {
-  state = { reactError: null, componentStackFrames: undefined }
+  state = { reactError: null }
 
   static getDerivedStateFromError(error: Error): ReactDevOverlayState {
     const e = error
@@ -43,24 +38,16 @@ class ReactDevOverlay extends React.PureComponent<
       id: 0,
       event,
     }
-    return { reactError: errorEvent, componentStackFrames: undefined }
+    return { reactError: errorEvent }
   }
 
-  componentDidCatch(
-    componentErr: Error,
-    errorInfo: { componentStack: null | string }
-  ) {
+  componentDidCatch(componentErr: Error) {
     this.props.onReactError(componentErr)
-    if (errorInfo.componentStack) {
-      this.setState({
-        componentStackFrames: parseComponentStack(errorInfo.componentStack),
-      })
-    }
   }
 
   render() {
     const { state, children } = this.props
-    const { reactError, componentStackFrames } = this.state
+    const { reactError } = this.state
 
     const hasBuildError = state.buildError != null
     const hasRuntimeErrors = Boolean(state.errors.length)
@@ -94,11 +81,7 @@ class ReactDevOverlay extends React.PureComponent<
             ) : hasBuildError ? (
               <BuildError message={state.buildError!} />
             ) : reactError ? (
-              <Errors
-                componentStackFrames={componentStackFrames}
-                initialDisplayState="fullscreen"
-                errors={[reactError]}
-              />
+              <Errors initialDisplayState="fullscreen" errors={[reactError]} />
             ) : hasRuntimeErrors ? (
               <Errors initialDisplayState="minimized" errors={state.errors} />
             ) : undefined}
