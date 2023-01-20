@@ -422,7 +422,7 @@ export default function HotReload({
   }, [dispatch])
 
   const handleOnUnhandledError = useCallback((error: Error): void => {
-    // Component stack as added to the error in use-error-handler
+    // Component stack is added to the error in use-error-handler
     const componentStack = (error as any)._componentStack
     dispatch({
       type: ACTION_UNHANDLED_ERROR,

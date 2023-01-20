@@ -68,7 +68,7 @@ if (typeof window !== 'undefined') {
         error.message += '\n\n' + hydrationErrorWarning
       }
       if (hydrationErrorComponentStack) {
-        // Component stack added to the error, parsed by the hot-reloader-client
+        // Component stack added to the error, picked up by the hot-reloader-client
         ;(error as any)._componentStack = hydrationErrorComponentStack
       }
       error.message +=
