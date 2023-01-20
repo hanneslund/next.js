@@ -4,19 +4,16 @@ import { ReadyRuntimeError } from '../../helpers/getErrorByType'
 import { noop as css } from '../../helpers/noop-template'
 import { OriginalStackFrame } from '../../helpers/stack-frame'
 import { groupStackFramesByFramework } from '../../helpers/group-stack-frames-by-framework'
-import { ComponentStackFrame } from '../../helpers/parse-component-stack'
 import { CallStackFrame } from './CallStackFrame'
 import { GroupedStackFrames } from './GroupedStackFrames'
 import { ComponentStackFrameRow } from './ComponentStackFrameRow'
 
 export type RuntimeErrorProps = {
   error: ReadyRuntimeError
-  componentStackFrames?: ComponentStackFrame[]
 }
 
 const RuntimeError: React.FC<RuntimeErrorProps> = function RuntimeError({
   error,
-  componentStackFrames,
 }) {
   const firstFirstPartyFrameIndex = React.useMemo<number>(() => {
     return error.frames.findIndex(
@@ -91,10 +88,10 @@ const RuntimeError: React.FC<RuntimeErrorProps> = function RuntimeError({
         </React.Fragment>
       ) : undefined}
 
-      {componentStackFrames ? (
+      {error.componentStackFrames ? (
         <>
           <h5>Component Stack</h5>
-          {componentStackFrames.map((componentStackFrame, index) => (
+          {error.componentStackFrames.map((componentStackFrame, index) => (
             <ComponentStackFrameRow
               key={index}
               componentStackFrame={componentStackFrame}

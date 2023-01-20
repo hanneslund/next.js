@@ -289,11 +289,7 @@ export const Errors: React.FC<ErrorsProps> = function Errors({
             ) : undefined}
           </DialogHeader>
           <DialogBody className="nextjs-container-errors-body">
-            <RuntimeError
-              key={activeError.id.toString()}
-              error={activeError}
-              componentStackFrames={activeError.componentStackFrames}
-            />
+            <RuntimeError key={activeError.id.toString()} error={activeError} />
           </DialogBody>
         </DialogContent>
       </Dialog>
