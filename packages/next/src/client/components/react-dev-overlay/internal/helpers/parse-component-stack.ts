@@ -13,7 +13,7 @@ export function parseComponentStack(
   for (const line of componentStack.trim().split('\n')) {
     // Get component and file from the component stack line
     const match = /at ([^ ]+)( \((.*)\))?/.exec(line)
-    if (match && match[1]) {
+    if (match?.[1]) {
       const component = match[1]
       const webpackFile = match[3]
 
