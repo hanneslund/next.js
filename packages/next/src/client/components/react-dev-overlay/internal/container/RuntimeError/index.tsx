@@ -8,9 +8,7 @@ import { CallStackFrame } from './CallStackFrame'
 import { GroupedStackFrames } from './GroupedStackFrames'
 import { ComponentStackFrameRow } from './ComponentStackFrameRow'
 
-export type RuntimeErrorProps = {
-  error: ReadyRuntimeError
-}
+export type RuntimeErrorProps = { error: ReadyRuntimeError }
 
 const RuntimeError: React.FC<RuntimeErrorProps> = function RuntimeError({
   error,
@@ -100,7 +98,7 @@ const RuntimeError: React.FC<RuntimeErrorProps> = function RuntimeError({
         </>
       ) : null}
 
-      {visibleCallStackFrames.length ? (
+      {stackFramesGroupedByFramework.length ? (
         <React.Fragment>
           <h5>Call Stack</h5>
           <GroupedStackFrames
