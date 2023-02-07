@@ -13,7 +13,6 @@ createNextDescribe(
   {
     files: __dirname,
     dependencies: {
-      '@next/font': 'canary',
       react: 'latest',
       'react-dom': 'latest',
     },
