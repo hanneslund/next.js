@@ -173,13 +173,25 @@ export const css = curry(async function css(
 
   const fns: ConfigurationFn[] = []
 
+  const googleLoaderOptions =
+    ctx.experimental?.fontLoaders?.find(
+      (loaderConfig) => loaderConfig.loader === '@next/font/google'
+    )?.options ?? {}
   // Resolve the configured font loaders, the resolved files are noop files that next-font-loader will match
-  let fontLoaders: [string, string][] | undefined = ctx.experimental.fontLoaders
-    ? ctx.experimental.fontLoaders.map(({ loader: fontLoader, options }) => [
-        path.join(require.resolve(fontLoader), '../target.css'),
-        options,
-      ])
-    : undefined
+  const fontLoaders: Array<[string, any]> = [
+    [require.resolve('next/font/google/target.css'), googleLoaderOptions],
+    [require.resolve('next/font/local/target.css'), {}],
+  ]
+  // TODO: remove this in the next major version
+  try {
+    const googleTarget = require.resolve('@next/font/google/target.css')
+    fontLoaders.push([googleTarget, googleLoaderOptions])
+  } catch {}
+  // TODO: remove this in the next major version
+  try {
+    const googleTarget = require.resolve('@next/font/local/target.css')
+    fontLoaders.push([googleTarget, {}])
+  } catch {}
 
   fontLoaders?.forEach(([fontLoaderPath, fontLoaderOptions]) => {
     // Matches the resolved font loaders noop files to run next-font-loader
