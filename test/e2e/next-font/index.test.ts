@@ -28,6 +28,9 @@ describe('next/font', () => {
             join(__dirname, `${fixture}/next.config.js`)
           ),
         },
+        dependencies: {
+          '@next/font': 'canary',
+        },
         env: {
           NEXT_FONT_GOOGLE_MOCKED_RESPONSES: mockedGoogleFontResponses,
         },

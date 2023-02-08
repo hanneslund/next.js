@@ -19,8 +19,7 @@ describe.each([['app'], ['app-old']])('%s', (fixture: string) => {
         'next.config.js': new FileRef(join(__dirname, 'next.config.js')),
       },
       dependencies: {
-        react: 'latest',
-        'react-dom': 'latest',
+        '@next/font': 'canary',
       },
       skipDeployment: true,
     },

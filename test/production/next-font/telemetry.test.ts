@@ -7,7 +7,7 @@ const mockedGoogleFontResponses = require.resolve(
   './google-font-mocked-responses.js'
 )
 
-describe('@next/font used telemetry', () => {
+describe('next/font used telemetry', () => {
   let next: NextInstance
 
   beforeAll(async () => {
@@ -15,9 +15,6 @@ describe('@next/font used telemetry', () => {
       files: {
         pages: new FileRef(join(__dirname, 'telemetry/pages')),
       },
-      dependencies: {
-        '@next/font': 'canary',
-      },
       env: {
         NEXT_FONT_GOOGLE_MOCKED_RESPONSES: mockedGoogleFontResponses,
         NEXT_TELEMETRY_DEBUG: '1',
@@ -26,23 +23,23 @@ describe('@next/font used telemetry', () => {
   })
   afterAll(() => next.destroy())
 
-  it('should send @next/font/google and @next/font/local usage event', async () => {
+  it('should send next/font/google and next/font/local usage event', async () => {
     const events = findAllTelemetryEvents(
       next.cliOutput,
       'NEXT_BUILD_FEATURE_USAGE'
     )
     expect(events).toContainEqual({
-      featureName: '@next/font/google',
+      featureName: 'next/font/google',
       invocationCount: 1,
     })
     expect(events).toContainEqual({
-      featureName: '@next/font/local',
+      featureName: 'next/font/local',
       invocationCount: 1,
     })
   })
 })
 
-describe('@next/font unused telemetry', () => {
+describe('next/font unused telemetry', () => {
   let next: NextInstance
 
   beforeAll(async () => {
@@ -50,9 +47,6 @@ describe('@next/font unused telemetry', () => {
       files: {
         pages: new FileRef(join(__dirname, 'telemetry/pages-unused')),
       },
-      dependencies: {
-        '@next/font': 'canary',
-      },
       env: {
         NEXT_FONT_GOOGLE_MOCKED_RESPONSES: mockedGoogleFontResponses,
         NEXT_TELEMETRY_DEBUG: '1',
@@ -61,17 +55,17 @@ describe('@next/font unused telemetry', () => {
   })
   afterAll(() => next.destroy())
 
-  it('should not send @next/font/google and @next/font/local usage event', async () => {
+  it('should not send next/font/google and next/font/local usage event', async () => {
     const events = findAllTelemetryEvents(
       next.cliOutput,
       'NEXT_BUILD_FEATURE_USAGE'
     )
     expect(events).toContainEqual({
-      featureName: '@next/font/google',
+      featureName: 'next/font/google',
       invocationCount: 0,
     })
     expect(events).toContainEqual({
-      featureName: '@next/font/local',
+      featureName: 'next/font/local',
       invocationCount: 0,
     })
   })
