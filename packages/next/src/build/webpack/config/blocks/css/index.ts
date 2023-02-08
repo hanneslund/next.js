@@ -177,40 +177,44 @@ export const css = curry(async function css(
     ctx.experimental?.fontLoaders?.find(
       (loaderConfig) => loaderConfig.loader === '@next/font/google'
     )?.options ?? {}
-  // Resolve the configured font loaders, the resolved files are noop files that next-font-loader will match
-  const fontLoaders: Array<[string, any]> = [
-    [require.resolve('next/font/google/target.css'), googleLoaderOptions],
-    [require.resolve('next/font/local/target.css'), {}],
-  ]
-  // TODO: remove this in the next major version
-  try {
-    const googleTarget = require.resolve('@next/font/google/target.css')
-    fontLoaders.push([googleTarget, googleLoaderOptions])
-  } catch {}
-  // TODO: remove this in the next major version
-  try {
-    const googleTarget = require.resolve('@next/font/local/target.css')
-    fontLoaders.push([googleTarget, {}])
-  } catch {}
+  const fontLoaders: Array<[string | RegExp, string, any?]> = [
+    [
+      require.resolve('next/font/google/target.css'),
+      '@next/font/google/loader',
+      googleLoaderOptions,
+    ],
+    [require.resolve('next/font/local/target.css'), '@next/font/local/loader'],
 
-  fontLoaders?.forEach(([fontLoaderPath, fontLoaderOptions]) => {
-    // Matches the resolved font loaders noop files to run next-font-loader
-    fns.push(
-      loader({
-        oneOf: [
-          markRemovable({
-            sideEffects: false,
-            test: fontLoaderPath,
-            use: getNextFontLoader(
-              ctx,
-              lazyPostCSSInitializer,
-              fontLoaderOptions
-            ),
-          }),
-        ],
-      })
-    )
-  })
+    // TODO: remove this in the next major version
+    [
+      /node_modules\/@next\/font\/google\/target.css/,
+      '@next/font/google/loader',
+      googleLoaderOptions,
+    ],
+    [/node_modules\/@next\/font\/local\/target.css/, '@next/font/local/loader'],
+  ]
+
+  fontLoaders.forEach(
+    ([fontLoaderTarget, fontLoaderPath, fontLoaderOptions]) => {
+      // Matches the resolved font loaders noop files to run next-font-loader
+      fns.push(
+        loader({
+          oneOf: [
+            markRemovable({
+              sideEffects: false,
+              test: fontLoaderTarget,
+              use: getNextFontLoader(
+                ctx,
+                lazyPostCSSInitializer,
+                fontLoaderPath,
+                fontLoaderOptions
+              ),
+            }),
+          ],
+        })
+      )
+    }
+  )
 
   // CSS cannot be imported in _document. This comes before everything because
   // global CSS nor CSS modules work in said file.

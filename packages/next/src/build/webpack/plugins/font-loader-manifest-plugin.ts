@@ -17,15 +17,10 @@ const PLUGIN_NAME = 'FontLoaderManifestPlugin'
 const fontLoaderTargets = [
   require.resolve('next/font/google/target.css'),
   require.resolve('next/font/local/target.css'),
+  // TODO: remove this in the next major version
+  /node_modules\/@next\/font\/google\/target\.css\?{.+}$/,
+  /node_modules\/@next\/font\/local\/target\.css\?{.+}$/,
 ]
-// TODO: remove this in the next major version
-try {
-  fontLoaderTargets.push(require.resolve('@next/font/google/target.css'))
-} catch {}
-// TODO: remove this in the next major version
-try {
-  fontLoaderTargets.push(require.resolve('@next/font/local/target.css'))
-} catch {}
 
 // Creates a manifest of all fonts that should be preloaded given a route
 export class FontLoaderManifestPlugin {
@@ -45,7 +40,9 @@ export class FontLoaderManifestPlugin {
           const modulesArr = Array.from(modules)
           fontLoaderModules = modulesArr.filter((mod: any) =>
             fontLoaderTargets.some((fontLoaderTarget) =>
-              mod.userRequest?.startsWith(`${fontLoaderTarget}?`)
+              typeof fontLoaderTarget === 'string'
+                ? mod.userRequest?.startsWith(`${fontLoaderTarget}?`)
+                : fontLoaderTarget.test(mod.userRequest)
             )
           )
         })
